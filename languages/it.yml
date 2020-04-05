@@ -1,0 +1,90 @@
+---
+name: Italiano
+title:
+  archive: Archivio
+  category: Categoria
+  tag: Tag
+  schedule: Programma
+menu:
+  home: Home
+  archives: Archivi
+  categories: Categorie
+  tags: Tags
+  about: Informazioni su
+  search: Cerca
+  schedule: Programma
+  sitemap: Sitemap
+  commonweal: Commonweal 404
+sidebar:
+  overview: Panoramica
+  toc: Indice
+post:
+  posted: Scritto il
+  edited: Edited on
+  created: Post creato
+  modified: Post modificato
+  edit: Edit this post
+  in: In
+  read_more: Leggi di più
+  untitled: Senza titolo
+  sticky: Sticky
+  views: Views
+  related_posts: Related Posts
+  copyright:
+    author: Autore
+    link: Link
+    license_title: Copyright
+    license_content: "Tutti gli articoli in questo sito sono sotto licenza %s salvo disposizione contraria."
+footer:
+  powered: "Powered by %s"
+  total_views: Total Views
+  total_visitors: Total Visitors
+counter:
+  tag_cloud:
+    zero: Nessun tag
+    one: 1 tag in totale
+    other: "%d tags in totale."
+  categories:
+    zero: Nessuna categoria
+    one: 1 categoria in totale
+    other: "%d categorie in totale."
+  archive_posts:
+    zero: Nessun post.
+    one: 1 post.
+    other: "%d posts in totale."
+state:
+  posts: posts
+  tags: tags
+  categories: categorie
+search:
+  placeholder: Cerca...
+cheers:
+  um: Mh..
+  ok: OK
+  nice: Bello
+  good: Buono
+  great: Ottimo
+  excellent: Eccellente
+keep_on: Continua così.
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ": "
+reward:
+  donate: Dona
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  paypal: PayPal
+  bitcoin: Bitcoin
+follow_me:
+  welcome: Welcome to my other publishing channels
+accessibility:
+  nav_toggle: Toggle navigation bar
+  prev_page: Pagina precedente
+  next_page: Pagina successiva
+symbols_count_time:
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
+  time_minutes: mins.

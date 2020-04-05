@@ -1,0 +1,73 @@
+.post-body {
+  font-family: $font-family-posts;
+  word-wrap();
+
+  +desktop-large() {
+    font-size: $font-size-large;
+  }
+
+  .exturl .fa {
+    font-size: $font-size-small;
+    margin-left: 4px;
+  }
+
+  .image-caption, .figure .caption {
+    color: $grey-dark;
+    font-size: $font-size-small;
+    font-weight: bold;
+    line-height: 1;
+    margin: -20px auto 15px;
+    text-align: center;
+  }
+}
+
+.post-sticky-flag {
+  display: inline-block;
+  transform: rotate(30deg);
+}
+
+.post-button {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.use-motion {
+  if (hexo-config('motion.transition.post_block')) {
+    .post-block, .pagination, .comments {
+      opacity: 0;
+    }
+  }
+
+  if (hexo-config('motion.transition.post_header')) {
+    .post-header {
+      opacity: 0;
+    }
+  }
+
+  if (hexo-config('motion.transition.post_body')) {
+    .post-body {
+      opacity: 0;
+    }
+  }
+
+  if (hexo-config('motion.transition.coll_header')) {
+    .collection-header {
+      opacity: 0;
+    }
+  }
+}
+
+@import 'post-collapse';
+@import 'post-eof';
+@import 'post-expand';
+@import 'post-gallery';
+@import 'post-header';
+@import 'post-nav';
+@import 'post-rtl';
+@import 'post-tags';
+@import 'post-widgets';
+@import 'post-reward';
+
+@import 'post-copyright' if (hexo-config('creative_commons.post'));
+
+@import 'post-followme' if (hexo-config('follow_me'));

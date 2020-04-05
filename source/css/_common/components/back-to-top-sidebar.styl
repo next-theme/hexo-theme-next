@@ -1,0 +1,20 @@
+.back-to-top {
+  background: transparent;
+  margin: 20px - $sidebar-offset -10px -20px;
+  opacity: 0;
+
+  if (!hexo-config('back2top.scrollpercent')) {
+    span {
+      display: none;
+    }
+  }
+
+  &.back-to-top-on {
+    cursor: pointer;
+    opacity: $b2t-opacity;
+
+    &:hover {
+      opacity: $b2t-opacity-hover;
+    }
+  }
+}

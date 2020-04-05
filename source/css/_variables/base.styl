@@ -1,0 +1,353 @@
+//
+// Variables
+// ==================================================
+
+
+// Colors
+// colors for use across theme.
+// --------------------------------------------------
+$whitesmoke   = #f5f5f5;
+$gainsboro    = #eee;
+$grey-lighter = #ddd;
+$grey-light   = #ccc;
+$grey         = #bbb;
+$grey-dark    = #999;
+$grey-dim     = #666;
+$black-light  = #555;
+$black-dim    = #333;
+$black-deep   = #222;
+$red          = #ff2a2a;
+$blue-bright  = #87daff;
+$blue         = #0684bd;
+$blue-deep    = #262a30;
+$orange       = #fc6423;
+
+
+// Scaffolding
+// Settings for some of the most global styles.
+// --------------------------------------------------
+// Global text color on <body>
+$text-color                   = $black-light;
+$text-color-dark              = $grey-light;
+
+// Global link color.
+$link-color                   = $black-light;
+$link-color-dark              = $grey-light;
+$link-hover-color             = $black-deep;
+$link-hover-color-dark        = $gainsboro;
+$link-decoration-color        = $grey-dark;
+
+$blockquote-color             = $grey-dim;
+$blockquote-color-dark        = $grey;
+
+// Global border color.
+$border-color                 = $grey-light;
+
+// Background color for <body>
+$body-bg-color                = white;
+$body-bg-color-dark           = #282828;
+$content-bg-color             = white;
+$content-bg-color-dark        = $black-dim;
+
+// Selection
+$selection-bg                 = $blue-deep;
+$selection-color              = $gainsboro;
+
+// Dark mode color
+$card-bg-color                = $whitesmoke;
+$card-bg-color-dark           = $black-light;
+
+$menu-item-bg-color           = $whitesmoke;
+$menu-item-bg-color-dark      = $black-light;
+
+// Typography
+// Font, line-height, and elements colors.
+// --------------------------------------------------
+get_font_family(config) {
+  $custom-family = hexo-config('font.' + config + '.family');
+  return $custom-family is a 'string' ? $custom-family : null;
+}
+
+// Font families.
+$font-family-chinese      = "PingFang SC", "Microsoft YaHei";
+
+$font-family-base         = $font-family-chinese, sans-serif;
+$font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global');
+
+$font-family-logo         = $font-family-base;
+$font-family-logo         = get_font_family('title'), $font-family-base if get_font_family('title');
+
+$font-family-headings     = $font-family-base;
+$font-family-headings     = get_font_family('headings'), $font-family-base if get_font_family('headings');
+
+$font-family-posts        = $font-family-base;
+$font-family-posts        = get_font_family('posts'), $font-family-base if get_font_family('posts');
+
+$font-family-monospace    = consolas, Menlo, monospace, $font-family-chinese;
+$font-family-monospace    = get_font_family('codes'), consolas, Menlo, monospace, $font-family-chinese if get_font_family('codes');
+
+
+// Font size
+$font-size-base           = (hexo-config('font.enable') and hexo-config('font.global.size') is a 'unit') ? unit(hexo-config('font.global.size'), em) : 1em;
+$font-size-smallest       = .75em;
+$font-size-smaller        = .8125em;
+$font-size-small          = .875em;
+$font-size-medium         = 1em;
+$font-size-large          = 1.125em;
+$font-size-larger         = 1.25em;
+$font-size-largest        = 1.5em;
+
+
+// Headings font size
+$font-size-headings-step  = .125em;
+$font-size-headings-base  = (hexo-config('font.enable') and hexo-config('font.headings.size') is a 'unit') ? unit(hexo-config('font.headings.size'), em) : 1.625em;
+
+
+// Global line height
+$line-height-base         = 2;
+$line-height-code-block   = 1.6; // Can't be less than 1.3;
+
+
+// Z-index master list
+// --------------------------------------------------
+$zindex-0       = 1000;
+$zindex-1       = 1100;
+$zindex-2       = 1200;
+$zindex-3       = 1300;
+$zindex-4       = 1400;
+$zindex-5       = 1500;
+
+
+// Table
+// --------------------------------------------------
+$table-border-color             = $grey-lighter;
+$table-font-size                = $font-size-small;
+$table-cell-border-bottom-color = $grey-lighter;
+$table-row-odd-bg-color         = #f9f9f9;
+$table-row-odd-bg-color-dark    = #282828;
+$table-row-hover-bg-color       = $whitesmoke;
+$table-row-hover-bg-color-dark  = #363636;
+
+
+// Code & Code Blocks
+// --------------------------------------------------
+$code-font-family               = $font-family-monospace;
+$code-foreground                = $black-light;
+$code-background                = $gainsboro;
+
+
+// Buttons
+// --------------------------------------------------
+$btn-default-radius                    = 0;
+$btn-default-bg                        = $black-deep;
+$btn-default-bg-dark                   = $black-deep;
+$btn-default-color                     = white;
+$btn-default-color-dark                = $text-color-dark;
+$btn-default-border-color              = $black-deep;
+$btn-default-border-color-dark         = $black-light;
+$btn-default-hover-bg                  = white;
+$btn-default-hover-bg-dark             = $grey-dim;
+$btn-default-hover-color               = $black-deep;
+$btn-default-hover-color-dark          = $text-color-dark;
+$btn-default-hover-border-color        = $black-deep;
+$btn-default-hover-border-color-dark   = $grey-dim;
+
+
+// Pagination
+// --------------------------------------------------
+$pagination-border              = $gainsboro;
+
+$pagination-link-bg             = transparent;
+$pagination-link-color          = $link-color;
+$pagination-link-border         = $gainsboro;
+
+$pagination-link-hover-bg       = transparent;
+$pagination-link-hover-color    = $link-color;
+$pagination-link-hover-border   = $black-deep;
+
+$pagination-active-bg           = $grey-light;
+$pagination-active-color        = white;
+$pagination-active-border       = $grey-light;
+
+
+// Layout sizes
+// --------------------------------------------------
+$content-desktop                = 700px;
+$content-desktop-large          = 800px;
+$content-desktop-largest        = 900px;
+
+$content-desktop-padding        = 40px;
+$content-tablet-padding         = 10px;
+$content-mobile-padding         = 8px;
+
+
+// Headband
+// --------------------------------------------------
+$headband-height                = 3px;
+$headband-bg                    = $black-deep;
+
+
+// Section Header
+// Variables for header section elements.
+// --------------------------------------------------
+$head-bg                        = transparent;
+
+// Site Meta
+$site-meta-text-align           = center;
+$brand-color                    = white;
+$brand-hover-color              = white;
+$brand-color-dark               = $grey-lighter;
+$brand-hover-color-dark         = $grey-lighter;
+
+$font-size-title                = (hexo-config('font.enable') and hexo-config('font.title.size') is a 'unit') ? unit(hexo-config('font.title.size'), em) : 1.375em;
+$font-size-subtitle             = $font-size-smaller;
+$subtitle-color                 = $grey-dark;
+$site-subtitle-color            = $grey-dark;
+
+
+// Posts Collpase
+// --------------------------------------------------
+$posts-collapse-margin          = 35px;
+$posts-collapse-margin-mobile   = 0px;
+
+
+// Sidebar
+// Variables for sidebar section elements.
+// --------------------------------------------------
+
+$sidebar-padding                      = hexo-config('sidebar.padding') is a 'unit' ? unit(hexo-config('sidebar.padding'), px) : 18px;
+$sidebar-offset                       = hexo-config('sidebar.offset') is a 'unit' ? unit(hexo-config('sidebar.offset'), px) : 12px;
+$sidebar-nav-color                    = $grey-dim;
+$sidebar-nav-hover-color              = $whitesmoke;
+$sidebar-highlight                    = $blue-bright;
+
+$site-author-image-width              = 96px;
+$site-author-image-border-width       = 2px;
+$site-author-image-border-color       = $black-dim;
+
+$site-author-name-margin              = 5px 0 0;
+$site-author-name-color               = $whitesmoke;
+$site-author-name-weight              = normal;
+
+$site-description-font-size           = $font-size-medium;
+$site-description-color               = $grey-dark;
+$site-description-margin-top          = 5px;
+
+$site-state-item-count-font-size      = $font-size-larger;
+$site-state-item-name-font-size       = $font-size-small;
+$site-state-item-name-color           = inherit;
+$site-state-item-border-color         = $black-dim;
+
+
+// Components
+// --------------------------------------------------
+// Back to top
+$b2t-opacity                  = 1;
+$b2t-opacity-hover            = .8;
+$b2t-position-bottom          = -100px;
+$b2t-position-bottom-on       = 19px;
+$b2t-position-right           = 30px;
+$b2t-position-right-mobile    = 20px;
+$b2t-font-size                = 12px;
+$b2t-color                    = white;
+$b2t-bg-color                 = $black-deep;
+
+//  .post-expand .post-eof
+//  In Muse scheme, margin above and below the post separator
+$post-eof-margin-top          = 80px; //  or 160px for more white space;
+$post-eof-margin-bottom       = 60px; //  or 120px for less white space;
+
+
+// Iconography
+// Icons SVG Base64
+// --------------------------------------------------
+// blockquote-center icon
+$center-quote-left            = '../images/quote-l.svg';
+$center-quote-right           = '../images/quote-r.svg';
+
+
+// Note colors
+// --------------------------------------------------
+// Read note light_bg_offset from NexT config and set in "$lbg%" to use it as string variable.
+$lbg = hexo-config('note.light_bg_offset') is a 'unit' ? unit(hexo-config('note.light_bg_offset'), "%") : 0;
+
+// Default
+$note-border-radius         = 3px;
+
+$note-default-border        = #777;
+$note-default-bg            = lighten(spin($note-default-border, 0), 94% + $lbg);
+$note-default-text          = $note-default-border;
+$note-default-icon          = "\f0a9";
+
+$note-modern-default-border = #e1e1e1;
+$note-modern-default-bg     = lighten(spin($note-modern-default-border, 10), 60% + ($lbg * 4));
+$note-modern-default-text   = $grey-dim;
+$note-modern-default-hover  = darken(spin($note-modern-default-text, -10), 32%);
+
+// Primary
+$note-primary-border        = #6f42c1;
+$note-primary-bg            = lighten(spin($note-primary-border, 10), 92% + $lbg);
+$note-primary-text          = $note-primary-border;
+$note-primary-icon          = "\f055";
+
+$note-modern-primary-border = #e1c2ff;
+$note-modern-primary-bg     = lighten(spin($note-modern-primary-border, 10), 40% + ($lbg * 4));
+$note-modern-primary-text   = #6f42c1;
+$note-modern-primary-hover  = darken(spin($note-modern-primary-text, -10), 22%);
+
+// Info
+$note-info-border           = #428bca;
+$note-info-bg               = lighten(spin($note-info-border, -10), 91% + $lbg);
+$note-info-text             = $note-info-border;
+$note-info-icon             = "\f05a";
+
+$note-modern-info-border    = #b3e5ef;
+$note-modern-info-bg        = lighten(spin($note-modern-info-border, 10), 50% + ($lbg * 4));
+$note-modern-info-text      = #31708f;
+$note-modern-info-hover     = darken(spin($note-modern-info-text, -10), 32%);
+
+// Success
+$note-success-border        = #5cb85c;
+$note-success-bg            = lighten(spin($note-success-border, 10), 90% + $lbg);
+$note-success-text          = $note-success-border;
+$note-success-icon          = "\f058";
+
+$note-modern-success-border = #d0e6be;
+$note-modern-success-bg     = lighten(spin($note-modern-success-border, 10), 40% + ($lbg * 4));
+$note-modern-success-text   = #3c763d;
+$note-modern-success-hover  = darken(spin($note-modern-success-text, -10), 27%);
+
+// Warning
+$note-warning-border        = #f0ad4e;
+$note-warning-bg            = lighten(spin($note-warning-border, 10), 88% + $lbg);
+$note-warning-text          = $note-warning-border;
+$note-warning-icon          = "\f06a";
+
+$note-modern-warning-border = #fae4cd;
+$note-modern-warning-bg     = lighten(spin($note-modern-warning-border, 10), 43% + ($lbg * 4));
+$note-modern-warning-text   = #8a6d3b;
+$note-modern-warning-hover  = darken(spin($note-modern-warning-text, -10), 18%);
+
+// Danger
+$note-danger-border         = #d9534f;
+$note-danger-bg             = lighten(spin($note-danger-border, -10), 92% + $lbg);
+$note-danger-text           = $note-danger-border;
+$note-danger-icon           = "\f056";
+
+$note-modern-danger-border  = #ebcdd2;
+$note-modern-danger-bg      = lighten(spin($note-modern-danger-border, 10), 35% + ($lbg * 4));
+$note-modern-danger-text    = #a94442;
+$note-modern-danger-hover   = darken(spin($note-modern-danger-text, -10), 22%);
+
+// Tabs border radius
+// --------------------------------------------------
+$tbr                        = 0;
+
+// Label colors
+// --------------------------------------------------
+$label-default              = lighten(spin($note-default-border, 0), 89% + $lbg);
+$label-primary              = lighten(spin($note-primary-border, 10), 87% + $lbg);
+$label-info                 = lighten(spin($note-info-border, -10), 86% + $lbg);
+$label-success              = lighten(spin($note-success-border, 10), 85% + $lbg);
+$label-warning              = lighten(spin($note-warning-border, 10), 83% + $lbg);
+$label-danger               = lighten(spin($note-danger-border, -10), 87% + $lbg);

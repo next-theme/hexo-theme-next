@@ -1,0 +1,90 @@
+---
+name: Tiếng Việt
+title:
+  archive: Lưu Trữ
+  category: Phân Loại
+  tag: Thẻ
+  schedule: Danh Mục
+menu:
+  home: Trang Chủ
+  archives: Lưu Trữ
+  categories: Đầu Mục
+  tags: Thẻ
+  about: Giới Thiệu
+  search: Tìm Kiếm
+  schedule: Danh Mục
+  sitemap: Bản đồ trang
+  commonweal: Commonwealth Act No. 404
+sidebar:
+  overview: Tổng Quan
+  toc: Mục Lục
+post:
+  posted: Tạo lúc
+  edited: Chỉnh sửa vào
+  created: Được tạo
+  modified: Được thay đổi
+  edit: Chính sửa bài viết này
+  in: Trong
+  read_more: Đọc tiếp
+  untitled: Không có tiêu đề
+  sticky: Đính
+  views: Lượt xem
+  related_posts: Các bài viết liên quan
+  copyright:
+    author: Người viết
+    link: Liên kết bài viết
+    license_title: Chú ý bản quyền
+    license_content: "Tất cả bài viết trong blog này được đăng ký bởi %s trừ khi có thông báo bổ sung."
+footer:
+  powered: "Cung cấp bởi %s"
+  total_views: Tổng số người xem
+  total_visitors: Tổng số truy cập
+counter:
+  tag_cloud:
+    zero: Không có thẻ nào
+    one: có 1 thẻ tất cả
+    other: "có %d thẻ tất cả"
+  categories:
+    zero: Không có trong mục nào
+    one: có 1 mục tất cả
+    other: "có %d mục tất cả"
+  archive_posts:
+    zero: Không có bài viết.
+    one: 1 bài viết.
+    other: "tổng số %d bài viết."
+state:
+  posts: bài viết
+  tags: thẻ
+  categories: mục
+search:
+  placeholder: Đang tìm...
+cheers:
+  um: Um..
+  ok: Đồng Ý
+  nice: Hay
+  good: Tốt
+  great: Tuyệt vời
+  excellent: Tuyệt cú mèo
+keep_on: Giữ tiến độ nha.
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ": "
+reward:
+  donate: Tài trợ
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  paypal: Paypal
+  bitcoin: Bitcoin
+follow_me:
+  welcome: Xin chào mừng đến với các kênh khác của tôi
+accessibility:
+  nav_toggle: Thanh điều hướng chuyển đổi
+  prev_page: Trang trước
+  next_page: Trang sau
+symbols_count_time:
+  count: Số biểu tượng trong bài viết
+  count_total: Tổng số biểu tượng
+  time: Thời lượng đọc
+  time_total: Tổng thời lượng đọc
+  time_minutes: phút.

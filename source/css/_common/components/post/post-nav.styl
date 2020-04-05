@@ -1,0 +1,44 @@
+.post-nav {
+  border-top: 1px solid $gainsboro;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 10px 5px 0;
+}
+
+.post-nav-item {
+  flex: 1;
+
+  a {
+    border-bottom: none;
+    display: block;
+    font-size: $font-size-small;
+    line-height: 1.6;
+    position: relative;
+
+    &:active {
+      top: 2px;
+    }
+  }
+
+  .fa {
+    font-size: $font-size-smallest;
+  }
+
+  &:first-child {
+    margin-right: 15px;
+
+    .fa {
+      margin-right: 5px;
+    }
+  }
+
+  &:last-child {
+    margin-left: 15px;
+    text-align: right;
+
+    .fa {
+      margin-left: 5px;
+    }
+  }
+}

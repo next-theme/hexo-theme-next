@@ -1,0 +1,65 @@
+// Header
+// --------------------------------------------------
+.header {
+  background: var(--content-bg-color);
+}
+
+.header-inner {
+  align-items: center;
+  display: flex;
+  padding: 20px 0;
+
+  +mobile() {
+    display: block;
+    padding: 10px 0;
+    width: auto;
+  }
+}
+
+.site-meta {
+  line-height: normal;
+
+  .brand {
+    padding: 2px 1px;
+
+    +mobile() {
+      display: block;
+    }
+  }
+
+  .site-title {
+    font-weight: bolder;
+  }
+}
+
+.logo-line-before, .logo-line-after {
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 75%;
+
+  +mobile() {
+    display: none;
+  }
+
+  i {
+    background: var(--brand-color);
+    display: block;
+    height: 2px;
+    position: relative;
+  }
+}
+
+.use-motion {
+  .logo-line-before i {
+    left: -100%;
+  }
+
+  .logo-line-after i {
+    right: -100%;
+  }
+}
+
+.site-subtitle {
+  display: none;
+}

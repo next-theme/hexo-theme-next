@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ config.language }}">
+<head>
+  {{ partial('_partials/head/head.njk', {}, {cache: theme.cache.enable}) }}
+  {% include '_partials/head/head-unique.njk' %}
+  {{- next_inject('head') }}
+  <title>{% block title %}{% endblock %}</title>
+  {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_scripts/noscript.njk', {}, {cache: theme.cache.enable}) }}
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container{%- if theme.motion.enable %} use-motion{%- endif %}">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">{% include '_partials/header/index.njk' %}</div>
+    </header>
+
+    {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          {% include '_partials/header/sub-menu.njk' %}
+          <div class="content {% block class %}{% endblock %}">
+            {% block content %}{% endblock %}
+          </div>
+          {% include '_partials/comments.njk' %}
+        </div>
+        {%- if theme.sidebar.display !== 'remove' %}
+          {% block sidebar %}{% endblock %}
+        {%- endif %}
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        {% include '_partials/languages.njk' %}
+        {{ partial('_partials/footer.njk', {}, {cache: theme.cache.enable}) }}
+        {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
+      </div>
+    </footer>
+  </div>
+
+  {{ partial('_scripts/index.njk', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
+
+  {%- if theme.pjax %}
+    <div id="pjax">
+  {%- endif %}
+  {% include '_third-party/math/index.njk' %}
+  {% include '_third-party/quicklink.njk' %}
+
+  {{- next_inject('bodyEnd') }}
+  {%- if theme.pjax %}
+    </div>
+  {%- endif %}
+</body>
+</html>

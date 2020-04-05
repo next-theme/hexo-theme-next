@@ -1,0 +1,7 @@
+{{ partial('_partials/header/brand.njk', {}, {cache: theme.cache.enable}) }}
+
+{{ partial('_partials/header/menu.njk', {}, {cache: theme.cache.enable}) }}
+
+{{ partial('_partials/search/index.njk', {}, {cache: theme.cache.enable}) }}
+
+{{- next_inject('header') }}

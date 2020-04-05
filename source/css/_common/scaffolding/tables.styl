@@ -1,0 +1,42 @@
+.table-container {
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: $table-font-size;
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+tbody tr {
+  &:nth-of-type(odd) {
+    background: var(--table-row-odd-bg-color);
+  }
+
+  &:hover {
+    background: var(--table-row-hover-bg-color);
+  }
+}
+
+caption, th, td {
+  font-weight: normal;
+  padding: 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th, td {
+  border: 1px solid $table-border-color;
+  border-bottom: 3px solid $table-cell-border-bottom-color;
+}
+
+th {
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+td {
+  border-bottom-width: 1px;
+}

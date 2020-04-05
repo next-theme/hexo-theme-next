@@ -1,0 +1,104 @@
+@keyframes dot-flash {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(.8);
+  }
+}
+
+.event-list {
+  padding: 0;
+
+  hr {
+    background: $black-deep;
+    margin: 20px 0 45px 0;
+
+    &::after {
+      background: $black-deep;
+      color: white;
+      content: 'NOW';
+      display: inline-block;
+      font-weight: bold;
+      padding: 0 5px;
+      text-align: right;
+    }
+  }
+
+  .event {
+    background: $black-deep;
+    margin: 20px 0;
+    min-height: 40px;
+    padding: 15px 0 15px 10px;
+
+    .event-summary {
+      color: white;
+      margin: 0;
+      padding-bottom: 3px;
+
+      &::before {
+        animation: dot-flash 1s alternate infinite ease-in-out;
+        color: white;
+        content: '\f111';
+        display: inline-block;
+        font-size: 10px;
+        margin-right: 25px;
+        vertical-align: middle;
+        font-family-icons();
+      }
+    }
+
+    .event-relative-time {
+      color: $grey;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: normal;
+      padding-left: 12px;
+    }
+
+    .event-details {
+      color: white;
+      display: block;
+      line-height: 18px;
+      margin-left: 56px;
+      padding-bottom: 6px;
+      padding-top: 3px;
+      text-indent: -24px;
+
+      &::before {
+        color: white;
+        display: inline-block;
+        margin-right: 9px;
+        text-align: center;
+        text-indent: 0;
+        width: 14px;
+        font-family-icons();
+      }
+
+      &.event-location::before {
+        content: '\f041';
+      }
+
+      &.event-duration::before {
+        content: '\f017';
+      }
+    }
+  }
+
+  .event-past {
+    background: $whitesmoke;
+
+    .event-summary, .event-details {
+      color: $grey;
+      opacity: .9;
+
+      &::before {
+        animation: none;
+        color: $grey;
+      }
+    }
+  }
+}

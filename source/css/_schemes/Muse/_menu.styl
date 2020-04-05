@@ -1,0 +1,57 @@
+.site-nav {
+  +mobile() {
+    border-bottom: 1px solid $grey-lighter;
+    border-top: 1px solid $grey-lighter;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.menu {
+  +mobile() {
+    text-align: left;
+  }
+}
+
+.menu-item-active a {
+  background: transparent;
+  border-bottom: 1px solid var(--link-hover-color) !important;
+
+  +mobile() {
+    border-bottom: 1px dotted $grey-lighter !important;
+  }
+}
+
+.menu .menu-item {
+  +mobile() {
+    margin: 0 10px;
+  }
+
+  a, span.exturl {
+    border-bottom: 1px solid transparent;
+
+    +mobile() {
+      padding: 5px 10px;
+    }
+
+    &:hover {
+      @extend .menu-item-active a;
+    }
+  }
+
+  .fa, .fab, .far, .fas {
+    +tablet-desktop() {
+      display: block;
+      line-height: 2;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+
+  .badge {
+    background: $gainsboro;
+    padding: 1px 4px;
+  }
+}

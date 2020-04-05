@@ -1,0 +1,57 @@
+.reward-container {
+  margin: 20px auto;
+  padding: 10px 0;
+  text-align: center;
+  width: 90%;
+
+  button {
+    background: $red;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    line-height: 2;
+    outline: 0;
+    padding: 0 15px;
+    vertical-align: text-top;
+
+    &:hover {
+      background: lighten($red, 20%);
+    }
+  }
+}
+
+#qr {
+  padding-top: 20px;
+
+  a {
+    border: 0;
+  }
+
+  img {
+    display: inline-block;
+    margin: .8em 2em 0 2em;
+    max-width: 100%;
+    width: 180px;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  if (hexo-config('reward_settings.animation')) {
+    > div:hover p {
+      animation: roll .1s infinite linear;
+    }
+
+    @keyframes roll {
+      from {
+        transform: rotateZ(30deg);
+      }
+
+      to {
+        transform: rotateZ(-30deg);
+      }
+    }
+  }
+}
