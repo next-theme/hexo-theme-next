@@ -15,11 +15,7 @@
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E=10.9.0-green?style=flat-square"></a>
   <a href="https://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E=4.0.0-blue?style=flat-square&logo=hexo"></a>
   <a href="https://github.com/hexo-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
-<br>
-  <a href="https://bestpractices.coreinfrastructure.org/projects/2625"><img src="https://img.shields.io/cii/level/2625?style=flat-square" title="Core Infrastructure Initiative Best Practices"></a>
-  <a href="https://travis-ci.org/hexo-next/hexo-theme-next?branch=master"><img src="https://img.shields.io/travis/hexo-next/hexo-theme-next/master?style=flat-square&logo=travis%20ci" title="Travis CI [Linux]"></a>
-  <a href="https://app.codacy.com/manual/hexo-next/hexo-theme-next/dashboard"><img src="https://img.shields.io/codacy/grade/72f7fe7609c2438a92069f448e5a341a/master?style=flat-square&logo=codacy" title="Project Grade"></a>
-  <img src="https://img.shields.io/snyk/vulnerabilities/github/hexo-next/hexo-theme-next?style=flat-square" title="Vulnerabilities">
+  <img src="https://img.shields.io/github/workflow/status/hexo-next/hexo-theme-next/Test?style=flat-square">
 <br>
   <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
 </p>
@@ -121,13 +117,6 @@ $ git pull
   <a href="https://crowdin.com"><img align="center" width="180" src="https://support.crowdin.com/assets/logos/crowdin-logo1-small.png"></a>
 <br>
   <sub>Crowdin 容许我们方便地翻译文档。</sub>
-<br>
-<br>
-  <a href="https://codacy.com"><img align="center" width="155" src="https://user-images.githubusercontent.com/16944225/55026017-623f8f00-5002-11e9-88bf-0d6a5884c6c2.png"></a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://travis-ci.com"><img align="center" width="140" src="https://raw.githubusercontent.com/travis-ci/travis-web/master/public/images/logos/TravisCI-Full-Color.png"></a>
-<br>
-  <sub>Codacy 容许我们监控代码质量，Travis CI 容许我们运行测试套件。</sub>
 </p>
 
 [docs-installation-url]: https://github.com/hexo-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md
