@@ -11,7 +11,7 @@
   «NexT» 是一款风格优雅的高质量 <a href="https://hexo.io">Hexo</a> 主题，自点点滴滴中用爱雕琢而成。
 <br>
 <br>
-  <a href="https://www.npmjs.com/package/hexo-theme-next"><img src="https://img.shields.io/github/package-json/v/hexo-next/hexo-theme-next?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/hexo-theme-next"><img src="https://img.shields.io/npm/v/hexo-theme-next?style=flat-square"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E=10.9.0-green?style=flat-square"></a>
   <a href="https://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E=4.0.0-blue?style=flat-square&logo=hexo"></a>
   <a href="https://github.com/hexo-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
@@ -52,7 +52,7 @@ NexT 支持大量的第三方插件，它们可以被轻松地配置。
 
 ```yml
 # Easily enable fast Ajax navigation on your website.
-# Dependencies: https://github.com/hexo-next/theme-next-pjax
+# Dependencies: https://github.com/hexo-next/pjax
 pjax: true
 ```
 

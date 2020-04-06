@@ -511,7 +511,7 @@ math:
     copy_tex: false
 
 # Easily enable fast Ajax navigation on your website.
-# Dependencies: https://github.com/hexo-next/theme-next-pjax
+# Dependencies: https://github.com/hexo-next/pjax
 pjax: false
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
@@ -904,7 +904,7 @@ vendors:
   copy_tex_css:
 
   # Internal version: 0.2.8
-  # pjax: //cdn.jsdelivr.net/gh/hexo-next/theme-next-pjax@0/pjax.min.js
+  # pjax: //cdn.jsdelivr.net/gh/hexo-next/pjax@0/pjax.min.js
   pjax:
 
   # FancyBox
