@@ -9,12 +9,12 @@ hexo.on('generateBefore', () => {
   require('./lib/injects')(hexo);
 });
 
-hexo.on('generateAfter', () => {
+hexo.on('exit', () => {
   if (!hexo.theme.config.reminder) return;
   const https = require('https');
   const path = require('path');
   const { version } = require(path.normalize('../../package.json'));
-  https.get('https://api.github.com/repos/hexo-next/hexo-theme-next/releases/latest', {
+  https.get('https://registry.npmjs.org/hexo-theme-next/latest', {
     headers: {
       'User-Agent': 'Theme NexT Client'
     }
@@ -25,17 +25,9 @@ hexo.on('generateAfter', () => {
     });
     res.on('end', () => {
       try {
-        let latest = JSON.parse(result).tag_name.replace('v', '').split('.');
-        let current = version.split('.');
-        let isOutdated = false;
-        for (let i = 0; i < Math.max(latest.length, current.length); i++) {
-          if (!current[i] || latest[i] > current[i]) {
-            isOutdated = true;
-            break;
-          }
-        }
-        if (isOutdated) {
-          hexo.log.warn(`Your theme NexT is outdated. Current version: v${current.join('.')}, latest version: v${latest.join('.')}`);
+        const latest = JSON.parse(result).version;
+        if (latest !== version) {
+          hexo.log.warn(`Your theme NexT is outdated. Current version: v${version}, latest version: v${latest}`);
           hexo.log.warn('Visit https://github.com/hexo-next/hexo-theme-next/releases for more information.');
         } else {
           hexo.log.info('Congratulations! Your are using the latest version of theme NexT.');
