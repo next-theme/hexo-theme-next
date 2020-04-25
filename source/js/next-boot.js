@@ -11,6 +11,7 @@ NexT.boot.registerEvents = function() {
   document.querySelector('.site-nav-toggle .toggle').addEventListener('click', () => {
     event.currentTarget.classList.toggle('toggle-close');
     var siteNav = document.querySelector('.site-nav');
+    if (!siteNav) return;
     var animateAction = siteNav.classList.contains('site-nav-on') ? 'slideUp' : 'slideDown';
 
     if (typeof Velocity === 'function') {

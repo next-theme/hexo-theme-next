@@ -1,7 +1,7 @@
 {% import 'menu-item.njk' as menu_item with context %}
 
-<nav class="site-nav">
 {%- if theme.menu %}
+<nav class="site-nav">
   <ul id="menu" class="main-menu menu">
     {%- for name, path in theme.menu %}
       {%- set respath = path %}
@@ -30,5 +30,5 @@
       </li>
     {%- endif %}
   </ul>
-{%- endif %}
 </nav>
+{%- endif %}
