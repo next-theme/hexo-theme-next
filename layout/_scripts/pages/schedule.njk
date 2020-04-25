@@ -36,7 +36,7 @@
 
   fetchData();
   var fetchDataTimer = setInterval(fetchData, 60000);
-  window.addEventListener('pjax:send', () => {
+  document.addEventListener('pjax:send', () => {
     clearInterval(fetchDataTimer);
   });
 

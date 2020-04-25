@@ -16,7 +16,7 @@ var pjax = new Pjax({
   scrollTo : !CONFIG.bookmark.enable
 });
 
-window.addEventListener('pjax:success', () => {
+document.addEventListener('pjax:success', () => {
   document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
     var code = element.text || element.textContent || element.innerHTML || '';
     var parent = element.parentNode;
