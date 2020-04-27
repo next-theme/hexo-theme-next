@@ -24,7 +24,7 @@
           } else {
             {%- if theme.leancloud_visitors.security %}
               leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/hexo-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
             {% else %}
               Counter('post', '/classes/Counter', { title, url, time: 1 })
                 .then(response => response.json())

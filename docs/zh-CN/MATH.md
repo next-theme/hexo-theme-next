@@ -155,12 +155,12 @@ markdown:
 
 1. 首先请查阅 Katex 的 [Common Issue](https://github.com/Khan/KaTeX#common-issues)
 2. 块级公式(例如 `$$...$$`)必须位于空行。\
-   即在开头的 `$$` 前和在结尾的 `$$` 后不能有除了空白字符以外的其他字符。([#32comment](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-357489509))
-3. 不支持 Unicode。([#32comment](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-357489509))
-4. 行内公式(例如 `$...$`)在开头的 `$` 后面和结尾的 `$` 前面**不能含有空格**。([#32comment](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-357489509))
+   即在开头的 `$$` 前和在结尾的 `$$` 后不能有除了空白字符以外的其他字符。([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509))
+3. 不支持 Unicode。([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509))
+4. 行内公式(例如 `$...$`)在开头的 `$` 后面和结尾的 `$` 前面**不能含有空格**。([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509))
 5. 如果你在文章的各级标题中(例如 `## 标题`)使用公式。\
-   那么文章目录中的这个标题会出现 3 次未渲染的公式代码([#32comment](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-359018694))
-6. 如果你在文章 Title 中使用公式，那么公式将不会被渲染。([#32comment](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-359142879))
+   那么文章目录中的这个标题会出现 3 次未渲染的公式代码([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359018694))
+6. 如果你在文章 Title 中使用公式，那么公式将不会被渲染。([#32comment](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359142879))
 
 我们目前使用的 Katex 版本为 0.11.1，这里面可能有某些问题是因为 Katex 版本老旧导致的；
 

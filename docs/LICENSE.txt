@@ -1,6 +1,6 @@
              «NexT» – Elegant and powerful theme for Hexo.
 
-  Copyright © 2017 «NexT» (github.com/hexo-next/hexo-theme-next).
+  Copyright © 2017 «NexT» (github.com/next-theme/hexo-theme-next).
 
                Detail attribution information for «NexT»
               is contained in the 'docs/AUTHORS.md' file.

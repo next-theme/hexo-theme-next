@@ -23,7 +23,7 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 
      ```sh
      $ mkdir themes/next
-     $ curl -s https://api.github.com/repos/hexo-next/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1
+     $ curl -s https://api.github.com/repos/next-theme/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1
      ```
      这种方式将**仅提供最新的 release 版本**（其中不附带 `.git` 目录）。\
      因此，将来你将不可能通过 `git` 更新这一方式安装的主题。\
@@ -38,14 +38,14 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 
      ```sh
      $ mkdir themes/next
-     $ curl -L https://api.github.com/repos/hexo-next/hexo-theme-next/tarball/v6.0.0 | tar -zxv -C themes/next --strip-components=1
+     $ curl -L https://api.github.com/repos/next-theme/hexo-theme-next/tarball/v6.0.0 | tar -zxv -C themes/next --strip-components=1
      ```
      和上述的 `curl、tar 和 wget` 方法相同，但只会下载**指定的 release 版本**。
 
    * 方式 2：使用 [git][git-url] 安装：
 
      ```sh
-     $ git clone --branch v6.0.0 https://github.com/hexo-next/hexo-theme-next themes/next
+     $ git clone --branch v6.0.0 https://github.com/next-theme/hexo-theme-next themes/next
      ```
      这一方式将为你下载**指定的 release 版本**（其中包含 `.git` 目录）。\
      并且，你可以随时切换到任何已定义的版本号所对应的 tag 的版本。
@@ -58,7 +58,7 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 
      ```sh
      $ mkdir themes/next
-     $ curl -L https://api.github.com/repos/hexo-next/hexo-theme-next/tarball | tar -zxv -C themes/next --strip-components=1
+     $ curl -L https://api.github.com/repos/next-theme/hexo-theme-next/tarball | tar -zxv -C themes/next --strip-components=1
      ```
      和上述的 `curl、tar 和 wget` 方法相同，但只会下载**最新 master 分支版本**。\
      在有些情况对开发者有所帮助。
@@ -66,7 +66,7 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
    * 方式 2：使用 [git][git-url] 安装：
 
      ```sh
-     $ git clone https://github.com/hexo-next/hexo-theme-next themes/next
+     $ git clone https://github.com/next-theme/hexo-theme-next themes/next
      ```
 
      这一方式将为你下载**完整仓库**（其中包含 `.git` 目录）。\
@@ -107,15 +107,15 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 theme: next
 ```
 
-[download-latest-url]: https://github.com/hexo-next/hexo-theme-next/archive/master.zip
-[releases-latest-url]: https://github.com/hexo-next/hexo-theme-next/releases/latest
-[releases-url]: https://github.com/hexo-next/hexo-theme-next/releases
-[tags-url]: https://github.com/hexo-next/hexo-theme-next/tags
-[commits-url]: https://github.com/hexo-next/hexo-theme-next/commits/master
+[download-latest-url]: https://github.com/next-theme/hexo-theme-next/archive/master.zip
+[releases-latest-url]: https://github.com/next-theme/hexo-theme-next/releases/latest
+[releases-url]: https://github.com/next-theme/hexo-theme-next/releases
+[tags-url]: https://github.com/next-theme/hexo-theme-next/tags
+[commits-url]: https://github.com/next-theme/hexo-theme-next/commits/master
 
 [git-url]: http://lmgtfy.com/?q=linux+git+install
 [curl-tar-url]: http://lmgtfy.com/?q=linux+curl+tar+install
 [curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
 
-[update-with-git-url]: https://github.com/hexo-next/hexo-theme-next/blob/master/docs/zh-CN/README.md#update
-[docs-data-files-url]: https://github.com/hexo-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
+[update-with-git-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/zh-CN/README.md#update
+[docs-data-files-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md

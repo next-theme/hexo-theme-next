@@ -1,6 +1,6 @@
 # <div align="center">«NexT» – Elegant and powerful theme for Hexo.</div>
 
-<p align="center">Copyright © 2017 «<a href="https://github.com/hexo-next/hexo-theme-next">NexT</a>».</p>
+<p align="center">Copyright © 2017 «<a href="https://github.com/next-theme/hexo-theme-next">NexT</a>».</p>
 
 <p align="center">Detail attribution information for «NexT»<br>
               is contained in the '<a href="docs/AUTHORS.md">docs/AUTHORS.md</a>' file.</p>

@@ -23,7 +23,7 @@ There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
 
      ```sh
      $ mkdir themes/next
-     $ curl -s https://api.github.com/repos/hexo-next/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1
+     $ curl -s https://api.github.com/repos/next-theme/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1
      ```
      This variant will give to you **only latest release version** (without `.git` directory inside).\
      So, there is impossible to update this version with `git` later.\
@@ -38,14 +38,14 @@ There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
 
      ```sh
      $ mkdir themes/next
-     $ curl -L https://api.github.com/repos/hexo-next/hexo-theme-next/tarball/v6.0.0 | tar -zxv -C themes/next --strip-components=1
+     $ curl -L https://api.github.com/repos/next-theme/hexo-theme-next/tarball/v6.0.0 | tar -zxv -C themes/next --strip-components=1
      ```
      Same as above under `curl & tar & wget` variant, but will download **only concrete version**.
 
    * Variant 2: Install with [git][git-url]:
 
      ```sh
-     $ git clone --branch v6.0.0 https://github.com/hexo-next/hexo-theme-next themes/next
+     $ git clone --branch v6.0.0 https://github.com/next-theme/hexo-theme-next themes/next
      ```
      This variant will give to you the **defined release version** (with `.git` directory inside).\
      And in any time you can switch to any tagged release, but with limit to defined version.
@@ -58,7 +58,7 @@ There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
 
      ```sh
      $ mkdir themes/next
-     $ curl -L https://api.github.com/repos/hexo-next/hexo-theme-next/tarball | tar -zxv -C themes/next --strip-components=1
+     $ curl -L https://api.github.com/repos/next-theme/hexo-theme-next/tarball | tar -zxv -C themes/next --strip-components=1
      ```
      Same as above under `curl & tar & wget` variant, but will download **only latest master branch version**.\
      At some cases useful for developers.
@@ -66,7 +66,7 @@ There are <b>3 options</b> to do it, need to <b>choose only one</b> of them.</p>
    * Variant 2: Install with [git][git-url]:
 
      ```sh
-     $ git clone https://github.com/hexo-next/hexo-theme-next themes/next
+     $ git clone https://github.com/next-theme/hexo-theme-next themes/next
      ```
 
      This variant will give to you the **whole repository** (with `.git` directory inside).\
@@ -107,15 +107,15 @@ Set theme in main **Hexo root config** `_config.yml` file:
 theme: next
 ```
 
-[download-latest-url]: https://github.com/hexo-next/hexo-theme-next/archive/master.zip
-[releases-latest-url]: https://github.com/hexo-next/hexo-theme-next/releases/latest
-[releases-url]: https://github.com/hexo-next/hexo-theme-next/releases
-[tags-url]: https://github.com/hexo-next/hexo-theme-next/tags
-[commits-url]: https://github.com/hexo-next/hexo-theme-next/commits/master
+[download-latest-url]: https://github.com/next-theme/hexo-theme-next/archive/master.zip
+[releases-latest-url]: https://github.com/next-theme/hexo-theme-next/releases/latest
+[releases-url]: https://github.com/next-theme/hexo-theme-next/releases
+[tags-url]: https://github.com/next-theme/hexo-theme-next/tags
+[commits-url]: https://github.com/next-theme/hexo-theme-next/commits/master
 
 [git-url]: http://lmgtfy.com/?q=linux+git+install
 [curl-tar-url]: http://lmgtfy.com/?q=linux+curl+tar+install
 [curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
 
-[update-with-git-url]: https://github.com/hexo-next/hexo-theme-next/blob/master/README.md#update
-[docs-data-files-url]: https://github.com/hexo-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
+[update-with-git-url]: https://github.com/next-theme/hexo-theme-next/blob/master/README.md#update
+[docs-data-files-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/DATA-FILES.md

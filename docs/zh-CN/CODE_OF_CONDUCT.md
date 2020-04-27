@@ -5,11 +5,11 @@
   <a title="俄语" href="../ru/CODE_OF_CONDUCT.md">:ru:</a>
 </div>
 
-# <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/hexo-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
+# <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
 [NexT](https://theme-next.org) 是一个优雅而强大的 [Hexo](https://hexo.io/)主题。在这里，您可以构建一个托管在 [GitHub Pages](https://pages.github.com/) 上的静态博客，分享您的生活，并与新朋友进行交流。
 
-参与者公约用来约束在 [NexT](https://github.com/hexo-next/hexo-theme-next) 社区中代码更新、问题交流、请求合并等行为。我们期望所有用户相互尊重，礼貌待人。任何违反这些规则的人都将不会被审核，并会在发现后立即被阻止和驱逐。
+参与者公约用来约束在 [NexT](https://github.com/next-theme/hexo-theme-next) 社区中代码更新、问题交流、请求合并等行为。我们期望所有用户相互尊重，礼貌待人。任何违反这些规则的人都将不会被审核，并会在发现后立即被阻止和驱逐。
 
 ## 目录
 

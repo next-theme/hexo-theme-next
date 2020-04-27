@@ -242,7 +242,7 @@ post_meta:
   categories: true
 
 # Post wordcount display settings
-# Dependencies: https://github.com/hexo-next/hexo-symbols-count-time
+# Dependencies: https://github.com/next-theme/hexo-symbols-count-time
 symbols_count_time:
   separated_meta: true
   item_text_post: true
@@ -478,7 +478,7 @@ baidu_push: false
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
 # See: https://theme-next.org/docs/third-party-services/
-# More plugins: https://github.com/hexo-next/awesome-next
+# More plugins: https://github.com/next-theme/awesome-next
 # You may need to install dependencies or set CDN URLs in `vendors`
 # There are two different CDN providers by default:
 #   - jsDelivr (cdn.jsdelivr.net), works everywhere even in China
@@ -505,7 +505,7 @@ math:
     copy_tex: false
 
 # Easily enable fast Ajax navigation on your website.
-# Dependencies: https://github.com/hexo-next/pjax
+# Dependencies: https://github.com/next-theme/pjax
 pjax: false
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
@@ -688,7 +688,7 @@ leancloud_visitors:
   app_key: # <your app key>
   # Required for apps from CN region
   server_url: # <your server url>
-  # Dependencies: https://github.com/hexo-next/hexo-leancloud-counter-security
+  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
   security: true
@@ -731,7 +731,7 @@ algolia_search:
     hits_stats: "${hits} results found in ${time} ms"
 
 # Local Search
-# Dependencies: https://github.com/hexo-next/hexo-generator-searchdb
+# Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
   enable: false
   # If auto, trigger search by changing input.
@@ -797,7 +797,7 @@ tabs:
 # PDF tag
 # NexT will try to load pdf files natively, if failed, pdf.js will be used.
 # So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
-# See: https://github.com/hexo-next/theme-next-pdf
+# See: https://github.com/next-theme/theme-next-pdf
 pdf:
   enable: false
   # Default height
@@ -835,7 +835,7 @@ motion:
     sidebar: slideUpIn
 
 # Progress bar in the top during page loading.
-# Dependencies: https://github.com/hexo-next/theme-next-pace
+# Dependencies: https://github.com/next-theme/theme-next-pace
 # For more information: https://github.com/HubSpot/pace
 pace:
   enable: false
@@ -845,7 +845,7 @@ pace:
   theme: minimal
 
 # JavaScript 3D library.
-# Dependencies: https://github.com/hexo-next/theme-next-three
+# Dependencies: https://github.com/next-theme/theme-next-three
 three:
   enable: false
   three_waves: false
@@ -853,7 +853,7 @@ three:
   canvas_sphere: false
 
 # Canvas-ribbon
-# Dependencies: https://github.com/hexo-next/theme-next-canvas-ribbon
+# Dependencies: https://github.com/next-theme/theme-next-canvas-ribbon
 # For more information: https://github.com/zproo/canvas-ribbon
 canvas_ribbon:
   enable: false
@@ -898,7 +898,7 @@ vendors:
   copy_tex_css:
 
   # Internal version: 0.2.8
-  # pjax: //cdn.jsdelivr.net/gh/hexo-next/pjax@0/pjax.min.js
+  # pjax: //cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js
   pjax:
 
   # FancyBox
@@ -972,17 +972,17 @@ vendors:
   pace_css:
 
   # Internal version: 1.0.0
-  # three: //cdn.jsdelivr.net/gh/hexo-next/theme-next-three@1/three.min.js
-  # three_waves: //cdn.jsdelivr.net/gh/hexo-next/theme-next-three@1/three-waves.min.js
-  # canvas_lines: //cdn.jsdelivr.net/gh/hexo-next/theme-next-three@1/canvas_lines.min.js
-  # canvas_sphere: //cdn.jsdelivr.net/gh/hexo-next/theme-next-three@1/canvas_sphere.min.js
+  # three: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/three.min.js
+  # three_waves: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/three-waves.min.js
+  # canvas_lines: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/canvas_lines.min.js
+  # canvas_sphere: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/canvas_sphere.min.js
   three:
   three_waves:
   canvas_lines:
   canvas_sphere:
 
   # Internal version: 1.0.0
-  # canvas_ribbon: //cdn.jsdelivr.net/gh/hexo-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
+  # canvas_ribbon: //cdn.jsdelivr.net/gh/next-theme/theme-next-canvas-ribbon@1/canvas-ribbon.js
   canvas_ribbon:
 
 # Assets

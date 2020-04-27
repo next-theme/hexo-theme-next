@@ -16,7 +16,7 @@ const keys = ['toc', 'reward_settings', 'quicklink'];
 
 function showWarnLog(source, variable) {
   hexo.log.warn(`front-matter: '${variable}' has deprecated, source: ${source}`);
-  hexo.log.warn('see: https://github.com/hexo-next/hexo-theme-next/pull/1211');
+  hexo.log.warn('see: https://github.com/theme-next/hexo-theme-next/pull/1211');
 }
 
 function compatibleBeforeAssign(page) {

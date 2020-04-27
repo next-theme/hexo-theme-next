@@ -82,6 +82,6 @@ And best contributors from initially repository:
 - **LeviDing**: [Fix the bug of Gitment](https://github.com/iissnan/hexo-theme-next/pull/1944)
 - **maple3142**: [Firestore visitor counter](https://github.com/iissnan/hexo-theme-next/pull/1978)
 
-It lives on as an open source project with many contributors, a self updating list is [here](https://github.com/hexo-next/hexo-theme-next/graphs/contributors).
+It lives on as an open source project with many contributors, a self updating list is [here](https://github.com/next-theme/hexo-theme-next/graphs/contributors).
 
 P.S. If you did some useful pulls/commits in original repository and you are not in the list, let us know and you will be added here.

@@ -157,12 +157,12 @@ markdown:
 
 1. Firstly, please check [Common Issues](https://github.com/Khan/KaTeX#common-issues) of Katex.
 2. Displayed Math (i.e. `$$...$$`) needs to started with new clear line.\
-   In other words: you must not have any characters (except of whitespaces) **before the opening `$$` and after the ending `$$`** ([comment #32](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-357489509)).
-3. Don't support Unicode ([comment #32](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-357489509)).
-4. Inline Math (..`$...$`) must not have white spaces **after the opening `$` and before the ending `$`** ([comment #32](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-357489509)).
+   In other words: you must not have any characters (except of whitespaces) **before the opening `$$` and after the ending `$$`** ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509)).
+3. Don't support Unicode ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509)).
+4. Inline Math (..`$...$`) must not have white spaces **after the opening `$` and before the ending `$`** ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-357489509)).
 5. If you use math in Heading (i.e. `## Heading`).\
-   Then in corresponding TOC item it will show the related LaTex code 3 times ([comment #32](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-359018694)).
-6. If you use math in your post's title, it will not be rendered ([comment #32](https://github.com/hexo-next/hexo-theme-next/pull/32#issuecomment-359142879)).
+   Then in corresponding TOC item it will show the related LaTex code 3 times ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359018694)).
+6. If you use math in your post's title, it will not be rendered ([comment #32](https://github.com/theme-next/hexo-theme-next/pull/32#issuecomment-359142879)).
 
 We currently use Katex 0.11.1, some of those bugs might be caused by the outdated version of Katex we use.
 

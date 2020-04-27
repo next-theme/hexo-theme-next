@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hexo-next/hexo-theme-next.git"
+    "url": "git+https://github.com/next-theme/hexo-theme-next.git"
   },
   "keywords": [
     "hexo",
@@ -20,7 +20,7 @@
   "author": "NexT <support@theme-next.org> (https://theme-next.org)",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/hexo-next/hexo-theme-next/issues"
+    "url": "https://github.com/next-theme/hexo-theme-next/issues"
   },
   "homepage": "https://theme-next.org",
   "devDependencies": {

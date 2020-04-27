@@ -23,7 +23,7 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 
      ```sh
      $ mkdir themes/next
-     $ curl -s https://api.github.com/repos/hexo-next/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1
+     $ curl -s https://api.github.com/repos/next-theme/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1
      ```
      Этим способом Вы скачаете **только последнюю версию релиза** (без директории `.git` внутри).\
      Поэтому, в дальнейшем будет невозможно обновить эту версию через `git`.\
@@ -38,14 +38,14 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 
      ```sh
      $ mkdir themes/next
-     $ curl -L https://api.github.com/repos/hexo-next/hexo-theme-next/tarball/v6.0.0 | tar -zxv -C themes/next --strip-components=1
+     $ curl -L https://api.github.com/repos/next-theme/hexo-theme-next/tarball/v6.0.0 | tar -zxv -C themes/next --strip-components=1
      ```
      То же, что и описано выше в способе `curl & tar & wget`, но скачает **только конкретную версию**.
 
    * Вариант 2: Установка с помощью [git][git-url]:
 
      ```sh
-     $ git clone --branch v6.0.0 https://github.com/hexo-next/hexo-theme-next themes/next
+     $ git clone --branch v6.0.0 https://github.com/next-theme/hexo-theme-next themes/next
      ```
      Этот вариант скачает **указанную версию релиза** (включая директорию `.git` внутри).\
      И в любой момент Вы можете переключиться на любую весию тэга, но с лимитом до указанной версии.
@@ -58,7 +58,7 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 
      ```sh
      $ mkdir themes/next
-     $ curl -L https://api.github.com/repos/hexo-next/hexo-theme-next/tarball | tar -zxv -C themes/next --strip-components=1
+     $ curl -L https://api.github.com/repos/next-theme/hexo-theme-next/tarball | tar -zxv -C themes/next --strip-components=1
      ```
      То же, что и описано выше в варианте `curl & tar & wget`, но скачает **только последнюю мастер-ветку**.\
      В некоторых случаях полезно для разработчиков.
@@ -66,7 +66,7 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
    * Вариант 2: Установка с помощью [git][git-url]:
 
      ```sh
-     $ git clone https://github.com/hexo-next/hexo-theme-next themes/next
+     $ git clone https://github.com/next-theme/hexo-theme-next themes/next
      ```
 
      Этот вариант скачает **весь репозиторий** (включая директорию `.git` внутри).\
@@ -107,15 +107,15 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 theme: next
 ```
 
-[download-latest-url]: https://github.com/hexo-next/hexo-theme-next/archive/master.zip
-[releases-latest-url]: https://github.com/hexo-next/hexo-theme-next/releases/latest
-[releases-url]: https://github.com/hexo-next/hexo-theme-next/releases
-[tags-url]: https://github.com/hexo-next/hexo-theme-next/tags
-[commits-url]: https://github.com/hexo-next/hexo-theme-next/commits/master
+[download-latest-url]: https://github.com/next-theme/hexo-theme-next/archive/master.zip
+[releases-latest-url]: https://github.com/next-theme/hexo-theme-next/releases/latest
+[releases-url]: https://github.com/next-theme/hexo-theme-next/releases
+[tags-url]: https://github.com/next-theme/hexo-theme-next/tags
+[commits-url]: https://github.com/next-theme/hexo-theme-next/commits/master
 
 [git-url]: http://lmgtfy.com/?q=linux+git+install
 [curl-tar-url]: http://lmgtfy.com/?q=linux+curl+tar+install
 [curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
 
-[update-with-git-url]: https://github.com/hexo-next/hexo-theme-next/blob/master/docs/ru/README.md#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0
-[docs-data-files-url]: https://github.com/hexo-next/hexo-theme-next/blob/master/docs/ru/DATA-FILES.md
+[update-with-git-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/ru/README.md#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0
+[docs-data-files-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/ru/DATA-FILES.md

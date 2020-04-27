@@ -28,7 +28,7 @@ hexo.on('exit', () => {
         const latest = JSON.parse(result).version;
         if (latest !== version) {
           hexo.log.warn(`Your theme NexT is outdated. Current version: v${version}, latest version: v${latest}`);
-          hexo.log.warn('Visit https://github.com/hexo-next/hexo-theme-next/releases for more information.');
+          hexo.log.warn('Visit https://github.com/next-theme/hexo-theme-next/releases for more information.');
         } else {
           hexo.log.info('Congratulations! Your are using the latest version of theme NexT.');
         }

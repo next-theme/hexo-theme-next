@@ -50,7 +50,7 @@
     app_key: # <your app key>
     # Required for apps from CN region
     server_url: # <your server url>
-    # Dependencies: https://github.com/hexo-next/hexo-leancloud-counter-security
+    # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     security: true
   ```
 
@@ -109,7 +109,7 @@
     app_key: # <your app key>
     # Required for apps from CN region
     server_url: # <your server url>
-    # Dependencies: https://github.com/hexo-next/hexo-leancloud-counter-security
+    # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     security: true
   ```
 
