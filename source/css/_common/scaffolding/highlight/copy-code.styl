@@ -1,8 +1,4 @@
-.highlight-container {
-  position: relative;
-}
-
-.highlight-container:hover .copy-btn, .highlight-container .copy-btn:focus {
+.highlight:hover .copy-btn, .highlight .copy-btn:focus {
   opacity: 1;
 }
 
@@ -22,7 +18,7 @@
     right: 0;
     top: 0;
   } else if (hexo-config('codeblock.copy_button.style') == 'mac') {
-    color: white;
+    color: $highlight-foreground;
     font-size: 14px;
     right: 0;
     top: 2px;
@@ -38,11 +34,15 @@
 }
 
 if (hexo-config('codeblock.copy_button.style') == 'mac') {
-  .highlight-container {
+  .highlight {
     background: #21252b;
     border-radius: 5px;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4);
     padding-top: 30px;
+
+    .table-container {
+      border-radius: 0 0 5px 5px;
+    }
 
     &::before {
       background: #fc625d;
@@ -54,14 +54,6 @@ if (hexo-config('codeblock.copy_button.style') == 'mac') {
       margin-top: -20px;
       position: absolute;
       width: 12px;
-    }
-
-    .highlight {
-      border-radius: 0 0 5px 5px;
-
-      .table-container {
-        border-radius: 0 0 5px 5px;
-      }
     }
   }
 }
