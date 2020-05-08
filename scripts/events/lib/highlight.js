@@ -23,6 +23,10 @@ function parse(file) {
 
 module.exports = hexo => {
   hexo.config.highlight.hljs = false;
-  let file = `${hexo.plugin_dir}highlight.js/styles/${hexo.theme.config.codeblock.highlight_theme}.css`;
-  hexo.theme.config.highlight = parse(file);
+  let light = `${hexo.plugin_dir}highlight.js/styles/${hexo.theme.config.codeblock.theme.light}.css`;
+  let dark = `${hexo.plugin_dir}highlight.js/styles/${hexo.theme.config.codeblock.theme.dark}.css`;
+  hexo.theme.config.highlight = {
+    light: parse(light),
+    dark : parse(dark)
+  };
 };

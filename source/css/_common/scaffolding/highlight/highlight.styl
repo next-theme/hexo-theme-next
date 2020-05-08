@@ -1,17 +1,17 @@
-@import hexo-config('highlight.file');
-$highlight-background = convert(hexo-config('highlight.background'));
-$highlight-foreground = convert(hexo-config('highlight.foreground'));
-$highlight-gutter     = {
-  color: mix($highlight-background, $highlight-foreground, 10%),
-  bg-color: mix($highlight-background, $highlight-foreground, 90%)
-};
+@import hexo-config('highlight.light.file');
+
+if (hexo-config('darkmode')) {
+  @media (prefers-color-scheme: dark) {
+    @import hexo-config('highlight.dark.file');
+  }
+}
 
 @import 'copy-code' if (hexo-config('codeblock.copy_button.enable'));
 
 // Placeholder: $code-block
 $code-block {
-  background: $highlight-background;
-  color: $highlight-foreground;
+  background: var(--highlight-background);
+  color: var(--highlight-foreground);
   line-height: $line-height-code-block;
   margin: 0 auto 20px;
 }
@@ -50,8 +50,8 @@ code {
   }
 
   figcaption {
-    background: $highlight-gutter.bg-color;
-    color: $highlight-foreground;
+    background: var(--highlight-gutter-background);
+    color: var(--highlight-foreground);
     display: flex;
     font-size: $table-font-size;
     justify-content: space-between;
@@ -59,10 +59,10 @@ code {
     padding: .5em;
 
     a {
-      color: $highlight-foreground;
+      color: var(--highlight-foreground);
 
       &:hover {
-        border-bottom-color: $highlight-foreground;
+        border-bottom-color: var(--highlight-foreground);
       }
     }
   }
@@ -71,8 +71,8 @@ code {
     disable-user-select();
 
     pre {
-      background: $highlight-gutter.bg-color;
-      color: $highlight-gutter.color;
+      background: var(--highlight-gutter-background);
+      color: var(--highlight-gutter-foreground);
       padding-left: 10px;
       padding-right: 10px;
       text-align: right;
@@ -80,7 +80,7 @@ code {
   }
 
   .code pre {
-    background: $highlight-background;
+    background: var(--highlight-background);
     padding-left: 10px;
     width: 100%;
   }
@@ -101,7 +101,7 @@ pre {
 
   code {
     background: none;
-    color: $highlight-foreground;
+    color: var(--highlight-foreground);
     font-size: $table-font-size;
     padding: 0;
     text-shadow: none;

@@ -347,7 +347,9 @@ custom_logo: #/uploads/custom-logo.jpg
 codeblock:
   # Code Highlight theme
   # See: https://github.com/highlightjs/highlight.js/tree/master/src/styles
-  highlight_theme: default
+  theme:
+    light: default
+    dark: dark
   # Add copy button on codeblock
   copy_button:
     enable: false
