@@ -1,8 +1,10 @@
-// https://github.com/chriskempson/tomorrow-theme
-$highlight-theme = hexo-config('codeblock.highlight_theme');
-
-@import 'theme';
-@import 'diff';
+@import hexo-config('highlight.file');
+$highlight-background = convert(hexo-config('highlight.background'));
+$highlight-foreground = convert(hexo-config('highlight.foreground'));
+$highlight-gutter     = {
+  color: mix($highlight-background, $highlight-foreground, 10%),
+  bg-color: mix($highlight-background, $highlight-foreground, 90%)
+};
 
 @import 'copy-code' if (hexo-config('codeblock.copy_button.enable'));
 
@@ -29,10 +31,6 @@ code {
 .highlight {
   @extend $code-block;
   position: relative;
-
-  *::selection {
-    background: $highlight-selection;
-  }
 
   pre {
     border: 0;
@@ -107,46 +105,5 @@ pre {
     font-size: $table-font-size;
     padding: 0;
     text-shadow: none;
-  }
-  // For diff highlight
-  .deletion {
-    background: $highlight-deletion;
-  }
-
-  .addition {
-    background: $highlight-addition;
-  }
-
-  .meta {
-    color: $highlight-yellow;
-    disable-user-select();
-  }
-
-  .comment {
-    color: $highlight-comment;
-  }
-
-  .variable, .attribute, .tag, .name, .regexp, .ruby .constant, .xml .tag .title, .xml .pi, .xml .doctype, .html .doctype, .css .id, .css .class, .css .pseudo {
-    color: $highlight-red;
-  }
-
-  .number, .preprocessor, .built_in, .builtin-name, .literal, .params, .constant, .command {
-    color: $highlight-orange;
-  }
-
-  .ruby .class .title, .css .rules .attribute, .string, .symbol, .value, .inheritance, .header, .ruby .symbol, .xml .cdata, .special, .formula {
-    color: $highlight-green;
-  }
-
-  .title, .css .hexcolor {
-    color: $highlight-aqua;
-  }
-
-  .function, .python .decorator, .python .title, .ruby .function .title, .ruby .title .keyword, .perl .sub, .javascript .title, .coffeescript .title {
-    color: $highlight-blue;
-  }
-
-  .keyword, .javascript .function {
-    color: $highlight-purple;
   }
 }

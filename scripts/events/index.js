@@ -7,6 +7,8 @@ hexo.on('generateBefore', () => {
   require('./lib/config')(hexo);
   // Add filter type `theme_inject`
   require('./lib/injects')(hexo);
+  // Highlight
+  require('./lib/highlight')(hexo);
 });
 
 hexo.on('exit', () => {
