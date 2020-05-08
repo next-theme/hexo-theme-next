@@ -5,7 +5,7 @@ function parse(file) {
   let rule = '';
   let background = '';
   let foreground = '';
-  css.replace(/\.hljs([^\S]+|,[^\{]+)\{(.*?)\}/sg, (match, $1, content) => {
+  css.replace(/\.hljs(\s+|,[^{]+)\{(.*?)\}/sg, (match, $1, content) => {
     rule += content;
     return match;
   });
