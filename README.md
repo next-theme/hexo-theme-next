@@ -99,7 +99,9 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 
 ## Contributors
 
-[![][contributors-image]][contributors-url]
+- [iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next/graphs/contributors)
+- [theme-next/hexo-theme-next](https://github.com/theme-next/hexo-theme-next/graphs/contributors)
+- [next-theme/hexo-theme-next](https://github.com/next-theme/hexo-theme-next/graphs/contributors)
 
 ## Thanks
 
@@ -125,7 +127,6 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 [docs-data-files-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
 
-[t-news-url]: https://t.me/theme_next_news
 [t-chat-url]: https://t.me/theme_next
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
@@ -138,5 +139,3 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 
 [contributing-document-url]: https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
 [official-plugins-url]: https://github.com/theme-next
-[contributors-image]: https://opencollective.com/next-theme/contributors.svg?width=890
-[contributors-url]: https://github.com/next-theme/hexo-theme-next/graphs/contributors
