@@ -103,9 +103,9 @@ $ git pull
   <sub>Crowdin позволяет нам удобно переводить документацию.</sub>
 </p>
 
-[docs-installation-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/ru/INSTALLATION.md
-[docs-data-files-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/ru/DATA-FILES.md
-[docs-update-5-1-x-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/ru/UPDATE-FROM-5.1.X.md
+[docs-installation-url]: https://theme-next.js.org/docs/getting-started/installation.html
+[docs-data-files-url]: https://theme-next.js.org/docs/getting-started/configuration.html
+[docs-update-5-1-x-url]: https://theme-next.js.org/docs/getting-started/update-from-v5.html
 
 [t-chat-url]: https://t.me/theme_next
 [gitter-url]: https://gitter.im/theme-next
