@@ -1,5 +1,5 @@
 /**
- * caniuse.js | https://theme-next.org/docs/tag-plugins/caniuse
+ * caniuse.js | https://theme-next.js.org/docs/tag-plugins/caniuse
  */
 
 /* global hexo */

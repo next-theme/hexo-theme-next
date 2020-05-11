@@ -5,7 +5,7 @@
   🇷🇺
 </div>
 
-# <div align="center"><a title="Репозиторий сайта NexT" href="https://github.com/next-theme/theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
+# <div align="center"><a title="Репозиторий сайта NexT" href="https://github.com/next-theme/theme-next.js.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
 <p align="center">
   «NexT» — элегантная высококачественная тема под <a href="https://hexo.io">Hexo</a>. Сделана с нуля, с любовью.
@@ -23,7 +23,7 @@
 ## Демо
 
 <p align="center">
-  💟 <a href="https://muse.theme-next.org">Muse</a> | 🔯 <a href="https://mist.theme-next.org">Mist</a> | ♓️ <a href="https://pisces.theme-next.org">Pisces</a> | ♊️ <a href="https://theme-next.org">Gemini</a>
+  💟 <a href="https://theme-next.js.org/muse/">Muse</a> | 🔯 <a href="https://theme-next.js.org/mist/">Mist</a> | ♓️ <a href="https://theme-next.js.org/pisces/">Pisces</a> | ♊️ <a href="https://theme-next.js.org">Gemini</a>
 <br>
 <br>
   Больше примеров «NexT» <a href="https://github.com/next-theme/awesome-next#live-preview">здесь</a>.

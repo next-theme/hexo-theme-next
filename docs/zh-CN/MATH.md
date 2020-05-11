@@ -94,7 +94,7 @@ $$\begin{align}
 $$x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}$$
 ```
 
-如果你想要了解更多信息，请访问 [MathJax 关于公式编号的官方文档](https://docs.mathjax.org/en/latest/input/tex/eqnumbers.html)。同时，你也可以阅读 [这篇文档](https://theme-next.org/docs/third-party-services/math-equations) 来获取更多细节信息。
+如果你想要了解更多信息，请访问 [MathJax 关于公式编号的官方文档](https://docs.mathjax.org/en/latest/input/tex/eqnumbers.html)。同时，你也可以阅读 [这篇文档](https://theme-next.js.org/docs/third-party-services/math-equations) 来获取更多细节信息。
 
 ### Katex
 

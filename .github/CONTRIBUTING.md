@@ -5,7 +5,7 @@
   <a title="Russian" href="../docs/ru/CONTRIBUTING.md">:ru:</a>
 </div>
 
-# <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
+# <div align="center"><a title="Go to homepage" href="https://theme-next.js.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
 First of all, thanks for taking your time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme-Next](https://github.com/theme-next) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
@@ -35,7 +35,7 @@ First of all, thanks for taking your time to contribute and help make our projec
 
 #### Read the docs
 
-If you just have a question, you'll get faster results by checking the [FAQs for a list of common questions and problems](https://theme-next.org/docs/faqs) or the [troubleshooting part of «NexT» Documentation Site](https://theme-next.org/docs/troubleshooting).
+If you just have a question, you'll get faster results by checking the [FAQs for a list of common questions and problems](https://theme-next.js.org/docs/faqs) or the [troubleshooting part of «NexT» Documentation Site](https://theme-next.js.org/docs/troubleshooting).
 
 Also, you can perform a [cursory search](https://github.com/theme-next/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93) to see if the problem has already been reported or solved. You don't want to duplicate effort. You might be able to find the cause of the problem and fix things yourself, or add comments to the existed issue.
 

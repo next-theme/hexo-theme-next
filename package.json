@@ -17,12 +17,12 @@
     "theme",
     "next"
   ],
-  "author": "NexT <support@theme-next.org> (https://theme-next.org)",
+  "author": "NexT <support@theme-next.org> (https://theme-next.js.org)",
   "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/next-theme/hexo-theme-next/issues"
   },
-  "homepage": "https://theme-next.org",
+  "homepage": "https://theme-next.js.org",
   "devDependencies": {
     "eslint": "7.0.0",
     "eslint-config-theme-next": "1.1.4",

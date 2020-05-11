@@ -95,7 +95,7 @@ Sometimes, you want to use more “exotic” style to refer your equation. You c
 $$x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}$$
 ```
 
-For more information, you can visit the [official MathJax documentation on equation numbering](https://docs.mathjax.org/en/latest/input/tex/eqnumbers.html). You can also visit this [post](https://theme-next.org/docs/third-party-services/math-equations) for more details.
+For more information, you can visit the [official MathJax documentation on equation numbering](https://docs.mathjax.org/en/latest/input/tex/eqnumbers.html). You can also visit this [post](https://theme-next.js.org/docs/third-party-services/math-equations) for more details.
 
 ### Katex
 

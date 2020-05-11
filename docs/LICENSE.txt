@@ -30,7 +30,7 @@ along with this program; if not, see: https://www.gnu.org/licenses/agpl.txt
      will mean this part owned by «NexT» in accord with terms in this file.
 
 * c) A covered work must retain «NexT» official website link
-     (https://theme-next.org) in footer section of every website created,
+     (https://theme-next.js.org) in footer section of every website created,
      modified or manipulated by using «NexT».
      «NexT» theme configuration must be:
      ```

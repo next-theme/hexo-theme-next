@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
-# See: https://theme-next.org/docs/theme-settings/
+# See: https://theme-next.js.org/docs/theme-settings/
 # ---------------------------------------------------------------
 
 # Console reminder if new version released.
@@ -30,7 +30,7 @@ custom_file_path:
 
 # ---------------------------------------------------------------
 # Site Information Settings
-# See: https://theme-next.org/docs/getting-started/
+# See: https://theme-next.js.org/docs/getting-started/
 # ---------------------------------------------------------------
 
 favicon:
@@ -127,7 +127,7 @@ menu_settings:
 
 # ---------------------------------------------------------------
 # Sidebar Settings
-# See: https://theme-next.org/docs/theme-settings/sidebar
+# See: https://theme-next.js.org/docs/theme-settings/sidebar
 # ---------------------------------------------------------------
 
 sidebar:
@@ -222,7 +222,7 @@ chat:
 
 # ---------------------------------------------------------------
 # Post Settings
-# See: https://theme-next.org/docs/theme-settings/posts
+# See: https://theme-next.js.org/docs/theme-settings/posts
 # ---------------------------------------------------------------
 
 # Automatically excerpt description in homepage as preamble text.
@@ -300,7 +300,7 @@ post_navigation: left
 
 # ---------------------------------------------------------------
 # Custom Page Settings
-# See: https://theme-next.org/docs/theme-settings/custom-pages
+# See: https://theme-next.js.org/docs/theme-settings/custom-pages
 # ---------------------------------------------------------------
 
 # TagCloud settings for tags page.
@@ -391,7 +391,7 @@ github_banner:
 
 # ---------------------------------------------------------------
 # Font Settings
-# See: https://theme-next.org/docs/theme-settings/#Fonts-Customization
+# See: https://theme-next.js.org/docs/theme-settings/#Fonts-Customization
 # ---------------------------------------------------------------
 # Find fonts on Google Fonts (https://www.google.com/fonts)
 # All fonts set here will have the following styles:
@@ -478,7 +478,7 @@ baidu_push: false
 
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
-# See: https://theme-next.org/docs/third-party-services/
+# See: https://theme-next.js.org/docs/third-party-services/
 # More plugins: https://github.com/next-theme/awesome-next
 # You may need to install dependencies or set CDN URLs in `vendors`
 # There are two different CDN providers by default:
@@ -552,7 +552,7 @@ quicklink:
 
 # ---------------------------------------------------------------
 # Comments Settings
-# See: https://theme-next.org/docs/third-party-services/comments
+# See: https://theme-next.js.org/docs/third-party-services/comments
 # ---------------------------------------------------------------
 
 # Multiple Comment System Support
@@ -646,7 +646,7 @@ gitalk:
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
-# See: https://theme-next.org/docs/third-party-services/post-widgets
+# See: https://theme-next.js.org/docs/third-party-services/post-widgets
 # ---------------------------------------------------------------
 
 # Star rating support to each article.
@@ -663,7 +663,7 @@ add_this_id:
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
-# See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
+# See: https://theme-next.js.org/docs/third-party-services/statistics-and-analytics
 # ---------------------------------------------------------------
 
 # Google Analytics
@@ -720,7 +720,7 @@ busuanzi_count:
 
 # ---------------------------------------------------------------
 # Search Services
-# See: https://theme-next.org/docs/third-party-services/search-services
+# See: https://theme-next.js.org/docs/third-party-services/search-services
 # ---------------------------------------------------------------
 
 # Algolia Search
@@ -754,7 +754,7 @@ swiftype_key:
 
 # ---------------------------------------------------------------
 # Chat Services
-# See: https://theme-next.org/docs/third-party-services/chat-services
+# See: https://theme-next.js.org/docs/third-party-services/chat-services
 # ---------------------------------------------------------------
 
 # Chatra Support
@@ -776,7 +776,7 @@ tidio:
 
 # ---------------------------------------------------------------
 # Tags Settings
-# See: https://theme-next.org/docs/tag-plugins/
+# See: https://theme-next.js.org/docs/tag-plugins/
 # ---------------------------------------------------------------
 
 # Note tag (bs-callout)
@@ -869,7 +869,7 @@ canvas_ribbon:
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
-#! See: https://theme-next.org/docs/advanced-settings
+#! See: https://theme-next.js.org/docs/advanced-settings
 #! ---------------------------------------------------------------
 
 # Script Vendors. Set a CDN address for the vendor you want to customize.

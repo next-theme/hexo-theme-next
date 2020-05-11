@@ -14,7 +14,7 @@ Please follow this Issue template to provide relevant information, such as sourc
 <!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
 - [ ] I am using [the latest](https://github.com/theme-next/hexo-theme-next/releases/latest) version of NexT.
-- [ ] I have read the relevant documents of [Hexo](https://hexo.io/docs/) and [NexT](https://theme-next.org/docs/).
+- [ ] I have read the relevant documents of [Hexo](https://hexo.io/docs/) and [NexT](https://theme-next.js.org/docs/).
 - [ ] I have reviewed the latest Roadmap on GitHub and searched for current [issues](https://github.com/theme-next/hexo-theme-next/issues), which does not help me.
 
 ***
