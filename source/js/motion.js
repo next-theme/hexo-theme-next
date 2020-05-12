@@ -106,7 +106,7 @@ NexT.motion.middleWares = {
       }
     });
 
-    if (CONFIG.motion.async) {
+    if (CONFIG.motion.async || !document.querySelectorAll('.menu-item').length) {
       integrator.next();
     }
   },
