@@ -4,9 +4,25 @@
   a {
     display: inline-block;
     margin: 10px;
+  }
+}
 
-    &:hover {
-      color: var(--link-hover-color) !important;
+for $tag-cloud in (0 .. 10) {
+  $tag-cloud-color = mix($tag-cloud-end, $tag-cloud-start, $tag-cloud * 10);
+  .tag-cloud-{$tag-cloud} {
+    border-bottom: 1px solid $tag-cloud-color;
+    color: $tag-cloud-color;
+  }
+}
+
+if (hexo-config('darkmode')) {
+  @media (prefers-color-scheme: dark) {
+    for $tag-cloud in (0 .. 10) {
+      $tag-cloud-color = mix($tag-cloud-end-dark, $tag-cloud-start-dark, $tag-cloud * 10);
+      .tag-cloud-{$tag-cloud} {
+        border-bottom: 1px solid $tag-cloud-color;
+        color: $tag-cloud-color;
+      }
     }
   }
 }
