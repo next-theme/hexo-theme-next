@@ -5,9 +5,9 @@
   <a title="Russian" href="../docs/ru/CONTRIBUTING.md">:ru:</a>
 </div>
 
-# <div align="center"><a title="Go to homepage" href="https://theme-next.js.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
+# <div align="center"><a title="Go to homepage" href="https://theme-next.js.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
-First of all, thanks for taking your time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme-Next](https://github.com/theme-next) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+First of all, thanks for taking your time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme Next](https://github.com/next-theme) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## Table Of Contents
 
@@ -37,22 +37,13 @@ First of all, thanks for taking your time to contribute and help make our projec
 
 If you just have a question, you'll get faster results by checking the [FAQs for a list of common questions and problems](https://theme-next.js.org/docs/faqs) or the [troubleshooting part of «NexT» Documentation Site](https://theme-next.js.org/docs/troubleshooting).
 
-Also, you can perform a [cursory search](https://github.com/theme-next/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93) to see if the problem has already been reported or solved. You don't want to duplicate effort. You might be able to find the cause of the problem and fix things yourself, or add comments to the existed issue.
+Also, you can perform a [cursory search](https://github.com/next-theme/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93) to see if the problem has already been reported or solved. You don't want to duplicate effort. You might be able to find the cause of the problem and fix things yourself, or add comments to the existed issue.
 
 #### Quick debug instructions
 
-Before submitting an Issue on GitHub, you can follow the steps below to debug:
+Before submitting an Issue on GitHub, you can follow our [Quick debug instructions](https://theme-next.js.org/docs/troubleshooting.html#Quick-Debug-Instructions) to debug.
 
-* Execute `hexo clean`, clear the browser cache and disable all CDN services (e.g. Cloudflare Rocket Loader)
-* Switch to another theme and check if the bug still exists (e.g. default theme landscape). In other words, prove that this is a NexT issue, not a issue from Hexo.
-* Upgrade theme NexT to the latest version.
-* Upgrade Hexo and Hexo plugins to the latest version.
-* Upgrade Node.js and `npm` to the latest version.
-* Uninstall all non-essential Hexo plugins, or reinstall all plugins using `npm install --save`.
-
-If you get an error message from Hexo or your browser, please search in Google / Stackoverflow / GitHub Issues, or report it to us when submitting a new Issue.
-
-If you find a bug in the source code, most importantly, please check carefully if you can reproduce the problem [in the latest release version of Next](https://github.com/theme-next/hexo-theme-next/releases/latest). Then, you can help us by [Reporting Bugs](#reporting-bugs) or [Suggesting Enhancements](#suggesting-enhancements) to our [Repository](https://github.com/theme-next/hexo-theme-next). Even better, you can [submit a Pull Request](#submitting-a-pull-request) with a fix.
+If you find a bug in the source code, most importantly, please check carefully if you can reproduce the problem [in the latest release version of Next](https://github.com/next-theme/hexo-theme-next/releases/latest). Then, you can help us by [Reporting Bugs](#reporting-bugs) or [Suggesting Enhancements](#suggesting-enhancements) to our [Repository](https://github.com/next-theme/hexo-theme-next). Even better, you can [submit a Pull Request](#submitting-a-pull-request) with a fix.
 
 ### Reporting Bugs
 
@@ -64,7 +55,7 @@ Following these guidelines helps maintainers and the community understand your r
 * Provide more context by answering these questions:
     * Can you reproduce the problem? Can you reliably reproduce the issue? If not, provide details about how often the problem happens and under which conditions it normally happens.
     * Did the problem start happening recently or was this always a problem?
-    * If the problem started happening recently, can you reproduce the problem in an older version of Next? What's the most recent version in which the problem doesn't happen? You can download older versions of Next from [the releases page](https://github.com/theme-next/hexo-theme-next/releases).
+    * If the problem started happening recently, can you reproduce the problem in an older version of Next? What's the most recent version in which the problem doesn't happen? You can download older versions of Next from [the releases page](https://github.com/next-theme/hexo-theme-next/releases).
     * Which version of Node, Hexo and Next are you using? You can get the exact version by running `node -v`, `hexo version` in your terminal, or copy the contents in site's`package.json`.
     * Which packages do you have installed? You can get that list by copying the contents in site's`package.json`.
 * Describe the exact steps which reproduce the problem in as many details as possible. When listing steps, don't just say what you did, but explain how you did it, e.g. which command exactly you used. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/) or [a permanent link to a code snippet](https://help.github.com/articles/creating-a-permanent-link-to-a-code-snippet/), or a [Gist link](https://gist.github.com/).

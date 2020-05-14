@@ -9,12 +9,12 @@
 ## PR Checklist <!-- 我确认我已经查看了 -->
 <!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
-- [ ] The commit message follows [guidelines for NexT](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
+- [ ] The commit message follows [guidelines for NexT](https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
 - [ ] Tests for the changes was maked (for bug fixes / features).
    - [ ] Muse | Mist have been tested.
    - [ ] Pisces | Gemini have been tested.
-- [ ] [Docs](https://github.com/theme-next/theme-next.js.org/tree/source/source/docs) in [NexT website](https://theme-next.js.org/docs/) have been added / updated (for features).
-<!-- For adding Docs edit needed file here: https://github.com/theme-next/theme-next.js.org/tree/source/source/docs and create PR with this changes here: https://github.com/theme-next/theme-next.js.org/pulls -->
+- [ ] [Docs](https://github.com/next-theme/theme-next-docs/tree/master/source/docs) in [NexT website](https://theme-next.js.org/docs/) have been added / updated (for features).
+<!-- For adding Docs edit needed file here: https://github.com/next-theme/theme-next-docs/tree/master/source/docs and create PR with this changes here: https://github.com/next-theme/theme-next-docs/pulls -->
 
 ## PR Type
 <!-- What kind of change does this PR introduce? -->

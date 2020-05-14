@@ -17,7 +17,7 @@ staleLabel: stale
 markComment: >
   This issue has been automatically marked as stale because lack of
   recent activity. It will be closed if no further activity occurs. Thank you
-  for your contributions. You can also use our [support channels](https://github.com/theme-next/hexo-theme-next#feedback) to get help with the project.
+  for your contributions. You can also use our [support channels](https://github.com/next-theme/hexo-theme-next#feedback) to get help with the project.
 # Comment to post when removing the stale label. Set to `false` to disable
 unmarkComment: false
 # Comment to post when closing a stale Issue or Pull Request. Set to `false` to disable

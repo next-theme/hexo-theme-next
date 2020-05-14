@@ -41,16 +41,7 @@
 
 #### 快速调试指南
 
-在 GitHub 上提交 Issue 前，请先通过以下方法 debug：
-
-* 执行`hexo clean`，清除浏览器缓存，并禁用 CDN 服务（例如 Cloudflare Rocket Loader）；
-* 切换到其它主题并检查 bug 是否仍然存在（例如使用默认主题 landscape）。换言之，证明这是 NexT 主题而非来自 Hexo 的 bug；
-* 将 NexT 主题升级到最新版；
-* 将 Hexo 和 Hexo 插件升级到最新版；
-* 将 Node.js 和 `npm` 升级到最新版；
-* 卸载不必要的 Hexo 插件，或重新通过 `npm install --save` 安装插件。
-
-如果你得到了来自 Hexo 或浏览器控制台的报错信息，请在 Google / Stackoverflow / GitHub Issue 中搜寻，或在提交 Issue 时报告给我们。
+在 GitHub 上提交 Issue 前，请先查看我们的 [快速调试指南](https://theme-next.js.org/docs/troubleshooting.html#Quick-Debug-Instructions) 来 debug。
 
 如果你在使用过程中发现了 Bug，请再次确认 Bug 在 [最新发布版本](https://github.com/next-theme/hexo-theme-next/releases/latest) 中是否重现。如果 Bug 重现，欢迎你到我们的 [主题仓库](https://github.com/next-theme/hexo-theme-next) 中 [反馈 Bug](#reporting-bugs) 或者 [提交功能需求](#提交功能需求)，也更期待您 [提交合并请求](#提交合并请求)。
 

@@ -1,5 +1,5 @@
 # Comment that will be sent if an issue is judged to be closed.
-comment: "This issue has been closed because it does not meet our Issue template. Please read our [guidelines for contributing](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md#how-can-i-contribute)."
+comment: "This issue has been closed because it does not meet our Issue template. Please read our [guidelines for contributing](https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md#how-can-i-contribute)."
 issueConfigs:
 # There can be several configs for different kind of issues.
 - content:

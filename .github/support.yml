@@ -8,7 +8,7 @@ supportLabel: Support
 supportComment: >
   :wave: @{issue-author}, we use the issue tracker exclusively for bug reports
   and feature requests. However, this issue appears to be a support request.
-  Please use our [support channels](https://github.com/theme-next/hexo-theme-next/tree/master#feedback) to get help with the project.
+  Please use our [support channels](https://github.com/next-theme/hexo-theme-next/tree/master#feedback) to get help with the project.
 
 # Close issues marked as support requests
 close: true
