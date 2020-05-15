@@ -85,7 +85,7 @@ $ git pull
 ## 反馈
 
 * 浏览 [Awesome NexT][awesome-next-url] 列表，与其它用户分享插件和教程。
-* 加入我们的 [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] 聊天。
+* 加入我们的 [Gitter][gitter-url] 聊天。
 * 请花几秒钟来[添加或修正翻译][i18n-url]。
 * 在 [GitHub Issues][issues-bug-url] 报告Bug。
 * 在 [GitHub][issues-feat-url] 请求新的功能。
@@ -125,9 +125,7 @@ $ git pull
 [docs-data-files-url]: https://theme-next.js.org/docs/getting-started/configuration.html
 [docs-update-5-1-x-url]: https://theme-next.js.org/docs/getting-started/update-from-v5.html
 
-[t-chat-url]: https://t.me/theme_next_chinese
-[gitter-url]: https://gitter.im/theme-next
-[riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
+[gitter-url]: https://gitter.im/hexo-next
 [i18n-url]: https://i18n.theme-next.org
 
 [awesome-next-url]: https://github.com/next-theme/awesome-next

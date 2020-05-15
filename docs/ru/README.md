@@ -71,7 +71,7 @@ $ git pull
 ## Обратная связь
 
 * Посетите [Awesome NexT][awesome-next-url] список.
-* Вступить в наши [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] чаты.
+* Вступить в наши [Gitter][gitter-url] чаты.
 * [Добавить или улучшить перевод][i18n-url] за несколько секунд.
 * Сообщить об ошибке в разделе [GitHub Issues][issues-bug-url].
 * Запросить новую возможность на [GitHub][issues-feat-url].
@@ -107,9 +107,7 @@ $ git pull
 [docs-data-files-url]: https://theme-next.js.org/docs/getting-started/configuration.html
 [docs-update-5-1-x-url]: https://theme-next.js.org/docs/getting-started/update-from-v5.html
 
-[t-chat-url]: https://t.me/theme_next
-[gitter-url]: https://gitter.im/theme-next
-[riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
+[gitter-url]: https://gitter.im/hexo-next
 [i18n-url]: https://i18n.theme-next.org
 
 [awesome-next-url]: https://github.com/next-theme/awesome-next

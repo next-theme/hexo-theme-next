@@ -85,7 +85,7 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 ## Feedback
 
 * Visit the [Awesome NexT][awesome-next-url] list to share plugins and tutorials with other users.
-* Join our [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] chats.
+* Join our [Gitter][gitter-url] chats.
 * [Add or improve translation][i18n-url] in few seconds.
 * Report a bug in [GitHub Issues][issues-bug-url].
 * Request a new feature on [GitHub][issues-feat-url].
@@ -127,9 +127,7 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 [docs-data-files-url]: https://theme-next.js.org/docs/getting-started/configuration.html
 [docs-update-5-1-x-url]: https://theme-next.js.org/docs/getting-started/update-from-v5.html
 
-[t-chat-url]: https://t.me/theme_next
-[gitter-url]: https://gitter.im/theme-next
-[riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
+[gitter-url]: https://gitter.im/hexo-next
 [i18n-url]: https://i18n.theme-next.org
 
 [awesome-next-url]: https://github.com/next-theme/awesome-next

@@ -86,9 +86,7 @@
     * [support@theme-next.org](mailto:support@theme-next.org)
 
 * 即时通信:
-    * [Gitter](https://gitter.im/theme-next)
-    * [Riot](https://riot.im/app/#/room/#NexT:matrix.org)
-    * [Telegram](https://t.me/joinchat/GUNHXA-vZkgSMuimL1VmMw)
+    * [Gitter](https://gitter.im/hexo-next)
 
 ## 来源
 
