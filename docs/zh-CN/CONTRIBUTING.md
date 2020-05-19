@@ -7,7 +7,7 @@
 
 # <div align="center"><a title="Go to homepage" href="https://theme-next.js.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
-首先，非常感谢大家抽出宝贵时间来让我们的 NexT 主题越变越好。在这里，我们介绍一下 [NexT 主题及其子模块](https://github.com/theme-next) 的开源贡献指南。不过，我们希望大家不要局限于此，更欢迎大家随时进行补充。
+首先，非常感谢大家抽出宝贵时间来让我们的 NexT 主题越变越好。在这里，我们介绍一下 [NexT 主题及其子模块](https://github.com/next-theme) 的开源贡献指南。不过，我们希望大家不要局限于此，更欢迎大家随时进行补充。
 
 ## 目录
 

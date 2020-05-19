@@ -88,9 +88,7 @@ You may get in touch with the maintainer team through any of the following metho
     * [support@theme-next.org](mailto:support@theme-next.org)
 
 * Through Chat:
-    * [Gitter](https://gitter.im/theme-next)
-    * [Riot](https://riot.im/app/#/room/#NexT:matrix.org)
-    * [Telegram](https://t.me/joinchat/GUNHXA-vZkgSMuimL1VmMw)
+    * [Gitter](https://gitter.im/hexo-next)
 
 ## Attribution
 

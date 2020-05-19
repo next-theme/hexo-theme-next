@@ -40,7 +40,7 @@ along with this program; if not, see: https://www.gnu.org/licenses/agpl.txt
      ```
      Collaborators, best contributors and all authors specified in the
      'docs/AUTHORS.md' file of «NexT» repository under the
-     'https://github.com/theme-next' organization can ignore theme info link
+     'https://github.com/next-theme' organization can ignore theme info link
      requirements.
 
   Anyone can be released from the requirements of the license by purchasing

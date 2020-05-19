@@ -134,4 +134,4 @@ $ git pull
 [feat-req-vote-url]: https://github.com/next-theme/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22
 
 [contributing-document-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/zh-CN/CONTRIBUTING.md
-[official-plugins-url]: https://github.com/theme-next
+[official-plugins-url]: https://github.com/next-theme
