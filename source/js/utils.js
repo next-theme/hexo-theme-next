@@ -89,7 +89,7 @@ NexT.utils = {
         ta.readOnly = false;
         const result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          target.querySelector('i').className = result ? 'fa fa-check fa-fw' : 'fa fa-times fa-fw';
+          target.querySelector('i').className = result ? 'fa fa-check-circle fa-fw' : 'fa fa-times-circle fa-fw';
         }
         ta.blur(); // For iOS
         target.blur();

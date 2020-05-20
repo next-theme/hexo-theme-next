@@ -242,7 +242,7 @@ post_meta:
   categories: true
 
 # Post wordcount display settings
-# Dependencies: https://github.com/next-theme/hexo-symbols-count-time
+# Dependencies: https://github.com/next-theme/hexo-word-counter
 symbols_count_time:
   separated_meta: true
   item_text_post: true
