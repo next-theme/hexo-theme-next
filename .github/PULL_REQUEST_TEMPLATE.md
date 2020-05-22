@@ -25,7 +25,7 @@
 - [ ] Refactoring (no functional changes, no api changes).
 - [ ] Build & CI related changes.
 - [ ] Documentation.
-- [ ] Translation. <!-- We use Crowdin to manage translations https://i18n.theme-next.org -->
+- [ ] Translation. <!-- We use Crowdin to manage translations https://crowdin.com/project/hexo-theme-next -->
 - [ ] Other... Please describe:
 
 ## What is the current behavior?
