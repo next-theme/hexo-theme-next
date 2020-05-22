@@ -25,10 +25,10 @@ gulp.task('validate:config', cb => {
 
 gulp.task('validate:languages', cb => {
   const languagesPath = path.join(__dirname, 'languages');
-  const languages = fs.readdirSync(languagesPath);
   const errors = [];
 
-  languages.forEach(lang => {
+  fs.readdirSync(languagesPath).forEach(lang => {
+    if (!lang.endsWith('.yml')) return;
     const languagePath = path.join(languagesPath, lang);
     try {
       yaml.safeLoad(fs.readFileSync(languagePath), {
