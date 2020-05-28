@@ -8,8 +8,8 @@
 
 function caniUse(args) {
   args = args.join('').split('@');
-  var feature = args[0];
-  var periods = args[1] || 'current';
+  const feature = args[0];
+  const periods = args[1] || 'current';
 
   if (!feature) {
     hexo.log.warn('Caniuse feature can NOT be empty.');

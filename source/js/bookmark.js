@@ -3,12 +3,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  var doSaveScroll = () => {
+  const doSaveScroll = () => {
     localStorage.setItem('bookmark' + location.pathname, window.scrollY);
   };
 
-  var scrollToMark = () => {
-    var top = localStorage.getItem('bookmark' + location.pathname);
+  const scrollToMark = () => {
+    let top = localStorage.getItem('bookmark' + location.pathname);
     top = parseInt(top, 10);
     // If the page opens with a specific hash, just jump out
     if (!isNaN(top) && location.hash === '') {
@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   // Register everything
-  var init = function(trigger) {
+  const init = function(trigger) {
     // Create a link element
-    var link = document.querySelector('.book-mark-link');
+    const link = document.querySelector('.book-mark-link');
     // Scroll event
     window.addEventListener('scroll', () => link.classList.toggle('book-mark-link-fixed', window.scrollY === 0));
     // Register beforeunload event when the trigger is auto
