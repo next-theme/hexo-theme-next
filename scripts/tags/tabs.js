@@ -35,14 +35,14 @@ function postTabs(args, content) {
 
     postContent = hexo.render.renderSync({text: postContent, engine: 'markdown'}).trim();
 
-    tabId += 1;
+    tabId++;
     tabHref = (tabName + ' ' + tabId).toLowerCase().split(' ').join('-');
 
     ((tabCaption.length === 0) && (tabIcon.length === 0)) && (tabCaption = tabName + ' ' + tabId);
 
     var isOnlyicon = tabIcon.length > 0 && tabCaption.length === 0 ? ' style="text-align: center;"' : '';
     let icon = tabIcon.trim();
-    icon = icon.startsWith('fa') ? icon : 'fa fa-' + icon;
+    if (!icon.startsWith('fa')) icon = 'fa fa-' + icon;
     tabIcon.length > 0 && (tabIcon = `<i class="${icon}"${isOnlyicon}></i>`);
 
     var isActive = (tabActive > 0 && tabActive === tabId) || (tabActive === 0 && tabId === 1) ? ' active' : '';
