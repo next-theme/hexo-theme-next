@@ -3,39 +3,39 @@
   grid-gap: 1.5rem 1.5rem;
   grid-template-columns: 1fr 1fr;
   padding: 1.5rem;
-  user-select: none;
 
   +mobile() {
     grid-template-columns: 1fr;
   }
 
-  div {
-    border: solid #ddd;
-    box-shadow: 1rem 1rem 0.5rem gray;
+  .link-grid-container {
+    border: solid $grey-lighter;
+    box-shadow: 1rem 1rem .5rem gray;
     height: 5rem;
-    transition: background 0.3s;
-    padding: 0.5rem;
+    padding: .5rem;
     position: relative;
+    transition: background .3s;
 
     &:hover {
-      animation: shake 0.5s;
-      background: rgba(230,244,250,.5);
+      animation: shake .5s;
+      background: rgba(230, 244, 250, .5);
     }
 
     &:active {
-      box-shadow: 0.5rem 0.5rem 0.25rem gray;
-      transform: translate(0.2rem, 0.2rem);
+      box-shadow: .5rem .5rem .25rem gray;
+      transform: translate(.2rem, .2rem);
     }
 
-    img {
-      border: 1px solid #ddd;
+    .link-grid-image {
+      background-clip: content-box;
+      background-origin: content-box;
+      background-size: cover;
+      border: 1px solid $grey-lighter;
       border-radius: 50%;
       box-sizing: border-box;
       height: 5rem;
-      left: 0.5rem;
       padding: 3px;
       position: absolute;
-      top: 0.5rem;
       width: 5rem;
     }
 
@@ -47,14 +47,14 @@
       }
 
       &:last-of-type {
-        font-size: 0.8em;
+        font-size: .8em;
         line-height: 1.3rem;
-        opacity: 0.7;
+        opacity: .7;
       }
     }
 
     a {
-      border: none;
+      border: 0;
       height: 100%;
       left: 0;
       position: absolute;
