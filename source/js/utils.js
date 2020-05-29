@@ -237,10 +237,10 @@ NexT.utils = {
     const navItems = document.querySelectorAll('.post-toc li');
     const sections = [...navItems].map(element => {
       const link = element.querySelector('a.nav-link');
+      const target = document.getElementById(decodeURI(link.getAttribute('href')).replace('#', ''));
       // TOC item animation navigate.
       link.addEventListener('click', event => {
         event.preventDefault();
-        const target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
         const offset = target.getBoundingClientRect().top + window.scrollY;
         window.anime({
           targets  : document.scrollingElement,
@@ -249,7 +249,7 @@ NexT.utils = {
           scrollTop: offset + 10
         });
       });
-      return document.getElementById(link.getAttribute('href').replace('#', ''));
+      return target;
     });
 
     const tocElement = document.querySelector('.post-toc-wrap');
