@@ -17,7 +17,7 @@
   <a href="https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
   <img src="https://img.shields.io/github/workflow/status/next-theme/hexo-theme-next/Linter?style=flat-square">
 <br>
-  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
+  <img src="https://user-images.githubusercontent.com/16272760/83972923-98baae80-a915-11ea-8142-3cf875dad8bf.png">
 </p>
 
 ## Live Preview
@@ -80,7 +80,7 @@ $ git pull
 And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-data-files-url] feature.\
 However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` commands for local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
-**If you want to update from v5.1.x to the latest version, read [this][docs-update-5-1-x-url].**
+**If you want to update from v5.x / v7.x to the latest version, read [this][docs-update-5-1-x-url].**
 
 ## Feedback
 

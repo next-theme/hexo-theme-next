@@ -17,7 +17,7 @@
   <a href="https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
   <img src="https://img.shields.io/github/workflow/status/next-theme/hexo-theme-next/Linter?style=flat-square">
 <br>
-  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
+  <img src="https://user-images.githubusercontent.com/16272760/83972923-98baae80-a915-11ea-8142-3cf875dad8bf.png">
 </p>
 
 ## Демо
@@ -66,7 +66,7 @@ $ git pull
 А если всплывают ошибки во время обновления (что-то наподобии **«Commit your changes or stash them before you can merge»**), рекомендуется ознакомиться с особенностью хранения [дата-файлов в Hexo][docs-data-files-url].\
 Как бы то ни было, можно обойти ошибки при обновлении если «Закомитить», «Стэшнуть» или «Откатить» локальные изменения. Смотрим  [здесь](https://stackoverflow.com/a/15745424/5861495) как это сделать.
 
-**Если нужно обновиться с версии v5.1.x на последней версиями, читаем [здесь][docs-update-5-1-x-url].**
+**Если нужно обновиться с версии v5.x / v7.x на последней версиями, читаем [здесь][docs-update-5-1-x-url].**
 
 ## Обратная связь
 

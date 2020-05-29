@@ -17,7 +17,7 @@
   <a href="https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
   <img src="https://img.shields.io/github/workflow/status/next-theme/hexo-theme-next/Linter?style=flat-square">
 <br>
-  <img src="https://user-images.githubusercontent.com/16272760/63487983-da41b080-c4df-11e9-951c-64883a8a5e9b.png">
+  <img src="https://user-images.githubusercontent.com/16272760/83972923-98baae80-a915-11ea-8142-3cf875dad8bf.png">
 </p>
 
 ## 即时预览
@@ -80,7 +80,7 @@ $ git pull
 如果你在此过程中收到了任何错误报告 (例如 **«Commit your changes or stash them before you can merge»**)，我们推荐你使用 [Hexo 数据文件][docs-data-files-url]特性。\
 然而你也可以通过提交（`Commit`）、贮藏（`Stash`）或忽视（`Discard`）本地更改以绕过这种更新错误。具体方法请参考[这里](https://stackoverflow.com/a/15745424/5861495)。
 
-**如果你想要从 v5.1.x 更新到最新版本，阅读[这篇文档][docs-update-5-1-x-url]。**
+**如果你想要从 v5.x / v7.x 更新到最新版本，阅读[这篇文档][docs-update-5-1-x-url]。**
 
 ## 反馈
 
