@@ -607,8 +607,6 @@ valine:
   enable: false
   appId: # Your leancloud application appid
   appKey: # Your leancloud application appkey
-  notify: false # Mail notifier
-  verify: false # Verification code
   placeholder: Just go go # Comment box placeholder
   avatar: mm # Gravatar style
   meta: # Custom comment header
@@ -938,7 +936,7 @@ vendors:
 
   # Valine
   # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
-  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js
+  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.4.14/Valine.min.js
   valine:
 
   # Gitalk
