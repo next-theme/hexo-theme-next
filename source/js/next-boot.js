@@ -8,7 +8,7 @@ NexT.boot.registerEvents = function() {
   NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.
-  document.querySelector('.site-nav-toggle .toggle').addEventListener('click', () => {
+  document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {
     event.currentTarget.classList.toggle('toggle-close');
     const siteNav = document.querySelector('.site-nav');
     if (!siteNav) return;
@@ -57,9 +57,8 @@ NexT.boot.registerEvents = function() {
       });
 
       [...item.parentNode.children].forEach(element => {
-        element.classList.remove(activeTabClassName);
+        element.classList.toggle(activeTabClassName, element === item);
       });
-      item.classList.add(activeTabClassName);
     });
   });
 

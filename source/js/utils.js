@@ -99,9 +99,9 @@ NexT.utils = {
         }
         document.body.removeChild(ta);
       });
-      button.addEventListener('mouseleave', event => {
+      element.addEventListener('mouseleave', () => {
         setTimeout(() => {
-          event.target.querySelector('i').className = 'fa fa-clipboard fa-fw';
+          button.querySelector('i').className = 'fa fa-clipboard fa-fw';
         }, 300);
       });
     });
@@ -131,7 +131,7 @@ NexT.utils = {
         let width = Number(element.width);
         let height = Number(element.height);
         if (width && height) {
-          element.parentNode.style.paddingTop = (height / width * 100) + '%';
+          box.style.paddingTop = (height / width * 100) + '%';
         }
       }
     });
@@ -181,14 +181,12 @@ NexT.utils = {
         if (!target.classList.contains('active')) {
           // Add & Remove active class on `nav-tabs` & `tab-content`.
           [...target.parentNode.children].forEach(element => {
-            element.classList.remove('active');
+            element.classList.toggle('active', element === target);
           });
-          target.classList.add('active');
-          const tActive = document.getElementById(target.querySelector('a').getAttribute('href').replace('#', ''));
+          const tActive = document.querySelector(target.querySelector('a').getAttribute('href'));
           [...tActive.parentNode.children].forEach(element => {
-            element.classList.remove('active');
+            element.classList.toggle('active', element === tActive);
           });
-          tActive.classList.add('active');
           // Trigger event
           tActive.dispatchEvent(new Event('tabs:click', {
             bubbles: true
@@ -203,7 +201,7 @@ NexT.utils = {
   registerCanIUseTag: function() {
     // Get responsive height passed from iframe.
     window.addEventListener('message', ({ data }) => {
-      if ((typeof data === 'string') && data.includes('ciu_embed')) {
+      if (typeof data === 'string' && data.includes('ciu_embed')) {
         const featureID = data.split(':')[1];
         const height = data.split(':')[2];
         document.querySelector(`iframe[data-feature=${featureID}]`).style.height = parseInt(height, 10) + 5 + 'px';
@@ -237,7 +235,7 @@ NexT.utils = {
     const navItems = document.querySelectorAll('.post-toc li');
     const sections = [...navItems].map(element => {
       const link = element.querySelector('a.nav-link');
-      const target = document.getElementById(decodeURI(link.getAttribute('href')).replace('#', ''));
+      const target = document.querySelector(decodeURI(link.getAttribute('href')));
       // TOC item animation navigate.
       link.addEventListener('click', event => {
         event.preventDefault();

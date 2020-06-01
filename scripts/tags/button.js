@@ -22,9 +22,7 @@ function postButton(args) {
   icon = icon.startsWith('fa') ? icon : 'fa fa-' + icon;
   title = title.trim();
 
-  return `<a class="btn" href="${url}"${title.length > 0 ? ` title="${title}"` : ''}>
-${icon.length > 0 ? `<i class="${icon}"></i>` : ''}${text}
-</a>`;
+  return `<a class="btn" href="${url}"${title.length > 0 ? ` title="${title}"` : ''}>${icon.length > 0 ? `<i class="${icon}"></i>` : ''}${text}</a>`;
 }
 
 hexo.extend.tag.register('button', postButton, {ends: false});
