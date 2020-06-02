@@ -183,7 +183,8 @@ NexT.utils = {
           [...target.parentNode.children].forEach(element => {
             element.classList.toggle('active', element === target);
           });
-          const tActive = document.querySelector(target.querySelector('a').getAttribute('href'));
+          // https://stackoverflow.com/questions/20306204/using-queryselector-with-ids-that-are-numbers
+          const tActive = document.getElementById(target.querySelector('a').getAttribute('href').replace('#', ''));
           [...tActive.parentNode.children].forEach(element => {
             element.classList.toggle('active', element === tActive);
           });
@@ -235,7 +236,7 @@ NexT.utils = {
     const navItems = document.querySelectorAll('.post-toc li');
     const sections = [...navItems].map(element => {
       const link = element.querySelector('a.nav-link');
-      const target = document.querySelector(decodeURI(link.getAttribute('href')));
+      const target = document.getElementById(decodeURI(link.getAttribute('href')).replace('#', ''));
       // TOC item animation navigate.
       link.addEventListener('click', event => {
         event.preventDefault();
