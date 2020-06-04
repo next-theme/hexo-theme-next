@@ -44,7 +44,6 @@
 
           {%- set date_diff = date(post.date) != date(post.updated) %}
           {%- set time_diff = time(post.date) != time(post.updated) %}
-          {%- set datetime_diff = date_diff or time_diff %}
 
           {%- if theme.post_meta.created_at %}
             <span class="post-meta-item">
@@ -63,10 +62,8 @@
             </span>
           {%- endif %}
 
-          {%- if theme.post_meta.updated_at.enable and datetime_diff %}
-            {%- set display_updated = not theme.post_meta.updated_at.another_day or theme.post_meta.updated_at.another_day and date_diff %}
-
-            {%- if display_updated or not theme.post_meta.created_at %}
+          {%- if theme.post_meta.updated_at.enable %}
+            {%- if not theme.post_meta.updated_at.another_day or date_diff or not theme.post_meta.created_at %}
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
