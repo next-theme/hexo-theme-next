@@ -1,9 +1,7 @@
 $page-number-basic {
   display: inline-block;
   margin: 0 10px;
-  padding: 0 11px;
-  position: relative;
-  top: -1px;
+  padding: 0 10px;
 
   +mobile() {
     margin: 0 5px;
@@ -27,42 +25,29 @@ $page-number-basic {
     }
   }
 
+  +mobile() {
+    border-top: 0;
+
+    .prev, .next, .page-number {
+      border-bottom: 1px solid $pagination-link-border;
+      border-top: 0;
+      margin-bottom: 10px;
+
+      &:hover {
+        border-bottom-color: $pagination-link-hover-border;
+      }
+    }
+  }
+
   .space {
     @extend $page-number-basic;
     margin: 0;
     padding: 0;
   }
 
-  .prev {
-    margin-left: 0;
-  }
-
-  .next {
-    margin-right: 0;
-  }
-
   .page-number.current {
     background: $pagination-active-bg;
     border-top-color: $pagination-active-border;
     color: $pagination-active-color;
-  }
-}
-
-+mobile() {
-  .pagination {
-    border-top: none;
-  }
-
-  .pagination {
-    .prev, .next, .page-number {
-      border-bottom: 1px solid $pagination-link-border;
-      border-top: 0;
-      margin-bottom: 10px;
-      padding: 0 10px;
-
-      &:hover {
-        border-bottom-color: $pagination-link-hover-border;
-      }
-    }
   }
 }
