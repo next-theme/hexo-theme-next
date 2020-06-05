@@ -1,6 +1,6 @@
 $page-number-basic {
   display: inline-block;
-  margin: 0 10px;
+  margin: -1px 10px 0 10px;
   padding: 0 10px;
 
   +mobile() {
@@ -27,11 +27,11 @@ $page-number-basic {
 
   +mobile() {
     border-top: 0;
+    margin-bottom: 10px;
 
     .prev, .next, .page-number {
       border-bottom: 1px solid $pagination-link-border;
       border-top: 0;
-      margin-bottom: 10px;
 
       &:hover {
         border-bottom-color: $pagination-link-hover-border;
