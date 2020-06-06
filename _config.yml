@@ -348,7 +348,7 @@ codeblock:
   # See: https://github.com/highlightjs/highlight.js/tree/master/src/styles
   theme:
     light: default
-    dark: dark
+    dark: tomorrow-night
   # Add copy button on codeblock
   copy_button:
     enable: false
