@@ -8,10 +8,14 @@ if (hexo-config('darkmode')) {
 
 @import 'copy-code' if (hexo-config('codeblock.copy_button.enable'));
 
-// Placeholder: $code-block
-$code-block {
+// Placeholder: $code-inline $code-block
+$code-inline {
   background: var(--highlight-background);
   color: var(--highlight-foreground);
+}
+
+$code-block {
+  @extend $code-inline;
   line-height: $line-height-code-block;
   margin: 0 auto 20px;
 }
@@ -21,11 +25,20 @@ pre, code {
 }
 
 code {
-  background: $code-background;
+  @extend $code-inline;
   border-radius: 3px;
-  color: $code-foreground;
   padding: 2px 4px;
   word-wrap();
+}
+
+kbd {
+  @extend $code-inline;
+  border: 1px solid $grey-light;
+  border-radius: .2em;
+  box-shadow: .1em .1em .2em rgba(0, 0, 0, .1);
+  font-family: inherit;
+  padding: .1em .3em;
+  white-space: nowrap;
 }
 
 .highlight {
@@ -105,7 +118,6 @@ pre {
 
   code {
     background: none;
-    color: var(--highlight-foreground);
     font-size: $table-font-size;
     padding: 0;
     text-shadow: none;
