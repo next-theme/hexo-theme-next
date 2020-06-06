@@ -9,13 +9,9 @@
     </div>
   </div>
 
-  <div class="site-meta{%- if theme.custom_logo %} custom-logo{%- endif %}">
+  <div class="site-meta">
     {%- if theme.custom_logo and theme.scheme === 'Muse' %}
-      <div class="site-meta-headline">
-        <a>
-          <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}">
-        </a>
-      </div>
+      <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}">
     {%- endif %}
 
     <a href="{{ config.root }}" class="brand" rel="start">
@@ -27,9 +23,7 @@
       <p class="site-subtitle" itemprop="description">{{ subtitle }}</p>
     {%- endif %}
     {%- if theme.custom_logo and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
-      <a>
-        <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}">
-      </a>
+      <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}">
     {%- endif %}
   </div>
 
