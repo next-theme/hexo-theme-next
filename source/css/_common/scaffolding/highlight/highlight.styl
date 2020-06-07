@@ -65,22 +65,18 @@ kbd {
   figcaption {
     background: var(--highlight-gutter-background);
     color: var(--highlight-foreground);
-    display: flex;
+    display: flow-root;
     font-size: $table-font-size;
-    justify-content: space-between;
     line-height: 1.2;
     padding: .5em;
 
     a {
       color: var(--highlight-foreground);
+      float: right;
 
       &:hover {
         border-bottom-color: var(--highlight-foreground);
       }
-    }
-
-    a, span {
-      min-width: 0;
     }
   }
 
