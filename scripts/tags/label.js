@@ -13,7 +13,7 @@ function postLabel(args) {
 
   !text && hexo.log.warn('Label text must be defined!');
 
-  return `<span class="label ${classes.trim()}">${text}</span>`;
+  return `<mark class="label ${classes.trim()}">${text}</mark>`;
 }
 
 hexo.extend.tag.register('label', postLabel, {ends: false});

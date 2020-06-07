@@ -278,6 +278,7 @@ $post-eof-margin-bottom       = 60px; //  or 120px for less white space;
 // --------------------------------------------------
 // Read note light_bg_offset from NexT config and set in "$lbg%" to use it as string variable.
 $lbg = hexo-config('note.light_bg_offset') is a 'unit' ? unit(hexo-config('note.light_bg_offset'), "%") : 0;
+$note-types = 'default' 'primary' 'info' 'success' 'warning' 'danger';
 
 // Default
 $note-border-radius         = 3px;
