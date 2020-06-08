@@ -10,7 +10,11 @@ properties:
   minify:
     type: boolean
   custom_file_path:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: object
+      additionalProperties:
+        type: string
   favicon:
     type: object
     properties:
@@ -21,6 +25,10 @@ properties:
       apple_touch_icon:
         type: string
       safari_pinned_tab:
+        type: string
+      android_manifest:
+        type: string
+      ms_browserconfig:
         type: string
   language_switcher:
     type: boolean
@@ -37,7 +45,9 @@ properties:
           color:
             type: string
       copyright:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       powered:
         type: boolean
       beian:
@@ -46,13 +56,21 @@ properties:
           enable:
             type: boolean
           icp:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
           gongan_id:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
           gongan_num:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
           gongan_icon_url:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
   creative_commons:
     type: object
     properties:
