@@ -16,6 +16,16 @@ const create = () => {
     if (Array.isArray(obj)) {
       target.type = 'array';
       target.items = child;
+      if (obj.length === 0) {
+        return;
+      }
+      obj = obj[0];
+      if (typeof obj === 'string') {
+        target.items = {
+          type: 'string'
+        };
+        return;
+      }
     } else {
       target.type = 'object';
       target.properties = child;
@@ -52,7 +62,7 @@ const create = () => {
   };
   let data = {};
   parse(config, data);
-  writeFileSync(join(theme_dir, 'assets/schema.yml'), safeDump(data));
+  writeFileSync(join(theme_dir, 'assets/schema-draft.yml'), safeDump(data));
 };
 
 hexo.extend.console.register('init-schema', 'Create schema from config file (incorrect and need to be modified)', {}, create);
