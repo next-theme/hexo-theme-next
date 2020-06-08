@@ -1,6 +1,10 @@
 {%- set js_vendors = {} %}
 {%- set js_vendors = js_vendors | attr('anime', 'anime.min.js') %}
 
+{%- if config.prismjs.enable and not config.prismjs.preprocess %}
+  {%- set js_vendors = js_vendors | attr('prism', '//cdn.jsdelivr.net/npm/prismjs@1/prism.min.js') %}
+{%- endif %}
+
 {%- if theme.pjax %}
   {%- set js_vendors = js_vendors | attr('pjax', 'pjax/pjax.min.js') %}
 {%- endif %}

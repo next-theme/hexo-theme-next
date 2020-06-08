@@ -1,8 +1,10 @@
-@import hexo-config('highlight.light.file');
+@import hexo-config('highlight.light.file') if (hexo-config('highlight.enable'));
+@import hexo-config('prism.light') if (hexo-config('prism.enable'));
 
 if (hexo-config('darkmode')) {
   @media (prefers-color-scheme: dark) {
-    @import hexo-config('highlight.dark.file');
+    @import hexo-config('highlight.dark.file') if (hexo-config('highlight.enable'));
+    @import hexo-config('prism.dark') if (hexo-config('prism.enable'));
   }
 }
 
