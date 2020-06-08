@@ -12,7 +12,7 @@ const check = () => {
   const { deepMerge } = require('hexo-util');
   const Ajv = require('ajv');
   const ajv = new Ajv();
-  const schema = safeLoad(readFileSync(join(theme_dir, 'assets/schema.yml'), 'utf-8'))
+  const schema = safeLoad(readFileSync(join(theme_dir, 'assets/schema.yml'), 'utf-8'));
   const validate = ajv.compile(schema);
   let config = safeLoad(readFileSync(join(theme_dir, '_config.yml'), 'utf-8'));
   if (hexo.config.theme_config) {
