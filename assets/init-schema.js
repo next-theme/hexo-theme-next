@@ -1,13 +1,13 @@
-/* global hexo */
+/**
+ * node assets/init-schema.js
+ */
 
 'use strict';
 
-// http://json-schema.org/understanding-json-schema/reference/index.html
-// https://github.com/ajv-validator/ajv
 const create = () => {
-  const { join } = require('path');
+  const { join, resolve } = require('path');
   const { readFileSync, writeFileSync } = require('fs');
-  const { theme_dir } = hexo;
+  const theme_dir = resolve(__dirname, '../');
   const { safeLoad, safeDump } = require('js-yaml');
   let config = safeLoad(readFileSync(join(theme_dir, '_config.yml'), 'utf-8'));
 
@@ -65,4 +65,4 @@ const create = () => {
   writeFileSync(join(theme_dir, 'assets/schema-draft.yml'), safeDump(data));
 };
 
-hexo.extend.console.register('init-schema', 'Create schema from config file (incorrect and need to be modified)', {}, create);
+create();
