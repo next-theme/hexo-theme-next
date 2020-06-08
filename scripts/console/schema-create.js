@@ -52,7 +52,7 @@ const create = () => {
   };
   let data = {};
   parse(config, data);
-  writeFileSync(join(__dirname, 'schema.yml'), safeDump(data));
+  writeFileSync(join(theme_dir, 'assets/schema.yml'), safeDump(data));
 };
 
-hexo.extend.console.register('schema-create', 'Create schema from config file', {}, create);
+hexo.extend.console.register('init-schema', 'Create schema from config file (incorrect and need to be modified)', {}, create);
