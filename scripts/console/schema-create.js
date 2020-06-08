@@ -50,8 +50,9 @@ const create = () => {
       parse(val, child[key]);
     });
   };
-  let data = parse(config);
-  writeFileSync(join(__dirname, 'sss.yml'), safeDump(data));
+  let data = {};
+  parse(config, data);
+  writeFileSync(join(__dirname, 'schema.yml'), safeDump(data));
 };
 
 hexo.extend.console.register('schema-create', 'Create schema from config file', {}, create);

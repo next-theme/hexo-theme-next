@@ -1,0 +1,791 @@
+type: object
+properties:
+  reminder:
+    type: boolean
+  cache:
+    type: object
+    properties:
+      enable:
+        type: boolean
+  minify:
+    type: boolean
+  custom_file_path:
+    type: 'null'
+  favicon:
+    type: object
+    properties:
+      small:
+        type: string
+      medium:
+        type: string
+      apple_touch_icon:
+        type: string
+      safari_pinned_tab:
+        type: string
+  language_switcher:
+    type: boolean
+  footer:
+    type: object
+    properties:
+      icon:
+        type: object
+        properties:
+          name:
+            type: string
+          animated:
+            type: boolean
+          color:
+            type: string
+      copyright:
+        type: 'null'
+      powered:
+        type: boolean
+      beian:
+        type: object
+        properties:
+          enable:
+            type: boolean
+          icp:
+            type: 'null'
+          gongan_id:
+            type: 'null'
+          gongan_num:
+            type: 'null'
+          gongan_icon_url:
+            type: 'null'
+  creative_commons:
+    type: object
+    properties:
+      license:
+        type: string
+      sidebar:
+        type: boolean
+      post:
+        type: boolean
+      language:
+        type: 'null'
+  scheme:
+    type: string
+  darkmode:
+    type: boolean
+  menu:
+    type: 'null'
+  menu_settings:
+    type: object
+    properties:
+      icons:
+        type: boolean
+      badges:
+        type: boolean
+  sidebar:
+    type: object
+    properties:
+      position:
+        type: string
+      display:
+        type: string
+      padding:
+        type: number
+      offset:
+        type: number
+      onmobile:
+        type: boolean
+  avatar:
+    type: object
+    properties:
+      url:
+        type: 'null'
+      rounded:
+        type: boolean
+      rotated:
+        type: boolean
+  site_state:
+    type: boolean
+  social:
+    type: 'null'
+  social_icons:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      icons_only:
+        type: boolean
+      transition:
+        type: boolean
+  links_settings:
+    type: object
+    properties:
+      icon:
+        type: string
+      title:
+        type: string
+      layout:
+        type: string
+  links:
+    type: 'null'
+  toc:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      number:
+        type: boolean
+      wrap:
+        type: boolean
+      expand_all:
+        type: boolean
+      max_depth:
+        type: number
+  chat:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      icon:
+        type: string
+      text:
+        type: string
+  excerpt_description:
+    type: boolean
+  read_more_btn:
+    type: boolean
+  post_meta:
+    type: object
+    properties:
+      item_text:
+        type: boolean
+      created_at:
+        type: boolean
+      updated_at:
+        type: object
+        properties:
+          enable:
+            type: boolean
+          another_day:
+            type: boolean
+      categories:
+        type: boolean
+  symbols_count_time:
+    type: object
+    properties:
+      separated_meta:
+        type: boolean
+      item_text_post:
+        type: boolean
+      item_text_total:
+        type: boolean
+  tag_icon:
+    type: boolean
+  reward_settings:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      animation:
+        type: boolean
+  reward:
+    type: 'null'
+  follow_me:
+    type: 'null'
+  related_posts:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      title:
+        type: 'null'
+      display_in_home:
+        type: boolean
+      params:
+        type: object
+        properties:
+          maxCount:
+            type: number
+  post_edit:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      url:
+        type: string
+  post_navigation:
+    type: string
+  tagcloud:
+    type: object
+    properties:
+      min:
+        type: number
+      max:
+        type: number
+      amount:
+        type: number
+      orderby:
+        type: string
+      order:
+        type: number
+  calendar:
+    type: object
+    properties:
+      calendar_id:
+        type: string
+      api_key:
+        type: string
+      orderBy:
+        type: string
+      offsetMax:
+        type: number
+      offsetMin:
+        type: number
+      showDeleted:
+        type: boolean
+      singleEvents:
+        type: boolean
+      maxResults:
+        type: number
+  text_align:
+    type: object
+    properties:
+      desktop:
+        type: string
+      mobile:
+        type: string
+  mobile_layout_economy:
+    type: boolean
+  android_chrome_color:
+    type: string
+  custom_logo:
+    type: 'null'
+  codeblock:
+    type: object
+    properties:
+      theme:
+        type: object
+        properties:
+          light:
+            type: string
+          dark:
+            type: string
+      copy_button:
+        type: object
+        properties:
+          enable:
+            type: boolean
+          show_result:
+            type: boolean
+          style:
+            type: 'null'
+  back2top:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      sidebar:
+        type: boolean
+      scrollpercent:
+        type: boolean
+  reading_progress:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      position:
+        type: string
+      color:
+        type: string
+      height:
+        type: string
+  bookmark:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      color:
+        type: string
+      save:
+        type: string
+  github_banner:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      permalink:
+        type: string
+      title:
+        type: string
+  font:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      host:
+        type: 'null'
+      global:
+        type: object
+        properties:
+          external:
+            type: boolean
+          family:
+            type: string
+          size:
+            type: 'null'
+      title:
+        type: object
+        properties:
+          external:
+            type: boolean
+          family:
+            type: 'null'
+          size:
+            type: 'null'
+      headings:
+        type: object
+        properties:
+          external:
+            type: boolean
+          family:
+            type: 'null'
+          size:
+            type: 'null'
+      posts:
+        type: object
+        properties:
+          external:
+            type: boolean
+          family:
+            type: 'null'
+      codes:
+        type: object
+        properties:
+          external:
+            type: boolean
+          family:
+            type: 'null'
+  disable_baidu_transformation:
+    type: boolean
+  index_with_subtitle:
+    type: boolean
+  exturl:
+    type: boolean
+  google_site_verification:
+    type: 'null'
+  bing_site_verification:
+    type: 'null'
+  yandex_site_verification:
+    type: 'null'
+  baidu_site_verification:
+    type: 'null'
+  baidu_push:
+    type: boolean
+  math:
+    type: object
+    properties:
+      per_page:
+        type: boolean
+      mathjax:
+        type: object
+        properties:
+          enable:
+            type: boolean
+          mhchem:
+            type: boolean
+      katex:
+        type: object
+        properties:
+          enable:
+            type: boolean
+          copy_tex:
+            type: boolean
+  pjax:
+    type: boolean
+  fancybox:
+    type: boolean
+  mediumzoom:
+    type: boolean
+  lazyload:
+    type: boolean
+  pangu:
+    type: boolean
+  quicklink:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      home:
+        type: boolean
+      archive:
+        type: boolean
+      delay:
+        type: boolean
+      timeout:
+        type: number
+      priority:
+        type: boolean
+      ignores:
+        type: 'null'
+  comments:
+    type: object
+    properties:
+      style:
+        type: string
+      active:
+        type: 'null'
+      storage:
+        type: boolean
+      lazyload:
+        type: boolean
+      nav:
+        type: 'null'
+  disqus:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      shortname:
+        type: 'null'
+      count:
+        type: boolean
+  disqusjs:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      api:
+        type: 'null'
+      apikey:
+        type: 'null'
+      shortname:
+        type: 'null'
+  changyan:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      appid:
+        type: 'null'
+      appkey:
+        type: 'null'
+  valine:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      appId:
+        type: 'null'
+      appKey:
+        type: 'null'
+      placeholder:
+        type: string
+      avatar:
+        type: string
+      meta:
+        type: array
+        items:
+          '0':
+            type: string
+          '1':
+            type: string
+          '2':
+            type: string
+      pageSize:
+        type: number
+      language:
+        type: 'null'
+      visitor:
+        type: boolean
+      comment_count:
+        type: boolean
+      recordIP:
+        type: boolean
+      serverURLs:
+        type: 'null'
+  livere_uid:
+    type: 'null'
+  gitalk:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      github_id:
+        type: 'null'
+      repo:
+        type: 'null'
+      client_id:
+        type: 'null'
+      client_secret:
+        type: 'null'
+      admin_user:
+        type: 'null'
+      distraction_free_mode:
+        type: boolean
+      language:
+        type: 'null'
+  rating:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      id:
+        type: 'null'
+      color:
+        type: string
+  add_this_id:
+    type: 'null'
+  google_analytics:
+    type: object
+    properties:
+      tracking_id:
+        type: 'null'
+      only_pageview:
+        type: boolean
+  baidu_analytics:
+    type: 'null'
+  growingio_analytics:
+    type: 'null'
+  cnzz_siteid:
+    type: 'null'
+  leancloud_visitors:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      app_id:
+        type: 'null'
+      app_key:
+        type: 'null'
+      server_url:
+        type: 'null'
+      security:
+        type: boolean
+  firestore:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      collection:
+        type: string
+      apiKey:
+        type: 'null'
+      projectId:
+        type: 'null'
+  busuanzi_count:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      total_visitors:
+        type: boolean
+      total_visitors_icon:
+        type: string
+      total_views:
+        type: boolean
+      total_views_icon:
+        type: string
+      post_views:
+        type: boolean
+      post_views_icon:
+        type: string
+  algolia_search:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      hits:
+        type: object
+        properties:
+          per_page:
+            type: number
+      labels:
+        type: object
+        properties:
+          input_placeholder:
+            type: string
+          hits_empty:
+            type: string
+          hits_stats:
+            type: string
+  local_search:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      trigger:
+        type: string
+      top_n_per_article:
+        type: number
+      unescape:
+        type: boolean
+      preload:
+        type: boolean
+  swiftype_key:
+    type: 'null'
+  chatra:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      async:
+        type: boolean
+      id:
+        type: 'null'
+  tidio:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      key:
+        type: 'null'
+  note:
+    type: object
+    properties:
+      style:
+        type: string
+      icons:
+        type: boolean
+      light_bg_offset:
+        type: number
+  tabs:
+    type: object
+    properties:
+      transition:
+        type: object
+        properties:
+          tabs:
+            type: boolean
+          labels:
+            type: boolean
+  pdf:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      height:
+        type: string
+  mermaid:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      theme:
+        type: string
+  motion:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      async:
+        type: boolean
+      transition:
+        type: object
+        properties:
+          post_block:
+            type: string
+          post_header:
+            type: string
+          post_body:
+            type: string
+          coll_header:
+            type: string
+          sidebar:
+            type: string
+  pace:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      theme:
+        type: string
+  three:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      three_waves:
+        type: boolean
+      canvas_lines:
+        type: boolean
+      canvas_sphere:
+        type: boolean
+  canvas_ribbon:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      size:
+        type: number
+      alpha:
+        type: number
+      zIndex:
+        type: number
+  vendors:
+    type: object
+    properties:
+      _internal:
+        type: string
+      anime:
+        type: 'null'
+      fontawesome:
+        type: 'null'
+      mathjax:
+        type: 'null'
+      katex:
+        type: 'null'
+      copy_tex_js:
+        type: 'null'
+      copy_tex_css:
+        type: 'null'
+      pjax:
+        type: 'null'
+      jquery:
+        type: 'null'
+      fancybox:
+        type: 'null'
+      fancybox_css:
+        type: 'null'
+      mediumzoom:
+        type: 'null'
+      lazyload:
+        type: 'null'
+      pangu:
+        type: 'null'
+      quicklink:
+        type: 'null'
+      disqusjs_js:
+        type: 'null'
+      disqusjs_css:
+        type: 'null'
+      valine:
+        type: 'null'
+      gitalk_js:
+        type: 'null'
+      gitalk_css:
+        type: 'null'
+      algolia_search:
+        type: 'null'
+      instant_search:
+        type: 'null'
+      mermaid:
+        type: 'null'
+      velocity:
+        type: 'null'
+      velocity_ui:
+        type: 'null'
+      pace:
+        type: 'null'
+      pace_css:
+        type: 'null'
+      three:
+        type: 'null'
+      three_waves:
+        type: 'null'
+      canvas_lines:
+        type: 'null'
+      canvas_sphere:
+        type: 'null'
+      canvas_ribbon:
+        type: 'null'
+  css:
+    type: string
+  js:
+    type: string
+  images:
+    type: string
