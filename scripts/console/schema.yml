@@ -175,6 +175,8 @@ properties:
     properties:
       enable:
         type: boolean
+      service:
+        type: string
       icon:
         type: string
       text:
@@ -217,17 +219,29 @@ properties:
         type: boolean
       animation:
         type: boolean
+      comment:
+        type: string
   reward:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: object
+      additionalProperties:
+        type: string
   follow_me:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: object
+      additionalProperties:
+        type: string
   related_posts:
     type: object
     properties:
       enable:
         type: boolean
       title:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       display_in_home:
         type: boolean
       params:
@@ -235,6 +249,14 @@ properties:
         properties:
           maxCount:
             type: number
+          PPMixingRate:
+            type: number
+          isDate:
+            type: boolean
+          isImage:
+            type: boolean
+          isExcerpt:
+            type: boolean
   post_edit:
     type: object
     properties:
@@ -288,7 +310,9 @@ properties:
   android_chrome_color:
     type: string
   custom_logo:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
   codeblock:
     type: object
     properties:
@@ -307,7 +331,9 @@ properties:
           show_result:
             type: boolean
           style:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
   back2top:
     type: object
     properties:
@@ -352,7 +378,9 @@ properties:
       enable:
         type: boolean
       host:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       global:
         type: object
         properties:
@@ -361,39 +389,56 @@ properties:
           family:
             type: string
           size:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
+            - type: number
       title:
         type: object
         properties:
           external:
             type: boolean
           family:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
           size:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
+            - type: number
       headings:
         type: object
         properties:
           external:
             type: boolean
           family:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
           size:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
+            - type: number
       posts:
         type: object
         properties:
           external:
             type: boolean
           family:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
       codes:
         type: object
         properties:
           external:
             type: boolean
           family:
-            type: 'null'
+            anyOf:
+            - type: 'null'
+            - type: string
   disable_baidu_transformation:
     type: boolean
   index_with_subtitle:
@@ -401,13 +446,25 @@ properties:
   exturl:
     type: boolean
   google_site_verification:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
+    - type: number
   bing_site_verification:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
+    - type: number
   yandex_site_verification:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
+    - type: number
   baidu_site_verification:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
+    - type: number
   baidu_push:
     type: boolean
   math:
@@ -455,27 +512,37 @@ properties:
       priority:
         type: boolean
       ignores:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
+        - type: number
+        - type: array
   comments:
     type: object
     properties:
       style:
         type: string
       active:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       storage:
         type: boolean
       lazyload:
         type: boolean
       nav:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: object
   disqus:
     type: object
     properties:
       enable:
         type: boolean
       shortname:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       count:
         type: boolean
   disqusjs:
@@ -484,29 +551,43 @@ properties:
       enable:
         type: boolean
       api:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       apikey:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       shortname:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
   changyan:
     type: object
     properties:
       enable:
         type: boolean
       appid:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       appkey:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
   valine:
     type: object
     properties:
       enable:
         type: boolean
       appId:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       appKey:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       placeholder:
         type: string
       avatar:
@@ -514,16 +595,13 @@ properties:
       meta:
         type: array
         items:
-          '0':
-            type: string
-          '1':
-            type: string
-          '2':
-            type: string
+          type: string
       pageSize:
         type: number
       language:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       visitor:
         type: boolean
       comment_count:
@@ -531,7 +609,9 @@ properties:
       recordIP:
         type: boolean
       serverURLs:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
   livere_uid:
     type: 'null'
   gitalk:
@@ -540,54 +620,84 @@ properties:
       enable:
         type: boolean
       github_id:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       repo:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       client_id:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       client_secret:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       admin_user:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       distraction_free_mode:
         type: boolean
       language:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
   rating:
     type: object
     properties:
       enable:
         type: boolean
       id:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       color:
         type: string
   add_this_id:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
   google_analytics:
     type: object
     properties:
       tracking_id:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       only_pageview:
         type: boolean
   baidu_analytics:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
   growingio_analytics:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
   cnzz_siteid:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
   leancloud_visitors:
     type: object
     properties:
       enable:
         type: boolean
       app_id:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       app_key:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       server_url:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       security:
         type: boolean
   firestore:
@@ -598,9 +708,13 @@ properties:
       collection:
         type: string
       apiKey:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       projectId:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
   busuanzi_count:
     type: object
     properties:
@@ -651,7 +765,9 @@ properties:
       preload:
         type: boolean
   swiftype_key:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: string
   chatra:
     type: object
     properties:
@@ -660,14 +776,18 @@ properties:
       async:
         type: boolean
       id:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
   tidio:
     type: object
     properties:
       enable:
         type: boolean
       key:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
   note:
     type: object
     properties:
@@ -756,67 +876,129 @@ properties:
       _internal:
         type: string
       anime:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       fontawesome:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       mathjax:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       katex:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       copy_tex_js:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       copy_tex_css:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       pjax:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       jquery:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       fancybox:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       fancybox_css:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       mediumzoom:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       lazyload:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       pangu:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       quicklink:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       disqusjs_js:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       disqusjs_css:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       valine:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       gitalk_js:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       gitalk_css:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       algolia_search:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       instant_search:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       mermaid:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       velocity:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       velocity_ui:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       pace:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       pace_css:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       three:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       three_waves:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       canvas_lines:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       canvas_sphere:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       canvas_ribbon:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
   css:
     type: string
   js:
