@@ -81,13 +81,19 @@ properties:
       post:
         type: boolean
       language:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
   scheme:
     type: string
   darkmode:
     type: boolean
   menu:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: object
+      additionalProperties:
+        type: string
   menu_settings:
     type: object
     properties:
@@ -112,7 +118,9 @@ properties:
     type: object
     properties:
       url:
-        type: 'null'
+        anyOf:
+        - type: 'null'
+        - type: string
       rounded:
         type: boolean
       rotated:
@@ -120,7 +128,11 @@ properties:
   site_state:
     type: boolean
   social:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: object
+      additionalProperties:
+        type: string
   social_icons:
     type: object
     properties:
@@ -140,7 +152,11 @@ properties:
       layout:
         type: string
   links:
-    type: 'null'
+    anyOf:
+    - type: 'null'
+    - type: object
+      additionalProperties:
+        type: string
   toc:
     type: object
     properties:
