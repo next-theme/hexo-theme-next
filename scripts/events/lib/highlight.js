@@ -25,6 +25,7 @@ module.exports = hexo => {
   let { config } = hexo;
   let theme = hexo.theme.config;
   config.highlight.hljs = false;
+  config.prismjs = config.prismjs || {};
   theme.highlight = {
     enable: config.highlight.enable && !config.prismjs.enable,
     light : parse(`${hexo.plugin_dir}highlight.js/styles/${theme.codeblock.theme.light}.css`),
