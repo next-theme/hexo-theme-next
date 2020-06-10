@@ -80,7 +80,9 @@ NexT.boot.refresh = function() {
    * Need to add config option in Front-End at 'layout/_partials/head.njk' file.
    */
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img');
+  CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img', {
+    background: 'var(--content-bg-color)'
+  });
   CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
 

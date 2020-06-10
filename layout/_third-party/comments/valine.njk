@@ -4,8 +4,8 @@
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('{{ valine_uri }}', () => {
     new Valine(Object.assign({
-      el         : '#valine-comments',
-      path       : location.pathname,
+      el  : '#valine-comments',
+      path: location.pathname,
     }, {{ theme.valine | json }}
     ));
   }, window.Valine);
