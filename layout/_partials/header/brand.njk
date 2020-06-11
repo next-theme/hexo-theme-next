@@ -11,7 +11,7 @@
 
   <div class="site-meta">
     {%- if theme.custom_logo and theme.scheme === 'Muse' %}
-      <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}">
+      <img class="custom-logo-image" src="{{ url_for(theme.custom_logo) }}" alt="{{ title }}">
     {%- endif %}
 
     <a href="{{ config.root }}" class="brand" rel="start">
@@ -23,7 +23,7 @@
       <p class="site-subtitle" itemprop="description">{{ subtitle }}</p>
     {%- endif %}
     {%- if theme.custom_logo and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
-      <img class="custom-logo-image" src="{{ theme.custom_logo }}" alt="{{ title }}">
+      <img class="custom-logo-image" src="{{ url_for(theme.custom_logo) }}" alt="{{ title }}">
     {%- endif %}
   </div>
 
