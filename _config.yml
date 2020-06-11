@@ -287,11 +287,11 @@ related_posts:
     #isExcerpt: false
 
 # Post edit
-# Dependencies: https://github.com/hexojs/hexo-deployer-git
+# Easily browse and edit blog source code online.
 post_edit:
   enable: false
-  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source
-  #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit
+  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
+  #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
 # Show previous post and next post in post footer if exists
 # Available values: left | right | false
@@ -486,6 +486,7 @@ baidu_push: false
 # ---------------------------------------------------------------
 
 # Math Formulas Render Support
+# Server-side plugin: https://github.com/next-theme/hexo-filter-mathjax
 math:
   # Default (true) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in Front-matter.
@@ -523,12 +524,12 @@ lazyload: false
 
 # Pangu Support
 # For more information: https://github.com/vinta/pangu.js
+# Server-side plugin: https://github.com/next-theme/hexo-pangu
 pangu: false
 
 # Quicklink Support
-# Do not enable both `pjax` and `quicklink`.
 # For more information: https://github.com/GoogleChromeLabs/quicklink
-# Front-matter (unsupport home archive).
+# Front-matter variable (unsupport home archive).
 quicklink:
   enable: false
 
