@@ -34,6 +34,7 @@ module.exports = hexo => {
   theme.prism = {
     enable: config.prismjs.enable,
     light : `${hexo.plugin_dir}prismjs/themes/${theme.codeblock.prism.light}.css`,
-    dark  : `${hexo.plugin_dir}prismjs/themes/${theme.codeblock.prism.dark}.css`
+    dark  : `${hexo.plugin_dir}prismjs/themes/${theme.codeblock.prism.dark}.css`,
+    number: `${hexo.plugin_dir}prismjs/plugins/line-numbers/prism-line-numbers.css`
   };
 };
