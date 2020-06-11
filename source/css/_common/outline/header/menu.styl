@@ -27,11 +27,8 @@
     transition-property: border-color;
     the-transition();
 
-    // To prevent hover on external links with touch devices after click.
-    @media (hover: none) {
-      &:hover {
-        border-bottom-color: transparent !important;
-      }
+    &:hover, &.menu-item-active {
+      background: var(--menu-item-bg-color);
     }
   }
 
@@ -53,10 +50,6 @@
       margin-left: 0;
     }
   }
-}
-
-.menu-item-active a {
-  background: var(--menu-item-bg-color);
 }
 
 .use-motion .menu-item {
