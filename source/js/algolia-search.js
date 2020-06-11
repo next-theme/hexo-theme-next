@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         next    : '<i class="fa fa-angle-right"></i>'
       },
       cssClasses: {
-        root        : 'pagination',
+        list        : ['pagination', 'algolia-pagination'],
         item        : 'pagination-item',
         link        : 'page-number',
         selectedItem: 'current',
