@@ -1,0 +1,31 @@
+/* global hexo */
+
+'use strict';
+
+hexo.extend.helper.register('js_vendors', function() {
+  let { theme } = this;
+  let vendors = {
+    anime: 'anime.min.js'
+  };
+  if (theme.pjax) {
+    vendors.pjax = 'pjax/pjax.min.js';
+  }
+  if (theme.fancybox) {
+    vendors.jquery = '//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js';
+    vendors.fancybox = '//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js';
+  }
+  if (theme.mediumzoom) {
+    vendors.mediumzoom = '//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js';
+  }
+  if (theme.lazyload) {
+    vendors.lazyload = '//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js';
+  }
+  if (theme.pangu) {
+    vendors.pangu = '//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js';
+  }
+  if (theme.motion.enable) {
+    vendors.velocity = 'velocity/velocity.min.js';
+    vendors.velocity_ui = 'velocity/velocity.ui.min.js';
+  }
+  return vendors;
+});

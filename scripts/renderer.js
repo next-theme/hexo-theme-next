@@ -10,10 +10,6 @@ function njkCompile(data) {
   const env = nunjucks.configure(templateDir, {
     autoescape: false
   });
-  env.addFilter('attr', (dictionary, key, value) => {
-    dictionary[key] = value;
-    return dictionary;
-  });
   env.addFilter('json', dictionary => {
     if (typeof dictionary !== 'undefined' && dictionary !== null) {
       return JSON.stringify(dictionary);
