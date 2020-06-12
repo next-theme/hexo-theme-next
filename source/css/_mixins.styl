@@ -108,7 +108,10 @@ flex-column() {
   justify-content: center;
 }
 
-font-family-icons() {
+font-family-icons($icon = '') {
+  if ($icon) {
+    content: $icon;
+  }
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }

@@ -189,7 +189,7 @@ social_icons:
 
 # Blog rolls
 links_settings:
-  icon: fa fa-link
+  icon: fa fa-globe
   title: Links
   # Available values: block | inline
   layout: block
