@@ -14,20 +14,28 @@
   h1, h2, h3, h4, h5, h6 {
     padding-top: 10px;
 
-    .header-anchor {
+    // Supported plugins: hexo-renderer-markdown-it hexo-renderer-marked
+    .header-anchor, .headerlink {
       border-bottom-style: none;
-      color: $grey-light;
+      color: inherit;
       float: right;
+      font-size: $font-size-small;
       margin-left: 10px;
-      visibility: hidden;
+      opacity: 0;
 
-      &:hover {
-        color: inherit;
+      &::before {
+        font-family-icons('\f0c1');
       }
     }
 
-    &:hover .header-anchor {
-      visibility: visible;
+    &:hover {
+      .header-anchor, .headerlink {
+        opacity: .5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
 

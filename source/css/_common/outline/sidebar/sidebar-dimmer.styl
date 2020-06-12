@@ -13,11 +13,11 @@
     top: 0;
     width: 100%;
     z-index: $zindex-1;
-  }
 
-  .sidebar-active + #sidebar-dimmer {
-    opacity: .7;
-    transform: translateX(-100%);
-    transition: opacity .5s;
+    .sidebar-active & {
+      opacity: .7;
+      transform: translateX(-100%);
+      transition: opacity .5s;
+    }
   }
 }

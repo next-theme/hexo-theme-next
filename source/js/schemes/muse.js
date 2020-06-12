@@ -1,10 +1,8 @@
-/* global NexT, CONFIG, Velocity */
+/* global CONFIG, Velocity */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   const isRight = CONFIG.sidebar.position === 'right';
-  const SIDEBAR_WIDTH = CONFIG.sidebar.width || 320;
-  const SIDEBAR_DISPLAY_DURATION = 200;
   const mousePos = {};
 
   const sidebarToggleLines = {
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const sidebarToggleMotion = {
-    sidebarEl       : document.querySelector('.sidebar'),
     isSidebarVisible: false,
     init            : function() {
       sidebarToggleLines.init();
@@ -64,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     showSidebar: function() {
       this.isSidebarVisible = true;
-      this.sidebarEl.classList.add('sidebar-active');
+      document.body.classList.add('sidebar-active');
       if (typeof Velocity === 'function') {
         Velocity(document.querySelectorAll('.sidebar .motion-element'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
           stagger: 50,
@@ -73,30 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       sidebarToggleLines.close();
-      NexT.utils.isDesktop() && window.anime(Object.assign({
-        targets : document.body,
-        duration: SIDEBAR_DISPLAY_DURATION,
-        easing  : 'linear'
-      }, isRight ? {
-        'padding-right': SIDEBAR_WIDTH
-      } : {
-        'padding-left': SIDEBAR_WIDTH
-      }));
     },
     hideSidebar: function() {
       this.isSidebarVisible = false;
-      this.sidebarEl.classList.remove('sidebar-active');
+      document.body.classList.remove('sidebar-active');
 
       sidebarToggleLines.init();
-      NexT.utils.isDesktop() && window.anime(Object.assign({
-        targets : document.body,
-        duration: SIDEBAR_DISPLAY_DURATION,
-        easing  : 'linear'
-      }, isRight ? {
-        'padding-right': 0
-      } : {
-        'padding-left': 0
-      }));
     }
   };
   sidebarToggleMotion.init();

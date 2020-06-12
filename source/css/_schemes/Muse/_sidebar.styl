@@ -1,8 +1,14 @@
 if (hexo-config('sidebar.position') == 'right') {
+  .sidebar-active {
+    +desktop() {
+      padding-right: $sidebar-desktop;
+    }
+  }
+
   .sidebar {
     right: 0 - $sidebar-desktop;
 
-    &.sidebar-active {
+    .sidebar-active & {
       right: 0;
     }
   }
@@ -20,10 +26,16 @@ if (hexo-config('sidebar.position') == 'right') {
     left: $b2t-position-right;
   }
 } else {
+  .sidebar-active {
+    +desktop() {
+      padding-left: $sidebar-desktop;
+    }
+  }
+
   .sidebar {
     left: 0 - $sidebar-desktop;
 
-    &.sidebar-active {
+    .sidebar-active & {
       left: 0;
     }
   }

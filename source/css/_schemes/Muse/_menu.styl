@@ -15,15 +15,6 @@
   }
 }
 
-.menu-item-active a {
-  background: transparent;
-  border-bottom: 1px solid var(--link-hover-color) !important;
-
-  +mobile() {
-    border-bottom: 1px dotted $grey-lighter !important;
-  }
-}
-
 .menu .menu-item {
   +mobile() {
     margin: 0 10px;
@@ -36,8 +27,13 @@
       padding: 5px 10px;
     }
 
-    &:hover {
-      @extend .menu-item-active a;
+    &:hover, &.menu-item-active {
+      background: transparent;
+      border-bottom: 1px solid var(--link-hover-color);
+
+      +mobile() {
+        border-bottom: 1px dotted $grey-lighter;
+      }
     }
   }
 

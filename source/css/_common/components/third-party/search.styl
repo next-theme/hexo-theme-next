@@ -115,33 +115,18 @@ if (hexo-config('algolia_search.enable')) {
   }
 
   .algolia-pagination {
-    .pagination {
-      border-top: none;
-      margin: 40px 0;
-      opacity: 1;
-      padding: 0;
-    }
+    // Override default style of ul
+    margin: 40px 0;
+    opacity: 1;
+    padding: 0;
 
     .pagination-item {
       display: inline-block;
     }
 
-    .page-number {
-      border-top: 1px solid transparent;
-      the-transition();
-
-      &:hover {
-        border-top: 1px solid $black-deep;
-      }
-    }
-
     .current .page-number {
       @extend .pagination .page-number.current;
       cursor: default;
-
-      &:hover {
-        border-top-color: $pagination-active-border;
-      }
     }
 
     .disabled-item {
