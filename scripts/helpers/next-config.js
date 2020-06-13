@@ -33,7 +33,8 @@ hexo.extend.helper.register('next_config', function() {
       labels   : theme.algolia_search.labels
     },
     localsearch: theme.local_search,
-    motion     : theme.motion
+    motion     : theme.motion,
+    prism      : config.prismjs.enable && !config.prismjs.preprocess
   };
   if (config.search) {
     exportConfig.path = config.search.path;
