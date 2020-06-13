@@ -349,6 +349,10 @@ codeblock:
   theme:
     light: default
     dark: tomorrow-night
+  # See: https://github.com/PrismJS/prism/tree/master/themes
+  prism:
+    light: prism
+    dark: prism-dark
   # Add copy button on codeblock
   copy_button:
     enable: false
@@ -882,6 +886,14 @@ vendors:
   # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
   fontawesome:
+
+  # Prism
+  # prism: //cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js
+  # prism_autoloader: //cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js
+  # prism_line_numbers: //cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.js
+  prism:
+  prism_autoloader:
+  prism_line_numbers:
 
   # MathJax
   # mathjax: //cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

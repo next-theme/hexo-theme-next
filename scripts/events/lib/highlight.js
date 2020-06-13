@@ -22,11 +22,19 @@ function parse(file) {
 }
 
 module.exports = hexo => {
-  hexo.config.highlight.hljs = false;
-  let light = `${hexo.plugin_dir}highlight.js/styles/${hexo.theme.config.codeblock.theme.light}.css`;
-  let dark = `${hexo.plugin_dir}highlight.js/styles/${hexo.theme.config.codeblock.theme.dark}.css`;
-  hexo.theme.config.highlight = {
-    light: parse(light),
-    dark : parse(dark)
+  let { config } = hexo;
+  let theme = hexo.theme.config;
+  config.highlight.hljs = false;
+  config.prismjs = config.prismjs || {};
+  theme.highlight = {
+    enable: config.highlight.enable && !config.prismjs.enable,
+    light : parse(`${hexo.plugin_dir}highlight.js/styles/${theme.codeblock.theme.light}.css`),
+    dark  : parse(`${hexo.plugin_dir}highlight.js/styles/${theme.codeblock.theme.dark}.css`)
+  };
+  theme.prism = {
+    enable: config.prismjs.enable,
+    light : `${hexo.plugin_dir}prismjs/themes/${theme.codeblock.prism.light}.css`,
+    dark  : `${hexo.plugin_dir}prismjs/themes/${theme.codeblock.prism.dark}.css`,
+    number: `${hexo.plugin_dir}prismjs/plugins/line-numbers/prism-line-numbers.css`
   };
 };

@@ -3,10 +3,17 @@
 'use strict';
 
 hexo.extend.helper.register('js_vendors', function() {
-  let { theme } = this;
+  let { config, theme } = this;
   let vendors = {
     anime: 'anime.min.js'
   };
+  if (config.prismjs.enable && !config.prismjs.preprocess) {
+    vendors.prism = '//cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js';
+    vendors.prism_autoloader = '//cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js';
+    if (config.prismjs.line_number) {
+      vendors.prism_line_numbers = '//cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.js';
+    }
+  }
   if (theme.pjax) {
     vendors.pjax = 'pjax/pjax.min.js';
   }
