@@ -5,24 +5,24 @@
 const crypto = require('crypto');
 
 hexo.extend.helper.register('next_inject', function(point) {
-  return hexo.theme.config.injects[point]
+  return this.theme.injects[point]
     .map(item => this.partial(item.layout, item.locals, item.options))
     .join('');
 });
 
 hexo.extend.helper.register('next_js', function(...urls) {
-  const { js } = hexo.theme.config;
+  const { js } = this.theme;
   return urls.map(url => this.js(`${js}/${url}`)).join('');
 });
 
 hexo.extend.helper.register('next_vendors', function(url) {
   if (url.startsWith('//')) return url;
-  const internal = hexo.theme.config.vendors._internal;
+  const internal = this.theme.vendors._internal;
   return this.url_for(`${internal}/${url}`);
 });
 
 hexo.extend.helper.register('post_edit', function(src) {
-  const theme = hexo.theme.config;
+  const { theme } = this;
   if (!theme.post_edit.enable) return '';
   return this.next_url(theme.post_edit.url + src, '<i class="fa fa-pen-nib"></i>', {
     class: 'post-edit-link',
@@ -31,7 +31,7 @@ hexo.extend.helper.register('post_edit', function(src) {
 });
 
 hexo.extend.helper.register('post_nav', function(post) {
-  const theme = hexo.theme.config;
+  const { theme } = this;
   if (theme.post_navigation === false || (!post.prev && !post.next)) return '';
   const prev = theme.post_navigation === 'right' ? post.prev : post.next;
   const next = theme.post_navigation === 'right' ? post.next : post.prev;

@@ -1,37 +1,19 @@
 'use strict';
 
-function isObject(item) {
-  return item && typeof item === 'object' && !Array.isArray(item);
-}
-
-function merge(target, source) {
-  for (const key in source) {
-    if (isObject(target[key]) && isObject(source[key])) {
-      merge(target[key], source[key]);
-    } else {
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
+const merge = require('hexo-util').deepMerge || require('lodash/merge');
 
 module.exports = hexo => {
   let data = hexo.locals.get('data');
 
   /**
    * Merge configs from _data/next.yml into hexo.theme.config.
-   * If `override`, configs in next.yml will rewrite configs in hexo.theme.config.
    * If next.yml not exists, merge all `theme_config.*` into hexo.theme.config.
    */
   if (data.next) {
-    if (data.next.override) {
-      hexo.theme.config = data.next;
-    } else {
-      merge(hexo.config, data.next);
-      merge(hexo.theme.config, data.next);
-    }
-  } else {
-    merge(hexo.theme.config, hexo.config.theme_config);
+    hexo.config = merge(hexo.config, data.next);
+    hexo.theme.config = merge(hexo.theme.config, data.next);
+  } else if (hexo.config.theme_config) {
+    hexo.theme.config = merge(hexo.theme.config, hexo.config.theme_config);
   }
 
   if (hexo.theme.config.cache && hexo.theme.config.cache.enable && hexo.config.relative_link) {
