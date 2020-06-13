@@ -888,7 +888,7 @@ vendors:
   fontawesome:
 
   # Prism
-  # prism: //cdn.jsdelivr.net/npm/prismjs@1/prism.min.js
+  # prism: //cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js
   # prism_autoloader: //cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js
   # prism_line_numbers: //cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.js
   prism:
