@@ -70,6 +70,7 @@ NexT.utils = {
           span.classList.add(`hljs-${name}`);
         });
       });
+      if (!CONFIG.copycode.enable) return;
       element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>');
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', event => {
