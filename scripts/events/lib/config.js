@@ -28,7 +28,7 @@ module.exports = hexo => {
     let { i18n } = hexo.theme;
 
     const mergeLang = lang => {
-      i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
+      if (data.languages[lang]) i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
     };
 
     if (Array.isArray(language)) {

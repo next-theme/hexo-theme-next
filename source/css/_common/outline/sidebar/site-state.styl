@@ -1,22 +1,15 @@
 .site-state {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   line-height: 1.4;
   margin-top: 10px;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
-.site-state-item {
-  &:not(:first-child) {
-    border-left: 1px solid $site-state-item-border-color;
-  }
-
-  a {
-    border-bottom: none;
-    display: block;
-    padding: 0 15px;
-  }
+.site-state-item a {
+  border-bottom: none;
+  display: block;
+  padding: 0 15px;
 }
 
 .site-state-item-count {
