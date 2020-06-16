@@ -1,7 +1,9 @@
 .sidebar {
-  background: var(--body-bg-color);
+  // Make sure that .content-wrap and .sidebar are the same height
+  // Required for .sidebar-inner `position: sticky;`
+  align-self: stretch;
+  background: initial;
   box-shadow: none;
-  margin-top: 100%;
   position: static;
   width: $sidebar-desktop;
 
@@ -20,19 +22,12 @@
   box-shadow: $box-shadow;
   box-sizing: border-box;
   color: var(--text-color);
+  position: sticky;
+  top: $sidebar-offset;
   width: $sidebar-desktop;
 
   if (hexo-config('motion.enable') && hexo-config('motion.transition.sidebar')) {
     opacity: 0;
-  }
-
-  &.affix {
-    position: fixed;
-    top: $sidebar-offset;
-  }
-
-  &.affix-bottom {
-    position: absolute;
   }
 }
 
