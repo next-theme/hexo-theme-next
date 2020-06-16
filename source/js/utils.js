@@ -70,7 +70,7 @@ NexT.utils = {
           span.classList.add(`hljs-${name}`);
         });
       });
-      if (!CONFIG.copycode.enable) return;
+      if (!CONFIG.copycode) return;
       element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>');
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', event => {
@@ -83,21 +83,13 @@ NexT.utils = {
         ta.readOnly = true;
         ta.value = code;
         document.body.append(ta);
-        const selection = document.getSelection();
-        const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
         ta.select();
         ta.setSelectionRange(0, code.length);
         ta.readOnly = false;
         const result = document.execCommand('copy');
-        if (CONFIG.copycode.show_result) {
-          target.querySelector('i').className = result ? 'fa fa-check-circle fa-fw' : 'fa fa-times-circle fa-fw';
-        }
+        target.querySelector('i').className = result ? 'fa fa-check-circle fa-fw' : 'fa fa-times-circle fa-fw';
         ta.blur(); // For iOS
         target.blur();
-        if (selected) {
-          selection.removeAllRanges();
-          selection.addRange(selected);
-        }
         document.body.removeChild(ta);
       });
       element.addEventListener('mouseleave', () => {
