@@ -24,14 +24,8 @@
   }
 
   h2, h3, h4, h5, h6 {
-    if ($note-icons) {
-      margin-top: 3px;
-    } else {
-      margin-top: 0;
-    }
-
     border-bottom: initial;
-    margin-bottom: 0;
+    margin: 0;
     padding-top: 0;
   }
 
@@ -54,7 +48,6 @@
         left: .3em;
         position: absolute;
         top: calc(50% - 1em);
-        font-family-icons();
       }
     }
   }
@@ -63,6 +56,11 @@
     &.{$type} {
       if ($note-style == 'flat') {
         background: lookup('$note-bg-' + $type);
+        if (hexo-config('darkmode')) {
+          @media (prefers-color-scheme: dark) {
+            background: mix(lookup('$note-bg-' + $type), $body-bg-color-dark, 10%);
+          }
+        }
       }
 
       if ($note-style == 'modern') {
@@ -72,11 +70,11 @@
 
         a, span.exturl {
           &:not(.btn) {
-            border-bottom: 1px solid lookup('$note-modern-text-' + $type);
+            border-bottom-color: lookup('$note-modern-text-' + $type);
             color: lookup('$note-modern-text-' + $type);
 
             &:hover {
-              border-bottom: 1px solid lookup('$note-modern-hover-' + $type);
+              border-bottom-color: lookup('$note-modern-hover-' + $type);
               color: lookup('$note-modern-hover-' + $type);
             }
           }
@@ -93,7 +91,7 @@
 
       if ($note-icons) {
         &:not(.no-icon)::before {
-          content: lookup('$note-icon-' + $type);
+          font-family-icons(lookup('$note-icon-' + $type));
 
           if ($note-style != 'modern') {
             color: lookup('$note-text-' + $type);

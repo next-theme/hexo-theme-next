@@ -2,7 +2,8 @@
   display: grid;
   gap: 1.5rem 1.5rem;
   grid-template-columns: 1fr 1fr;
-  padding: 1.5rem;
+  margin-bottom: 20px;
+  padding: 1rem;
 
   +mobile() {
     grid-template-columns: 1fr;
@@ -10,19 +11,21 @@
 
   .link-grid-container {
     border: solid $grey-lighter;
-    box-shadow: 1rem 1rem .5rem gray;
-    height: 5rem;
+    box-shadow: 1rem 1rem .5rem rgba(0, 0, 0, .5);
+    min-height: 5rem;
+    // Fix issue #30
+    min-width: 0;
     padding: .5rem;
     position: relative;
     transition: background .3s;
 
     &:hover {
       animation: shake .5s;
-      background: rgba(230, 244, 250, .5);
+      background: var(--card-bg-color);
     }
 
     &:active {
-      box-shadow: .5rem .5rem .25rem gray;
+      box-shadow: .5rem .5rem .25rem rgba(0, 0, 0, .5);
       transform: translate(.2rem, .2rem);
     }
 
