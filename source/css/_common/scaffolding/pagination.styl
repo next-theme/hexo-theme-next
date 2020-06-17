@@ -17,8 +17,7 @@ $page-number-basic {
     @extend $page-number-basic;
     border-bottom: 0;
     border-top: 1px solid $pagination-link-border;
-    transition-property: border-color;
-    the-transition();
+    transition: border-color $transition-ease;
 
     &:hover {
       border-top-color: $pagination-link-hover-border;

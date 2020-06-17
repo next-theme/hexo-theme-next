@@ -17,7 +17,7 @@
       float: right;
       font-size: $font-size-larger;
       margin-left: -1.2em;
-      the-transition-ease-in();
+      transition: color $transition-ease-in;
 
       +mobile-small() {
         margin-left: initial;
@@ -45,9 +45,9 @@
     left: 0;
     position: absolute;
     transform: scaleX(0);
+    transition: transform $transition-ease;
     visibility: hidden;
     width: 100%;
-    the-transition();
   }
 
   &:hover::before {

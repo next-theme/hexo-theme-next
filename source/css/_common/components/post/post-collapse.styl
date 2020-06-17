@@ -61,8 +61,7 @@
     margin: 30px 0;
     padding-left: 15px;
     position: relative;
-    transition-property: border;
-    the-transition();
+    transition: border $transition-ease;
 
     &::before {
       background: $grey;
@@ -74,9 +73,8 @@
       margin-left: -4px;
       position: absolute;
       top: $font-size-smallest;
-      transition-property: background;
+      transition: background $transition-ease;
       width: 6px;
-      the-transition();
     }
 
     &:hover {
