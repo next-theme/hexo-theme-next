@@ -1,5 +1,5 @@
 .sidebar {
-  background: initial;
+  bottom: initial;
   box-shadow: none;
   margin-top: $sidebar-offset;
   position: sticky;
@@ -92,10 +92,6 @@
   if (hexo-config('links_settings.layout') == 'inline') {
     display: inline-block;
     sidebar-inline-links-item();
-
-    if (!hexo-config('social_icons.icons_only')) {
-      width: unset;
-    }
   }
 }
 
