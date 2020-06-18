@@ -1,5 +1,10 @@
+.search-active {
+  overflow: hidden;
+}
+
 .search-pop-overlay {
   background: rgba(0, 0, 0, 0);
+  display: flex;
   height: 100%;
   left: 0;
   position: fixed;
@@ -9,7 +14,7 @@
   width: 100%;
   z-index: $zindex-4;
 
-  &.search-active {
+  .search-active & {
     background: rgba(0, 0, 0, .3);
     transition: background .2s;
     visibility: visible;
@@ -20,9 +25,7 @@
   background: var(--card-bg-color);
   border-radius: 5px;
   height: 80%;
-  left: calc(50% - 350px);
-  position: fixed;
-  top: 10%;
+  margin: auto;
   transform: scale(0);
   transition: transform .2s;
   width: 700px;
@@ -35,9 +38,6 @@
   +mobile() {
     border-radius: 0;
     height: 100%;
-    left: 0;
-    margin: 0;
-    top: 0;
     width: 100%;
   }
 
