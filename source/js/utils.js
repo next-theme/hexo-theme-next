@@ -354,13 +354,6 @@ NexT.utils = {
     }
   },
 
-  setAffixParam: function() {
-    const sidebarOffset = CONFIG.sidebar.offset || 12;
-    const headerOffset = document.querySelector('.header-inner').offsetHeight;
-
-    document.querySelector('.sidebar-inner').style.marginTop = headerOffset + sidebarOffset + 'px';
-  },
-
   getScript: function(url, callback, condition) {
     if (condition) {
       callback();

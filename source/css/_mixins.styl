@@ -96,3 +96,16 @@ font-family-icons($icon = '') {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
+
+main-container() {
+  margin: 0 auto;
+  width: $content-desktop;
+
+  +desktop-large() {
+    width: $content-desktop-large;
+  }
+
+  +desktop-largest() {
+    width: $content-desktop-largest;
+  }
+}

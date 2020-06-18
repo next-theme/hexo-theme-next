@@ -71,15 +71,6 @@ NexT.boot.registerEvents = function() {
       target && target.click();
     }
   });
-
-  if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') {
-    NexT.utils.setAffixParam();
-    window.matchMedia('(min-width: 992px)').addListener(event => {
-      if (event.matches) {
-        NexT.utils.setAffixParam();
-      }
-    });
-  }
 };
 
 NexT.boot.refresh = function() {

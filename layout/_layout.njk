@@ -13,24 +13,22 @@
   <div class="container{%- if theme.motion.enable %} use-motion{%- endif %}">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">{% include '_partials/header/index.njk' %}</div>
-    </header>
-
-    {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
-
     <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          {% include '_partials/header/sub-menu.njk' %}
-          <div class="content {% block class %}{% endblock %}">
-            {% block content %}{% endblock %}
-          </div>
-          {% include '_partials/comments.njk' %}
-        </div>
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner">{% include '_partials/header/index.njk' %}</div>
         {%- if theme.sidebar.display !== 'remove' %}
           {% block sidebar %}{% endblock %}
         {%- endif %}
+      </header>
+
+      {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
+
+      <div class="main-inner">
+        {% include '_partials/header/sub-menu.njk' %}
+        <div class="content {% block class %}{% endblock %}">
+          {% block content %}{% endblock %}
+        </div>
+        {% include '_partials/comments.njk' %}
       </div>
     </main>
 

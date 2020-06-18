@@ -1,30 +1,14 @@
+.main-inner {
+  main-container();
+
+  +mobile() {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 .header-inner, .main-inner, .footer-inner {
   +mobile() {
     width: auto;
   }
-}
-
-.header-inner {
-  padding-top: 100px;
-
-  +mobile() {
-    padding-top: 50px;
-  }
-}
-
-.main-inner {
-  padding-bottom: 60px;
-}
-
-.content {
-  padding-top: 70px;
-
-  +mobile() {
-    padding-top: 35px;
-  }
-}
-
-embed {
-  display: block;
-  margin: 0 auto 25px auto;
 }

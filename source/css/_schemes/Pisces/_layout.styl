@@ -1,14 +1,11 @@
 .header {
-  margin: 0 auto;
-  position: relative;
-  width: $content-desktop;
+  // Make sure that .header and .main-inner are the same height
+  // Required for .sidebar `position: sticky;`
+  align-self: stretch;
+  width: $sidebar-desktop;
 
   +desktop-large() {
-    width: $content-desktop-large;
-  }
-
-  +desktop-largest() {
-    width: $content-desktop-largest;
+    width: $sidebar-desktop;
   }
 
   +tablet-mobile() {
@@ -22,7 +19,6 @@
   box-shadow: $box-shadow-inner;
   overflow: hidden;
   padding: 0;
-  position: absolute;
   top: 0;
   width: $sidebar-desktop;
 
@@ -37,20 +33,23 @@
   }
 }
 
-.main-inner {
+.main {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
+  main-container();
 
-  if (hexo-config('sidebar.position') != 'right') {
+  if (hexo-config('sidebar.position') == 'right') {
     flex-direction: row-reverse;
   }
+
   +tablet-mobile() {
+    display: block;
     width: auto;
   }
 }
 
-.content-wrap {
+.main-inner {
   align-self: stretch;
   background: var(--content-bg-color);
   border-radius: $border-radius-inner;
@@ -64,6 +63,10 @@
     padding: 20px;
     width: 100%;
   }
+}
+
+.content {
+  padding-top: 40px;
 }
 
 if (hexo-config('sidebar.position') == 'right') {
