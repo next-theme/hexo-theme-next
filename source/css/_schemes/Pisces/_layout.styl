@@ -33,14 +33,24 @@
   }
 }
 
-.main-inner {
+.main {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+  width: $content-desktop;
 
   if (hexo-config('sidebar.position') == 'right') {
     flex-direction: row-reverse;
   }
+  +desktop-large() {
+    width: $content-desktop-large;
+  }
+
+  +desktop-largest() {
+    width: $content-desktop-largest;
+  }
+
   +tablet-mobile() {
     display: block;
     width: auto;
