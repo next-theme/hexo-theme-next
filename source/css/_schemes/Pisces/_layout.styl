@@ -1,14 +1,13 @@
 .header {
-  margin: 0 auto;
-  position: relative;
-  width: $content-desktop;
+  // Make sure that .content-wrap and .sidebar are the same height
+  // Required for .sidebar-inner `position: sticky;`
+  align-self: stretch;
+  //margin: 0 auto;
+  //position: relative;
+  width: $sidebar-desktop;
 
   +desktop-large() {
-    width: $content-desktop-large;
-  }
-
-  +desktop-largest() {
-    width: $content-desktop-largest;
+    width: $sidebar-desktop;
   }
 
   +tablet-mobile() {
@@ -22,7 +21,7 @@
   box-shadow: $box-shadow-inner;
   overflow: hidden;
   padding: 0;
-  position: absolute;
+  //position: absolute;
   top: 0;
   width: $sidebar-desktop;
 
@@ -42,10 +41,11 @@
   display: flex;
   justify-content: space-between;
 
-  if (hexo-config('sidebar.position') != 'right') {
+  if (hexo-config('sidebar.position') == 'right') {
     flex-direction: row-reverse;
   }
   +tablet-mobile() {
+    display: block;
     width: auto;
   }
 }

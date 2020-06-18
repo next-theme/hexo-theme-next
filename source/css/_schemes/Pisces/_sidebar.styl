@@ -1,11 +1,10 @@
 .sidebar {
-  // Make sure that .content-wrap and .sidebar are the same height
-  // Required for .sidebar-inner `position: sticky;`
-  align-self: stretch;
   background: initial;
   box-shadow: none;
-  position: static;
-  width: $sidebar-desktop;
+  margin-top: $sidebar-offset;
+  position: sticky;
+  top: $sidebar-offset;
+  //width: $sidebar-desktop;
 
   +tablet-mobile() {
     display: none;
@@ -22,9 +21,7 @@
   box-shadow: $box-shadow;
   box-sizing: border-box;
   color: var(--text-color);
-  position: sticky;
-  top: $sidebar-offset;
-  width: $sidebar-desktop;
+  //width: $sidebar-desktop;
 
   if (hexo-config('motion.enable') && hexo-config('motion.transition.sidebar')) {
     opacity: 0;
