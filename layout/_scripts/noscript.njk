@@ -16,8 +16,9 @@
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line-before, .use-motion .logo-line-after {
+    transform: scaleX(1);
+  }
 
   .search-pop-overlay, .sidebar-nav { display: none; }
   .sidebar-panel { display: block; }

@@ -32,30 +32,26 @@
 }
 
 .logo-line-before, .logo-line-after {
+  background: var(--brand-color);
   display: block;
+  height: 2px;
   margin: 0 auto;
-  overflow: hidden;
   width: 75%;
 
   +mobile() {
     display: none;
   }
-
-  i {
-    background: var(--brand-color);
-    display: block;
-    height: 2px;
-    position: relative;
-  }
 }
 
 .use-motion {
-  .logo-line-before i {
-    left: -100%;
+  .logo-line-before {
+    transform-origin: left;
+    transform: scaleX(0);
   }
 
-  .logo-line-after i {
-    right: -100%;
+  .logo-line-after {
+    transform-origin: right;
+    transform: scaleX(0);
   }
 }
 

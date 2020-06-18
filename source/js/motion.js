@@ -33,8 +33,8 @@ NexT.motion.middleWares = {
     const image = document.querySelector('.custom-logo-image');
     const title = document.querySelector('.site-title');
     const subtitle = document.querySelector('.site-subtitle');
-    const logoLineTop = document.querySelector('.logo-line-before i');
-    const logoLineBottom = document.querySelector('.logo-line-after i');
+    const logoLineTop = document.querySelector('.logo-line-before');
+    const logoLineBottom = document.querySelector('.logo-line-after');
 
     brand && sequence.push({
       e: brand,
@@ -42,10 +42,11 @@ NexT.motion.middleWares = {
       o: {duration: 200}
     });
 
-    function getMistLineSettings(element, translateX) {
+    function getMistLineSettings(element) {
+      Velocity.hook(element, 'scaleX', 0);
       return {
         e: element,
-        p: {translateX},
+        p: {scaleX: 1},
         o: {
           duration     : 500,
           sequenceQueue: false
@@ -63,8 +64,8 @@ NexT.motion.middleWares = {
 
     CONFIG.scheme === 'Mist' && logoLineTop && logoLineBottom
     && sequence.push(
-      getMistLineSettings(logoLineTop, '100%'),
-      getMistLineSettings(logoLineBottom, '-100%')
+      getMistLineSettings(logoLineTop),
+      getMistLineSettings(logoLineBottom)
     );
 
     CONFIG.scheme === 'Muse' && image && pushImageToSequence();
@@ -165,11 +166,7 @@ NexT.motion.middleWares = {
     if (sidebarAffixTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini')) {
       Velocity(sidebarAffix, 'transition.' + sidebarAffixTransition, {
         display : null,
-        duration: 200,
-        complete: function() {
-          // After motion complete need to remove transform from sidebar to let affix work on Pisces | Gemini.
-          sidebarAffix.style.transform = 'initial';
-        }
+        duration: 200
       });
     }
     integrator.next();
