@@ -2,22 +2,12 @@
   // Make sure that .header and .main-inner are the same height
   // Required for .sidebar `position: sticky;`
   align-self: stretch;
-  width: $sidebar-desktop;
-
-  +desktop-large() {
-    width: $sidebar-desktop;
-  }
-
-  +tablet-mobile() {
-    width: auto;
-  }
 }
 
 .header-inner {
   background: var(--content-bg-color);
   border-radius: $border-radius-inner;
   box-shadow: $box-shadow-inner;
-  top: 0;
   width: $sidebar-desktop;
 
   +desktop-large() {

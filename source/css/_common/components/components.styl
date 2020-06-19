@@ -6,6 +6,20 @@ if (hexo-config('back2top.enable')) {
   @import (hexo-config('back2top.sidebar') ? 'back-to-top-sidebar' : 'back-to-top');
 }
 
+#noscript-warning {
+  background-color: lighten($red, 20%);
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: $zindex-5;
+}
+
 @import 'reading-progress' if (hexo-config('reading_progress.enable'));
 
 @import 'post';
