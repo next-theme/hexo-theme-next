@@ -109,3 +109,21 @@ main-container() {
     width: $content-desktop-largest;
   }
 }
+
+sidebar-toggle($reverse = false) {
+  $condition = hexo-config('sidebar.position') == 'right';
+  if (($scheme == 'Muse') || ($scheme == 'Mist')) {
+    $condition = $condition == $reverse;
+  }
+  if ($condition) {
+    left: $b2t-position-right;
+    +tablet-mobile() {
+      left: $b2t-position-right-mobile;
+    }
+  } else {
+    right: $b2t-position-right;
+    +tablet-mobile() {
+      right: $b2t-position-right-mobile;
+    }
+  }
+}

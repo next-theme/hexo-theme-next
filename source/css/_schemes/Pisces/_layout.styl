@@ -74,25 +74,12 @@ if (hexo-config('sidebar.position') == 'right') {
     right: 0;
   }
 
-  .book-mark-link {
-    left: $b2t-position-right;
-  }
-
   .footer-inner {
     padding-right: $sidebar-desktop + $sidebar-offset;
   }
 } else {
   .footer-inner {
     padding-left: $sidebar-desktop + $sidebar-offset;
-  }
-
-  .back-to-top {
-    left: auto;
-    right: $b2t-position-right;
-
-    +tablet-mobile() {
-      right: $b2t-position-right-mobile;
-    }
   }
 }
 

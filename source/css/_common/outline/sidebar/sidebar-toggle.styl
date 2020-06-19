@@ -3,14 +3,13 @@
   bottom: 45px;
   cursor: pointer;
   height: 14px;
-  left: $b2t-position-right;
   padding: 5px;
   position: fixed;
   width: 14px;
   z-index: $zindex-3;
+  sidebar-toggle();
 
   +tablet-mobile() {
-    left: $b2t-position-right-mobile;
     opacity: $b2t-opacity-hover;
 
     if (!hexo-config('sidebar.onmobile')) {

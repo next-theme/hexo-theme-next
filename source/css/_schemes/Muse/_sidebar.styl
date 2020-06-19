@@ -12,19 +12,6 @@ if (hexo-config('sidebar.position') == 'right') {
       right: 0;
     }
   }
-
-  .sidebar-toggle, .back-to-top {
-    left: auto;
-    right: $b2t-position-right;
-
-    +tablet-mobile() {
-      right: $b2t-position-right-mobile;
-    }
-  }
-
-  .book-mark-link {
-    left: $b2t-position-right;
-  }
 } else {
   .sidebar-active {
     +desktop() {
