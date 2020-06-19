@@ -10,7 +10,7 @@ hexo.extend.helper.register('next_font', function() {
   const fontStyles = ':300,300italic,400,400italic,700,700italic';
   const fontHost = config.host || '//fonts.googleapis.com';
 
-  //Get a font list from config
+  // Get a font list from config
   let fontFamilies = ['global', 'title', 'headings', 'posts', 'codes'].map(item => {
     if (config[item] && config[item].family && config[item].external) {
       return config[item].family + fontStyles;

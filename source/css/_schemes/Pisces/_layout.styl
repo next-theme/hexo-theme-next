@@ -17,8 +17,6 @@
   background: var(--content-bg-color);
   border-radius: $border-radius-inner;
   box-shadow: $box-shadow-inner;
-  overflow: hidden;
-  padding: 0;
   top: 0;
   width: $sidebar-desktop;
 
@@ -28,7 +26,6 @@
 
   +tablet-mobile() {
     border-radius: initial;
-    position: relative;
     width: auto;
   }
 }
@@ -69,21 +66,13 @@
   padding-top: 40px;
 }
 
-if (hexo-config('sidebar.position') == 'right') {
-  .header-inner {
-    right: 0;
-  }
+.footer-inner {
 
-  .footer-inner {
+  if (hexo-config('sidebar.position') == 'right') {
     padding-right: $sidebar-desktop + $sidebar-offset;
-  }
-} else {
-  .footer-inner {
+  } else {
     padding-left: $sidebar-desktop + $sidebar-offset;
   }
-}
-
-.footer-inner {
 
   +tablet-mobile() {
     padding-left: 0;

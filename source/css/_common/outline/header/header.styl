@@ -1,5 +1,14 @@
 // Header Section
 // --------------------------------------------------
+.headband {
+  background: $headband-bg;
+  height: $headband-height;
+
+  +tablet-mobile() {
+    display: none;
+  }
+}
+
 .header {
   background: $head-bg;
 }
@@ -14,7 +23,6 @@
   padding: 0 10px;
 }
 
-@import 'headerband';
 @import 'site-meta';
 @import 'site-nav';
 @import 'menu';
