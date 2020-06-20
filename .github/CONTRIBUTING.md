@@ -7,7 +7,7 @@
 
 # <div align="center"><a title="Go to homepage" href="https://theme-next.js.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
-First of all, thanks for taking your time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme Next](https://github.com/next-theme) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+First of all, thanks for taking your time to contribute and help make our project even better than it is today! The following is a set of guidelines for contributing to [Theme NexT](https://github.com/next-theme) and its libs submodules. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## Table Of Contents
 
@@ -43,7 +43,7 @@ Also, you can perform a [cursory search](https://github.com/next-theme/hexo-them
 
 Before submitting an Issue on GitHub, you can follow our [Quick debug instructions](https://theme-next.js.org/docs/troubleshooting.html#Quick-Debug-Instructions) to debug.
 
-If you find a bug in the source code, most importantly, please check carefully if you can reproduce the problem [in the latest release version of Next](https://github.com/next-theme/hexo-theme-next/releases/latest). Then, you can help us by [Reporting Bugs](#reporting-bugs) or [Suggesting Enhancements](#suggesting-enhancements) to our [Repository](https://github.com/next-theme/hexo-theme-next). Even better, you can [submit a Pull Request](#submitting-a-pull-request) with a fix.
+If you find a bug in the source code, most importantly, please check carefully if you can reproduce the problem [in the latest release version of NexT](https://github.com/next-theme/hexo-theme-next/releases/latest). Then, you can help us by [Reporting Bugs](#reporting-bugs) or [Suggesting Enhancements](#suggesting-enhancements) to our [Repository](https://github.com/next-theme/hexo-theme-next). Even better, you can [submit a Pull Request](#submitting-a-pull-request) with a fix.
 
 ### Reporting Bugs
 
@@ -55,8 +55,8 @@ Following these guidelines helps maintainers and the community understand your r
 * Provide more context by answering these questions:
     * Can you reproduce the problem? Can you reliably reproduce the issue? If not, provide details about how often the problem happens and under which conditions it normally happens.
     * Did the problem start happening recently or was this always a problem?
-    * If the problem started happening recently, can you reproduce the problem in an older version of Next? What's the most recent version in which the problem doesn't happen? You can download older versions of Next from [the releases page](https://github.com/next-theme/hexo-theme-next/releases).
-    * Which version of Node, Hexo and Next are you using? You can get the exact version by running `node -v`, `hexo version` in your terminal, or copy the contents in site's`package.json`.
+    * If the problem started happening recently, can you reproduce the problem in an older version of NexT? What's the most recent version in which the problem doesn't happen? You can download older versions of NexT from [the releases page](https://github.com/next-theme/hexo-theme-next/releases).
+    * Which version of Node, Hexo and NexT are you using? You can get the exact version by running `node -v`, `hexo version` in your terminal, or copy the contents in site's`package.json`.
     * Which packages do you have installed? You can get that list by copying the contents in site's`package.json`.
 * Describe the exact steps which reproduce the problem in as many details as possible. When listing steps, don't just say what you did, but explain how you did it, e.g. which command exactly you used. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/) or [a permanent link to a code snippet](https://help.github.com/articles/creating-a-permanent-link-to-a-code-snippet/), or a [Gist link](https://gist.github.com/).
 * Provide specific examples to demonstrate the steps. Include links to files (screenshots or GIFs) or live demo.
@@ -132,7 +132,7 @@ Issues related:
     - `Polls`: An issue that initiated a poll
 - By results
     - `Duplicate`: An issue which had been mentioned
-    - `Irrelevant`: An irrelevant issue for Next
+    - `Irrelevant`: An irrelevant issue for NexT
     - `Invalid`: An issue that cannot be reproduced
     - `Expected Behavior`: An issue that corresponds to expected behavior
     - `Need More Info`: Need more information for solving the issue

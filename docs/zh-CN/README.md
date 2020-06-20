@@ -42,23 +42,21 @@ $ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 ## 插件
 
-NexT 支持大量的第三方插件，它们可以被轻松地配置。
+插件丰富和拓展了 NexT 的功能。这些插件分为两种：核心插件和第三方插件。核心插件被 NexT 的基础功能所依赖。第三方插件默认通过 jsDelivr 的 CDN 服务加载，它们提供了大量的可选功能。
 
-例如，你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，启用 `pjax` 配置项：
+配置这些插件非常简单。例如，你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，启用 `pjax` 配置项：
 
 ```yml
 # Easily enable fast Ajax navigation on your website.
-# Dependencies: https://github.com/next-theme/pjax
+# For more information: https://github.com/next-theme/pjax
 pjax: true
 ```
 
-然后，打开它上面的 «Dependencies» 链接以查看它的安装步骤。
-
 ### 设置 CDN
 
-如果你想要通过 CDN 来加载插件脚本，那么需要设置相关的 CDN 链接。
+如果你想要通过自定义 CDN 而不是默认的 jsDelivr 来加载插件脚本，那么需要设置相关的 CDN 链接。
 
-例如，你想要使用 `mediumzoom` 插件并通过 CDN 加载，进入 Next 配置文件并找到如下内容：
+例如，你想要为 `mediumzoom` 插件设置 CDN 地址，进入 NexT 配置文件并找到如下内容：
 
 ```yml
 vendors:
@@ -77,7 +75,7 @@ $ cd themes/next
 $ git pull
 ```
 
-如果你在此过程中收到了任何错误报告 (例如 **«Commit your changes or stash them before you can merge»**)，我们推荐你使用 [Hexo 数据文件][docs-data-files-url]特性。\
+如果你在此过程中收到了任何错误报告 (例如 **«Commit your changes or stash them before you can merge»**)，我们推荐你使用 [Alternate Theme Config][docs-data-files-url]特性。\
 然而你也可以通过提交（`Commit`）、贮藏（`Stash`）或忽视（`Discard`）本地更改以绕过这种更新错误。具体方法请参考[这里](https://stackoverflow.com/a/15745424/5861495)。
 
 **如果你想要从 v5.x / v7.x 更新到最新版本，阅读[这篇文档][docs-update-5-1-x-url]。**

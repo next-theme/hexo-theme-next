@@ -56,7 +56,7 @@
     * Bug 是否能够重现？是一直出现还是偶尔出现？
     * Bug 是从什么时候开始发生的？
     * 如果 Bug 突然发生，使用 [旧版本主题](https://github.com/next-theme/hexo-theme-next/releases) 是否能够重现 Bug？又是从哪个版本开始出现 Bug？
-    * 你所使用 Node，Hexo 以及 Next 的版本号多少？你可以运行 `node -v` 和 `hexo version` 获取版本号，或者查看文件 `package.json` 的内容。
+    * 你所使用 Node，Hexo 以及 NexT 的版本号多少？你可以运行 `node -v` 和 `hexo version` 获取版本号，或者查看文件 `package.json` 的内容。
     * 你使用了哪些插件包？查看文件 `package.json` 的内容即可获取。
 * 一步步详细你是如何重现 Bug 的，做了什么，使用了哪些功能等等。如果你需要展示代码段，请使用 [Markdown 代码块](https://help.github.com/articles/creating-and-highlighting-code-blocks/) 或 [Github 预览链接](https://help.github.com/articles/creating-a-permanent-link-to-a-code-snippet/) 或 [Gist 链接](https://gist.github.com/)。
 * 提供 Bug 的样例，如图像文件、在线演示网址等等。

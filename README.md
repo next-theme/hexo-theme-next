@@ -42,23 +42,21 @@ Or you can see [detailed installation instructions][docs-installation-url] if yo
 
 ## Plugins
 
-NexT supports a large number of third-party plugins, which can be easily configured.
+Plugins extend and expand the functionality of NexT. There are two types of plugins: core plugins and third-party plugins. The core plugins are required by the basic functions of NexT. Third-party plugins are loaded from jsDelivr CDN by default, and they provide a large number of optional features.
 
-For example, if you want to enable `pjax` on your site, just set `pjax` to `true` in NexT config file:
+Configuring these plugins is very easy. For example, if you want to enable `pjax` on your site, just set `pjax` to `true` in NexT config file:
 
 ```yml
 # Easily enable fast Ajax navigation on your website.
-# Dependencies: https://github.com/next-theme/pjax
+# For more information: https://github.com/next-theme/pjax
 pjax: true
 ```
 
-Then visit the «Dependencies» link to get the installation instructions of this module.
-
 ### Configure CDN
 
-If you want to specify a CDN link for any plugins, you need to set / update the CDN link.
+If you want to specify the CDN provider for any plugins, you need to set / update the CDN URL.
 
-For example, if you want to use `mediumzoom` and load the plugin via CDN, go to NexT config and see:
+For example, if you want to set the CDN URL for `mediumzoom`, go to NexT config and see:
 
 ```yml
 vendors:
@@ -77,7 +75,7 @@ $ cd themes/next
 $ git pull
 ```
 
-And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-data-files-url] feature.\
+And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Alternate Theme Config][docs-data-files-url] feature.\
 However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` commands for local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
 **If you want to update from v5.x / v7.x to the latest version, read [this][docs-update-5-1-x-url].**

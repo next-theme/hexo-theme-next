@@ -42,17 +42,29 @@ $ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 ## Плагины
 
-В конфиге NexT'а теперь можно найти зависимости на каждый модуль, который был вынесен во внешние репозитории, которые могут быть найдены по [ссылке основной организации][official-plugins-url].
+Plugins extend and expand the functionality of NexT. There are two types of plugins: core plugins and third-party plugins. The core plugins are required by the basic functions of NexT. Third-party plugins are loaded from jsDelivr CDN by default, and they provide a large number of optional features.
 
-Например, Вы хотите использовать `pjax` для своего сайта. Открываем конфиг NexT'а и находим:
+Configuring these plugins is very easy. Например, Вы хотите использовать `pjax` для своего сайта. Открываем конфиг NexT'а и находим:
 
 ```yml
 # Easily enable fast Ajax navigation on your website.
-# Dependencies: https://github.com/next-theme/pjax
+# For more information: https://github.com/next-theme/pjax
 pjax: true
 ```
 
-Затем включаем параметр `pjax` и переходим по ссылке «Dependencies» с дальнейшеми инструкциями по установке этого модуля.
+### Configure CDN
+
+If you want to specify the CDN provider for any plugins, you need to set / update the CDN URL.
+
+For example, if you want to set the CDN URL for `mediumzoom`, go to NexT config and see:
+
+```yml
+vendors:
+  # ...
+  # Some contents...
+  # ...
+  mediumzoom: # Set or update mediumzoom CDN URL.
+```
 
 ## Обновление
 
@@ -63,7 +75,7 @@ $ cd themes/next
 $ git pull
 ```
 
-А если всплывают ошибки во время обновления (что-то наподобии **«Commit your changes or stash them before you can merge»**), рекомендуется ознакомиться с особенностью хранения [дата-файлов в Hexo][docs-data-files-url].\
+А если всплывают ошибки во время обновления (что-то наподобии **«Commit your changes or stash them before you can merge»**), рекомендуется ознакомиться с особенностью хранения [Alternate Theme Config][docs-data-files-url].\
 Как бы то ни было, можно обойти ошибки при обновлении если «Закомитить», «Стэшнуть» или «Откатить» локальные изменения. Смотрим  [здесь](https://stackoverflow.com/a/15745424/5861495) как это сделать.
 
 **Если нужно обновиться с версии v5.x / v7.x на последней версиями, читаем [здесь][docs-update-5-1-x-url].**
