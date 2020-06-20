@@ -25,7 +25,7 @@
   "homepage": "https://theme-next.js.org",
   "devDependencies": {
     "eslint": "7.1.0",
-    "eslint-config-theme-next": "1.1.4",
+    "eslint-config-theme-next": "1.2.0",
     "gulp": "4.0.2",
     "gulp-shell": "0.8.0",
     "js-yaml": "3.14.0",
