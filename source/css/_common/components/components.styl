@@ -1,6 +1,12 @@
 if (hexo-config('back2top.enable')) {
   .back-to-top {
     font-size: $b2t-font-size;
+
+    if (!hexo-config('back2top.scrollpercent')) {
+      span {
+        display: none;
+      }
+    }
   }
 
   @import (hexo-config('back2top.sidebar') ? 'back-to-top-sidebar' : 'back-to-top');

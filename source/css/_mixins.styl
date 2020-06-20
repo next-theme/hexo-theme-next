@@ -110,7 +110,7 @@ main-container() {
   }
 }
 
-sidebar-toggle($reverse = false) {
+sidebar-toggle-position($reverse = false) {
   $condition = hexo-config('sidebar.position') == 'right';
   if (($scheme == 'Muse') || ($scheme == 'Mist')) {
     $condition = $condition == $reverse;
@@ -125,5 +125,22 @@ sidebar-toggle($reverse = false) {
     +tablet-mobile() {
       right: $b2t-position-right-mobile;
     }
+  }
+}
+
+sidebar-toggle() {
+  background: $b2t-bg-color;
+  cursor: pointer;
+  opacity: $b2t-opacity;
+  position: fixed;
+  z-index: $zindex-3;
+  sidebar-toggle-position();
+
+  &:hover {
+    opacity: $b2t-opacity-hover;
+  }
+
+  +tablet-mobile() {
+    opacity: $b2t-opacity-hover;
   }
 }

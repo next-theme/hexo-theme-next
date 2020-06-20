@@ -317,15 +317,14 @@ NexT.utils = {
    */
   initSidebarDimension: function() {
     const sidebarNav = document.querySelector('.sidebar-nav');
-    const sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.offsetHeight : 0;
+    const sidebarb2t = document.querySelector('.sidebar-inner .back-to-top');
+    const sidebarb2tHeight = sidebarb2t ? sidebarb2t.offsetHeight : 0;
     const sidebarOffset = CONFIG.sidebar.offset || 12;
-    const sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
-    let sidebarSchemePadding = (CONFIG.sidebar.padding * 2) + sidebarNavHeight + sidebarb2tHeight;
+    let sidebarSchemePadding = CONFIG.sidebar.padding * 2 + sidebarNav.offsetHeight + sidebarb2tHeight;
     if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') sidebarSchemePadding += sidebarOffset * 2;
     // Initialize Sidebar & TOC Height.
     const sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
-    document.querySelector('.site-overview-wrap').style.maxHeight = sidebarWrapperHeight;
-    document.querySelector('.post-toc-wrap').style.maxHeight = sidebarWrapperHeight;
+    document.documentElement.style.setProperty('--sidebar-wrapper-height', sidebarWrapperHeight);
   },
 
   updateSidebarPosition: function() {

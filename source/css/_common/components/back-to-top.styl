@@ -1,24 +1,15 @@
 .back-to-top {
-  background: $b2t-bg-color;
   bottom: $b2t-position-bottom;
   box-sizing: border-box;
   color: $b2t-color;
-  cursor: pointer;
-  opacity: $b2t-opacity;
   padding: 0 6px;
-  position: fixed;
   transition: bottom $transition-ease;
-  z-index: $zindex-3;
   sidebar-toggle();
 
   if (hexo-config('back2top.scrollpercent')) {
     width: initial;
   } else {
     width: 24px;
-
-    span {
-      display: none;
-    }
   }
 
   &:hover {
@@ -27,9 +18,5 @@
 
   &.back-to-top-on {
     bottom: $b2t-position-bottom-on;
-  }
-
-  +tablet-mobile() {
-    opacity: $b2t-opacity-hover;
   }
 }

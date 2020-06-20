@@ -18,7 +18,6 @@ hexo.extend.helper.register('next_config', function() {
     exturl    : theme.exturl,
     sidebar   : theme.sidebar,
     copycode  : theme.codeblock.copy_button.enable,
-    back2top  : theme.back2top,
     bookmark  : theme.bookmark,
     fancybox  : theme.fancybox,
     mediumzoom: theme.mediumzoom,
