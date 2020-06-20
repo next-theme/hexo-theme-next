@@ -1,7 +1,4 @@
 {
   "extends": "theme-next",
-  "parserOptions": {
-    "ecmaVersion": 2018
-  },
   "root": true
 }
