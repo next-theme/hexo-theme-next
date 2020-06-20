@@ -72,9 +72,9 @@ symbol:
   colon: "："
 reward:
   donate: 赞赏
-  wechatpay: 微信支付
+  wechatpay: 微信
   alipay: 支付宝
-  paypal: 贝宝
+  paypal: PayPal
   bitcoin: 比特币
 follow_me:
   welcome: 欢迎关注我的其它发布渠道
