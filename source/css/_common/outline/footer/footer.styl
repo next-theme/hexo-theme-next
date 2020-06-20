@@ -15,17 +15,8 @@
 
 .footer-inner {
   box-sizing: border-box;
-  margin: 0 auto;
   text-align: center;
-  width: $content-desktop;
-
-  +desktop-large() {
-    width: $content-desktop-large;
-  }
-
-  +desktop-largest() {
-    width: $content-desktop-largest;
-  }
+  main-container();
 }
 
 @keyframes iconAnimate {
