@@ -3,13 +3,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const algoliaSettings = CONFIG.algolia;
   const { indexName, appID, apiKey } = algoliaSettings;
+  const input = document.querySelector('.search-input');
 
   let search = instantsearch({
     indexName,
     searchClient  : algoliasearch(appID, apiKey),
     searchFunction: helper => {
-      let searchInput = document.querySelector('.search-input');
-      if (searchInput.value) {
+      if (input.value) {
         helper.search();
       }
     }
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
       document.body.classList.add('search-active');
-      document.querySelector('.search-input').focus();
+      setTimeout(() => input.focus(), 500);
     });
   });
 
