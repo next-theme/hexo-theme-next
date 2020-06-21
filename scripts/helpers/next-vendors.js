@@ -15,7 +15,7 @@ hexo.extend.helper.register('js_vendors', function() {
     }
   }
   if (theme.pjax) {
-    vendors.pjax = 'pjax/pjax.min.js';
+    vendors.pjax = '//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js';
   }
   if (theme.fancybox) {
     vendors.jquery = '//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js';

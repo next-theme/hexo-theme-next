@@ -504,7 +504,7 @@ math:
     copy_tex: false
 
 # Easily enable fast Ajax navigation on your website.
-# Dependencies: https://github.com/next-theme/pjax
+# For more information: https://github.com/next-theme/pjax
 pjax: false
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
@@ -902,7 +902,7 @@ vendors:
   copy_tex_js:
   copy_tex_css:
 
-  # Internal version: 0.2.8
+  # Recommended version: 0.4.0
   # pjax: //cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js
   pjax:
 
@@ -978,7 +978,7 @@ vendors:
   pace:
   pace_css:
 
-  # Internal version: 1.0.0
+  # JavaScript 3D library
   # three: //cdn.jsdelivr.net/npm/three@0/build/three.min.js
   # three_waves: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/three-waves.min.js
   # canvas_lines: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/canvas_lines.min.js
