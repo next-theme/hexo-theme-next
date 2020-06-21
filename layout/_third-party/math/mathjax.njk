@@ -4,9 +4,6 @@
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
-        {%- if theme.math.mathjax.mhchem %}
-          load: ['[tex]/mhchem'],
-        {%- endif %}
         source: {
           '[tex]/amsCd': '[tex]/amscd',
           '[tex]/AMScd': '[tex]/amscd'
@@ -14,9 +11,6 @@
       },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
-        {%- if theme.math.mathjax.mhchem %}
-          packages: {'[+]': ['mhchem']},
-        {%- endif %}
         tags: 'ams'
       },
       options: {

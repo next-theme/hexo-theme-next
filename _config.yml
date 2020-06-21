@@ -496,8 +496,6 @@ math:
   # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
   mathjax:
     enable: false
-    # See: https://mhchem.github.io/MathJax-mhchem/
-    mhchem: false
 
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
   katex:
@@ -542,7 +540,7 @@ quicklink:
   delay: true
   # Custom a time in milliseconds by which the browser must execute prefetching.
   timeout: 3000
-  # Default (true) will enable fetch() or falls back to XHR.
+  # Default (true) will attempt to use the fetch() API if supported (rather than link[rel=prefetch]).
   priority: true
 
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
@@ -834,7 +832,6 @@ motion:
     sidebar: slideUpIn
 
 # Progress bar in the top during page loading.
-# Dependencies: https://github.com/next-theme/theme-next-pace
 # For more information: https://github.com/HubSpot/pace
 pace:
   enable: false
@@ -851,9 +848,8 @@ three:
   canvas_lines: false
   canvas_sphere: false
 
-# Canvas-ribbon
-# Dependencies: https://github.com/next-theme/theme-next-canvas-ribbon
-# For more information: https://github.com/zproo/canvas-ribbon
+# Canvas ribbon
+# For more information: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
   enable: false
   size: 300 # The width of the ribbon
@@ -876,6 +872,7 @@ vendors:
 
   # Internal version: 3.1.0
   # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
+  # anime: //cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js
   anime:
 
   # Internal version: 5.13.0
@@ -886,13 +883,14 @@ vendors:
   # Prism
   # prism: //cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js
   # prism_autoloader: //cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js
-  # prism_line_numbers: //cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.js
+  # prism_line_numbers: //cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js
   prism:
   prism_autoloader:
   prism_line_numbers:
 
   # MathJax
   # mathjax: //cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js
   mathjax:
 
   # KaTeX
@@ -910,19 +908,20 @@ vendors:
 
   # FancyBox
   # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
-  # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
-  # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
+  # fancybox: //cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js
+  # fancybox_css: //cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css
   jquery:
   fancybox:
   fancybox_css:
 
   # Medium-zoom
   # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
+  # mediumzoom: //cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.5/medium-zoom.min.js
   mediumzoom:
 
   # Lazyload
   # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
-  # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js
+  # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.15.0/lozad.min.js
   lazyload:
 
   # Pangu
@@ -931,7 +930,8 @@ vendors:
   pangu:
 
   # Quicklink
-  # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
+  # quicklink: //cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js
+  # quicklink: //cdnjs.cloudflare.com/ajax/libs/quicklink/2.0.0/quicklink.umd.js
   quicklink:
 
   # DisqusJS
@@ -959,7 +959,7 @@ vendors:
 
   # Mermaid
   # mermaid: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
-  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js
+  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.5.2/mermaid.min.js
   mermaid:
 
   # Internal version: 1.2.1
@@ -973,13 +973,13 @@ vendors:
   # Internal version: 1.0.2
   # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
-  # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
+  # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
   pace:
   pace_css:
 
   # Internal version: 1.0.0
-  # three: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/three.min.js
+  # three: //cdn.jsdelivr.net/npm/three@0/build/three.min.js
   # three_waves: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/three-waves.min.js
   # canvas_lines: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/canvas_lines.min.js
   # canvas_sphere: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/canvas_sphere.min.js
@@ -988,8 +988,8 @@ vendors:
   canvas_lines:
   canvas_sphere:
 
-  # Internal version: 1.0.0
-  # canvas_ribbon: //cdn.jsdelivr.net/gh/next-theme/theme-next-canvas-ribbon@1/canvas-ribbon.js
+  # Canvas ribbon
+  # canvas_ribbon: //cdn.jsdelivr.net/npm/ribbon.js@1/dist/ribbon.min.js
   canvas_ribbon:
 
 # Assets

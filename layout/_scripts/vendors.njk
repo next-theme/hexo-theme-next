@@ -1,5 +1,5 @@
 {%- if theme.three.enable %}
-  {%- set three_uri = theme.vendors.three or next_vendors('three/three.min.js') %}
+  {%- set three_uri = theme.vendors.three or '//cdn.jsdelivr.net/npm/three@0/build/three.min.js' %}
   <script defer src="{{ three_uri }}"></script>
   {%- if theme.three.three_waves %}
     {%- set waves_uri = theme.vendors.three_waves or next_vendors('three/three-waves.min.js') %}
@@ -16,7 +16,7 @@
 {%- endif %}
 
 {%- if theme.canvas_ribbon.enable %}
-  {%- set canvas_ribbon_uri = theme.vendors.canvas_ribbon or next_vendors('canvas-ribbon/canvas-ribbon.js') %}
+  {%- set canvas_ribbon_uri = theme.vendors.canvas_ribbon or '//cdn.jsdelivr.net/npm/ribbon.js@1/dist/ribbon.min.js' %}
   <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{ theme.canvas_ribbon.zIndex }}" src="{{ canvas_ribbon_uri }}"></script>
 {%- endif %}
 

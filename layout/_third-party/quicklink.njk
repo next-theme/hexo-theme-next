@@ -1,11 +1,11 @@
 {%- if page.quicklink.enable %}
-  {%- set quicklink_uri = theme.vendors.quicklink or '//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js' %}
+  {%- set quicklink_uri = theme.vendors.quicklink or '//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js' %}
   <script src="{{ quicklink_uri }}"></script>
   <script>
     {%- if page.quicklink.delay %}
       window.addEventListener('load', () => {
     {%- endif %}
-      quicklink({
+      quicklink.listen({
         timeout : {{ page.quicklink.timeout }},
         priority: {{ page.quicklink.priority }},
         ignores : [uri => uri.includes('#'),uri => uri === '{{ url | replace('index.html', '') }}',{{ page.quicklink.ignores }}]
