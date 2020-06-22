@@ -19,9 +19,6 @@
 // P.S. If u want to change this paddings u may set this variables into `custom_file_path.variable` (in theme _config.yml).
 
 // So, it will 12px in Desktop, 10px in Tablets and 8px in Mobiles for all possible paddings.
-// ==================================================
-// Read values from NexT config and set they as local variables to use as string variables (in any CSS section).
-$use-seo = hexo-config('seo');
 
 // ==================================================
 // Desktop layout styles.
@@ -82,15 +79,6 @@ $use-seo = hexo-config('seo');
   padding: 10px 0 10px;
 }
 
-// Footer alignment.
-.main {
-  padding-bottom: initial;
-}
-
-.footer {
-  bottom: auto;
-}
-
 // Sub-menu(s).
 .sub-menu {
   border-bottom: initial;
@@ -120,17 +108,7 @@ $use-seo = hexo-config('seo');
   }
 
   h3 {
-    if ($use-seo) {
-      border-bottom: 1px solid $body-bg-color;
-    } else {
-      border-bottom: 1px dotted $body-bg-color;
-    }
-  }
-
-  h4 {
-    if ($use-seo) {
-      border-bottom: 1px dotted $body-bg-color;
-    }
+    border-bottom: 1px dotted $body-bg-color;
   }
 }
 
