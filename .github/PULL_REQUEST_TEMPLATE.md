@@ -23,7 +23,6 @@
 - [ ] Feature.
 - [ ] Code style update (formatting, local variables).
 - [ ] Refactoring (no functional changes, no api changes).
-- [ ] Build & CI related changes.
 - [ ] Documentation.
 - [ ] Translation. <!-- We use Crowdin to manage translations https://crowdin.com/project/hexo-theme-next -->
 - [ ] Other... Please describe:
@@ -31,13 +30,13 @@
 ## What is the current behavior?
 <!-- Please describe the current behavior that you are modifying, or link to a relevant issue -->
 
-Issue resolved: N/A
+Issue resolved:
 
 ## What is the new behavior?
 <!-- Description about this pull, in several words -->
 
-- Screenshots with this changes: N/A
-- Link to demo site with this changes: N/A
+- Link to demo site with this changes:
+- Screenshots with this changes:
 
 ### How to use?
 In NexT `_config.yml`:
