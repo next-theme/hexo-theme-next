@@ -1,5 +1,5 @@
 {%- if theme.pdf.enable %}
-{%- set pdf_uri = next_vendors('pdf/web/viewer.html') %}
+{%- set pdf_uri = url_for('lib/pdf/web/viewer.html') %}
 <script{{ pjax }}>
 document.querySelectorAll('.pdfobject-container').forEach(element => {
   let url = element.dataset.target;

@@ -10,15 +10,17 @@ hexo.extend.helper.register('next_inject', function(point) {
     .join('');
 });
 
-hexo.extend.helper.register('next_js', function(...urls) {
+hexo.extend.helper.register('next_js', function(url) {
+  const { next_version } = this;
   const { js } = this.theme;
-  return urls.map(url => this.js(`${js}/${url}`)).join('');
-});
-
-hexo.extend.helper.register('next_vendors', function(url) {
-  if (url.startsWith('//')) return url;
-  const internal = this.theme.vendors._internal;
-  return this.url_for(`${internal}/${url}`);
+  const { internal } = this.theme.vendors;
+  let src = `${js}/${url}`;
+  if (internal === 'jsdelivr') {
+    src = `//cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${url}`;
+  } else if (internal === 'unpkg') {
+    src = `//unpkg.com/hexo-theme-next@${next_version}/source/js/${url}`;
+  }
+  return this.js(src);
 });
 
 hexo.extend.helper.register('post_edit', function(src) {

@@ -1,3 +1,9 @@
+# ===============================================================
+# It's recommended to use Alternate Theme Config to configure the theme
+# Modifying this file may result in merge conflict
+# See: https://theme-next.js.org/docs/getting-started/configuration
+# ===============================================================
+
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
 # See: https://theme-next.js.org/docs/theme-settings/
@@ -480,9 +486,6 @@ baidu_push: false
 # See: https://theme-next.js.org/docs/third-party-services/
 # More plugins: https://github.com/next-theme/awesome-next
 # You may need to install dependencies or set CDN URLs in `vendors`
-# There are two different CDN providers by default:
-#   - jsDelivr (cdn.jsdelivr.net), works everywhere even in China
-#   - CDNJS (cdnjs.cloudflare.com), provided by cloudflare
 # ---------------------------------------------------------------
 
 # Math Formulas Render Support
@@ -857,47 +860,49 @@ canvas_ribbon:
   zIndex: -1 # The display level of the ribbon
 
 
-#! ---------------------------------------------------------------
+#! ==============================================================
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
 #! See: https://theme-next.js.org/docs/advanced-settings
-#! ---------------------------------------------------------------
+#! ==============================================================
 
 # Script Vendors. Set a CDN address for the vendor you want to customize.
-# Be aware that you would better use the same version as internal ones to avoid potential problems.
+# CDN URLs from UNPKG and CDNJS are provided in the comments for selection.
+# If left blank, jsDelivr will be used as the default CDN provider.
+# It's recommended to use the same version as internal ones to avoid potential problems.
 # Remember to use the https protocol of CDN files when you enable https on your site.
 vendors:
-  # Internal path prefix.
-  _internal: lib
+  # Available values: local, jsdelivr, unpkg
+  internal: local
 
   # Internal version: 3.1.0
-  # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
+  # anime: //unpkg.com/animejs@3.1.0/lib/anime.min.js
   # anime: //cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js
   anime:
 
   # Internal version: 5.13.0
-  # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
+  # fontawesome: //unpkg.com/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
   fontawesome:
 
   # Prism
-  # prism: //cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js
-  # prism_autoloader: //cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js
-  # prism_line_numbers: //cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js
+  # prism: //unpkg.com/prismjs@1/components/prism-core.min.js
+  # prism_autoloader: //unpkg.com/prismjs@1/plugins/autoloader/prism-autoloader.min.js
+  # prism_line_numbers: //unpkg.com/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js
   prism:
   prism_autoloader:
   prism_line_numbers:
 
   # MathJax
-  # mathjax: //cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  # mathjax: //unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   # mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js
   mathjax:
 
   # KaTeX
-  # katex: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
+  # katex: //unpkg.com/katex@0/dist/katex.min.css
   # katex: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css
-  # copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
-  # copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
+  # copy_tex_js: //unpkg.com/katex@0/dist/contrib/copy-tex.min.js
+  # copy_tex_css: //unpkg.com/katex@0/dist/contrib/copy-tex.min.css
   katex:
   copy_tex_js:
   copy_tex_css:
@@ -907,79 +912,79 @@ vendors:
   pjax:
 
   # FancyBox
-  # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
-  # fancybox: //cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js
-  # fancybox_css: //cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css
+  # jquery: //unpkg.com/jquery@3/dist/jquery.min.js
+  # fancybox: //unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js
+  # fancybox_css: //unpkg.com/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css
   jquery:
   fancybox:
   fancybox_css:
 
   # Medium-zoom
-  # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
+  # mediumzoom: //unpkg.com/medium-zoom@1/dist/medium-zoom.min.js
   # mediumzoom: //cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.5/medium-zoom.min.js
   mediumzoom:
 
   # Lazyload
-  # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
+  # lazyload: //unpkg.com/lozad@1/dist/lozad.min.js
   # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.15.0/lozad.min.js
   lazyload:
 
   # Pangu
-  # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
+  # pangu: //unpkg.com/pangu@4/dist/browser/pangu.min.js
   # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js
   pangu:
 
   # Quicklink
-  # quicklink: //cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js
+  # quicklink: //unpkg.com/quicklink@2/dist/quicklink.umd.js
   # quicklink: //cdnjs.cloudflare.com/ajax/libs/quicklink/2.0.0/quicklink.umd.js
   quicklink:
 
   # DisqusJS
-  # disqusjs_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
-  # disqusjs_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
+  # disqusjs_js: //unpkg.com/disqusjs@1/dist/disqus.js
+  # disqusjs_css: //unpkg.com/disqusjs@1/dist/disqusjs.css
   disqusjs_js:
   disqusjs_css:
 
   # Valine
-  # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
+  # valine: //unpkg.com/valine@1/dist/Valine.min.js
   # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.4.14/Valine.min.js
   valine:
 
   # Gitalk
-  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
-  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css
+  # gitalk_js: //unpkg.com/gitalk@1/dist/gitalk.min.js
+  # gitalk_css: //unpkg.com/gitalk@1/dist/gitalk.min.css
   gitalk_js:
   gitalk_css:
 
   # Algolia Search
-  # algolia_search: //cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js
-  # instant_search: //cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js
+  # algolia_search: //unpkg.com/algoliasearch@4/dist/algoliasearch-lite.umd.js
+  # instant_search: //unpkg.com/instantsearch.js@4/dist/instantsearch.production.min.js
   algolia_search:
   instant_search:
 
   # Mermaid
-  # mermaid: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
+  # mermaid: //unpkg.com/mermaid@8/dist/mermaid.min.js
   # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.5.2/mermaid.min.js
   mermaid:
 
   # Internal version: 1.2.1
-  # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
+  # velocity: //unpkg.com/velocity-animate@1/velocity.min.js
   # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
-  # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
+  # velocity_ui: //unpkg.com/velocity-animate@1/velocity.ui.min.js
   # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
   velocity:
   velocity_ui:
 
   # Internal version: 1.0.2
-  # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
+  # pace: //unpkg.com/pace-js@1/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
-  # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css
+  # pace_css: //unpkg.com/pace-js@1/themes/blue/pace-theme-minimal.min.css
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
   pace:
   pace_css:
 
   # JavaScript 3D library
-  # three: //cdn.jsdelivr.net/npm/three@0/build/three.min.js
+  # three: //unpkg.com/three@0/build/three.min.js
   # three_waves: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/three-waves.min.js
   # canvas_lines: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/canvas_lines.min.js
   # canvas_sphere: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/canvas_sphere.min.js
@@ -989,7 +994,7 @@ vendors:
   canvas_sphere:
 
   # Canvas ribbon
-  # canvas_ribbon: //cdn.jsdelivr.net/npm/ribbon.js@1/dist/ribbon.min.js
+  # canvas_ribbon: //unpkg.com/ribbon.js@1/dist/ribbon.min.js
   canvas_ribbon:
 
 # Assets
