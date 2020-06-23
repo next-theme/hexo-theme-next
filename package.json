@@ -24,7 +24,7 @@
   },
   "homepage": "https://theme-next.js.org",
   "devDependencies": {
-    "eslint": "7.1.0",
+    "eslint": "7.3.1",
     "eslint-config-theme-next": "1.2.0",
     "gulp": "4.0.2",
     "gulp-shell": "0.8.0",
