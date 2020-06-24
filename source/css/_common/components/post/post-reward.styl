@@ -24,8 +24,25 @@
   }
 }
 
-#qr {
+#post-reward {
   padding-top: 20px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  div {
+    display: inline-block;
+
+    if (hexo-config('reward_settings.animation')) {
+      &:hover p {
+        animation: roll .1s infinite linear;
+        // The animation may affect :hover of img in dark mode
+        pointer-events: none;
+      }
+    }
+  }
 
   img {
     display: inline-block;
@@ -33,20 +50,14 @@
     max-width: 100%;
     width: 180px;
   }
+}
 
-  if (hexo-config('reward_settings.animation')) {
-    div:hover p {
-      animation: roll .1s infinite linear;
-    }
+@keyframes roll {
+  from {
+    transform: rotateZ(30deg);
+  }
 
-    @keyframes roll {
-      from {
-        transform: rotateZ(30deg);
-      }
-
-      to {
-        transform: rotateZ(-30deg);
-      }
-    }
+  to {
+    transform: rotateZ(-30deg);
   }
 }
