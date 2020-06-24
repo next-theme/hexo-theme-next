@@ -73,8 +73,6 @@ sidebar-inline-links-item() {
   a, span.exturl {
     box-sizing: border-box;
     display: inline-block;
-    margin-bottom: 0;
-    margin-right: 0;
     max-width: 216px;
     overflow: hidden;
     padding: 0 5px;
@@ -143,4 +141,11 @@ sidebar-toggle() {
   +tablet-mobile() {
     opacity: $b2t-opacity-hover;
   }
+}
+
+round-icon($diameter) {
+  border-radius: 50%;
+  content: ' ';
+  height: $diameter;
+  width: $diameter;
 }
