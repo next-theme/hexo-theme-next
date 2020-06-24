@@ -5,7 +5,9 @@
   <a title="Russian" href="../docs/ru/CODE_OF_CONDUCT.md">:ru:</a>
 </div>
 
-# <div align="center"><a title="Go to homepage" href="https://theme-next.js.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
+<a title="NexT website" href="https://theme-next.js.org"><img align="right" alt="NexT logo" width="100" height="100" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg"></a>
+
+# NexT
 
 [NexT](https://theme-next.js.org) is an elegant and powerful theme for [Hexo](https://hexo.io/). With it, you can build a static blog hosted on [GitHub Pages](https://pages.github.com/) to share your life and communicate with new friends.
 
