@@ -6,23 +6,26 @@
   position: relative;
   text-align: center;
 
-  .fa {
-    display: block;
+  &::before, &::after {
+    left: 0;
+    line-height: 1;
     opacity: .6;
     position: absolute;
     width: 100%;
   }
 
-  .fa-quote-left {
+  &::before {
     border-top: 1px solid $grey-light;
     text-align: left;
     top: -20px;
+    font-family-icons('\f10d');
   }
 
-  .fa-quote-right {
+  &::after {
     border-bottom: 1px solid $grey-light;
     bottom: -20px;
     text-align: right;
+    font-family-icons('\f10e');
   }
 
   p, div {
