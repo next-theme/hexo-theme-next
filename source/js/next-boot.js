@@ -30,34 +30,28 @@ NexT.boot.registerEvents = function() {
   document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
     element.addEventListener('click', event => {
       const item = event.currentTarget;
-      const activeTabClassName = 'sidebar-nav-active';
-      const activePanelClassName = 'sidebar-panel-active';
-      if (item.classList.contains(activeTabClassName)) return;
+      if (item.matches('.sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview')) return;
+      const sidebar = document.querySelector('.sidebar-inner');
+      const panel = document.querySelectorAll('.sidebar-panel');
+      const activeClassName = ['sidebar-toc-active', 'sidebar-overview-active'];
 
-      const targets = document.querySelectorAll('.sidebar-panel');
-      const target = targets[index];
-      const currentTarget = targets[1 - index];
       window.anime({
-        targets : currentTarget,
+        targets : panel[1 - index],
         duration: TAB_ANIMATE_DURATION,
         easing  : 'linear',
         opacity : 0,
         complete: () => {
           // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
-          currentTarget.classList.remove(activePanelClassName);
-          target.style.opacity = 0;
-          target.classList.add(activePanelClassName);
+          sidebar.classList.remove(activeClassName[1 - index]);
+          panel[index].style.opacity = 0;
+          sidebar.classList.add(activeClassName[index]);
           window.anime({
-            targets : target,
+            targets : panel[index],
             duration: TAB_ANIMATE_DURATION,
             easing  : 'linear',
             opacity : 1
           });
         }
-      });
-
-      [...item.parentNode.children].forEach(element => {
-        element.classList.toggle(activeTabClassName, element === item);
       });
     });
   });

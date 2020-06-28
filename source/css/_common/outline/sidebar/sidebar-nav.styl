@@ -1,8 +1,13 @@
 // Sidebar Navigation
 .sidebar-nav {
+  display: none;
   margin: 0;
   padding-bottom: 20px;
   padding-left: 0;
+
+  .sidebar-nav-active & {
+    display: block;
+  }
 
   li {
     border-bottom: 1px solid transparent;
@@ -19,14 +24,14 @@
       color: $sidebar-nav-hover-color;
     }
   }
+}
 
-  .sidebar-nav-active {
-    border-bottom-color: $sidebar-highlight;
+.sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview {
+  border-bottom-color: $sidebar-highlight;
+  color: $sidebar-highlight;
+
+  &:hover {
     color: $sidebar-highlight;
-
-    &:hover {
-      color: $sidebar-highlight;
-    }
   }
 }
 
@@ -37,6 +42,6 @@
   overflow-y: auto;
 }
 
-.sidebar-panel-active {
+.sidebar-toc-active .post-toc-wrap, .sidebar-overview-active .site-overview-wrap {
   display: block;
 }

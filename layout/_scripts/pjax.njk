@@ -8,9 +8,6 @@ var pjax = new Pjax({
     '.languages',
     '#pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
@@ -26,6 +23,13 @@ document.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.subMenu)
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  if (hasTOC) {
+    document.querySelector('.sidebar-nav-toc').click();
+  } else {
+    document.querySelector('.sidebar-nav-overview').click();
   }
   NexT.utils.updateSidebarPosition();
 });
