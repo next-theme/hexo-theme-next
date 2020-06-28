@@ -4,12 +4,15 @@
     <span>0%</span>
   </div>
 {%- endif %}
+
 {%- if theme.reading_progress.enable %}
   <div class="reading-progress-bar"></div>
 {%- endif %}
+
 {%- if theme.bookmark.enable %}
   <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 {%- endif %}
+
 {%- if theme.github_banner.enable %}
   {%- set github_URL = theme.github_banner.permalink %}
   {%- set github_title = theme.github_banner.title %}
@@ -18,3 +21,7 @@
 
   {{ next_url(github_URL, github_image, {class: 'github-corner', title: github_title, "aria-label": github_title}) }}
 {%- endif %}
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
