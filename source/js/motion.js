@@ -29,6 +29,7 @@ NexT.motion.integrator = {
 NexT.motion.middleWares = {
   logo: function(integrator) {
     const sequence = [];
+    const header = document.querySelector('.header-inner');
     const image = document.querySelector('.custom-logo-image');
     const title = document.querySelector('.site-title');
     const subtitle = document.querySelector('.site-subtitle');
@@ -62,16 +63,12 @@ NexT.motion.middleWares = {
       });
     }
 
+    header && pushToSequence(header);
     CONFIG.scheme === 'Mist' && logoLine.length && getMistLineSettings(logoLine);
-
     CONFIG.scheme === 'Muse' && image && pushToSequence(image);
-
     title && pushToSequence(title);
-
     subtitle && pushToSequence(subtitle);
-
     toggle.length && pushToSequence(toggle);
-
     (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') && image && pushToSequence(image);
 
     if (sequence.length > 0) {
