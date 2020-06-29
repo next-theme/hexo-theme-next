@@ -99,6 +99,7 @@ NexT.boot.motion = function() {
       .add(NexT.motion.middleWares.menu)
       .add(NexT.motion.middleWares.postList)
       .add(NexT.motion.middleWares.sidebar)
+      .add(NexT.motion.middleWares.footer)
       .bootstrap();
   }
   NexT.utils.updateSidebarPosition();
