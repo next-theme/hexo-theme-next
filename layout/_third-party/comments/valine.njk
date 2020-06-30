@@ -6,7 +6,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
       path: location.pathname,
-    }, {{ theme.valine | json }}
+    }, {{ theme.valine | safedump }}
     ));
   }, window.Valine);
 });

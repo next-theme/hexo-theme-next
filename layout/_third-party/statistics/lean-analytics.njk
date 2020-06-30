@@ -61,7 +61,7 @@
         });
     }
 
-    let { app_id, app_key, server_url } = {{ theme.leancloud_visitors | json }};
+    let { app_id, app_key, server_url } = {{ theme.leancloud_visitors | safedump }};
     function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {

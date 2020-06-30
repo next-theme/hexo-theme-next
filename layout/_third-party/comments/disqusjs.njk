@@ -11,9 +11,9 @@ NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
       api       : '{{ theme.disqusjs.api }}' || 'https://disqus.com/api/',
       apikey    : '{{ theme.disqusjs.apikey }}',
       shortname : '{{ theme.disqusjs.shortname }}',
-      url       : {{ page.permalink | json }},
-      identifier: {{ page.path | json }},
-      title     : {{ page.title | json }},
+      url       : {{ page.permalink | safedump }},
+      identifier: {{ page.path | safedump }},
+      title     : {{ page.title | safedump }},
     });
   }, window.DisqusJS);
 });

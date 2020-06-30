@@ -6,7 +6,7 @@
 <script{{ pjax }} id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
-    sidebar: {{ page.sidebar | json }},
+    sidebar: {{ page.sidebar | safedump }},
     isHome : {{ is_home() }},
     isPost : {{ is_post() }},
     lang   : '{{ page.lang }}'

@@ -13,9 +13,9 @@
 {%- if page.comments %}
 <script>
   var disqus_config = function() {
-    this.page.url = {{ page.permalink | json }};
-    this.page.identifier = {{ page.path | json }};
-    this.page.title = {{ page.title | json }};
+    this.page.url = {{ page.permalink | safedump }};
+    this.page.identifier = {{ page.path | safedump }};
+    this.page.title = {{ page.title | safedump }};
     {% if __('disqus') !== 'disqus' -%}
       this.language = '{{ __('disqus') }}';
     {% endif -%}
