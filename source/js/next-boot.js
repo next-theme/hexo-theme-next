@@ -1,4 +1,4 @@
-/* global NexT, CONFIG, Velocity */
+/* global NexT, CONFIG */
 
 NexT.boot = {};
 
@@ -12,18 +12,35 @@ NexT.boot.registerEvents = function() {
     event.currentTarget.classList.toggle('toggle-close');
     const siteNav = document.querySelector('.site-nav');
     if (!siteNav) return;
-    const animateAction = siteNav.classList.contains('site-nav-on') ? 'slideUp' : 'slideDown';
-
-    if (typeof Velocity === 'function') {
-      Velocity(siteNav, animateAction, {
-        duration: 200,
-        complete: function() {
-          siteNav.classList.toggle('site-nav-on');
-        }
-      });
-    } else {
-      siteNav.classList.toggle('site-nav-on');
-    }
+    const animateAction = siteNav.classList.contains('site-nav-on');
+    const height = NexT.utils.getComputedStyle(siteNav);
+    siteNav.style.height = animateAction ? height : 0;
+    const toggle = () => siteNav.classList.toggle('site-nav-on');
+    const begin = () => {
+      siteNav.style.overflow = 'hidden';
+    };
+    const complete = () => {
+      siteNav.style.overflow = '';
+      siteNav.style.height = '';
+    };
+    window.anime(Object.assign({
+      targets : siteNav,
+      duration: 200,
+      height  : animateAction ? [height, 0] : [0, height],
+      easing  : 'linear'
+    }, animateAction ? {
+      begin,
+      complete: () => {
+        complete();
+        toggle();
+      }
+    } : {
+      begin: () => {
+        begin();
+        toggle();
+      },
+      complete
+    }));
   });
 
   const TAB_ANIMATE_DURATION = 200;
