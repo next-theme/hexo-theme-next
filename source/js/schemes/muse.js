@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     showSidebar: function() {
       document.body.classList.add('sidebar-active');
-      const animateAction = 'animate__' + (isRight ? 'slideInRight' : 'slideInLeft');
+      const animateAction = isRight ? 'slideInRight' : 'slideInLeft';
       document.querySelectorAll('.sidebar .motion-element').forEach((element, index) => {
         element.style.animationDelay = (50 * index) + 'ms';
         element.classList.remove(animateAction);
         setTimeout(() => {
           // Trigger a DOM reflow
-          element.classList.add('animate__animated', animateAction);
+          element.classList.add('animated', animateAction);
         }, 0);
       });
     },

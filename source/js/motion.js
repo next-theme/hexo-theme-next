@@ -31,7 +31,7 @@ NexT.motion.integrator = {
 
 NexT.motion.create = function(element, name) {
   return function() {
-    element.classList.add('animate__animated', `animate__${name}`);
+    element.classList.add('animated', name);
   };
 };
 
@@ -91,7 +91,7 @@ NexT.motion.middleWares = {
     const subMenuItem = document.querySelectorAll('.sub-menu .menu-item');
     if (subMenuItem.length > 0) {
       subMenuItem.forEach(element => {
-        element.classList.add('animate__animated');
+        element.classList.add('animated');
       });
     }
     return [];
