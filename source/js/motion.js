@@ -29,18 +29,12 @@ NexT.motion.integrator = {
   }
 };
 
-NexT.motion.create = function(element, name) {
-  return function() {
-    element.classList.add('animated', name);
-  };
-};
-
 NexT.motion.animate = function(sequence, animation, selector) {
   if (!animation) return;
   document.querySelectorAll(selector).forEach(targets => {
     sequence.push({
       targets,
-      begin : NexT.motion.create(targets, animation),
+      begin : () => targets.classList.add('animated', animation),
       deltaT: '-=100'
     });
   });
@@ -79,7 +73,7 @@ NexT.motion.middleWares = {
     document.querySelectorAll('.menu-item').forEach(targets => {
       sequence.push({
         targets,
-        begin : NexT.motion.create(targets, 'fadeInDown'),
+        begin : () => targets.classList.add('animated', 'fadeInDown'),
         deltaT: '-=200'
       });
     });
@@ -116,7 +110,7 @@ NexT.motion.middleWares = {
     if (sidebarTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini')) {
       return [{
         targets: sidebar,
-        begin  : NexT.motion.create(sidebar, sidebarTransition)
+        begin  : () => sidebar.classList.add('animated', sidebarTransition)
       }];
     }
     return [];
