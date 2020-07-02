@@ -824,15 +824,15 @@ motion:
     # fadeIn | flipXIn | flipYIn | flipBounceXIn | flipBounceYIn
     # swoopIn | whirlIn | shrinkIn | expandIn
     # bounceIn | bounceUpIn | bounceDownIn | bounceLeftIn | bounceRightIn
-    # slideUpIn | slideDownIn | slideLeftIn | slideRightIn
+    # slideInUp | slideInDown | slideInLeft | slideInRight
     # slideUpBigIn | slideDownBigIn | slideLeftBigIn | slideRightBigIn
     # perspectiveUpIn | perspectiveDownIn | perspectiveLeftIn | perspectiveRightIn
     post_block: fadeIn
-    post_header: slideDownIn
-    post_body: slideDownIn
-    coll_header: slideLeftIn
+    post_header: slideInDown
+    post_body: slideInDown
+    coll_header: slideInLeft
     # Only for Pisces | Gemini.
-    sidebar: slideUpIn
+    sidebar: slideInUp
 
 # Progress bar in the top during page loading.
 # For more information: https://github.com/HubSpot/pace
@@ -876,11 +876,13 @@ vendors:
   internal: local
 
   # Internal version: 3.1.0
+  # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
   # anime: //unpkg.com/animejs@3.1.0/lib/anime.min.js
   # anime: //cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js
   anime:
 
   # Internal version: 5.13.0
+  # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //unpkg.com/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
   fontawesome:
@@ -967,13 +969,11 @@ vendors:
   # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.5.2/mermaid.min.js
   mermaid:
 
-  # Internal version: 1.2.1
-  # velocity: //unpkg.com/velocity-animate@1/velocity.min.js
-  # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
-  # velocity_ui: //unpkg.com/velocity-animate@1/velocity.ui.min.js
-  # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
-  velocity:
-  velocity_ui:
+  # Internal version: 4.1.0
+  # animate_css: //cdn.jsdelivr.net/npm/animate.css@4/animate.min.css
+  # animate_css: //unpkg.com/animate.css@4/animate.min.css
+  # animate_css: //cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css
+  animate_css:
 
   # Internal version: 1.0.2
   # pace: //unpkg.com/pace-js@1/pace.min.js
