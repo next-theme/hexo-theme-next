@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     showSidebar: function() {
       document.body.classList.add('sidebar-active');
-      const animateAction = isRight ? 'slideInRight' : 'slideInLeft';
+      const animateAction = isRight ? 'fadeInRight' : 'fadeInLeft';
       document.querySelectorAll('.sidebar .motion-element').forEach((element, index) => {
-        element.style.animationDelay = (50 * index) + 'ms';
+        element.style.animationDelay = (100 * index) + 'ms';
         element.classList.remove(animateAction);
         setTimeout(() => {
           // Trigger a DOM reflow
