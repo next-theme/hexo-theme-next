@@ -7,7 +7,6 @@ hexo.extend.filter.register('after_generate', () => {
   if (!theme.minify) return;
 
   const lists = hexo.route.list();
-  const velocity = lists.filter(list => list.includes('lib/velocity'));
   const fontawesome = lists.filter(list => list.includes('lib/font-awesome'));
 
   if (!theme.bookmark.enable) {
@@ -16,15 +15,11 @@ hexo.extend.filter.register('after_generate', () => {
 
   if (!theme.motion.enable) {
     hexo.route.remove('js/motion.js');
-    velocity.forEach(path => {
-      hexo.route.remove(path);
-    });
+    hexo.route.remove('lib/animate-css/animate.min.css');
   }
 
-  if (theme.motion.enable && theme.vendors.velocity && theme.vendors.velocity_ui) {
-    velocity.forEach(path => {
-      hexo.route.remove(path);
-    });
+  if (theme.motion.enable && theme.vendors.animate_css) {
+    hexo.route.remove('lib/animate-css/animate.min.css');
   }
 
   if (theme.vendors.fontawesome) {

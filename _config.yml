@@ -814,25 +814,19 @@ mermaid:
 # Animation Settings
 # ---------------------------------------------------------------
 
-# Use velocity to animate everything.
-# For more information: http://velocityjs.org
+# Use Animate.css to animate everything.
+# For more information: https://animate.style
 motion:
   enable: true
   async: false
   transition:
-    # Transition variants:
-    # fadeIn | flipXIn | flipYIn | flipBounceXIn | flipBounceYIn
-    # swoopIn | whirlIn | shrinkIn | expandIn
-    # bounceIn | bounceUpIn | bounceDownIn | bounceLeftIn | bounceRightIn
-    # slideInUp | slideInDown | slideInLeft | slideInRight
-    # slideUpBigIn | slideDownBigIn | slideLeftBigIn | slideRightBigIn
-    # perspectiveUpIn | perspectiveDownIn | perspectiveLeftIn | perspectiveRightIn
+    # All available Transition variants: https://theme-next.js.org/
     post_block: fadeIn
-    post_header: slideInDown
-    post_body: slideInDown
-    coll_header: slideInLeft
+    post_header: fadeInDown
+    post_body: fadeInDown
+    coll_header: fadeInLeft
     # Only for Pisces | Gemini.
-    sidebar: slideInUp
+    sidebar: fadeInUp
 
 # Progress bar in the top during page loading.
 # For more information: https://github.com/HubSpot/pace
