@@ -29,17 +29,6 @@ NexT.motion.integrator = {
   }
 };
 
-NexT.motion.animate = function(sequence, animation, selector) {
-  if (!animation) return;
-  document.querySelectorAll(selector).forEach(targets => {
-    sequence.push({
-      targets,
-      begin : () => targets.classList.add('animated', animation),
-      deltaT: '-=100'
-    });
-  });
-};
-
 NexT.motion.middleWares = {
   header: function() {
     const sequence = [];
@@ -95,10 +84,21 @@ NexT.motion.middleWares = {
     const sequence = [];
     const { post_block, post_header, post_body, coll_header } = CONFIG.motion.transition;
 
-    NexT.motion.animate(sequence, post_block, '.post-block, .pagination, .comments');
-    NexT.motion.animate(sequence, coll_header, '.collection-header');
-    NexT.motion.animate(sequence, post_header, '.post-header');
-    NexT.motion.animate(sequence, post_body, '.post-body');
+    function animate(animation, selector) {
+      if (!animation) return;
+      document.querySelectorAll(selector).forEach(targets => {
+        sequence.push({
+          targets,
+          begin : () => targets.classList.add('animated', animation),
+          deltaT: '-=100'
+        });
+      });
+    }
+
+    animate(post_block, '.post-block, .pagination, .comments');
+    animate(coll_header, '.collection-header');
+    animate(post_header, '.post-header');
+    animate(post_body, '.post-body');
 
     return sequence;
   },
