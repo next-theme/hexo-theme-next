@@ -820,7 +820,7 @@ motion:
   enable: true
   async: false
   transition:
-    # All available Transition variants: https://theme-next.js.org/
+    # All available Transition variants: https://theme-next.js.org/animate/
     post_block: fadeIn
     post_header: fadeInDown
     post_body: fadeInDown
