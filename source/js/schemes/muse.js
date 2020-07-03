@@ -1,4 +1,4 @@
-/* global CONFIG, Velocity */
+/* global CONFIG */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -33,12 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     showSidebar: function() {
       document.body.classList.add('sidebar-active');
-      if (typeof Velocity === 'function') {
-        Velocity(document.querySelectorAll('.sidebar .motion-element'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-          stagger: 50,
-          drag   : true
-        });
-      }
+      const animateAction = isRight ? 'fadeInRight' : 'fadeInLeft';
+      document.querySelectorAll('.sidebar .animated').forEach((element, index) => {
+        element.style.animationDelay = (100 * index) + 'ms';
+        element.classList.remove(animateAction);
+        setTimeout(() => {
+          // Trigger a DOM reflow
+          element.classList.add(animateAction);
+        }, 0);
+      });
     },
     hideSidebar: function() {
       document.body.classList.remove('sidebar-active');

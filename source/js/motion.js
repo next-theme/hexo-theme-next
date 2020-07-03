@@ -1,49 +1,54 @@
-/* global NexT, CONFIG, Velocity */
-
-if (window.$ && window.$.Velocity) window.Velocity = window.$.Velocity;
+/* global NexT, CONFIG */
 
 NexT.motion = {};
 
 NexT.motion.integrator = {
-  queue : [],
-  cursor: -1,
-  init  : function() {
+  queue: [],
+  init : function() {
     this.queue = [];
-    this.cursor = -1;
     return this;
   },
   add: function(fn) {
-    this.queue.push(fn);
+    const sequence = fn();
+    if (CONFIG.motion.async) this.queue.push(sequence);
+    else this.queue = this.queue.concat(sequence);
     return this;
   },
-  next: function() {
-    this.cursor++;
-    const fn = this.queue[this.cursor];
-    typeof fn === 'function' && fn(NexT.motion.integrator);
-  },
   bootstrap: function() {
-    this.next();
+    if (!CONFIG.motion.async) this.queue = [this.queue];
+    this.queue.forEach(sequence => {
+      const timeline = window.anime.timeline({
+        duration: 200,
+        easing  : 'linear'
+      });
+      sequence.forEach(item => {
+        if (item.deltaT) timeline.add(item, item.deltaT);
+        else timeline.add(item);
+      });
+    });
   }
 };
 
 NexT.motion.middleWares = {
-  logo: function(integrator) {
+  header: function() {
     const sequence = [];
 
     function getMistLineSettings(targets) {
-      sequence.push([{
+      sequence.push({
         targets,
         scaleX  : [0, 1],
-        duration: 500
-      }, '-=200']);
+        duration: 500,
+        deltaT  : '-=200'
+      });
     }
 
     function pushToSequence(targets, sequenceQueue = false) {
-      sequence.push([{
+      sequence.push({
         targets,
         opacity: 1,
-        top    : 0
-      }, sequenceQueue ? '-=200' : '-=0']);
+        top    : 0,
+        deltaT : sequenceQueue ? '-=200' : '-=0'
+      });
     }
 
     pushToSequence('.header');
@@ -54,101 +59,67 @@ NexT.motion.middleWares = {
     pushToSequence('.site-subtitle');
     (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') && pushToSequence('.custom-logo-image');
 
-    sequence[sequence.length - 1][0].complete = function() {
-      integrator.next();
-    };
-    const timeline = window.anime.timeline({
-      duration: 200,
-      easing  : 'linear'
-    });
-    sequence.forEach(item => timeline.add(...item));
-
-    if (CONFIG.motion.async) {
-      integrator.next();
-    }
-  },
-
-  menu: function(integrator) {
-    Velocity(document.querySelectorAll('.menu-item'), 'transition.slideDownIn', {
-      display : null,
-      duration: 200,
-      complete: function() {
-        integrator.next();
-      }
+    document.querySelectorAll('.menu-item').forEach(targets => {
+      sequence.push({
+        targets,
+        begin : () => targets.classList.add('animated', 'fadeInDown'),
+        deltaT: '-=200'
+      });
     });
 
-    if (CONFIG.motion.async || !document.querySelectorAll('.menu-item').length) {
-      integrator.next();
-    }
+    return sequence;
   },
 
-  subMenu: function(integrator) {
+  subMenu: function() {
     const subMenuItem = document.querySelectorAll('.sub-menu .menu-item');
     if (subMenuItem.length > 0) {
       subMenuItem.forEach(element => {
-        element.style.opacity = 1;
+        element.classList.add('animated');
       });
     }
-    integrator.next();
+    return [];
   },
 
-  postList: function(integrator) {
-    const postBlock = document.querySelectorAll('.post-block, .pagination, .comments');
-    const postBlockTransition = CONFIG.motion.transition.post_block;
-    const postHeader = document.querySelectorAll('.post-header');
-    const postHeaderTransition = CONFIG.motion.transition.post_header;
-    const postBody = document.querySelectorAll('.post-body');
-    const postBodyTransition = CONFIG.motion.transition.post_body;
-    const collHeader = document.querySelectorAll('.collection-header');
-    const collHeaderTransition = CONFIG.motion.transition.coll_header;
+  postList: function() {
+    const sequence = [];
+    const { post_block, post_header, post_body, coll_header } = CONFIG.motion.transition;
 
-    if (postBlock.length > 0) {
-      const postMotionOptions = window.postMotionOptions || {
-        stagger : 100,
-        drag    : true,
-        complete: function() {
-          integrator.next();
-        }
-      };
+    function animate(animation, selector) {
+      if (!animation) return;
+      document.querySelectorAll(selector).forEach(targets => {
+        sequence.push({
+          targets,
+          begin : () => targets.classList.add('animated', animation),
+          deltaT: '-=100'
+        });
+      });
+    }
 
-      if (postBlockTransition) {
-        Velocity(postBlock, 'transition.' + postBlockTransition, postMotionOptions);
-      }
-      if (postHeaderTransition) {
-        Velocity(postHeader, 'transition.' + postHeaderTransition, postMotionOptions);
-      }
-      if (postBodyTransition) {
-        Velocity(postBody, 'transition.' + postBodyTransition, postMotionOptions);
-      }
-      if (collHeaderTransition) {
-        Velocity(collHeader, 'transition.' + collHeaderTransition, postMotionOptions);
-      }
-    }
-    if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') {
-      integrator.next();
-    }
+    animate(post_block, '.post-block, .pagination, .comments');
+    animate(coll_header, '.collection-header');
+    animate(post_header, '.post-header');
+    animate(post_body, '.post-body');
+
+    return sequence;
   },
 
-  sidebar: function(integrator) {
+  sidebar: function() {
     const sidebar = document.querySelector('.sidebar');
     const sidebarTransition = CONFIG.motion.transition.sidebar;
     // Only for Pisces | Gemini.
     if (sidebarTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini')) {
-      Velocity(sidebar, 'transition.' + sidebarTransition, {
-        display : null,
-        duration: 200
-      });
+      return [{
+        targets: sidebar,
+        begin  : () => sidebar.classList.add('animated', sidebarTransition)
+      }];
     }
-    integrator.next();
+    return [];
   },
 
-  footer: function(integrator) {
-    const footer = document.querySelector('.footer');
-    Velocity(footer, {
+  footer: function() {
+    return [{
+      targets: document.querySelector('.footer'),
       opacity: 1
-    }, {
-      duration: 200
-    });
-    integrator.next();
+    }];
   }
 };

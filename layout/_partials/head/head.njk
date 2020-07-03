@@ -46,6 +46,11 @@
 {%- set font_awesome_uri = theme.vendors.fontawesome or url_for('lib/font-awesome/css/all.min.css') %}
 <link rel="stylesheet" href="{{ font_awesome_uri }}">
 
+{%-if theme.motion.enable %}
+  {% set animate_css_uri = theme.vendors.animate_css or url_for('lib/animate-css/animate.min.css') %}
+  <link rel="stylesheet" href="{{ animate_css_uri }}">
+{%- endif %}
+
 {%- if theme.fancybox %}
   {%- set fancybox_css_uri = theme.vendors.fancybox_css or '//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css' %}
   <link rel="stylesheet" href="{{ fancybox_css_uri }}">

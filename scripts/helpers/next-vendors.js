@@ -30,9 +30,5 @@ hexo.extend.helper.register('js_vendors', function() {
   if (theme.pangu) {
     vendors.pangu = '//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js';
   }
-  if (theme.motion.enable) {
-    vendors.velocity = 'lib/velocity/velocity.min.js';
-    vendors.velocity_ui = 'lib/velocity/velocity.ui.min.js';
-  }
   return vendors;
 });
