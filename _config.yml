@@ -9,9 +9,6 @@
 # See: https://theme-next.js.org/docs/theme-settings/
 # ---------------------------------------------------------------
 
-# Console reminder if new version released.
-reminder: false
-
 # Allow to cache content generation. Introduced in NexT v6.0.0.
 cache:
   enable: true
