@@ -2,11 +2,11 @@
 var pjax = new Pjax({
   selectors: [
     'head title',
-    '#page-configurations',
+    '.page-configurations',
     '.main-inner',
     '.post-toc-wrap',
     '.languages',
-    '#pjax'
+    '.pjax'
   ],
   analytics: false,
   cacheBust: false,
@@ -14,7 +14,7 @@ var pjax = new Pjax({
 });
 
 document.addEventListener('pjax:success', () => {
-  pjax.executeScripts(document.querySelectorAll('script[data-pjax], #pjax script'));
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {

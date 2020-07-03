@@ -38,7 +38,7 @@ hexo.extend.helper.register('next_config', function() {
   if (config.search) {
     exportConfig.path = config.search.path;
   }
-  return `<script id="hexo-configurations">
+  return `<script class="hexo-configurations">
     var NexT = window.NexT || {};
     var CONFIG = ${JSON.stringify(exportConfig)};
   </script>`;

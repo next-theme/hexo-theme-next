@@ -45,7 +45,7 @@
   {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
 
   {%- if theme.pjax %}
-    <div id="pjax">
+    <div class="pjax">
   {%- endif %}
   {% include '_third-party/math/index.njk' %}
   {% include '_third-party/quicklink.njk' %}
