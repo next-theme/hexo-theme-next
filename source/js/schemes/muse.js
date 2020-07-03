@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     showSidebar: function() {
       document.body.classList.add('sidebar-active');
       const animateAction = isRight ? 'fadeInRight' : 'fadeInLeft';
-      document.querySelectorAll('.sidebar .motion-element').forEach((element, index) => {
+      document.querySelectorAll('.sidebar .animated').forEach((element, index) => {
         element.style.animationDelay = (100 * index) + 'ms';
         element.classList.remove(animateAction);
         setTimeout(() => {
           // Trigger a DOM reflow
-          element.classList.add('animated', animateAction);
+          element.classList.add(animateAction);
         }, 0);
       });
     },
