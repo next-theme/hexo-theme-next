@@ -17,9 +17,9 @@
 [![Required Node version](https://img.shields.io/node/v/hexo-theme-next?color=green&logo=node.js&style=flat-square)](https://nodejs.org)
 [![Required Hexo version](https://img.shields.io/badge/hexo-%3E=4.0.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
 [![License](https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu)](https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md)
-[![Build Status](https://img.shields.io/lgtm/grade/javascript/github/next-theme/hexo-theme-next?label=code%20quality&logo=lgtm&style=flat-square)](https://lgtm.com/projects/g/next-theme/hexo-theme-next/)
-[![Build Status](https://img.shields.io/github/workflow/status/next-theme/hexo-theme-next/Linter?label=test&logo=github&style=flat-square)](https://github.com/next-theme/hexo-theme-next/actions)
-[![Build Status](https://img.shields.io/netlify/bc28ebb2-8371-4a33-a1eb-e0a15e909168?logo=netlify&style=flat-square)](https://app.netlify.com/sites/hexo-theme-next/deploys)
+[![Code Quality](https://img.shields.io/lgtm/grade/javascript/github/next-theme/hexo-theme-next?label=code%20quality&logo=lgtm&style=flat-square)](https://lgtm.com/projects/g/next-theme/hexo-theme-next/)
+[![Build Status](https://img.shields.io/github/workflow/status/next-theme/hexo-theme-next/Linter?label=test&logo=github&style=flat-square)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ALinter)
+[![Build Status](https://img.shields.io/github/workflow/status/next-theme/hexo-theme-next/Tester?logo=github&style=flat-square)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ATester)
 
 ## Демо
 

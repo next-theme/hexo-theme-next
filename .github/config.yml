@@ -18,30 +18,3 @@ firstPRMergeComment: >
 
 # *OPTIONAL* Label to be added to Issues and Pull Requests with insufficient information given
 requestInfoLabelToAdd: Need More Info
-
-# *OPTIONAL* Add a list of people whose Issues/PRs will not be commented on
-# keys must be GitHub usernames
-requestInfoUserstoExclude:
-  - 1v9
-  - Acris
-  - flashlab
-  - geekrainy
-  - iissnan
-  - ivan-nginx
-  - JiangTJ
-  - LEAFERx
-  - liolok
-  - maple3142
-  - Raincal
-  - sli1989
-  - stevenjoezhang
-  - tsanie
-  - wafer-li
-
-# =============================================================================================== #
-lockThreads:
-  toxicityThreshold: .7
-  numComments: 2
-  setTimeInHours: 72
-  replyComment: >
-    This thread is being locked due to exceeding the toxicity minimums. cc/ @theme-next/next
