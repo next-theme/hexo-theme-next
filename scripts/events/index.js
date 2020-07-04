@@ -2,14 +2,14 @@
 
 'use strict';
 
-hexo.on('generateBefore', () => {
+hexo.extend.filter.register('before_generate', () => {
   // Merge config.
   require('./lib/config')(hexo);
   // Add filter type `theme_inject`
   require('./lib/injects')(hexo);
   // Highlight
   require('./lib/highlight')(hexo);
-});
+}, 0);
 
 hexo.on('ready', () => {
   const { version } = require('../../package.json');
