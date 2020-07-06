@@ -7,5 +7,6 @@
 @import 'math' if (hexo-config('math.mathjax.enable'));
 
 .use-motion .animated {
-  visibility: visible;
+  // Fix issue #46 .animated in .sidebar
+  visibility: inherit;
 }

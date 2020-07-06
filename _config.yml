@@ -252,13 +252,13 @@ symbols_count_time:
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
 
-# Reward (Donate)
+# Donate (Sponsor) settings
 # Front-matter variable (unsupport animation).
 reward_settings:
-  # If true, reward will be displayed in every article by default.
+  # If true, a donate button will be displayed in every article by default.
   enable: false
   animation: false
-  #comment: Donate comment here.
+  #comment: Buy me a coffee
 
 reward:
   #wechatpay: /images/wechatpay.png
@@ -394,7 +394,7 @@ github_banner:
 # Font Settings
 # See: https://theme-next.js.org/docs/theme-settings/#Fonts-Customization
 # ---------------------------------------------------------------
-# Find fonts on Google Fonts (https://www.google.com/fonts)
+# Find fonts on Google Fonts (https://fonts.google.com)
 # All fonts set here will have the following styles:
 #   light | light italic | normal | normal italic | bold | bold italic
 # Be aware that setting too much fonts will cause site running slowly
