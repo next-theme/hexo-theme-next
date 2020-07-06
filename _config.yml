@@ -833,14 +833,6 @@ pace:
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
   theme: minimal
 
-# JavaScript 3D library.
-# Dependencies: https://github.com/next-theme/theme-next-three
-three:
-  enable: false
-  three_waves: false
-  canvas_lines: false
-  canvas_sphere: false
-
 # Canvas ribbon
 # For more information: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
@@ -972,16 +964,6 @@ vendors:
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
   pace:
   pace_css:
-
-  # JavaScript 3D library
-  # three: //unpkg.com/three@0/build/three.min.js
-  # three_waves: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/three-waves.min.js
-  # canvas_lines: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/canvas_lines.min.js
-  # canvas_sphere: //cdn.jsdelivr.net/gh/next-theme/theme-next-three@1/canvas_sphere.min.js
-  three:
-  three_waves:
-  canvas_lines:
-  canvas_sphere:
 
   # Canvas ribbon
   # canvas_ribbon: //unpkg.com/ribbon.js@1/dist/ribbon.min.js
