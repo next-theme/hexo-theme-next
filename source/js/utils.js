@@ -66,6 +66,7 @@ NexT.utils = {
     document.querySelectorAll('figure.highlight').forEach(element => {
       element.querySelectorAll('.code .line span').forEach(span => {
         span.classList.forEach(name => {
+          // https://caniuse.com/#feat=mdn-api_element_classlist_replace
           span.classList.remove(name);
           span.classList.add(`hljs-${name}`);
         });
@@ -138,8 +139,8 @@ NexT.utils = {
       if (backToTop || readingProgressBar) {
         const docHeight = document.querySelector('.container').offsetHeight;
         const winHeight = window.innerHeight;
-        const contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
-        const scrollPercent = Math.min(100 * window.scrollY / contentVisibilityHeight, 100);
+        const contentHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
+        const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
         if (backToTop) {
           backToTop.classList.toggle('back-to-top-on', Math.round(scrollPercent) >= 5);
           backToTop.querySelector('span').innerText = Math.round(scrollPercent) + '%';

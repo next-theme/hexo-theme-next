@@ -62,8 +62,8 @@ NexT.motion.middleWares = {
     document.querySelectorAll('.menu-item').forEach(targets => {
       sequence.push({
         targets,
-        begin : () => targets.classList.add('animated', 'fadeInDown'),
-        deltaT: '-=200'
+        complete: () => targets.classList.add('animated', 'fadeInDown'),
+        deltaT  : '-=200'
       });
     });
 
@@ -89,8 +89,8 @@ NexT.motion.middleWares = {
       document.querySelectorAll(selector).forEach(targets => {
         sequence.push({
           targets,
-          begin : () => targets.classList.add('animated', animation),
-          deltaT: '-=100'
+          complete: () => targets.classList.add('animated', animation),
+          deltaT  : '-=100'
         });
       });
     }
@@ -109,8 +109,8 @@ NexT.motion.middleWares = {
     // Only for Pisces | Gemini.
     if (sidebarTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini')) {
       return [{
-        targets: sidebar,
-        begin  : () => sidebar.classList.add('animated', sidebarTransition)
+        targets : sidebar,
+        complete: () => sidebar.classList.add('animated', sidebarTransition)
       }];
     }
     return [];

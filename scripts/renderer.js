@@ -28,7 +28,13 @@ njkRenderer.compile = function(data) {
   const compiledTemplate = njkCompile(data);
   // Need a closure to keep the compiled template.
   return function(locals) {
-    return compiledTemplate.render(locals);
+    let result = '';
+    try {
+      result = compiledTemplate.render(locals);
+    } catch (error) {
+      hexo.log.error(error);
+    }
+    return result;
   };
 };
 

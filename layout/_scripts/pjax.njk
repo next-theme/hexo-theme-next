@@ -26,11 +26,7 @@ document.addEventListener('pjax:success', () => {
   }
   const hasTOC = document.querySelector('.post-toc');
   document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
-  if (hasTOC) {
-    document.querySelector('.sidebar-nav-toc').click();
-  } else {
-    document.querySelector('.sidebar-nav-overview').click();
-  }
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
 </script>
