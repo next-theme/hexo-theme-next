@@ -67,7 +67,7 @@ NexT.boot.registerEvents = function() {
             targets   : panel[index],
             easing    : 'linear',
             opacity   : [0, 1],
-            translateY: [-20, 0],
+            translateY: [-20, 0]
           });
         }
       });

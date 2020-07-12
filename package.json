@@ -28,10 +28,16 @@
     "eslint-config-theme-next": "1.2.0",
     "gulp": "4.0.2",
     "gulp-shell": "0.8.0",
+    "husky": "4.2.5",
     "js-yaml": "3.14.0",
     "stylint": "2.0.0"
   },
   "engines": {
     "node": ">=10.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "gulp"
+    }
   }
 }
