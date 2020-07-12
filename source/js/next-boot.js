@@ -43,7 +43,7 @@ NexT.boot.registerEvents = function() {
     }));
   });
 
-  const TAB_ANIMATE_DURATION = 200;
+  const duration = 200;
   document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
     element.addEventListener('click', event => {
       const item = event.currentTarget;
@@ -53,20 +53,21 @@ NexT.boot.registerEvents = function() {
       const activeClassName = ['sidebar-toc-active', 'sidebar-overview-active'];
 
       window.anime({
-        targets : panel[1 - index],
-        duration: TAB_ANIMATE_DURATION,
-        easing  : 'linear',
-        opacity : 0,
-        complete: () => {
+        duration,
+        targets   : panel[1 - index],
+        easing    : 'linear',
+        opacity   : 0,
+        translateY: [0, -20],
+        complete  : () => {
           // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
           sidebar.classList.remove(activeClassName[1 - index]);
-          panel[index].style.opacity = 0;
           sidebar.classList.add(activeClassName[index]);
           window.anime({
-            targets : panel[index],
-            duration: TAB_ANIMATE_DURATION,
-            easing  : 'linear',
-            opacity : 1
+            duration,
+            targets   : panel[index],
+            easing    : 'linear',
+            opacity   : [0, 1],
+            translateY: [-20, 0],
           });
         }
       });
@@ -88,7 +89,7 @@ NexT.boot.refresh = function() {
 
   /**
    * Register JS handlers by condition option.
-   * Need to add config option in Front-End at 'layout/_partials/head.njk' file.
+   * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
    */
   CONFIG.prism && window.Prism.highlightAll();
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
