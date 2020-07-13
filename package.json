@@ -32,9 +32,6 @@
     "js-yaml": "3.14.0",
     "stylint": "2.0.0"
   },
-  "engines": {
-    "node": ">=10.9.0"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "gulp"

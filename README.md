@@ -14,7 +14,6 @@
 > «NexT» is a high quality elegant [Hexo](https://hexo.io) theme. It is crafted from scratch with love.
 
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-next?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-next)
-[![Required Node version](https://img.shields.io/node/v/hexo-theme-next?color=green&logo=node.js&style=flat-square)](https://nodejs.org)
 [![Required Hexo version](https://img.shields.io/badge/hexo-%3E=4.0.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
 [![License](https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu)](https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md)
 [![Code Quality](https://img.shields.io/lgtm/grade/javascript/github/next-theme/hexo-theme-next?label=code%20quality&logo=lgtm&style=flat-square)](https://lgtm.com/projects/g/next-theme/hexo-theme-next/)
@@ -98,9 +97,7 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 
 ## Contributors
 
-- [iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next/graphs/contributors)
-- [theme-next/hexo-theme-next](https://github.com/theme-next/hexo-theme-next/graphs/contributors)
-- [next-theme/hexo-theme-next](https://github.com/next-theme/hexo-theme-next/graphs/contributors)
+[![Contributors][contributors-image]][contributors-url]
 
 ## Thanks
 
@@ -136,3 +133,5 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 
 [contributing-document-url]: https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
 [official-plugins-url]: https://github.com/next-theme
+[contributors-image]: https://raw.githubusercontent.com/next-theme/contributors/master/contributors.svg
+[contributors-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/AUTHORS.md
