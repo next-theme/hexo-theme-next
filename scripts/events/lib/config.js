@@ -1,6 +1,11 @@
 'use strict';
 
 const merge = require('hexo-util').deepMerge || require('lodash/merge');
+let plugins;
+try {
+  plugins = require('@next-theme/plugins');
+} catch (error) {
+}
 
 module.exports = hexo => {
   let data = hexo.locals.get('data');
@@ -19,6 +24,13 @@ module.exports = hexo => {
   if (hexo.theme.config.cache && hexo.theme.config.cache.enable && hexo.config.relative_link) {
     hexo.log.warn('Since caching is turned on, the `relative_link` option in Hexo `_config.yml` is set to `false` to avoid potential hazards.');
     hexo.config.relative_link = false;
+  }
+  if (typeof plugins === 'function') {
+    const { vendors, generator } = plugins();
+    Object.keys(vendors).forEach(key => {
+      hexo.theme.config.vendors[key] = hexo.theme.config.vendors[key] || vendors[key];
+    });
+    hexo.extend.generator.register('next_vendors', () => generator);
   }
   hexo.config.meta_generator = false;
 

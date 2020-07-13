@@ -39,7 +39,7 @@
     };
     (function () {
       var script = document.createElement('script');
-      script.src = '{{ mathjax_uri }}';
+      script.src = '{{ url_for(mathjax_uri) }}';
       script.defer = true;
       document.head.appendChild(script);
     })();

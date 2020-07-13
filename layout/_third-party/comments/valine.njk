@@ -2,7 +2,7 @@
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('{{ valine_uri }}', () => {
+  NexT.utils.getScript('{{ url_for(valine_uri) }}', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
       path: location.pathname,
