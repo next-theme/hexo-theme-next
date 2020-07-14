@@ -229,7 +229,7 @@ NexT.utils = {
         let target = sel.options[sel.selectedIndex];
         document.querySelectorAll('.lang-select-label span').forEach(
           span => {
-            span.innerText = target.text
+            span.innerText = target.text;
           }
         );
         let url = target.dataset.href;
