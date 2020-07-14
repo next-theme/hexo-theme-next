@@ -227,7 +227,11 @@ NexT.utils = {
       sel.value = CONFIG.page.lang;
       sel.addEventListener('change', () => {
         let target = sel.options[sel.selectedIndex];
-        document.querySelectorAll('.lang-select-label span').forEach(span => span.innerText = target.text);
+        document.querySelectorAll('.lang-select-label span').forEach(
+          span => {
+            span.innerText = target.text
+          }
+        );
         let url = target.dataset.href;
         window.pjax ? window.pjax.loadUrl(url) : window.location.href = url;
       });
