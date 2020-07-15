@@ -45,7 +45,7 @@ Please follow this Issue template to provide relevant information, such as sourc
 ```
 
 ### Package dependencies Information
-<!-- Paste output from `npm ls --depth 0` in Hexo root dirctory (粘贴在 Hexo 根目录下 `npm ls --depth 0` 输出的信息) -->
+<!-- Paste output from `npm ls --depth 0` in Hexo root directory (粘贴在 Hexo 根目录下 `npm ls --depth 0` 输出的信息) -->
 ```
 
 ```

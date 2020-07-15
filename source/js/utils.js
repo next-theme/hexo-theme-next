@@ -6,6 +6,14 @@ HTMLElement.prototype.wrap = function(wrapper) {
   wrapper.appendChild(this);
 };
 
+// https://caniuse.com/#feat=mdn-api_element_classlist_replace
+if (typeof DOMTokenList.prototype.replace !== 'function') {
+  DOMTokenList.prototype.replace = function(remove, add) {
+    this.remove(remove);
+    this.add(add);
+  };
+}
+
 NexT.utils = {
 
   /**
@@ -66,9 +74,7 @@ NexT.utils = {
     document.querySelectorAll('figure.highlight').forEach(element => {
       element.querySelectorAll('.code .line span').forEach(span => {
         span.classList.forEach(name => {
-          // https://caniuse.com/#feat=mdn-api_element_classlist_replace
-          span.classList.remove(name);
-          span.classList.add(`hljs-${name}`);
+          span.classList.replace(name, `hljs-${name}`);
         });
       });
       if (!CONFIG.copycode) return;
