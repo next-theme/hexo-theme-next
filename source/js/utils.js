@@ -222,18 +222,16 @@ NexT.utils = {
   },
 
   registerLangSelect: function() {
-    let selects = document.querySelectorAll('.lang-select');
+    const selects = document.querySelectorAll('.lang-select');
     selects.forEach(sel => {
       sel.value = CONFIG.page.lang;
       sel.addEventListener('change', () => {
-        let target = sel.options[sel.selectedIndex];
-        document.querySelectorAll('.lang-select-label span').forEach(
-          span => {
-            span.innerText = target.text;
-          }
-        );
-        let url = target.dataset.href;
-        window.pjax ? window.pjax.loadUrl(url) : window.location.href = url;
+        const target = sel.options[sel.selectedIndex];
+        document.querySelectorAll('.lang-select-label span').forEach(span => {
+          span.innerText = target.text;
+        });
+        // Disable Pjax to force refresh translation of menu item
+        window.location.href = target.dataset.href;
       });
     });
   },
