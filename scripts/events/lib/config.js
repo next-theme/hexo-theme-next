@@ -8,7 +8,7 @@ try {
 }
 
 module.exports = hexo => {
-  let data = hexo.locals.get('data');
+  const data = hexo.locals.get('data');
 
   /**
    * Merge configs from _data/next.yml into hexo.theme.config.
@@ -36,15 +36,15 @@ module.exports = hexo => {
 
   // Custom languages support. Introduced in NexT v6.3.0.
   if (data.languages) {
-    let { language } = hexo.config;
-    let { i18n } = hexo.theme;
+    const { language } = hexo.config;
+    const { i18n } = hexo.theme;
 
     const mergeLang = lang => {
       if (data.languages[lang]) i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
     };
 
     if (Array.isArray(language)) {
-      for (let lang of language) {
+      for (const lang of language) {
         mergeLang(lang);
       }
     } else {

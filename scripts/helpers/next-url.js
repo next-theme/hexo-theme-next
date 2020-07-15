@@ -26,7 +26,7 @@ hexo.extend.helper.register('next_url', function(path, text, options = {}) {
     };
   }
 
-  for (let key in options) {
+  for (const key in options) {
 
     /**
      * If option have `class` attribute, add it to

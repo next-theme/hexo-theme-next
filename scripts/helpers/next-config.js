@@ -8,9 +8,9 @@ const url = require('url');
  * Export theme config to js
  */
 hexo.extend.helper.register('next_config', function() {
-  let { config, theme, next_version } = this;
+  const { config, theme, next_version } = this;
   config.algolia = config.algolia || {};
-  let exportConfig = {
+  const exportConfig = {
     hostname  : url.parse(config.url).hostname || config.url,
     root      : config.root,
     scheme    : theme.scheme,

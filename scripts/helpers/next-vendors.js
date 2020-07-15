@@ -3,8 +3,8 @@
 'use strict';
 
 hexo.extend.helper.register('js_vendors', function() {
-  let { config, theme } = this;
-  let vendors = {
+  const { config, theme } = this;
+  const vendors = {
     anime: 'lib/anime.min.js'
   };
   if (config.prismjs.enable && !config.prismjs.preprocess) {

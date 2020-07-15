@@ -53,7 +53,7 @@ hexo.extend.helper.register('post_nav', function(post) {
 });
 
 hexo.extend.helper.register('gitalk_md5', function(path) {
-  let str = this.url_for(path);
+  const str = this.url_for(path);
   str.replace('index.html', '');
   return crypto.createHash('md5').update(str).digest('hex');
 });

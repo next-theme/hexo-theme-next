@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const algoliaSettings = CONFIG.algolia;
   const { indexName, appID, apiKey } = algoliaSettings;
 
-  let search = instantsearch({
+  const search = instantsearch({
     indexName,
     searchClient  : algoliasearch(appID, apiKey),
     searchFunction: helper => {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container: '#algolia-stats',
       templates: {
         text: data => {
-          let stats = algoliaSettings.labels.hits_stats
+          const stats = algoliaSettings.labels.hits_stats
             .replace(/\$\{hits}/, data.nbHits)
             .replace(/\$\{time}/, data.processingTimeMS);
           return `${stats}
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container: '#algolia-hits',
       templates: {
         item: data => {
-          let link = data.permalink ? data.permalink : CONFIG.root + data.path;
+          const link = data.permalink ? data.permalink : CONFIG.root + data.path;
           return `<a href="${link}" class="algolia-hit-item-link">${data._highlightResult.title.value}</a>`;
         },
         empty: data => {

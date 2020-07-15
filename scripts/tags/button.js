@@ -8,7 +8,7 @@
 
 function postButton(args) {
   args = args.join(' ').split(',');
-  let url   = args[0];
+  const url = args[0];
   let text  = args[1] || '';
   let icon  = args[2] || '';
   let title = args[3] || '';

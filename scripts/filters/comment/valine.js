@@ -7,7 +7,7 @@ const { iconText } = require('./common');
 
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
-  let theme = hexo.theme.config;
+  const theme = hexo.theme.config;
   if (!theme.valine.enable || !theme.valine.appId || !theme.valine.appKey) return;
 
   injects.comment.raw('valine', '<div class="comments" id="valine-comments"></div>', {}, {cache: true});
@@ -18,7 +18,7 @@ hexo.extend.filter.register('theme_inject', injects => {
 
 // Add post_meta
 hexo.extend.filter.register('theme_inject', injects => {
-  let theme = hexo.theme.config;
+  const theme = hexo.theme.config;
   if (!theme.valine.enable || !theme.valine.appId || !theme.valine.appKey) return;
 
   injects.postMeta.raw('valine', `

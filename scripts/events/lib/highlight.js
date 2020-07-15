@@ -6,8 +6,8 @@ function resolve(package) {
 }
 
 function highlightTheme(name) {
-  let file = `${resolve('highlight.js')}/styles/${name}.css`;
-  let css = fs.readFileSync(file).toString();
+  const file = `${resolve('highlight.js')}/styles/${name}.css`;
+  const css = fs.readFileSync(file).toString();
   let rule = '';
   let background = '';
   let foreground = '';
@@ -34,8 +34,8 @@ function prismTheme(name) {
 }
 
 module.exports = hexo => {
-  let { config } = hexo;
-  let theme = hexo.theme.config;
+  const { config } = hexo;
+  const theme = hexo.theme.config;
   config.highlight.hljs = false;
   config.prismjs = config.prismjs || {};
   theme.highlight = {

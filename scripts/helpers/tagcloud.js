@@ -43,7 +43,7 @@ hexo.extend.helper.register('next_tagcloud', function(options) {
   tags.forEach(tag => {
     const ratio = length ? sizes.indexOf(tag.length) / length : 0;
     const size = min + ((max - min) * ratio);
-    let style = `font-size: ${parseFloat(size.toFixed(2))}${unit};`;
+    const style = `font-size: ${parseFloat(size.toFixed(2))}${unit};`;
 
     result.push(
       `<a href="${this.url_for(tag.path)}" style="${style}" class="tag-cloud-${Math.round(ratio * 10)}">${transform ? transform(tag.name) : tag.name}</a>`

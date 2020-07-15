@@ -73,7 +73,7 @@ const LAYOUTS = {
 
 function groupBy(group, data) {
   const r = [];
-  for (let count of group) {
+  for (const count of group) {
     r.push(data.slice(0, count));
     data = data.slice(count);
   }

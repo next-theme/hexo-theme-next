@@ -7,7 +7,7 @@
 'use strict';
 
 function pdf(args) {
-  let theme = hexo.theme.config;
+  const theme = hexo.theme.config;
   return `<div class="pdfobject-container" data-target="${args[0]}" data-height="${args[1] || theme.pdf.height}"></div>`;
 }
 

@@ -17,7 +17,7 @@ hexo.extend.filter.register('after_post_render', data => {
       if (!href) return match;
 
       // Exit if the url has same host with `config.url`, which means it's an internal link.
-      let link = url.parse(href);
+      const link = url.parse(href);
       if (!link.protocol || link.hostname === siteHost) return match;
 
       return `<span class="exturl" data-url="${Buffer.from(href).toString('base64')}">${html}<i class="fa fa-external-link-alt"></i></span>`;
