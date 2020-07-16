@@ -21,7 +21,12 @@ module.exports = hexo => {
     hexo.theme.config = merge(hexo.theme.config, hexo.config.theme_config);
   }
 
-  if (hexo.theme.config.cache && hexo.theme.config.cache.enable && hexo.config.relative_link) {
+  const { cache, language_switcher } = hexo.theme.config;
+  if (cache && cache.enable && language_switcher) {
+    hexo.log.warn('Since language_switcher is turned on, the caching is disabled to avoid potential hazards.');
+    cache.enable = false;
+  }
+  if (cache && cache.enable && hexo.config.relative_link) {
     hexo.log.warn('Since caching is turned on, the `relative_link` option in Hexo `_config.yml` is set to `false` to avoid potential hazards.');
     hexo.config.relative_link = false;
   }
