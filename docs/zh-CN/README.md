@@ -31,14 +31,29 @@
 
 ## 安装
 
-最简单的安装方式是直接克隆整个仓库：
+如果你在使用 Hexo 5.0 或更新版本，最简单的安装方式是通过 npm：
 
 ```sh
-$ cd hexo
+$ cd hexo-site
+$ npm install hexo-theme-next
+```
+
+你也可以直接克隆整个仓库：
+
+```sh
+$ cd hexo-site
 $ git clone https://github.com/next-theme/hexo-theme-next themes/next
 ```
 
-此外，如果你想要使用其他方式，你也可以参见[详细安装步骤][docs-installation-url]。
+此外，如果你想要使用其他方式，请参见[详细安装步骤][docs-installation-url]。
+
+## 配置
+
+目前 NexT 鼓励用户使用 [Alternate Theme Config][docs-configuration-url] 进行配置。并且可以轻松地通过 [Custom Files][docs-custom-files-url] 自定义主题的布局和样式。
+
+不推荐直接修改 NexT 主题的文件。因为这可能导致错误（例如 git merge 冲突），并且在升级主题时修改的文件可能丢失。
+
+然而你也可以通过提交（`Commit`）、贮藏（`Stash`）或忽视（`Discard`）本地更改以绕过这种更新错误 (例如 **«Commit your changes or stash them before you can merge»**)。具体方法请参考[这里](https://stackoverflow.com/a/15745424/5861495)。
 
 ## 插件
 
@@ -68,15 +83,21 @@ vendors:
 
 ## 更新
 
-NexT 每个月都会发布新版本。你可以通过如下命令更新到最新的 master 分支：
+NexT 每个月都会发布新版本。你可以通过如下命令更新 NexT。
+
+通过 npm 安装最新版本：
+
+```sh
+$ cd hexo-site
+$ npm update hexo-theme-next
+```
+
+或者通过 git 更新到最新的 master 分支：
 
 ```sh
 $ cd themes/next
 $ git pull
 ```
-
-如果你在此过程中收到了任何错误报告 (例如 **«Commit your changes or stash them before you can merge»**)，我们推荐你使用 [Alternate Theme Config][docs-data-files-url] 特性。\
-然而你也可以通过提交（`Commit`）、贮藏（`Stash`）或忽视（`Discard`）本地更改以绕过这种更新错误。具体方法请参考[这里](https://stackoverflow.com/a/15745424/5861495)。
 
 **如果你想要从 v5.x / v7.x 更新到最新版本，阅读[这篇文档][docs-update-5-1-x-url]。**
 
@@ -120,7 +141,8 @@ $ git pull
 > jsDelivr 提供了 CDN 服务。
 
 [docs-installation-url]: https://theme-next.js.org/docs/getting-started/installation.html
-[docs-data-files-url]: https://theme-next.js.org/docs/getting-started/configuration.html
+[docs-configuration-url]: https://theme-next.js.org/docs/getting-started/configuration.html
+[docs-custom-files-url]: https://theme-next.js.org/docs/theme-settings/custom-files.html
 [docs-update-5-1-x-url]: https://theme-next.js.org/docs/getting-started/update-from-v5.html
 
 [gitter-url]: https://gitter.im/hexo-next

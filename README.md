@@ -31,14 +31,29 @@
 
 ## Installation
 
-The simplest way to install is to clone the entire repository:
+If you're using Hexo 5.0 or later, the simplest way to install is through npm:
 
 ```sh
-$ cd hexo
+$ cd hexo-site
+$ npm install hexo-theme-next
+```
+
+Or you can clone the entire repository:
+
+```sh
+$ cd hexo-site
 $ git clone https://github.com/next-theme/hexo-theme-next themes/next
 ```
 
-Or you can see [detailed installation instructions][docs-installation-url] if you want any other variant.
+See [detailed installation instructions][docs-installation-url] if you want any other variant.
+
+## Configuration
+
+At present, NexT encourages users to use the [Alternate Theme Config][docs-configuration-url] to configure NexT. And it's easy to customize the layout or style of NexT using [Custom Files][docs-custom-files-url].
+
+It is not recommended to directly modify any files in the NexT theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
+
+However, you can bypass merge conflicts (error message like **«Commit your changes or stash them before you can merge»**) by using the `Commit`, `Stash` or `Reset` commands for local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
 ## Plugins
 
@@ -68,15 +83,21 @@ vendors:
 
 ## Update
 
-NexT releases new versions every month. You can update to latest master branch by the following command:
+A new version of NexT will be released every month. You can update NexT by the following command.
+
+Install the latest version throuth npm:
+
+```sh
+$ cd hexo-site
+$ npm update hexo-theme-next
+```
+
+Or update to latest master branch:
 
 ```sh
 $ cd themes/next
 $ git pull
 ```
-
-And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Alternate Theme Config][docs-data-files-url] feature.\
-However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` commands for local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
 **If you want to update from v5.x / v7.x to the latest version, read [this][docs-update-5-1-x-url].**
 
@@ -120,7 +141,8 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 > Thanks jsDelivr for providing public CDN service.
 
 [docs-installation-url]: https://theme-next.js.org/docs/getting-started/installation.html
-[docs-data-files-url]: https://theme-next.js.org/docs/getting-started/configuration.html
+[docs-configuration-url]: https://theme-next.js.org/docs/getting-started/configuration.html
+[docs-custom-files-url]: https://theme-next.js.org/docs/theme-settings/custom-files.html
 [docs-update-5-1-x-url]: https://theme-next.js.org/docs/getting-started/update-from-v5.html
 
 [gitter-url]: https://gitter.im/hexo-next
