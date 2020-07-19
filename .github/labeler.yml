@@ -1,0 +1,7 @@
+# Configuration for labeler - https://github.com/actions/labeler
+
+🔌 3rd Party Plugin: package.json
+Configurations: _config.yml
+CSS: source/css/**/*
+📖 Docs: docs/**/*
+Layout: layout/**/*

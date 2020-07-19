@@ -1,0 +1,31 @@
+# Configuration for Label Commenter - https://github.com/peaceiris/actions-label-commenter
+
+labels:
+  - name: Invalid
+    labeled:
+      issue:
+        body: |
+          This issue has been closed because it does not meet our Issue template.
+          Please read our [guidelines for contributing](https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md#how-can-i-contribute)."
+        action: close
+  - name: Need More Info
+    labeled:
+      issue:
+        body: We would appreciate it if you could provide us with more info about this issue!
+  - name: 🎯 Roadmap
+    labeled:
+      issue:
+        body: This issue has been added to the latest roadmap.
+  - name: Support
+    labeled:
+      issue:
+        body: |
+          :wave: Hey there! we use the issue tracker exclusively for bug reports
+          and feature requests. However, this issue appears to be a support request.
+          Please use our [support channels](https://github.com/next-theme/hexo-theme-next#feedback) to get help with the project.
+        action: close
+  - name: Wontfix
+    labeled:
+      issue:
+        body: This will not be worked on but we appreciate your contribution.
+        action: close

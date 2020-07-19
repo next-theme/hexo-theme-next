@@ -12,9 +12,3 @@ newPRWelcomeComment: >
 # Comment to be posted to on pull requests merged by a first time user
 firstPRMergeComment: >
   Congrats on merging your first pull request here! :tada: How awesome!
-
-# =============================================================================================== #
-# Configuration for request-info - https://github.com/behaviorbot/request-info
-
-# *OPTIONAL* Label to be added to Issues and Pull Requests with insufficient information given
-requestInfoLabelToAdd: Need More Info
