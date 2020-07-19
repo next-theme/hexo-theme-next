@@ -14,7 +14,7 @@ Please follow this Issue template to provide relevant information, such as sourc
 <!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
 - [ ] I am using [the latest](https://github.com/next-theme/hexo-theme-next/releases/latest) version of NexT.
-- [ ] I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) & [Troubleshooting page of NexT](https://theme-next.js.org/docs/troubleshooting.html).
+- [ ] I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Troubleshooting page of NexT](https://theme-next.js.org/docs/troubleshooting.html).
 - [ ] I have already searched for current [issues](https://github.com/next-theme/hexo-theme-next/issues), which does not help me.
 
 ***
@@ -45,7 +45,7 @@ Please follow this Issue template to provide relevant information, such as sourc
 ```
 
 ### Package dependencies Information
-<!-- Paste output from `npm ls --depth 0` (粘贴 `npm ls --depth 0` 输出的信息) -->
+<!-- Paste output from `npm ls --depth 0` in Hexo root dirctory (粘贴在 Hexo 根目录下 `npm ls --depth 0` 输出的信息) -->
 ```
 
 ```

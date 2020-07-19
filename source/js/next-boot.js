@@ -45,9 +45,8 @@ NexT.boot.registerEvents = function() {
 
   const duration = 200;
   document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
-    element.addEventListener('click', event => {
-      const item = event.currentTarget;
-      if (item.matches('.sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview')) return;
+    element.addEventListener('click', () => {
+      if (element.matches('.sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview')) return;
       const sidebar = document.querySelector('.sidebar-inner');
       const panel = document.querySelectorAll('.sidebar-panel');
       const activeClassName = ['sidebar-toc-active', 'sidebar-overview-active'];
