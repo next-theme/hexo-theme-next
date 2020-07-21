@@ -7,6 +7,12 @@
 @import 'math' if (hexo-config('math.mathjax.enable'));
 
 .use-motion .animated {
+  // Fix issue #48 #55
+  animation-fill-mode: none;
   // Fix issue #46 .animated in .sidebar
   visibility: inherit;
+}
+
+.use-motion .sidebar .animated {
+  animation-fill-mode: both;
 }
