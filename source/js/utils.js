@@ -187,12 +187,12 @@ NexT.utils = {
         // Prevent selected tab to select again.
         if (element.classList.contains('active')) return;
         // Add & Remove active class on `nav-tabs` & `tab-content`.
-        element.parentNode.childNodes.forEach(target => {
+        [...element.parentNode.children].forEach(target => {
           target.classList.toggle('active', target === element);
         });
         // https://stackoverflow.com/questions/20306204/using-queryselector-with-ids-that-are-numbers
         const tActive = document.getElementById(element.querySelector('a').getAttribute('href').replace('#', ''));
-        tActive.parentNode.childNodes.forEach(target => {
+        [...tActive.parentNode.children].forEach(target => {
           target.classList.toggle('active', target === tActive);
         });
         // Trigger event
