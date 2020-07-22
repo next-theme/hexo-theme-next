@@ -3,12 +3,12 @@
 'use strict';
 
 const { htmlTag } = require('hexo-util');
-const url = require('url');
+const { parse } = require('url');
 
 hexo.extend.helper.register('next_url', function(path, text, options = {}) {
   const { config } = this;
-  const data = url.parse(path);
-  const siteHost = url.parse(config.url).hostname || config.url;
+  const data = parse(path);
+  const siteHost = parse(config.url).hostname || config.url;
 
   const theme = hexo.theme.config;
   let exturl = '';

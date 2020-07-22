@@ -6,7 +6,7 @@ labels:
       issue:
         body: |
           This issue has been closed because it does not meet our Issue template.
-          Please read our [guidelines for contributing](https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md#how-can-i-contribute)."
+          Please read our [guidelines for contributing](https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md#how-can-i-contribute).
         action: close
   - name: Need More Info
     labeled:
