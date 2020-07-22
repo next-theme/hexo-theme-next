@@ -10,7 +10,7 @@
     function getCount(doc, increaseCount) {
       // IncreaseCount will be false when not in article page
       return doc.get().then(d => {
-        var count = 0;
+        let count = 0;
         if (!d.exists) { // Has no data, initialize count
           if (increaseCount) {
             doc.set({
@@ -41,13 +41,13 @@
   </script>
   <script{{ pjax }}>
     (function() {
-      var db = firebase.firestore();
-      var articles = db.collection('{{ theme.firestore.collection }}');
+      const db = firebase.firestore();
+      const articles = db.collection('{{ theme.firestore.collection }}');
 
       if (CONFIG.page.isPost) { // Is article page
-        var title = document.querySelector('.post-title').innerText.trim();
-        var doc = articles.doc(title);
-        var increaseCount = CONFIG.hostname === location.hostname;
+        const title = document.querySelector('.post-title').innerText.trim();
+        const doc = articles.doc(title);
+        let increaseCount = CONFIG.hostname === location.hostname;
         if (localStorage.getItem(title)) {
           increaseCount = false;
         } else {
@@ -56,13 +56,13 @@
         }
         getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
       } else if (CONFIG.page.isHome) { // Is index page
-        var promises = [...document.querySelectorAll('.post-title')].map(element => {
-          var title = element.innerText.trim();
-          var doc = articles.doc(title);
+        const promises = [...document.querySelectorAll('.post-title')].map(element => {
+          const title = element.innerText.trim();
+          const doc = articles.doc(title);
           return getCount(doc);
         });
         Promise.all(promises).then(counts => {
-          var metas = document.querySelectorAll('.firestore-visitors-count');
+          const metas = document.querySelectorAll('.firestore-visitors-count');
           counts.forEach((val, idx) => {
             appendCountTo(metas[idx])(val);
           });

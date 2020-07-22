@@ -38,7 +38,7 @@
       }
     };
     (function () {
-      var script = document.createElement('script');
+      const script = document.createElement('script');
       script.src = '{{ url_for(mathjax_uri) }}';
       script.defer = true;
       document.head.appendChild(script);
