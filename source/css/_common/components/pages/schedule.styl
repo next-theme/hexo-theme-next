@@ -24,34 +24,44 @@
       display: inline-block;
       font-weight: bold;
       padding: 0 5px;
-      text-align: right;
     }
   }
 
   .event {
-    background: $black-deep;
-    margin: 20px 0;
-    min-height: 40px;
-    padding: 15px 0 15px 10px;
+    --event-background: $black-deep;
+    --event-foreground: $grey;
+    --event-title: white;
+    background: var(--event-background);
+    padding: 15px;
 
     .event-summary {
-      color: white;
+      border-bottom: 0;
+      color: var(--event-title);
       margin: 0;
-      padding-bottom: 3px;
+      padding: 0 0 0 35px;
+      position: relative;
 
       &::before {
         animation: dot-flash 1s alternate infinite ease-in-out;
-        color: white;
-        display: inline-block;
-        font-size: 10px;
-        margin-right: 25px;
-        vertical-align: middle;
-        font-family-icons('\f111');
+        background: var(--event-title);
+        left: 0;
+        margin-top: -6px;
+        position: absolute;
+        top: 50%;
+        round-icon(12px);
       }
     }
 
+    &:nth-of-type(odd) .event-summary::before {
+      animation-delay: .5s;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
     .event-relative-time {
-      color: $grey;
+      color: var(--event-foreground);
       display: inline-block;
       font-size: 12px;
       font-weight: normal;
@@ -59,20 +69,15 @@
     }
 
     .event-details {
-      color: white;
+      color: var(--event-foreground);
       display: block;
       line-height: 18px;
-      margin-left: 56px;
-      padding-bottom: 6px;
-      padding-top: 3px;
-      text-indent: -24px;
+      padding: 6px 0 6px 35px;
 
       &::before {
-        color: white;
+        color: var(--event-foreground);
         display: inline-block;
         margin-right: 9px;
-        text-align: center;
-        text-indent: 0;
         width: 14px;
         font-family-icons();
       }
@@ -84,20 +89,16 @@
       &.event-duration::before {
         content: '\f017';
       }
+
+      &.event-description::before {
+        content: '\f024';
+      }
     }
   }
 
   .event-past {
-    background: $whitesmoke;
-
-    .event-summary, .event-details {
-      color: $grey;
-      opacity: .9;
-
-      &::before {
-        animation: none;
-        color: $grey;
-      }
-    }
+    --event-background: $whitesmoke;
+    --event-foreground: $grey-dark;
+    --event-title: $black-deep;
   }
 }

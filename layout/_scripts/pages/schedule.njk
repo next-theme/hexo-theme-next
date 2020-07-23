@@ -81,21 +81,26 @@
       hour   : '2-digit',
       minute : '2-digit'
     };
-    const relativeTimeStr = tense === 0 ? 'NOW' : getRelativeTime(now, start);
-    const durationStr = start.toLocaleTimeString([], durationFormat) + ' - ' + end.toLocaleTimeString([], durationFormat);
+    const relativeTime = tense === 0 ? 'NOW' : getRelativeTime(now, start);
+    const duration = start.toLocaleTimeString([], durationFormat) + ' - ' + end.toLocaleTimeString([], durationFormat);
 
-    let locationDOM = '';
+    let location = '';
     if (calendar.showLocation && event.location) {
-      locationDOM = '<span class="event-location event-details">' + event.location + '</span>';
+      location = `<span class="event-location event-details">${event.location}</span>`;
+    }
+    let description = '';
+    if (event.description) {
+      description = `<span class="event-description event-details">${event.description}</span>`;
     }
 
     const eventContent = `<div class="event ${tenseClass}">
         <h2 class="event-summary">
           ${event.summary}
-          <span class="event-relative-time">${relativeTimeStr}</span>
+          <span class="event-relative-time">${relativeTime}</span>
         </h2>
-        ${locationDOM}
-        <span class="event-duration event-details">${durationStr}</span>
+        ${location}
+        <span class="event-duration event-details">${duration}</span>
+        ${description}
       </div>`;
     return eventContent;
   }

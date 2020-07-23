@@ -318,7 +318,8 @@ calendar:
   calendar_id: <required> # Your Google account E-Mail
   api_key: <required>
   orderBy: startTime
-  offsetMax: 24 # Time Range
+  showLocation: false
+  offsetMax: 72 # Time Range
   offsetMin: 4 # Time Range
   showDeleted: false
   singleEvents: true
