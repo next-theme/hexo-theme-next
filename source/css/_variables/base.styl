@@ -71,7 +71,7 @@ $menu-item-bg-color-dark      = $black-light;
 // --------------------------------------------------
 get_font_family(config) {
   $custom-family = hexo-config('font.' + config + '.family');
-  return $custom-family is a 'string' ? $custom-family : null;
+  return $custom-family is a 'string' ? unquote($custom-family) : null;
 }
 
 // Font families.

@@ -20,7 +20,7 @@
       this.language = '{{ __('disqus') }}';
     {% endif -%}
   };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+  NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {
       DISQUS.reset({
         reload: true,

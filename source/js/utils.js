@@ -348,7 +348,8 @@ NexT.utils = {
     }
   },
 
-  loadComments: function(element, callback) {
+  loadComments: function(selector, callback) {
+    const element = document.querySelector(selector);
     if (!CONFIG.comments.lazyload || !element) {
       callback();
       return;
