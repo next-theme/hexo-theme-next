@@ -8,21 +8,20 @@
 
 function postButton(args) {
   args = args.join(' ').split(',');
-  const url = args[0];
-  let text  = args[1] || '';
-  let icon  = args[2] || '';
-  let title = args[3] || '';
+  const url   = args[0];
+  const text  = (args[1] || '').trim();
+  let icon    = (args[2] || '').trim();
+  const title = (args[3] || '').trim();
 
   if (!url) {
     hexo.log.warn('URL can NOT be empty.');
   }
+  if (icon.length > 0) {
+    if (!icon.startsWith('fa')) icon = 'fa fa-' + icon;
+    icon = `<i class="${icon}"></i>`;
+  }
 
-  text = text.trim();
-  icon = icon.trim();
-  icon = icon.startsWith('fa') ? icon : 'fa fa-' + icon;
-  title = title.trim();
-
-  return `<a class="btn" href="${url}"${title.length > 0 ? ` title="${title}"` : ''}>${icon.length > 0 ? `<i class="${icon}"></i>` : ''}${text}</a>`;
+  return `<a class="btn" href="${url}"${title.length > 0 ? ` title="${title}"` : ''}>${icon}${text}</a>`;
 }
 
 hexo.extend.tag.register('button', postButton, {ends: false});

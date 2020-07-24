@@ -19,7 +19,7 @@ function postTabs(args, content) {
   let tabNav = '';
   let tabContent = '';
 
-  !tabName && hexo.log.warn('Tabs block must have unique name!');
+  if (!tabName) hexo.log.warn('Tabs block must have unique name!');
 
   while ((match = tabBlock.exec(content)) !== null) {
     matches.push(match[1]);
@@ -27,27 +27,25 @@ function postTabs(args, content) {
   }
 
   for (let i = 0; i < matches.length; i += 2) {
-    const tabParameters = matches[i].split('@');
-    let postContent   = matches[i + 1];
-    let tabCaption    = tabParameters[0] || '';
-    let tabIcon       = tabParameters[1] || '';
-    let tabHref       = '';
+    let [caption = '', icon = ''] = matches[i].split('@');
+    let postContent = matches[i + 1];
 
     postContent = hexo.render.renderSync({text: postContent, engine: 'markdown'}).trim();
 
-    tabId++;
-    tabHref = (tabName + ' ' + tabId).toLowerCase().split(' ').join('-');
+    const abbr = tabName + ' ' + ++tabId;
+    const href = abbr.toLowerCase().split(' ').join('-');
 
-    ((tabCaption.length === 0) && (tabIcon.length === 0)) && (tabCaption = tabName + ' ' + tabId);
+    icon = icon.trim();
+    if (icon.length > 0) {
+      if (!icon.startsWith('fa')) icon = 'fa fa-' + icon;
+      icon = `<i class="${icon}"></i>`;
+    }
 
-    const isOnlyicon = tabIcon.length > 0 && tabCaption.length === 0 ? ' style="text-align: center;"' : '';
-    let icon = tabIcon.trim();
-    if (!icon.startsWith('fa')) icon = 'fa fa-' + icon;
-    tabIcon.length > 0 && (tabIcon = `<i class="${icon}"${isOnlyicon}></i>`);
+    caption = icon + caption.trim();
 
     const isActive = (tabActive > 0 && tabActive === tabId) || (tabActive === 0 && tabId === 1) ? ' active' : '';
-    tabNav += `<li class="tab${isActive}"><a href="#${tabHref}">${tabIcon + tabCaption.trim()}</a></li>`;
-    tabContent += `<div class="tab-pane${isActive}" id="${tabHref}">${postContent}</div>`;
+    tabNav += `<li class="tab${isActive}"><a href="#${href}">${caption || abbr}</a></li>`;
+    tabContent += `<div class="tab-pane${isActive}" id="${href}">${postContent}</div>`;
   }
 
   tabNav = `<ul class="nav-tabs">${tabNav}</ul>`;
