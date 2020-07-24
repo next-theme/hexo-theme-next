@@ -42,46 +42,32 @@
     const msPerYear = msPerDay * 365;
 
     let elapsed = current - previous;
-    const tense = elapsed > 0 ? 'ago' : 'later';
+    const tense = elapsed > 0 ? ' ago' : ' later';
 
     elapsed = Math.abs(elapsed);
 
     if (elapsed < msPerHour) {
-      return Math.round(elapsed / msPerMinute) + ' minutes ' + tense;
+      return Math.round(elapsed / msPerMinute) + ' minutes' + tense;
     } else if (elapsed < msPerDay) {
-      return Math.round(elapsed / msPerHour) + ' hours ' + tense;
+      return Math.round(elapsed / msPerHour) + ' hours' + tense;
     } else if (elapsed < msPerMonth) {
-      return 'about ' + Math.round(elapsed / msPerDay) + ' days ' + tense;
+      return 'about ' + Math.round(elapsed / msPerDay) + ' days' + tense;
     } else if (elapsed < msPerYear) {
-      return 'about ' + Math.round(elapsed / msPerMonth) + ' months ' + tense;
+      return 'about ' + Math.round(elapsed / msPerMonth) + ' months' + tense;
     }
 
-    return 'about' + Math.round(elapsed / msPerYear) + ' years' + tense;
+    return 'about ' + Math.round(elapsed / msPerYear) + ' years' + tense;
   }
 
   function buildEventDOM(tense, event) {
-    let tenseClass = '';
     const start = event.start.dateTime;
     const end = event.end.dateTime;
-    switch (tense) {
-      case 0: // now
-        tenseClass = 'event-now';
-        break;
-      case 1: // future
-        tenseClass = 'event-future';
-        break;
-      case -1: // past
-        tenseClass = 'event-past';
-        break;
-      default:
-        throw new Error('Time data error');
-    }
     const durationFormat = {
       weekday: 'short',
       hour   : '2-digit',
       minute : '2-digit'
     };
-    const relativeTime = tense === 0 ? 'NOW' : getRelativeTime(now, start);
+    const relativeTime = tense === 'now' ? 'NOW' : getRelativeTime(now, start);
     const duration = start.toLocaleTimeString([], durationFormat) + ' - ' + end.toLocaleTimeString([], durationFormat);
 
     let location = '';
@@ -93,7 +79,7 @@
       description = `<span class="event-description event-details">${event.description}</span>`;
     }
 
-    const eventContent = `<div class="event ${tenseClass}">
+    const eventContent = `<section class="event event-${tense}">
         <h2 class="event-summary">
           ${event.summary}
           <span class="event-relative-time">${relativeTime}</span>
@@ -101,7 +87,7 @@
         ${location}
         <span class="event-duration event-details">${duration}</span>
         ${description}
-      </div>`;
+      </section>`;
     return eventContent;
   }
 
@@ -126,14 +112,14 @@
         const start = event.start.dateTime = new Date(event.start.dateTime || (new Date(event.start.date).getTime() + utc));
         const end = event.end.dateTime = new Date(event.end.dateTime || (new Date(event.end.date).getTime() + utc));
 
-        let tense = 0; // 0:now 1:future -1:past
+        let tense = 'now';
         if (end < now) {
-          tense = -1;
+          tense = 'past';
         } else if (start > now) {
-          tense = 1;
+          tense = 'future';
         }
 
-        if (tense === 1 && prevEnd < now) {
+        if (tense === 'future' && prevEnd < now) {
           eventList.innerHTML += '<hr>';
         }
 

@@ -50,7 +50,8 @@
 
   .post-header {
     border-bottom: 1px dashed $grey-light;
-    margin: 30px 0;
+    // 2px is equal to half the width of .posts-collapse::before
+    margin: 30px 2px 0;
     padding-left: 15px;
     position: relative;
     transition: border $transition-ease;
@@ -58,7 +59,7 @@
     &::before {
       background: $grey;
       border: 1px solid white;
-      left: -4px;
+      left: -6px;
       position: absolute;
       top: $font-size-smallest;
       transition: background $transition-ease;
