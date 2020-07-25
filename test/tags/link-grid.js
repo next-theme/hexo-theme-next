@@ -2,9 +2,7 @@
 
 require('chai').should();
 
-describe('link-grid', () => {
-  const linkGrid = require('../../scripts/tags/link-grid');
-  const result = `<div class="link-grid"><div class="link-grid-container">
+const result = `<div class="link-grid"><div class="link-grid-container">
 <div class="link-grid-image" style="background-image: url(/images/apple-touch-icon-next.png);"></div>
 <p>Theme NexT</p><p>Stay Simple. Stay NexT.</p>
 <a href="https://theme-next.js.org/"></a>
@@ -13,6 +11,9 @@ describe('link-grid', () => {
 <p>Theme NexT</p><p>Stay Simple. Stay NexT.</p>
 <a href="https://theme-next.js.org/"></a>
 </div></div>`;
+
+describe('link-grid', () => {
+  const linkGrid = require('../../scripts/tags/link-grid');
 
   it('default', () => {
     linkGrid([], `
