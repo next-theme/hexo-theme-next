@@ -6,14 +6,14 @@ const yaml = require('js-yaml');
 const should = require('chai').should();
 
 describe('Validate', () => {
-  it('validate - config', () => {
+  it('config', () => {
     const themeConfig = fs.readFileSync(path.join(__dirname, '../../_config.yml'));
     should.not.throw(() => {
       yaml.safeLoad(themeConfig);
     });
   });
 
-  it('validate - language', () => {
+  it('language', () => {
     const languagesPath = path.join(__dirname, '../../languages');
     should.not.throw(() => {
       fs.readdirSync(languagesPath).forEach(lang => {

@@ -9,13 +9,13 @@ module.exports = function(args, content) {
   const delimiter = args[1] || '|';
   const comment   = args[2] || '%';
 
-  const links = content.split('\n').map(item => {
-    item = item.split(delimiter).map(arg => arg.trim());
-    if (item[0][0] === comment) return '';
+  const links = content.split('\n').filter(line => line.trim() !== '').map(line => {
+    line = line.split(delimiter).map(arg => arg.trim());
+    if (line[0][0] === comment) return '';
     return `<div class="link-grid-container">
-<div class="link-grid-image" style="background-image: url(${item[3] || image});"></div>
-<p>${item[0]}</p><p>${item[2] || item[1]}</p>
-<a href="${item[1]}"></a>
+<div class="link-grid-image" style="background-image: url(${line[3] || image});"></div>
+<p>${line[0]}</p><p>${line[2] || line[1]}</p>
+<a href="${line[1]}"></a>
 </div>`;
   });
   return `<div class="link-grid">${links.join('')}</div>`;

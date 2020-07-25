@@ -1,11 +1,15 @@
 'use strict';
 
-require('chai').should();
-
 describe('Tags', () => {
-  it('tags - config', () => {
-  });
-
-  it('tags - language', () => {
-  });
+  require('./button');
+  require('./caniuse');
+  require('./center-quote');
+  require('./group-pictures');
+  require('./label');
+  require('./link-grid');
+  require('./mermaid');
+  require('./note');
+  require('./pdf');
+  require('./tabs');
+  require('./video');
 });
