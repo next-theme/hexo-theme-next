@@ -62,8 +62,8 @@ ${markdown}
   });
 
   it('icon', () => {
-      postTabs('name'.split(' '),
-        `<!-- tab @home -->
+    postTabs('name'.split(' '),
+      `<!-- tab @home -->
 ${markdown}
 <!-- endtab -->
 
@@ -73,8 +73,8 @@ ${markdown}
   });
 
   it('icon (Font Awesome 5)', () => {
-      postTabs('name'.split(' '),
-        `<!-- tab @fab fa-fort-awesome -->
+    postTabs('name'.split(' '),
+      `<!-- tab @fab fa-fort-awesome -->
 ${markdown}
 <!-- endtab -->
 
