@@ -1,16 +1,14 @@
-/* global hexo */
-
 'use strict';
 
 const { htmlTag } = require('hexo-util');
 const { parse } = require('url');
 
-hexo.extend.helper.register('next_url', function(path, text, options = {}) {
+module.exports = function(path, text, options = {}) {
   const { config } = this;
   const data = parse(path);
   const siteHost = parse(config.url).hostname || config.url;
 
-  const theme = hexo.theme.config;
+  const theme = this.theme.config;
   let exturl = '';
   let tag = 'a';
   let attrs = { href: this.url_for(path) };
@@ -58,4 +56,4 @@ hexo.extend.helper.register('next_url', function(path, text, options = {}) {
   }
 
   return htmlTag(tag, attrs, decodeURI(text), false);
-});
+};

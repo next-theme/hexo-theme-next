@@ -1,6 +1,7 @@
 'use strict';
 
 describe('NexT', () => {
-  require('./validate');
+  require('./helpers');
   require('./tags');
+  require('./validate');
 });

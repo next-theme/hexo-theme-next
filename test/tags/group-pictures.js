@@ -1,11 +1,13 @@
 'use strict';
 
 require('chai').should();
-const Hexo = require('../hexo');
+const Hexo = require('hexo');
 const hexo = new Hexo();
 
 describe('group-pictures', () => {
   const groupPicture = require('../../scripts/tags/group-pictures')(hexo);
+
+  before(() => hexo.init().then(() => hexo.loadPlugin(require.resolve('hexo-renderer-marked'))));
 
   it('layout 3-1', () => {
     groupPicture(['3-1'], `

@@ -1,7 +1,7 @@
 'use strict';
 
 require('chai').should();
-const Hexo = require('../hexo');
+const Hexo = require('hexo');
 const hexo = new Hexo();
 
 const markdown = 'Test **Bold** *Italic*';
@@ -10,6 +10,8 @@ const summary = 'This is a summary'.split(' ');
 
 describe('note', () => {
   const postNote = require('../../scripts/tags/note')(hexo);
+
+  before(() => hexo.init().then(() => hexo.loadPlugin(require.resolve('hexo-renderer-marked'))));
 
   it('only text', () => {
     postNote([], markdown).should.eql(`<div class="note ">${result}
