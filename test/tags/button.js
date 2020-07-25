@@ -1,10 +1,10 @@
 'use strict';
 
 require('chai').should();
+const Hexo = require('../hexo');
+const hexo = new Hexo();
 
 describe('button', () => {
-  const Hexo = require('hexo');
-  const hexo = new Hexo(__dirname);
   const postButton = require('../../scripts/tags/button')(hexo);
 
   it('only url', () => {

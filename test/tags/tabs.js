@@ -1,17 +1,15 @@
 'use strict';
 
 require('chai').should();
+const Hexo = require('../hexo');
+const hexo = new Hexo();
 
 const markdown = 'Test **Bold** *Italic*';
 const result = '<p>Test <strong>Bold</strong> <em>Italic</em></p>';
 const container = '<div class="tabs" id="name"><ul class="nav-tabs">';
 
 describe('tabs', () => {
-  const Hexo = require('hexo');
-  const hexo = new Hexo(__dirname);
   const postTabs = require('../../scripts/tags/tabs')(hexo);
-
-  before(() => hexo.init().then(() => hexo.loadPlugin(require.resolve('hexo-renderer-marked'))));
 
   it('empty', () => {
     postTabs(['name']).should.eql(`${container}</ul><div class="tab-content"></div></div>`);

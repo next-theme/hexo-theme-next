@@ -1,10 +1,10 @@
 'use strict';
 
 require('chai').should();
+const Hexo = require('../hexo');
+const hexo = new Hexo();
 
 describe('pdf', () => {
-  const Hexo = require('hexo');
-  const hexo = new Hexo(__dirname);
   const pdf = require('../../scripts/tags/pdf')(hexo);
 
   before(() => {

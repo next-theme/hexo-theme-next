@@ -1,10 +1,10 @@
 'use strict';
 
 require('chai').should();
+const Hexo = require('../hexo');
+const hexo = new Hexo();
 
 describe('label', () => {
-  const Hexo = require('hexo');
-  const hexo = new Hexo(__dirname);
   const postLabel = require('../../scripts/tags/label')(hexo);
 
   it('only text', () => {

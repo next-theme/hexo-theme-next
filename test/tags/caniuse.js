@@ -1,10 +1,10 @@
 'use strict';
 
 require('chai').should();
+const Hexo = require('../hexo');
+const hexo = new Hexo();
 
 describe('caniuse', () => {
-  const Hexo = require('hexo');
-  const hexo = new Hexo(__dirname);
   const caniUse = require('../../scripts/tags/caniuse')(hexo);
 
   it('only feature', () => {
