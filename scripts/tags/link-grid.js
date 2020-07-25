@@ -2,11 +2,9 @@
  * link-grid.js | https://theme-next.js.org/docs/tag-plugins/link-grid
  */
 
-/* global hexo */
-
 'use strict';
 
-function linkGrid(args, content) {
+module.exports = function(args, content) {
   const image     = args[0] || '/images/avatar.gif';
   const delimiter = args[1] || '|';
   const comment   = args[2] || '%';
@@ -21,7 +19,4 @@ function linkGrid(args, content) {
 </div>`;
   });
   return `<div class="link-grid">${links.join('')}</div>`;
-}
-
-hexo.extend.tag.register('linkgrid', linkGrid, {ends: true});
-hexo.extend.tag.register('lg', linkGrid, {ends: true});
+};

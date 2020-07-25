@@ -2,13 +2,9 @@
  * pdf.js | https://theme-next.js.org/docs/tag-plugins/pdf
  */
 
-/* global hexo */
-
 'use strict';
 
-function pdf(args) {
-  const theme = hexo.theme.config;
+module.exports = ctx => function(args) {
+  const theme = ctx.theme.config;
   return `<div class="pdfobject-container" data-target="${args[0]}" data-height="${args[1] || theme.pdf.height}"></div>`;
-}
-
-hexo.extend.tag.register('pdf', pdf, {ends: false});
+};
