@@ -6,7 +6,7 @@ const hexo = new Hexo();
 
 const markdown = 'Test **Bold** *Italic*';
 const result = '<p>Test <strong>Bold</strong> <em>Italic</em></p>';
-const summary = 'This is a summary'.split(' ');
+const summary = 'This is a *summary*'.split(' ');
 
 describe('note', () => {
   const postNote = require('../../scripts/tags/note')(hexo);
@@ -29,7 +29,7 @@ describe('note', () => {
   });
 
   it('summary and text', () => {
-    postNote(summary, markdown).should.eql(`<details class="note "><summary><p>This is a summary</p>
+    postNote(summary, markdown).should.eql(`<details class="note "><summary><p>This is a <em>summary</em></p>
 </summary>
 ${result}
 
@@ -37,7 +37,7 @@ ${result}
   });
 
   it('classes, summary and text', () => {
-    postNote(['primary'].concat(summary), markdown).should.eql(`<details class="note primary"><summary><p>This is a summary</p>
+    postNote(['primary'].concat(summary), markdown).should.eql(`<details class="note primary"><summary><p>This is a <em>summary</em></p>
 </summary>
 ${result}
 
@@ -45,7 +45,7 @@ ${result}
   });
 
   it('classes, no-icon, summary and text', () => {
-    postNote(['primary', 'no-icon'].concat(summary), markdown).should.eql(`<details class="note primary no-icon"><summary><p>This is a summary</p>
+    postNote(['primary', 'no-icon'].concat(summary), markdown).should.eql(`<details class="note primary no-icon"><summary><p>This is a <em>summary</em></p>
 </summary>
 ${result}
 

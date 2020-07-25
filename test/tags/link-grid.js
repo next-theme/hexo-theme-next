@@ -39,4 +39,11 @@ Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. |`).should.eql
 Theme NexT , https://theme-next.js.org/ , Stay Simple. Stay NexT. , /images/sample.png
 Theme NexT , https://theme-next.js.org/ , Stay Simple. Stay NexT. , /images/sample.png`).should.eql(result);
   });
+
+  it('custom delimiter and comment', () => {
+    linkGrid(['/images/sample.png', ',', '#'], `
+Theme NexT , https://theme-next.js.org/ , Stay Simple. Stay NexT. , /images/sample.png
+Theme NexT , https://theme-next.js.org/ , Stay Simple. Stay NexT. , /images/sample.png
+# Theme NexT , https://theme-next.js.org/ , Stay Simple. Stay NexT. , /images/sample.png`).should.eql(result);
+  });
 });

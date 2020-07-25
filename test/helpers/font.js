@@ -4,6 +4,9 @@ require('chai').should();
 const Hexo = require('hexo');
 const hexo = new Hexo();
 
+const fontStyles = ':300,300italic,400,400italic,700,700italic';
+const fontHost = '//fonts.googleapis.com';
+
 describe('font', () => {
   const nextFont = require('../../scripts/helpers/font').bind(hexo);
 
@@ -35,7 +38,7 @@ describe('font', () => {
       family  : 'Palatino',
       external: false
     };
-    nextFont().should.eql('<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Amatic SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">');
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Amatic SC${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 
   it('multiple', () => {
@@ -48,7 +51,7 @@ describe('font', () => {
       family  : 'Palatino',
       external: true
     };
-    nextFont().should.eql('<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Amatic SC:300,300italic,400,400italic,700,700italic|Palatino:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">');
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Amatic SC${fontStyles}|Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 
   it('duplicate', () => {
@@ -61,7 +64,7 @@ describe('font', () => {
       family  : 'Palatino',
       external: true
     };
-    nextFont().should.eql('<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Palatino:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">');
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 
   it('fallback font', () => {
@@ -74,6 +77,6 @@ describe('font', () => {
       family  : 'Palatino',
       external: true
     };
-    nextFont().should.eql('<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Palatino:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">');
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Roboto Slab${fontStyles}|Noto Serif SC${fontStyles}|Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 });

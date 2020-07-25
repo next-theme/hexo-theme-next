@@ -15,11 +15,11 @@ describe('button', () => {
     postButton('#, Hello world'.split(' ')).should.eql('<a class="btn" href="#">Hello world</a>');
   });
 
-  it('url and icon', () => {
+  it('url and icon (Font Awesome 4)', () => {
     postButton('#,, home fa-5x'.split(' ')).should.eql('<a class="btn" href="#"><i class="fa fa-home fa-5x"></i></a>');
   });
 
-  it('url and icon (Font Awesome 5)', () => {
+  it('url and icon', () => {
     postButton('#,, fab fa-fort-awesome fa-5x'.split(' ')).should.eql('<a class="btn" href="#"><i class="fab fa-fort-awesome fa-5x"></i></a>');
   });
 

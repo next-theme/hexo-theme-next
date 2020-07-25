@@ -61,7 +61,7 @@ ${markdown}
 <!-- endtab -->`).should.eql(`${container}<li class="tab active"><a href="#name-1">Tab 1</a></li><li class="tab"><a href="#name-2">Tab 2</a></li></ul><div class="tab-content"><div class="tab-pane active" id="name-1">${result}</div><div class="tab-pane" id="name-2">${result}</div></div></div>`);
   });
 
-  it('icon', () => {
+  it('icon (Font Awesome 4)', () => {
     postTabs('name'.split(' '),
       `<!-- tab @home -->
 ${markdown}
@@ -72,7 +72,7 @@ ${markdown}
 <!-- endtab -->`).should.eql(`${container}<li class="tab active"><a href="#name-1"><i class="fa fa-home"></i></a></li><li class="tab"><a href="#name-2"><i class="fa fa-home"></i></a></li></ul><div class="tab-content"><div class="tab-pane active" id="name-1">${result}</div><div class="tab-pane" id="name-2">${result}</div></div></div>`);
   });
 
-  it('icon (Font Awesome 5)', () => {
+  it('icon', () => {
     postTabs('name'.split(' '),
       `<!-- tab @fab fa-fort-awesome -->
 ${markdown}
