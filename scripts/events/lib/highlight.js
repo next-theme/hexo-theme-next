@@ -1,10 +1,8 @@
-'use strict';
-
 const fs = require('fs');
 const path = require('path');
 
-function resolve(name) {
-  return path.dirname(require.resolve(`${name}/package.json`));
+function resolve(package) {
+  return path.dirname(require.resolve(`${package}/package.json`));
 }
 
 function highlightTheme(name) {
