@@ -13,9 +13,28 @@ describe('next-url', () => {
 
   before(() => {
     hexo.config.url = 'https://example.com';
+    hexo.url_for = require('hexo/lib/plugins/helper/url_for').bind(hexo);
   });
 
-  it('default', () => {
-    nextUrl('/child/').should.eql('');
+  it('text', () => {
+    nextUrl('/child/', 'Text').should.eql('<a href="/child/">Text</a>');
+  });
+
+  it('icon', () => {
+    nextUrl('/child/', '<i class="fab fa-fort-awesome"></i>').should.eql('<a href="/child/"><i class="fab fa-fort-awesome"></i></a>');
+  });
+
+  it('class', () => {
+    nextUrl('/child/', 'Text', { class: 'theme-link' }).should.eql('<a href="/child/" class="theme-link">Text</a>');
+  });
+
+  it('external', () => {
+    nextUrl('https://theme-next.js.org', 'Text').should.eql('<a href="https://theme-next.js.org/" rel="noopener" target="_blank">Text</a>');
+  });
+
+  it('exturl enabled', () => {
+    hexo.theme.exturl = true;
+    const encoded = btoa('https://theme-next.js.org');
+    nextUrl('https://theme-next.js.org', 'Text').should.eql(`<span class="exturl" data-url="${encoded}">Text</span>`);
   });
 });

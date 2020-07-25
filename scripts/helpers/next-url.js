@@ -4,11 +4,10 @@ const { htmlTag } = require('hexo-util');
 const { parse } = require('url');
 
 module.exports = function(path, text, options = {}) {
-  const { config } = this;
+  const { config, theme } = this;
   const data = parse(path);
   const siteHost = parse(config.url).hostname || config.url;
 
-  const theme = this.theme.config;
   let exturl = '';
   let tag = 'a';
   let attrs = { href: this.url_for(path) };
