@@ -2,7 +2,7 @@
   "name": "hexo-theme-next",
   "version": "8.0.0-rc.4",
   "description": "Elegant and powerful theme for Hexo.",
-  "main": "test/index.js",
+  "main": "package.json",
   "scripts": {
     "eslint": "eslint scripts/ source/js test/",
     "stylint": "stylint source/css/",
