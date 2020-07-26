@@ -952,7 +952,7 @@ vendors:
   # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.5.2/mermaid.min.js
   mermaid:
 
-  # Internal version: 3.1.0
+  # Internal version: 3.1.1
   # animate_css: //cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css
   # animate_css: //unpkg.com/animate.css@4.1.0/animate.min.css
   # animate_css: //cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css
