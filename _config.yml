@@ -858,13 +858,13 @@ vendors:
   # Available values: local, jsdelivr, unpkg
   internal: local
 
-  # Internal version: 3.2.0
+  # Internal version: 3.1.0
   # anime: //cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js
   # anime: //unpkg.com/animejs@3.2.0/lib/anime.min.js
   # anime: //cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js
   anime:
 
-  # Internal version: 5.14.0
+  # Internal version: 5.13.0
   # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //unpkg.com/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css
@@ -880,7 +880,7 @@ vendors:
 
   # MathJax
   # mathjax: //unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  # mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.6/es5/tex-mml-chtml.js
+  # mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js
   mathjax:
 
   # KaTeX
@@ -949,10 +949,10 @@ vendors:
 
   # Mermaid
   # mermaid: //unpkg.com/mermaid@8/dist/mermaid.min.js
-  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.6.3/mermaid.min.js
+  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.5.2/mermaid.min.js
   mermaid:
 
-  # Internal version: 4.1.0
+  # Internal version: 3.1.0
   # animate_css: //cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css
   # animate_css: //unpkg.com/animate.css@4.1.0/animate.min.css
   # animate_css: //cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css
