@@ -953,9 +953,9 @@ vendors:
   mermaid:
 
   # Internal version: 3.1.1
-  # animate_css: //cdn.jsdelivr.net/npm/animate.css@3.1.0/animate.min.css
-  # animate_css: //unpkg.com/animate.css@3.1.0/animate.min.css
-  # animate_css: //cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css
+  # animate_css: //cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css
+  # animate_css: //unpkg.com/animate.css@3.1.1/animate.min.css
+  # animate_css: //cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css
   animate_css:
 
   # Internal version: 1.0.2
