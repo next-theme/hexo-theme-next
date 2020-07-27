@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             url    : element.querySelector('url').textContent
           };
         }) : JSON.parse(res);
-        // Only match articles with not empty titles
+        // Only match articles with non-empty titles
         datas = datas.filter(data => data.title).map(data => {
           data.title = data.title.trim();
           data.content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';

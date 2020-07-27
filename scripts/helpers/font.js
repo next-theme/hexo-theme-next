@@ -2,6 +2,7 @@
 
 'use strict';
 
+// https://developers.google.com/fonts/docs/getting_started
 hexo.extend.helper.register('next_font', function() {
   const config = this.theme.font;
 
@@ -18,7 +19,7 @@ hexo.extend.helper.register('next_font', function() {
     }
   });
 
-  fontFamilies = fontFamilies.map(name => name.trim() + fontStyles);
+  fontFamilies = fontFamilies.map(name => name.trim().replace(/\s/g, '+') + fontStyles);
   fontFamilies = [...new Set(fontFamilies)].join('|');
 
   // Merge extra parameters to the final processed font string
