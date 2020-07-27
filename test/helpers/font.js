@@ -42,7 +42,7 @@ describe('font', () => {
       family  : 'Palatino',
       external: false
     };
-    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Amatic SC${fontStyles}&display=swap&subset=latin,latin-ext">`);
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Amatic+SC${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 
   it('multiple', () => {
@@ -55,7 +55,7 @@ describe('font', () => {
       family  : 'Palatino',
       external: true
     };
-    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Amatic SC${fontStyles}|Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Amatic+SC${fontStyles}|Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 
   it('duplicate', () => {
@@ -81,6 +81,6 @@ describe('font', () => {
       family  : 'Palatino',
       external: true
     };
-    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Roboto Slab${fontStyles}|Noto Serif SC${fontStyles}|Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Roboto+Slab${fontStyles}|Noto+Serif+SC${fontStyles}|Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 });

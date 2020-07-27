@@ -1,5 +1,6 @@
 'use strict';
 
+// https://developers.google.com/fonts/docs/getting_started
 module.exports = function() {
   const config = this.theme.font;
 
@@ -16,7 +17,7 @@ module.exports = function() {
     }
   });
 
-  fontFamilies = fontFamilies.map(name => name.trim() + fontStyles);
+  fontFamilies = fontFamilies.map(name => name.trim().replace(/\s/g, '+') + fontStyles);
   fontFamilies = [...new Set(fontFamilies)].join('|');
 
   // Merge extra parameters to the final processed font string
