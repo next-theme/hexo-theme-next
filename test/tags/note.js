@@ -4,9 +4,10 @@ require('chai').should();
 const Hexo = require('hexo');
 const hexo = new Hexo();
 
-const markdown = 'Test **Bold** *Italic*';
+const content = 'Test **Bold** *Italic*';
 const result = '<p>Test <strong>Bold</strong> <em>Italic</em></p>';
-const summary = 'This is a *summary*'.split(' ');
+const args = 'This is a *summary*'.split(' ');
+const summary = '<summary><p>This is a <em>summary</em>';
 
 describe('note', () => {
   const postNote = require('../../scripts/tags/note')(hexo);
@@ -14,22 +15,22 @@ describe('note', () => {
   before(() => hexo.init().then(() => hexo.loadPlugin(require.resolve('hexo-renderer-marked'))));
 
   it('only text', () => {
-    postNote([], markdown).should.eql(`<div class="note ">${result}
+    postNote([], content).should.eql(`<div class="note ">${result}
 </div>`);
   });
 
   it('classes and text', () => {
-    postNote(['primary'], markdown).should.eql(`<div class="note primary">${result}
+    postNote(['primary'], content).should.eql(`<div class="note primary">${result}
 </div>`);
   });
 
   it('classes, no-icon and text', () => {
-    postNote(['primary', 'no-icon'], markdown).should.eql(`<div class="note primary no-icon">${result}
+    postNote(['primary', 'no-icon'], content).should.eql(`<div class="note primary no-icon">${result}
 </div>`);
   });
 
   it('summary and text', () => {
-    postNote(summary, markdown).should.eql(`<details class="note "><summary><p>This is a <em>summary</em></p>
+    postNote(args, content).should.eql(`<details class="note ">${summary}</p>
 </summary>
 ${result}
 
@@ -37,7 +38,7 @@ ${result}
   });
 
   it('classes, summary and text', () => {
-    postNote(['primary'].concat(summary), markdown).should.eql(`<details class="note primary"><summary><p>This is a <em>summary</em></p>
+    postNote(['primary'].concat(args), content).should.eql(`<details class="note primary">${summary}</p>
 </summary>
 ${result}
 
@@ -45,7 +46,7 @@ ${result}
   });
 
   it('classes, no-icon, summary and text', () => {
-    postNote(['primary', 'no-icon'].concat(summary), markdown).should.eql(`<details class="note primary no-icon"><summary><p>This is a <em>summary</em></p>
+    postNote(['primary', 'no-icon'].concat(args), content).should.eql(`<details class="note primary no-icon">${summary}</p>
 </summary>
 ${result}
 

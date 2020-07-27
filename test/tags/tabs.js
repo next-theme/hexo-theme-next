@@ -4,7 +4,7 @@ require('chai').should();
 const Hexo = require('hexo');
 const hexo = new Hexo();
 
-const markdown = 'Test **Bold** *Italic*';
+const content = 'Test **Bold** *Italic*';
 const result = '<p>Test <strong>Bold</strong> <em>Italic</em></p>';
 const container = '<div class="tabs" id="name"><ul class="nav-tabs">';
 
@@ -20,77 +20,77 @@ describe('tabs', () => {
   it('default', () => {
     postTabs(['name'],
       `<!-- tab -->
-${markdown}
+${content}
 <!-- endtab -->
 
 <!-- tab -->
-${markdown}
+${content}
 <!-- endtab -->`).should.eql(`${container}<li class="tab active"><a href="#name-1">name 1</a></li><li class="tab"><a href="#name-2">name 2</a></li></ul><div class="tab-content"><div class="tab-pane active" id="name-1">${result}</div><div class="tab-pane" id="name-2">${result}</div></div></div>`);
   });
 
   it('selected index', () => {
     postTabs('name, 2'.split(' '),
       `<!-- tab -->
-${markdown}
+${content}
 <!-- endtab -->
 
 <!-- tab -->
-${markdown}
+${content}
 <!-- endtab -->`).should.eql(`${container}<li class="tab"><a href="#name-1">name 1</a></li><li class="tab active"><a href="#name-2">name 2</a></li></ul><div class="tab-content"><div class="tab-pane" id="name-1">${result}</div><div class="tab-pane active" id="name-2">${result}</div></div></div>`);
   });
 
   it('no tab selected', () => {
     postTabs('name, -1'.split(' '),
       `<!-- tab -->
-${markdown}
+${content}
 <!-- endtab -->
 
 <!-- tab -->
-${markdown}
+${content}
 <!-- endtab -->`).should.eql(`${container}<li class="tab"><a href="#name-1">name 1</a></li><li class="tab"><a href="#name-2">name 2</a></li></ul><div class="tab-content"><div class="tab-pane" id="name-1">${result}</div><div class="tab-pane" id="name-2">${result}</div></div></div>`);
   });
 
   it('label', () => {
     postTabs('name'.split(' '),
       `<!-- tab Tab 1 -->
-${markdown}
+${content}
 <!-- endtab -->
 
 <!-- tab Tab 2 -->
-${markdown}
+${content}
 <!-- endtab -->`).should.eql(`${container}<li class="tab active"><a href="#name-1">Tab 1</a></li><li class="tab"><a href="#name-2">Tab 2</a></li></ul><div class="tab-content"><div class="tab-pane active" id="name-1">${result}</div><div class="tab-pane" id="name-2">${result}</div></div></div>`);
   });
 
   it('icon (Font Awesome 4)', () => {
     postTabs('name'.split(' '),
       `<!-- tab @home -->
-${markdown}
+${content}
 <!-- endtab -->
 
 <!-- tab @home -->
-${markdown}
+${content}
 <!-- endtab -->`).should.eql(`${container}<li class="tab active"><a href="#name-1"><i class="fa fa-home"></i></a></li><li class="tab"><a href="#name-2"><i class="fa fa-home"></i></a></li></ul><div class="tab-content"><div class="tab-pane active" id="name-1">${result}</div><div class="tab-pane" id="name-2">${result}</div></div></div>`);
   });
 
   it('icon', () => {
     postTabs('name'.split(' '),
       `<!-- tab @fab fa-fort-awesome -->
-${markdown}
+${content}
 <!-- endtab -->
 
 <!-- tab @fab fa-fort-awesome -->
-${markdown}
+${content}
 <!-- endtab -->`).should.eql(`${container}<li class="tab active"><a href="#name-1"><i class="fab fa-fort-awesome"></i></a></li><li class="tab"><a href="#name-2"><i class="fab fa-fort-awesome"></i></a></li></ul><div class="tab-content"><div class="tab-pane active" id="name-1">${result}</div><div class="tab-pane" id="name-2">${result}</div></div></div>`);
   });
 
   it('label and icon', () => {
     postTabs('name, -1'.split(' '),
       `<!-- tab Tab 1@home -->
-${markdown}
+${content}
 <!-- endtab -->
 
 <!-- tab Tab 1@home -->
-${markdown}
+${content}
 <!-- endtab -->`).should.eql(`${container}<li class="tab"><a href="#name-1"><i class="fa fa-home"></i>Tab 1</a></li><li class="tab"><a href="#name-2"><i class="fa fa-home"></i>Tab 1</a></li></ul><div class="tab-content"><div class="tab-pane" id="name-1">${result}</div><div class="tab-pane" id="name-2">${result}</div></div></div>`);
   });
 });

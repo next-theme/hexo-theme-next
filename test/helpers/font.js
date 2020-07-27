@@ -16,6 +16,10 @@ describe('font', () => {
 
   it('font disabled', () => {
     hexo.theme.font.enable = false;
+    hexo.theme.font.title = {
+      family  : 'Amatic SC',
+      external: true
+    };
     nextFont().should.eql('');
   });
 

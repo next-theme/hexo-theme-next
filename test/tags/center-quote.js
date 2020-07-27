@@ -4,7 +4,7 @@ require('chai').should();
 const Hexo = require('hexo');
 const hexo = new Hexo();
 
-const markdown = 'Test **Bold** *Italic*';
+const content = 'Test **Bold** *Italic*';
 const result = '<p>Test <strong>Bold</strong> <em>Italic</em></p>';
 
 describe('center-quote', () => {
@@ -13,7 +13,7 @@ describe('center-quote', () => {
   before(() => hexo.init().then(() => hexo.loadPlugin(require.resolve('hexo-renderer-marked'))));
 
   it('markdown content', () => {
-    centerQuote([], markdown).should.eql(`<blockquote class="blockquote-center">
+    centerQuote([], content).should.eql(`<blockquote class="blockquote-center">
 ${result}
 
 </blockquote>`);
