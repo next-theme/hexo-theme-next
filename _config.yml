@@ -328,6 +328,7 @@ calendar:
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
+# See: https://theme-next.js.org/docs/theme-settings/
 # ---------------------------------------------------------------
 
 # Set the text alignment in posts / pages.
@@ -446,6 +447,7 @@ font:
 
 # ---------------------------------------------------------------
 # SEO Settings
+# See: https://theme-next.js.org/docs/theme-settings/seo
 # ---------------------------------------------------------------
 
 # Disable Baidu transformation on mobile devices.
@@ -859,15 +861,15 @@ vendors:
   internal: local
 
   # Internal version: 3.1.0
-  # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
-  # anime: //unpkg.com/animejs@3.1.0/lib/anime.min.js
-  # anime: //cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js
+  # anime: //cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js
+  # anime: //unpkg.com/animejs@3.2.0/lib/anime.min.js
+  # anime: //cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js
   anime:
 
   # Internal version: 5.13.0
   # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //unpkg.com/@fortawesome/fontawesome-free@5/css/all.min.css
-  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css
   fontawesome:
 
   # Prism
@@ -949,10 +951,11 @@ vendors:
 
   # Mermaid
   # mermaid: //unpkg.com/mermaid@8/dist/mermaid.min.js
-  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.5.2/mermaid.min.js
+  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.6.3/mermaid.min.js
   mermaid:
 
   # Internal version: 3.1.1
+  # Warning: motion won't work with animate.css version 3.2.0 or later
   # animate_css: //cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css
   # animate_css: //unpkg.com/animate.css@3.1.1/animate.min.css
   # animate_css: //cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css
@@ -961,7 +964,7 @@ vendors:
   # Internal version: 1.0.2
   # pace: //unpkg.com/pace-js@1/pace.min.js
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
-  # pace_css: //unpkg.com/pace-js@1/themes/blue/pace-theme-minimal.min.css
+  # pace_css: //unpkg.com/pace-js@1/themes/blue/pace-theme-minimal.css
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
   pace:
   pace_css:
