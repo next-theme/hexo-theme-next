@@ -15,34 +15,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const input = document.querySelector('.search-input');
   const resultContent = document.getElementById('search-result');
 
-  const getIndexByWord = (word, text, caseSensitive) => {
-    if (CONFIG.localsearch.unescape) {
-      const div = document.createElement('div');
-      div.innerText = word;
-      word = div.innerHTML;
-    }
-    const wordLen = word.length;
-    if (wordLen === 0) return [];
-    let startPosition = 0;
-    let position = -1;
-    const index = [];
-    if (!caseSensitive) {
-      text = text.toLowerCase();
-      word = word.toLowerCase();
-    }
-    while ((position = text.indexOf(word, startPosition)) > -1) {
-      index.push({ position, word });
-      startPosition = position + wordLen;
-    }
-    return index;
-  };
+  const getIndexByWord = (words, text, caseSensitive = false) => {
+    // Sort index by position of keyword
+    const compare = (left, right) => {
+      if (left.position !== right.position) {
+        return left.position - right.position;
+      }
+      return right.word.length - left.word.length;
+    };
 
-  // Sort index by position of keyword
-  const compare = (left, right) => {
-    if (left.position !== right.position) {
-      return left.position - right.position;
-    }
-    return right.word.length - left.word.length;
+    const index = [];
+    const included = new Set();
+    words.forEach(word => {
+      if (CONFIG.localsearch.unescape) {
+        const div = document.createElement('div');
+        div.innerText = word;
+        word = div.innerHTML;
+      }
+      const wordLen = word.length;
+      if (wordLen === 0) return;
+      let startPosition = 0;
+      let position = -1;
+      if (!caseSensitive) {
+        text = text.toLowerCase();
+        word = word.toLowerCase();
+      }
+      while ((position = text.indexOf(word, startPosition)) > -1) {
+        index.push({ position, word });
+        included.add(word);
+        startPosition = position + wordLen;
+      }
+    });
+    index.sort(compare);
+    return [index, included];
   };
 
   // Merge hits into slices
@@ -94,24 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const getResultItems = (keywords) => {
     const resultItems = [];
     datas.forEach(({ title, content, url }) => {
-      let indexOfTitle = [];
-      let indexOfContent = [];
       // The number of different keywords included in the article.
-      let includedCount = 0;
-      keywords.forEach(keyword => {
-        const titleIndex = getIndexByWord(keyword, title, false);
-        const contentIndex = getIndexByWord(keyword, content, false);
-        if (titleIndex.length + contentIndex.length > 0) includedCount++;
-        indexOfTitle = indexOfTitle.concat(titleIndex);
-        indexOfContent = indexOfContent.concat(contentIndex);
-      });
+      const [indexOfTitle, keysOfTitle] = getIndexByWord(keywords, title);
+      const [indexOfContent, keysOfContent] = getIndexByWord(keywords, content);
+      const includedCount = new Set([...keysOfTitle, ...keysOfContent]).size;
 
       // Show search results
       const hitCount = indexOfTitle.length + indexOfContent.length;
       if (hitCount === 0) return;
-
-      indexOfTitle.sort(compare);
-      indexOfContent.sort(compare);
 
       const slicesOfTitle = [];
       if (indexOfTitle.length !== 0) {
@@ -252,14 +247,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let index = 0;
     const children = [];
     for (const { position, length } of hits) {
-      const text = document.createTextNode(val.substr(index, position - index));
+      const text = document.createTextNode(val.substring(index, position));
       index = position + length;
       const mark = document.createElement('mark');
       mark.className = className;
       mark.appendChild(document.createTextNode(val.substr(position, length)));
       children.push(text, mark);
     }
-    node.nodeValue = val.substr(index, val.length);
+    node.nodeValue = val.substr(index);
     children.forEach(element => {
       node.parentNode.insertBefore(element, node);
     });
@@ -277,13 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!walk.currentNode.parentNode.matches('button, select, textarea')) allNodes.push(walk.currentNode);
     }
     allNodes.forEach(node => {
-      let indexOfNode = [];
-      keywords.forEach(keyword => {
-        const nodeIndex = getIndexByWord(keyword, node.nodeValue, false);
-        indexOfNode = indexOfNode.concat(nodeIndex);
-      });
+      const [indexOfNode] = getIndexByWord(keywords, node.nodeValue);
       if (!indexOfNode.length) return;
-      indexOfNode.sort(compare);
       const { hits } = mergeIntoSlice(0, node.nodeValue.length, indexOfNode);
       highlightText(node, hits, 'search-keyword');
     });
