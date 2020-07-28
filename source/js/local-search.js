@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return result;
   };
 
-  const getResultItems = (keywords) => {
+  const getResultItems = keywords => {
     const resultItems = [];
     datas.forEach(({ title, content, url }) => {
       // The number of different keywords included in the article.
@@ -141,14 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let resultItem = '';
 
+      url = new URL(url, location.origin);
+      url.searchParams.append('highlight', keywords.join(' '));
+
       if (slicesOfTitle.length !== 0) {
-        resultItem += `<li><a href="${url}" class="search-result-title">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
+        resultItem += `<li><a href="${url.href}" class="search-result-title">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
       } else {
-        resultItem += `<li><a href="${url}" class="search-result-title">${title}</a>`;
+        resultItem += `<li><a href="${url.href}" class="search-result-title">${title}</a>`;
       }
 
       slicesOfContent.forEach(slice => {
-        resultItem += `<a href="${url}"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
+        resultItem += `<a href="${url.href}"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
       });
 
       resultItem += '</li>';
@@ -226,7 +229,8 @@ document.addEventListener('DOMContentLoaded', () => {
    * it will always return arrays of strings for the value parts.
    */
   const getQueryParameters = () => {
-    const parts = location.search.split('?')[1].split('&');
+    const s = location.search;
+    const parts = s.substr(s.indexOf('?') + 1).split('&');
     const result = {};
     for (const part of parts) {
       let [key, value] = part.split('=', 2);
@@ -261,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Highlight the search words provided in the url in the text
-  window.highlightSearchWords = () => {
+  const highlightSearchWords = () => {
     const params = getQueryParameters();
     const keywords = params.highlight ? params.highlight[0].split(/\s+/) : [];
     const body = document.querySelector('.post-body');
@@ -315,7 +319,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
-  document.addEventListener('pjax:success', onPopupClose);
+  document.addEventListener('pjax:success', () => {
+    highlightSearchWords();
+    onPopupClose();
+  });
   window.addEventListener('keyup', event => {
     if (event.key === 'Escape') {
       onPopupClose();
