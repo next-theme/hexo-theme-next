@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordLen = word.length;
     if (wordLen === 0) return [];
     let startPosition = 0;
-    let position = [];
+    let position = -1;
     const index = [];
     if (!caseSensitive) {
       text = text.toLowerCase();
@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let item = index[index.length - 1];
     let { position, word } = item;
     const hits = [];
-    let searchTextCountInSlice = 0;
+    let searchTextCount = 0;
     while (position + word.length <= end && index.length !== 0) {
       if (word === searchText) {
-        searchTextCountInSlice++;
+        searchTextCount++;
       }
       hits.push({
         position,
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hits,
       start,
       end,
-      searchTextCount: searchTextCountInSlice
+      searchTextCount
     };
   };
 
@@ -90,35 +90,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getResultItems = (searchText, keywords) => {
     const resultItems = [];
-    console.log(searchText)
     datas.forEach(({ title, content, url }) => {
-      const titleInLowerCase = title.toLowerCase();
-      const contentInLowerCase = content.toLowerCase();
       let indexOfTitle = [];
       let indexOfContent = [];
       let searchTextCount = 0;
       keywords.forEach(keyword => {
-        indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-        indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+        indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, title, false));
+        indexOfContent = indexOfContent.concat(getIndexByWord(keyword, content, false));
       });
 
       // Show search results
-      if (indexOfTitle.length === 0 && indexOfContent.length === 0) return;
       const hitCount = indexOfTitle.length + indexOfContent.length;
+      if (hitCount === 0) return;
       // Sort index by position of keyword
-      [indexOfTitle, indexOfContent].forEach(index => {
-        index.sort((left, right) => {
-          if (right.position !== left.position) {
-            return right.position - left.position;
-          }
-          return left.word.length - right.word.length;
-        });
-      });
+      const compare = (left, right) => {
+        if (right.position !== left.position) {
+          return right.position - left.position;
+        }
+        return left.word.length - right.word.length;
+      };
+      indexOfTitle.sort(compare);
+      indexOfContent.sort(compare);
 
       const slicesOfTitle = [];
       if (indexOfTitle.length !== 0) {
         const tmp = mergeIntoSlice(0, title.length, indexOfTitle, searchText);
-        searchTextCount += tmp.searchTextCountInSlice;
+        searchTextCount += tmp.searchTextCount;
         slicesOfTitle.push(tmp);
       }
 
@@ -139,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
           end = content.length;
         }
         const tmp = mergeIntoSlice(start, end, indexOfContent, searchText);
-        searchTextCount += tmp.searchTextCountInSlice;
+        searchTextCount += tmp.searchTextCount;
         slicesOfContent.push(tmp);
       }
 
