@@ -1,19 +1,14 @@
 /* global CONFIG */
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (!CONFIG.path) {
+    console.warn('`hexo-generator-searchdb` plugin is not installed!');
+    return;
+  }
   // Popup Window
   let isfetched = false;
   let datas;
-  let isXml = true;
-  // Search DB path
-  let searchPath = CONFIG.path;
-  if (searchPath.length === 0) {
-    searchPath = 'search.xml';
-  } else if (searchPath.endsWith('json')) {
-    isXml = false;
-  }
   const input = document.querySelector('.search-input');
-  const resultContent = document.getElementById('search-result');
 
   const getIndexByWord = (words, text, caseSensitive = false) => {
     // Sort index by position of keyword
@@ -169,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isfetched) return;
     const searchText = input.value.trim().toLowerCase();
     const keywords = searchText.split(/[-\s]+/);
+    const resultContent = document.getElementById('search-result');
     let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching
@@ -193,7 +189,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const fetchData = () => {
-    fetch(CONFIG.root + searchPath)
+    // Search DB path
+    const searchPath = CONFIG.root + CONFIG.path;
+    const isXml = !CONFIG.path.endsWith('json');
+    fetch(searchPath)
       .then(response => response.text())
       .then(res => {
         // Get the contents from search data

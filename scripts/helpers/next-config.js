@@ -9,7 +9,6 @@ const { parse } = require('url');
  */
 hexo.extend.helper.register('next_config', function() {
   const { config, theme, next_version } = this;
-  config.algolia = config.algolia || {};
   const exportConfig = {
     hostname  : parse(config.url).hostname || config.url,
     root      : config.root,
@@ -24,19 +23,22 @@ hexo.extend.helper.register('next_config', function() {
     lazyload  : theme.lazyload,
     pangu     : theme.pangu,
     comments  : theme.comments,
-    algolia   : {
+    motion    : theme.motion,
+    prism     : config.prismjs.enable && !config.prismjs.preprocess
+  };
+  if (theme.algolia_search && theme.algolia_search.enable) {
+    config.algolia = config.algolia || {};
+    exportConfig.algolia = {
       appID    : config.algolia.applicationID,
       apiKey   : config.algolia.apiKey,
       indexName: config.algolia.indexName,
       hits     : theme.algolia_search.hits,
       labels   : theme.algolia_search.labels
-    },
-    localsearch: theme.local_search,
-    motion     : theme.motion,
-    prism      : config.prismjs.enable && !config.prismjs.preprocess
-  };
+    };
+  }
   if (config.search) {
     exportConfig.path = config.search.path;
+    exportConfig.localsearch = theme.local_search;
   }
   return `<script class="hexo-configurations">
     var NexT = window.NexT || {};
