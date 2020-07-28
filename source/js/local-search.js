@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return index;
   };
 
+  // Sort index by position of keyword
+  const compare = (left, right) => {
+    if (left.position !== right.position) {
+      return left.position - right.position;
+    }
+    return right.word.length - left.word.length;
+  };
+
   // Merge hits into slices
   const mergeIntoSlice = (start, end, index) => {
     let item = index[0];
@@ -101,13 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Show search results
       const hitCount = indexOfTitle.length + indexOfContent.length;
       if (hitCount === 0) return;
-      // Sort index by position of keyword
-      const compare = (left, right) => {
-        if (left.position !== right.position) {
-          return left.position - right.position;
-        }
-        return right.word.length - left.word.length;
-      };
+
       indexOfTitle.sort(compare);
       indexOfContent.sort(compare);
 
@@ -250,25 +252,22 @@ document.addEventListener('DOMContentLoaded', () => {
    * highlight a given string on a jquery object by wrapping it in
    * span elements with the given class name.
    */
-  const highlightText = (element, terms, className) => {
-    let text;
-    terms.forEach(term => {
-      text = term.toLowerCase()
-    });
-    const highlight = node => {
-      const val = node.nodeValue;
-      const pos = val.toLowerCase().indexOf(text);
-      if (pos >= 0) {
-        const span = document.createElement("mark");
-        span.className = className;
-        span.appendChild(document.createTextNode(val.substr(pos, text.length)));
-        const next = document.createTextNode(val.substr(pos + text.length));
-        node.parentNode.insertBefore(span, node.parentNode.insertBefore(next, node.nextSibling));
-        node.nodeValue = val.substr(0, pos);
-        highlight(next);
-      }
+  const highlightText = (node, hits, className) => {
+    const val = node.nodeValue;
+    let index = 0;
+    const children = [];
+    for (let { position, length } of hits) {
+      const text = document.createTextNode(val.substr(index, position - index));
+      index = position + length;
+      const mark = document.createElement("mark");
+      mark.className = className;
+      mark.appendChild(document.createTextNode(val.substr(position, length)));
+      children.push(text, mark);
     }
-    if (!element.parentNode.matches("button, select, textarea")) highlight(element);
+    node.nodeValue = val.substr(index, val.length);
+    children.forEach(element => {
+      node.parentNode.insertBefore(element, node);
+    });
   };
 
   /**
@@ -276,16 +275,23 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   window.highlightSearchWords = () => {
     const params = getQueryParameters();
-    const terms = (params.highlight) ? params.highlight[0].split(/\s+/) : [];
+    const keywords = (params.highlight) ? params.highlight[0].split(/\s+/) : [];
     const body = document.querySelector('.post-body');
-    if (!terms.length || !body) return;
+    if (!keywords.length || !body) return;
     const walk = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null, false);
     const allNodes = [];
     while (walk.nextNode()) {
-      allNodes.push(walk.currentNode);
+      if (!walk.currentNode.parentNode.matches("button, select, textarea")) allNodes.push(walk.currentNode);
     }
     allNodes.forEach(node => {
-      highlightText(node, terms, 'search-keyword');
+      let indexOfNode = [];
+      keywords.forEach(keyword => {
+        const nodeIndex = getIndexByWord(keyword, node.nodeValue, false);
+        indexOfNode = indexOfNode.concat(nodeIndex);
+      });
+      if (!indexOfNode.length) return;
+      const { hits } = mergeIntoSlice(0, node.nodeValue.length, indexOfNode);
+      highlightText(node, hits, 'search-keyword');
     });
   };
 
