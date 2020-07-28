@@ -126,7 +126,7 @@ module.exports = ctx => function(args, content) {
   const group = parseInt(args[0], 10);
   const layout = parseInt(args[1], 10);
 
-  content = ctx.render.renderSync({text: content, engine: 'markdown'});
+  content = ctx.render.renderSync({ text: content, engine: 'markdown' });
 
   const pictures = content.match(/<img[\s\S]*?>/g);
 

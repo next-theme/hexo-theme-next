@@ -28,7 +28,7 @@ module.exports = ctx => function(args, content) {
     let [caption = '', icon = ''] = matches[i].split('@');
     let postContent = matches[i + 1];
 
-    postContent = ctx.render.renderSync({text: postContent, engine: 'markdown'}).trim();
+    postContent = ctx.render.renderSync({ text: postContent, engine: 'markdown' }).trim();
 
     const abbr = tabName + ' ' + ++tabId;
     const href = abbr.toLowerCase().split(' ').join('-');
