@@ -213,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
           return data;
         });
         // Remove loading animation
-        document.getElementById('no-result').innerHTML = '<i class="fa fa-search fa-5x"></i>';
         inputEventFunction();
       });
   };
