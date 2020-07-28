@@ -38,15 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Merge hits into slices
-  const mergeIntoSlice = (start, end, index, searchText) => {
+  const mergeIntoSlice = (start, end, index) => {
     let item = index[0];
     let { position, word } = item;
     const hits = [];
-    let count = 0;
     while (position + word.length <= end && index.length !== 0) {
-      if (word === searchText) {
-        count++;
-      }
       hits.push({
         position,
         length: word.length
@@ -69,8 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return {
       hits,
       start,
-      end,
-      count
+      end
     };
   };
 
@@ -88,15 +83,19 @@ document.addEventListener('DOMContentLoaded', () => {
     return result;
   };
 
-  const getResultItems = (searchText, keywords) => {
+  const getResultItems = (keywords) => {
     const resultItems = [];
     datas.forEach(({ title, content, url }) => {
       let indexOfTitle = [];
       let indexOfContent = [];
-      let searchTextCount = 0;
+      // The number of different keywords included in the article.
+      let includedCount = 0;
       keywords.forEach(keyword => {
-        indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, title, false));
-        indexOfContent = indexOfContent.concat(getIndexByWord(keyword, content, false));
+        const titleIndex = getIndexByWord(keyword, title, false);
+        const contentIndex = getIndexByWord(keyword, content, false);
+        if (titleIndex.length + contentIndex.length > 0) includedCount++;
+        indexOfTitle = indexOfTitle.concat(titleIndex);
+        indexOfContent = indexOfContent.concat(contentIndex);
       });
 
       // Show search results
@@ -114,30 +113,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const slicesOfTitle = [];
       if (indexOfTitle.length !== 0) {
-        const tmp = mergeIntoSlice(0, title.length, indexOfTitle, searchText);
-        searchTextCount += tmp.count;
-        slicesOfTitle.push(tmp);
+        slicesOfTitle.push(mergeIntoSlice(0, title.length, indexOfTitle));
       }
 
       let slicesOfContent = [];
       while (indexOfContent.length !== 0) {
         const item = indexOfContent[0];
-        const { position, word } = item;
-        // Cut out 100 characters
-        let start = position - 20;
-        let end = position + 80;
-        if (start < 0) {
-          start = 0;
-        }
-        if (end < position + word.length) {
-          end = position + word.length;
-        }
-        if (end > content.length) {
-          end = content.length;
-        }
-        const tmp = mergeIntoSlice(start, end, indexOfContent, searchText);
-        searchTextCount += tmp.count;
-        slicesOfContent.push(tmp);
+        const { position } = item;
+        // Cut out 100 characters. The maxlength of .search-input is 80.
+        const start = Math.max(0, position - 20);
+        const end = Math.min(content.length, position + 80);
+        slicesOfContent.push(mergeIntoSlice(start, end, indexOfContent));
       }
 
       // Sort slices in content by search text's count and hits' count
@@ -173,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item: resultItem,
         id  : resultItems.length,
         hitCount,
-        searchTextCount
+        includedCount
       });
     });
     return resultItems;
@@ -183,13 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isfetched) return;
     const searchText = input.value.trim().toLowerCase();
     const keywords = searchText.split(/[-\s]+/);
-    if (keywords.length > 1) {
-      keywords.push(searchText);
-    }
     let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching
-      resultItems = getResultItems(searchText, keywords);
+      resultItems = getResultItems(keywords);
     }
     if (keywords.length === 1 && keywords[0] === '') {
       resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>';
@@ -197,8 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
       resultContent.innerHTML = '<div id="no-result"><i class="far fa-frown fa-5x"></i></div>';
     } else {
       resultItems.sort((left, right) => {
-        if (left.searchTextCount !== right.searchTextCount) {
-          return right.searchTextCount - left.searchTextCount;
+        if (left.includedCount !== right.includedCount) {
+          return right.includedCount - left.includedCount;
         } else if (left.hitCount !== right.hitCount) {
           return right.hitCount - left.hitCount;
         }
