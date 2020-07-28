@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let item = index[index.length - 1];
     let { position, word } = item;
     const hits = [];
-    let searchTextCount = 0;
+    let count = 0;
     while (position + word.length <= end && index.length !== 0) {
       if (word === searchText) {
-        searchTextCount++;
+        count++;
       }
       hits.push({
         position,
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hits,
       start,
       end,
-      searchTextCount
+      count
     };
   };
 
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const slicesOfTitle = [];
       if (indexOfTitle.length !== 0) {
         const tmp = mergeIntoSlice(0, title.length, indexOfTitle, searchText);
-        searchTextCount += tmp.searchTextCount;
+        searchTextCount += tmp.count;
         slicesOfTitle.push(tmp);
       }
 
@@ -136,14 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
           end = content.length;
         }
         const tmp = mergeIntoSlice(start, end, indexOfContent, searchText);
-        searchTextCount += tmp.searchTextCount;
+        searchTextCount += tmp.count;
         slicesOfContent.push(tmp);
       }
 
       // Sort slices in content by search text's count and hits' count
       slicesOfContent.sort((left, right) => {
-        if (left.searchTextCount !== right.searchTextCount) {
-          return right.searchTextCount - left.searchTextCount;
+        if (left.count !== right.count) {
+          return right.count - left.count;
         } else if (left.hits.length !== right.hits.length) {
           return right.hits.length - left.hits.length;
         }
