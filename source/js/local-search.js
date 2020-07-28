@@ -218,11 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 
-  // Small helper function to urldecode strings
-  const urldecode = x => {
-    return decodeURIComponent(x).replace(/\+/g, ' ');
-  };
-
   /**
    * This function returns the parsed url parameters of the
    * current request. Multiple values per key are supported,
@@ -233,9 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const parts = s.substr(s.indexOf('?') + 1).split('&');
     const result = {};
     for (const part of parts) {
-      let [key, value] = part.split('=', 2);
-      key = urldecode(key);
-      value = urldecode(value);
+      const [key, value] = part.split('=', 2);
       if (key in result) {
         result[key].push(value);
       } else {
@@ -267,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Highlight the search words provided in the url in the text
   const highlightSearchWords = () => {
     const params = getQueryParameters();
-    const keywords = params.highlight ? params.highlight[0].split(/\s+/) : [];
+    const keywords = params.highlight ? params.highlight[0].split(/\+/).map(decodeURIComponent) : [];
     const body = document.querySelector('.post-body');
     if (!keywords.length || !body) return;
     const walk = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null, false);
