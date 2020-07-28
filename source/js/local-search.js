@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Merge hits into slices
   const mergeIntoSlice = (start, end, index, searchText) => {
-    let item = index[index.length - 1];
+    let item = index[0];
     let { position, word } = item;
     const hits = [];
     let count = 0;
@@ -54,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const wordEnd = position + word.length;
 
       // Move to next position of hit
-      index.pop();
+      index.shift();
       while (index.length !== 0) {
-        item = index[index.length - 1];
+        item = index[0];
         position = item.position;
         word = item.word;
         if (wordEnd > position) {
-          index.pop();
+          index.shift();
         } else {
           break;
         }
@@ -104,10 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (hitCount === 0) return;
       // Sort index by position of keyword
       const compare = (left, right) => {
-        if (right.position !== left.position) {
-          return right.position - left.position;
+        if (left.position !== right.position) {
+          return left.position - right.position;
         }
-        return left.word.length - right.word.length;
+        return right.word.length - left.word.length;
       };
       indexOfTitle.sort(compare);
       indexOfContent.sort(compare);
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let slicesOfContent = [];
       while (indexOfContent.length !== 0) {
-        const item = indexOfContent[indexOfContent.length - 1];
+        const item = indexOfContent[0];
         const { position, word } = item;
         // Cut out 100 characters
         let start = position - 20;
