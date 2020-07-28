@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     return resultItems;
-  }
+  };
 
   const inputEventFunction = () => {
     if (!isfetched) return;
@@ -220,9 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 
-  /**
-   * small helper function to urldecode strings
-   */
+  // Small helper function to urldecode strings
   const urldecode = x => {
     return decodeURIComponent(x).replace(/\+/g, ' ');
   };
@@ -235,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const getQueryParameters = () => {
     const parts = location.search.split('?')[1].split('&');
     const result = {};
-    for (let part of parts) {
+    for (const part of parts) {
       let [key, value] = part.split('=', 2);
       key = urldecode(key);
       value = urldecode(value);
@@ -248,18 +246,15 @@ document.addEventListener('DOMContentLoaded', () => {
     return result;
   };
 
-  /**
-   * highlight a given string on a jquery object by wrapping it in
-   * span elements with the given class name.
-   */
+  // Highlight by wrapping node in mark elements with the given class name
   const highlightText = (node, hits, className) => {
     const val = node.nodeValue;
     let index = 0;
     const children = [];
-    for (let { position, length } of hits) {
+    for (const { position, length } of hits) {
       const text = document.createTextNode(val.substr(index, position - index));
       index = position + length;
-      const mark = document.createElement("mark");
+      const mark = document.createElement('mark');
       mark.className = className;
       mark.appendChild(document.createTextNode(val.substr(position, length)));
       children.push(text, mark);
@@ -270,18 +265,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  /**
-   * highlight the search words provided in the url in the text
-   */
+  // Highlight the search words provided in the url in the text
   window.highlightSearchWords = () => {
     const params = getQueryParameters();
-    const keywords = (params.highlight) ? params.highlight[0].split(/\s+/) : [];
+    const keywords = params.highlight ? params.highlight[0].split(/\s+/) : [];
     const body = document.querySelector('.post-body');
     if (!keywords.length || !body) return;
     const walk = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null, false);
     const allNodes = [];
     while (walk.nextNode()) {
-      if (!walk.currentNode.parentNode.matches("button, select, textarea")) allNodes.push(walk.currentNode);
+      if (!walk.currentNode.parentNode.matches('button, select, textarea')) allNodes.push(walk.currentNode);
     }
     allNodes.forEach(node => {
       let indexOfNode = [];
@@ -290,6 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         indexOfNode = indexOfNode.concat(nodeIndex);
       });
       if (!indexOfNode.length) return;
+      indexOfNode.sort(compare);
       const { hits } = mergeIntoSlice(0, node.nodeValue.length, indexOfNode);
       highlightText(node, hits, 'search-keyword');
     });
