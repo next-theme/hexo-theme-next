@@ -154,12 +154,6 @@ if (hexo-config('local_search.enable')) {
       font-weight: bold;
     }
 
-    .search-keyword {
-      border-bottom: 1px dashed $red;
-      color: $red;
-      font-weight: bold;
-    }
-
     #search-result {
       display: flex;
       height: calc(100% - 55px);
@@ -171,5 +165,12 @@ if (hexo-config('local_search.enable')) {
       color: $grey-light;
       margin: auto;
     }
+  }
+
+  mark.search-keyword {
+    background: transparent;
+    border-bottom: 1px dashed $red;
+    color: $red;
+    font-weight: bold;
   }
 }
