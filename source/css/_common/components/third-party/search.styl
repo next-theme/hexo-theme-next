@@ -133,6 +133,130 @@ if (hexo-config('algolia_search.enable')) {
 }
 
 if (hexo-config('local_search.enable')) {
+  @keyframes spinner-linspin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spinner-easespin {
+    12.5% {
+      transform: rotate(135deg);
+    }
+
+    25% {
+      transform: rotate(270deg);
+    }
+
+    37.5% {
+      transform: rotate(405deg);
+    }
+
+    50% {
+      transform: rotate(540deg);
+    }
+
+    62.5% {
+      transform: rotate(675deg);
+    }
+
+    75% {
+      transform: rotate(810deg);
+    }
+
+    87.5% {
+      transform: rotate(945deg);
+    }
+
+    to {
+      transform: rotate(1080deg);
+    }
+  }
+
+  @keyframes spinner-left-spin {
+    0% {
+      transform: rotate(130deg);
+    }
+
+    50% {
+      transform: rotate(-5deg);
+    }
+
+    to {
+      transform: rotate(130deg);
+    }
+  }
+
+  @keyframes right-spin {
+    0% {
+      transform: rotate(-130deg);
+    }
+
+    50% {
+      transform: rotate(5deg);
+    }
+
+    to {
+      transform: rotate(-130deg);
+    }
+  }
+
+  .spinner-container {
+    animation: spinner-linspin 1568.23529647ms linear infinite;
+    height: 6em;
+    pointer-events: none;
+    width: 6em;
+  }
+
+  .spinner-rotator {
+    animation: spinner-easespin 5332ms cubic-bezier(0.4, 0.0, 0.2, 1) infinite both;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .spinner-left, .spinner-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  .spinner-left {
+    left: 0;
+    right: 49%;
+
+    .spinner-circle {
+      animation: spinner-left-spin 1333ms cubic-bezier(0.4, 0.0, 0.2, 1) infinite both;
+      border-right-color: transparent;
+      left: 0;
+      right: -100%;
+    }
+  }
+
+  .spinner-right {
+    left: 49%;
+    right: 0;
+
+   .spinner-circle {
+      animation: right-spin 1333ms cubic-bezier(0.4, 0.0, 0.2, 1) infinite both;
+      border-left-color: transparent;
+      left: -100%;
+      right: 0;
+    }
+  }
+
+  .spinner-circle {
+    border-color: #ddd #ddd transparent;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: .5em;
+    box-sizing: border-box;
+    height: 100%;
+    position: absolute;
+    width: 200%;
+  }
+
   .search-popup {
     .search-input-container {
       flex-grow: 1;
@@ -164,31 +288,6 @@ if (hexo-config('local_search.enable')) {
     #no-result {
       color: $grey-light;
       margin: auto;
-
-      svg {
-        width: 6em;
-
-        .spinner {
-          animation: fa-spin 5s linear alternate-reverse infinite;
-          opacity: .5;
-          transform-origin: 50%;
-        }
-
-        use {
-          &:nth-of-type(1) {
-            animation-duration: 2s;
-          }
-          &:nth-of-type(2) {
-            animation-duration: 3s;
-          }
-          &:nth-of-type(3) {
-            animation-duration: 7s;
-          }
-          &:nth-of-type(4) {
-            animation-duration: 11s;
-          }
-        }
-      }
     }
   }
 
