@@ -11,14 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const input = document.querySelector('.search-input');
 
   const getIndexByWord = (words, text, caseSensitive = false) => {
-    // Sort index by position of keyword
-    const compare = (left, right) => {
-      if (left.position !== right.position) {
-        return left.position - right.position;
-      }
-      return right.word.length - left.word.length;
-    };
-
     const index = [];
     const included = new Set();
     words.forEach(word => {
@@ -41,7 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
         startPosition = position + wordLen;
       }
     });
-    index.sort(compare);
+    // Sort index by position of keyword
+    index.sort((left, right) => {
+      if (left.position !== right.position) {
+        return left.position - right.position;
+      }
+      return right.word.length - left.word.length;
+    });
     return [index, included];
   };
 
@@ -50,7 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let item = index[0];
     let { position, word } = item;
     const hits = [];
+    const count = new Set();
     while (position + word.length <= end && index.length !== 0) {
+      count.add(word);
       hits.push({
         position,
         length: word.length
@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return {
       hits,
       start,
-      end
+      end,
+      count: count.size
     };
   };
 
@@ -118,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slicesOfContent.push(mergeIntoSlice(start, end, indexOfContent));
       }
 
-      // Sort slices in content by search text's count and hits' count
+      // Sort slices in content by included keywords' count and hits' count
       slicesOfContent.sort((left, right) => {
         if (left.count !== right.count) {
           return right.count - left.count;
@@ -237,11 +238,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Highlight by wrapping node in mark elements with the given class name
-  const highlightText = (node, hits, className) => {
+  const highlightText = (node, slice, className) => {
     const val = node.nodeValue;
-    let index = 0;
+    let index = slice.start;
     const children = [];
-    for (const { position, length } of hits) {
+    for (const { position, length } of slice.hits) {
       const text = document.createTextNode(val.substring(index, position));
       index = position + length;
       const mark = document.createElement('mark');
@@ -249,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mark.appendChild(document.createTextNode(val.substr(position, length)));
       children.push(text, mark);
     }
-    node.nodeValue = val.substr(index);
+    node.nodeValue = val.substring(index, slice.end);
     children.forEach(element => {
       node.parentNode.insertBefore(element, node);
     });
@@ -269,8 +270,8 @@ document.addEventListener('DOMContentLoaded', () => {
     allNodes.forEach(node => {
       const [indexOfNode] = getIndexByWord(keywords, node.nodeValue);
       if (!indexOfNode.length) return;
-      const { hits } = mergeIntoSlice(0, node.nodeValue.length, indexOfNode);
-      highlightText(node, hits, 'search-keyword');
+      const slice = mergeIntoSlice(0, node.nodeValue.length, indexOfNode);
+      highlightText(node, slice, 'search-keyword');
     });
   };
 
