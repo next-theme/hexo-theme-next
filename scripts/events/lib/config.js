@@ -10,11 +10,9 @@ try {
 module.exports = hexo => {
   const data = hexo.locals.get('data');
 
-  /**
-   * Merge configs from _data/next.yml into hexo.theme.config.
-   * If next.yml not exists, merge all `theme_config.*` into hexo.theme.config.
-   */
   if (data.next) {
+    hexo.log.warn('`next.yml` is deprecated. Please upgrade to Hexo 5.0 and use `_config.next.yml` instead.');
+    hexo.log.warn('Documentation: https://theme-next.js.org/docs/getting-started/configuration.html');
     hexo.config = merge(hexo.config, data.next);
     hexo.theme.config = merge(hexo.theme.config, data.next);
   } else if (hexo.config.theme_config) {
