@@ -79,16 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Highlight title and content
-  const highlightKeyword = (text, slice) => {
+  const highlightKeyword = (val, slice) => {
     let result = '';
-    let prevEnd = slice.start;
-    slice.hits.forEach(hit => {
-      result += text.substring(prevEnd, hit.position);
-      const end = hit.position + hit.length;
-      result += `<mark class="search-keyword">${text.substring(hit.position, end)}</mark>`;
-      prevEnd = end;
-    });
-    result += text.substring(prevEnd, slice.end);
+    let index = slice.start;
+    for (const { position, length } of slice.hits) {
+      result += val.substring(index, position);
+      index = position + length;
+      result += `<mark class="search-keyword">${val.substr(position, length)}</mark>`;
+    }
+    result += val.substring(index, slice.end);
     return result;
   };
 
