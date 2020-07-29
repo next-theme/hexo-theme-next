@@ -2,8 +2,6 @@
  * group-pictures.js | https://theme-next.js.org/docs/tag-plugins/group-pictures
  */
 
-/* global hexo */
-
 'use strict';
 
 const LAYOUTS = {
@@ -123,17 +121,14 @@ const templates = {
   }
 };
 
-function groupPicture(args, content) {
+module.exports = ctx => function(args, content) {
   args = args[0].split('-');
   const group = parseInt(args[0], 10);
   const layout = parseInt(args[1], 10);
 
-  content = hexo.render.renderSync({text: content, engine: 'markdown'});
+  content = ctx.render.renderSync({ text: content, engine: 'markdown' });
 
   const pictures = content.match(/<img[\s\S]*?>/g);
 
   return `<div class="group-picture">${templates.dispatch(pictures, group, layout)}</div>`;
-}
-
-hexo.extend.tag.register('grouppicture', groupPicture, {ends: true});
-hexo.extend.tag.register('gp', groupPicture, {ends: true});
+};

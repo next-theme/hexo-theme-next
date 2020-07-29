@@ -1,9 +1,7 @@
-/* global hexo */
-
 'use strict';
 
 // https://developers.google.com/fonts/docs/getting_started
-hexo.extend.helper.register('next_font', function() {
+module.exports = function() {
   const config = this.theme.font;
 
   if (!config || !config.enable) return '';
@@ -24,4 +22,4 @@ hexo.extend.helper.register('next_font', function() {
 
   // Merge extra parameters to the final processed font string
   return fontFamilies ? `<link rel="stylesheet" href="${fontHost}/css?family=${fontFamilies}&display=swap&subset=latin,latin-ext">` : '';
-});
+};

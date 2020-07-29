@@ -2,11 +2,9 @@
  * tabs.js | https://theme-next.js.org/docs/tag-plugins/tabs
  */
 
-/* global hexo */
-
 'use strict';
 
-function postTabs(args, content) {
+module.exports = ctx => function(args, content) {
   const tabBlock = /<!--\s*tab (.*?)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g;
 
   args = args.join(' ').split(',');
@@ -19,7 +17,7 @@ function postTabs(args, content) {
   let tabNav = '';
   let tabContent = '';
 
-  if (!tabName) hexo.log.warn('Tabs block must have unique name!');
+  if (!tabName) ctx.log.warn('Tabs block must have unique name!');
 
   while ((match = tabBlock.exec(content)) !== null) {
     matches.push(match[1]);
@@ -30,7 +28,7 @@ function postTabs(args, content) {
     let [caption = '', icon = ''] = matches[i].split('@');
     let postContent = matches[i + 1];
 
-    postContent = hexo.render.renderSync({text: postContent, engine: 'markdown'}).trim();
+    postContent = ctx.render.renderSync({ text: postContent, engine: 'markdown' }).trim();
 
     const abbr = tabName + ' ' + ++tabId;
     const href = abbr.toLowerCase().split(' ').join('-');
@@ -52,8 +50,4 @@ function postTabs(args, content) {
   tabContent = `<div class="tab-content">${tabContent}</div>`;
 
   return `<div class="tabs" id="${tabName.toLowerCase().split(' ').join('-')}">${tabNav + tabContent}</div>`;
-}
-
-hexo.extend.tag.register('tabs', postTabs, {ends: true});
-hexo.extend.tag.register('subtabs', postTabs, {ends: true});
-hexo.extend.tag.register('subsubtabs', postTabs, {ends: true});
+};
