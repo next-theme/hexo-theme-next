@@ -1,17 +1,18 @@
-@import hexo-config('highlight.light.file') if (hexo-config('highlight.enable'));
+// Use `@require` to fix issue #67
+@require hexo-config('highlight.light.file') if (hexo-config('highlight.enable'));
 if (hexo-config('prism.enable')) {
-  @import hexo-config('prism.light');
-  @import hexo-config('prism.number');
+  @require hexo-config('prism.light');
+  @require hexo-config('prism.number');
 }
 
 if (hexo-config('darkmode')) {
   @media (prefers-color-scheme: dark) {
-    @import hexo-config('highlight.dark.file') if (hexo-config('highlight.enable'));
-    @import hexo-config('prism.dark') if (hexo-config('prism.enable'));
+    @require hexo-config('highlight.dark.file') if (hexo-config('highlight.enable'));
+    @require hexo-config('prism.dark') if (hexo-config('prism.enable'));
   }
 }
 
-@import 'copy-code' if (hexo-config('codeblock.copy_button.enable'));
+@require 'copy-code' if (hexo-config('codeblock.copy_button.enable'));
 
 // Placeholder: $code-inline $code-block
 $code-inline {

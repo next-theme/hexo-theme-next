@@ -37,7 +37,7 @@
 
     if (hexo-config('reward_settings.animation')) {
       &:hover p {
-        animation: roll .1s infinite linear;
+        animation: next-roll .1s infinite linear;
         // The animation may affect :hover of img in dark mode
         pointer-events: none;
       }
@@ -52,7 +52,7 @@
   }
 }
 
-@keyframes roll {
+@keyframes next-roll {
   from {
     transform: rotateZ(30deg);
   }
