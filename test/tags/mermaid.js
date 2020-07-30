@@ -2,6 +2,8 @@
 
 require('chai').should();
 
+const { escapeHTML } = require('hexo-util');
+
 const result = `A[Hard] -->|Text| B(Round)
 B --> C{Decision}
 C -->|One| D[Result 1]
@@ -13,7 +15,7 @@ describe('mermaid', () => {
   it('default', () => {
     mermaid(['graph', 'TD'], result).should.eql(`<pre class="mermaid" style="text-align: center;">
 graph TD
-${result}
+${escapeHTML(result)}
 </pre>`);
   });
 });

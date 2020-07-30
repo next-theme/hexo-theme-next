@@ -3,13 +3,13 @@
 <script{{ pjax }}>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('{{ url_for(mermaid_uri) }}', () => {
-    mermaid.initialize({
+    mermaid.init({
       theme    : '{{ theme.mermaid.theme }}',
       logLevel : 3,
       flowchart: { curve     : 'linear' },
       gantt    : { axisFormat: '%m/%d/%Y' },
       sequence : { actorMargin: 50 }
-    });
+    }, '.mermaid');
   }, window.mermaid);
 }
 </script>
