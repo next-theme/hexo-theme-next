@@ -14,6 +14,15 @@
       <meta itemprop="name" content="{{ title }}">
     </span>
 
+    {# Gallery support #}
+    {%- if post.photos and post.photos.length %}
+      <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+        {%- for photo in post.photos %}
+          <div class="post-gallery-image" style="background-image: url({{ url_for(photo) }});" itemprop="contentUrl"></div>
+        {%- endfor %}
+      </div>
+    {%- endif %}
+
     {%- if post.header !== false %}
       <header class="post-header">
         <{%- if is_index %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">
@@ -163,16 +172,6 @@
     {### POST BODY ###}
     {#################}
     <div class="post-body{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="articleBody">
-
-      {# Gallery support #}
-      {%- if post.photos and post.photos.length %}
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          {%- for photo in post.photos %}
-            <img src="{{ url_for(photo) }}" itemprop="contentUrl">
-          {%- endfor %}
-        </div>
-      {%- endif %}
-
       {%- if is_index %}
         {%- if post.description and theme.excerpt_description %}
           <p>{{ post.description }}</p>

@@ -1,20 +1,19 @@
 .post-gallery {
-  align-items: center;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 20px;
+  display: flex;
+  margin-bottom: 60px;
 
-  +mobile() {
-    grid-template-columns: 1fr 1fr;
-  }
+  .post-gallery-image {
+    background-size: cover;
+    flex: 1;
+    height: 200px;
 
-  a {
-    // For fancybox
-    border: 0;
-  }
+    &:not(:first-child) {
+      clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
+      margin-left: -20px;
+    }
 
-  img {
-    margin: 0;
+    &:not(:last-child) {
+      margin-right: -20px;
+    }
   }
 }
