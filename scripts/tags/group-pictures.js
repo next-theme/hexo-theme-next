@@ -82,7 +82,7 @@ const templates = {
 
   dispatch: function(pictures, group, layout) {
     const rule = LAYOUTS[group] ? LAYOUTS[group][layout] : null;
-    return rule ? this.getHTML(groupBy(rule, pictures)) : templates.defaults(pictures);
+    return rule ? this.getHTML(groupBy(rule, pictures)) : this.defaults(pictures);
   },
 
   /**
@@ -113,10 +113,8 @@ const templates = {
   },
 
   getColumnHTML: function(pictures) {
-    const columnWidth = 100 / pictures.length;
-    const columnStyle = `style="width: ${columnWidth}%;"`;
     return pictures.map(picture => {
-      return `<div class="group-picture-column" ${columnStyle}>${picture}</div>`;
+      return `<div class="group-picture-column">${picture}</div>`;
     }).join('');
   }
 };

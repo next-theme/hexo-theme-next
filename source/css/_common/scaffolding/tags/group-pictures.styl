@@ -1,14 +1,20 @@
-.post-body .group-picture img {
-  margin: 0 auto;
-  padding: 0 3px;
-}
+.group-picture {
+  margin-bottom: 20px;
 
-.group-picture-row {
-  margin-bottom: 6px;
-  overflow: hidden;
-}
+  .group-picture-row {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 3px;
+  }
 
-.group-picture-column {
-  float: left;
-  margin-bottom: 10px;
+  .group-picture-column {
+    flex: 1;
+
+    img {
+      margin: 0;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
 }

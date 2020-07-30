@@ -1,11 +1,10 @@
 .post-gallery {
   display: flex;
   margin-bottom: 60px;
+  min-height: 200px;
 
   .post-gallery-image {
-    background-size: cover;
     flex: 1;
-    height: 200px;
 
     &:not(:first-child) {
       clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
@@ -14,6 +13,12 @@
 
     &:not(:last-child) {
       margin-right: -20px;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
     }
   }
 }
