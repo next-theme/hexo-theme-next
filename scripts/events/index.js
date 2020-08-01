@@ -3,8 +3,10 @@
 'use strict';
 
 hexo.extend.filter.register('before_generate', () => {
-  // Merge config.
+  // Merge config
   require('./lib/config')(hexo);
+  // Set vendors
+  require('./lib/vendors')(hexo);
   // Add filter type `theme_inject`
   require('./lib/injects')(hexo);
   // Highlight
