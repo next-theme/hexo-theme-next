@@ -71,7 +71,9 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    document.querySelectorAll('figure.highlight').forEach(element => {
+    let figure = document.querySelectorAll('figure.highlight');
+    if (figure.length === 0) figure = document.querySelectorAll('pre');
+    figure.forEach(element => {
       element.querySelectorAll('.code .line span').forEach(span => {
         span.classList.forEach(name => {
           span.classList.replace(name, `hljs-${name}`);
@@ -81,7 +83,8 @@ NexT.utils = {
       element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>');
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', () => {
-        const code = [...button.parentNode.querySelectorAll('.code .line')].map(line => line.innerText).join('\n');
+        const lines = element.querySelector('.code') || element.querySelector('code');
+        const code = lines.innerText;
         const ta = document.createElement('textarea');
         ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
         ta.style.position = 'absolute';
