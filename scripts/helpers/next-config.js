@@ -26,17 +26,16 @@ hexo.extend.helper.register('next_config', function() {
     motion    : theme.motion,
     prism     : config.prismjs.enable && !config.prismjs.preprocess
   };
-  if (theme.algolia_search && theme.algolia_search.enable) {
-    config.algolia = config.algolia || {};
+  if (config.algolia && theme.algolia_search && theme.algolia_search.enable) {
     exportConfig.algolia = {
-      appID    : config.algolia.applicationID,
+      appID    : config.algolia.applicationID || config.algolia.appId,
       apiKey   : config.algolia.apiKey,
       indexName: config.algolia.indexName,
       hits     : theme.algolia_search.hits,
       labels   : theme.algolia_search.labels
     };
   }
-  if (config.search) {
+  if (config.search && theme.local_search && theme.local_search.enable) {
     exportConfig.path = config.search.path;
     exportConfig.localsearch = theme.local_search;
   }
