@@ -15,7 +15,7 @@ prism:
 prism_autoloader:
   name: prismjs
   version: 1.20.0
-  file: plugins/line-numbers/prism-line-numbers.min.js
+  file: plugins/autoloader/prism-autoloader.min.js
   alias: prism
 prism_line_numbers:
   name: prismjs
