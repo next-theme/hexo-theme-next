@@ -862,13 +862,13 @@ vendors:
   # Available values: local, jsdelivr, unpkg
   internal: local
 
-  # Internal version: 3.1.0
+  # Internal version: 3.2.0
   # anime: //cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js
   # anime: //unpkg.com/animejs@3.2.0/lib/anime.min.js
   # anime: //cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js
   anime:
 
-  # Internal version: 5.13.0
+  # Internal version: 5.14.0
   # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //unpkg.com/@fortawesome/fontawesome-free@5/css/all.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css
