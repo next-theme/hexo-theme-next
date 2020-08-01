@@ -13,6 +13,13 @@ describe('Validate', () => {
     });
   });
 
+  it('vendors', () => {
+    const vendorsFile = fs.readFileSync(path.join(__dirname, '../../_vendors.yml'));
+    should.not.throw(() => {
+      yaml.safeLoad(vendorsFile);
+    });
+  });
+
   it('language', () => {
     const languagesPath = path.join(__dirname, '../../languages');
     should.not.throw(() => {
