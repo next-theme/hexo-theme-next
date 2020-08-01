@@ -43,19 +43,19 @@
 
 {{ next_font() }}
 
-<link rel="stylesheet" href="{{ url_for(theme.vendors.fontawesome) }}">
+<link rel="stylesheet" href="{{ theme.vendors.fontawesome }}">
 
 {%-if theme.motion.enable %}
-  <link rel="stylesheet" href="{{ url_for(theme.vendors.animate_css) }}">
+  <link rel="stylesheet" href="{{ theme.vendors.animate_css }}">
 {%- endif %}
 
 {%- if theme.fancybox %}
-  <link rel="stylesheet" href="{{ url_for(theme.vendors.fancybox_css) }}">
+  <link rel="stylesheet" href="{{ theme.vendors.fancybox_css }}">
 {%- endif %}
 
 {%- if theme.pace.enable %}
-  <link rel="stylesheet" href="{{ url_for(theme.vendors.pace_css) }}">
-  <script src="{{ url_for(theme.vendors.pace) }}"></script>
+  <link rel="stylesheet" href="{{ theme.vendors.pace_css }}">
+  <script src="{{ theme.vendors.pace }}"></script>
 {%- endif %}
 
 {{ next_config() }}

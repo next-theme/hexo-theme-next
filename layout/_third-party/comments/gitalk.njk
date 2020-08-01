@@ -1,9 +1,9 @@
 {%- if page.comments %}
-<link rel="stylesheet" href="{{ url_for(theme.vendors.gitalk_css) }}">
+<link rel="stylesheet" href="{{ theme.vendors.gitalk_css }}">
 
 <script>
 NexT.utils.loadComments('#gitalk-container', () => {
-  NexT.utils.getScript('{{ url_for(theme.vendors.gitalk_js) }}', () => {
+  NexT.utils.getScript('{{ theme.vendors.gitalk_js }}', () => {
     var gitalk = new Gitalk({
       clientID    : '{{ theme.gitalk.client_id }}',
       clientSecret: '{{ theme.gitalk.client_secret }}',

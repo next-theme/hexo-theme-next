@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="{{ url_for(theme.vendors.katex) }}">
+<link rel="stylesheet" href="{{ theme.vendors.katex }}">
 {%- if theme.math.katex.copy_tex %}
-  <script src="{{ url_for(theme.vendors.copy_tex_js) }}"></script>
-  <link rel="stylesheet" href="{{ url_for(theme.vendors.copy_tex_css) }}">
+  <script src="{{ theme.vendors.copy_tex_js }}"></script>
+  <link rel="stylesheet" href="{{ theme.vendors.copy_tex_css }}">
 {%- endif %}

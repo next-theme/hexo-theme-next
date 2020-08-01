@@ -1,5 +1,5 @@
 {%- if page.quicklink.enable %}
-  <script src="{{ url_for(theme.vendors.quicklink) }}"></script>
+  <script src="{{ theme.vendors.quicklink }}"></script>
   <script>
     {%- if page.quicklink.delay %}
       window.addEventListener('load', () => {

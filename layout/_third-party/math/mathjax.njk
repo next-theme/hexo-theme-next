@@ -37,7 +37,7 @@
     };
     (function () {
       const script = document.createElement('script');
-      script.src = '{{ url_for(theme.vendors.mathjax) }}';
+      script.src = '{{ theme.vendors.mathjax }}';
       script.defer = true;
       document.head.appendChild(script);
     })();

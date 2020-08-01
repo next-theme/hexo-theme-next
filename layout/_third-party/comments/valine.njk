@@ -1,6 +1,6 @@
 <script>
 NexT.utils.loadComments('#valine-comments', () => {
-  NexT.utils.getScript('{{ url_for(theme.vendors.valine) }}', () => {
+  NexT.utils.getScript('{{ theme.vendors.valine }}', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
       path: location.pathname,

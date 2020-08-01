@@ -3,30 +3,35 @@
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
+const { url_for } = require('hexo-util');
 let internal;
 try {
   internal = require('@next-theme/plugins');
 } catch (error) {
 }
 const vendorsFile = fs.readFileSync(path.join(__dirname, '../../../_vendors.yml'));
-const vendors = yaml.safeLoad(vendorsFile);
+const dependencies = yaml.safeLoad(vendorsFile);
 
 module.exports = hexo => {
+  const { vendors } = hexo.theme.config;
   if (typeof internal === 'function') {
-    internal(hexo, vendors);
+    internal(hexo, dependencies);
   }
-  for (const [key, value] of Object.entries(vendors)) {
-    if (hexo.theme.config.vendors[key]) continue;
+  for (const [key, value] of Object.entries(dependencies)) {
+    if (vendors[key]) {
+      vendors[key] = url_for.call(hexo, vendors[key]);
+      continue;
+    }
     const { name, version, file, alias, unavailable } = value;
     const links = {
-      local   : `lib/${name}/${file}`,
-      jsdelivr: `https://cdn.jsdelivr.net/npm/${name}@${version}/${file}`,
-      unpkg   : `https://unpkg.com/${name}@${version}/${file}`,
-      cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/${alias || name}/${version}/${file.replace(/^(dist|lib|)\/(browser\/|)/, '')}`
+      local   : url_for.call(hexo, `lib/${name}/${file}`),
+      jsdelivr: `//cdn.jsdelivr.net/npm/${name}@${version}/${file}`,
+      unpkg   : `//unpkg.com/${name}@${version}/${file}`,
+      cdnjs   : `//cdnjs.cloudflare.com/ajax/libs/${alias || name}/${version}/${file.replace(/^(dist|lib|)\/(browser\/|)/, '')}`
     };
-    let { plugins = 'jsdelivr' } = hexo.theme.config.vendors;
+    let { plugins = 'jsdelivr' } = vendors;
     if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
     if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';
-    hexo.theme.config.vendors[key] = links[plugins];
+    vendors[key] = links[plugins];
   }
 };
