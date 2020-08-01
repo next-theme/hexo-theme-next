@@ -13,18 +13,20 @@ const vendors = yaml.safeLoad(vendorsFile);
 
 module.exports = hexo => {
   if (typeof internal === 'function') {
-    internal(hexo);
+    internal(hexo, vendors);
   }
   for (const [key, value] of Object.entries(vendors)) {
     if (hexo.theme.config.vendors[key]) continue;
     const { name, version, file, alias, unavailable } = value;
     const links = {
+      local   : `lib/${name}/${file}`,
       jsdelivr: `https://cdn.jsdelivr.net/npm/${name}@${version}/${file}`,
       unpkg   : `https://unpkg.com/${name}@${version}/${file}`,
       cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/${alias || name}/${version}/${file.replace(/^(dist|lib|)\/(browser\/|)/, '')}`
     };
     let { plugins = 'jsdelivr' } = hexo.theme.config.vendors;
-    if (unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
+    if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
+    if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';
     hexo.theme.config.vendors[key] = links[plugins];
   }
 };

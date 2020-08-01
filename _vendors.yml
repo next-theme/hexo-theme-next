@@ -62,7 +62,7 @@ fancybox_css:
   alias: fancybox
 mediumzoom:
   name: medium-zoom
-  version: 1.0.5
+  version: 1.0.6
   file: dist/medium-zoom.min.js
 lazyload:
   name: lozad
@@ -109,7 +109,7 @@ instant_search:
   file: dist/instantsearch.production.min.js
 mermaid:
   name: mermaid
-  version: 8.6.3
+  version: 8.6.4
   file: dist/mermaid.min.js
 animate_css:
   name: animate.css

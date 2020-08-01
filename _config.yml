@@ -860,7 +860,8 @@ vendors:
   # Available values: local, jsdelivr, unpkg
   internal: local
   # The default CDN provider of third-party plugins.
-  # Available values: jsdelivr, unpkg, cdnjs
+  # Available values: local, jsdelivr, unpkg, cdnjs
+  # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
   plugins: jsdelivr
 
   # In the following settings, you can specify the CDN link for each plugin.
