@@ -43,24 +43,19 @@
 
 {{ next_font() }}
 
-{%- set font_awesome_uri = theme.vendors.fontawesome or 'lib/font-awesome/css/all.min.css' %}
-<link rel="stylesheet" href="{{ url_for(font_awesome_uri) }}">
+<link rel="stylesheet" href="{{ theme.vendors.fontawesome }}">
 
 {%-if theme.motion.enable %}
-  {% set animate_css_uri = theme.vendors.animate_css or 'lib/animate-css/animate.min.css' %}
-  <link rel="stylesheet" href="{{ url_for(animate_css_uri) }}">
+  <link rel="stylesheet" href="{{ theme.vendors.animate_css }}">
 {%- endif %}
 
 {%- if theme.fancybox %}
-  {%- set fancybox_css_uri = theme.vendors.fancybox_css or '//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css' %}
-  <link rel="stylesheet" href="{{ url_for(fancybox_css_uri) }}">
+  <link rel="stylesheet" href="{{ theme.vendors.fancybox_css }}">
 {%- endif %}
 
 {%- if theme.pace.enable %}
-  {%- set pace_css_uri = theme.vendors.pace_css or '//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-' + theme.pace.theme + '.min.css' %}
-  {%- set pace_js_uri = theme.vendors.pace or '//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js' %}
-  <link rel="stylesheet" href="{{ url_for(pace_css_uri) }}">
-  <script src="{{ url_for(pace_js_uri) }}"></script>
+  <link rel="stylesheet" href="{{ theme.vendors.pace_css }}">
+  <script src="{{ theme.vendors.pace }}"></script>
 {%- endif %}
 
 {{ next_config() }}

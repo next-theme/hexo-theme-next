@@ -1,6 +1,5 @@
 {%- if page.quicklink.enable %}
-  {%- set quicklink_uri = theme.vendors.quicklink or '//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js' %}
-  <script src="{{ url_for(quicklink_uri) }}"></script>
+  <script src="{{ theme.vendors.quicklink }}"></script>
   <script>
     {%- if page.quicklink.delay %}
       window.addEventListener('load', () => {

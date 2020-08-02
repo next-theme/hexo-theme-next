@@ -1,8 +1,5 @@
-{%- set katex_uri = theme.vendors.katex or '//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css' %}
-<link rel="stylesheet" href="{{ url_for(katex_uri) }}">
+<link rel="stylesheet" href="{{ theme.vendors.katex }}">
 {%- if theme.math.katex.copy_tex %}
-  {%- set copy_tex_js_uri = theme.vendors.copy_tex_js or '//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js' %}
-  {%- set copy_tex_css_uri = theme.vendors.copy_tex_css or '//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css' %}
-  <script src="{{ url_for(copy_tex_js_uri) }}"></script>
-  <link rel="stylesheet" href="{{ url_for(copy_tex_css_uri) }}">
+  <script src="{{ theme.vendors.copy_tex_js }}"></script>
+  <link rel="stylesheet" href="{{ theme.vendors.copy_tex_css }}">
 {%- endif %}

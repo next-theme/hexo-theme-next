@@ -1,5 +1,3 @@
-{%- set mathjax_uri = theme.vendors.mathjax or '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js' %}
-
 <script>
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
@@ -39,7 +37,7 @@
     };
     (function () {
       const script = document.createElement('script');
-      script.src = '{{ url_for(mathjax_uri) }}';
+      script.src = '{{ theme.vendors.mathjax }}';
       script.defer = true;
       document.head.appendChild(script);
     })();

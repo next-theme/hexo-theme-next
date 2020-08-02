@@ -12,20 +12,6 @@ hexo.extend.filter.register('after_generate', () => {
 
   if (!theme.motion.enable) {
     hexo.route.remove('js/motion.js');
-    hexo.route.remove('lib/animate-css/animate.min.css');
-  } else if (theme.vendors.animate_css) {
-    hexo.route.remove('lib/animate-css/animate.min.css');
-  }
-
-  if (theme.vendors.fontawesome) {
-    const lists = hexo.route.list();
-    lists.forEach(path => {
-      if (path.startsWith('lib/font-awesome')) hexo.route.remove(path);
-    });
-  }
-
-  if (theme.vendors.anime) {
-    hexo.route.remove('lib/anime.min.js');
   }
 
   if (!theme.algolia_search.enable) {

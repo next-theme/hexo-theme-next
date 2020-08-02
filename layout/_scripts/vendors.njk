@@ -1,8 +1,7 @@
 {%- if theme.canvas_ribbon.enable %}
-  {%- set canvas_ribbon_uri = theme.vendors.canvas_ribbon or '//cdn.jsdelivr.net/npm/ribbon.js@1/dist/ribbon.min.js' %}
-  <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{ theme.canvas_ribbon.zIndex }}" src="{{ url_for(canvas_ribbon_uri) }}"></script>
+  <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{ theme.canvas_ribbon.zIndex }}" src="{{ theme.vendors.canvas_ribbon }}"></script>
 {%- endif %}
 
-{%- for name, internal in js_vendors() %}
-  <script src="{{ url_for(theme.vendors[name] or internal) }}"></script>
+{%- for name in js_vendors() %}
+  <script src="{{ url_for(theme.vendors[name]) }}"></script>
 {%- endfor %}

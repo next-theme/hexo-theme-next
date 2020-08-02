@@ -1,12 +1,9 @@
 {%- if page.comments %}
-{%- set disqusjs_css_uri = theme.vendors.disqusjs_css or '//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css' %}
-<link rel="stylesheet" href="{{ url_for(disqusjs_css_uri) }}">
-
-{%- set disqusjs_js_uri = theme.vendors.disqusjs_js or '//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js' %}
+<link rel="stylesheet" href="{{ theme.vendors.disqusjs_css }}">
 
 <script>
 NexT.utils.loadComments('#disqus_thread', () => {
-  NexT.utils.getScript('{{ url_for(disqusjs_js_uri) }}', () => {
+  NexT.utils.getScript('{{ theme.vendors.disqusjs_js }}', () => {
     window.dsqjs = new DisqusJS({
       api       : '{{ theme.disqusjs.api }}' || 'https://disqus.com/api/',
       apikey    : '{{ theme.disqusjs.apikey }}',

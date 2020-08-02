@@ -1,6 +1,4 @@
-{%- set algolia_search_uri = theme.vendors.algolia_search or '//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js' %}
-{%- set instant_search_uri = theme.vendors.instant_search or '//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js' %}
-<script src="{{ url_for(algolia_search_uri) }}"></script>
-<script src="{{ url_for(instant_search_uri) }}"></script>
+<script src="{{ theme.vendors.algolia_search }}"></script>
+<script src="{{ theme.vendors.instant_search }}"></script>
 
 {{- next_js('algolia-search.js') }}

@@ -1,8 +1,6 @@
-{%- set valine_uri = theme.vendors.valine or '//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js' %}
-
 <script>
 NexT.utils.loadComments('#valine-comments', () => {
-  NexT.utils.getScript('{{ url_for(valine_uri) }}', () => {
+  NexT.utils.getScript('{{ theme.vendors.valine }}', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
       path: location.pathname,

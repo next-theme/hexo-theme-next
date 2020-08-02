@@ -1,0 +1,132 @@
+anime:
+  name: animejs
+  version: 3.2.0
+  file: lib/anime.min.js
+fontawesome:
+  name: '@fortawesome/fontawesome-free'
+  version: 5.14.0
+  file: css/all.min.css
+  alias: font-awesome
+prism:
+  name: prismjs
+  version: 1.20.0
+  file: components/prism-core.min.js
+  alias: prism
+prism_autoloader:
+  name: prismjs
+  version: 1.20.0
+  file: plugins/autoloader/prism-autoloader.min.js
+  alias: prism
+prism_line_numbers:
+  name: prismjs
+  version: 1.20.0
+  file: plugins/line-numbers/prism-line-numbers.min.js
+  alias: prism
+mathjax:
+  name: mathjax
+  version: 3.0.5
+  file: es5/tex-mml-chtml.js
+katex:
+  name: katex
+  version: 0.11.1
+  file: dist/katex.min.css
+  alias: KaTeX
+copy_tex_js:
+  name: katex
+  version: 0.11.1
+  file: dist/contrib/copy-tex.min.js
+  alias: KaTeX
+copy_tex_css:
+  name: katex
+  version: 0.11.1
+  file: dist/contrib/copy-tex.min.css
+  alias: KaTeX
+pjax:
+  name: '@next-theme/pjax'
+  version: 0.4.0
+  file: pjax.min.js
+  unavailable: [cdnjs]
+jquery:
+  name: jquery
+  version: 3.5.1
+  file: dist/jquery.min.js
+fancybox:
+  name: '@fancyapps/fancybox'
+  version: 3.5.7
+  file: dist/jquery.fancybox.min.js
+  alias: fancybox
+fancybox_css:
+  name: '@fancyapps/fancybox'
+  version: 3.5.7
+  file: dist/jquery.fancybox.min.css
+  alias: fancybox
+mediumzoom:
+  name: medium-zoom
+  version: 1.0.6
+  file: dist/medium-zoom.min.js
+lazyload:
+  name: lozad
+  version: 1.15.0
+  file: dist/lozad.min.js
+  alias: lozad.js
+pangu:
+  name: pangu
+  version: 4.0.7
+  file: dist/browser/pangu.min.js
+quicklink:
+  name: quicklink
+  version: 2.0.0
+  file: dist/quicklink.umd.js
+disqusjs_js:
+  name: disqusjs
+  version: 1.3.0
+  file: dist/disqus.js
+  unavailable: [cdnjs]
+disqusjs_css:
+  name: disqusjs
+  version: 1.3.0
+  file: dist/disqusjs.css
+  unavailable: [cdnjs]
+valine:
+  name: valine
+  version: 1.4.14
+  file: dist/Valine.min.js
+gitalk_js:
+  name: gitalk
+  version: 1.6.2
+  file: dist/gitalk.min.js
+gitalk_css:
+  name: gitalk
+  version: 1.6.2
+  file: dist/gitalk.css
+algolia_search:
+  name: algoliasearch
+  version: 4.3.1
+  file: dist/algoliasearch-lite.umd.js
+instant_search:
+  name: instantsearch.js
+  version: 4.7.0
+  file: dist/instantsearch.production.min.js
+mermaid:
+  name: mermaid
+  version: 8.6.4
+  file: dist/mermaid.min.js
+animate_css:
+  name: animate.css
+  version: 3.1.1
+  file: animate.min.css
+pace:
+  name: pace-js
+  version: 1.0.2
+  file: pace.min.js
+  alias: pace
+pace_css:
+  name: pace-js
+  version: 1.0.2
+  file: themes/blue/pace-theme-minimal.css
+  alias: pace
+canvas_ribbon:
+  name: ribbon.js
+  version: 1.0.2
+  file: dist/ribbon.min.js
+  unavailable: [cdnjs]
