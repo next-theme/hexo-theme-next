@@ -47,6 +47,12 @@ $ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 此外，如果你想要使用其他方式，请参见[详细安装步骤][docs-installation-url]。
 
+安装完成后，在 Hexo 配置文件中将 `theme` 设置为 `next`。
+
+```yml
+theme: next
+```
+
 ## 配置
 
 目前 NexT 鼓励用户使用 [Alternate Theme Config][docs-configuration-url] 进行配置。并且可以轻松地通过 [Custom Files][docs-custom-files-url] 自定义主题的布局和样式。
@@ -57,7 +63,7 @@ $ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 ## 插件
 
-插件丰富和拓展了 NexT 的功能。这些插件分为两种：核心插件和第三方插件。核心插件被 NexT 的基础功能所依赖。第三方插件默认通过 jsDelivr 的 CDN 服务加载，它们提供了大量的可选功能。
+插件丰富和拓展了 NexT 的功能。这些插件分为两种：核心插件和第三方插件。核心插件被 NexT 的基础功能所依赖。第三方插件提供了大量的可选功能。
 
 配置这些插件非常简单。例如，你想要在你的站点中使用 `pjax` 插件，请进入 NexT 配置文件，启用 `pjax` 配置项：
 
@@ -69,16 +75,16 @@ pjax: true
 
 ### 设置 CDN
 
-如果你想要通过自定义 CDN 而不是默认的 jsDelivr 来加载插件脚本，那么需要设置相关的 CDN 链接。
+第三方插件默认通过 [jsDelivr](https://www.jsdelivr.com) CDN 服务加载。我们也提供了其它的 CDN 服务供选择，包括著名的 [UNPKG](https://unpkg.com) 和 [CDNJS](https://cdnjs.com)。
 
-例如，你想要为 `mediumzoom` 插件设置 CDN 地址，进入 NexT 配置文件并找到如下内容：
+例如，你想要使用 `unpkg` 代替 `jsdelivr` 作为默认的 CDN 提供商，你需要在 NexT 配置文件中进行如下设置：
 
 ```yml
 vendors:
   # ...
   # Some contents...
   # ...
-  mediumzoom: # Set or update mediumzoom CDN URL.
+  plugins: unpkg
 ```
 
 ## 更新

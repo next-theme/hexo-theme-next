@@ -857,10 +857,10 @@ canvas_ribbon:
 # Remember to use the https protocol of CDN links when you enable https on your site.
 vendors:
   # The CDN provider of NexT internal scripts.
-  # Available values: local, jsdelivr, unpkg
+  # Available values: local | jsdelivr | unpkg
   internal: local
   # The default CDN provider of third-party plugins.
-  # Available values: local, jsdelivr, unpkg, cdnjs
+  # Available values: local | jsdelivr | unpkg | cdnjs
   # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
   plugins: jsdelivr
 
@@ -868,9 +868,11 @@ vendors:
   # If left blank, the default CDN provider set by `plugins` option will be used.
 
   # Anime.js
+  # For more information: https://animejs.com
   anime:
 
   # Font Awesome
+  # For more information: https://fontawesome.com
   fontawesome:
 
   # Prism

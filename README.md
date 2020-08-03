@@ -47,6 +47,12 @@ $ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 See [detailed installation instructions][docs-installation-url] if you want any other variant.
 
+After the installation, open Hexo config file and set `theme` variable to `next`.
+
+```yml
+theme: next
+```
+
 ## Configuration
 
 At present, NexT encourages users to use the [Alternate Theme Config][docs-configuration-url] to configure NexT. And it's easy to customize the layout or style of NexT using [Custom Files][docs-custom-files-url].
@@ -57,7 +63,7 @@ However, you can bypass merge conflicts (error message like **«Commit your chan
 
 ## Plugins
 
-Plugins extend and expand the functionality of NexT. There are two types of plugins: core plugins and third-party plugins. The core plugins are required by the basic functions of NexT. Third-party plugins are loaded from jsDelivr CDN by default, and they provide a large number of optional features.
+Plugins extend and expand the functionality of NexT. There are two types of plugins: core plugins and third-party plugins. The core plugins are required by the basic functions of NexT. Third-party plugins provide a large number of optional features.
 
 Configuring these plugins is very easy. For example, if you want to enable `pjax` on your site, just set `pjax` to `true` in NexT config file:
 
@@ -69,16 +75,16 @@ pjax: true
 
 ### Configure CDN
 
-If you want to specify the CDN provider for any plugins, you need to set / update the CDN URL.
+Third-party plugins are loaded from [jsDelivr](https://www.jsdelivr.com) CDN by default. We also provide other optional CDNs, including the famous [UNPKG](https://unpkg.com) and [CDNJS](https://cdnjs.com).
 
-For example, if you want to set the CDN URL for `mediumzoom`, go to NexT config and see:
+For example, if you want to use `unpkg` instead of `jsdelivr` as the default CDN provider, you need to edit the following settings in NexT config file:
 
 ```yml
 vendors:
   # ...
   # Some contents...
   # ...
-  mediumzoom: # Set or update mediumzoom CDN URL.
+  plugins: unpkg
 ```
 
 ## Update
