@@ -2,12 +2,15 @@
   <script{{ pjax }}>
     NProgress.start();
     document.onreadystatechange = function () {
-        if (document.readyState == "interactive") {
-            NProgress.inc(0.8);
-        };
-        if (document.readyState === "complete") {
-            NProgress.done();
-        }
+      if (document.readyState == "interactive") {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === "complete") {
+        NProgress.done();
+      }
     }
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
   </script>
 {%- endif %}
