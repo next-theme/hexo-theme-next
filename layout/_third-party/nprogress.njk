@@ -1,0 +1,13 @@
+{%- if theme.nprogress.enable %}
+  <script{{ pjax }}>
+    NProgress.start();
+    document.onreadystatechange = function () {
+        if (document.readyState == "interactive") {
+            NProgress.inc(0.8);
+        };
+        if (document.readyState === "complete") {
+            NProgress.done();
+        }
+    }
+  </script>
+{%- endif %}

@@ -825,13 +825,9 @@ motion:
     sidebar: fadeInUp
 
 # Progress bar in the top during page loading.
-# For more information: https://github.com/HubSpot/pace
-pace:
+# For more information: https://github.com/rstacruz/nprogress
+nprogress:
   enable: false
-  # Themes list:
-  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
-  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: minimal
 
 # Canvas ribbon
 # For more information: https://github.com/hustcc/ribbon.js
