@@ -27,7 +27,7 @@ prism_line_numbers:
   alias: prism
 mathjax:
   name: mathjax
-  version: 3.0.5
+  version: 3.1.0
   file: es5/tex-mml-chtml.js
 katex:
   name: katex
