@@ -10,7 +10,8 @@ var pjax = new Pjax({
   ],
   analytics: false,
   cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
 });
 
 document.addEventListener('pjax:success', () => {
