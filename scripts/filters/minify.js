@@ -6,6 +6,10 @@ hexo.extend.filter.register('after_generate', () => {
   const theme = hexo.theme.config;
   if (!theme.minify) return;
 
+  if (!hexo.locals.get('pages').some(page => page.type === 'schedule')) {
+    hexo.route.remove('js/schedule.js');
+  }
+
   if (!theme.bookmark.enable) {
     hexo.route.remove('js/bookmark.js');
   }

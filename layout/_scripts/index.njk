@@ -5,8 +5,9 @@
   {{- next_js('motion.js') }}
 {%- endif %}
 
-{%- set scheme_script = 'schemes/' + theme.scheme | lower + '.njk' %}
-{% include scheme_script %}
+{%- if theme.scheme === 'Muse' or theme.scheme === 'Mist' %}
+  {{- next_js('schemes/muse.js') }}
+{%- endif %}
 
 {{- next_js('next-boot.js') }}
 {%- if theme.bookmark.enable %}

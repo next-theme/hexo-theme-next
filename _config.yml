@@ -612,7 +612,7 @@ valine:
   avatar: mm # Gravatar style
   meta: [] # Custom comment header: [nick, mail, link]
   pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
+  lang: # Language, available values: en, zh-cn
   visitor: false # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
