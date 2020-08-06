@@ -4,11 +4,11 @@
 
 You can use internationalization to present your site in different languages. The default language is set by modifying the `language` setting in Hexo `_config.yml`. You can also set multiple languages and modify the order of default languages.
 
-```yaml
+```yml
 language: en
 ```
 
-```yaml
+```yml
 language:
   - zh-CN
   - en
@@ -21,7 +21,7 @@ If you would like to customize the default translation, you do not need to modif
 1. Creat a `languages.yml` in `source/_data`.
 2. Insert following codes: (be careful about the two-space indent)
 
-    ```yaml
+    ```yml
     # language
     zh-CN:
       # items

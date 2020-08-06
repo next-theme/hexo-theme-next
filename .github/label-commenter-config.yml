@@ -20,8 +20,7 @@ labels:
     labeled:
       issue:
         body: |
-          :wave: Hey there! we use the issue tracker exclusively for bug reports
-          and feature requests. However, this issue appears to be a support request.
+          :wave: Hey there! we use the issue tracker exclusively for bug reports and feature requests. However, this issue appears to be a support request.
           Please use our [support channels](https://github.com/next-theme/hexo-theme-next#feedback) to get help with the project.
         action: close
   - name: Wontfix

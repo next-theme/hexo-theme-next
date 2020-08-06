@@ -15,17 +15,17 @@ hexo.extend.helper.register('next_inject', function(point) {
     .join('');
 });
 
-hexo.extend.helper.register('next_js', function(url) {
+hexo.extend.helper.register('next_js', function(url, pjax = false) {
   const { next_version } = this;
   const { js } = this.theme;
   const { internal } = this.theme.vendors;
-  let src = `${js}/${url}`;
+  let src = this.url_for(`${js}/${url}`);
   if (internal === 'jsdelivr') {
     src = `//cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${url}`;
   } else if (internal === 'unpkg') {
     src = `//unpkg.com/hexo-theme-next@${next_version}/source/js/${url}`;
   }
-  return this.js(src);
+  return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
 });
 
 hexo.extend.helper.register('post_edit', function(src) {

@@ -10,7 +10,6 @@ exemptLabels:
   - Feature Request
   - Discussion
   - Help Wanted
-  - Question
 # Label to use when marking as stale
 staleLabel: stale
 # Comment to post when marking as stale. Set to `false` to disable
