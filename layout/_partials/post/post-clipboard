@@ -1,0 +1,11 @@
+{%- if theme.post_copyright.enable %}
+  <script>
+    document.body.oncopy = function (e) {
+      var selection = window.getSelection();
+      if (("" + selection).length < {{ theme.post_copyright.maxLength }}) return;
+      e.preventDefault();
+      let copyMsg = window.getSelection() + "作者: {{ page.author or author }} 链接: {{ page.permalink }}"
+      e.clipboardData.setData("Text", copyMsg);
+    }
+  </script>
+{%- endif %}
