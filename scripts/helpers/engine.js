@@ -15,16 +15,15 @@ hexo.extend.helper.register('next_inject', function(point) {
     .join('');
 });
 
-hexo.extend.helper.register('next_js', function(url, pjax = false) {
+hexo.extend.helper.register('next_js', function(file, pjax = false) {
   const { next_version } = this;
-  const { js } = this.theme;
   const { internal } = this.theme.vendors;
-  let src = this.url_for(`${js}/${url}`);
-  if (internal === 'jsdelivr') {
-    src = `//cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${url}`;
-  } else if (internal === 'unpkg') {
-    src = `//unpkg.com/hexo-theme-next@${next_version}/source/js/${url}`;
-  }
+  const links = {
+    local   : this.url_for(`${this.theme.js}/${file}`),
+    jsdelivr: `//cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${file}`,
+    unpkg   : `//unpkg.com/hexo-theme-next@${next_version}/source/js/${file}`
+  };
+  const src = links[internal] || links.local;
   return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
 });
 
@@ -59,18 +58,7 @@ hexo.extend.helper.register('post_nav', function(post) {
 
 hexo.extend.helper.register('gitalk_md5', function(path) {
   const str = this.url_for(path);
-  str.replace('index.html', '');
   return crypto.createHash('md5').update(str).digest('hex');
-});
-
-hexo.extend.helper.register('canonical', function() {
-  // https://support.google.com/webmasters/answer/139066
-  const { permalink } = hexo.config;
-  let url = this.url.replace(/index\.html$/, '');
-  if (!permalink.endsWith('.html')) {
-    url = url.replace(/\.html$/, '');
-  }
-  return `<link rel="canonical" href="${url}">`;
 });
 
 /**

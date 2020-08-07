@@ -32,6 +32,6 @@ module.exports = hexo => {
     let { plugins = 'jsdelivr' } = vendors;
     if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
     if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';
-    vendors[key] = links[plugins];
+    vendors[key] = links[plugins] || links.jsdelivr;
   }
 };
