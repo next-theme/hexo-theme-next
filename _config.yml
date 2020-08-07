@@ -298,6 +298,10 @@ post_edit:
 # Available values: left | right | false
 post_navigation: left
 
+# Add copyright when copying
+post_copyright:
+  enable: true 
+  maxLength: 10 # Trigger length
 
 # ---------------------------------------------------------------
 # Custom Page Settings
