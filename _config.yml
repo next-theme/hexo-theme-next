@@ -300,7 +300,7 @@ post_navigation: left
 
 # Add copyright when copying
 post_copyright:
-  enable: true 
+  enable: false
   maxLength: 10 # Trigger length
 
 # ---------------------------------------------------------------
