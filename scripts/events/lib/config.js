@@ -14,14 +14,22 @@ module.exports = hexo => {
     hexo.theme.config = merge(hexo.theme.config, hexo.config.theme_config);
   }
 
-  const { cache, language_switcher } = hexo.theme.config;
+  const { cache, language_switcher, leancloud_visitors, valine } = hexo.theme.config;
+  const warning = function(...args) {
+    hexo.log.warn(`Since ${args[0]} is turned on, the ${args[1]} is disabled to avoid potential hazards.`);
+  };
+
   if (cache && cache.enable && language_switcher) {
-    hexo.log.warn('Since language_switcher is turned on, the caching is disabled to avoid potential hazards.');
+    warning('language_switcher', 'caching');
     cache.enable = false;
   }
   if (cache && cache.enable && hexo.config.relative_link) {
-    hexo.log.warn('Since caching is turned on, the `relative_link` option in Hexo `_config.yml` is set to `false` to avoid potential hazards.');
+    warning('caching', '`relative_link` option in Hexo `_config.yml`');
     hexo.config.relative_link = false;
+  }
+  if (leancloud_visitors && leancloud_visitors.enable && valine && valine.enable && valine.visitor) {
+    warning('valine.visitor', 'leancloud_visitors');
+    leancloud_visitors.enable = false;
   }
   hexo.config.meta_generator = false;
 
