@@ -15,15 +15,7 @@
     </span>
 
     {# Gallery support #}
-    {%- if post.photos and post.photos.length %}
-      <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-        {%- for photo in post.photos %}
-          <div class="post-gallery-image">
-            <img src="{{ url_for(photo) }}" itemprop="contentUrl">
-          </div>
-        {%- endfor %}
-      </div>
-    {%- endif %}
+    {{ post_gallery(post.photos) }}
 
     {%- if post.header !== false %}
       <header class="post-header">
@@ -240,7 +232,26 @@
 
         {{ partial('_partials/post/post-footer.njk', {}, {cache: theme.cache.enable}) }}
 
-        {{ post_nav(post) }}
+        {%- if theme.post_navigation and (post.prev or post.next) %}
+          {%- set prev = post.prev if theme.post_navigation === 'right' else post.next %}
+          {%- set next = post.next if theme.post_navigation === 'right' else post.prev %}
+          <div class="post-nav">
+            <div class="post-nav-item">
+              {%- if prev %}
+                <a href="{{ url_for(prev.path) }}" rel="prev" title="{{ prev.title }}">
+                  <i class="fa fa-chevron-left"></i> {{ prev.title }}
+                </a>
+              {%- endif %}
+            </div>
+            <div class="post-nav-item">
+              {%- if next %}
+                <a href="{{ url_for(next.path) }}" rel="next" title="{{ next.title }}">
+                  {{ next.title }} <i class="fa fa-chevron-right"></i>
+                </a>
+              {%- endif %}
+            </div>
+          </div>
+        {%- endif %}
       </footer>
     {% else %}
       <footer class="post-footer">

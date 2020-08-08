@@ -27,6 +27,17 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
   return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
 });
 
+hexo.extend.helper.register('post_gallery', function(photos) {
+  if (!photos || !photos.length) return '';
+  const content = photos.map(photo => `
+    <div class="post-gallery-image">
+      <img src="${this.url_for(photo)}" itemprop="contentUrl">
+    </div>`).join('');
+  return `<div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    ${content}
+    </div>`;
+});
+
 hexo.extend.helper.register('post_edit', function(src) {
   const { theme } = this;
   if (!theme.post_edit.enable) return '';
@@ -34,26 +45,6 @@ hexo.extend.helper.register('post_edit', function(src) {
     class: 'post-edit-link',
     title: this.__('post.edit')
   });
-});
-
-hexo.extend.helper.register('post_nav', function(post) {
-  const { theme } = this;
-  if (theme.post_navigation === false || (!post.prev && !post.next)) return '';
-  const prev = theme.post_navigation === 'right' ? post.prev : post.next;
-  const next = theme.post_navigation === 'right' ? post.next : post.prev;
-  const left = prev ? `
-    <a href="${this.url_for(prev.path)}" rel="prev" title="${prev.title}">
-      <i class="fa fa-chevron-left"></i> ${prev.title}
-    </a>` : '';
-  const right = next ? `
-    <a href="${this.url_for(next.path)}" rel="next" title="${next.title}">
-      ${next.title} <i class="fa fa-chevron-right"></i>
-    </a>` : '';
-  return `
-    <div class="post-nav">
-      <div class="post-nav-item">${left}</div>
-      <div class="post-nav-item">${right}</div>
-    </div>`;
 });
 
 hexo.extend.helper.register('gitalk_md5', function(path) {
