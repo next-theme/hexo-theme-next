@@ -24,9 +24,9 @@
   },
   "homepage": "https://theme-next.js.org",
   "devDependencies": {
+    "@next-theme/eslint-config": "0.0.1",
     "chai": "4.2.0",
     "eslint": "7.5.0",
-    "eslint-config-theme-next": "1.2.1",
     "hexo": "5.0.0",
     "hexo-renderer-marked": "3.0.0",
     "husky": "4.2.5",
