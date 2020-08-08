@@ -60,7 +60,7 @@
 }
 
 // Top main padding from header to posts (default 40px).
-.content {
+.post-block:first-of-type {
   padding-top: initial;
 }
 
@@ -85,7 +85,7 @@
   box-shadow: $box-shadow-inner;
 
   // Adapt submenu(s) with post-blocks.
-  + .content .post-block {
+  + .post-block {
     box-shadow: $box-shadow;
     margin-top: $sidebar-offset;
 

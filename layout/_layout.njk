@@ -22,11 +22,9 @@
 
     {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
 
-    <div class="main-inner">
+    <div class="main-inner {% block class %}{% endblock %}">
       {% include '_partials/header/sub-menu.njk' %}
-      <div class="content {% block class %}{% endblock %}">
-        {% block content %}{% endblock %}
-      </div>
+      {% block content %}{% endblock %}
       {% include '_partials/comments.njk' %}
     </div>
   </main>
