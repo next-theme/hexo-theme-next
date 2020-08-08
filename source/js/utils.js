@@ -145,9 +145,7 @@ NexT.utils = {
     // For init back to top in sidebar if page was scrolled after page refresh.
     window.addEventListener('scroll', () => {
       if (backToTop || readingProgressBar) {
-        const docHeight = document.querySelector('.container').offsetHeight;
-        const winHeight = window.innerHeight;
-        const contentHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
+        const contentHeight = document.body.scrollHeight - window.innerHeight;
         const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
         if (backToTop) {
           backToTop.classList.toggle('back-to-top-on', Math.round(scrollPercent) >= 5);

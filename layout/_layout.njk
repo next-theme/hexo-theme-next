@@ -9,37 +9,35 @@
   {{ partial('_scripts/noscript.njk', {}, {cache: theme.cache.enable}) }}
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container{%- if theme.motion.enable %} use-motion{%- endif %}">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage"{% if theme.motion.enable %} class="use-motion"{% endif %}>
+  <div class="headband"></div>
 
-    <main class="main">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-        <div class="header-inner">{% include '_partials/header/index.njk' %}</div>
-        {%- if theme.sidebar.display !== 'remove' %}
-          {% block sidebar %}{% endblock %}
-        {%- endif %}
-      </header>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">{% include '_partials/header/index.njk' %}</div>
+      {%- if theme.sidebar.display !== 'remove' %}
+        {% block sidebar %}{% endblock %}
+      {%- endif %}
+    </header>
 
-      {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
+    {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
 
-      <div class="main-inner">
-        {% include '_partials/header/sub-menu.njk' %}
-        <div class="content {% block class %}{% endblock %}">
-          {% block content %}{% endblock %}
-        </div>
-        {% include '_partials/comments.njk' %}
+    <div class="main-inner">
+      {% include '_partials/header/sub-menu.njk' %}
+      <div class="content {% block class %}{% endblock %}">
+        {% block content %}{% endblock %}
       </div>
-    </main>
+      {% include '_partials/comments.njk' %}
+    </div>
+  </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        {% include '_partials/languages.njk' %}
-        {{ partial('_partials/footer.njk', {}, {cache: theme.cache.enable}) }}
-        {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
-      </div>
-    </footer>
-  </div>
+  <footer class="footer">
+    <div class="footer-inner">
+      {% include '_partials/languages.njk' %}
+      {{ partial('_partials/footer.njk', {}, {cache: theme.cache.enable}) }}
+      {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
+    </div>
+  </footer>
 
   {{ partial('_scripts/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
