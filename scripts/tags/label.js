@@ -5,9 +5,7 @@
 'use strict';
 
 module.exports = ctx => function(args) {
-  args = args.join(' ').split('@');
-  const classes = args[0] || 'default';
-  const text    = args[1] || '';
+  const [classes = 'default', text = ''] = args.join(' ').split('@');
 
   if (!text) ctx.log.warn('Label text must be defined!');
 

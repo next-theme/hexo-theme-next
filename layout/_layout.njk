@@ -3,7 +3,6 @@
 <head>
   {{ partial('_partials/head/head.njk', {}, {cache: theme.cache.enable}) }}
   {% include '_partials/head/head-unique.njk' %}
-  {{- next_inject('head') }}
   <title>{% block title %}{% endblock %}</title>
   {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/noscript.njk', {}, {cache: theme.cache.enable}) }}

@@ -5,9 +5,7 @@
 'use strict';
 
 module.exports = ctx => function(args) {
-  args = args.join('').split('@');
-  const feature = args[0];
-  const periods = args[1] || 'current';
+  const [feature, periods = 'current'] = args.join('').split('@');
 
   if (!feature) {
     ctx.log.warn('Caniuse feature can NOT be empty.');
