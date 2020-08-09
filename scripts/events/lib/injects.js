@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const points = require('./injects-point');
+const { points } = require('./utils');
 const defaultExtname = '.njk';
 
 // Defining stylus types
