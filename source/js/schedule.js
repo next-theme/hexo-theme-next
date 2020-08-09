@@ -33,7 +33,8 @@
     maxResults  : calendar.maxResults
   };
 
-  const request_url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendar.calendar_id + '/events?' + Object.entries(params).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  const request_url = new URL(`https://www.googleapis.com/calendar/v3/calendars/${calendar.calendar_id}/events`);
+  Object.entries(params).forEach(param => request_url.searchParams.append(...param));
 
   function getRelativeTime(current, previous) {
     const msPerMinute = 60 * 1000;
@@ -96,7 +97,7 @@
     const eventList = document.querySelector('.event-list');
     if (!eventList) return;
 
-    fetch(request_url).then(response => {
+    fetch(request_url.href).then(response => {
       return response.json();
     }).then(data => {
       if (data.items.length === 0) {

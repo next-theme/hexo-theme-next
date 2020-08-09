@@ -16,9 +16,9 @@
       {%- endfor %}
       <script{{ pjax }}>
         (function() {
-          let commentButton = document.querySelectorAll('.comment-button');
+          const commentButton = document.querySelectorAll('.comment-button');
             commentButton.forEach(element => {
-            let commentClass = element.classList[2];
+            const commentClass = element.classList[2];
             element.addEventListener('click', () => {
               commentButton.forEach(active => active.classList.toggle('active', active === element));
               document.querySelectorAll('.comment-position').forEach(active => active.classList.toggle('active', active.classList.contains(commentClass)));
@@ -32,7 +32,7 @@
             activeClass = localStorage.getItem('comments_active') || activeClass;
           }
           if (activeClass) {
-            let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+            const activeButton = document.querySelector(`.comment-button.${activeClass}`);
             if (activeButton) {
               activeButton.click();
             }
@@ -65,7 +65,7 @@
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -74,7 +74,7 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
+      const commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }

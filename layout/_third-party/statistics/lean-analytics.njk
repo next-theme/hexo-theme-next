@@ -52,7 +52,7 @@
         .then(response => response.json())
         .then(({ results }) => {
           for (let url of entries) {
-            let target = results.find(item => item.url === url);
+            const target = results.find(item => item.url === url);
             leancloudSelector(url).innerText = target ? target.time : 0;
           }
         })
@@ -61,7 +61,7 @@
         });
     }
 
-    let { app_id, app_key, server_url } = {{ theme.leancloud_visitors | safedump }};
+    const { app_id, app_key, server_url } = {{ theme.leancloud_visitors | safedump }};
     function fetchData(api_server) {
       const Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
