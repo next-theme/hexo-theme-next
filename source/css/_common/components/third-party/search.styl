@@ -71,6 +71,30 @@
       display: none;
     }
   }
+
+  .search-result-container {
+    height: calc(100% - 55px);
+    overflow: auto;
+    padding: 5px 25px;
+
+    hr {
+      margin: 10px 0;
+    }
+  }
+
+  .search-result-list {
+    margin: 0 5px;
+    padding: 0;
+  }
+
+  a.search-result-title {
+    font-weight: bold;
+  }
+
+  p.search-result {
+    border-bottom: 1px dashed $grey-light;
+    padding: 5px 0;
+  }
 }
 
 if (hexo-config('algolia_search.enable')) {
@@ -90,25 +114,6 @@ if (hexo-config('algolia_search.enable')) {
       height: 18px;
       vertical-align: middle;
     }
-  }
-
-  .algolia-results {
-    height: calc(100% - 55px);
-    overflow: auto;
-    padding: 5px 30px;
-
-    hr {
-      margin: 10px 0;
-    }
-  }
-
-  .algolia-hit-item {
-    margin: 15px 0;
-  }
-
-  .algolia-hit-item-link {
-    border-bottom: 1px dashed $grey-light;
-    display: block;
   }
 
   .algolia-pagination {
@@ -139,26 +144,12 @@ if (hexo-config('local_search.enable')) {
       padding: 2px;
     }
 
-    ul.search-result-list {
-      margin: 0 5px;
-      padding: 0;
-      width: 100%;
-    }
-
-    p.search-result {
-      border-bottom: 1px dashed $grey-light;
-      padding: 5px 0;
-    }
-
-    a.search-result-title {
-      font-weight: bold;
-    }
-
-    #search-result {
+    .search-result-container {
       display: flex;
-      height: calc(100% - 55px);
-      overflow: auto;
-      padding: 5px 25px;
+    }
+
+    .search-result-list {
+      width: 100%;
     }
 
     #no-result {

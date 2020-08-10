@@ -53,11 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }),
 
     instantsearch.widgets.hits({
-      container: '#algolia-hits',
-      templates: {
+      container : '#algolia-hits',
+      escapeHTML: false,
+      templates : {
         item: data => {
-          const link = data.permalink ? data.permalink : CONFIG.root + data.path;
-          return `<a href="${link}" class="algolia-hit-item-link">${data._highlightResult.title.value}</a>`;
+          const { title, excerpt, excerptStrip, contentStripTruncate } = data._highlightResult;
+          let result = `<a href="${data.permalink}" class="search-result-title">${title.value}</a>`;
+          const content = excerpt || excerptStrip || contentStripTruncate;
+          if (content && content.value) {
+            const div = document.createElement('div');
+            div.innerHTML = content.value;
+            result += `<a href="${data.permalink}"><p class="search-result">${div.textContent.substr(0, 100)}...</p></a>`;
+          }
+          return result;
         },
         empty: data => {
           return `<div id="algolia-hits-empty">
@@ -66,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       },
       cssClasses: {
-        item: 'algolia-hit-item'
+        list: 'search-result-list'
       }
     }),
 

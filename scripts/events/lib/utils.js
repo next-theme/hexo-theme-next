@@ -53,6 +53,7 @@ const points = {
   ]
 };
 
+// Required by theme-next-docs
 module.exports = {
   resolve,
   highlightTheme,
