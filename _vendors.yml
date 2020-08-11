@@ -102,6 +102,14 @@ gitalk_css:
   name: gitalk
   version: 1.6.2
   file: dist/gitalk.css
+firebase_app:
+  name: firebase
+  version: 7.17.2
+  file: firebase-app.js
+firebase_firestore:
+  name: firebase
+  version: 7.17.2
+  file: firebase-firestore.js
 algolia_search:
   name: algoliasearch
   version: 4.3.1

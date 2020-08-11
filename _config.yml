@@ -919,6 +919,10 @@ vendors:
   gitalk_js:
   gitalk_css:
 
+  # Firebase
+  firebase_app:
+  firebase_firestore:
+
   # Algolia Search
   algolia_search:
   instant_search:
