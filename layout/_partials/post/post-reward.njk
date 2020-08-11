@@ -1,9 +1,9 @@
 <div class="reward-container">
   <div>{{ page.reward_settings.comment }}</div>
-  <button onclick="document.getElementById('post-reward').classList.toggle('active');">
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
     {{ __('reward.donate') }}
   </button>
-  <div id="post-reward">
+  <div class="post-reward">
 
     {%- for name, image in theme.reward %}
       {%- set builtin = ['wechatpay', 'alipay', 'paypal', 'bitcoin'] %}

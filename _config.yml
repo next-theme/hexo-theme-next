@@ -712,7 +712,7 @@ busuanzi_count:
   total_views: true
   total_views_icon: fa fa-eye
   post_views: true
-  post_views_icon: fa fa-eye
+  post_views_icon: far fa-eye
 
 
 # ---------------------------------------------------------------

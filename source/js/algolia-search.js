@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }),
 
     instantsearch.widgets.stats({
-      container: '#algolia-stats',
+      container: '.algolia-stats',
       templates: {
         text: data => {
           const stats = algoliaSettings.labels.hits_stats
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }),
 
     instantsearch.widgets.hits({
-      container : '#algolia-hits',
+      container : '.algolia-hits',
       escapeHTML: false,
       templates : {
         item: data => {
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }),
 
     instantsearch.widgets.pagination({
-      container: '#algolia-pagination',
+      container: '.algolia-pagination',
       scrollTo : false,
       showFirst: false,
       showLast : false,

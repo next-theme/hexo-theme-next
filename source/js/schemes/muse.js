@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init : function() {
       window.addEventListener('mousedown', this.mousedownHandler);
       window.addEventListener('mouseup', this.mouseupHandler.bind(this));
-      document.querySelector('#sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
+      document.querySelector('.sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
       document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
       window.addEventListener('sidebar:show', this.showSidebar);
       window.addEventListener('sidebar:hide', this.hideSidebar);

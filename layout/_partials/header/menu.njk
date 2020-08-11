@@ -2,7 +2,7 @@
 
 {%- if theme.menu or theme.algolia_search.enable or theme.local_search.enable %}
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
+  <ul class="main-menu menu">
     {%- for name, path in theme.menu %}
       {%- set respath = path %}
       {%- if path == '[object Object]' %}
