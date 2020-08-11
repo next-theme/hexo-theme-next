@@ -49,17 +49,10 @@
 
 ### 反馈 Bug
 
-反馈 Bug 前，请再次确认您已经查看了 [你需要了解的](#你需要了解的) 内容，避免提交重复的 Issue。确定相关仓库后，创建 Issue 并按照 [模板](../../.github/ISSUE_TEMPLATE.md) 尽可能的详细填写相关信息。
-
-请认真遵守如下指南，这样我们才能更好地理解问题，重现问题和解决问题。
+反馈 Bug 前，请再次确认您已经查看了 [你需要了解的](#你需要了解的) 内容，避免提交重复的 Issue。创建 Issue 时，请认真遵守如下指南，这样我们才能更好地理解问题，重现问题和解决问题。
 
 * 在标题中清晰准确地描述你的问题。
-* 参照如下问题尽可能多的提供信息：
-    * Bug 是否能够重现？是一直出现还是偶尔出现？
-    * Bug 是从什么时候开始发生的？
-    * 如果 Bug 突然发生，使用 [旧版本主题](https://github.com/next-theme/hexo-theme-next/releases) 是否能够重现 Bug？又是从哪个版本开始出现 Bug？
-    * 你所使用 Node，Hexo 以及 NexT 的版本号多少？你可以运行 `node -v` 和 `hexo version` 获取版本号，或者查看文件 `package.json` 的内容。
-    * 你使用了哪些插件包？查看文件 `package.json` 的内容即可获取。
+* 按照 [模板](../../.github/ISSUE_TEMPLATE.md) 尽可能的详细填写相关信息。
 * 一步步详细你是如何重现 Bug 的，做了什么，使用了哪些功能等等。如果你需要展示代码段，请使用 [Markdown 代码块](https://help.github.com/articles/creating-and-highlighting-code-blocks/) 或 [Github 预览链接](https://help.github.com/articles/creating-a-permanent-link-to-a-code-snippet/) 或 [Gist 链接](https://gist.github.com/)。
 * 提供 Bug 的样例，如图像文件、在线演示网址等等。
 * 详细描述通过上述重现过程出现的问题。
@@ -101,7 +94,7 @@
 3. 确定你需要发布的分支。除非发布测试版本，通常情况下选择 `master` 分支。
 4. 输入发布版本的标题和说明。
     - 标题为版本号。
-    - 所有内容更改的类型包括了 **Breaking Changes**, **Updates**, **Features** 和 **Bug Fixes**。在描述 Breaking Changes 时，使用二级标题分别陈述，描述其他类型时，使用项目列表陈述。
+    - 内容根据 [Release Drafter](https://github.com/release-drafter/release-drafter) 的模版填写。
     - 使用被动语态，省略主语。
     - 所有的变化都需要记录在版本说明中。对于没有使用 PR 的更改，需要添加相应的 commit 编号。如果使用了 PR 进行合并修改，则直接添加相应的 PR 编号即可。
 5. 如果您希望随版本一起发布二进制文件（如编译的程序），请在上传二进制文件对话框中手动拖放或选择文件。
@@ -119,7 +112,7 @@
 
 ### 标签规范
 
-为了方便维护人员和用户能够快速找到他们想要查看的问题，我们使用“标签”功能对 Pull requests 和 Issues 进行分类。
+为了方便维护人员和用户能够快速找到他们想要查看的问题，我们使用「标签」功能对 Pull requests 和 Issues 进行分类。
 
 如果您不确定某个标签的含义，或者不知道将哪些标签应用于 PR 或 issue，千万别错过这个。
 
@@ -134,13 +127,14 @@ Issue 的标签：
     - `Polls`: 发起投票的 Issue
 - 结果
     - `Duplicate`: 重复提及的 Issue
-    - `Irrelevant`: 与 NexT 主题无关的 Issue
+    - `Hexo`: 与 Hexo 相关的 Issue
+    - `Hexo Plugin`: 与 Hexo 插件相关的 Issue
+    - `Browser`: 与浏览器相关的 Issue
     - `Invalid`: 无法复现的 Issue
     - `Expected Behavior`: 与预期行为相符的 Issue
     - `Need More Info`: 需要更多信息的 Issue
-    - `Verified`: 已经被确认的 Issue
     - `Solved`: 已经解决的 Issue
-    - `Backlog`: 待解决的 Issue
+    - `To Do`: 待解决的 Issue
     - `Stale`: 由于长期无人回应被封存的 Issue
 
 Pull Request 的标签：
@@ -150,7 +144,6 @@ Pull Request 的标签：
 - `New Feature`: 添加了新功能的 Pull Request
 - `Feature`: 为现有功能提供选项或加成的 Pull Request
 - `i18n`: 更新了翻译的 Pull Request
-- `Work in Progress`: 仍在进行改动和完善的 Pull Request
 - `Skip Release`: 无需在 Release Note 中展现的 Pull Request
 
 两者兼有：
@@ -160,8 +153,7 @@ Pull Request 的标签：
 - `Discussion`: 需要进行讨论的 Issue 或者 Pull Request
 - `Improvement`: 需要改进的 Issue 或者改进了 NexT 主题的 Pull Request
 - `Performance`: 提出性能问题的 Issue 或者提高了 NexT 主题性能的 Pull Request
-- `Hexo`: 与 Hexo 和 Hexo 插件相关的 Issue 或者 Pull Request
-- `Template Engine`: 与模版引擎相关的 Issue 或者 Pull Request
+- `Layout`: 与模版引擎相关的 Issue 或者 Pull Request
 - `CSS`: 与 NexT 主题 CSS 文件相关的 Issue 或者 Pull Request
 - `Fonts`: 与 NexT 主题字体相关的 Issue 或者 Pull Request
 - `PJAX`: 与 PJAX 相关的 Issue 或者 Pull Request
@@ -184,6 +176,6 @@ Pull Request 的标签：
     * `Style`：格式（不影响代码运行的变动）
     * `Revert`：代码回滚
     * `Release`：版本发布
-- `subject` 用于简要描述修改变更的内容，如 `Update code highlighting in readme.md`。
+- `subject` 用于简要描述修改变更的内容，如 `Update code highlighting in README.md`。
     * 句尾不要使用符号。
     * 使用现在时、祈使句语气。
