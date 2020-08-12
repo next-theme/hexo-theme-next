@@ -610,7 +610,7 @@ valine:
   appKey: # Your leancloud application appkey
   placeholder: Just go go # Comment box placeholder
   avatar: mm # Gravatar style
-  meta: [] # Custom comment header: [nick, mail, link]
+  meta: [nick, mail, link] # Custom comment header
   pageSize: 10 # Pagination size
   lang: # Language, available values: en, zh-cn
   visitor: false # Article reading statistic

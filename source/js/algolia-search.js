@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   window.pjax && search.on('render', () => {
-    window.pjax.refresh(document.getElementById('algolia-hits'));
+    window.pjax.refresh(document.querySelector('.algolia-hits'));
   });
 
   // Registering Widgets

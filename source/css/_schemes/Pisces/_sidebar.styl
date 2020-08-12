@@ -71,11 +71,11 @@
 
   a, span.exturl {
     border-bottom: none;
+    border-radius: 4px;
     display: block;
 
     &:hover {
       background: var(--body-bg-color);
-      border-radius: 4px;
     }
   }
 }
@@ -83,6 +83,7 @@
 .links-of-blogroll-item {
   if (hexo-config('links_settings.layout') == 'inline') {
     display: inline-block;
+    max-width: 100%;
     sidebar-inline-links-item();
   }
 }
