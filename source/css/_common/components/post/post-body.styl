@@ -1,4 +1,11 @@
 .post-body {
+  font-family: $font-family-posts;
+  word-wrap();
+
+  +desktop-large() {
+    font-size: $font-size-large;
+  }
+
   +desktop() {
     text-align: unquote(hexo-config('text_align.desktop'));
   }
@@ -33,6 +40,20 @@
         }
       }
     }
+  }
+
+  .exturl .fa {
+    font-size: $font-size-small;
+    margin-left: 4px;
+  }
+
+  .image-caption, .figure .caption {
+    color: $grey-dark;
+    font-size: $font-size-small;
+    font-weight: bold;
+    line-height: 1;
+    margin: -20px auto 15px;
+    text-align: center;
   }
 
   iframe, img, video, embed {

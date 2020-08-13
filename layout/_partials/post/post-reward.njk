@@ -10,7 +10,7 @@
       {%- set translation = __('reward.' + name) if builtin.includes(name) else name %}
       <div>
         <img src="{{ url_for(image) }}" alt="{{ author }} {{ translation }}">
-        <p>{{ translation }}</p>
+        <span>{{ translation }}</span>
       </div>
     {%- endfor %}
 

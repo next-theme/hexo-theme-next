@@ -1,25 +1,28 @@
+if (hexo-config('creative_commons.post')) {
+  .post-copyright {
+    list-style: none;
+    padding: .5em 1em;
+    post-card();
+  }
+}
+
 .followme {
-  align-items: center;
-  background: var(--card-bg-color);
-  border-left: 3px solid $red;
   color: $grey;
-  margin: 2em 0 1em 0;
   padding: 1em 1.5em;
-  flex-column();
+  text-align: center;
+  post-card();
 
   .social-list {
-    align-items: center;
     display: flex;
     flex-wrap: wrap;
-
-    +tablet-mobile() {
-      .social-item {
-        margin: .5em .75em;
-      }
-    }
+    justify-content: center;
 
     .social-item {
       margin: .5em 2em;
+
+      +tablet-mobile() {
+        margin: .5em .75em;
+      }
     }
 
     .social-link {
@@ -29,8 +32,6 @@
 
       .icon {
         font-size: 1.75em;
-        height: 1.75em;
-        width: 1.75em;
       }
 
       .label {
