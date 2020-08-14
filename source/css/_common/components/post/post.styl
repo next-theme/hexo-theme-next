@@ -16,6 +16,14 @@
   text-align: center;
 }
 
+if (hexo-config('creative_commons.post')) {
+  .post-copyright {
+    list-style: none;
+    padding: .5em 1em;
+    post-card();
+  }
+}
+
 .post-eof {
   background: $grey-light;
   height: 1px;
