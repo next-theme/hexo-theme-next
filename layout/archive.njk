@@ -4,7 +4,7 @@
 
 {% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
 
-{% block class %}archive{% endblock %}
+{% block class %}archive posts-collapse{% endblock %}
 
 {% block content %}
 
@@ -12,7 +12,7 @@
   {### ARCHIVE BLOCK ###}
   {#####################}
   <div class="post-block">
-    <div class="posts-collapse">
+    <div class="post-content">
       <div class="collection-title">
         {%- set posts_length = site.posts.length %}
         {%- if posts_length > 210 %}

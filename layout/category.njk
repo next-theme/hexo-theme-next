@@ -4,7 +4,7 @@
 
 {% block title %}{{ __('title.category') }}: {{ page.category }} | {{ title }}{% endblock %}
 
-{% block class %}category{% endblock %}
+{% block class %}category posts-collapse{% endblock %}
 
 {% block content %}
 
@@ -12,7 +12,7 @@
   {### CATEGORY BLOCK ###}
   {######################}
   <div class="post-block">
-    <div class="posts-collapse">
+    <div class="post-content">
       <div class="collection-title">
         <h2 class="collection-header">
           {{- page.category }}
