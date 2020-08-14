@@ -32,12 +32,12 @@
     <div class="footer-inner">
       {% include '_partials/languages.njk' %}
       {{ partial('_partials/footer.njk', {}, {cache: theme.cache.enable}) }}
-      {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
     </div>
   </footer>
 
   {{ partial('_scripts/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
 
   {%- if theme.pjax %}
     <div class="pjax">

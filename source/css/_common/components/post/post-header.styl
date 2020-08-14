@@ -83,21 +83,14 @@
   }
 }
 
-.post-meta .post-meta-item + .post-meta-item::before {
+// .post-meta-item exists in .post-meta and footer
+.post-meta-item + .post-meta-item::before {
   content: '|';
-  margin: 0 .5em;
-}
-
-.post-meta-divider {
   margin: 0 .5em;
 }
 
 .post-meta-item-icon {
   margin-right: 3px;
-
-  +tablet-mobile() {
-    display: inline-block;
-  }
 }
 
 .post-meta-item-text {

@@ -18,29 +18,61 @@
     <i class="{{ theme.footer.icon.name }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright or author }}</span>
+</div>
 
+{%- if config.symbols_count_time.total_symbols or config.symbols_count_time.total_time %}
+<div class="wordcount">
   {%- if config.symbols_count_time.total_symbols %}
-    <span class="post-meta-divider">|</span>
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
+      <i class="fa fa-chart-line"></i>
     </span>
     {%- if theme.symbols_count_time.item_text_total %}
-      <span class="post-meta-item-text">{{ __('symbols_count_time.count_total') + __('symbol.colon') }}</span>
+      <span>{{ __('symbols_count_time.count_total') + __('symbol.colon') }}</span>
     {%- endif %}
     <span title="{{ __('symbols_count_time.count_total') }}">{{ symbolsCountTotal(site) }}</span>
+  </span>
   {%- endif %}
 
   {%- if config.symbols_count_time.total_time %}
-    <span class="post-meta-divider">|</span>
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
     {%- if theme.symbols_count_time.item_text_total %}
-      <span class="post-meta-item-text">{{ __('symbols_count_time.time_total') }} &asymp;</span>
+      <span>{{ __('symbols_count_time.time_total') }} &asymp;</span>
     {%- endif %}
     <span title="{{ __('symbols_count_time.time_total') }}">{{ symbolsTimeTotal(site, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
+  </span>
+{%- endif %}
+</div>
+{%- endif %}
+
+{%- if theme.busuanzi_count.enable %}
+<div class="busuanzi-count">
+  {%- if theme.busuanzi_count.total_visitors %}
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="{{ theme.busuanzi_count.total_visitors_icon }}"></i>
+      </span>
+      <span class="site-uv" title="{{ __('footer.total_visitors') }}">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  {%- endif %}
+
+  {%- if theme.busuanzi_count.total_views %}
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="{{ theme.busuanzi_count.total_views_icon }}"></i>
+      </span>
+      <span class="site-pv" title="{{ __('footer.total_views') }}">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
   {%- endif %}
 </div>
+{%- endif %}
 
 {%- if theme.footer.powered %}
   <div class="powered-by">
