@@ -4,6 +4,21 @@
 @import '_sub-menu';
 @import '_sidebar';
 
+.main-inner {
+  background: var(--content-bg-color);
+  box-shadow: $box-shadow-inner;
+  padding: $content-desktop-padding;
+
+  +tablet-mobile() {
+    padding: 20px;
+  }
+}
+
+// Sub-menu(s).
+.sub-menu {
+  border-bottom: 1px solid $table-border-color;
+}
+
 .post-block:first-of-type {
   padding-top: 40px;
 }
