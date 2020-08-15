@@ -24,8 +24,8 @@
 // Desktop layout styles.
 // ==================================================
 // Post blocks.
-.main-inner {
-  .sub-menu, .post-block, .comments, .pagination {
+.main-inner > {
+  .sub-menu, .post-block, .tabs-comment, .comments, .pagination {
     background: var(--content-bg-color);
     border-radius: $border-radius-inner;
     box-shadow: $box-shadow-inner;
@@ -49,10 +49,6 @@
 // Post & Comments blocks.
 .post-block, .comments {
   padding: $content-desktop-padding;
-}
-
-.tabs-comment {
-  margin-top: 1em;
 }
 
 // Post delimiters.
