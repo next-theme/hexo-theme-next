@@ -1,6 +1,6 @@
 {%- if theme.mermaid.enable %}
 <script{{ pjax }}>
-if (document.querySelectorAll('pre.mermaid').length) {
+if (document.querySelectorAll('.mermaid').length) {
   NexT.utils.getScript('{{ theme.vendors.mermaid }}', () => {
     mermaid.init({
       theme    : '{{ theme.mermaid.theme }}',

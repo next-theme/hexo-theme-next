@@ -13,9 +13,9 @@ describe('mermaid', () => {
   const mermaid = require('../../scripts/tags/mermaid');
 
   it('default', () => {
-    mermaid(['graph', 'TD'], result).should.eql(`<pre class="mermaid" style="text-align: center;">
+    mermaid(['graph', 'TD'], result).should.eql(`<div class="mermaid">
 graph TD
 ${escapeHTML(result)}
-</pre>`);
+</div>`);
   });
 });
