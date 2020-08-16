@@ -12,3 +12,17 @@
     width: auto;
   }
 }
+
+// Page - Container
+// --------------------------------------------------
+.main-inner {
+  padding-bottom: $content-padding-bottom;
+}
+
+.post-block:first-of-type {
+  padding-top: $posts-first-padding;
+
+  +mobile() {
+    padding-top: $posts-first-padding-mobile;
+  }
+}
