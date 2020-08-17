@@ -48,7 +48,9 @@ kbd {
   white-space: nowrap;
 }
 
-.highlight {
+// `highlight.line_number: false` && `highlight.wrap: false`
+// in Hexo config generates code.highlight elements
+figure.highlight {
   @extend $code-block;
   position: relative;
 
@@ -103,6 +105,12 @@ kbd {
     padding-left: 10px;
     width: 100%;
   }
+}
+
+// See https://github.com/hexojs/hexo-util/pull/229
+pre .caption, pre figcaption {
+  @extend figure.highlight figcaption;
+  margin-bottom: 10px;
 }
 
 .gist table {
