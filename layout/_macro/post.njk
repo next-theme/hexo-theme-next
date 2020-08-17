@@ -201,22 +201,24 @@
       {{ partial('_partials/post/post-related.njk') }}
     {%- endif %}
 
-    {%- if not is_index %}
-      {{- next_inject('postBodyEnd') }}
+    <footer class="post-footer">
+      {%- if is_index %}
+        <div class="post-eof"></div>
+      {% else %}
+        {{- next_inject('postBodyEnd') }}
 
-      {%- if post.reward_settings.enable %}
-        {{ partial('_partials/post/post-reward.njk') }}
-      {%- endif %}
+        {%- if post.reward_settings.enable %}
+          {{ partial('_partials/post/post-reward.njk') }}
+        {%- endif %}
 
-      {%- if theme.creative_commons.license and theme.creative_commons.post %}
-        {{ partial('_partials/post/post-copyright.njk') }}
-      {%- endif %}
+        {%- if theme.creative_commons.license and theme.creative_commons.post %}
+          {{ partial('_partials/post/post-copyright.njk') }}
+        {%- endif %}
 
-      {%- if theme.follow_me %}
-        {{ partial('_partials/post/post-followme.njk', {}, {cache: theme.cache.enable}) }}
-      {%- endif %}
+        {%- if theme.follow_me %}
+          {{ partial('_partials/post/post-followme.njk', {}, {cache: theme.cache.enable}) }}
+        {%- endif %}
 
-      <footer class="post-footer">
         {%- if post.tags and post.tags.length %}
           {%- set tag_indicate = '<i class="fa fa-tag"></i>' if theme.tag_icon else '#' %}
           <div class="post-tags">
@@ -248,12 +250,9 @@
             </div>
           </div>
         {%- endif %}
-      </footer>
-    {% else %}
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    {%- endif %}
+
+      {%- endif %}
+    </footer>
   </article>
   {######################}
   {### END POST BLOCK ###}

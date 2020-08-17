@@ -1,0 +1,41 @@
+// Flexbox layout makes it possible to reorder the child
+// elements of .post-footer through the `order` CSS property
+// Fix issue #16
+// To do: use `gap` instead of `margin-bottom`
+// See https://caniuse.com/#feat=flexbox-gap
+.post-footer {
+  flex-column();
+}
+
+.post-eof {
+  background: $grey-light;
+  height: 1px;
+  margin: $post-eof-margin-top auto $post-eof-margin-bottom;
+  width: 8%;
+
+  .post-block:last-of-type & {
+    display: none;
+  }
+}
+
+if (hexo-config('creative_commons.post')) {
+  .post-copyright ul {
+    list-style: none;
+    padding: .5em 1em;
+    post-card();
+  }
+}
+
+.post-tags {
+  margin-top: 40px;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    font-size: $font-size-smaller;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

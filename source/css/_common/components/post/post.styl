@@ -16,25 +16,6 @@
   text-align: center;
 }
 
-if (hexo-config('creative_commons.post')) {
-  .post-copyright {
-    list-style: none;
-    padding: .5em 1em;
-    post-card();
-  }
-}
-
-.post-eof {
-  background: $grey-light;
-  height: 1px;
-  margin: $post-eof-margin-top auto $post-eof-margin-bottom;
-  width: 8%;
-
-  .post-block:last-of-type & {
-    display: none;
-  }
-}
-
 .use-motion {
   if (hexo-config('motion.transition.post_block')) {
     .post-block, .pagination, .comments {
@@ -66,7 +47,7 @@ if (hexo-config('creative_commons.post')) {
 @import 'post-gallery';
 @import 'post-header';
 @import 'post-nav';
-@import 'post-tags';
+@import 'post-footer';
 @import 'post-widgets';
 @import 'post-reward';
 
