@@ -1,9 +1,3 @@
-.header {
-  // Make sure that .header and .main-inner are the same height
-  // Required for .sidebar `position: sticky;`
-  align-self: stretch;
-}
-
 .header-inner {
   background: var(--content-bg-color);
   border-radius: $border-radius-inner;
@@ -17,7 +11,9 @@
 }
 
 .main {
-  align-items: flex-start;
+  // Make sure that .header and .main-inner are the same height
+  // Required for .sidebar `position: sticky;`
+  align-items: stretch;
   display: flex;
   justify-content: space-between;
   main-container();
@@ -33,7 +29,6 @@
 }
 
 .main-inner {
-  align-self: stretch;
   border-radius: $border-radius-inner;
   box-sizing: border-box;
   width: $content-wrap;
