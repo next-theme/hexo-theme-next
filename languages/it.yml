@@ -58,6 +58,9 @@ state:
   categories: categorie
 search:
   placeholder: Cerca...
+  empty: "We didn't find any results for the search: %s"
+  hits_time: "%s results found in %s ms"
+  hits: "%s results found"
 cheers:
   um: Mh..
   ok: OK
