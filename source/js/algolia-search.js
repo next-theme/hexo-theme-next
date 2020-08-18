@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const stats = algoliaSettings.labels.hits_stats
             .replace(/\$\{hits}/, data.nbHits)
             .replace(/\$\{time}/, data.processingTimeMS);
-          return `${stats}
-            <span class="algolia-powered">
-              <img src="${CONFIG.root}images/algolia_logo.svg" alt="Algolia">
-            </span>
-            <hr>`;
+          return `<span>${stats}</span>
+            <img src="${CONFIG.root}images/logo-algolia-nebula-blue-full.svg" class="algolia-powered" alt="Algolia">`;
         }
+      },
+      cssClasses: {
+        text: 'search-stats'
       }
     }),
 

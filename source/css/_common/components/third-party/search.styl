@@ -78,7 +78,11 @@
     padding: 5px 25px;
 
     hr {
-      margin: 10px 0;
+      margin: 5px 0 10px;
+
+      &:first-child {
+        display: none;
+      }
     }
   }
 
@@ -106,14 +110,15 @@ if (hexo-config('algolia_search.enable')) {
     }
   }
 
-  .algolia-powered {
-    float: right;
+  .search-stats {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
 
-    img {
-      display: inline-block;
-      height: 18px;
-      vertical-align: middle;
-    }
+  .algolia-powered {
+    height: 1em;
+    margin: 0;
   }
 
   .algolia-pagination {
