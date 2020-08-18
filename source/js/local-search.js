@@ -164,16 +164,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isfetched) return;
     const searchText = input.value.trim().toLowerCase();
     const keywords = searchText.split(/[-\s]+/);
-    const resultContent = document.querySelector('.search-result-container');
+    const container = document.querySelector('.search-result-container');
     let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching
       resultItems = getResultItems(keywords);
     }
     if (keywords.length === 1 && keywords[0] === '') {
-      resultContent.innerHTML = '<div class="no-result"><i class="fa fa-search fa-5x"></i></div>';
+      container.classList.add('no-result');
+      container.innerHTML = '<div class="search-result-icon"><i class="fa fa-search fa-5x"></i></div>';
     } else if (resultItems.length === 0) {
-      resultContent.innerHTML = '<div class="no-result"><i class="far fa-frown fa-5x"></i></div>';
+      container.classList.add('no-result');
+      container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
     } else {
       resultItems.sort((left, right) => {
         if (left.includedCount !== right.includedCount) {
@@ -183,8 +185,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return right.id - left.id;
       });
-      resultContent.innerHTML = `<ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
-      window.pjax && window.pjax.refresh(resultContent);
+      const stats = CONFIG.i18n.hits.replace(/\$\{hits}/, resultItems.length);
+
+      container.classList.remove('no-result');
+      container.innerHTML = `<div class="search-stats">${stats}</div>
+        <hr>
+        <ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
+      window.pjax && window.pjax.refresh(container);
     }
   };
 

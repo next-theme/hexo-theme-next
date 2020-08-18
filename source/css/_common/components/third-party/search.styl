@@ -114,11 +114,11 @@ if (hexo-config('algolia_search.enable')) {
     align-items: center;
     display: flex;
     justify-content: space-between;
-  }
 
-  .algolia-powered {
-    height: 1em;
-    margin: 0;
+    img {
+      height: 1em;
+      margin: 0;
+    }
   }
 
   .algolia-pagination {
@@ -149,7 +149,7 @@ if (hexo-config('local_search.enable')) {
       padding: 2px;
     }
 
-    .search-result-container {
+    .no-result {
       display: flex;
     }
 
@@ -157,7 +157,7 @@ if (hexo-config('local_search.enable')) {
       width: 100%;
     }
 
-    .no-result {
+    .search-result-icon {
       color: $grey-light;
       margin: auto;
     }
