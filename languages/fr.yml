@@ -33,6 +33,8 @@ post:
   copyright:
     author: Auteur de l'article
     link: Lien de l'article
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: Droit d'auteur
     license_content: "Tous les articles de ce blog sont sous licence %s, sauf mention contraire."
 footer:
