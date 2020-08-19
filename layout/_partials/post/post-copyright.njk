@@ -5,7 +5,7 @@
 <ul class="post-copyright">
   <li class="post-copyright-author">
     {%- if page.author %}
-      <strong>{{ __('post.copyright.post-author') + __('symbol.colon') }} </strong>
+      <strong>{{ __('post.copyright.post_author') + __('symbol.colon') }} </strong>
       {{- page.author }}
     {%- elif author %}
       <strong>{{ __('post.copyright.author') + __('symbol.colon') }} </strong>
@@ -14,9 +14,9 @@
   </li>
   <li class="post-copyright-link">
     {%- if page.post_link %}
-      <strong>{{ __('post.copyright.post-link') + __('symbol.colon') }}</strong>
-      {{ page.post_link }}
-    {%- elif next_url(page.permalink, page.permalink, {title: page.title}) %}
+      <strong>{{ __('post.copyright.post_link') + __('symbol.colon') }}</strong>
+      {{ next_url(page.post_link, page.post_link, {title: page.title}) }}
+    {%- else %}
       <strong>{{ __('post.copyright.link') + __('symbol.colon') }}</strong>
       {{ next_url(page.permalink, page.permalink, {title: page.title}) }}
     {%- endif %}
