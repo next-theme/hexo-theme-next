@@ -36,6 +36,8 @@ post:
   copyright:
     author: Post author
     link: Post link
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
 
