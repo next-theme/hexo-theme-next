@@ -33,7 +33,6 @@ custom_file_path:
 
 # ---------------------------------------------------------------
 # Site Information Settings
-# See: https://theme-next.js.org/docs/getting-started/
 # ---------------------------------------------------------------
 
 favicon:
@@ -327,7 +326,7 @@ calendar:
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
-# See: https://theme-next.js.org/docs/theme-settings/
+# See: https://theme-next.js.org/docs/theme-settings/miscellaneous
 # ---------------------------------------------------------------
 
 # Set the text alignment in posts / pages.
@@ -393,7 +392,6 @@ github_banner:
 
 # ---------------------------------------------------------------
 # Font Settings
-# See: https://theme-next.js.org/docs/theme-settings/#Fonts-Customization
 # ---------------------------------------------------------------
 # Find fonts on Google Fonts (https://fonts.google.com)
 # All fonts set here will have the following styles:
@@ -845,7 +843,7 @@ canvas_ribbon:
 #! ==============================================================
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
-#! See: https://theme-next.js.org/docs/advanced-settings
+#! See: https://theme-next.js.org/docs/advanced-settings/vendors
 #! ==============================================================
 
 # It's recommended to use the same version as in `_vendors.yml` to avoid potential problems.

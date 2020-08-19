@@ -80,7 +80,7 @@ NexT.utils = {
         });
       });
       if (!CONFIG.copycode) return;
-      element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>');
+      element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', () => {
         const lines = element.querySelector('.code') || element.querySelector('code');
@@ -103,7 +103,7 @@ NexT.utils = {
       });
       element.addEventListener('mouseleave', () => {
         setTimeout(() => {
-          button.querySelector('i').className = 'fa fa-clipboard fa-fw';
+          button.querySelector('i').className = 'fa fa-copy fa-fw';
         }, 300);
       });
     });

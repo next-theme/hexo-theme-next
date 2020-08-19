@@ -39,6 +39,7 @@ Issue resolved:
 - Screenshots with this changes:
 
 ### How to use?
+
 In NexT `_config.yml`:
 ```yml
 
