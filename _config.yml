@@ -853,6 +853,7 @@ canvas_ribbon:
 vendors:
   # The CDN provider of NexT internal scripts.
   # Available values: local | jsdelivr | unpkg
+  # Warning: If you are using the latest master branch of NexT, please set `internal: local`
   internal: local
   # The default CDN provider of third-party plugins.
   # Available values: local | jsdelivr | unpkg | cdnjs

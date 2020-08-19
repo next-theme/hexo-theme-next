@@ -12,10 +12,10 @@ NexT.boot.registerEvents = function() {
     event.currentTarget.classList.toggle('toggle-close');
     const siteNav = document.querySelector('.site-nav');
     if (!siteNav) return;
-    const animateAction = siteNav.classList.contains('site-nav-on');
+    const animateAction = document.body.classList.contains('site-nav-on');
     const height = NexT.utils.getComputedStyle(siteNav);
     siteNav.style.height = animateAction ? height : 0;
-    const toggle = () => siteNav.classList.toggle('site-nav-on');
+    const toggle = () => document.body.classList.toggle('site-nav-on');
     const begin = () => {
       siteNav.style.overflow = 'hidden';
     };
