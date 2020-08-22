@@ -11,7 +11,6 @@ module.exports = ctx => function(args, content) {
   const tabName = args[0];
   const tabActive = Number(args[1]) || 0;
 
-  const matches = [];
   let match;
   let tabId = 0;
   let tabNav = '';
@@ -20,13 +19,8 @@ module.exports = ctx => function(args, content) {
   if (!tabName) ctx.log.warn('Tabs block must have unique name!');
 
   while ((match = tabBlock.exec(content)) !== null) {
-    matches.push(match[1]);
-    matches.push(match[2]);
-  }
-
-  for (let i = 0; i < matches.length; i += 2) {
-    let [caption = '', icon = ''] = matches[i].split('@');
-    let postContent = matches[i + 1];
+    let [caption = '', icon = ''] = match[1].split('@');
+    let postContent = match[2];
 
     postContent = ctx.render.renderSync({ text: postContent, engine: 'markdown' }).trim();
 

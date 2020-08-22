@@ -9,8 +9,7 @@
         gtag('config', '{{ theme.google_analytics.tracking_id }}');
       }
     </script>
-  {%- endif %}
-  {%- if theme.google_analytics.only_pageview %}
+  {%- else %}
     <script>
       function sendPageView() {
         if (CONFIG.hostname !== location.hostname) return;
