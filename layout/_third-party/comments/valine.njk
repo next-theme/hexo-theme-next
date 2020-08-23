@@ -3,7 +3,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('{{ theme.vendors.valine }}', () => {
     new Valine(Object.assign({
       el  : '#valine-comments',
-      path: location.pathname,
+      path: {{ url_for(page.path) | replace(r/index\.html$/, '') | safedump }},
     }, {{ theme.valine | safedump }}
     ));
   }, window.Valine);
