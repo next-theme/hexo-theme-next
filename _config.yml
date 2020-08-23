@@ -495,10 +495,10 @@ baidu_push: false
 # See: https://theme-next.js.org/docs/third-party-services/math-equations
 # Server-side plugin: https://github.com/next-theme/hexo-filter-mathjax
 math:
-  # Default (true) will load mathjax / katex script on demand.
+  # Default (false) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in Front-matter.
-  # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
-  per_page: true
+  # If you set it to true, it will load mathjax / katex srcipt EVERY PAGE.
+  every_page: false
 
   mathjax:
     enable: false
