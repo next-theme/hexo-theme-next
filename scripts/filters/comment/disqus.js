@@ -36,6 +36,6 @@ hexo.extend.filter.register('theme_inject', injects => {
     </a>
   </span>
   {% endif %}
-  `, {}, {}, theme.disqus.post_meta_order);
+  `, {}, {});
 
 });

@@ -43,8 +43,8 @@
           {%- endif %}
         </{%- if is_index %}h2{% else %}h1{%- endif %}>
 
-        <div class="post-meta">
-
+        <div class="post-meta-container">
+          <div class="post-meta">
           {%- set date_diff = date(post.date) != date(post.updated) %}
           {%- set time_diff = time(post.date) != time(post.updated) %}
 
@@ -149,11 +149,11 @@
               <span>{{ symbolsTime(post, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
             </span>
           {%- endif %}
+          </div>
 
           {%- if post.description and (not theme.excerpt_description or not is_index) %}
             <div class="post-description">{{ post.description }}</div>
           {%- endif %}
-
         </div>
       </header>
     {%- endif %}

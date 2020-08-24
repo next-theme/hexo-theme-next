@@ -36,7 +36,6 @@
   color: var(--link-color);
   display: inline-block;
   position: relative;
-  vertical-align: top;
 
   &::before {
     background: var(--link-color);
@@ -66,7 +65,7 @@
   transform: rotate(30deg);
 }
 
-.posts-expand .post-meta {
+.posts-expand .post-meta-container {
   color: $grey-dark;
   font-family: $font-family-posts;
   font-size: $font-size-smallest;
@@ -81,6 +80,12 @@
     border-bottom: 1px dashed $grey-dark;
     cursor: pointer;
   }
+}
+
+// Flexbox layout makes it possible to reorder the child
+// elements of .post-meta through the `order` CSS property
+.post-meta {
+  flex-wrap();
 }
 
 // .post-meta-item exists in .post-meta and footer

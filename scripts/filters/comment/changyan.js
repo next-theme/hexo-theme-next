@@ -40,6 +40,6 @@ hexo.extend.filter.register('theme_inject', injects => {
     {% endif %}
   </span>
   {% endif %}
-  `, {}, {}, theme.changyan.post_meta_order);
+  `, {}, {});
 
 });
