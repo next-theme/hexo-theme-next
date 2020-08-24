@@ -15,7 +15,8 @@ labels:
   - name: 🎯 Roadmap
     labeled:
       issue:
-        body: This issue has been added to the latest roadmap.
+        body: |
+          This issue has been added to the latest roadmap. :tada:
   - name: Support
     labeled:
       issue:

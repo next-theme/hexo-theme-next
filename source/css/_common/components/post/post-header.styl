@@ -89,7 +89,7 @@
 }
 
 // .post-meta-item exists in .post-meta and footer
-.post-meta-item + .post-meta-item::before {
+.post-meta-item:not(:first-child)::before {
   content: '|';
   margin: 0 .5em;
 }
