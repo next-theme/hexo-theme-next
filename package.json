@@ -27,7 +27,7 @@
     "@next-theme/eslint-config": "0.0.1",
     "chai": "4.2.0",
     "eslint": "7.7.0",
-    "hexo": "5.0.0",
+    "hexo": "5.1.1",
     "hexo-renderer-marked": "3.0.0",
     "husky": "4.2.5",
     "js-yaml": "3.14.0",
