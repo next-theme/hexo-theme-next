@@ -33,6 +33,8 @@ post:
   copyright:
     author: مؤلف المقال
     link: رابط المقال
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: حقوق الملكية
     license_content: "حميع المقالات في هذه المدوّنة منشورة تحت رخصة %s إلا عند التنويه بخلافه."
 footer:
@@ -58,6 +60,9 @@ state:
   categories: التصنيفات
 search:
   placeholder: بحث...
+  empty: "We didn't find any results for the search: %s"
+  hits_time: "%s results found in %s ms"
+  hits: "%s results found"
 cheers:
   um: هِم..
   ok: حسناً

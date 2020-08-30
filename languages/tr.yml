@@ -33,6 +33,8 @@ post:
   copyright:
     author: Gönderiyi yazan
     link: Gönderi bağlantısı
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: Telif Hakkı Bildirimi
     license_content: "Bu blogdaki tüm makaleler aksi belirtilmediği sürece %s altında lisanslıdır."
 footer:
@@ -58,6 +60,9 @@ state:
   categories: kategoriler
 search:
   placeholder: Aranıyor...
+  empty: "We didn't find any results for the search: %s"
+  hits_time: "%s results found in %s ms"
+  hits: "%s results found"
 cheers:
   um: Um..
   ok: Tamam

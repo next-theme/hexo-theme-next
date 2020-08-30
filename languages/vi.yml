@@ -33,6 +33,8 @@ post:
   copyright:
     author: Người viết
     link: Liên kết bài viết
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: Chú ý bản quyền
     license_content: "Tất cả bài viết trong blog này được đăng ký bởi %s trừ khi có thông báo bổ sung."
 footer:
@@ -58,6 +60,9 @@ state:
   categories: mục
 search:
   placeholder: Đang tìm...
+  empty: "We didn't find any results for the search: %s"
+  hits_time: "%s results found in %s ms"
+  hits: "%s results found"
 cheers:
   um: Um..
   ok: Đồng Ý

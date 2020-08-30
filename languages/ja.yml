@@ -33,6 +33,8 @@ post:
   copyright:
     author: 著者
     link: 記事へのリンク
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: 著作権表示
     license_content: "このブログ内のすべての記事は、特別な記載がない限り %s の下のライセンスで保護されています。"
 footer:
@@ -58,6 +60,9 @@ state:
   categories: カテゴリ
 search:
   placeholder: 検索…
+  empty: "We didn't find any results for the search: %s"
+  hits_time: "%s results found in %s ms"
+  hits: "%s results found"
 cheers:
   um: うーん
   ok: はい

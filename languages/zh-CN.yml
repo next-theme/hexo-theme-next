@@ -33,6 +33,8 @@ post:
   copyright:
     author: 本文作者
     link: 本文链接
+    post_author: 原作者
+    post_link: 原文链接
     license_title: 版权声明
     license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
 footer:
@@ -58,6 +60,9 @@ state:
   categories: 分类
 search:
   placeholder: 搜索...
+  empty: "没有找到任何搜索结果：%s"
+  hits_time: "找到 %s 个搜索结果（用时 %s 毫秒）"
+  hits: "找到 %s 个搜索结果"
 cheers:
   um: 嗯..
   ok: 还行

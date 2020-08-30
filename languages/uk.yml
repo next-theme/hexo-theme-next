@@ -33,6 +33,8 @@ post:
   copyright:
     author: Автор запису
     link: Посилання на запис
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: Інформація про авторські права
     license_content: "Всі записи на цьому сайті захищені ліцензією %s, якщо не вказано додатково."
 footer:
@@ -58,6 +60,9 @@ state:
   categories: Категорії
 search:
   placeholder: Пошук...
+  empty: "We didn't find any results for the search: %s"
+  hits_time: "%s results found in %s ms"
+  hits: "%s results found"
 cheers:
   um: Ем..
   ok: ОК

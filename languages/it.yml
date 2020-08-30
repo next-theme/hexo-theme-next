@@ -33,6 +33,8 @@ post:
   copyright:
     author: Autore
     link: Link
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: Copyright
     license_content: "Tutti gli articoli in questo sito sono sotto licenza %s salvo disposizione contraria."
 footer:
@@ -58,6 +60,9 @@ state:
   categories: categorie
 search:
   placeholder: Cerca...
+  empty: "We didn't find any results for the search: %s"
+  hits_time: "%s results found in %s ms"
+  hits: "%s results found"
 cheers:
   um: Mh..
   ok: OK

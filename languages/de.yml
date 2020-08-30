@@ -33,6 +33,8 @@ post:
   copyright:
     author: Beitragsautor
     link: Beitragslink
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: Urheberrechtshinweis
     license_content: "Alle Artikel in diesem Blog sind unter %s lizenziert, außer es wird anders angegeben."
 footer:
@@ -58,6 +60,9 @@ state:
   categories: Kategorien
 search:
   placeholder: Suche...
+  empty: "We didn't find any results for the search: %s"
+  hits_time: "%s results found in %s ms"
+  hits: "%s results found"
 cheers:
   um: Öhm..
   ok: OK

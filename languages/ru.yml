@@ -33,6 +33,8 @@ post:
   copyright:
     author: Автор записи
     link: Ссылка на запись
+    post_author: Written by
+    post_link: This article originally appeared on
     license_title: Информация об авторских правах
     license_content: "Все записи на этом сайте защищены лицензией %s, если не указано дополнительно."
 footer:
@@ -58,6 +60,9 @@ state:
   categories: Категории
 search:
   placeholder: Поиск...
+  empty: "We didn't find any results for the search: %s"
+  hits_time: "%s results found in %s ms"
+  hits: "%s results found"
 cheers:
   um: Эм..
   ok: OK
