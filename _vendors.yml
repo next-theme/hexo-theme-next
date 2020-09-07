@@ -130,12 +130,10 @@ nprogress_js:
   name: nprogress
   version: 0.2.0
   file: nprogress.js
-  alias: nprogress
 nprogress_css:
   name: nprogress
   version: 0.2.0
   file: nprogress.css
-  alias: nprogress
 canvas_ribbon:
   name: ribbon.js
   version: 1.0.2
