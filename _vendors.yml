@@ -53,7 +53,7 @@ jquery:
   name: jquery
   version: 3.5.1
   file: dist/jquery.min.js
-fancybox:
+fancybox_js:
   name: '@fancyapps/fancybox'
   version: 3.5.7
   file: dist/jquery.fancybox.min.js
@@ -126,16 +126,14 @@ animate_css:
   name: animate.css
   version: 3.1.1
   file: animate.min.css
-pace:
-  name: pace-js
-  version: 1.0.2
-  file: pace.min.js
-  alias: pace
-pace_css:
-  name: pace-js
-  version: 1.0.2
-  file: themes/blue/pace-theme-minimal.css
-  alias: pace
+nprogress_js:
+  name: nprogress
+  version: 0.2.0
+  file: nprogress.js
+nprogress_css:
+  name: nprogress
+  version: 0.2.0
+  file: nprogress.css
 canvas_ribbon:
   name: ribbon.js
   version: 1.0.2

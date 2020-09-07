@@ -1,0 +1,22 @@
+{%- if theme.nprogress.enable %}
+  <script>
+    NProgress.configure({
+      showSpinner: {{ theme.nprogress.spinner | safedump }}
+    });
+    NProgress.start();
+    document.addEventListener('readystatechange', () => {
+      if (document.readyState === 'interactive') {
+        NProgress.inc(0.8);
+      }
+      if (document.readyState === 'complete') {
+        NProgress.done();
+      }
+    });
+    document.addEventListener('pjax:send', () => {
+      NProgress.start();
+    });
+    document.addEventListener('pjax:success', () => {
+      NProgress.done();
+    });
+  </script>
+{%- endif %}

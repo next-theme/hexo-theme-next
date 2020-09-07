@@ -825,13 +825,10 @@ motion:
     sidebar: fadeInUp
 
 # Progress bar in the top during page loading.
-# For more information: https://github.com/HubSpot/pace
-pace:
+# For more information: https://github.com/rstacruz/nprogress
+nprogress:
   enable: false
-  # Themes list:
-  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
-  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: minimal
+  spinner: true
 
 # Canvas ribbon
 # For more information: https://github.com/hustcc/ribbon.js
@@ -889,7 +886,7 @@ vendors:
 
   # FancyBox
   jquery:
-  fancybox:
+  fancybox_js:
   fancybox_css:
 
   # Medium-zoom
@@ -930,9 +927,9 @@ vendors:
   # Warning: motion won't work with animate.css version 3.2.0 or later
   animate_css:
 
-  # Pace.js
-  pace:
-  pace_css:
+  # NProgress.js
+  nprogress_js:
+  nprogress_css:
 
   # Canvas ribbon
   canvas_ribbon:
