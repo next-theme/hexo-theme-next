@@ -886,7 +886,7 @@ vendors:
 
   # FancyBox
   jquery:
-  fancybox:
+  fancybox_js:
   fancybox_css:
 
   # Medium-zoom
@@ -928,7 +928,7 @@ vendors:
   animate_css:
 
   # NProgress.js
-  nprogress:
+  nprogress_js:
   nprogress_css:
 
   # Canvas ribbon
