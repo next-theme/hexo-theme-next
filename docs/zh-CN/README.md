@@ -148,7 +148,7 @@ $ git pull
 
 [docs-installation-url]: https://theme-next.js.org/docs/getting-started/installation.html
 [docs-configuration-url]: https://theme-next.js.org/docs/getting-started/configuration.html
-[docs-custom-files-url]: https://theme-next.js.org/docs/theme-settings/custom-files.html
+[docs-custom-files-url]: https://theme-next.js.org/docs/advanced-settings/custom-files.html
 [docs-update-5-1-x-url]: https://theme-next.js.org/docs/getting-started/update-from-v5.html
 
 [gitter-url]: https://gitter.im/hexo-next

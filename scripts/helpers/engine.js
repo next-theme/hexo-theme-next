@@ -21,7 +21,8 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
   const links = {
     local   : this.url_for(`${this.theme.js}/${file}`),
     jsdelivr: `//cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${file}`,
-    unpkg   : `//unpkg.com/hexo-theme-next@${next_version}/source/js/${file}`
+    unpkg   : `//unpkg.com/hexo-theme-next@${next_version}/source/js/${file}`,
+    cdnjs   : `//cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/${next_version}/${file}`
   };
   const src = links[internal] || links.local;
   return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
