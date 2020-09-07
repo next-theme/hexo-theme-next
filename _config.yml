@@ -828,6 +828,7 @@ motion:
 # For more information: https://github.com/rstacruz/nprogress
 nprogress:
   enable: false
+  spinner: true
 
 # Canvas ribbon
 # For more information: https://github.com/hustcc/ribbon.js
