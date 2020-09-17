@@ -52,7 +52,9 @@ if (hexo-config('sidebar.position') == 'right') {
 }
 
 .links-of-author {
-  margin-top: 15px;
+  &:not(:first-child) {
+    margin-top: 15px;
+  }
 
   a, span.exturl {
     border-bottom-color: $black-light;

@@ -43,5 +43,7 @@
 }
 
 .sidebar-toc-active .post-toc-wrap, .sidebar-overview-active .site-overview-wrap {
-  display: block;
+  // Flexbox layout makes it possible to reorder the child
+  // elements of .site-overview-item through the `order` CSS property
+  flex-column();
 }
