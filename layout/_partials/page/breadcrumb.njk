@@ -8,11 +8,7 @@
         {%- if loop.index == count - 1 and paths[loop.index] == 'index.html' %}
           <li>{{ path | upper }}</li>
         {% else %}
-          {%- if link == '' %}
-            {%- set link = '/' + path %}
-          {% else %}
-            {%- set link = link + '/' + path %}
-          {%- endif %}
+          {%- set link = '/' + path if link == '' else link + '/' + path %}
           {%- if path.endsWith('.html') %}
             <li>{{ path | replace(r/\.html$/, '') | upper }}</li>
           {% else %}

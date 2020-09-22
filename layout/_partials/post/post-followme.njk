@@ -6,7 +6,7 @@
     <div class="social-list">
       {%- for name, value in theme.follow_me %}
         {%- set link = value.split('||')[0] | trim %}
-        {%- set icon = value.split('||')[1] | trim %}
+        {%- set icon = value.split('||')[1] | trim if value.split('||')[1] else '' %}
 
         <div class="social-item">
           <a target="_blank" class="social-link" href="{{ link }}">
