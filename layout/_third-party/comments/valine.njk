@@ -2,8 +2,9 @@
 NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('{{ theme.vendors.valine }}', () => {
     new Valine(Object.assign({
-      el  : '#valine-comments',
+      el: '#valine-comments',
       path: {{ url_for(page.path) | replace(r/index\.html$/, '') | safedump }},
+      serverURLs: 'https://{{ theme.valine.appId.slice(0, 8) | lower }}.api.lncldglobal.com'
     }, {{ theme.valine | safedump }}
     ));
   }, window.Valine);
