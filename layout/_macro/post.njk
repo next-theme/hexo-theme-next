@@ -1,7 +1,11 @@
-  {##################}
-  {### POST BLOCK ###}
-  {##################}
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="{{ post.lang or config.language }}">
+{##################}
+{### POST BLOCK ###}
+{##################}
+<div class="post-block">
+  {# Gallery support #}
+  {{ post_gallery(post.photos) }}
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ post.lang or config.language }}">
     <link itemprop="mainEntityOfPage" href="{{ post.permalink }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -13,9 +17,6 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ title }}">
     </span>
-
-    {# Gallery support #}
-    {{ post_gallery(post.photos) }}
 
     {%- if post.header !== false %}
       <header class="post-header">
@@ -149,6 +150,7 @@
       {%- endif %}
     </footer>
   </article>
-  {######################}
-  {### END POST BLOCK ###}
-  {######################}
+</div>
+{######################}
+{### END POST BLOCK ###}
+{######################}
