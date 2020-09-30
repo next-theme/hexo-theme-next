@@ -44,8 +44,10 @@
       const db = firebase.firestore();
       const articles = db.collection('{{ theme.firestore.collection }}');
 
-      if (CONFIG.page.isPost) { // Is article page
-        const title = document.querySelector('.post-title').innerText.trim();
+      if (CONFIG.page.isPost) {
+        // Fix issue #118
+        // https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+        const title = document.querySelector('.post-title').textContent.trim();
         const doc = articles.doc(title);
         let increaseCount = CONFIG.hostname === location.hostname;
         if (localStorage.getItem(title)) {
@@ -55,9 +57,9 @@
           localStorage.setItem(title, true);
         }
         getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
-      } else if (CONFIG.page.isHome) { // Is index page
+      } else if (CONFIG.page.isHome) {
         const promises = [...document.querySelectorAll('.post-title')].map(element => {
-          const title = element.innerText.trim();
+          const title = element.textContent.trim();
           const doc = articles.doc(title);
           return getCount(doc);
         });
