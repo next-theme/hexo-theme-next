@@ -7,7 +7,7 @@ anime:
   file: lib/anime.min.js
 fontawesome:
   name: '@fortawesome/fontawesome-free'
-  version: 5.14.0
+  version: 5.15.0
   file: css/all.min.css
   alias: font-awesome
 prism:
@@ -27,21 +27,21 @@ prism_line_numbers:
   alias: prism
 mathjax:
   name: mathjax
-  version: 3.1.0
+  version: 3.1.2
   file: es5/tex-mml-chtml.js
 katex:
   name: katex
-  version: 0.11.1
+  version: 0.12.0
   file: dist/katex.min.css
   alias: KaTeX
 copy_tex_js:
   name: katex
-  version: 0.11.1
+  version: 0.12.0
   file: dist/contrib/copy-tex.min.js
   alias: KaTeX
 copy_tex_css:
   name: katex
-  version: 0.11.1
+  version: 0.12.0
   file: dist/contrib/copy-tex.min.css
   alias: KaTeX
 pjax:
@@ -69,7 +69,7 @@ mediumzoom:
   file: dist/medium-zoom.min.js
 lazyload:
   name: lozad
-  version: 1.15.0
+  version: 1.16.0
   file: dist/lozad.min.js
   alias: lozad.js
 pangu:
@@ -104,23 +104,23 @@ gitalk_css:
   file: dist/gitalk.css
 firebase_app:
   name: firebase
-  version: 7.19.1
+  version: 7.21.1
   file: firebase-app.js
 firebase_firestore:
   name: firebase
-  version: 7.19.1
+  version: 7.21.1
   file: firebase-firestore.js
 algolia_search:
   name: algoliasearch
-  version: 4.4.0
+  version: 4.5.1
   file: dist/algoliasearch-lite.umd.js
 instant_search:
   name: instantsearch.js
-  version: 4.7.1
+  version: 4.8.3
   file: dist/instantsearch.production.min.js
 mermaid:
   name: mermaid
-  version: 8.7.0
+  version: 8.8.0
   file: dist/mermaid.min.js
 animate_css:
   name: animate.css
