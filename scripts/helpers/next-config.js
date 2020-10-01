@@ -8,12 +8,12 @@ const { parse } = require('url');
  * Export theme config to js
  */
 hexo.extend.helper.register('next_config', function() {
-  const { config, theme, next_version, __ } = this;
+  const { config, theme, __ } = this;
   const exportConfig = {
     hostname  : parse(config.url).hostname || config.url,
     root      : config.root,
     scheme    : theme.scheme,
-    version   : next_version,
+    version   : this.next_version,
     exturl    : theme.exturl,
     sidebar   : theme.sidebar,
     copycode  : theme.codeblock.copy_button.enable,
@@ -41,7 +41,7 @@ hexo.extend.helper.register('next_config', function() {
     };
   }
   if (config.search && theme.local_search && theme.local_search.enable) {
-    exportConfig.path = config.search.path;
+    exportConfig.path = this.url_for(config.search.path);
     exportConfig.localsearch = theme.local_search;
   }
   return `<script class="hexo-configurations">
