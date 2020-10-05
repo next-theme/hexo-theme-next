@@ -2,11 +2,11 @@
 <script>
 NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('{{ theme.vendors.valine }}', () => {
-    new Valine(Object.assign({{ theme.valine | safedump }}, {
+    new Valine(Object.assign({
       el: '#valine-comments',
       path: {{ url_for(page.path) | replace(r/index\.html$/, '') | safedump }},
       serverURLs: {{ serverURLs | safedump }}
-    }));
+    },{{ theme.valine | safedump }}));
   }, window.Valine);
 });
 </script>
