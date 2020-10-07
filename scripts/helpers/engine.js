@@ -30,7 +30,7 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
 
 hexo.extend.helper.register('next_pre', function() {
   const { preconnect } = this.theme;
-  const pre= preconnect.enable;
+  const pre = preconnect.enable;
   const fallback = preconnect.fallback;
   if (!pre) return '';
   const { enable, host } = this.theme.font;
@@ -44,9 +44,9 @@ hexo.extend.helper.register('next_pre', function() {
   const h = enable ? links.host = host || `https://fonts.googleapis.com` : '';
   const i = links[internal];
   const p = links[plugins];
-  const H = h == '' ? '' : `<link rel="preconnect" href="${h}" crossorigin>\n<link rel="dns-prefetch" href="${h}">`;
-  const I = i == '' ? '' : `<link rel="preconnect" href="${i}" crossorigin>\n<link rel="dns-prefetch" href="${i}">`;
-  const P = p == '' ? '' : `<link rel="preconnect" href="${p}" crossorigin>\n<link rel="dns-prefetch" href="${p}">`;
+  const H = h === '' ? '' : `<link rel="preconnect" href="${h}" crossorigin>\n<link rel="dns-prefetch" href="${h}">`;
+  const I = i === '' ? '' : `<link rel="preconnect" href="${i}" crossorigin>\n<link rel="dns-prefetch" href="${i}">`;
+  const P = p === '' ? '' : `<link rel="preconnect" href="${p}" crossorigin>\n<link rel="dns-prefetch" href="${p}">`;
   const result = [...new Set([H, I, P])].join('\n');
   return fallback ? result : result.replace(/<link rel="dns-prefetch"(([\s\S])*?)>/g, '');
 });
