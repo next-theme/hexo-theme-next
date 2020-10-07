@@ -21,7 +21,7 @@ minify: false
 preconnect:
   # If true, <link rel="preconnect" crossorigin> will be added to <head>.
   enable: false
-   # Serve <link rel="dns-prefetch"> as a fallback.
+  # Serve <link rel="dns-prefetch"> as a fallback.
   fallback: false
 
 # Define custom file paths.
