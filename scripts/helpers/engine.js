@@ -37,11 +37,11 @@ hexo.extend.helper.register('next_pre', function() {
   const { internal, plugins } = this.theme.vendors;
   const links = {
     local   : '',
-    jsdelivr: `https://cdn.jsdelivr.net`,
-    unpkg   : `https://unpkg.com`,
-    cdnjs   : `https://cdnjs.cloudflare.com`
+    jsdelivr: 'https://cdn.jsdelivr.net',
+    unpkg   : 'https://unpkg.com',
+    cdnjs   : 'https://cdnjs.cloudflare.com'
   };
-  const h = enable ? links.host = host || `https://fonts.googleapis.com` : '';
+  const h = enable ? links.host = host || 'https://fonts.googleapis.com' : '';
   const i = links[internal];
   const p = links[plugins];
   const H = h === '' ? '' : `<link rel="preconnect" href="${h}" crossorigin>\n<link rel="dns-prefetch" href="${h}">`;
