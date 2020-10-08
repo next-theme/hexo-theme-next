@@ -13,7 +13,7 @@ Please follow this Issue template to provide relevant information, such as sourc
 ## Issue Checklist <!-- 我确认我已经查看了 -->
 <!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
-- [ ] I am using [the latest](https://github.com/next-theme/hexo-theme-next/releases/latest) version of NexT.
+- [ ] I am using NexT version 8.0 or later.
 - [ ] I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Troubleshooting page of NexT](https://theme-next.js.org/docs/troubleshooting.html).
 - [ ] I have already searched for current [issues](https://github.com/next-theme/hexo-theme-next/issues), which does not help me.
 
