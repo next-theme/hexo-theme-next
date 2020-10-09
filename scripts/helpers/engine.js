@@ -42,10 +42,10 @@ hexo.extend.helper.register('next_pre', function() {
   const h = enable ? links.host = host || 'https://fonts.googleapis.com' : '';
   const i = links[internal];
   const p = links[plugins];
-  const H = h === '' ? '' : `<link rel="preconnect" href="${h}" crossorigin>`;
-  const I = i === '' ? '' : `<link rel="preconnect" href="${i}" crossorigin>`;
-  const P = p === '' ? '' : `<link rel="preconnect" href="${p}" crossorigin>`;
-  return [...new Set([H, I, P])].filter(e => e).join('\n');
+  const results = [...new Set([h, i, p].filter(x => x))].map(
+    x => `<link rel="preconnect" href="${x}" crossorigin>`
+  );
+  return results.join('\n');
 });
 
 hexo.extend.helper.register('post_gallery', function(photos) {
