@@ -28,6 +28,26 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
   return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
 });
 
+hexo.extend.helper.register('next_pre', function() {
+  const { preconnect } = this.theme;
+  if (!preconnect) return '';
+  const { enable, host } = this.theme.font;
+  const { internal, plugins } = this.theme.vendors;
+  const links = {
+    local   : '',
+    jsdelivr: 'https://cdn.jsdelivr.net',
+    unpkg   : 'https://unpkg.com',
+    cdnjs   : 'https://cdnjs.cloudflare.com'
+  };
+  const h = enable ? host || 'https://fonts.googleapis.com' : '';
+  const i = links[internal];
+  const p = links[plugins];
+  const results = [...new Set([h, i, p].filter(origin => origin))].map(
+    origin => `<link rel="preconnect" href="${origin}" crossorigin>`
+  );
+  return results.join('\n');
+});
+
 hexo.extend.helper.register('post_gallery', function(photos) {
   if (!photos || !photos.length) return '';
   const content = photos.map(photo => `
