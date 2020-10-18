@@ -39,7 +39,7 @@ hexo.extend.helper.register('next_pre', function() {
     unpkg   : 'https://unpkg.com',
     cdnjs   : 'https://cdnjs.cloudflare.com'
   };
-  const h = enable ? links.host = host || 'https://fonts.googleapis.com' : '';
+  const h = enable ? host || 'https://fonts.googleapis.com' : '';
   const i = links[internal];
   const p = links[plugins];
   const results = [...new Set([h, i, p].filter(x => x))].map(
