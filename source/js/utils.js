@@ -283,10 +283,9 @@ NexT.utils = {
 
   supportsPDFs: function() {
     const ua = navigator.userAgent;
-    const isFirefoxWithPDFJS = ua.includes('irefox') && parseInt(ua.split('rv:')[1].split('.')[0], 10) > 18;
     const supportsPdfMimeType = typeof navigator.mimeTypes['application/pdf'] !== 'undefined';
     const isIOS = /iphone|ipad|ipod/i.test(ua.toLowerCase());
-    return isFirefoxWithPDFJS || (supportsPdfMimeType && !isIOS);
+    return ua.includes('irefox') || (supportsPdfMimeType && !isIOS);
   },
 
   getComputedStyle: function(element) {
