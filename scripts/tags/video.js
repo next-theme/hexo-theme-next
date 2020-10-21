@@ -5,5 +5,5 @@
 'use strict';
 
 module.exports = function(args) {
-  return `<video src="${args}" preload="metadata" controls playsinline poster="">Sorry, your browser does not support the video tag.</video>`;
+  return `<video src="${args[0]}" preload="metadata" controlslist="nodownload" controls playsinline poster="${args[1] || ''}"></video>`;
 };
