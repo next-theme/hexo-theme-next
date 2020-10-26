@@ -272,7 +272,7 @@ NexT.utils = {
       parent = parent.parentNode;
     }
     // Scrolling to center active TOC element if TOC content is taller then viewport.
-    const tocElement = document.querySelector('.post-toc-wrap');
+    const tocElement = document.querySelector('.sidebar-panel-container');
     window.anime({
       targets  : tocElement,
       duration : 200,
