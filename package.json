@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-next",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "Elegant and powerful theme for Hexo.",
   "main": "package.json",
   "scripts": {
