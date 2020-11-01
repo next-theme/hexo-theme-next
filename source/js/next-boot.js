@@ -48,12 +48,12 @@ NexT.boot.registerEvents = function() {
     element.addEventListener('click', () => {
       if (element.matches('.sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview')) return;
       const sidebar = document.querySelector('.sidebar-inner');
-      const panel = document.querySelectorAll('.sidebar-panel');
+      const panel = document.querySelector('.sidebar-panel-container');
       const activeClassName = ['sidebar-toc-active', 'sidebar-overview-active'];
 
       window.anime({
         duration,
-        targets   : panel[1 - index],
+        targets   : panel,
         easing    : 'linear',
         opacity   : 0,
         translateY: [0, -20],
@@ -62,7 +62,7 @@ NexT.boot.registerEvents = function() {
           sidebar.classList.replace(activeClassName[1 - index], activeClassName[index]);
           window.anime({
             duration,
-            targets   : panel[index],
+            targets   : panel,
             easing    : 'linear',
             opacity   : [0, 1],
             translateY: [-20, 0]
