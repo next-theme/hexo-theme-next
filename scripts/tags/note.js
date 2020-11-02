@@ -7,19 +7,19 @@
 module.exports = ctx => function(args, content) {
   const keywords = ['default', 'primary', 'info', 'success', 'warning', 'danger', 'no-icon'];
   const className = [];
-  const summary = [];
-  args.forEach((arg, index) => {
-    if (index > 2 || !keywords.includes(arg)) {
-      summary.push(arg);
+  for (let i = 0; i < 2; i++) {
+    if (keywords.includes(args[0])) {
+      className.push(args.shift());
     } else {
-      className.push(arg);
+      break;
     }
-  });
-  content = ctx.render.renderSync({ text: content, engine: 'markdown' });
-  if (summary.length === 0) {
-    return `<div class="note ${args.join(' ')}">${content}</div>`;
   }
-  return `<details class="note ${className.join(' ')}"><summary>${ctx.render.renderSync({ text: summary.join(' '), engine: 'markdown' })}</summary>
+
+  content = ctx.render.renderSync({ text: content, engine: 'markdown' });
+  if (args.length === 0) {
+    return `<div class="note ${className.join(' ')}">${content}</div>`;
+  }
+  return `<details class="note ${className.join(' ')}"><summary>${ctx.render.renderSync({ text: args.join(' '), engine: 'markdown' })}</summary>
 ${content}
 </details>`;
 };

@@ -52,4 +52,12 @@ ${result}
 
 </details>`);
   });
+
+  it('keywords in summary', () => {
+    postNote(['It\'s', 'danger'], content).should.eql(`<details class="note "><summary><p>It’s danger</p>
+</summary>
+${result}
+
+</details>`);
+  });
 });
