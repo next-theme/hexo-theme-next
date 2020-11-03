@@ -936,8 +936,3 @@ vendors:
 
   # Canvas ribbon
   canvas_ribbon:
-
-# Assets
-css: css
-js: js
-images: images

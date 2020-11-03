@@ -19,7 +19,7 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
   const { next_version } = this;
   const { internal } = this.theme.vendors;
   const links = {
-    local   : this.url_for(`${this.theme.js}/${file}`),
+    local   : this.url_for(`js/${file}`),
     jsdelivr: `//cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${file}`,
     unpkg   : `//unpkg.com/hexo-theme-next@${next_version}/source/js/${file}`,
     cdnjs   : `//cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/${next_version}/${file}`
