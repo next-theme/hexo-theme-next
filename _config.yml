@@ -936,3 +936,9 @@ vendors:
 
   # Canvas ribbon
   canvas_ribbon:
+
+# Assets
+# Accelerate delivery of static files using a CDN
+css: css
+js: js
+images: images

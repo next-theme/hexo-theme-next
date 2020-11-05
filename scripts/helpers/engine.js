@@ -19,7 +19,7 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
   const { next_version } = this;
   const { internal } = this.theme.vendors;
   const links = {
-    local   : this.url_for(`js/${file}`),
+    local   : this.url_for(`${this.theme.js}/${file}`),
     jsdelivr: `//cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${file}`,
     unpkg   : `//unpkg.com/hexo-theme-next@${next_version}/source/js/${file}`,
     cdnjs   : `//cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/${next_version}/${file}`
@@ -60,9 +60,9 @@ hexo.extend.helper.register('post_gallery', function(photos) {
 });
 
 hexo.extend.helper.register('post_edit', function(src) {
-  const { theme } = this;
-  if (!theme.post_edit.enable) return '';
-  return this.next_url(theme.post_edit.url + src, '<i class="fa fa-pen-nib"></i>', {
+  const { post_edit } = this.theme;
+  if (!post_edit.enable) return '';
+  return this.next_url(post_edit.url + src, '<i class="fa fa-pen-nib"></i>', {
     class: 'post-edit-link',
     title: this.__('post.edit')
   });

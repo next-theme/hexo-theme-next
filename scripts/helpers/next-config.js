@@ -8,10 +8,11 @@ const { parse } = require('url');
  * Export theme config to js
  */
 hexo.extend.helper.register('next_config', function() {
-  const { config, theme, __ } = this;
+  const { config, theme, url_for, __ } = this;
   const exportConfig = {
     hostname  : parse(config.url).hostname || config.url,
     root      : config.root,
+    images    : url_for(theme.images),
     scheme    : theme.scheme,
     version   : this.next_version,
     exturl    : theme.exturl,
@@ -41,7 +42,7 @@ hexo.extend.helper.register('next_config', function() {
     };
   }
   if (config.search && theme.local_search && theme.local_search.enable) {
-    exportConfig.path = this.url_for(config.search.path);
+    exportConfig.path = url_for(config.search.path);
     exportConfig.localsearch = theme.local_search;
   }
   return `<script class="hexo-configurations">
