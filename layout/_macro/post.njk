@@ -107,7 +107,7 @@
           {{ partial('_partials/post/post-reward.njk') }}
         {%- endif %}
 
-        {%- if theme.creative_commons.license and theme.creative_commons.post %}
+        {%- if theme.creative_commons.license and theme.creative_commons.post and post.copyright !== false %}
           {{ partial('_partials/post/post-copyright.njk') }}
         {%- endif %}
 
