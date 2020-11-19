@@ -2,7 +2,7 @@
 <html lang="{{ config.language }}">
 <head>
   {{ partial('_partials/head/head.njk', {}, {cache: theme.cache.enable}) }}
-  {% include '_partials/head/head-unique.njk' %}
+  {%- include '_partials/head/head-unique.njk' -%}
   <title>{% block title %}{% endblock %}</title>
   {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/noscript.njk', {}, {cache: theme.cache.enable}) }}
@@ -13,7 +13,9 @@
 
   <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">{% include '_partials/header/index.njk' %}</div>
+      <div class="header-inner">
+        {%- include '_partials/header/index.njk' -%}
+      </div>
       {%- if theme.sidebar.display !== 'remove' %}
         {% block sidebar %}{% endblock %}
       {%- endif %}
@@ -22,15 +24,15 @@
     {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
 
     <div class="main-inner {% block class %}{% endblock %}">
-      {% include '_partials/header/sub-menu.njk' %}
+      {%- include '_partials/header/sub-menu.njk' -%}
       {% block content %}{% endblock %}
-      {% include '_partials/comments.njk' %}
+      {%- include '_partials/comments.njk' -%}
     </div>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      {% include '_partials/languages.njk' %}
+      {%- include '_partials/languages.njk' -%}
       {{ partial('_partials/footer.njk', {}, {cache: theme.cache.enable}) }}
     </div>
   </footer>
@@ -42,8 +44,8 @@
   {%- if theme.pjax %}
     <div class="pjax">
   {%- endif %}
-  {% include '_third-party/math/index.njk' %}
-  {% include '_third-party/quicklink.njk' %}
+  {%- include '_third-party/math/index.njk' -%}
+  {%- include '_third-party/quicklink.njk' -%}
 
   {{- next_inject('bodyEnd') }}
   {%- if theme.pjax %}

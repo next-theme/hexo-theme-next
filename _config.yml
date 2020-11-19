@@ -197,8 +197,8 @@ chat:
 language_switcher: false
 
 footer:
-  # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  # Specify the year when the site was setup. If not defined, current year will be used.
+  #since: 2020
 
   # Icon between year and copyright info.
   icon:
@@ -406,7 +406,7 @@ github_banner:
 #   light | light italic | normal | normal italic | bold | bold italic
 # Be aware that setting too much fonts will cause site running slowly
 # ---------------------------------------------------------------
-# To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `title`):
+# Web Safe fonts are recommended for `global` (and `title`):
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 

@@ -23,17 +23,17 @@
     {### PAGE BLOCK ###}
     {##################}
     <div class="post-block" lang="{{ page.lang or config.language }}">
-      {% include '_partials/page/page-header.njk' %}
+      {%- include '_partials/page/page-header.njk' -%}
       {#################}
       {### PAGE BODY ###}
       {#################}
       <div class="post-body{%- if page.direction and page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
         {%- if page.type === 'tags' %}
-          {% include '_partials/page/tags.njk' %}
+          {%- include '_partials/page/tags.njk' -%}
         {% elif page.type === 'categories' %}
-          {% include '_partials/page/categories.njk' %}
+          {%- include '_partials/page/categories.njk' -%}
         {% elif page.type === 'schedule' %}
-          {% include '_partials/page/schedule.njk' %}
+          {%- include '_partials/page/schedule.njk' -%}
         {% else %}
           {{ page.content }}
         {%- endif %}
@@ -42,7 +42,7 @@
       {### END PAGE BODY ###}
       {#####################}
     </div>
-    {% include '_partials/page/breadcrumb.njk' %}
+    {%- include '_partials/page/breadcrumb.njk' -%}
     {######################}
     {### END PAGE BLOCK ###}
     {######################}
