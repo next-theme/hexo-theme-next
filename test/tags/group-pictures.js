@@ -42,6 +42,13 @@ Text
 ![](/images/sample.png)`).should.eql('<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="/images/sample.png"></div><div class="group-picture-column"><a href="https://theme-next.js.org/"><img src="/images/sample.png"></a></div></div><div class="group-picture-row"><div class="group-picture-column"><a href="https://theme-next.js.org/"><img src="/images/sample.png"></a></div><div class="group-picture-column"><img src="/images/sample.png"></div></div></div>');
   });
 
+  it('set hyperlinks 2', () => {
+    groupPicture(['3-1'], `
+![](/images/sample.png)
+[![](/images/sample.png)](https://theme-next.js.org/)
+![](/images/sample.png)`).should.eql('<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="/images/sample.png"></div><div class="group-picture-column"><a href="https://theme-next.js.org/"><img src="/images/sample.png"></a></div><div class="group-picture-column"><img src="/images/sample.png"></div></div></div>');
+  });
+
   it('no layout', () => {
     groupPicture(['NaN-NaN'], `
 ![](/images/sample.png)
