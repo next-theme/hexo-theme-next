@@ -10,25 +10,16 @@
     function getCount(doc, increaseCount) {
       // IncreaseCount will be false when not in article page
       return doc.get().then(d => {
-        let count = 0;
-        if (!d.exists) { // Has no data, initialize count
-          if (increaseCount) {
-            doc.set({
-              count: 1
-            });
-            count = 1;
-          }
-        } else { // Has data
-          count = d.data().count;
-          if (increaseCount) {
-            // If first view this article
-            doc.set({ // Increase count
-              count: count + 1
-            });
-            count++;
-          }
+        // Has no data, initialize count
+        let count = d.exists ? d.data().count : 0;
+        // If first view this article
+        if (increaseCount) {
+          // Increase count
+          count++;
+          doc.set({
+            count
+          });
         }
-
         return count;
       });
     }
@@ -36,7 +27,7 @@
     function appendCountTo(el) {
       return count => {
         el.innerText = count;
-      }
+      };
     }
   </script>
   <script{{ pjax }}>
