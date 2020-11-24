@@ -849,7 +849,7 @@ canvas_ribbon:
 #! ==============================================================
 
 # It's recommended to use the same version as in `_vendors.yml` to avoid potential problems.
-# Remember to use the https protocol of CDN links when you enable https on your site.
+# Remember to use the HTTPS protocol of CDN links when you enable HTTPS on your site.
 vendors:
   # The CDN provider of NexT internal scripts.
   # Available values: local | jsdelivr | unpkg | cdnjs
