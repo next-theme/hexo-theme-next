@@ -923,6 +923,9 @@ vendors:
   algolia_search:
   instant_search:
 
+  # PDF
+  pdfobject:
+
   # Mermaid
   mermaid:
 

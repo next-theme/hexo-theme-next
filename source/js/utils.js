@@ -281,13 +281,6 @@ NexT.utils = {
     });
   },
 
-  supportsPDFs: function() {
-    const ua = navigator.userAgent;
-    const supportsPdfMimeType = typeof navigator.mimeTypes['application/pdf'] !== 'undefined';
-    const isIOS = /iphone|ipad|ipod/i.test(ua.toLowerCase());
-    return ua.includes('irefox') || (supportsPdfMimeType && !isIOS);
-  },
-
   getComputedStyle: function(element) {
     const clone = element.cloneNode(true);
     clone.style.position = 'absolute';

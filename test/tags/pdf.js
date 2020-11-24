@@ -14,10 +14,10 @@ describe('pdf', () => {
   });
 
   it('default', () => {
-    pdf(['https://example.com/sample.pdf']).should.eql('<div class="pdfobject-container" data-target="https://example.com/sample.pdf" data-height="500px"></div>');
+    pdf(['https://example.com/sample.pdf']).should.eql('<div class="pdf-container" data-target="https://example.com/sample.pdf" data-height="500px"></div>');
   });
 
   it('custom height', () => {
-    pdf(['https://example.com/sample.pdf', '1000px']).should.eql('<div class="pdfobject-container" data-target="https://example.com/sample.pdf" data-height="1000px"></div>');
+    pdf(['https://example.com/sample.pdf', '1000px']).should.eql('<div class="pdf-container" data-target="https://example.com/sample.pdf" data-height="1000px"></div>');
   });
 });

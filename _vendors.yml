@@ -118,6 +118,10 @@ instant_search:
   name: instantsearch.js
   version: 4.8.4
   file: dist/instantsearch.production.min.js
+pdfobject:
+  name: pdfobject
+  version: 2.2.4
+  file: pdfobject.min.js
 mermaid:
   name: mermaid
   version: 8.8.2
