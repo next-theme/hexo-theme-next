@@ -466,11 +466,11 @@ index_with_subtitle: false
 exturl: false
 
 # Google Webmaster tools verification.
-# See: https://www.google.com/webmasters
+# See: https://developers.google.com/search
 google_site_verification:
 
 # Bing Webmaster tools verification.
-# See: https://www.bing.com/webmaster
+# See: https://www.bing.com/webmasters
 bing_site_verification:
 
 # Yandex Webmaster tools verification.
@@ -515,7 +515,7 @@ math:
 pjax: false
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
-# For more information: https://fancyapps.com/fancybox
+# For more information: https://fancyapps.com/fancybox/
 fancybox: false
 
 # A JavaScript library for zooming images like Medium.
@@ -565,7 +565,7 @@ comments:
   # Available values: tabs | buttons
   style: tabs
   # Choose a comment system to be displayed by default.
-  # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
+  # Available values: disqus | disqusjs | changyan | valine | livere | gitalk
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
@@ -587,11 +587,11 @@ disqus:
 
 # DisqusJS
 # Alternative Disqus - Render comment component using Disqus API.
-# Demo: https://suka.js.org/DisqusJS/
+# Demo: https://disqusjs.skk.moe
 # For more information: https://github.com/SukkaW/DisqusJS
 disqusjs:
   enable: false
-  # API Endpoint of Disqus API (https://disqus.com/api/).
+  # API Endpoint of Disqus API (https://disqus.com/api/docs/).
   # Leave api empty if you are able to connect to Disqus API. Otherwise you need a reverse proxy for it.
   # For example:
   # api: https://disqus.skk.moe/disqus/
@@ -682,7 +682,7 @@ growingio_analytics: # <project_id>
 cnzz_siteid:
 
 # Show number of visitors of each article.
-# You can visit https://leancloud.cn to get AppID and AppKey.
+# You can visit https://www.leancloud.cn to get AppID and AppKey.
 # AppID and AppKey are recommended to be the same as valine's for counter compatibility.
 # Warning: Do not enable both `valine.visitor` and `leancloud_visitors`.
 leancloud_visitors:
@@ -706,7 +706,7 @@ firestore:
   projectId: # Required
 
 # Show Views / Visitors of the website / page with busuanzi.
-# Get more information on http://ibruce.info/2015/04/04/busuanzi
+# Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   enable: false
   total_visitors: true
@@ -753,20 +753,20 @@ swiftype_key:
 # ---------------------------------------------------------------
 
 # Chatra Support
-# See: https://chatra.io
+# See: https://chatra.com
 # Dashboard: https://app.chatra.io/settings/general
 chatra:
   enable: false
   async: true
   id: # Visit Dashboard to get your ChatraID
-  #embed: # Unfinished experimental feature for developers. See: https://chatra.io/help/api/#injectto
+  #embed: # Unfinished experimental feature for developers. See: https://chatra.com/help/api/#injectto
 
 # Tidio Support
-# See: https://www.tidiochat.com
-# Dashboard: https://www.tidiochat.com/panel/dashboard
+# See: https://www.tidio.com
+# Dashboard: https://www.tidio.com/panel/dashboard
 tidio:
   enable: false
-  key: # Public Key, get it from dashboard. See: https://www.tidiochat.com/panel/settings/developer
+  key: # Public Key, get it from dashboard. See: https://www.tidio.com/panel/settings/developer
 
 
 # ---------------------------------------------------------------
