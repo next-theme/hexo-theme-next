@@ -31,7 +31,7 @@ module.exports = hexo => {
       warning('waline.visitor', 'leancloud_visitors');
       leancloud_visitors.enable = false;
     }
-  }  
+  }
   hexo.config.meta_generator = false;
 
   // Custom languages support. Introduced in NexT v6.3.0.
