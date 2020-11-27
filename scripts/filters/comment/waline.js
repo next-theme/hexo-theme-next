@@ -8,7 +8,7 @@ const { iconText } = require('./common');
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
   const theme = hexo.theme.config;
-  if (!theme.waline.enable || !theme.waline.serverURL) return;
+  if (!theme.waline || !theme.waline.enable || !theme.waline.serverURL) return;
 
   injects.comment.raw('waline', '<div class="comments" id="waline-comments"></div>', {}, {cache: true});
 
@@ -19,7 +19,7 @@ hexo.extend.filter.register('theme_inject', injects => {
 // Add post_meta
 hexo.extend.filter.register('theme_inject', injects => {
   const theme = hexo.theme.config;
-  if (!theme.waline.enable || !theme.waline.serverURL) return;
+  if (!theme.waline || !theme.waline.enable || !theme.waline.serverURL) return;
 
   injects.postMeta.raw('waline', `
   {% if post.comments and (is_post() or theme.waline.comment_count) %}
