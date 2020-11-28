@@ -1,0 +1,10 @@
+{%- if page.comments %}
+<script>
+NexT.utils.loadComments('#isso-thread', () => {
+  const script = document.createElement('script');
+  script.src = '{{ theme.isso }}js/embed.min.js';
+  script.dataset.isso = '{{ theme.isso }}';
+  document.querySelector('#isso-thread').appendChild(script);
+});
+</script>
+{%- endif %}

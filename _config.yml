@@ -520,11 +520,11 @@ fancybox: false
 
 # A JavaScript library for zooming images like Medium.
 # Warning: Do not enable both `fancybox` and `mediumzoom`.
-# For more information: https://github.com/francoischalifour/medium-zoom
+# For more information: https://medium-zoom.francoischalifour.com
 mediumzoom: false
 
 # Vanilla JavaScript plugin for lazyloading images.
-# For more information: https://github.com/ApoorvSaxena/lozad.js
+# For more information: https://apoorv.pro/lozad.js/demo/
 lazyload: false
 
 # Pangu Support
@@ -533,7 +533,7 @@ lazyload: false
 pangu: false
 
 # Quicklink Support
-# For more information: https://github.com/GoogleChromeLabs/quicklink
+# For more information: https://getquick.link
 # Front-matter variable (unsupport home archive).
 quicklink:
   enable: false
@@ -580,15 +580,14 @@ comments:
     #  order: -2
 
 # Disqus
+# For more information: https://disqus.com
 disqus:
   enable: false
   shortname:
   count: true
 
 # DisqusJS
-# Alternative Disqus - Render comment component using Disqus API.
-# Demo: https://disqusjs.skk.moe
-# For more information: https://github.com/SukkaW/DisqusJS
+# For more information: https://disqusjs.skk.moe
 disqusjs:
   enable: false
   # API Endpoint of Disqus API (https://disqus.com/api/docs/).
@@ -600,6 +599,7 @@ disqusjs:
   shortname: # See: https://disqus.com/admin/settings/general/
 
 # Changyan
+# For more information: https://changyan.kuaizhan.com
 changyan:
   enable: false
   appid:
@@ -610,7 +610,7 @@ changyan:
 livere_uid: # <your_uid>
 
 # Gitalk
-# For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
+# For more information: https://gitalk.github.io
 gitalk:
   enable: false
   github_id: # GitHub repo owner
@@ -633,6 +633,11 @@ utterances:
   issue_term: pathname
   # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
   theme: github-light
+
+# Isso
+# For more information: https://posativ.org/isso/
+isso: # <data_isso>
+
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
