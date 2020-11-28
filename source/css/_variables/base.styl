@@ -75,7 +75,7 @@ get_font_family(config) {
 }
 
 // Font families.
-$font-family-chinese      = "PingFang SC", "Microsoft YaHei";
+$font-family-chinese      = 'PingFang SC', 'Microsoft YaHei';
 
 $font-family-base         = $font-family-chinese, sans-serif;
 $font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global');
@@ -281,8 +281,8 @@ $post-card-margin             = 1em 0 0;
 
 // Note colors
 // --------------------------------------------------
-// Read note light_bg_offset from NexT config and set in "$lbg%" to use it as string variable.
-$lbg = hexo-config('note.light_bg_offset') is a 'unit' ? unit(hexo-config('note.light_bg_offset'), "%") : 0;
+// Read note light_bg_offset from NexT config and set in '$lbg%' to use it as string variable.
+$lbg = hexo-config('note.light_bg_offset') is a 'unit' ? unit(hexo-config('note.light_bg_offset'), '%') : 0;
 $note-types = 'default' 'primary' 'info' 'success' 'warning' 'danger';
 
 // Default
@@ -291,7 +291,7 @@ $note-border-radius         = 3px;
 $note-border-default        = #777;
 $note-bg-default            = lighten(spin($note-border-default, 0), 94% + $lbg);
 $note-text-default          = $note-border-default;
-$note-icon-default          = "\f0a9";
+$note-icon-default          = '\f0a9';
 
 $note-modern-border-default = #e1e1e1;
 $note-modern-bg-default     = lighten(spin($note-modern-border-default, 10), 60% + ($lbg * 4));
@@ -302,7 +302,7 @@ $note-modern-hover-default  = darken(spin($note-modern-text-default, -10), 32%);
 $note-border-primary        = #6f42c1;
 $note-bg-primary            = lighten(spin($note-border-primary, 10), 92% + $lbg);
 $note-text-primary          = $note-border-primary;
-$note-icon-primary          = "\f055";
+$note-icon-primary          = '\f055';
 
 $note-modern-border-primary = #e1c2ff;
 $note-modern-bg-primary     = lighten(spin($note-modern-border-primary, 10), 40% + ($lbg * 4));
@@ -313,7 +313,7 @@ $note-modern-hover-primary  = darken(spin($note-modern-text-primary, -10), 22%);
 $note-border-info           = #428bca;
 $note-bg-info               = lighten(spin($note-border-info, -10), 91% + $lbg);
 $note-text-info             = $note-border-info;
-$note-icon-info             = "\f05a";
+$note-icon-info             = '\f05a';
 
 $note-modern-border-info    = #b3e5ef;
 $note-modern-bg-info        = lighten(spin($note-modern-border-info, 10), 50% + ($lbg * 4));
@@ -324,7 +324,7 @@ $note-modern-hover-info     = darken(spin($note-modern-text-info, -10), 32%);
 $note-border-success        = #5cb85c;
 $note-bg-success            = lighten(spin($note-border-success, 10), 90% + $lbg);
 $note-text-success          = $note-border-success;
-$note-icon-success          = "\f058";
+$note-icon-success          = '\f058';
 
 $note-modern-border-success = #d0e6be;
 $note-modern-bg-success     = lighten(spin($note-modern-border-success, 10), 40% + ($lbg * 4));
@@ -335,7 +335,7 @@ $note-modern-hover-success  = darken(spin($note-modern-text-success, -10), 27%);
 $note-border-warning        = #f0ad4e;
 $note-bg-warning            = lighten(spin($note-border-warning, 10), 88% + $lbg);
 $note-text-warning          = $note-border-warning;
-$note-icon-warning          = "\f06a";
+$note-icon-warning          = '\f06a';
 
 $note-modern-border-warning = #fae4cd;
 $note-modern-bg-warning     = lighten(spin($note-modern-border-warning, 10), 43% + ($lbg * 4));
@@ -346,7 +346,7 @@ $note-modern-hover-warning  = darken(spin($note-modern-text-warning, -10), 18%);
 $note-border-danger         = #d9534f;
 $note-bg-danger             = lighten(spin($note-border-danger, -10), 92% + $lbg);
 $note-text-danger           = $note-border-danger;
-$note-icon-danger           = "\f056";
+$note-icon-danger           = '\f056';
 
 $note-modern-border-danger  = #ebcdd2;
 $note-modern-bg-danger      = lighten(spin($note-modern-border-danger, 10), 35% + ($lbg * 4));
