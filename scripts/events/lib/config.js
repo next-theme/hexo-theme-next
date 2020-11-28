@@ -10,7 +10,7 @@ module.exports = hexo => {
     hexo.log.warn('Documentation: https://theme-next.js.org/docs/getting-started/configuration.html');
   }
 
-  const { cache, language_switcher, leancloud_visitors, valine } = hexo.theme.config;
+  const { cache, language_switcher } = hexo.theme.config;
   const warning = function(...args) {
     hexo.log.warn(`Since ${args[0]} is turned on, the ${args[1]} is disabled to avoid potential hazards.`);
   };
@@ -22,10 +22,6 @@ module.exports = hexo => {
   if (cache && cache.enable && hexo.config.relative_link) {
     warning('caching', '`relative_link` option in Hexo `_config.yml`');
     hexo.config.relative_link = false;
-  }
-  if (leancloud_visitors && leancloud_visitors.enable && valine && valine.enable && valine.visitor) {
-    warning('valine.visitor', 'leancloud_visitors');
-    leancloud_visitors.enable = false;
   }
   hexo.config.meta_generator = false;
 
