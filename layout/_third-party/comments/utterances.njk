@@ -1,0 +1,14 @@
+{%- if page.comments %}
+<script>
+NexT.utils.loadComments('#utterances-container', () => {
+  const script = document.createElement('script');
+  script.src = 'https://utteranc.es/client.js';
+  script.setAttribute('repo', {{ theme.utterances.repo | safedump }});
+  script.setAttribute('issue-term', {{ theme.utterances.issue_term | safedump }});
+  script.setAttribute('theme', {{ theme.utterances.theme | safedump }});
+  script.crossOrigin = 'anonymous';
+  script.async = true;
+  document.querySelector('#utterances-container').appendChild(script);
+});
+</script>
+{%- endif %}

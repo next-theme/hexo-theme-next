@@ -7,8 +7,8 @@ const { iconText } = require('./common');
 
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
-  const theme = hexo.theme.config;
-  if (!theme.changyan.enable || !theme.changyan.appid || !theme.changyan.appkey) return;
+  const config = hexo.theme.config.changyan;
+  if (!config.enable || !config.appid || !config.appkey) return;
 
   injects.comment.raw('changyan', `
   <div class="comments">
@@ -22,8 +22,8 @@ hexo.extend.filter.register('theme_inject', injects => {
 
 // Add post_meta
 hexo.extend.filter.register('theme_inject', injects => {
-  const theme = hexo.theme.config;
-  if (!theme.changyan.enable || !theme.changyan.appid || !theme.changyan.appkey) return;
+  const config = hexo.theme.config.changyan;
+  if (!config.enable || !config.appid || !config.appkey) return;
 
   injects.postMeta.raw('changyan', `
   {% if post.comments %}
