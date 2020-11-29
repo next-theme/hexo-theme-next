@@ -13,6 +13,7 @@ jobs:
         with:
           ref: master
       - name: Label Commenter
-        uses: peaceiris/actions-label-commenter@v1
+        # Exclude https://github.com/peaceiris/actions-label-commenter/pull/316
+        uses: peaceiris/actions-label-commenter@v1.7.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

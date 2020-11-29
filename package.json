@@ -8,10 +8,7 @@
     "stylint": "stylint source/css/",
     "test": "mocha test/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/next-theme/hexo-theme-next.git"
-  },
+  "repository": "next-theme/hexo-theme-next",
   "keywords": [
     "hexo",
     "theme",
