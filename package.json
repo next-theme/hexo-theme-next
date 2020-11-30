@@ -28,7 +28,7 @@
     "hexo-renderer-marked": "3.3.0",
     "husky": "4.3.0",
     "js-yaml": "3.14.0",
-    "mocha": "8.2.0",
+    "mocha": "8.2.1",
     "stylint": "2.0.0"
   },
   "husky": {
