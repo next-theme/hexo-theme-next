@@ -279,89 +279,100 @@ $post-eof-margin-bottom       = 60px; //  or 120px for less white space;
 
 $post-card-margin             = 1em 0 0;
 
+
 // Note colors
 // --------------------------------------------------
 // Read note light_bg_offset from NexT config and set in '$lbg%' to use it as string variable.
 $lbg = hexo-config('note.light_bg_offset') is a 'unit' ? unit(hexo-config('note.light_bg_offset'), '%') : 0;
 $note-types = 'default' 'primary' 'info' 'success' 'warning' 'danger';
 
-// Default
 $note-border-radius         = 3px;
 
-$note-border-default        = #777;
-$note-bg-default            = lighten(spin($note-border-default, 0), 94% + $lbg);
-$note-text-default          = $note-border-default;
-$note-icon-default          = '\f0a9';
+$note-border = {
+  default : #777,
+  primary : #6f42c1,
+  info    : #428bca,
+  success : #5cb85c,
+  warning : #f0ad4e,
+  danger  : #d9534f
+};
 
-$note-modern-border-default = #e1e1e1;
-$note-modern-bg-default     = lighten(spin($note-modern-border-default, 10), 60% + ($lbg * 4));
-$note-modern-text-default   = $grey-dim;
-$note-modern-hover-default  = darken(spin($note-modern-text-default, -10), 32%);
+$note-bg = {
+  default : lighten(spin($note-border.default, 0), 94% + $lbg),
+  primary : lighten(spin($note-border.primary, 10), 92% + $lbg),
+  info    : lighten(spin($note-border.info, -10), 91% + $lbg),
+  success : lighten(spin($note-border.success, 10), 90% + $lbg),
+  warning : lighten(spin($note-border.warning, 10), 88% + $lbg),
+  danger  : lighten(spin($note-border.danger, -10), 92% + $lbg)
+};
 
-// Primary
-$note-border-primary        = #6f42c1;
-$note-bg-primary            = lighten(spin($note-border-primary, 10), 92% + $lbg);
-$note-text-primary          = $note-border-primary;
-$note-icon-primary          = '\f055';
+$note-text = {
+  default : $note-border.default,
+  primary : $note-border.primary,
+  info    : $note-border.info,
+  success : $note-border.success,
+  warning : $note-border.warning,
+  danger  : $note-border.danger
+};
 
-$note-modern-border-primary = #e1c2ff;
-$note-modern-bg-primary     = lighten(spin($note-modern-border-primary, 10), 40% + ($lbg * 4));
-$note-modern-text-primary   = #6f42c1;
-$note-modern-hover-primary  = darken(spin($note-modern-text-primary, -10), 22%);
+$note-icon = {
+  default : '\f0a9',
+  primary : '\f055',
+  info    : '\f05a',
+  success : '\f058',
+  warning : '\f06a',
+  danger  : '\f056'
+};
 
-// Info
-$note-border-info           = #428bca;
-$note-bg-info               = lighten(spin($note-border-info, -10), 91% + $lbg);
-$note-text-info             = $note-border-info;
-$note-icon-info             = '\f05a';
+$note-modern-border = {
+  default : #e1e1e1,
+  primary : #e1c2ff,
+  info    : #b3e5ef,
+  success : #d0e6be,
+  warning : #fae4cd,
+  danger  : #ebcdd2
+};
 
-$note-modern-border-info    = #b3e5ef;
-$note-modern-bg-info        = lighten(spin($note-modern-border-info, 10), 50% + ($lbg * 4));
-$note-modern-text-info      = #31708f;
-$note-modern-hover-info     = darken(spin($note-modern-text-info, -10), 32%);
+$note-modern-bg = {
+  default : lighten(spin($note-modern-border.default, 10), 60% + ($lbg * 4)),
+  primary : lighten(spin($note-modern-border.primary, 10), 40% + ($lbg * 4)),
+  info    : lighten(spin($note-modern-border.info, 10), 50% + ($lbg * 4)),
+  success : lighten(spin($note-modern-border.success, 10), 40% + ($lbg * 4)),
+  warning : lighten(spin($note-modern-border.warning, 10), 43% + ($lbg * 4)),
+  danger  : lighten(spin($note-modern-border.danger, 10), 35% + ($lbg * 4))
+};
 
-// Success
-$note-border-success        = #5cb85c;
-$note-bg-success            = lighten(spin($note-border-success, 10), 90% + $lbg);
-$note-text-success          = $note-border-success;
-$note-icon-success          = '\f058';
+$note-modern-text = {
+  default : $grey-dim,
+  primary : #6f42c1,
+  info    : #31708f,
+  success : #3c763d,
+  warning : #8a6d3b,
+  danger  : #a94442
+};
 
-$note-modern-border-success = #d0e6be;
-$note-modern-bg-success     = lighten(spin($note-modern-border-success, 10), 40% + ($lbg * 4));
-$note-modern-text-success   = #3c763d;
-$note-modern-hover-success  = darken(spin($note-modern-text-success, -10), 27%);
+$note-modern-hover = {
+  default : darken(spin($note-modern-text.default, -10), 32%),
+  primary : darken(spin($note-modern-text.primary, -10), 22%),
+  info    : darken(spin($note-modern-text.info, -10), 32%),
+  success : darken(spin($note-modern-text.success, -10), 27%),
+  warning : darken(spin($note-modern-text.warning, -10), 18%),
+  danger  : darken(spin($note-modern-text.danger, -10), 22%)
+};
 
-// Warning
-$note-border-warning        = #f0ad4e;
-$note-bg-warning            = lighten(spin($note-border-warning, 10), 88% + $lbg);
-$note-text-warning          = $note-border-warning;
-$note-icon-warning          = '\f06a';
-
-$note-modern-border-warning = #fae4cd;
-$note-modern-bg-warning     = lighten(spin($note-modern-border-warning, 10), 43% + ($lbg * 4));
-$note-modern-text-warning   = #8a6d3b;
-$note-modern-hover-warning  = darken(spin($note-modern-text-warning, -10), 18%);
-
-// Danger
-$note-border-danger         = #d9534f;
-$note-bg-danger             = lighten(spin($note-border-danger, -10), 92% + $lbg);
-$note-text-danger           = $note-border-danger;
-$note-icon-danger           = '\f056';
-
-$note-modern-border-danger  = #ebcdd2;
-$note-modern-bg-danger      = lighten(spin($note-modern-border-danger, 10), 35% + ($lbg * 4));
-$note-modern-text-danger    = #a94442;
-$note-modern-hover-danger   = darken(spin($note-modern-text-danger, -10), 22%);
 
 // Tabs border radius
 // --------------------------------------------------
 $tbr                        = 0;
 
+
 // Label colors
 // --------------------------------------------------
-$label-default              = lighten(spin($note-border-default, 0), 89% + $lbg);
-$label-primary              = lighten(spin($note-border-primary, 10), 87% + $lbg);
-$label-info                 = lighten(spin($note-border-info, -10), 86% + $lbg);
-$label-success              = lighten(spin($note-border-success, 10), 85% + $lbg);
-$label-warning              = lighten(spin($note-border-warning, 10), 83% + $lbg);
-$label-danger               = lighten(spin($note-border-danger, -10), 87% + $lbg);
+$label = {
+  default : lighten(spin($note-border.default, 0), 89% + $lbg),
+  primary : lighten(spin($note-border.primary, 10), 87% + $lbg),
+  info    : lighten(spin($note-border.info, -10), 86% + $lbg),
+  success : lighten(spin($note-border.success, 10), 85% + $lbg),
+  warning : lighten(spin($note-border.warning, 10), 83% + $lbg),
+  danger  : lighten(spin($note-border.danger, -10), 87% + $lbg)
+};

@@ -64,46 +64,46 @@
   for $type in $note-types {
     &.{$type} {
       if ($note-style == 'flat') {
-        background: lookup('$note-bg-' + $type);
+        background: $note-bg[$type];
         if (hexo-config('darkmode')) {
           @media (prefers-color-scheme: dark) {
-            background: mix(lookup('$note-bg-' + $type), $body-bg-color-dark, 10%);
+            background: mix($note-bg[$type], $body-bg-color-dark, 10%);
           }
         }
       }
 
       if ($note-style == 'modern') {
-        background: lookup('$note-modern-bg-' + $type);
-        border-color: lookup('$note-modern-border-' + $type);
-        color: lookup('$note-modern-text-' + $type);
+        background: $note-modern-bg[$type];
+        border-color: $note-modern-border[$type];
+        color: $note-modern-text[$type];
 
         a, span.exturl {
           &:not(.btn) {
-            border-bottom-color: lookup('$note-modern-text-' + $type);
-            color: lookup('$note-modern-text-' + $type);
+            border-bottom-color: $note-modern-text[$type];
+            color: $note-modern-text[$type];
 
             &:hover {
-              border-bottom-color: lookup('$note-modern-hover-' + $type);
-              color: lookup('$note-modern-hover-' + $type);
+              border-bottom-color: $note-modern-hover[$type];
+              color: $note-modern-hover[$type];
             }
           }
         }
       }
 
       if ($note-style != 'modern') {
-        border-left-color: lookup('$note-border-' + $type);
+        border-left-color: $note-border[$type];
 
         h2, h3, h4, h5, h6 {
-          color: lookup('$note-text-' + $type);
+          color: $note-text[$type];
         }
       }
 
       if ($note-icons) {
         &:not(.no-icon)::before {
-          font-family-icons(lookup('$note-icon-' + $type));
+          font-family-icons($note-icon[$type]);
 
           if ($note-style != 'modern') {
-            color: lookup('$note-text-' + $type);
+            color: $note-text[$type];
           }
         }
       }

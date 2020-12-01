@@ -38,6 +38,8 @@ p {
 a, span.exturl {
   border-bottom: 1px solid $link-decoration-color;
   color: var(--link-color);
+  // For spanned external links.
+  cursor: pointer;
   outline: 0;
   text-decoration: none;
   word-wrap();
@@ -46,9 +48,6 @@ a, span.exturl {
     border-bottom-color: var(--link-hover-color);
     color: var(--link-hover-color);
   }
-
-  // For spanned external links.
-  cursor: pointer;
 }
 
 iframe, img, video, embed {
