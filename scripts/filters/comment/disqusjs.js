@@ -6,7 +6,7 @@ const path = require('path');
 
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
-  const config = hexo.theme.config.disqus;
+  const config = hexo.theme.config.disqusjs;
   if (!config.enable || !config.shortname || !config.apikey) return;
 
   injects.comment.raw('disqusjs', `
