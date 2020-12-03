@@ -12,7 +12,7 @@ NexT.utils.loadComments('#gitalk-container', () => {
       admin       : ['{{ theme.gitalk.admin_user }}'],
       id          : '{{ gitalk_md5(page.path) }}',
       {%- if theme.gitalk.language == '' %}
-        language: window.navigator.language || window.navigator.userLanguage,
+        language: window.navigator.language,
       {% else %}
         language: '{{ theme.gitalk.language }}',
       {%- endif %}

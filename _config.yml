@@ -504,6 +504,8 @@ math:
 
   mathjax:
     enable: false
+    # Available values: none | ams | all
+    tags: none
 
   katex:
     enable: false
