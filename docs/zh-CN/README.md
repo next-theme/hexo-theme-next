@@ -89,13 +89,13 @@ vendors:
 
 ## 更新
 
-NexT 每个月都会发布新版本。你可以通过如下命令更新 NexT。
+NexT 每个月都会发布新版本。请在更新前阅读[更新说明][docs-release-url]。你可以通过如下命令更新 NexT。
 
 通过 npm 安装最新版本：
 
 ```sh
 $ cd hexo-site
-$ npm update hexo-theme-next
+$ npm install hexo-theme-next@latest
 ```
 
 或者通过 git 更新到最新的 master 分支：
@@ -149,6 +149,7 @@ $ git pull
 [docs-installation-url]: https://theme-next.js.org/docs/getting-started/installation.html
 [docs-configuration-url]: https://theme-next.js.org/docs/getting-started/configuration.html
 [docs-custom-files-url]: https://theme-next.js.org/docs/advanced-settings/custom-files.html
+[docs-release-url]: https://github.com/next-theme/hexo-theme-next/releases
 [docs-upgrade-url]: https://theme-next.js.org/docs/getting-started/upgrade.html
 
 [gitter-url]: https://gitter.im/hexo-next

@@ -89,13 +89,13 @@ vendors:
 
 ## Обновление
 
-NexT выпускает новые версии каждый месяц. You can update NexT by the following command.
+NexT выпускает новые версии каждый месяц. Please read the [release notes][docs-release-url] before updating the theme. You can update NexT by the following command.
 
 Install the latest version throuth npm:
 
 ```sh
 $ cd hexo-site
-$ npm update hexo-theme-next
+$ npm install hexo-theme-next@latest
 ```
 
 Or update to latest master branch:
@@ -152,6 +152,7 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 [docs-installation-url]: https://theme-next.js.org/docs/getting-started/installation.html
 [docs-configuration-url]: https://theme-next.js.org/docs/getting-started/configuration.html
 [docs-custom-files-url]: https://theme-next.js.org/docs/advanced-settings/custom-files.html
+[docs-release-url]: https://github.com/next-theme/hexo-theme-next/releases
 [docs-upgrade-url]: https://theme-next.js.org/docs/getting-started/upgrade.html
 
 [gitter-url]: https://gitter.im/hexo-next
