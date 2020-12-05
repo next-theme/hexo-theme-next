@@ -98,7 +98,7 @@ $ cd hexo-site
 $ npm install hexo-theme-next@latest
 ```
 
-Or update to latest master branch:
+Or update to the latest master branch:
 
 ```sh
 $ cd themes/next
