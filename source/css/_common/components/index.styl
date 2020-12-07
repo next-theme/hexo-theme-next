@@ -2,7 +2,7 @@ if (hexo-config('back2top.enable')) {
   .back-to-top {
     font-size: $b2t-font-size;
 
-    if (!hexo-config('back2top.scrollpercent')) {
+    if (not hexo-config('back2top.scrollpercent')) {
       span {
         display: none;
       }
@@ -14,7 +14,7 @@ if (hexo-config('back2top.enable')) {
 
 .noscript-warning {
   background-color: lighten($red, 20%);
-  color: #fff;
+  color: white;
   font-family: sans-serif;
   font-size: 1rem;
   font-weight: bold;

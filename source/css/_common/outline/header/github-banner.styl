@@ -29,12 +29,12 @@
   }
 
   +tablet-mobile() {
-    if (hexo-config('local_search.enable') || hexo-config('algolia_search.enable')) {
+    if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) {
       display: none;
     }
 
     svg {
-      if (($scheme == 'Pisces') || ($scheme == 'Gemini')) {
+      if (($scheme == 'Pisces') or ($scheme == 'Gemini')) {
         color: $bg-color;
         fill: white;
       }
