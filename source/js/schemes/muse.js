@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           // Trigger a DOM reflow
           element.classList.add(animateAction);
-        }, 0);
+        });
       });
     },
     hideSidebar: function() {

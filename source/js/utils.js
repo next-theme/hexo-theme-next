@@ -336,13 +336,9 @@ NexT.utils = {
     if (condition) {
       callback();
     } else {
-      let script = document.createElement('script');
-      script.onload = script.onreadystatechange = function(_, isAbort) {
-        if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
-          script.onload = script.onreadystatechange = null;
-          script = undefined;
-          if (!isAbort && callback) setTimeout(callback, 0);
-        }
+      const script = document.createElement('script');
+      script.onload = () => {
+        setTimeout(callback);
       };
       script.src = url;
       document.head.appendChild(script);
