@@ -739,9 +739,6 @@ local_search:
   # Preload the search data when the page loads.
   preload: false
 
-# Swiftype Search API Key
-swiftype_key:
-
 
 # ---------------------------------------------------------------
 # Chat Services
