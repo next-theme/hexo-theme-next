@@ -110,7 +110,7 @@ $ git pull
 ## 反馈
 
 * 浏览 [Awesome NexT][awesome-next-url] 列表，与其它用户分享插件和教程。
-* 加入我们的 [Gitter][gitter-url] 聊天。
+* 加入我们的 [GitHub discussions][discussions-url] / [Gitter][gitter-url] 聊天。
 * 请花几秒钟来[添加或修正翻译][i18n-url]。
 * 在 [GitHub Issues][issues-bug-url] 报告Bug。
 * 在 [GitHub][issues-feat-url] 请求新的功能。
@@ -152,10 +152,11 @@ $ git pull
 [docs-release-url]: https://github.com/next-theme/hexo-theme-next/releases
 [docs-upgrade-url]: https://theme-next.js.org/docs/getting-started/upgrade.html
 
+[awesome-next-url]: https://github.com/next-theme/awesome-next
+[discussions-url]: https://github.com/next-theme/hexo-theme-next/discussions
 [gitter-url]: https://gitter.im/hexo-next
 [i18n-url]: https://crowdin.com/project/hexo-theme-next
 
-[awesome-next-url]: https://github.com/next-theme/awesome-next
 [issues-bug-url]: https://github.com/next-theme/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/next-theme/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/next-theme/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22

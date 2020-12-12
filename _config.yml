@@ -767,11 +767,11 @@ tidio:
 # See: https://theme-next.js.org/docs/tag-plugins/
 # ---------------------------------------------------------------
 
-# Note tag (bs-callout)
+# Note tag (bootstrap callout)
 note:
   # Note tag style values:
-  #  - simple    bs-callout old alert style. Default.
-  #  - modern    bs-callout new (v2-v3) alert style.
+  #  - simple    bootstrap callout old alert style. Default.
+  #  - modern    bootstrap callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
   style: simple

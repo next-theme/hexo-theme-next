@@ -1,8 +1,8 @@
 ---
 name: Other
-about: Not a question, feature request or bug report
+about: Not a feature request or bug report
 title: ''
-labels: ''
+labels: Question
 assignees: ''
 
 ---
