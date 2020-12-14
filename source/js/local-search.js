@@ -222,26 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 
-  /**
-   * This function returns the parsed url parameters of the
-   * current request. Multiple values per key are supported,
-   * it will always return arrays of strings for the value parts.
-   */
-  const getQueryParameters = () => {
-    const s = location.search;
-    const parts = s.substr(s.indexOf('?') + 1).split('&');
-    const result = {};
-    for (const part of parts) {
-      const [key, value] = part.split('=', 2);
-      if (key in result) {
-        result[key].push(value);
-      } else {
-        result[key] = [value];
-      }
-    }
-    return result;
-  };
-
   // Highlight by wrapping node in mark elements with the given class name
   const highlightText = (node, slice, className) => {
     const val = node.nodeValue;
@@ -263,11 +243,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Highlight the search words provided in the url in the text
   const highlightSearchWords = () => {
-    const params = getQueryParameters();
-    const keywords = params.highlight ? params.highlight[0].split(/\+/).map(decodeURIComponent) : [];
+    const params = new URL(location.href).searchParams.get('highlight');
+    const keywords = params ? params.split(' ') : [];
     const body = document.querySelector('.post-body');
     if (!keywords.length || !body) return;
-    const walk = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null, false);
+    const walk = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null);
     const allNodes = [];
     while (walk.nextNode()) {
       if (!walk.currentNode.parentNode.matches('button, select, textarea')) allNodes.push(walk.currentNode);

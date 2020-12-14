@@ -6,7 +6,7 @@ HTMLElement.prototype.wrap = function(wrapper) {
   wrapper.appendChild(this);
 };
 
-// https://caniuse.com/#feat=mdn-api_element_classlist_replace
+// https://caniuse.com/mdn-api_element_classlist_replace
 if (typeof DOMTokenList.prototype.replace !== 'function') {
   DOMTokenList.prototype.replace = function(remove, add) {
     this.remove(remove);
