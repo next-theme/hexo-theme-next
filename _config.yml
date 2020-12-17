@@ -455,9 +455,6 @@ font:
 # See: https://theme-next.js.org/docs/theme-settings/seo
 # ---------------------------------------------------------------
 
-# Disable Baidu transformation on mobile devices.
-disable_baidu_transformation: false
-
 # If true, site-subtitle will be added to index page.
 # Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
 index_with_subtitle: false
@@ -480,9 +477,6 @@ yandex_site_verification:
 # Baidu Webmaster tools verification.
 # See: https://ziyuan.baidu.com/site
 baidu_site_verification:
-
-# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
 
 
 # ---------------------------------------------------------------
