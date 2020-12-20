@@ -33,8 +33,8 @@ post:
   copyright:
     author: 作者
     link: 文章連結
-    post_author: Written by
-    post_link: This article originally appeared on
+    post_author: 已寫入
+    post_link: 文章最初發表於
     license_title: 版權聲明
     license_content: "本網誌所有文章除特別聲明外，均採用 %s 許可協議。轉載請註明出處！"
 footer:
@@ -60,9 +60,9 @@ state:
   categories: 分類
 search:
   placeholder: 搜尋...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
+  empty: "我們無法找到任何有關 %s 的搜索結果"
+  hits_time: "%s 找到 %s 個結果"
+  hits: "找到 %s 個結果"
 cheers:
   um: 嗯..
   ok: 還行
