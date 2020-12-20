@@ -670,9 +670,6 @@ baidu_analytics: # <app_id>
 # Growingio Analytics
 growingio_analytics: # <project_id>
 
-# CNZZ count
-cnzz_siteid:
-
 # Show number of visitors of each article.
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
