@@ -1,5 +1,5 @@
 {% macro render(display_toc) %}
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -24,22 +24,22 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
+        <div class="post-toc-wrap sidebar-panel">
           {%- if display_toc %}
             <div class="post-toc animated">{{ toc }}</div>
           {%- endif %}
-        </section>
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           {{ partial('_partials/sidebar/site-overview.njk', {}, {cache: theme.cache.enable}) }}
 
           {{- next_inject('sidebar') }}
-        </section>
+        </div>
       </div>
 
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
-        <div class="back-to-top animated">
+        <div class="back-to-top animated" role="button">
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
         </div>
