@@ -658,6 +658,7 @@ add_this_id:
 # ---------------------------------------------------------------
 
 # Google Analytics
+# See: https://analytics.google.com
 google_analytics:
   tracking_id: # <app_id>
   # By default, NexT will load an external gtag.js script on your site.
@@ -665,12 +666,15 @@ google_analytics:
   only_pageview: false
 
 # Baidu Analytics
+# See: https://tongji.baidu.com
 baidu_analytics: # <app_id>
 
 # Growingio Analytics
+# See: https://www.growingio.com
 growingio_analytics: # <project_id>
 
 # Cloudflare Web Analytics
+# See: https://www.cloudflare.com/web-analytics/
 cloudflare_analytics:
 
 # Show number of visitors of each article.
@@ -696,7 +700,7 @@ firestore:
   projectId: # Required
 
 # Show Views / Visitors of the website / page with busuanzi.
-# Get more information on http://ibruce.info/2015/04/04/busuanzi/
+# For more information: http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   enable: false
   total_visitors: true
@@ -740,7 +744,7 @@ local_search:
 # ---------------------------------------------------------------
 
 # Chatra Support
-# See: https://chatra.com
+# For more information: https://chatra.com
 # Dashboard: https://app.chatra.io/settings/general
 chatra:
   enable: false
@@ -749,7 +753,7 @@ chatra:
   #embed: # Unfinished experimental feature for developers. See: https://chatra.com/help/api/#injectto
 
 # Tidio Support
-# See: https://www.tidio.com
+# For more information: https://www.tidio.com
 # Dashboard: https://www.tidio.com/panel/dashboard
 tidio:
   enable: false
