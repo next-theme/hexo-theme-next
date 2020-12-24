@@ -15,8 +15,4 @@ jobs:
           This issue has been automatically marked as stale because lack of
           recent activity. It will be closed if no further activity occurs. Thank you
           for your contributions. You can also use our [support channels](https://github.com/next-theme/hexo-theme-next#feedback) to get help with the project.
-        exempt-issue-labels:
-          - Bug
-          - Feature Request
-          - Discussion
-          - Help Wanted
+        exempt-issue-labels: Bug,Feature Request,Discussion,Help Wanted
