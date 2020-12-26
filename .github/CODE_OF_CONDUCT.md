@@ -86,8 +86,8 @@ Project maintainers who do not follow or enforce the Code of Conduct in good fai
 
 You may get in touch with the maintainer team through any of the following methods:
 
-* Through Email:
-    * [support@theme-next.org](mailto:support@theme-next.org)
+* Through Discussions:
+    * [GitHub Discussions](https://github.com/next-theme/hexo-theme-next/discussions)
 
 * Through Chat:
     * [Gitter](https://gitter.im/hexo-next)

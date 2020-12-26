@@ -82,10 +82,10 @@
 
 ## 联系项目维护者
 
-您可以通过以下任何方法与维护人员联系
+您可以通过以下方式与维护人员联系：
 
-* 电子邮件:
-    * [support@theme-next.org](mailto:support@theme-next.org)
+* 讨论:
+    * [GitHub Discussions](https://github.com/next-theme/hexo-theme-next/discussions)
 
 * 即时通信:
     * [Gitter](https://gitter.im/hexo-next)
