@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
           return result;
         },
         empty: data => {
-          return `<div id="algolia-hits-empty">
+          return `<div class="algolia-hits-empty">
               ${CONFIG.i18n.empty.replace(/\$\{query}/, data.query)}
             </div>`;
         }

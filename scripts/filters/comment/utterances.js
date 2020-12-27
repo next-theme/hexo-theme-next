@@ -14,11 +14,7 @@ hexo.extend.filter.register('theme_inject', injects => {
     return;
   }
 
-  injects.comment.raw('utterances', `
-  <div class="comments">
-    <div id="utterances-container"></div>
-  </div>
-  `, {}, { cache: true });
+  injects.comment.raw('utterances', '<div class="comments utterances-container"></div>', {}, { cache: true });
 
   injects.bodyEnd.file('utterances', path.join(hexo.theme_dir, 'layout/_third-party/comments/utterances.njk'));
 

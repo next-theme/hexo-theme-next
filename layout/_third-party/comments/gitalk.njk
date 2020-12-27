@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ theme.vendors.gitalk_css }}">
 
 <script>
-NexT.utils.loadComments('#gitalk-container', () => {
+NexT.utils.loadComments('.gitalk-container', () => {
   NexT.utils.getScript('{{ theme.vendors.gitalk_js }}', () => {
     var gitalk = new Gitalk({
       clientID    : '{{ theme.gitalk.client_id }}',
@@ -18,7 +18,7 @@ NexT.utils.loadComments('#gitalk-container', () => {
       {%- endif %}
       distractionFreeMode: {{ theme.gitalk.distraction_free_mode }}
     });
-    gitalk.render('gitalk-container');
+    gitalk.render(document.querySelector('.gitalk-container'));
   }, window.Gitalk);
 });
 </script>
