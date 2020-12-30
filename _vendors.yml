@@ -98,19 +98,19 @@ gitalk_css:
   file: dist/gitalk.css
 firebase_app:
   name: firebase
-  version: 8.1.1
+  version: 8.2.1
   file: firebase-app.js
 firebase_firestore:
   name: firebase
-  version: 8.1.1
+  version: 8.2.1
   file: firebase-firestore.js
 algolia_search:
   name: algoliasearch
-  version: 4.8.2
+  version: 4.8.3
   file: dist/algoliasearch-lite.umd.js
 instant_search:
   name: instantsearch.js
-  version: 4.8.7
+  version: 4.9.2
   file: dist/instantsearch.production.min.js
 pdfobject:
   name: pdfobject
@@ -118,7 +118,7 @@ pdfobject:
   file: pdfobject.min.js
 mermaid:
   name: mermaid
-  version: 8.8.3
+  version: 8.8.4
   file: dist/mermaid.min.js
 animate_css:
   name: animate.css
