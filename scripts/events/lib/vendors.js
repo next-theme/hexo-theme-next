@@ -10,7 +10,7 @@ try {
 } catch (error) {
 }
 const vendorsFile = fs.readFileSync(path.join(__dirname, '../../../_vendors.yml'));
-const dependencies = yaml.safeLoad(vendorsFile);
+const dependencies = yaml.load(vendorsFile);
 
 module.exports = hexo => {
   const { vendors } = hexo.theme.config;
