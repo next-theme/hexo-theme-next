@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="{{ theme.vendors.katex }}">
+<link rel="stylesheet" href="{{ theme.vendors.katex }}" media="print" onload='this.media="all"'>
 {%- if theme.math.katex.copy_tex %}
   <script src="{{ theme.vendors.copy_tex_js }}"></script>
-  <link rel="stylesheet" href="{{ theme.vendors.copy_tex_css }}">
+  <link rel="stylesheet" href="{{ theme.vendors.copy_tex_css }}" media="print" onload='this.media="all"'>
 {%- endif %}

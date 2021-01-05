@@ -1,5 +1,5 @@
 {%- if page.comments %}
-<link rel="stylesheet" href="{{ theme.vendors.gitalk_css }}">
+<link rel="stylesheet" href="{{ theme.vendors.gitalk_css }}" media="print" onload='this.media="all"'>
 
 <script>
 NexT.utils.loadComments('.gitalk-container', () => {
