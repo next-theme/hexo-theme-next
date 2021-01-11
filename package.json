@@ -3,6 +3,15 @@
   "version": "8.2.0",
   "description": "Elegant and powerful theme for Hexo.",
   "main": "package.json",
+  "files": [
+    "docs",
+    "languages",
+    "layout",
+    "scripts",
+    "source",
+    "_config.yml",
+    "_vendors.yml"
+  ],
   "scripts": {
     "eslint": "eslint scripts/ source/js test/",
     "stylint": "stylint source/css/",

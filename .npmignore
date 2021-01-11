@@ -1,8 +1,0 @@
-.github/
-test/
-.editorconfig
-.eslintrc.json
-.gitattributes
-.stylintrc
-crowdin.yml
-renovate.json
