@@ -5,7 +5,7 @@
   {# Gallery support #}
   {{ post_gallery(post.photos) }}
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ post.lang or config.language }}">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ post.lang }}">
     <link itemprop="mainEntityOfPage" href="{{ post.permalink }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">

@@ -9,14 +9,14 @@ describe('Validate', () => {
   it('config', () => {
     const themeConfig = fs.readFileSync(path.join(__dirname, '../../_config.yml'));
     should.not.throw(() => {
-      yaml.safeLoad(themeConfig);
+      yaml.load(themeConfig);
     });
   });
 
   it('vendors', () => {
     const vendorsFile = fs.readFileSync(path.join(__dirname, '../../_vendors.yml'));
     should.not.throw(() => {
-      yaml.safeLoad(vendorsFile);
+      yaml.load(vendorsFile);
     });
   });
 
@@ -26,7 +26,7 @@ describe('Validate', () => {
       fs.readdirSync(languagesPath).forEach(lang => {
         if (!lang.endsWith('.yml')) return;
         const languagePath = path.join(languagesPath, lang);
-        yaml.safeLoad(fs.readFileSync(languagePath), {
+        yaml.load(fs.readFileSync(languagePath), {
           filename: path.relative(__dirname, languagePath)
         });
       });
