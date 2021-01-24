@@ -5,7 +5,7 @@ const Hexo = require('hexo');
 const hexo = new Hexo();
 
 const fontStyles = ':300,300italic,400,400italic,700,700italic';
-const fontHost = '//fonts.googleapis.com';
+const fontHost = 'https://fonts.googleapis.com';
 
 describe('font', () => {
   const nextFont = require('../../scripts/helpers/font').bind(hexo);
