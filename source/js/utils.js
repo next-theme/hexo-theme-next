@@ -86,6 +86,7 @@ NexT.utils = {
         const lines = element.querySelector('.code') || element.querySelector('code');
         const code = lines.innerText;
         if (navigator.clipboard) {
+          // https://caniuse.com/mdn-api_clipboard_writetext
           navigator.clipboard.writeText(code).then(() => {
             button.querySelector('i').className = 'fa fa-check-circle fa-fw';
           }, () => {
