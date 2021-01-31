@@ -14,7 +14,7 @@ hexo.extend.filter.register('after_post_render', data => {
   if (theme.exturl) {
     const siteHost = parse(config.url).hostname || config.url;
     // External URL icon
-    const exturlIcon = theme.exturlIcon ? '<i class="fa fa-external-link-alt"></i>' : '';
+    const exturlIcon = theme.exturl_icon ? '<i class="fa fa-external-link-alt"></i>' : '';
     data.content = data.content.replace(/<a[^>]* href="([^"]+)"[^>]*>([^<]+)<\/a>/img, (match, href, html) => {
       // Exit if the href attribute doesn't exists.
       if (!href) return match;
