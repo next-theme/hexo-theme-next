@@ -23,6 +23,10 @@ hexo.extend.filter.register('after_post_render', data => {
       const link = parse(href);
       if (!link.protocol || link.hostname === siteHost) return match;
 
+      // Return encrypted URL with title.
+      const title = match.match(/title="([^"]+)"/);
+      if (title) return `<span class="exturl" data-url="${Buffer.from(href).toString('base64')}" title="${title[1]}">${html}${exturlIcon}</span>`;
+
       return `<span class="exturl" data-url="${Buffer.from(href).toString('base64')}">${html}${exturlIcon}</span>`;
     });
   }
