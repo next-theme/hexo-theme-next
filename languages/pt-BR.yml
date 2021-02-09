@@ -4,7 +4,7 @@ title:
   archive: Arquivo
   category: Categoria
   tag: Etiqueta
-  schedule: Schedule
+  schedule: Programação
 menu:
   home: Home
   archives: Arquivos
@@ -12,17 +12,17 @@ menu:
   tags: Etiquetas
   about: Sobre
   search: Pesquisar
-  schedule: Schedule
-  sitemap: Sitemap
+  schedule: Programação
+  sitemap: Mapa do site
   commonweal: Commonweal 404
 sidebar:
   overview: Visão geral
-  toc: Tabela de conteúdo
+  toc: Índice
 post:
   posted: Postado em
   edited: Editado em
-  created: Post created
-  modified: Updated at
+  created: Criado em
+  modified: Modificado em
   edit: Editar publicação
   in: Em
   read_more: Leia mais
@@ -32,32 +32,32 @@ post:
   related_posts: Publicações Relacionadas
   copyright:
     author: Autor da publicação
-    link: Post link
+    link: Link da publicação
     post_author: Escrito por
-    post_link: This article originally appeared on
+    post_link: Este artigo foi originalmente publicado em
     license_title: Nota de Direitos Autorais
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    license_content: "Todos os artigos deste blog são licenciados sob %s, a menos que seja indicado o contrário."
 footer:
   powered: "Feito com %s"
   total_views: Visualizações Totais
   total_visitors: Total de visitantes
 counter:
   tag_cloud:
-    zero: Sem tags
-    one: 1 tag no total de
-    other: "%d tags no total de"
+    zero: Sem etiquetas
+    one: 1 etiqueta no total de
+    other: "%d etiquetas no total de"
   categories:
     zero: Sem categoria
     one: 1 categoria no total de
     other: "%d categoria no total de"
   archive_posts:
-    zero: Sem posts.
+    zero: Sem publicações.
     one: 1 publicação.
-    other: "%d posts no total."
+    other: "%d publicações no total."
 state:
-  posts: Posts
-  tags: Tags
-  categories: Categorias
+  posts: publicações
+  tags: etiquetas
+  categories: categorias
 search:
   placeholder: Pesquisando...
   empty: "Não encontramos nenhum resultado para a pesquisa: %s"
@@ -82,9 +82,9 @@ reward:
   paypal: PayPal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: Bem-vindo aos meus outros canais de publicação
 accessibility:
-  nav_toggle: Toggle navigation bar
+  nav_toggle: Alternar barra de navegação
   prev_page: Página anterior
   next_page: Próxima página
 symbols_count_time:
