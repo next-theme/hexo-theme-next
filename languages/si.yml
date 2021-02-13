@@ -1,9 +1,9 @@
 ---
 name: ඉංග්‍රීසි
 title:
-  archive: Archive
+  archive: ලේඛන ගබඩාව
   category: ප්‍රවර්ගය
-  tag: Tag
+  tag: ටැගය
   schedule: කාලසටහන
 menu:
   home: නිවස
@@ -14,7 +14,7 @@ menu:
   search: සෙවීම
   schedule: කාලසටහන
   sitemap: අඩවි සිතියම
-  commonweal: Commonweal 404
+  commonweal: සමස්ත ප්‍රජාව 404
 sidebar:
   overview: සමස්ත දැක්ම
   toc: පටුන
@@ -24,7 +24,7 @@ post:
   created: හැදුවා
   modified: සංස්කරණය කළා
   edit: ලිපිය සංස්කරණය
-  in: In
+  in: තුළ
   read_more: තව කියවන්න
   untitled: නිර්නාමික
   sticky: ඇලෙන
