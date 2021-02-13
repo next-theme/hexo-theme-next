@@ -2,39 +2,39 @@
 name: ඉංග්‍රීසි
 title:
   archive: Archive
-  category: Category
+  category: ප්‍රවර්ගය
   tag: Tag
-  schedule: Schedule
+  schedule: කාලසටහන
 menu:
-  home: Home
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  search: Search
-  schedule: Schedule
-  sitemap: Sitemap
+  home: නිවස
+  archives: ලේඛන ගබඩාව
+  categories: ප්‍රවර්ග
+  tags: ටැග
+  about: පිළිබඳ
+  search: සෙවීම
+  schedule: කාලසටහන
+  sitemap: අඩවි සිතියම
   commonweal: Commonweal 404
 sidebar:
-  overview: Overview
-  toc: Table of Contents
+  overview: සමස්ත දැක්ම
+  toc: පටුන
 post:
-  posted: Posted on
-  edited: Edited on
-  created: Created
-  modified: Modified
-  edit: Edit this post
+  posted: පළ කළේ
+  edited: සංස්කරණය කළේ
+  created: හැදුවා
+  modified: සංස්කරණය කළා
+  edit: ලිපිය සංස්කරණය
   in: In
-  read_more: Read more
-  untitled: Untitled
-  sticky: Sticky
-  views: Views
-  related_posts: Related Posts
+  read_more: තව කියවන්න
+  untitled: නිර්නාමික
+  sticky: ඇලෙන
+  views: දර්ශන වාර
+  related_posts: ආශ්‍රිත ලිපි
   copyright:
-    author: Post author
-    link: Post link
-    post_author: Written by
-    post_link: This article originally appeared on
+    author: කර්තෘ
+    link: සබැඳිය
+    post_author: ලියන ලද්දේ
+    post_link: මේ ලිපිය මුළින්ම පළ වූයේ
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
 footer:
