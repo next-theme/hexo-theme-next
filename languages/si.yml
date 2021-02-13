@@ -82,14 +82,14 @@ reward:
   paypal: PayPal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: මගේ වෙනත් පළකිරීම් මාධ්‍ය වෙත සාදරයෙන් පිළිගනිමි
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: යාත්‍රණය මාරු කිරීම
+  prev_page: පෙර පිටුව
+  next_page: පසු පිටුව
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: ලිපියේ සංකේත ගණන
+  count_total: මුළු සංකේත ගණන
+  time: කියවුම් කාලය
+  time_total: මුළු කියවුම් කාලය
+  time_minutes: විනාඩි.
