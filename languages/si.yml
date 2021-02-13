@@ -35,32 +35,32 @@ post:
     link: සබැඳිය
     post_author: ලියන ලද්දේ
     post_link: මේ ලිපිය මුළින්ම පළ වූයේ
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    license_title: හිමිකම් ප්‍රකාශය
+    license_content: "මෙහි සියලු ලිපි, අමතර සඳහනක් නොමැති තැන් වලදී, %s බලපත්‍රය යටතේ පවතී."
 footer:
-  powered: "Powered by %s"
-  total_views: Total Views
-  total_visitors: Total Visitors
+  powered: "%s විසින් බල ගැන්වේ"
+  total_views: සියලු දර්ශන වාර
+  total_visitors: සියලු අමුත්තන්
 counter:
   tag_cloud:
-    zero: No tags
-    one: 1 tag in total
-    other: "%d tags in total"
+    zero: ටැග නැත
+    one: 1 ටැගයක් ඇත
+    other: "ටැග %dක් ඇත"
   categories:
-    zero: No categories
-    one: 1 category in total
-    other: "%d categories in total"
+    zero: ප්‍රවර්ග නැත
+    one: 1 ප්‍රවර්ගයක් ඇත
+    other: "ප්‍රවර්ග %dක් ඇත"
   archive_posts:
-    zero: No posts.
-    one: 1 post.
-    other: "%d posts in total."
+    zero: ලිපි නැත.
+    one: 1 ලිපියක්.
+    other: "ලිපි %dක් ඇත."
 state:
-  posts: posts
-  tags: tags
-  categories: categories
+  posts: ලිපි
+  tags: ටැග
+  categories: ප්‍රවර්ග
 search:
-  placeholder: Searching...
-  empty: "We didn't find any results for the search: %s"
+  placeholder: සොයමින්...
+  empty: "%s ගැන සෙවීමෙන් ප්‍රතිඵල හමු නොවුණි"
   hits_time: "%s results found in %s ms"
   hits: "%s results found"
 cheers:
