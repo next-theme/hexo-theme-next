@@ -61,23 +61,23 @@ state:
 search:
   placeholder: සොයමින්...
   empty: "%s ගැන සෙවීමෙන් ප්‍රතිඵල හමු නොවුණි"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
+  hits_time: "ප්‍රතිඵල %s සඳහා %s ms ගතවිය"
+  hits: "ප්‍රතිඵල %s හමු විය"
 cheers:
-  um: Um..
-  ok: OK
-  nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
-keep_on: Keep on posting.
+  um: ඇත්ත වශයෙන්ම..
+  ok: හරි
+  nice: කදිමයි
+  good: හොඳයි
+  great: නියමයි
+  excellent: විශිෂ්ටයි
+keep_on: දිගටම පළ කරන්න.
 symbol:
   comma: ", "
   period: ". "
   colon: ": "
 reward:
-  donate: Donate
-  wechatpay: WeChat Pay
+  donate: පරිත්‍යාග කරන්න
+  wechatpay: WeChat ගෙවීම
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
