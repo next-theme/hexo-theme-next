@@ -18,7 +18,7 @@ hexo.extend.helper.register('next_inject', function(point) {
 hexo.extend.helper.register('next_js', function(file, pjax = false) {
   const { next_version } = this;
   const { internal } = this.theme.vendors;
-  const minified_file = (file.endsWith('.js') && ! file.endsWith(".min.js")) ? file.slice(0,-3) + ".min.js" : file;
+  const minified_file = file.endsWith('.js') && !file.endsWith('.min.js') ? file.slice(0, -3) + '.min.js' : file;
   const links = {
     local   : this.url_for(`${this.theme.js}/${file}`),
     jsdelivr: `https://cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${minified_file}`,
