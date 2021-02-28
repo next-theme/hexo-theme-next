@@ -78,7 +78,7 @@ pangu:
   file: dist/browser/pangu.min.js
 quicklink:
   name: quicklink
-  version: 2.0.0
+  version: 2.1.0
   file: dist/quicklink.umd.js
 disqusjs_js:
   name: disqusjs
@@ -98,19 +98,19 @@ gitalk_css:
   file: dist/gitalk.css
 firebase_app:
   name: firebase
-  version: 8.2.5
+  version: 8.2.9
   file: firebase-app.js
 firebase_firestore:
   name: firebase
-  version: 8.2.5
+  version: 8.2.9
   file: firebase-firestore.js
 algolia_search:
   name: algoliasearch
-  version: 4.8.4
+  version: 4.8.5
   file: dist/algoliasearch-lite.umd.js
 instant_search:
   name: instantsearch.js
-  version: 4.13.1
+  version: 4.15.0
   file: dist/instantsearch.production.min.js
 pdfobject:
   name: pdfobject
@@ -118,7 +118,7 @@ pdfobject:
   file: pdfobject.min.js
 mermaid:
   name: mermaid
-  version: 8.9.0
+  version: 8.9.1
   file: dist/mermaid.min.js
 animate_css:
   name: animate.css
