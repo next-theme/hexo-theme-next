@@ -13,4 +13,4 @@ jobs:
         with:
           ref: master
       - name: Label Commenter
-        uses: peaceiris/actions-label-commenter@v1.9.0
+        uses: peaceiris/actions-label-commenter@v1
