@@ -1,95 +1,95 @@
 ---
-name: English
+name: සිංහල
 title:
-  archive: Archive
-  category: Category
-  tag: Tag
-  schedule: Schedule
+  archive: ලේඛන ගබඩාව
+  category: ප්‍රවර්ගය
+  tag: ටැගය
+  schedule: කාලසටහන
 menu:
-  home: Home
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  search: Search
-  schedule: Schedule
-  sitemap: Sitemap
-  commonweal: Commonweal 404
+  home: නිවස
+  archives: ලේඛන ගබඩාව
+  categories: ප්‍රවර්ග
+  tags: ටැග
+  about: පිළිබඳ
+  search: සෙවීම
+  schedule: කාලසටහන
+  sitemap: අඩවි සිතියම
+  commonweal: සමස්ත ප්‍රජාව 404
 sidebar:
-  overview: Overview
-  toc: Table of Contents
+  overview: සමස්ත දැක්ම
+  toc: පටුන
 post:
-  posted: Posted on
-  edited: Edited on
-  created: Created
-  modified: Modified
-  edit: Edit this post
-  in: In
-  read_more: Read more
-  untitled: Untitled
-  sticky: Sticky
-  views: Views
-  related_posts: Related Posts
+  posted: පළ කළේ
+  edited: සංස්කරණය කළේ
+  created: හැදුවා
+  modified: සංස්කරණය කළා
+  edit: ලිපිය සංස්කරණය
+  in: තුළ
+  read_more: තව කියවන්න
+  untitled: නිර්නාමික
+  sticky: ඇලෙන
+  views: දර්ශන වාර
+  related_posts: ආශ්‍රිත ලිපි
   copyright:
-    author: Post author
-    link: Post link
-    post_author: Written by
-    post_link: This article originally appeared on
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    author: කර්තෘ
+    link: සබැඳිය
+    post_author: ලියන ලද්දේ
+    post_link: මේ ලිපිය මුළින්ම පළ වූයේ
+    license_title: හිමිකම් ප්‍රකාශය
+    license_content: "මෙහි සියලු ලිපි, අමතර සඳහනක් නොමැති තැන් වලදී, %s බලපත්‍රය යටතේ පවතී."
 footer:
-  powered: "Powered by %s"
-  total_views: Total Views
-  total_visitors: Total Visitors
+  powered: "%s විසින් බල ගැන්වේ"
+  total_views: සියලු දර්ශන වාර
+  total_visitors: සියලු අමුත්තන්
 counter:
   tag_cloud:
-    zero: No tags
-    one: 1 tag in total
-    other: "%d tags in total"
+    zero: ටැග නැත
+    one: 1 ටැගයක් ඇත
+    other: "ටැග %dක් ඇත"
   categories:
-    zero: No categories
-    one: 1 category in total
-    other: "%d categories in total"
+    zero: ප්‍රවර්ග නැත
+    one: 1 ප්‍රවර්ගයක් ඇත
+    other: "ප්‍රවර්ග %dක් ඇත"
   archive_posts:
-    zero: No posts.
-    one: 1 post.
-    other: "%d posts in total."
+    zero: ලිපි නැත.
+    one: 1 ලිපියක්.
+    other: "ලිපි %dක් ඇත."
 state:
-  posts: posts
-  tags: tags
-  categories: categories
+  posts: ලිපි
+  tags: ටැග
+  categories: ප්‍රවර්ග
 search:
-  placeholder: Searching...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
+  placeholder: සොයමින්...
+  empty: "%s ගැන සෙවීමෙන් ප්‍රතිඵල හමු නොවුණි"
+  hits_time: "ප්‍රතිඵල %s සඳහා %s ms ගතවිය"
+  hits: "ප්‍රතිඵල %s හමු විය"
 cheers:
-  um: Um..
-  ok: OK
-  nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
-keep_on: Keep on posting.
+  um: ඇත්ත වශයෙන්ම..
+  ok: හරි
+  nice: කදිමයි
+  good: හොඳයි
+  great: නියමයි
+  excellent: විශිෂ්ටයි
+keep_on: දිගටම පළ කරන්න.
 symbol:
   comma: ", "
   period: ". "
   colon: ": "
 reward:
-  donate: Donate
-  wechatpay: WeChat Pay
+  donate: පරිත්‍යාග කරන්න
+  wechatpay: WeChat ගෙවීම
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: මගේ වෙනත් පළකිරීම් මාධ්‍ය වෙත සාදරයෙන් පිළිගනිමි
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: යාත්‍රණය මාරු කිරීම
+  prev_page: පෙර පිටුව
+  next_page: පසු පිටුව
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: ලිපියේ සංකේත ගණන
+  count_total: මුළු සංකේත ගණන
+  time: කියවුම් කාලය
+  time_total: මුළු කියවුම් කාලය
+  time_minutes: විනාඩි.
