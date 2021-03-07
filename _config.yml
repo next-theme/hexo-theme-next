@@ -379,6 +379,7 @@ reading_progress:
   enable: false
   # Available values: top | bottom
   position: top
+  reversed: false
   color: "#37c6c0"
   height: 3px
 
