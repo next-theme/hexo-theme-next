@@ -17,12 +17,19 @@
   }
 }
 
-.site-nav {
-  +mobile() {
-    display: none;
-  }
+site-nav-hide-by-default() {
+  --scroll-height: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height $transition-ease;
 
   .site-nav-on & {
-    display: block;
+    height: var(--scroll-height);
+  }
+}
+
+.site-nav {
+  +mobile() {
+    site-nav-hide-by-default();
   }
 }
