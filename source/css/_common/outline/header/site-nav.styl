@@ -23,7 +23,12 @@ site-nav-hide-by-default() {
   overflow: hidden;
   transition: height $transition-ease;
 
-  .site-nav-on & {
+  body:not(.site-nav-on) & .animated {
+    -webkit-animation: none;
+    animation: none;
+  }
+
+  body.site-nav-on & {
     height: var(--scroll-height);
   }
 }
