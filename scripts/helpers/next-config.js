@@ -46,7 +46,7 @@ hexo.extend.helper.register('next_config', function() {
     exportConfig.path = url_for(config.search.path);
     exportConfig.localsearch = theme.local_search;
   }
-  return `<script class="hexo-configurations" data-config="${
+  return `<meta name="hexo-config" content="${
     escapeHTML(JSON.stringify(exportConfig))
-  }" src="${url_for(theme.js)}/config-hexo.js"></script>`;
+  }">`;
 });

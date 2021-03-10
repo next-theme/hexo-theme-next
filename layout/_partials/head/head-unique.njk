@@ -9,13 +9,13 @@
 
 {# Exports some front-matter variables to Front-End #}
 {# https://hexo.io/docs/variables.html #}
-<script{{ pjax }} class="page-configurations" data-config="{{
+<meta name="hexo-config-page" content="{{
   {
     sidebar: page.sidebar or '',
     isHome : is_home(),
     isPost : is_post(),
     lang   : page.lang
   } | safedump | escape
-}}" src="js/config-page.js"></script>
+}}">
 
 {{- next_inject('head') }}

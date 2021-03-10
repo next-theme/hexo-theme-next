@@ -3,7 +3,7 @@
 const pjax = new Pjax({
   selectors: [
     'head title',
-    '.page-configurations',
+    'head meta[name="hexo-config-page"]',
     '.main-inner',
     '.post-toc-wrap',
     '.languages',
