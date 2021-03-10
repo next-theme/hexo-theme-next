@@ -26,6 +26,10 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/local-search.js');
   }
 
+  if (!theme.pjax) {
+    hexo.route.remove('js/pjax.js');
+  }
+
   if (theme.scheme === 'Pisces' || theme.scheme === 'Gemini') {
     hexo.route.remove('js/schemes/muse.js');
   }

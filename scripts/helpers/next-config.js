@@ -3,6 +3,7 @@
 'use strict';
 
 const { parse } = require('url');
+const { escapeHTML } = require('hexo-util');
 
 /**
  * Export theme config to js
@@ -45,8 +46,7 @@ hexo.extend.helper.register('next_config', function() {
     exportConfig.path = url_for(config.search.path);
     exportConfig.localsearch = theme.local_search;
   }
-  return `<script class="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = ${JSON.stringify(exportConfig)};
-  </script>`;
+  return `<script class="hexo-configurations" data-config="${
+    escapeHTML(JSON.stringify(exportConfig))
+  }" src="${url_for(theme.js)}/config-hexo.js"></script>`;
 });
