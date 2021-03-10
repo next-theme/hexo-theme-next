@@ -2,7 +2,7 @@
   <div class="beian">
     {{- next_url('https://beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
     {%- if theme.footer.beian.gongan_icon_url %}
-      <img src="{{ url_for(theme.footer.beian.gongan_icon_url) }}" style="display: inline-block;">
+      <img src="{{ url_for(theme.footer.beian.gongan_icon_url) }}">
     {%- endif %}
     {%- if theme.footer.beian.gongan_id and theme.footer.beian.gongan_num %}
       {{- next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' + theme.footer.beian.gongan_id, theme.footer.beian.gongan_num + ' ') }}
@@ -51,7 +51,7 @@
 {%- if theme.busuanzi_count.enable %}
 <div class="busuanzi-count">
   {%- if theme.busuanzi_count.total_visitors %}
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
       <span class="post-meta-item-icon">
         <i class="{{ theme.busuanzi_count.total_visitors_icon }}"></i>
       </span>
@@ -62,7 +62,7 @@
   {%- endif %}
 
   {%- if theme.busuanzi_count.total_views %}
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
       <span class="post-meta-item-icon">
         <i class="{{ theme.busuanzi_count.total_views_icon }}"></i>
       </span>
