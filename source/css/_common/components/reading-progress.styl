@@ -2,7 +2,6 @@
   --progress: 0;
   background: unquote(hexo-config('reading_progress.color'));
   height: unquote(hexo-config('reading_progress.height'));
-  left: 0;
   position: fixed;
   z-index: $zindex-5;
 
@@ -10,6 +9,12 @@
     width: calc(100% - var(--progress));
   } else {
     width: var(--progress);
+  }
+
+  if (hexo-config('reading_progress.startAt') == 'right') {
+    right: 0;
+  } else {
+    left: 0;
   }
 
   if (hexo-config('reading_progress.position') == 'bottom') {
