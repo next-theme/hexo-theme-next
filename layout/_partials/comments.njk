@@ -14,7 +14,7 @@
           {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
         </div>
       {%- endfor %}
-      <script{{ pjax }} src="{{ url_for(theme.js) }}/comments-buttons.js"></script>
+      {{- next_js('comments-buttons.js', true) }}
     {%- elif theme.comments.style == 'tabs' %}
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
@@ -34,4 +34,4 @@
   {%- endif %}
 {%- endif %}
 
-<script src="{{ url_for(theme.js) }}/comments.js"></script>
+{{- next_js('comments.js') }}
