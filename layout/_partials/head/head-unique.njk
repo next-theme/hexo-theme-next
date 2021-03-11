@@ -17,5 +17,10 @@
     lang   : page.lang
   } | safedump | escape
 }}">
+{%- if page.type === 'schedule' and not page.title %}
+  <meta name="hexo-config-calendar" content="{{
+    theme.calendar | safedump | escape
+  }}">
+{%- endif %}
 
 {{- next_inject('head') }}
