@@ -37,7 +37,7 @@
     "hexo": "5.4.0",
     "hexo-renderer-marked": "4.0.0",
     "js-yaml": "4.0.0",
-    "mocha": "8.3.0",
+    "mocha": "8.3.2",
     "stylint": "2.0.0"
   }
 }
