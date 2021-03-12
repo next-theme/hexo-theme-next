@@ -937,3 +937,7 @@ vendors:
 css: css
 js: js
 images: images
+
+# Issues API
+# For more information: https://github.com/xaoxuu/issues-api/
+issues_api: https://issues-api.vercel.app/v1/

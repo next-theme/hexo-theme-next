@@ -1,0 +1,89 @@
+.users-wrap
+  overflow: hidden
+  svg.loading
+    display: block
+    position: absolute
+    color: var(--text-p3)
+    z-index: -1
+    width: 100%
+    height: 2rem
+    margin: auto
+    animation: spin infinite 2s
+    animation-timing-function: linear
+    @keyframes spin
+      from
+        transform:rotate(0deg)
+      to
+        transform:rotate(360deg)
+
+  .group-header
+    margin: 0 0 1rem
+    p
+      margin: 0
+      font-size: $fs-14
+      &:first-child
+        font-size: 1.25rem
+        font-weight: 500
+  .group-body
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    align-items: stretch
+    margin-bottom: 2rem
+    justify-content: flex-start
+  .friendsjs-wrap
+    display: block
+    .loading-wrap
+      min-height: 50px
+      margin: 2rem 0
+      text-align: center
+
+.users-wrap .user-card
+  flex-shrink: 1
+  display: flex
+  align-items: stretch
+  width: 12.5%
+  @media screen and (max-width: 980px)
+    width: 14.28%
+  @media screen and (max-width: 900px)
+    width: 16.66%
+  @media screen and (max-width: 820px)
+    width: 20%
+  @media screen and (max-width: 500px)
+    width: 25%
+  .card-link
+    margin: 0
+    width: 100%
+    font-size: 10px
+    font-weight: 500
+    display: flex
+    justify-content: flex-start
+    flex-direction: column
+    align-items: center
+    text-align: center
+    line-height: 1.2
+    border-radius: 4px
+    overflow: hidden
+    position: relative
+    padding: 1rem 0.5rem
+    border: none
+    color: $link-color
+    img
+      object-fit: cover
+      display: block
+      width: 48px
+      height: 48px
+      background: $card-bg-color
+      border-radius: 64px
+      margin: 0 0 0.5rem
+
+// transform
+.users-wrap .user-card .card-link
+  >img
+    transition: transform .3s
+  &:hover
+    background: $selection-bg
+    color: $selection-color
+    img
+      transform: scale(1.2) rotate(8deg)
+      box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.1), 0 4px 8px 0px rgba(0, 0, 0, 0.1), 0 8px 16px 0px rgba(0, 0, 0, 0.1)

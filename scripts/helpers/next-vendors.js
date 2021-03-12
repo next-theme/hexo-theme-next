@@ -26,5 +26,8 @@ hexo.extend.helper.register('js_vendors', function() {
   if (theme.pangu) {
     vendors.push('pangu');
   }
+  if (theme.issues_api) {
+    vendors.push('jquery');
+  }
   return vendors;
 });

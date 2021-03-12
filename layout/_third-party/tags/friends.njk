@@ -1,0 +1,8 @@
+{%- if theme.issues_api %}
+{%- set pdfobject_uri = theme.vendors.pdfobject %}
+<script{{ pjax }}>
+if (document.querySelectorAll('.friendsjs-wrap').length) {
+  NexT.utils.getScript('/js/friends.js');
+}
+</script>
+{%- endif %}
