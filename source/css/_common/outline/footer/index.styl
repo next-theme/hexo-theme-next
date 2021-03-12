@@ -75,13 +75,9 @@
   }
 }
 
-if (hexo-config('footer.beian.enable')) {
-  .beian {
-    if (hexo-config('footer.beian.gongan_icon_url')) {
-      img {
-        display: inline-block;
-      }
-    }
+if (hexo-config('footer.beian.enable') && hexo-config('footer.beian.gongan_icon_url')) {
+  .beian img {
+    display: inline-block;
   }
 }
 
