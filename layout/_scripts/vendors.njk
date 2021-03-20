@@ -5,3 +5,24 @@
 {%- for name in js_vendors() %}
   <script src="{{ url_for(theme.vendors[name]) }}"></script>
 {%- endfor %}
+
+{# Customize darkmode.js - Invokation #}
+{%- if theme.darkmode.enable %}
+<script>
+var options = {
+  bottom: '{{ theme.darkmode.bottom }}',
+  right: '{{ theme.darkmode.right }}',
+  left: '{{ theme.darkmode.left }}',
+  time: '{{ theme.darkmode.time }}',
+  mixColor: '{{ theme.darkmode.mixColor }}',
+  backgroundColor: '{{ theme.darkmode.backgroundColor }}', 
+  buttonColorDark: '{{ theme.darkmode.buttonColorDark }}', 
+  buttonColorLight: '{{ theme.darkmode.buttonColorLight }}',
+  saveInCookies: {{ theme.darkmode.saveInCookies }},
+  label: '{{ theme.darkmode.label }}',
+  autoMatchOsTheme: {{ theme.darkmode.autoMatchOsTheme }},
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+</script>
+{%- endif %}

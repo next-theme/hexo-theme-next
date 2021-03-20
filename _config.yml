@@ -37,12 +37,24 @@ custom_file_path:
 
 # Schemes
 scheme: Muse
-#scheme: Mist
+# scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
 
 # Dark Mode
-darkmode: false
+darkmode: 
+  enable: false
+  bottom: '32px'
+  right: '32px' 
+  left: 'unset' 
+  time: '0.5s' 
+  mixColor: '#fff'
+  backgroundColor: '#fff'
+  buttonColorDark: '#100f2c'
+  buttonColorLight: '#fff'
+  saveInCookies: true
+  label: '🌓'
+  autoMatchOsTheme: true
 
 
 # ---------------------------------------------------------------

@@ -26,5 +26,8 @@ hexo.extend.helper.register('js_vendors', function() {
   if (theme.pangu) {
     vendors.push('pangu');
   }
+  if (theme.darkmode) {
+    vendors.push('darkmode_js');
+  }
   return vendors;
 });

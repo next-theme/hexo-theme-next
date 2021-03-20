@@ -137,3 +137,7 @@ canvas_ribbon:
   version: 1.0.2
   file: dist/ribbon.min.js
   unavailable: [cdnjs]
+darkmode_js:
+  name: darkmode-js
+  version: 1.5.7
+  file: lib/darkmode-js.min.js
