@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "eslint": "eslint scripts/ source/js test/",
-    "prepare": "git config --local core.hooksPath .githooks/",
+    "prepare": "node .githooks/install.js",
     "stylint": "stylint source/css/",
     "test": "mocha test/index.js"
   },
