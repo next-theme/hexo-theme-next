@@ -290,17 +290,6 @@ NexT.utils = {
     });
   },
 
-  getComputedStyle: function(element) {
-    const clone = element.cloneNode(true);
-    clone.style.position = 'absolute';
-    clone.style.visibility = 'hidden';
-    clone.style.display = 'block';
-    element.parentNode.appendChild(clone);
-    const height = clone.clientHeight;
-    element.parentNode.removeChild(clone);
-    return height;
-  },
-
   /**
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
