@@ -7,8 +7,8 @@
 const { escapeHTML } = require('hexo-util');
 
 module.exports = function(args, content) {
-  return `<div class="mermaid">
+  return `<pre class="mermaid">
 ${args.join(' ')}
 ${escapeHTML(content)}
-</div>`;
+</pre>`;
 };

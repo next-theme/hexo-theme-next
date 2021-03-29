@@ -13,9 +13,9 @@ describe('mermaid', () => {
   const mermaid = require('../../scripts/tags/mermaid');
 
   it('default', () => {
-    mermaid(['graph', 'TD'], result).should.eql(`<div class="mermaid">
+    mermaid(['graph', 'TD'], result).should.eql(`<pre class="mermaid">
 graph TD
 ${escapeHTML(result)}
-</div>`);
+</pre>`);
   });
 });

@@ -1,7 +1,15 @@
 {%- if theme.mermaid.enable %}
 <script{{ pjax }}>
-if (document.querySelectorAll('.mermaid').length) {
+var mermaidElements = document.querySelectorAll('.mermaid');
+if (mermaidElements.length) {
   NexT.utils.getScript('{{ theme.vendors.mermaid }}', () => {
+    mermaidElements.forEach(element => {
+      const newElement = document.createElement('div');
+      newElement.innerHTML = element.innerHTML;
+      newElement.className = element.className;
+      element.parentNode.replaceChild(newElement, element);
+    });
+
     mermaid.init({
       theme    : '{{ theme.mermaid.theme }}',
       logLevel : 3,
