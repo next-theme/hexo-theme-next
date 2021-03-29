@@ -14,8 +14,13 @@ body {
   font-size: $font-size-base;
   line-height: $line-height-base;
   min-height: 100%;
+  overflow-x: hidden;
+  @supports (overflow-x: clip) {
+    overflow-x: clip;
+  }
   position: relative;
   transition: padding $transition-ease;
+  width: 100vw;
 }
 
 h1, h2, h3, h4, h5, h6 {
