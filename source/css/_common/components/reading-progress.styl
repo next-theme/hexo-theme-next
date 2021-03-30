@@ -1,10 +1,21 @@
 .reading-progress-bar {
+  --progress: 0;
   background: unquote(hexo-config('reading_progress.color'));
   height: unquote(hexo-config('reading_progress.height'));
-  left: 0;
   position: fixed;
-  width: 0;
   z-index: $zindex-5;
+
+  if (hexo-config('reading_progress.reversed')) {
+    width: calc(100% - var(--progress));
+  } else {
+    width: var(--progress);
+  }
+
+  if (hexo-config('reading_progress.startAt') == 'right') {
+    right: 0;
+  } else {
+    left: 0;
+  }
 
   if (hexo-config('reading_progress.position') == 'bottom') {
     bottom: 0;
