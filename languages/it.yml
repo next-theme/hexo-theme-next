@@ -87,6 +87,8 @@ accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Pagina precedente
   next_page: Pagina successiva
+  back_to_top: Back to top
+  select_lang: Select language
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total

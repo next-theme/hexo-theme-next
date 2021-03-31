@@ -87,6 +87,8 @@ accessibility:
   nav_toggle: ナビゲーションバーの切り替え
   prev_page: 前のページ
   next_page: 次のページ
+  back_to_top: Back to top
+  select_lang: Select language
 symbols_count_time:
   count: 単語数
   count_total: 単語の総数

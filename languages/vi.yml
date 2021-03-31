@@ -87,6 +87,8 @@ accessibility:
   nav_toggle: Thanh điều hướng chuyển đổi
   prev_page: Trang trước
   next_page: Trang sau
+  back_to_top: Back to top
+  select_lang: Select language
 symbols_count_time:
   count: Số biểu tượng trong bài viết
   count_total: Tổng số biểu tượng

@@ -87,6 +87,8 @@ accessibility:
   nav_toggle: Navigationsleiste an/ausschalten
   prev_page: Vorherige Seite
   next_page: Nächste Seite
+  back_to_top: Back to top
+  select_lang: Select language
 symbols_count_time:
   count: Symbole im Artikel gezählt
   count_total: Insgesamt gezählte Symbole

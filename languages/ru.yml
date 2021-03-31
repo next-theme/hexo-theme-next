@@ -87,6 +87,8 @@ accessibility:
   nav_toggle: Показать/скрыть меню
   prev_page: Предыдущая страница
   next_page: Следующая страница
+  back_to_top: Back to top
+  select_lang: Select language
 symbols_count_time:
   count: Кол-во символов в статье
   count_total: Общее кол-во символов

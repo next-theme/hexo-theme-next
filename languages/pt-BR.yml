@@ -87,6 +87,8 @@ accessibility:
   nav_toggle: Alternar barra de navegação
   prev_page: Página anterior
   next_page: Próxima página
+  back_to_top: Back to top
+  select_lang: Select language
 symbols_count_time:
   count: Contagem total de caracteres no artigo
   count_total: Contagem total de caracteres

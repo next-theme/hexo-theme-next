@@ -87,6 +87,8 @@ accessibility:
   nav_toggle: تغییر ناوبری
   prev_page: صفحه قبلی
   next_page: صفحه بعدی
+  back_to_top: Back to top
+  select_lang: Select language
 symbols_count_time:
   count: تعداد نمادها در مقاله
   count_total: تعداد کل نمادها
