@@ -87,6 +87,8 @@ accessibility:
   nav_toggle: تشغيل شريط التصفح
   prev_page: الصفحة السابقة
   next_page: الصفحة التالية
+  back_to_top: Back to top
+  select_lang: Select language
 symbols_count_time:
   count: عدد الحروف في المقال
   count_total: مُجمل عدد الحروف
