@@ -102,6 +102,8 @@ accessibility:
   nav_toggle: Toggle navigation bar
   prev_page: Previous page
   next_page: Next page
+  back_to_top: Back to top
+  select_lang: Select language
 
 symbols_count_time:
   count: Symbols count in article
