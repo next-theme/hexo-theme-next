@@ -14,31 +14,7 @@
           {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
         </div>
       {%- endfor %}
-      <script{{ pjax }}>
-        (function() {
-          const commentButton = document.querySelectorAll('.comment-button');
-            commentButton.forEach(element => {
-            const commentClass = element.classList[2];
-            element.addEventListener('click', () => {
-              commentButton.forEach(active => active.classList.toggle('active', active === element));
-              document.querySelectorAll('.comment-position').forEach(active => active.classList.toggle('active', active.classList.contains(commentClass)));
-              if (CONFIG.comments.storage) {
-                localStorage.setItem('comments_active', commentClass);
-              }
-            });
-          });
-          let { activeClass } = CONFIG.comments;
-          if (CONFIG.comments.storage) {
-            activeClass = localStorage.getItem('comments_active') || activeClass;
-          }
-          if (activeClass) {
-            const activeButton = document.querySelector(`.comment-button.${activeClass}`);
-            if (activeButton) {
-              activeButton.click();
-            }
-          }
-        })();
-      </script>
+      {{- next_js('comments-buttons.js', true) }}
     {%- elif theme.comments.style == 'tabs' %}
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
@@ -58,24 +34,4 @@
   {%- endif %}
 {%- endif %}
 
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
+{{- next_js('comments.js') }}

@@ -1,17 +1,18 @@
-<script>
-var pjax = new Pjax({
+/* global NexT, CONFIG, Pjax */
+
+const pjax = new Pjax({
   selectors: [
     'head title',
-    '.page-configurations',
+    'head meta[name^="hexo-config-"]',
     '.main-inner',
     '.post-toc-wrap',
     '.languages',
     '.pjax'
   ],
-  analytics: false,
-  cacheBust: false,
+  analytics        : false,
+  cacheBust        : false,
   scrollRestoration: false,
-  scrollTo: !CONFIG.bookmark.enable
+  scrollTo         : !CONFIG.bookmark.enable
 });
 
 document.addEventListener('pjax:success', () => {
@@ -30,4 +31,3 @@ document.addEventListener('pjax:success', () => {
   document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
   NexT.utils.updateSidebarPosition();
 });
-</script>

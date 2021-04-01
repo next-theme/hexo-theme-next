@@ -9,7 +9,7 @@ module.exports = function([image = '/images/avatar.gif', delimiter = '|', commen
     const item = line.split(delimiter).map(arg => arg.trim());
     if (item[0][0] === comment) return '';
     return `<div class="link-grid-container">
-<div class="link-grid-image" style="background-image: url(${item[3] || image});"></div>
+<object class="link-grid-image" data="${item[3] || image}"></object>
 <p>${item[0]}</p><p>${item[2] || item[1]}</p>
 <a href="${item[1]}"></a>
 </div>`;

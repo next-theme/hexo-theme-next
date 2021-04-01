@@ -3,9 +3,12 @@
 <head>
   {{ partial('_partials/head/head.njk', {}, {cache: theme.cache.enable}) }}
   {%- include '_partials/head/head-unique.njk' -%}
+  {{- next_js('load-config.js', true) }}
   <title>{% block title %}{% endblock %}</title>
   {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
-  {{ partial('_scripts/noscript.njk', {}, {cache: theme.cache.enable}) }}
+  <noscript>
+    <link rel="stylesheet" href="{{ url_for(theme.css) }}/noscript.css">
+  </noscript>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage"{% if theme.motion.enable %} class="use-motion"{% endif %}>

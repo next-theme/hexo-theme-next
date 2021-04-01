@@ -74,3 +74,25 @@
     animation: icon-animate 1.33s ease-in-out infinite;
   }
 }
+
+if (hexo-config('footer.beian.enable') && hexo-config('footer.beian.gongan_icon_url')) {
+  .beian img {
+    display: inline-block;
+  }
+}
+
+if (hexo-config('busuanzi_count.enable')) {
+  .busuanzi-count {
+    if (hexo-config('busuanzi_count.total_visitors')) {
+      #busuanzi_container_site_uv {
+        display: none;
+      }
+    }
+
+    if (hexo-config('busuanzi_count.total_views')) {
+      #busuanzi_container_site_pv {
+        display: none;
+      }
+    }
+  }
+}
