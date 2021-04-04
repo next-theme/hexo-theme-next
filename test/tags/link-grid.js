@@ -3,11 +3,11 @@
 require('chai').should();
 
 const result = `<div class="link-grid"><div class="link-grid-container">
-<img class="link-grid-image" alt="Theme NexT" src="/images/sample.png">
+<object class="link-grid-image" data="/images/sample.png"></object>
 <p>Theme NexT</p><p>Stay Simple. Stay NexT.</p>
 <a href="https://theme-next.js.org/"></a>
 </div><div class="link-grid-container">
-<img class="link-grid-image" alt="Theme NexT" src="/images/sample.png">
+<object class="link-grid-image" data="/images/sample.png"></object>
 <p>Theme NexT</p><p>Stay Simple. Stay NexT.</p>
 <a href="https://theme-next.js.org/"></a>
 </div></div>`;
