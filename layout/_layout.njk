@@ -3,8 +3,9 @@
 <head>
   {{ partial('_partials/head/head.njk', {}, {cache: theme.cache.enable}) }}
   {%- include '_partials/head/head-unique.njk' -%}
-  {{- next_js('load-config.js', true) }}
   <title>{% block title %}{% endblock %}</title>
+  {{- next_js('load-config.js', true) }}
+  {{- next_inject('head') }}
   {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
   <noscript>
     <link rel="stylesheet" href="{{ url_for(theme.css) }}/noscript.css">
