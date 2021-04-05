@@ -18,12 +18,13 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/motion.js');
   }
 
+  // TODO: clean other third part scripts or add to route only when needed
   if (!theme.algolia_search.enable) {
-    hexo.route.remove('js/algolia-search.js');
+    hexo.route.remove('js/third-party/search/algolia-search.js');
   }
 
   if (!theme.local_search.enable) {
-    hexo.route.remove('js/local-search.js');
+    hexo.route.remove('js/third-party/search/local-search.js');
   }
 
   if (!theme.pjax) {

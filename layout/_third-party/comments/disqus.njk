@@ -1,37 +1,28 @@
-{%- if theme.disqus.count %}
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://{{ theme.disqus.shortname }}.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-{%- endif %}
-{%- if page.comments %}
-<script>
-  var disqus_config = function() {
-    this.page.url = {{ page.permalink | safedump }};
-    this.page.identifier = {{ page.path | safedump }};
-    this.page.title = {{ page.title | safedump }};
-    {% if __('disqus') !== 'disqus' -%}
-      this.language = '{{ __('disqus') }}';
-    {% endif -%}
-  };
-  NexT.utils.loadComments('#disqus_thread', () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://{{ theme.disqus.shortname }}.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
+{% if inject_point === 'comment' %}
+
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+
+{% elif inject_point === 'bodyEnd' %}
+
+  {{ next_data('disqus', theme.disqus, {
+    i18n: {
+      disqus: __('disqus')
     }
-  });
-</script>
-{%- endif %}
+  }) }}
+  {{ next_js('third-party/comments/disqus.js') }}
+
+{% elif inject_point === 'postMeta' %}
+
+  {% if post.comments %}
+    <span class="post-meta-item">
+      {% from '_third-party/comments/common.njk' import iconText %}
+      {{ iconText('far fa-comment', 'changyan') }}
+      <a title="disqus" href="{{ url_for(post.path) }}#disqus_thread" itemprop="discussionUrl">
+        <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
+      </a>
+    </span>
+  {% endif %}
+
+{% endif %}

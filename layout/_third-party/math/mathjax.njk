@@ -1,31 +1,4 @@
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: '{{ theme.math.mathjax.tags }}'
-      },
-      options: {
-        renderActions: {
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              const target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    const script = document.createElement('script');
-    script.src = '{{ theme.vendors.mathjax }}';
-    script.defer = true;
-    document.head.appendChild(script);
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.typesetClear();
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
+{{ next_data('mathjax', theme.math.mathjax, {
+  js: theme.vendors.mathjax
+}) }}
+{{ next_js('third-party/math/mathjax.js') }}

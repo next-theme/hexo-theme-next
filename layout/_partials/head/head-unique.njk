@@ -9,15 +9,8 @@
 
 {# Exports some front-matter variables to Front-End #}
 {# https://hexo.io/docs/variables.html #}
-<meta name="hexo-config-page" content="{{
-  {
-    sidebar: page.sidebar or '',
-    isHome : is_home(),
-    isPost : is_post(),
-    lang   : page.lang
-  } | safedump | escape
-}}">
-<meta name="hexo-config-calendar" content="{{
-  theme.calendar | safedump | escape
-    if page.type === 'schedule' and not page.title
-}}">
+{{ next_data('page', next_config_unique()) }}
+
+{{ next_data('calendar',
+  theme.calendar if page.type === 'schedule' and not page.title else '')
+}}

@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="{{ theme.vendors.katex }}">
 {%- if theme.math.katex.copy_tex %}
-  <script src="{{ theme.vendors.copy_tex_js }}"></script>
   <link rel="stylesheet" href="{{ theme.vendors.copy_tex_css }}">
+  {%- if enable_math %}
+    <script{{ pjax }} src="{{ theme.vendors.copy_tex_js }}"></script>
+  {%- endif %}
 {%- endif %}

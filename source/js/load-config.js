@@ -1,15 +1,33 @@
+/* global CONFIG */
+
 if (!window.NexT) window.NexT = {};
 
-if (!window.CONFIG) {
-  window.CONFIG = JSON.parse(
-    document.querySelector('meta[name="hexo-config"]').content || '{}'
-  );
-}
+window.CONFIG = new Proxy({
+  prefix: 'next-config-',
+  parse(configText) {
+    const jsonString = new DOMParser().parseFromString(configText, 'text/html').documentElement.textContent;
+    return JSON.parse(jsonString || '{}');
+  },
+  variables: {
+    latest: [],
+    update(name) {
+      const targetEle = document.getElementById(`${CONFIG.prefix}${name}`);
+      if (!targetEle) return;
+      this[name] = CONFIG.parse(targetEle.text);
+      this.latest.push(name);
+    }
+  }
+}, {
+  get(target, propKey) {
+    if (propKey in target) return target[propKey];
 
-(() => {
-  document.querySelectorAll('meta[name^="hexo-config-"]')
-    .forEach(configMeta => {
-      const key = configMeta.name.slice('hexo-config-'.length);
-      window.CONFIG[key] = JSON.parse(configMeta.content || '{}');
-    });
-})();
+    if (!target.variables.latest.includes(propKey)) target.variables.update(propKey);
+    return target.variables[propKey];
+  }
+});
+
+Object.assign(CONFIG, CONFIG.parse(document.getElementById(`${CONFIG.prefix}main`).text));
+
+document.addEventListener('pjax:success', () => {
+  CONFIG.variables.latest.length = 0;
+});

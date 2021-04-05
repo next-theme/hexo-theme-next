@@ -14,6 +14,21 @@ if (typeof DOMTokenList.prototype.replace !== 'function') {
   };
 }
 
+{
+  const onPageLoaded = () => document.dispatchEvent(
+    new Event('page:loaded', {
+      bubbles: true
+    })
+  );
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('readystatechange', onPageLoaded, {once: true});
+  } else {
+    onPageLoaded();
+  }
+  document.addEventListener('pjax:success', onPageLoaded);
+}
+
 NexT.utils = {
 
   /**
@@ -322,6 +337,38 @@ NexT.utils = {
     }
   },
 
+  getScriptPromise: (url, {
+    condition = false,
+    attributes: {
+      id = '',
+      async = false,
+      defer = false,
+      crossOrigin = '',
+      dataset = {},
+      ...otherAttributes
+    } = {},
+    parentNode = null
+  } = {}) => new Promise((resolve, reject) => {
+    if (condition) {
+      resolve();
+    } else {
+      const script = document.createElement('script');
+
+      if (id) script.id = id;
+      if (crossOrigin) script.crossOrigin = crossOrigin;
+      script.async = async;
+      script.defer = defer;
+      Object.assign(script.dataset, dataset);
+      for (const [name, value] in otherAttributes) script.setAttribute(name, value);
+
+      script.onload = resolve;
+      script.onerror = reject;
+
+      script.src = url;
+      (parentNode || document.head).appendChild(script);
+    }
+  }),
+
   getScript: function(url, callback, condition) {
     if (condition) {
       callback();
@@ -334,6 +381,22 @@ NexT.utils = {
       document.head.appendChild(script);
     }
   },
+
+  loadCommentsPromise: (selector) => new Promise((resolve) => {
+    const element = document.querySelector(selector);
+    if (!CONFIG.comments.lazyload || !element) {
+      resolve();
+      return;
+    }
+    const intersectionObserver = new IntersectionObserver((entries, observer) => {
+      const entry = entries[0];
+      if (!entry.isIntersecting) return;
+
+      resolve();
+      observer.disconnect();
+    });
+    intersectionObserver.observe(element);
+  }),
 
   loadComments: function(selector, callback) {
     const element = document.querySelector(selector);

@@ -1,15 +1,28 @@
-{%- if is_home() %}
-  <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId={{ theme.changyan.appid }}"></script>
-{% elif page.comments %}
-  <script>
-  NexT.utils.loadComments('#SOHUCS', () => {
-    NexT.utils.getScript('https://changyan.sohu.com/upload/changyan.js', () => {
-      window.changyan.api.config({
-        appid: '{{ theme.changyan.appid }}',
-        conf : '{{ theme.changyan.appkey }}'
-      });
-    });
-  });
-  </script>
-  <script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
-{%- endif %}
+{% if inject_point === 'comment' %}
+
+  <div class="comments" id="SOHUCS"></div>
+
+{% elif inject_point === 'bodyEnd' %}
+
+  {{ next_data('changyan', theme.changyan) }}
+  {{ next_js('third-party/comments/changyan.js') }}
+
+{% elif inject_point === 'postMeta' %}
+
+  {% if post.comments %}
+    <span class="post-meta-item">
+      {% from '_third-party/comments/common.njk' import iconText %}
+      {{ iconText('far fa-comment', 'changyan') }}
+    {% if is_post() %}
+      <a title="changyan" href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
+        <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
+      </a>
+    {% else %}
+      <a title="changyan" href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
+        <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
+      </a>
+    {% endif %}
+  </span>
+  {% endif %}
+
+{% endif %}
