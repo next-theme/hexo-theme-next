@@ -58,6 +58,6 @@ hexo.extend.helper.register('next_config_unique', function() {
     comments : page.comments || '',
     permalink: page.permalink || '',
     path     : page.path || '',
-    tittle   : page.tittle || ''
+    title    : page.title || ''
   };
 });

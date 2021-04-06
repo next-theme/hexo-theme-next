@@ -3,13 +3,18 @@
 if (!CONFIG.google_analytics.only_pageview) {
   if (CONFIG.hostname === location.hostname) {
     window.dataLayer = window.dataLayer || [];
-    window.gtag = () => {
+    window.gtag = function() {
       dataLayer.push(arguments);
     };
+    gtag('js', new Date());
+    gtag('config', CONFIG.google_analytics.tracking_id);
 
-    document.addEventListener('page:loaded', () => {
-      gtag('js', new Date());
-      gtag('config', CONFIG.google_analytics.tracking_id);
+    document.addEventListener('pjax:success', () => {
+      gtag('event', 'page_view', {
+        page_location: location.href,
+        page_path    : location.pathname,
+        page_title   : document.title
+      });
     });
   }
 } else {
