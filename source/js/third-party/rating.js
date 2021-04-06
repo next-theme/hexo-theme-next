@@ -1,21 +1,22 @@
-/* global NexT, CONFIG, wpac_init */
+/* global CONFIG, WPac */
 
-document.addEventListener('page:loaded', () => {
-  if (!CONFIG.page.isPost) return;
-  if (!window.wpac_init) window.wpac_init = [];
-
-  wpac_init.push({
+{
+  const widgets = [{
     widget: 'Rating',
     id    : CONFIG.rating.id,
     el    : 'wpac-rating',
     color : CONFIG.rating.color
-  });
+  }];
 
-  if (window.WIDGETPACK_LOADED) return;
-  window.WIDGETPACK_LOADED = true;
-  NexT.utils.getScriptPromise('//embed.widgetpack.com/widget.js', {
-    attributes: {
-      async: true
+  document.addEventListener('page:loaded', () => {
+    if (!CONFIG.page.isPost) return;
+
+    const newWidgets = widgets.map(widget => ({...widget}));
+
+    if (window.WPac) {
+      WPac.init(newWidgets);
+    } else {
+      window.wpac_init = newWidgets;
     }
   });
-});
+}
