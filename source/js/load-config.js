@@ -1,33 +1,43 @@
-/* global CONFIG */
+{
+  if (!window.NexT) window.NexT = {};
 
-if (!window.NexT) window.NexT = {};
+  const prefix = 'next-config-';
 
-window.CONFIG = new Proxy({
-  prefix: 'next-config-',
-  parse(configText) {
-    const jsonString = new DOMParser().parseFromString(configText, 'text/html').documentElement.textContent;
+  const parse = (text) => {
+    const jsonString = new DOMParser().parseFromString(text, 'text/html').documentElement.textContent;
     return JSON.parse(jsonString || '{}');
-  },
-  variables: {
-    latest: [],
-    update(name) {
-      const targetEle = document.getElementById(`${CONFIG.prefix}${name}`);
-      if (!targetEle) return;
-      this[name] = CONFIG.parse(targetEle.text);
-      this.latest.push(name);
+  };
+
+  const staticConfig = {};
+  let variableConfig = {};
+
+  const update = (name) => {
+    const targetEle = document.getElementById(`${prefix}${name}`);
+    if (!targetEle) return;
+    const parsedConfig = parse(targetEle.text);
+    if (name === 'main') {
+      Object.assign(staticConfig, parsedConfig);
+    } else {
+      variableConfig[name] = parsedConfig;
     }
-  }
-}, {
-  get(target, propKey) {
-    if (propKey in target) return target[propKey];
+  };
 
-    if (!target.variables.latest.includes(propKey)) target.variables.update(propKey);
-    return target.variables[propKey];
-  }
-});
+  update('main');
 
-Object.assign(CONFIG, CONFIG.parse(document.getElementById(`${CONFIG.prefix}main`).text));
+  window.CONFIG = new Proxy({}, {
+    get(overrideConfig, propKey) {
+      if (propKey in overrideConfig) return overrideConfig[propKey];
 
-document.addEventListener('pjax:success', () => {
-  CONFIG.variables.latest.length = 0;
-});
+      if (propKey in staticConfig) {
+        return staticConfig[propKey];
+      }
+
+      if (!(propKey in variableConfig)) update(propKey);
+      return variableConfig[propKey];
+    }
+  });
+
+  document.addEventListener('pjax:success', () => {
+    variableConfig = {};
+  });
+}

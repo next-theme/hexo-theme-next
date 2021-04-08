@@ -17,7 +17,7 @@
   document.addEventListener('page:loaded', () => {
     if (!CONFIG.quicklink.enable) return;
 
-    NexT.utils.getScriptPromise(CONFIG.quicklink.js)
+    NexT.utils.getScript(CONFIG.quicklink.js)
       .then(() => {
         if (CONFIG.quicklink.delay) {
           window.addEventListener('load', quicklinkListen);

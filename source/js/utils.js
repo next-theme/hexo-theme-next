@@ -337,7 +337,7 @@ NexT.utils = {
     }
   },
 
-  getScriptPromise: (url, {
+  getScript: (url, {
     condition = false,
     attributes: {
       id = '',
@@ -359,7 +359,9 @@ NexT.utils = {
       script.async = async;
       script.defer = defer;
       Object.assign(script.dataset, dataset);
-      for (const [name, value] in otherAttributes) script.setAttribute(name, value);
+      Object.entries(otherAttributes).forEach(([name, value]) => {
+        script.setAttribute(name, String(value));
+      });
 
       script.onload = resolve;
       script.onerror = reject;
@@ -369,20 +371,7 @@ NexT.utils = {
     }
   }),
 
-  getScript: function(url, callback, condition) {
-    if (condition) {
-      callback();
-    } else {
-      const script = document.createElement('script');
-      script.onload = () => {
-        setTimeout(callback);
-      };
-      script.src = url;
-      document.head.appendChild(script);
-    }
-  },
-
-  loadCommentsPromise: (selector) => new Promise((resolve) => {
+  loadComments: (selector) => new Promise((resolve) => {
     const element = document.querySelector(selector);
     if (!CONFIG.comments.lazyload || !element) {
       resolve();
@@ -396,22 +385,5 @@ NexT.utils = {
       observer.disconnect();
     });
     intersectionObserver.observe(element);
-  }),
-
-  loadComments: function(selector, callback) {
-    const element = document.querySelector(selector);
-    if (!CONFIG.comments.lazyload || !element) {
-      callback();
-      return;
-    }
-    const intersectionObserver = new IntersectionObserver((entries, observer) => {
-      const entry = entries[0];
-      if (entry.isIntersecting) {
-        callback();
-        observer.disconnect();
-      }
-    });
-    intersectionObserver.observe(element);
-    return intersectionObserver;
-  }
+  })
 };

@@ -22,7 +22,7 @@ document.addEventListener('page:loaded', () => {
         }
       }
     };
-    NexT.utils.getScriptPromise(CONFIG.mathjax.js, {
+    NexT.utils.getScript(CONFIG.mathjax.js, {
       attributes: {
         defer: true
       }

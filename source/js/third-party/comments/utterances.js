@@ -3,8 +3,8 @@
 document.addEventListener('page:loaded', () => {
   if (!CONFIG.page.comments) return;
 
-  NexT.utils.loadCommentsPromise('.utterances-container')
-    .then(() => NexT.utils.getScriptPromise('https://utteranc.es/client.js', {
+  NexT.utils.loadComments('.utterances-container')
+    .then(() => NexT.utils.getScript('https://utteranc.es/client.js', {
       attributes: {
         async       : true,
         crossOrigin : 'anonymous',

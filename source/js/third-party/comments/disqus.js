@@ -4,7 +4,7 @@ document.addEventListener('page:loaded', () => {
 
   if (CONFIG.disqus.count) {
     const loadCount = () => {
-      NexT.utils.getScriptPromise(`https://${CONFIG.disqus.shortname}.disqus.com/count.js`, {
+      NexT.utils.getScript(`https://${CONFIG.disqus.shortname}.disqus.com/count.js`, {
         attributes: { id: 'dsq-count-scr' }
       });
     };
@@ -22,14 +22,14 @@ document.addEventListener('page:loaded', () => {
         this.language = CONFIG.disqus.i18n.disqus;
       }
     };
-    NexT.utils.loadCommentsPromise('#disqus_thread').then(() => {
+    NexT.utils.loadComments('#disqus_thread').then(() => {
       if (window.DISQUS) {
         DISQUS.reset({
           reload: true,
           config: disqus_config
         });
       } else {
-        NexT.utils.getScriptPromise(`https://${CONFIG.disqus.shortname}.disqus.com/embed.js`, {
+        NexT.utils.getScript(`https://${CONFIG.disqus.shortname}.disqus.com/embed.js`, {
           attributes: { dataset: { timestamp: '' + +new Date() } }
         });
       }

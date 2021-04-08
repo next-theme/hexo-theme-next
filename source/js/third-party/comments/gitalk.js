@@ -1,8 +1,10 @@
 /* global NexT, CONFIG, Gitalk */
 
 document.addEventListener('page:loaded', () => {
-  NexT.utils.loadCommentsPromise('.gitalk-container')
-    .then(() => NexT.utils.getScriptPromise(CONFIG.gitalk.js, {
+  if (!CONFIG.page.comments) return;
+
+  NexT.utils.loadComments('.gitalk-container')
+    .then(() => NexT.utils.getScript(CONFIG.gitalk.js, {
       condition: window.Gitalk
     }))
     .then(() => {

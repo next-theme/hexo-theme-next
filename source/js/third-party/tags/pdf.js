@@ -2,7 +2,7 @@
 
 document.addEventListener('page:loaded', () => {
   if (document.querySelectorAll('.pdf-container').length) {
-    NexT.utils.getScriptPromise(CONFIG.pdf.object_url, {
+    NexT.utils.getScript(CONFIG.pdf.object_url, {
       condition: window.PDFObject
     }).then(() => {
       document.querySelectorAll('.pdf-container').forEach(element => {

@@ -3,7 +3,7 @@
 document.addEventListener('page:loaded', () => {
   const mermaidElements = document.querySelectorAll('.mermaid');
   if (mermaidElements.length) {
-    NexT.utils.getScriptPromise(CONFIG.mermaid.js, {
+    NexT.utils.getScript(CONFIG.mermaid.js, {
       condition: window.mermaid
     }).then(() => {
       mermaidElements.forEach(element => {
