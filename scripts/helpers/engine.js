@@ -32,8 +32,8 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
 hexo.extend.helper.register('next_data', function(name, ...data) {
   const { escape_html } = this;
   const json = data.length === 1 ? data[0] : Object.assign({}, ...data);
-  return `<script id="next-config-${name}" type="application/json">${
-    escape_html(JSON.stringify(json) ?? '')
+  return `<script class="next-config" data-name="${name}" type="application/json">${
+    escape_html(JSON.stringify(json))
   }</script>`;
 });
 

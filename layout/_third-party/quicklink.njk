@@ -1,6 +1,7 @@
 {%- if theme.quicklink.enable %}
+  <script src="{{ theme.vendors.quicklink }}"></script>
   {{ next_data('quicklink', page.quicklink, {
-    js: theme.vendors.quicklink
+    url: url | replace(r/index\.html$/, '')
   }) }}
   {{ next_js('third-party/quicklink.js') }}
 {%- endif %}
