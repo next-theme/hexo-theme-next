@@ -1,23 +1,6 @@
 {%- if theme.mermaid.enable %}
-<script{{ pjax }}>
-var mermaidElements = document.querySelectorAll('.mermaid');
-if (mermaidElements.length) {
-  NexT.utils.getScript('{{ theme.vendors.mermaid }}', () => {
-    mermaidElements.forEach(element => {
-      const newElement = document.createElement('div');
-      newElement.innerHTML = element.innerHTML;
-      newElement.className = element.className;
-      element.parentNode.replaceChild(newElement, element);
-    });
-
-    mermaid.init({
-      theme    : '{{ theme.mermaid.theme }}',
-      logLevel : 3,
-      flowchart: { curve     : 'linear' },
-      gantt    : { axisFormat: '%m/%d/%Y' },
-      sequence : { actorMargin: 50 }
-    }, '.mermaid');
-  }, window.mermaid);
-}
-</script>
+  {{ next_data('mermaid', theme.mermaid, {
+    js: theme.vendors.mermaid
+  }) }}
+  {{ next_js('third-party/tags/mermaid.js') }}
 {%- endif %}

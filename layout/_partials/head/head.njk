@@ -53,4 +53,4 @@
   <script src="{{ theme.vendors.nprogress_js }}"></script>
 {%- endif %}
 
-<meta name="hexo-config" content="{{ next_config() | safedump | escape }}">
+{{ next_data('main', next_config()) }}

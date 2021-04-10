@@ -4,7 +4,7 @@
   {{ partial('_partials/head/head.njk', {}, {cache: theme.cache.enable}) }}
   {%- include '_partials/head/head-unique.njk' -%}
   <title>{% block title %}{% endblock %}</title>
-  {{- next_js('load-config.js', true) }}
+  {{- next_js('config.js') }}
   {{- next_inject('head') }}
   {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
   <noscript>
@@ -45,15 +45,9 @@
   {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
 
-  {%- if theme.pjax %}
-    <div class="pjax">
-  {%- endif %}
   {%- include '_third-party/math/index.njk' -%}
   {%- include '_third-party/quicklink.njk' -%}
 
   {{- next_inject('bodyEnd') }}
-  {%- if theme.pjax %}
-    </div>
-  {%- endif %}
 </body>
 </html>

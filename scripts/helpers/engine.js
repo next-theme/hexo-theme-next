@@ -29,6 +29,14 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
   return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
 });
 
+hexo.extend.helper.register('next_data', function(name, ...data) {
+  const { escape_html } = this;
+  const json = data.length === 1 ? data[0] : Object.assign({}, ...data);
+  return `<script class="next-config" data-name="${name}" type="application/json">${
+    escape_html(JSON.stringify(json))
+  }</script>`;
+});
+
 hexo.extend.helper.register('next_pre', function() {
   const { preconnect } = this.theme;
   if (!preconnect) return '';

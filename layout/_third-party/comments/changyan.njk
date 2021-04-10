@@ -1,15 +1,2 @@
-{%- if is_home() %}
-  <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId={{ theme.changyan.appid }}"></script>
-{% elif page.comments %}
-  <script>
-  NexT.utils.loadComments('#SOHUCS', () => {
-    NexT.utils.getScript('https://changyan.sohu.com/upload/changyan.js', () => {
-      window.changyan.api.config({
-        appid: '{{ theme.changyan.appid }}',
-        conf : '{{ theme.changyan.appkey }}'
-      });
-    });
-  });
-  </script>
-  <script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
-{%- endif %}
+{{ next_data('changyan', theme.changyan) }}
+{{ next_js('third-party/comments/changyan.js') }}

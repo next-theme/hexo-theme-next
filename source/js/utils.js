@@ -14,6 +14,21 @@ if (typeof DOMTokenList.prototype.replace !== 'function') {
   };
 }
 
+(function() {
+  const onPageLoaded = () => document.dispatchEvent(
+    new Event('page:loaded', {
+      bubbles: true
+    })
+  );
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('readystatechange', onPageLoaded, {once: true});
+  } else {
+    onPageLoaded();
+  }
+  document.addEventListener('pjax:success', onPageLoaded);
+})();
+
 NexT.utils = {
 
   /**
@@ -72,7 +87,7 @@ NexT.utils = {
    */
   registerCopyCode: function() {
     let figure = document.querySelectorAll('figure.highlight');
-    if (figure.length === 0) figure = document.querySelectorAll('pre');
+    if (figure.length === 0) figure = document.querySelectorAll('pre:not(.mermaid)');
     figure.forEach(element => {
       element.querySelectorAll('.code .line span').forEach(span => {
         span.classList.forEach(name => {
@@ -322,33 +337,53 @@ NexT.utils = {
     }
   },
 
-  getScript: function(url, callback, condition) {
+  getScript: (url, {
+    condition = false,
+    attributes: {
+      id = '',
+      async = false,
+      defer = false,
+      crossOrigin = '',
+      dataset = {},
+      ...otherAttributes
+    } = {},
+    parentNode = null
+  } = {}) => new Promise((resolve, reject) => {
     if (condition) {
-      callback();
+      resolve();
     } else {
       const script = document.createElement('script');
-      script.onload = () => {
-        setTimeout(callback);
-      };
-      script.src = url;
-      document.head.appendChild(script);
-    }
-  },
 
-  loadComments: function(selector, callback) {
+      if (id) script.id = id;
+      if (crossOrigin) script.crossOrigin = crossOrigin;
+      script.async = async;
+      script.defer = defer;
+      Object.assign(script.dataset, dataset);
+      Object.entries(otherAttributes).forEach(([name, value]) => {
+        script.setAttribute(name, String(value));
+      });
+
+      script.onload = resolve;
+      script.onerror = reject;
+
+      script.src = url;
+      (parentNode || document.head).appendChild(script);
+    }
+  }),
+
+  loadComments: (selector) => new Promise((resolve) => {
     const element = document.querySelector(selector);
     if (!CONFIG.comments.lazyload || !element) {
-      callback();
+      resolve();
       return;
     }
     const intersectionObserver = new IntersectionObserver((entries, observer) => {
       const entry = entries[0];
-      if (entry.isIntersecting) {
-        callback();
-        observer.disconnect();
-      }
+      if (!entry.isIntersecting) return;
+
+      resolve();
+      observer.disconnect();
     });
     intersectionObserver.observe(element);
-    return intersectionObserver;
-  }
+  })
 };

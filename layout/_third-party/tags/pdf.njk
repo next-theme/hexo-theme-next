@@ -1,23 +1,7 @@
 {%- if theme.pdf.enable %}
-{%- set pdfobject_uri = theme.vendors.pdfobject %}
-{%- set pdf_uri = url_for('lib/pdf/web/viewer.html') %}
-<script{{ pjax }}>
-if (document.querySelectorAll('.pdf-container').length) {
-  NexT.utils.getScript('{{ pdfobject_uri }}', () => {
-    document.querySelectorAll('.pdf-container').forEach(element => {
-      PDFObject.embed(element.dataset.target, element, {
-        pdfOpenParams: {
-          navpanes : 0,
-          toolbar  : 0,
-          statusbar: 0,
-          pagemode : 'thumbs',
-          view     : 'FitH'
-        },
-        PDFJS_URL: '{{ pdf_uri }}',
-        height   : element.dataset.height
-      });
-    });
-  }, window.PDFObject);
-}
-</script>
+  {{ next_data('pdf', {
+    object_url: theme.vendors.pdfobject,
+    url: url_for('lib/pdf/web/viewer.html')
+  }) }}
+  {{ next_js('third-party/tags/pdf.js') }}
 {%- endif %}

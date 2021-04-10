@@ -47,3 +47,17 @@ hexo.extend.helper.register('next_config', function() {
   }
   return exportConfig;
 });
+
+hexo.extend.helper.register('next_config_unique', function() {
+  const { page, is_home, is_post } = this;
+  return {
+    sidebar  : page.sidebar || '',
+    isHome   : is_home(),
+    isPost   : is_post(),
+    lang     : page.lang,
+    comments : page.comments || '',
+    permalink: page.permalink || '',
+    path     : page.path || '',
+    title    : page.title || ''
+  };
+});

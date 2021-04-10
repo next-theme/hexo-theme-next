@@ -1,16 +1,7 @@
-{%- if page.quicklink.enable %}
+{%- if theme.quicklink.enable %}
   <script src="{{ theme.vendors.quicklink }}"></script>
-  <script>
-    {%- if page.quicklink.delay %}
-      window.addEventListener('load', () => {
-    {%- endif %}
-      quicklink.listen({
-        timeout : {{ page.quicklink.timeout }},
-        priority: {{ page.quicklink.priority }},
-        ignores : [uri => uri.includes('#'),uri => uri === '{{ url | replace(r/index\.html$/, '') }}',{{ page.quicklink.ignores }}]
-      });
-    {%- if page.quicklink.delay %}
-      });
-    {%- endif %}
-  </script>
+  {{ next_data('quicklink', page.quicklink, {
+    url: url | replace(r/index\.html$/, '')
+  }) }}
+  {{ next_js('third-party/quicklink.js') }}
 {%- endif %}

@@ -553,6 +553,7 @@ quicklink:
 
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
   # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
+  # This option is deprecated. Use `CONFIG.quicklink.ignores` in your custom scripts instead.
   ignores:
 
 

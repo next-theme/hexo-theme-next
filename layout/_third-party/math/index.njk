@@ -1,4 +1,6 @@
 {%- if theme.math.mathjax.enable or theme.math.katex.enable %}
+  {%- set enable_math = false %}
+
   {%- set is_index_has_math = false %}
 
   {# At home, check if there has `mathjax: true` post #}
@@ -11,10 +13,14 @@
   {%- endif %}
 
   {%- if theme.math.every_page or is_index_has_math or page.mathjax %}
-    {%- if theme.math.mathjax.enable %}
-      {%- include '_third-party/math/mathjax.njk' -%}
-    {% elif theme.math.katex.enable %}
-      {%- include '_third-party/math/katex.njk' -%}
-    {%- endif %}
+    {%- set enable_math = true %}
+  {%- endif %}
+
+  {{ next_data('enableMath', enable_math) }}
+
+  {%- if theme.math.mathjax.enable %}
+    {%- include '_third-party/math/mathjax.njk' -%}
+  {% elif theme.math.katex.enable %}
+    {%- include '_third-party/math/katex.njk' -%}
   {%- endif %}
 {%- endif %}
