@@ -14,7 +14,7 @@ if (typeof DOMTokenList.prototype.replace !== 'function') {
   };
 }
 
-{
+(function() {
   const onPageLoaded = () => document.dispatchEvent(
     new Event('page:loaded', {
       bubbles: true
@@ -27,7 +27,7 @@ if (typeof DOMTokenList.prototype.replace !== 'function') {
     onPageLoaded();
   }
   document.addEventListener('pjax:success', onPageLoaded);
-}
+})();
 
 NexT.utils = {
 

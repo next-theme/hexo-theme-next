@@ -1,6 +1,6 @@
 /* global CONFIG, WPac */
 
-{
+(function() {
   const widgets = [{
     widget: 'Rating',
     id    : CONFIG.rating.id,
@@ -19,4 +19,4 @@
       window.wpac_init = newWidgets;
     }
   });
-}
+})();

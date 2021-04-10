@@ -16,7 +16,7 @@ const pjax = new Pjax({
 });
 
 document.addEventListener('pjax:success', () => {
-  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax]'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {

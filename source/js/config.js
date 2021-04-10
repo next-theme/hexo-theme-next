@@ -1,6 +1,6 @@
-{
-  if (!window.NexT) window.NexT = {};
+if (!window.NexT) window.NexT = {};
 
+(function() {
   const className = 'next-config';
 
   const staticConfig = {};
@@ -57,4 +57,4 @@
   document.addEventListener('pjax:success', () => {
     variableConfig = {};
   });
-}
+})();

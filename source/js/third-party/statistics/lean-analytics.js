@@ -1,7 +1,7 @@
 /* global CONFIG */
 /* eslint-disable no-console */
 
-{
+(function() {
   const leancloudSelector = (url) => {
     url = encodeURI(url);
     return document.getElementById(url).querySelector('.leancloud-visitors-count');
@@ -99,4 +99,4 @@
         });
     }
   });
-}
+})();

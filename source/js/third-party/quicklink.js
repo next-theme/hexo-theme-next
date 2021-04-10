@@ -1,6 +1,6 @@
 /* global CONFIG, quicklink */
 
-{
+(function() {
   if (typeof CONFIG.quicklink.ignores === 'string') {
     const ignoresStr = `[${CONFIG.quicklink.ignores}]`;
     try {
@@ -41,4 +41,4 @@
   } else {
     document.addEventListener('page:loaded', onRefresh);
   }
-}
+})();

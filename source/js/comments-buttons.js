@@ -1,6 +1,6 @@
 /* global CONFIG */
 
-{
+(function() {
   const commentButton = document.querySelectorAll('.comment-button');
   commentButton.forEach(element => {
     const commentClass = element.classList[2];
@@ -22,4 +22,4 @@
       activeButton.click();
     }
   }
-}
+})();

@@ -5,7 +5,7 @@ firebase.initializeApp({
   projectId: CONFIG.firestore.projectId
 });
 
-{
+(function() {
   const getCount = (doc, increaseCount) => {
     // IncreaseCount will be false when not in article page
     return doc.get().then(d => {
@@ -60,4 +60,4 @@ firebase.initializeApp({
       });
     }
   });
-}
+})();
