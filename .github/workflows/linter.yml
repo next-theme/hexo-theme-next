@@ -9,6 +9,15 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v2
-    - run: npm install
+    - name: Install Dependencies
+      run: npm install
     - run: npm run eslint
     - run: npm test
+    - name: Coverage
+      run: npm run test-cov
+      env:
+        CI: true
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
