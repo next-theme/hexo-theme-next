@@ -1,6 +1,6 @@
 {%- if theme.firestore.enable %}
-  <script src="{{ theme.vendors.firebase_app }}"></script>
-  <script src="{{ theme.vendors.firebase_firestore }}"></script>
+  {{ next_vendors('firebase_app') }}
+  {{ next_vendors('firebase_firestore') }}
   {{ next_data('firestore', theme.firestore) }}
   {{ next_js('third-party/statistics/firestore.js') }}
 {%- endif %}

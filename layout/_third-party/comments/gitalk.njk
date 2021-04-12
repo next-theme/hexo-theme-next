@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="{{ theme.vendors.gitalk_css }}">
+{{ next_vendors('gitalk_css') }}
 
 {{ next_data('gitalk', theme.gitalk, {
-  js: theme.vendors.gitalk_js,
+  js: theme.vendors.gitalk_js.url,
   path_md5: gitalk_md5(page.path)
 }) }}
 {{ next_js('third-party/comments/gitalk.js') }}

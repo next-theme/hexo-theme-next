@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="{{ theme.vendors.disqusjs_css }}">
+{{ next_vendors('disqusjs_css') }}
 
 {{ next_data('disqusjs', theme.disqusjs, {
-  js: theme.vendors.disqusjs_js
+  js: theme.vendors.disqusjs_js.url
 }) }}
 {{ next_js('third-party/comments/disqusjs.js') }}

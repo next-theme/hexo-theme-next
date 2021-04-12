@@ -38,19 +38,19 @@
 
 {{ next_font() }}
 
-<link rel="stylesheet" href="{{ theme.vendors.fontawesome }}">
+{{ next_vendors('fontawesome') }}
 
 {%- if theme.motion.enable %}
-  <link rel="stylesheet" href="{{ theme.vendors.animate_css }}">
+  {{ next_vendors('animate_css') }}
 {%- endif %}
 
 {%- if theme.fancybox %}
-  <link rel="stylesheet" href="{{ theme.vendors.fancybox_css }}">
+  {{ next_vendors('fancybox_css') }}
 {%- endif %}
 
 {%- if theme.nprogress.enable %}
-  <link rel="stylesheet" href="{{ theme.vendors.nprogress_css }}">
-  <script src="{{ theme.vendors.nprogress_js }}"></script>
+  {{ next_vendors('nprogress_css') }}
+  {{ next_vendors('nprogress_js') }}
 {%- endif %}
 
 {{ next_data('main', next_config()) }}

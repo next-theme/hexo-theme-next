@@ -29,6 +29,17 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
   return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
 });
 
+hexo.extend.helper.register('next_vendors', function(name) {
+  const { url, edited, integrity } = this.theme.vendors[name];
+  const type = url.endsWith('css') ? 'css' : 'js';
+  if (type === 'css') {
+    if (edited) return `<link rel="stylesheet" href="${url}">`;
+    return `<link rel="stylesheet" href="${url}" integrity="${integrity}" crossorigin="anonymous">`;
+  }
+  if (edited) return `<script src="${url}"></script>`;
+  return `<script src="${url}" integrity="${integrity}" crossorigin="anonymous"></script>`;
+});
+
 hexo.extend.helper.register('next_data', function(name, ...data) {
   const { escape_html } = this;
   const json = data.length === 1 ? data[0] : Object.assign({}, ...data);
