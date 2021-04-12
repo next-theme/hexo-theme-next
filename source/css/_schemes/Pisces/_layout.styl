@@ -2,6 +2,7 @@
   background: var(--content-bg-color);
   border-radius: $border-radius-inner;
   box-shadow: $box-shadow-inner;
+  margin: 0 auto;
   width: $sidebar-desktop;
 
   +tablet-mobile() {
@@ -17,7 +18,6 @@
   display: flex;
   justify-content: space-between;
   main-container();
-  margin: 0 calc((100vw - var(--width)) / 2);
 
   if (hexo-config('sidebar.position') == 'right') {
     flex-direction: row-reverse;

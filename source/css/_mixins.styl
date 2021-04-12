@@ -109,7 +109,7 @@ font-family-icons($icon = '') {
 
 main-container() {
   --width: $content-desktop;
-  margin: 0 auto;
+  margin: 0 calc((100vw - var(--width)) / 2);
   width: var(--width);
 
   +desktop-large() {
