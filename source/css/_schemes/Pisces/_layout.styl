@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-between;
   main-container();
+  margin: 0 calc((100vw - var(--width)) / 2);
 
   if (hexo-config('sidebar.position') == 'right') {
     flex-direction: row-reverse;
