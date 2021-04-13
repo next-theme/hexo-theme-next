@@ -1,6 +1,6 @@
 {%- if theme.mermaid.enable %}
   {{ next_data('mermaid', theme.mermaid, {
-    js: theme.vendors.mermaid.url
+    js: theme.vendors.mermaid
   }) }}
   {{ next_js('third-party/tags/mermaid.js') }}
 {%- endif %}

@@ -20,9 +20,7 @@ module.exports = hexo => {
   for (const [key, value] of Object.entries(dependencies)) {
     if (vendors[key]) {
       vendors[key] = {
-        ...value,
-        url   : url_for.call(hexo, vendors[key]),
-        edited: true
+        url: url_for.call(hexo, vendors[key])
       };
       continue;
     }
@@ -37,8 +35,8 @@ module.exports = hexo => {
     if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
     if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';
     vendors[key] = {
-      ...value,
-      url: links[plugins] || links.jsdelivr
+      url      : links[plugins] || links.jsdelivr,
+      integrity: value.integrity
     };
   }
 };

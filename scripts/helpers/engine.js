@@ -30,14 +30,14 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
 });
 
 hexo.extend.helper.register('next_vendors', function(name) {
-  const { url, edited, integrity } = this.theme.vendors[name];
+  const { url, integrity } = this.theme.vendors[name];
   const type = url.endsWith('css') ? 'css' : 'js';
   if (type === 'css') {
-    if (edited) return `<link rel="stylesheet" href="${url}">`;
-    return `<link rel="stylesheet" href="${url}" integrity="${integrity}" crossorigin="anonymous">`;
+    if (integrity) return `<link rel="stylesheet" href="${url}" integrity="${integrity}" crossorigin="anonymous">`;
+    return `<link rel="stylesheet" href="${url}">`;
   }
-  if (edited) return `<script src="${url}"></script>`;
-  return `<script src="${url}" integrity="${integrity}" crossorigin="anonymous"></script>`;
+  if (integrity) return `<script src="${url}" integrity="${integrity}" crossorigin="anonymous"></script>`;
+  return `<script src="${url}"></script>`;
 });
 
 hexo.extend.helper.register('next_data', function(name, ...data) {
