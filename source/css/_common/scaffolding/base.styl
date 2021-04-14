@@ -17,12 +17,14 @@ body {
   position: relative;
   transition: padding $transition-ease;
 
-  if (hexo-config('overlay_body_scrollbar')) {
+  if (hexo-config('body_scrollbar_style') == 'overlay') {
     overflow-x: hidden;
     @supports (overflow-x: clip) {
       overflow-x: clip;
     }
     width: 100vw;
+  } else if (hexo-config('body_scrollbar_style') == 'stable') {
+    overflow-y: scroll;
   }
 }
 
