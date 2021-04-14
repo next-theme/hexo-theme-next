@@ -16,6 +16,14 @@ body {
   min-height: 100%;
   position: relative;
   transition: padding $transition-ease;
+
+  if (hexo-config('overlay_body_scrollbar')) {
+    overflow-x: hidden;
+    @supports (overflow-x: clip) {
+      overflow-x: clip;
+    }
+    width: 100vw;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
