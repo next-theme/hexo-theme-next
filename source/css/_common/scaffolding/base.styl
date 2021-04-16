@@ -14,12 +14,20 @@ body {
   font-size: $font-size-base;
   line-height: $line-height-base;
   min-height: 100%;
-  overflow-x: hidden;
-  @supports (overflow-x: clip) {
-    overflow-x: clip;
-  }
   position: relative;
   transition: padding $transition-ease;
+
+  if (hexo-config('body_scrollbar.overlay')) {
+    overflow-x: hidden;
+    @supports (overflow-x: clip) {
+      overflow-x: clip;
+    }
+    width: 100vw;
+  }
+
+  if (hexo-config('body_scrollbar.stable')) {
+    overflow-y: scroll;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -108,16 +108,15 @@ font-family-icons($icon = '') {
 }
 
 main-container() {
-  --width: $content-desktop;
-  margin: 0 calc((100vw - var(--width)) / 2);
-  width: var(--width);
+  margin: 0 auto;
+  width: $content-desktop;
 
   +desktop-large() {
-    --width: $content-desktop-large;
+    width: $content-desktop-large;
   }
 
   +desktop-largest() {
-    --width: $content-desktop-largest;
+    width: $content-desktop-largest;
   }
 }
 
