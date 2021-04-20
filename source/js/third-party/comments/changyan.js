@@ -8,7 +8,11 @@ document.addEventListener('page:loaded', () => {
     );
   } else if (CONFIG.page.comments) {
     NexT.utils.loadComments('#SOHUCS')
-      .then(() => NexT.utils.getScript('https://changyan.sohu.com/upload/changyan.js'))
+      .then(() => {
+        delete window.changyan;
+        delete window.cyan;
+        return NexT.utils.getScript('https://changyan.sohu.com/upload/changyan.js');
+      })
       .then(() => {
         window.changyan.api.config({
           appid: CONFIG.changyan.appid,
