@@ -8,35 +8,9 @@ hexo.extend.filter.register('after_generate', () => {
 
   if (theme.vendors.internal !== 'local') {
     // remove all internal scripts
-    hexo.route.remove('js/bookmark.js');
-    hexo.route.remove('js/comments-buttons.js');
-    hexo.route.remove('js/comments.js');
-    hexo.route.remove('js/config.js');
-    hexo.route.remove('js/motion.js');
-    hexo.route.remove('js/next-boot.js');
-    hexo.route.remove('js/pjax.js');
-    hexo.route.remove('js/schedule.js');
-    hexo.route.remove('js/utils.js');
-    hexo.route.remove('js/schemes/muse.js');
-    hexo.route.remove('js/third-party/analytics/baidu-analytics.js');
-    hexo.route.remove('js/third-party/analytics/google-analytics.js');
-    hexo.route.remove('js/third-party/analytics/growingio.js');
-    hexo.route.remove('js/third-party/chat/chatra.js');
-    hexo.route.remove('js/third-party/comments/changyan.js');
-    hexo.route.remove('js/third-party/comments/disqus.js');
-    hexo.route.remove('js/third-party/comments/disqusjs.js');
-    hexo.route.remove('js/third-party/comments/gitalk.js');
-    hexo.route.remove('js/third-party/comments/isso.js');
-    hexo.route.remove('js/third-party/comments/livere.js');
-    hexo.route.remove('js/third-party/comments/utterances.js');
-    hexo.route.remove('js/third-party/math/katex.js');
-    hexo.route.remove('js/third-party/math/mathjax.js');
-    hexo.route.remove('js/third-party/search/algolia-search.js');
-    hexo.route.remove('js/third-party/search/local-search.js');
-    hexo.route.remove('js/third-party/statistics/firestore.js');
-    hexo.route.remove('js/third-party/statistics/lean-analytics.js');
-    hexo.route.remove('js/third-party/tags/mermaid.js');
-    hexo.route.remove('js/third-party/tags/pdf.js');
+    Object.keys(hexo.theme._processingFiles).forEach(path => {
+      if (path.startsWith('source/js/')) hexo.route.remove(path.slice(7));
+    });
     return;
   }
 
