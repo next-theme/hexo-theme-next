@@ -2,14 +2,20 @@
 
 'use strict';
 
+const localScripts = [];
+
+hexo.theme.addProcessor('js/*', (file) => {
+  localScripts.push(file.params[0]);
+});
+
 hexo.extend.filter.register('after_generate', () => {
   const theme = hexo.theme.config;
   if (!theme.minify) return;
 
   if (theme.vendors.internal !== 'local') {
     // remove all internal scripts
-    Object.keys(hexo.theme._processingFiles).forEach(path => {
-      if (path.startsWith('source/js/')) hexo.route.remove(path.slice(7));
+    localScripts.forEach(path => {
+      hexo.route.remove(path);
     });
     return;
   }
