@@ -4,7 +4,7 @@
 
 const localScripts = [];
 
-hexo.theme.addProcessor('js/*', (file) => {
+hexo.theme.addProcessor('js/*', file => {
   localScripts.push(file.params[0]);
 });
 
@@ -13,7 +13,7 @@ hexo.extend.filter.register('after_generate', () => {
   if (!theme.minify) return;
 
   if (theme.vendors.internal !== 'local') {
-    // remove all internal scripts
+    // Remove all internal scripts
     localScripts.forEach(path => {
       hexo.route.remove(path);
     });
