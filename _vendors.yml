@@ -32,34 +32,34 @@ prism_line_numbers:
   integrity: sha256-jWSJB6Iusw1nLB+Iqwk0dp9T2jSn5bRzLXJCE1VmOIU=
 mathjax:
   name: mathjax
-  version: 3.1.2
+  version: 3.1.4
   file: es5/tex-mml-chtml.js
-  integrity: sha256-NQFNlPEZ25KOvT1N5ACll1R64Ny+cq7jqHW097fGqi4=
+  integrity: sha256-ncNI9OXOS5Ek4tzVYiOMmN/KKCPZ6V0Cpv2P/zHntiA=
 katex:
   name: katex
-  version: 0.13.0
+  version: 0.13.3
   file: dist/katex.min.css
   alias: KaTeX
-  integrity: sha256-gPJfuwTULrEAAcI3X4bALVU/2qBU+QY/TpoD3GO+Exw=
+  integrity: sha256-ZtdsMkDnoWbkrm82KV9pXHJCBx4mzAuAkBEMswmVH5M=
 copy_tex_js:
   name: katex
-  version: 0.13.0
+  version: 0.13.3
   file: dist/contrib/copy-tex.min.js
   alias: KaTeX
   integrity: sha256-etSqbSVF4+Lwe8MGk/Vanc1sR+mWv+qOG73fxWw9p94=
 copy_tex_css:
   name: katex
-  version: 0.13.0
+  version: 0.13.3
   file: dist/contrib/copy-tex.min.css
   alias: KaTeX
   integrity: sha256-+oItviPaTmqjDhk4y4fLLUIMgRQYDV/ZyrRNvQiebWM=
 pjax:
   name: '@next-theme/pjax'
-  version: 0.4.0
+  version: 0.5.0
   file: pjax.min.js
   unavailable:
     - cdnjs
-  integrity: sha256-ekLD6YnHhz+Xgbicp6O5ZS0HXDG0a4cr2yZ1Yiu9QHU=
+  integrity: sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=
 jquery:
   name: jquery
   version: 3.6.0
@@ -120,24 +120,24 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 8.3.1
+  version: 8.4.2
   file: firebase-app.js
-  integrity: sha256-Cq3kRztMdCf0Gls66s3fei41MvK3/s6Ip3ZE7A4n2Bo=
+  integrity: sha256-aS+rZ1asHNtiV5W1+xXQ5lgWF8vMvIqUGYkHJetOD9A=
 firebase_firestore:
   name: firebase
-  version: 8.3.1
+  version: 8.4.2
   file: firebase-firestore.js
-  integrity: sha256-1zsSPNLvOv2mXLbnZXk0Gxux8n+t2w38VIdeegWwEUs=
+  integrity: sha256-hCnXfO8mXFtVSaEv9mZUk6Dw2xIcWZj+ABYvThpJCJg=
 algolia_search:
   name: algoliasearch
-  version: 4.8.6
+  version: 4.9.1
   file: dist/algoliasearch-lite.umd.js
-  integrity: sha256-mF+MR7ohaG9BNcnZvqxwNjYLYN7wwmp5JnyTtunkW2U=
+  integrity: sha256-nsOZ0hN8nehDzx3JBvvEM0RrxgDhZVihR8EI+hYxnh8=
 instant_search:
   name: instantsearch.js
-  version: 4.19.0
+  version: 4.21.0
   file: dist/instantsearch.production.min.js
-  integrity: sha256-9jtvcPM3y/n+MVfdqHpa7ayzFwce5h8pjypq5Ozc+bs=
+  integrity: sha256-wbxAqbeBbXYS1TyTiSutvpECRaZqDIv1mfEjgpmheR8=
 pdfobject:
   name: pdfobject
   version: 2.2.5
@@ -145,9 +145,9 @@ pdfobject:
   integrity: sha256-YuNlP9i6s/WH7EaU2kErloo9Vc85C3WVqhoMDgsEVpY=
 mermaid:
   name: mermaid
-  version: 8.9.2
+  version: 8.9.3
   file: dist/mermaid.min.js
-  integrity: sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=
+  integrity: sha256-OyJHvRcZHaRR6Ig73ppxF4QXk8HzvfgTprRWkulCkfY=
 animate_css:
   name: animate.css
   version: 3.1.1
