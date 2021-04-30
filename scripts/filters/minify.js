@@ -2,9 +2,23 @@
 
 'use strict';
 
+const internalScripts = [];
+
+hexo.theme.addProcessor('js/*', file => {
+  internalScripts.push(file.params[0]);
+});
+
 hexo.extend.filter.register('after_generate', () => {
   const theme = hexo.theme.config;
   if (!theme.minify) return;
+
+  if (theme.vendors.internal !== 'local') {
+    // Remove all internal scripts
+    internalScripts.forEach(path => {
+      hexo.route.remove(path);
+    });
+    return;
+  }
 
   if (!hexo.locals.get('pages').some(page => page.type === 'schedule')) {
     hexo.route.remove('js/schedule.js');
