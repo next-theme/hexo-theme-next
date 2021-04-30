@@ -9,10 +9,9 @@ const pjax = new Pjax({
     '.languages',
     '.pjax'
   ],
-  analytics        : false,
-  cacheBust        : false,
-  scrollRestoration: false,
-  scrollTo         : !CONFIG.bookmark.enable
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
 });
 
 document.addEventListener('pjax:success', () => {
