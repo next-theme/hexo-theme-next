@@ -2,10 +2,10 @@
 
 'use strict';
 
-const localScripts = [];
+const internalScripts = [];
 
 hexo.theme.addProcessor('js/*', file => {
-  localScripts.push(file.params[0]);
+  internalScripts.push(file.params[0]);
 });
 
 hexo.extend.filter.register('after_generate', () => {
@@ -14,7 +14,7 @@ hexo.extend.filter.register('after_generate', () => {
 
   if (theme.vendors.internal !== 'local') {
     // Remove all internal scripts
-    localScripts.forEach(path => {
+    internalScripts.forEach(path => {
       hexo.route.remove(path);
     });
     return;
