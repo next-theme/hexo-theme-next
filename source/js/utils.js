@@ -378,7 +378,7 @@ NexT.utils = {
           script.src = url;
           if (integrity) {
             script.integrity = integrity;
-            script.crossorigin = 'anonymous';
+            script.crossOrigin = 'anonymous';
           }
         } else {
           script.src = src;
