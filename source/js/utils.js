@@ -376,7 +376,10 @@ NexT.utils = {
         if (typeof src === 'object') {
           const { url, integrity } = src;
           script.src = url;
-          if (integrity) script.integrity = integrity;
+          if (integrity) {
+            script.integrity = integrity;
+            script.crossorigin = 'anonymous';
+          }
         } else {
           script.src = src;
         }
