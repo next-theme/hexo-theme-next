@@ -62,7 +62,7 @@ custom_logo: #/uploads/custom-logo.jpg
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/about/cclicenses/
 creative_commons:
-  # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+  # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
   license: by-nc-sa
   # Available values: big | small
   size: small
