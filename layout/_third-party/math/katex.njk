@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="{{ theme.vendors.katex }}">
+{{ next_vendors('katex') }}
 {%- if theme.math.katex.copy_tex %}
-  <link rel="stylesheet" href="{{ theme.vendors.copy_tex_css }}">
+  {{ next_vendors('copy_tex_css') }}
   {{ next_data('katex', {
     copy_tex_js: theme.vendors.copy_tex_js
   }) }}

@@ -1,7 +1,7 @@
 {%- if theme.canvas_ribbon.enable %}
-  <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{ theme.canvas_ribbon.zIndex }}" src="{{ theme.vendors.canvas_ribbon }}"></script>
+  <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{ theme.canvas_ribbon.zIndex }}" src="{{ theme.vendors.canvas_ribbon.url }}"></script>
 {%- endif %}
 
 {%- for name in js_vendors() %}
-  <script src="{{ url_for(theme.vendors[name]) }}"></script>
+  {{ next_vendors(name) }}
 {%- endfor %}
