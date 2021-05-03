@@ -174,5 +174,4 @@ creative_commons:
   name: '@creativecommons/vocabulary'
   version: 2020.11.3
   dir: assets/license_badges
-  unavailable:
-    - cdnjs
+  alias: creativecommons-vocabulary
