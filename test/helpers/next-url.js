@@ -37,4 +37,10 @@ describe('next-url', () => {
     const encoded = btoa('https://theme-next.js.org');
     nextUrl('https://theme-next.js.org', 'Text').should.eql(`<span class="exturl" data-url="${encoded}">Text</span>`);
   });
+
+  it('class with exturl enabled', () => {
+    hexo.theme.exturl = true;
+    const encoded = btoa('https://theme-next.js.org');
+    nextUrl('https://theme-next.js.org', 'Text', { class: 'theme-link' }).should.eql(`<span class="exturl theme-link" data-url="${encoded}">Text</span>`);
+  });
 });

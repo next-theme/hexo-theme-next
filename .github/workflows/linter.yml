@@ -12,9 +12,8 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - run: npm run eslint
-    - run: npm test
     - name: Coverage
-      run: npm run test-cov
+      run: npx nyc --reporter=lcovonly npm test
       env:
         CI: true
     - name: Coveralls

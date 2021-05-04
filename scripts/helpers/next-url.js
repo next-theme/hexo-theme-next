@@ -36,10 +36,6 @@ module.exports = function(path, text, options = {}) {
     }
   }
 
-  if (attrs.class && Array.isArray(attrs.class)) {
-    attrs.class = attrs.class.join(' ');
-  }
-
   // If it's external link, rewrite attributes.
   if (data.protocol && data.hostname !== siteHost) {
     attrs.external = null;
