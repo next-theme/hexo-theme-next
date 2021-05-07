@@ -1,4 +1,4 @@
-/* global instantsearch, algoliasearch, CONFIG */
+/* global instantsearch, algoliasearch, CONFIG, pjax */
 
 document.addEventListener('DOMContentLoaded', () => {
   const { indexName, appID, apiKey, hits } = CONFIG.algolia;
@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  window.pjax && search.on('render', () => {
-    window.pjax.refresh(document.querySelector('.algolia-hits'));
-  });
+  if (typeof pjax === 'object') {
+    search.on('render', () => {
+      pjax.refresh(document.querySelector('.algolia-hits'));
+    });
+  }
 
   // Registering Widgets
   search.addWidgets([

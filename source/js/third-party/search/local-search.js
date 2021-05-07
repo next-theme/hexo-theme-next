@@ -1,4 +1,4 @@
-/* global CONFIG */
+/* global CONFIG, pjax */
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!CONFIG.path) {
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container.innerHTML = `<div class="search-stats">${stats}</div>
         <hr>
         <ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
-      window.pjax && window.pjax.refresh(container);
+      if (typeof pjax === 'object') pjax.refresh(container);
     }
   };
 
@@ -203,13 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(res => {
         // Get the contents from search data
         isfetched = true;
-        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
-          return {
-            title  : element.querySelector('title').textContent,
-            content: element.querySelector('content').textContent,
-            url    : element.querySelector('url').textContent
-          };
-        }) : JSON.parse(res);
+        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => ({
+          title  : element.querySelector('title').textContent,
+          content: element.querySelector('content').textContent,
+          url    : element.querySelector('url').textContent
+        })) : JSON.parse(res);
         // Only match articles with non-empty titles
         datas = datas.filter(data => data.title).map(data => {
           data.title = data.title.trim();
