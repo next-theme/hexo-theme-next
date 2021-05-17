@@ -18,7 +18,9 @@ module.exports = hexo => {
     internal(hexo, dependencies);
   }
   for (const [key, value] of Object.entries(dependencies)) {
-    if (vendors[key]) {
+    // This script will be executed repeatedly when Hexo listens file changes
+    // But the variable vendors[key] only needs to be modified once
+    if (vendors[key] && typeof vendors[key] === 'string') {
       vendors[key] = {
         url: url_for.call(hexo, vendors[key])
       };
