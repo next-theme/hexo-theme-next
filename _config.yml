@@ -61,13 +61,15 @@ custom_logo: #/uploads/custom-logo.jpg
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/about/cclicenses/
-# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-# You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
-# CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
 creative_commons:
+  # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
   license: by-nc-sa
+  # Available values: big | small
+  size: small
   sidebar: false
   post: false
+  # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
+  # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
   language:
 
 

@@ -21,7 +21,7 @@ hexo.extend.filter.register('template_locals', locals => {
   // See https://github.com/hexojs/hexo/pull/4614
   page.lang = page.lang || page.language;
   // Creative Commons
-  locals.ccURL = 'https://creativecommons.org/' + (theme.creative_commons.license === 'zero' ? 'publicdomain/zero/1.0/' : 'licenses/' + theme.creative_commons.license + '/4.0/') + (theme.creative_commons.language || '');
+  locals.ccURL = 'https://creativecommons.org/' + (theme.creative_commons.license === 'cc-zero' ? 'publicdomain/zero/1.0/' : 'licenses/' + theme.creative_commons.license + '/4.0/') + (theme.creative_commons.language || '');
   // PJAX
   locals.pjax = theme.pjax ? ' data-pjax' : '';
   // Front-matter

@@ -89,7 +89,7 @@
 
 {%- if theme.creative_commons.license and theme.creative_commons.sidebar %}
   <div class="cc-license site-overview-item animated" itemprop="license">
-  {%- set ccImage = '<img src="' + url_for(theme.images + '/cc-' + theme.creative_commons.license + '.svg') + '" alt="Creative Commons">' %}
+    {%- set ccImage = '<img src="' + theme.vendors.creative_commons.url + '" alt="Creative Commons">' %}
     {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
   </div>
 {%- endif %}

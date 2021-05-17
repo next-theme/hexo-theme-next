@@ -170,3 +170,8 @@ canvas_ribbon:
   unavailable:
     - cdnjs
   integrity: sha256-UkSSapoJqxvq+8bSCIrAhXO+aOMBRmkK6vxjTstemLs=
+creative_commons:
+  name: '@creativecommons/vocabulary'
+  version: 2020.11.3
+  dir: assets/license_badges
+  alias: creativecommons-vocabulary

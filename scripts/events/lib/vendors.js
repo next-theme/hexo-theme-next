@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const { url_for } = require('hexo-util');
+
 let internal;
 try {
   internal = require('@next-theme/plugins');
@@ -13,7 +14,7 @@ const vendorsFile = fs.readFileSync(path.join(__dirname, '../../../_vendors.yml'
 const dependencies = yaml.load(vendorsFile);
 
 module.exports = hexo => {
-  const { vendors } = hexo.theme.config;
+  const { vendors, creative_commons } = hexo.theme.config;
   if (typeof internal === 'function') {
     internal(hexo, dependencies);
   }
@@ -25,6 +26,9 @@ module.exports = hexo => {
         url: url_for.call(hexo, vendors[key])
       };
       continue;
+    }
+    if (key === 'creative_commons') {
+      value.file = `${value.dir}/${creative_commons.size}/${creative_commons.license.replace(/-/g, '_')}.svg`;
     }
     const { name, version, file, alias, unavailable } = value;
     const links = {
