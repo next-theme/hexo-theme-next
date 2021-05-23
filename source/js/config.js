@@ -37,7 +37,7 @@ if (!window.NexT) window.NexT = {};
       }
 
       let override = overrideConfig[name];
-      if (override === undefined && typeof existing === 'object') {
+      if (!(name in overrideConfig) && typeof existing === 'object') {
         override = {};
         overrideConfig[name] = override;
       }
@@ -49,6 +49,8 @@ if (!window.NexT) window.NexT = {};
             return true;
           }
         });
+      } else if (name in overrideConfig) {
+        return override;
       }
       return existing;
     }
