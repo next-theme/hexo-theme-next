@@ -36,22 +36,30 @@ if (!window.NexT) window.NexT = {};
         existing = variableConfig[name];
       }
 
-      let override = overrideConfig[name];
+      // For unset override and mixable existing
       if (!(name in overrideConfig) && typeof existing === 'object') {
-        override = {};
-        overrideConfig[name] = override;
+        // Get ready to mix.
+        overrideConfig[name] = {};
       }
 
-      if (typeof override === 'object') {
-        return new Proxy({...existing, ...override}, {
-          set(target, prop, value) {
-            override[prop] = value;
-            return true;
-          }
-        });
-      } else if (name in overrideConfig) {
+      if (name in overrideConfig) {
+        const override = overrideConfig[name];
+
+        // When mixable
+        if (typeof override === 'object' && typeof existing === 'object') {
+          // Mix, proxy changes to the override.
+          return new Proxy({...existing, ...override}, {
+            set(target, prop, value) {
+              override[prop] = value;
+              return true;
+            }
+          });
+        }
+
         return override;
       }
+
+      // Only when not mixable and override hasn't been set.
       return existing;
     }
   });
