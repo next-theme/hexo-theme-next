@@ -14,7 +14,9 @@ document.addEventListener('page:loaded', () => {
   }
 
   if (CONFIG.page.comments) {
-    const disqus_config = function() {
+    // `disqus_config` should be a global variable
+    // See https://help.disqus.com/en/articles/1717084-javascript-configuration-variables
+    window.disqus_config = function() {
       this.page.url = CONFIG.page.permalink;
       this.page.identifier = CONFIG.page.path;
       this.page.title = CONFIG.page.title;
@@ -26,7 +28,7 @@ document.addEventListener('page:loaded', () => {
       if (window.DISQUS) {
         DISQUS.reset({
           reload: true,
-          config: disqus_config
+          config: window.disqus_config
         });
       } else {
         NexT.utils.getScript(`https://${CONFIG.disqus.shortname}.disqus.com/embed.js`, {
