@@ -50,6 +50,7 @@ if (!window.NexT) window.NexT = {};
           // Mix, proxy changes to the override.
           return new Proxy({...existing, ...override}, {
             set(target, prop, value) {
+              target[prop] = value;
               override[prop] = value;
               return true;
             }
