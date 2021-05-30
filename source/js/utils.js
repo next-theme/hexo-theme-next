@@ -189,7 +189,7 @@ NexT.utils = {
         index--;
       }
       this.activateNavByIndex(index);
-    });
+    }, { passive: true });
 
     backToTop && backToTop.addEventListener('click', () => {
       window.anime({

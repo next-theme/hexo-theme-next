@@ -57,5 +57,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateFooterPosition();
   window.addEventListener('resize', updateFooterPosition);
-  window.addEventListener('scroll', updateFooterPosition);
+  window.addEventListener('scroll', updateFooterPosition, { passive: true });
 });
