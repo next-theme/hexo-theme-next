@@ -649,7 +649,40 @@ utterances:
 
 # Isso
 # For more information: https://posativ.org/isso/
-isso: # <data_isso>
+isso: 
+  url: # Your isso server domain
+  lang: zh # Set language
+  # Set to true when spam guard is configured with reply-to-self = true.
+  reply_to_self: "false" 
+  # Set to true when spam guard is configured with require-author = true.
+  require_author: "false" 
+  # Set to true when spam guard is configured with require-email = true.
+  require_email: "false" 
+  # Set to true when reply notifications is configured with reply-notifications = true.
+  reply_notifications: "false" 
+  # Number of top level (or nested) comments to show by default. If some comments are not shown, an “X Hidden” link is shown.
+  # Set to “inf” to show all, or “0” to hide all.
+  max_comments_top: "10"
+  max_comments_nested: "5"
+  # Number of comments to reveal on clicking the “X Hidden” link.
+  reveal_on_click: "5"
+  # Enable or disable avatar generation.
+  avatar: "true"
+  # Set avatar background color. Any valid CSS color will do.
+  avatar_bg: "#f0f0f0"
+  # Set avatar foreground color. Up to 8 colors are possible. 
+  # The default color scheme is based in this color palette. 
+  # Multiple colors must be separated by space. 
+  # If you use less than eight colors and not a multiple of 2, the color distribution is not even.
+  avatar_fg: "#9abf88 #5698c4 #e279a3 #9163b6 ..."
+  # Enable or disable voting feature on the client side.
+  vote: "true"
+  # List of vote levels used to customize comment appearance based on score. 
+  # Provide a comma-separated values (eg. “0,5,10,25,100”) or a JSON array (eg. “[-5,5,15]”).
+  vote_levels: ""
+  # Enable or disable the addition of a link to the feed for the comment thread. 
+  # The link will only be valid if the appropriate setting, in [rss] section, is also enabled server-side.
+  feed: "false"
 
 
 # ---------------------------------------------------------------
