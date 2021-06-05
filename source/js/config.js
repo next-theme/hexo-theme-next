@@ -6,14 +6,14 @@ if (!window.NexT) window.NexT = {};
   const staticConfig = {};
   let variableConfig = {};
 
-  const parse = (text) => {
+  const parse = text => {
     const jsonString = new DOMParser()
       .parseFromString(text, 'text/html').documentElement
       .textContent;
     return JSON.parse(jsonString || '{}');
   };
 
-  const update = (name) => {
+  const update = name => {
     const targetEle = document.querySelector(`.${className}[data-name="${name}"]`);
     if (!targetEle) return;
     const parsedConfig = parse(targetEle.text);
@@ -48,7 +48,7 @@ if (!window.NexT) window.NexT = {};
         // When mixable
         if (typeof override === 'object' && typeof existing === 'object') {
           // Mix, proxy changes to the override.
-          return new Proxy({...existing, ...override}, {
+          return new Proxy({ ...existing, ...override }, {
             set(target, prop, value) {
               target[prop] = value;
               override[prop] = value;

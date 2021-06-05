@@ -200,7 +200,7 @@ language_switcher: false
 
 footer:
   # Specify the year when the site was setup. If not defined, current year will be used.
-  #since: 2020
+  #since: 2021
 
   # Icon between year and copyright info.
   icon:
@@ -387,7 +387,7 @@ back2top:
 reading_progress:
   enable: false
   # Available values: left | right
-  startAt: left
+  start_at: left
   # Available values: top | bottom
   position: top
   reversed: false
@@ -559,11 +559,6 @@ quicklink:
   timeout: 3000
   # Default (true) will attempt to use the fetch() API if supported (rather than link[rel=prefetch]).
   priority: true
-
-  # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
-  # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
-  # This option is deprecated. Use `CONFIG.quicklink.ignores` in your custom scripts instead.
-  ignores:
 
 
 # ---------------------------------------------------------------

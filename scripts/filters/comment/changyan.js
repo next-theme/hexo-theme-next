@@ -10,7 +10,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   const config = hexo.theme.config.changyan;
   if (!config.enable || !config.appid || !config.appkey) return;
 
-  injects.comment.raw('changyan', '<div class="comments" id="SOHUCS"></div>', {}, {cache: true});
+  injects.comment.raw('changyan', '<div class="comments" id="SOHUCS"></div>', {}, { cache: true });
 
   injects.bodyEnd.file('changyan', path.join(hexo.theme_dir, 'layout/_third-party/comments/changyan.njk'));
 

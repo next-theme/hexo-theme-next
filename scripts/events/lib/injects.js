@@ -28,7 +28,7 @@ class ViewInject {
     if (path.extname(name) === '') {
       name += defaultExtname;
     }
-    this.raws.push({name, raw, args});
+    this.raws.push({ name, raw, args });
   }
   file(name, file, ...args) {
     // Set default extname from file's extname

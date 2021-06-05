@@ -11,7 +11,7 @@
   document.addEventListener('page:loaded', () => {
     if (!CONFIG.page.isPost) return;
 
-    const newWidgets = widgets.map(widget => ({...widget}));
+    const newWidgets = widgets.map(widget => ({ ...widget }));
 
     if (window.WPac) {
       WPac.init(newWidgets);

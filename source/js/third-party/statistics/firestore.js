@@ -23,7 +23,7 @@ firebase.initializeApp({
     });
   };
 
-  const appendCountTo = (el) => {
+  const appendCountTo = el => {
     return count => {
       el.innerText = count;
     };

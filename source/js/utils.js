@@ -22,7 +22,7 @@ if (typeof DOMTokenList.prototype.replace !== 'function') {
   );
 
   if (document.readyState === 'loading') {
-    document.addEventListener('readystatechange', onPageLoaded, {once: true});
+    document.addEventListener('readystatechange', onPageLoaded, { once: true });
   } else {
     onPageLoaded();
   }
@@ -392,7 +392,7 @@ NexT.utils = {
     if (legacyCallback) {
       return this.loadComments(selector).then(legacyCallback);
     }
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const element = document.querySelector(selector);
       if (!CONFIG.comments.lazyload || !element) {
         resolve();

@@ -16,9 +16,9 @@ document.addEventListener('page:loaded', () => {
       mermaid.init({
         theme    : CONFIG.mermaid.theme,
         logLevel : 3,
-        flowchart: {curve: 'linear'},
-        gantt    : {axisFormat: '%m/%d/%Y'},
-        sequence : {actorMargin: 50}
+        flowchart: { curve: 'linear' },
+        gantt    : { axisFormat: '%m/%d/%Y' },
+        sequence : { actorMargin: 50 }
       }, '.mermaid');
     });
   }

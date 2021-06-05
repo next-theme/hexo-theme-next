@@ -13,7 +13,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
-  `, {}, {cache: true});
+  `, {}, { cache: true });
 
   injects.bodyEnd.file('disqusjs', path.join(hexo.theme_dir, 'layout/_third-party/comments/disqusjs.njk'));
 
