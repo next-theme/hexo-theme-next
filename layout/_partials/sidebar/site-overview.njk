@@ -60,13 +60,13 @@
 </div>
 {%- endif %}
 
-{%- if theme.chat.enable and theme.chat.service !== '' %}
+{%- if theme.chatra.enable or theme.tidio.enable or theme.gitter.enable %}
   <div class="sidebar-button site-overview-item animated">
-  {%- if theme.chat.service === 'chatra' and theme.chatra.enable %}
+  {%- if theme.chatra.enable %}
     <button onclick="Chatra('openChat', true);">
-  {%- elif theme.chat.service === 'tidio' and theme.tidio.enable %}
+  {%- elif theme.tidio.enable %}
     <button onclick="tidioChatApi.open();">
-  {%- elif theme.chat.service === 'gitter' and theme.gitter.enable %}
+  {%- elif theme.gitter.enable %}
     <button class="js-gitter-toggle-chat-button">
   {%- endif %}
   {%- if theme.chat.icon %}<i class="{{ theme.chat.icon }}"></i>{%- endif %}

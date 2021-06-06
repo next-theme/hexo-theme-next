@@ -749,10 +749,6 @@ local_search:
 # A button to open designated chat widget.
 # Firstly, you need to enable and configure the chat service.
 chat:
-  enable: false
-  # Available services: chatra | tidio | gitter
-  service: chatra
-  sidebar: true
   icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
   text: Chat # Button text, change it as you wish.
 
