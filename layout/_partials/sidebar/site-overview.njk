@@ -60,7 +60,7 @@
 </div>
 {%- endif %}
 
-{%- if theme.chatra.enable or theme.tidio.enable or theme.gitter.enable %}
+{%- if theme.chat.enable and (theme.chatra.enable or theme.tidio.enable or theme.gitter.enable) %}
   <div class="sidebar-button site-overview-item animated">
   {%- if theme.chatra.enable %}
     <button onclick="Chatra('openChat', true);">

@@ -1,6 +1,5 @@
 /* global CONFIG */
 
 ((window.gitter = {}).chat = {}).options = {
-  room             : CONFIG.gitter.room,
-  activationElement: false
+  room: CONFIG.gitter.room
 };

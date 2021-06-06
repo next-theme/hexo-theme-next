@@ -746,9 +746,10 @@ local_search:
 # See: https://theme-next.js.org/docs/third-party-services/chat-services
 # ---------------------------------------------------------------
 
-# A button to open designated chat widget.
+# A button to open designated chat widget in sidebar.
 # Firstly, you need to enable and configure the chat service.
 chat:
+  enable: false
   icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
   text: Chat # Button text, change it as you wish.
 
