@@ -63,15 +63,15 @@
 {%- if theme.chat.enable and theme.chat.service !== '' %}
   <div class="sidebar-button site-overview-item animated">
   {%- if theme.chat.service === 'chatra' and theme.chatra.enable %}
-    <a onclick="Chatra('openChat', true);">
+    <button onclick="Chatra('openChat', true);">
   {%- elif theme.chat.service === 'tidio' and theme.tidio.enable %}
-    <a onclick="tidioChatApi.open();">
+    <button onclick="tidioChatApi.open();">
   {%- elif theme.chat.service === 'gitter' and theme.gitter.enable %}
-    <a onclick=";">
+    <button class="js-gitter-toggle-chat-button">
   {%- endif %}
   {%- if theme.chat.icon %}<i class="{{ theme.chat.icon }}"></i>{%- endif %}
     {{ theme.chat.text }}
-  </a>
+  </button>
   </div>
 {%- endif %}
 
