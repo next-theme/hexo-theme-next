@@ -235,9 +235,15 @@ site-nav-hide-by-default() {
   }
 }
 
-button() {
+button($color) {
   background: transparent;
+  color: $color;
   cursor: pointer;
   line-height: 2;
   padding: 0 15px;
+
+  &:hover {
+    background: $color;
+    color: white;
+  }
 }
