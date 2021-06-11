@@ -1,5 +1,3 @@
-{%- if theme.chatra.enable %}
-  {{ next_data('chatra', theme.chatra) }}
-  {{ next_js('third-party/chat/chatra.js') }}
-  <script{{ ' async' if theme.chatra.async }} src="https://call.chatra.io/chatra.js"></script>
-{%- endif %}
+{{ next_data('chatra', theme.chatra) }}
+{{ next_js('third-party/chat/chatra.js') }}
+<script{{ ' async' if theme.chatra.async }} src="https://call.chatra.io/chatra.js"></script>
