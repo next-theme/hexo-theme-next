@@ -6,12 +6,7 @@ if (!window.NexT) window.NexT = {};
   const staticConfig = {};
   let variableConfig = {};
 
-  const parse = text => {
-    const jsonString = new DOMParser()
-      .parseFromString(text, 'text/html').documentElement
-      .textContent;
-    return JSON.parse(jsonString || '{}');
-  };
+  const parse = text => JSON.parse(text || '{}');
 
   const update = name => {
     const targetEle = document.querySelector(`.${className}[data-name="${name}"]`);
