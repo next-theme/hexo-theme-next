@@ -32,11 +32,12 @@
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          {{ partial('_partials/sidebar/site-overview.njk', {}, {cache: theme.cache.enable}) }}
+          <div class="site-overview">
+            {{ partial('_partials/sidebar/site-overview.njk', {}, {cache: theme.cache.enable}) }}
 
-          {{- next_inject('sidebar') }}
+            {{- next_inject('sidebar') }}
+          </div>
         </div>
-      </div>
 
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top animated" role="button" aria-label="{{ __('accessibility.back_to_top') }}">
