@@ -34,6 +34,7 @@
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.3",
     "chai": "4.3.4",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "7.32.0",
     "hexo": "5.4.0",
     "hexo-renderer-marked": "4.1.0",
@@ -41,5 +42,10 @@
     "mocha": "9.1.2",
     "nyc": "15.1.0",
     "stylint": "2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
