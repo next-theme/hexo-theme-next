@@ -41,10 +41,9 @@ hexo.extend.helper.register('next_vendors', function(name) {
 });
 
 hexo.extend.helper.register('next_data', function(name, ...data) {
-  const { escape_html } = this;
   const json = data.length === 1 ? data[0] : Object.assign({}, ...data);
   return `<script class="next-config" data-name="${name}" type="application/json">${
-    escape_html(JSON.stringify(json))
+    JSON.stringify(json).replace(/</g, '\\u003c')
   }</script>`;
 });
 
