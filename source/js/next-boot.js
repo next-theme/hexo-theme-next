@@ -76,6 +76,7 @@ NexT.boot.refresh = function() {
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerLangSelect();
   NexT.utils.registerSidebarTOC();
+  NexT.utils.registerPostReward();
   NexT.utils.wrapTableWithBox();
   NexT.utils.registerVideoIframe();
 };
