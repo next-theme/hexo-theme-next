@@ -1,10 +1,19 @@
-/* global CONFIG */
+/* global CONFIG, Chatra */
 
-if (CONFIG.chatra.embed) {
-  window.ChatraSetup = {
-    mode    : 'frame',
-    injectTo: CONFIG.chatra.embed
-  };
-}
+(function() {
+  if (CONFIG.chatra.embed) {
+    window.ChatraSetup = {
+      mode    : 'frame',
+      injectTo: CONFIG.chatra.embed
+    };
+  }
 
-window.ChatraID = CONFIG.chatra.id;
+  window.ChatraID = CONFIG.chatra.id;
+
+  const chatButton = document.querySelector('.sidebar-button button');
+  if (chatButton) {
+    chatButton.addEventListener('click', () => {
+      Chatra('openChat', true);
+    });
+  }
+})();
