@@ -83,7 +83,7 @@
 
   {{- next_inject('postMeta') }}
 
-  {%- if theme.symbols_count_time.separated_meta and (config.symbols_count_time.symbols or config.symbols_count_time.time) %}
+  {%- if theme.symbols_count_time.separated_meta and config.symbols_count_time.symbols and config.symbols_count_time.time %}
     <span class="post-meta-break"></span>
   {%- endif %}
 
