@@ -181,7 +181,7 @@ NexT.utils = {
       }
       if (!Array.isArray(NexT.utils.sections)) return;
       let index = NexT.utils.sections.findIndex(element => {
-        return element && element.getBoundingClientRect().top > 0;
+        return element && element.getBoundingClientRect().top > 10;
       });
       if (index === -1) {
         index = NexT.utils.sections.length - 1;
@@ -275,7 +275,7 @@ NexT.utils = {
           targets  : document.scrollingElement,
           duration : 500,
           easing   : 'linear',
-          scrollTop: offset + 10,
+          scrollTop: offset,
           complete : () => {
             history.pushState(null, document.title, element.href);
           }
