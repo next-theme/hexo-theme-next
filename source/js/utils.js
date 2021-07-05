@@ -291,18 +291,34 @@ NexT.utils = {
   },
 
   activateNavByIndex: function(index) {
-    const target = document.querySelectorAll('.post-toc li a.nav-link')[index];
+    const nav = document.querySelector('.post-toc .nav');
+    if (!nav) return;
+
+    const navItemList = nav.querySelectorAll('.nav-item');
+    const target = navItemList[index];
     if (!target || target.classList.contains('active-current')) return;
 
-    document.querySelectorAll('.post-toc .active').forEach(element => {
-      element.classList.remove('active', 'active-current');
+    const singleHeight = navItemList[navItemList.length - 1].offsetHeight;
+
+    nav.querySelectorAll('.active').forEach(navItem => {
+      navItem.classList.remove('active', 'active-current');
     });
     target.classList.add('active', 'active-current');
-    let parent = target.parentNode;
-    while (!parent.matches('.post-toc')) {
-      if (parent.matches('li')) parent.classList.add('active');
-      parent = parent.parentNode;
+
+    let activateEle = target.querySelector('.nav-child') || target.parentElement;
+    let navChildHeight = 0;
+    while (activateEle !== nav) {
+      if (activateEle.classList.contains('nav-item')) {
+        activateEle.classList.add('active');
+      } else if (activateEle.classList.contains('nav-child')) {
+        const extraHeight = activateEle.scrollHeight
+          - [...activateEle.children].reduce((a, b) => a + b.offsetHeight, 0);
+        navChildHeight += (singleHeight * activateEle.childElementCount) + extraHeight;
+        activateEle.style.setProperty('--height', `${navChildHeight}px`);
+      }
+      activateEle = activateEle.parentElement;
     }
+
     // Scrolling to center active TOC element if TOC content is taller then viewport.
     const tocElement = document.querySelector('.sidebar-panel-container');
     window.anime({
