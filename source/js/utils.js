@@ -277,7 +277,7 @@ NexT.utils = {
           easing   : 'linear',
           scrollTop: offset + 10,
           complete : () => {
-            history.pushState(null, null, element.href);
+            history.pushState(null, document.title, element.href);
           }
         });
       });
