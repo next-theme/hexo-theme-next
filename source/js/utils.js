@@ -311,8 +311,10 @@ NexT.utils = {
       if (activateEle.classList.contains('nav-item')) {
         activateEle.classList.add('active');
       } else if (activateEle.classList.contains('nav-child')) {
-        const extraHeight = activateEle.scrollHeight
-          - [...activateEle.children].reduce((a, b) => a + b.offsetHeight, 0);
+        // Defined in CSS. The last nav-item in a nav-child has a margin-bottom of 5px.
+        const extraHeight = 5;
+
+        // scrollHeight isn't reliable here as transitioning items affect.
         navChildHeight += (singleHeight * activateEle.childElementCount) + extraHeight;
         activateEle.style.setProperty('--height', `${navChildHeight}px`);
       }

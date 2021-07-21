@@ -1,12 +1,14 @@
 // Sidebar Navigation
 .sidebar-nav {
-  display: none;
+  --scroll-height: auto;
+  height: 0;
   margin: 0;
-  padding-bottom: 20px;
+  overflow: hidden;
   padding-left: 0;
+  transition: height $transition-ease;
 
   .sidebar-nav-active & {
-    display: block;
+    height: var(--scroll-height);
   }
 
   li {
@@ -36,21 +38,57 @@
 }
 
 .sidebar-panel-container {
+  display: grid;
   max-height: var(--sidebar-wrapper-height);
   overflow-x: hidden;
   overflow-y: auto;
+  padding-top: 20px;
 }
 
 .sidebar-panel {
-  display: none;
+  --deactivate-duration: .3s;
+  animation: var(--deactivate-duration) deactivate-sidebar-panel;
+  grid-area: 1 / 1;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-20px);
+  transition-delay: 0s;
+  transition-duration: var(--deactivate-duration);
+  transition-property: opacity, transform, height, visibility;
+  pointer-events: none;
+}
+
+@keyframes deactivate-sidebar-panel {
+  from {
+    height: var(--inactive-panel-height);
+  }
+  to {
+    height: var(--active-panel-height);
+  }
+}
+
+@keyframes activate-sidebar-panel {
+  // Keep height 0 to avoid affecting the layout.
+  from, to {
+    height: 0;
+  }
+}
+
+.sidebar-overview-active .site-overview-wrap,
+.sidebar-toc-active .post-toc-wrap {
+  --activate-duration: var(--deactivate-duration);
+  animation: var(--deactivate-duration) activate-sidebar-panel;
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: var(--deactivate-duration);
+  transition-duration: var(--activate-duration);
+  pointer-events: auto;
 }
 
 .sidebar-overview-active .site-overview-wrap {
   // Flexbox layout makes it possible to reorder the child
   // elements of .site-overview-item through the `order` CSS property
   flex-column();
-}
-
-.sidebar-toc-active .post-toc-wrap {
-  display: block;
 }
