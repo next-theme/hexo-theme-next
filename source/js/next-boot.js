@@ -22,10 +22,14 @@ NexT.boot.registerEvents = function() {
       const sidebar = document.querySelector('.sidebar-inner');
 
       const panelContainer = sidebar.querySelector('.sidebar-panel-container');
-      const activePanelHeight = panelContainer.children[index].scrollHeight;
-      panelContainer.style.setProperty('--active-panel-height', `${activePanelHeight}px`);
-      const inactivePanelHeight = panelContainer.children[1 - index].scrollHeight;
-      panelContainer.style.setProperty('--inactive-panel-height', `${inactivePanelHeight}px`);
+      const nav = panelContainer.firstElementChild.querySelector('.nav');
+      const navHeight = nav ? parseInt(nav.style.getPropertyValue('--height'), 10) : 0;
+      const panelHeights = [
+        navHeight || panelContainer.firstElementChild.scrollHeight,
+        panelContainer.lastElementChild.scrollHeight
+      ];
+      panelContainer.style.setProperty('--inactive-panel-height', `${panelHeights[1 - index]}px`);
+      panelContainer.style.setProperty('--active-panel-height', `${panelHeights[index]}px`);
 
       const activeClassNames = ['sidebar-toc-active', 'sidebar-overview-active'];
       sidebar.classList.replace(activeClassNames[1 - index], activeClassNames[index]);

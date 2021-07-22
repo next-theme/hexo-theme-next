@@ -163,6 +163,19 @@ NexT.utils = {
     });
   },
 
+  updateActiveNav: function() {
+    if (!Array.isArray(NexT.utils.sections)) return;
+    let index = NexT.utils.sections.findIndex(element => {
+      return element && element.getBoundingClientRect().top > 0;
+    });
+    if (index === -1) {
+      index = NexT.utils.sections.length - 1;
+    } else if (index > 0) {
+      index--;
+    }
+    this.activateNavByIndex(index);
+  },
+
   registerScrollPercent: function() {
     const backToTop = document.querySelector('.back-to-top');
     const readingProgressBar = document.querySelector('.reading-progress-bar');
@@ -179,16 +192,7 @@ NexT.utils = {
           readingProgressBar.style.setProperty('--progress', scrollPercent.toFixed(2) + '%');
         }
       }
-      if (!Array.isArray(NexT.utils.sections)) return;
-      let index = NexT.utils.sections.findIndex(element => {
-        return element && element.getBoundingClientRect().top > 0;
-      });
-      if (index === -1) {
-        index = NexT.utils.sections.length - 1;
-      } else if (index > 0) {
-        index--;
-      }
-      this.activateNavByIndex(index);
+      NexT.utils.updateActiveNav();
     }, { passive: true });
 
     backToTop && backToTop.addEventListener('click', () => {
@@ -280,6 +284,7 @@ NexT.utils = {
       });
       return target;
     });
+    this.updateActiveNav();
   },
 
   registerPostReward: function() {
@@ -307,11 +312,12 @@ NexT.utils = {
 
     let activateEle = target.querySelector('.nav-child') || target.parentElement;
     let navChildHeight = 0;
-    while (activateEle !== nav) {
+
+    while (nav.contains(activateEle)) {
       if (activateEle.classList.contains('nav-item')) {
         activateEle.classList.add('active');
-      } else if (activateEle.classList.contains('nav-child')) {
-        // Defined in CSS. The last nav-item in a nav-child has a margin-bottom of 5px.
+      } else if (activateEle.classList.contains('nav-child') || activateEle === nav) {
+        // Defined in CSS. The last nav-item in a list has a margin-bottom of 5px.
         const extraHeight = 5;
 
         // scrollHeight isn't reliable here as transitioning items affect.
