@@ -91,7 +91,7 @@
 }
 
 // .post-meta-item exists in .post-meta and footer
-.post-meta-item:not(:first-child)::before {
+:not(.post-meta-break) + .post-meta-item::before {
   content: '|';
   margin: 0 .5em;
 }
@@ -108,6 +108,11 @@
   +tablet-mobile() {
     display: none;
   }
+}
+
+.post-meta-break {
+  flex-basis: 100%;
+  height: 0;
 }
 
 if (hexo-config('busuanzi_count.enable') and hexo-config('busuanzi_count.post_views')) {

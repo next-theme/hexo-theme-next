@@ -83,11 +83,11 @@
 
   {{- next_inject('postMeta') }}
 
+  {%- if theme.symbols_count_time.separated_meta and config.symbols_count_time.symbols and config.symbols_count_time.time %}
+    <span class="post-meta-break"></span>
+  {%- endif %}
+
   {%- if config.symbols_count_time.symbols %}
-    {%- if theme.symbols_count_time.separated_meta %}
-      </div>
-      <div class="post-meta">
-    {%- endif %}
     <span class="post-meta-item" title="{{ __('symbols_count_time.count') }}">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
