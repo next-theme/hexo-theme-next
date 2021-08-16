@@ -3,13 +3,9 @@
   // https://caniuse.com/mdn-css_properties_gap_grid_context
   grid-gap: 1.5rem;
   gap: 1.5rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin-bottom: 20px;
   padding: 1rem;
-
-  +mobile() {
-    grid-template-columns: 1fr;
-  }
 
   .link-grid-container {
     border: solid $grey-lighter;
