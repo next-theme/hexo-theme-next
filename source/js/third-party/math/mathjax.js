@@ -31,6 +31,6 @@ document.addEventListener('page:loaded', () => {
     MathJax.startup.document.state(0);
     MathJax.typesetClear();
     MathJax.texReset();
-    MathJax.typeset();
+    MathJax.typesetPromise();
   }
 });
