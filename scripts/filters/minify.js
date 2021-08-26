@@ -137,10 +137,6 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/third-party/fancybox.js');
   }
 
-  if (!theme.nprogress.enable) {
-    hexo.route.remove('js/third-party/nprogress.js');
-  }
-
   if (!theme.quicklink.enable) {
     hexo.route.remove('js/third-party/quicklink.js');
   }
