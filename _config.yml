@@ -849,14 +849,11 @@ canvas_ribbon:
   zIndex: -1 # The display level of the ribbon
 
 
-#! ==============================================================
-#! DO NOT EDIT THE FOLLOWING SETTINGS
-#! UNLESS YOU KNOW WHAT YOU ARE DOING
-#! See: https://theme-next.js.org/docs/advanced-settings/vendors
-#! ==============================================================
+# ---------------------------------------------------------------
+# CDN Settings
+# See: https://theme-next.js.org/docs/advanced-settings/vendors
+# ---------------------------------------------------------------
 
-# It's recommended to use the same version as in `_vendors.yml` to avoid potential problems.
-# Remember to use the HTTPS protocol of CDN links when you enable HTTPS on your site.
 vendors:
   # The CDN provider of NexT internal scripts.
   # Available values: local | jsdelivr | unpkg | cdnjs
@@ -866,83 +863,6 @@ vendors:
   # Available values: local | jsdelivr | unpkg | cdnjs
   # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
   plugins: jsdelivr
-
-  # In the following settings, you can specify the CDN link for each plugin.
-  # If left blank, the default CDN provider set by `plugins` option will be used.
-
-  # Anime.js
-  # For more information: https://animejs.com
-  anime:
-
-  # Font Awesome
-  # For more information: https://fontawesome.com
-  fontawesome:
-
-  # Prism
-  prism:
-  prism_autoloader:
-  prism_line_numbers:
-
-  # MathJax
-  mathjax:
-
-  # KaTeX
-  katex:
-  copy_tex_js:
-  copy_tex_css:
-
-  # Pjax
-  pjax:
-
-  # FancyBox
-  jquery:
-  fancybox_js:
-  fancybox_css:
-
-  # Medium-zoom
-  mediumzoom:
-
-  # Lazyload
-  lazyload:
-
-  # Pangu
-  pangu:
-
-  # Quicklink
-  quicklink:
-
-  # DisqusJS
-  disqusjs_js:
-  disqusjs_css:
-
-  # Gitalk
-  gitalk_js:
-  gitalk_css:
-
-  # Firebase
-  firebase_app:
-  firebase_firestore:
-
-  # Algolia Search
-  algolia_search:
-  instant_search:
-
-  # PDF
-  pdfobject:
-
-  # Mermaid
-  mermaid:
-
-  # Animate.css
-  # Warning: motion won't work with animate.css version 3.2.0 or later
-  animate_css:
-
-  # NProgress.js
-  nprogress_js:
-  nprogress_css:
-
-  # Canvas ribbon
-  canvas_ribbon:
 
 # Assets
 # Accelerate delivery of static files using a CDN
