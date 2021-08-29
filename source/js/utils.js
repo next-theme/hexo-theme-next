@@ -311,6 +311,7 @@ NexT.utils = {
     }
     // Scrolling to center active TOC element if TOC content is taller then viewport.
     const tocElement = document.querySelector('.sidebar-panel-container');
+    if (!tocElement.parentNode.classList.contains('sidebar-toc-active')) return;
     window.anime({
       targets  : tocElement,
       duration : 200,
