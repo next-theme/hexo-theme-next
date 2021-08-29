@@ -45,8 +45,6 @@ NexT.boot.registerEvents = function() {
     });
   });
 
-  window.addEventListener('resize', NexT.utils.initSidebarDimension);
-
   window.addEventListener('hashchange', () => {
     const tHash = location.hash;
     if (tHash !== '' && !tHash.match(/%\S{2}/)) {
