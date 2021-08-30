@@ -190,6 +190,7 @@ NexT.utils = {
         tActive.dispatchEvent(new Event('tabs:click', {
           bubbles: true
         }));
+        if (!CONFIG.stickytabs) return;
         const offset = nav.parentNode.getBoundingClientRect().top + window.scrollY + 10;
         window.anime({
           targets  : document.scrollingElement,
