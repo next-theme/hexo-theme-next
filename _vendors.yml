@@ -153,16 +153,17 @@ animate_css:
   version: 3.1.1
   file: animate.min.css
   integrity: sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=
-nprogress_js:
-  name: nprogress
-  version: 0.2.0
-  file: nprogress.js
-  integrity: sha256-a5YRB27CcBwBFcT5EF/f3E4vzIqyHrSR878nseNYw64=
-nprogress_css:
-  name: nprogress
-  version: 0.2.0
-  file: nprogress.css
-  integrity: sha256-no0c5ccDODBwp+9hSmV5VvPpKwHCpbVzXHexIkupM6U=
+pace_js:
+  name: pace-js
+  version: 1.2.4
+  file: pace.min.js
+  alias: pace
+  integrity: sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=
+pace_css:
+  name: pace-js
+  version: 1.2.4
+  dir: themes
+  alias: pace
 canvas_ribbon:
   name: ribbon.js
   version: 1.0.2

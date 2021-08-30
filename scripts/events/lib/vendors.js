@@ -14,7 +14,7 @@ const vendorsFile = fs.readFileSync(path.join(__dirname, '../../../_vendors.yml'
 const dependencies = yaml.load(vendorsFile);
 
 module.exports = hexo => {
-  const { vendors, creative_commons } = hexo.theme.config;
+  const { vendors, creative_commons, pace } = hexo.theme.config;
   if (typeof internal === 'function') {
     internal(hexo, dependencies);
   }
@@ -29,6 +29,9 @@ module.exports = hexo => {
     }
     if (key === 'creative_commons') {
       value.file = `${value.dir}/${creative_commons.size}/${creative_commons.license.replace(/-/g, '_')}.svg`;
+    }
+    if (key === 'pace_css') {
+      value.file = `${value.dir}/${pace.color}/pace-theme-${pace.theme}.css`;
     }
     const { name, version, file, alias, unavailable } = value;
     const links = {
