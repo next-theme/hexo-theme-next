@@ -144,18 +144,18 @@ Pull requests related:
 - `New Feature`: A pull request that provides a new feature
 - `Feature`: A pull request that provides an option or addition to existing feature
 - `i18n`: A pull request that makes new languages translation
+- `Dependencies`: A pull request that updates package dependencies
+- `Actions`: A pull request that updates the GitHub Actions workflow
 - `Skip Release`: A pull request that should be excluded from release note
 
 Both:
 
 - `Roadmap`: An issue / pull request about future development
 - `Help Wanted`: An issue / pull request that needs help
-- `Discussion`: An issue / pull request that needs to be discussed
 - `Improvement`: An issue that needs improvement or a pull request that improves NexT
-- `Performance`: An issue / pull request that improves the performance
 - `Layout`: An issue / pull request related to template engine
 - `CSS`: An issue / pull request related to CSS
-- `Fonts`: An issue / pull request related to fonts
+- `Icons & Fonts`: An issue / pull request related to icons or fonts
 - `PJAX`: An issue / pull request related to PJAX
 - `3rd Party Plugin`: An issue / pull request related to 3rd party plugins & service
 - `Docs`: An issue / pull request related to instruction document
