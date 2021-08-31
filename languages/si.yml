@@ -1,17 +1,17 @@
 ---
 name: සිංහල
 title:
-  archive: ලේඛන ගබඩාව
+  archive: සංරක්ෂිතය
   category: ප්‍රවර්ගය
   tag: ටැගය
   schedule: කාලසටහන
 menu:
-  home: නිවස
-  archives: ලේඛන ගබඩාව
+  home: මුල
+  archives: සංරක්ෂිත
   categories: ප්‍රවර්ග
   tags: ටැග
-  about: පිළිබඳ
-  search: සෙවීම
+  about: පිළිබඳව
+  search: සොයන්න
   schedule: කාලසටහන
   sitemap: අඩවි සිතියම
   commonweal: සමස්ත ප්‍රජාව 404
@@ -77,10 +77,10 @@ symbol:
   colon: ": "
 reward:
   donate: පරිත්‍යාග කරන්න
-  wechatpay: WeChat ගෙවීම
-  alipay: Alipay
-  paypal: PayPal
-  bitcoin: Bitcoin
+  wechatpay: වීචැට් පේ
+  alipay: අලිපේ
+  paypal: පේපෑල්
+  bitcoin: බිට්කොයින්
 follow_me:
   welcome: මගේ වෙනත් පළකිරීම් මාධ්‍ය වෙත සාදරයෙන් පිළිගනිමි
 accessibility:
