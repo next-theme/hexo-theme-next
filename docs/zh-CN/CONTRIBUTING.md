@@ -145,7 +145,7 @@ Pull Request 的标签：
 - `Feature`: 为现有功能提供选项或加成的 Pull Request
 - `i18n`: 更新了翻译的 Pull Request
 - `Dependencies`: 更新了依赖包的 Pull Request
-- `Actions`: 更新了GitHub Actions的 Pull Request
+- `Actions`: 更新了 GitHub Actions 的 Pull Request
 - `Skip Release`: 无需在 Release Note 中展现的 Pull Request
 
 两者兼有：
