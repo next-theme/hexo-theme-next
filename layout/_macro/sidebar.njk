@@ -32,11 +32,9 @@
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-overview">
-            {{ partial('_partials/sidebar/site-overview.njk', {}, {cache: theme.cache.enable}) }}
+          {{ partial('_partials/sidebar/site-overview.njk', {}, {cache: theme.cache.enable}) }}
 
-            {{- next_inject('sidebar') }}
-          </div>
+          {{- next_inject('sidebar') }}
         </div>
       </div>
 

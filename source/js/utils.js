@@ -273,6 +273,7 @@ NexT.utils = {
     }
     // Scrolling to center active TOC element if TOC content is taller then viewport.
     const tocElement = document.querySelector('.sidebar-panel-container');
+    if (!tocElement.parentNode.classList.contains('sidebar-toc-active')) return;
     window.anime({
       targets  : tocElement,
       duration : 200,
@@ -281,25 +282,7 @@ NexT.utils = {
     });
   },
 
-  /**
-   * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
-   * Need for Sidebar/TOC inner scrolling if content taller then viewport.
-   */
-  initSidebarDimension: function() {
-    const sidebarNav = document.querySelector('.sidebar-nav');
-    const sidebarb2t = document.querySelector('.sidebar-inner .back-to-top');
-    const sidebarNavHeight = sidebarNav ? sidebarNav.offsetHeight : 0;
-    const sidebarb2tHeight = sidebarb2t ? sidebarb2t.offsetHeight : 0;
-    const sidebarOffset = CONFIG.sidebar.offset || 12;
-    let sidebarSchemePadding = (CONFIG.sidebar.padding * 2) + sidebarNavHeight + sidebarb2tHeight;
-    if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') sidebarSchemePadding += sidebarOffset * 2;
-    // Initialize Sidebar & TOC Height.
-    const sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
-    document.documentElement.style.setProperty('--sidebar-wrapper-height', sidebarWrapperHeight);
-  },
-
   updateSidebarPosition: function() {
-    NexT.utils.initSidebarDimension();
     if (window.innerWidth < 992 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     const hasTOC = document.querySelector('.post-toc');
