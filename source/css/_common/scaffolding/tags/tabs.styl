@@ -6,10 +6,14 @@
   padding-top: 10px;
 
   ul.nav-tabs {
+    background: (($scheme == 'Muse') or ($scheme == 'Mist')) ? var(--body-bg-color) : var(--content-bg-color);
     display: flex;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 
     +mobile-smallest() {
       display: block;

@@ -23,6 +23,7 @@ hexo.extend.helper.register('next_config', function() {
     lazyload  : theme.lazyload,
     pangu     : theme.pangu,
     comments  : theme.comments,
+    stickytabs: theme.tabs.sticky,
     motion    : theme.motion,
     prism     : config.prismjs.enable && !config.prismjs.preprocess,
     i18n      : {

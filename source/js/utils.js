@@ -176,8 +176,9 @@ NexT.utils = {
         event.preventDefault();
         // Prevent selected tab to select again.
         if (element.classList.contains('active')) return;
+        const nav = element.parentNode;
         // Add & Remove active class on `nav-tabs` & `tab-content`.
-        [...element.parentNode.children].forEach(target => {
+        [...nav.children].forEach(target => {
           target.classList.toggle('active', target === element);
         });
         // https://stackoverflow.com/questions/20306204/using-queryselector-with-ids-that-are-numbers
@@ -189,6 +190,14 @@ NexT.utils = {
         tActive.dispatchEvent(new Event('tabs:click', {
           bubbles: true
         }));
+        if (!CONFIG.stickytabs) return;
+        const offset = nav.parentNode.getBoundingClientRect().top + window.scrollY + 10;
+        window.anime({
+          targets  : document.scrollingElement,
+          duration : 500,
+          easing   : 'linear',
+          scrollTop: offset
+        });
       });
     });
 
