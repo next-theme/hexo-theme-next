@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('`hexo-generator-searchdb` plugin is not installed!');
     return;
   }
+
+  // Use CDN to accelerate the speed of loading search.xml or search.json
+  if ('cdn' in CONFIG.localsearch && CONFIG.localsearch.cdn.enable === true && CONFIG.localsearch.cdn.url !== null){
+    CONFIG.path = CONFIG.localsearch.cdn.url;
+  }
+
   // Popup Window
   let isfetched = false;
   let datas;
