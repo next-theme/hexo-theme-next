@@ -26,6 +26,24 @@ $code-block {
   margin: 0 auto 20px;
 }
 
+$figcaption {
+  background: var(--highlight-gutter-background);
+  color: var(--highlight-foreground);
+  display: flow-root;
+  font-size: $table-font-size;
+  line-height: 1.2;
+  padding: .5em;
+
+  a {
+    color: var(--highlight-foreground);
+    float: right;
+
+    &:hover {
+      border-bottom-color: var(--highlight-foreground);
+    }
+  }
+}
+
 pre, code {
   font-family: $code-font-family;
 }
@@ -72,21 +90,7 @@ figure.highlight {
   }
 
   figcaption {
-    background: var(--highlight-gutter-background);
-    color: var(--highlight-foreground);
-    display: flow-root;
-    font-size: $table-font-size;
-    line-height: 1.2;
-    padding: .5em;
-
-    a {
-      color: var(--highlight-foreground);
-      float: right;
-
-      &:hover {
-        border-bottom-color: var(--highlight-foreground);
-      }
-    }
+    @extend $figcaption;
   }
 
   .gutter {
@@ -109,7 +113,7 @@ figure.highlight {
 
 // See https://github.com/hexojs/hexo-util/pull/229
 pre .caption, pre figcaption {
-  @extend figure.highlight figcaption;
+  @extend $figcaption;
   margin-bottom: 10px;
 }
 

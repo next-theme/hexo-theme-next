@@ -10,10 +10,6 @@
   background: $sidebar-highlight;
 }
 
-// Fix issue #75
-// @extends does not seem to work inside @media
-// So we use a mixin here
-// https://github.com/stylus/stylus/issues/609
 @media (any-hover: hover) {
   body:not(.sidebar-active) .sidebar-toggle:hover {
     toggle-arrow(hexo-config('sidebar.position'));
