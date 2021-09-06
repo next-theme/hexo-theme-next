@@ -1,32 +1,34 @@
-.followme {
-  color: $grey;
-  padding: 1em 1.5em;
-  text-align: center;
-  post-card();
+if (hexo-config('follow_me')) {
+  .followme {
+    color: $grey;
+    padding: 1em 1.5em;
+    text-align: center;
+    post-card();
 
-  .social-list {
-    flex-wrap();
+    .social-list {
+      flex-wrap();
 
-    .social-item {
-      margin: .5em 2em;
+      .social-item {
+        margin: .5em 2em;
 
-      +tablet-mobile() {
-        margin: .5em .75em;
-      }
-    }
-
-    .social-link {
-      border: 0;
-      display:inline-block;
-      text-align: center;
-
-      .icon {
-        font-size: 1.75em;
+        +tablet-mobile() {
+          margin: .5em .75em;
+        }
       }
 
-      .label {
-        display: block;
-        font-size: 14px;
+      .social-link {
+        border: 0;
+        display:inline-block;
+        text-align: center;
+
+        .icon {
+          font-size: 1.75em;
+        }
+
+        .label {
+          display: block;
+          font-size: 14px;
+        }
       }
     }
   }

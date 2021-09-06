@@ -1,107 +1,109 @@
-.post-body .note {
-  $note-icons = hexo-config('note.icons');
-  $note-style = hexo-config('note.style');
+if (hexo-config('note.style') != 'disabled') {
+  .post-body .note {
+    $note-icons = hexo-config('note.icons');
+    $note-style = hexo-config('note.style');
 
-  border-radius: $note-border-radius;
-  margin-bottom: 20px;
-  padding: 1em;
-  position: relative;
+    border-radius: $note-border-radius;
+    margin-bottom: 20px;
+    padding: 1em;
+    position: relative;
 
-  if ($note-style == 'simple') {
-    border: 1px solid $gainsboro;
-    border-left-width: 5px;
-  }
-
-  if ($note-style == 'modern') {
-    background: $whitesmoke;
-    border: 1px solid transparent;
-  }
-
-  if ($note-style == 'flat') {
-    background: lighten($gainsboro, 65%);
-    border: initial;
-    border-left: 3px solid $gainsboro;
-  }
-
-  summary {
-    cursor: pointer;
-    outline: 0;
-
-    p {
-      display: inline;
-    }
-  }
-
-  h2, h3, h4, h5, h6 {
-    border-bottom: initial;
-    margin: 0;
-    padding-top: 0;
-  }
-
-  p, ul, ol, table, pre, blockquote, img {
-    &:first-child {
-      margin-top: 0;
+    if ($note-style == 'simple') {
+      border: 1px solid $gainsboro;
+      border-left-width: 5px;
     }
 
-    &:last-child {
-      margin-bottom: 0;
+    if ($note-style == 'modern') {
+      background: $whitesmoke;
+      border: 1px solid transparent;
     }
-  }
 
-  if ($note-icons) {
-    &:not(.no-icon) {
-      padding-left: 2.5em;
+    if ($note-style == 'flat') {
+      background: lighten($gainsboro, 65%);
+      border: initial;
+      border-left: 3px solid $gainsboro;
+    }
 
-      &::before {
-        font-size: 1.5em;
-        left: .3em;
-        position: absolute;
-        top: calc(50% - 1em);
+    summary {
+      cursor: pointer;
+      outline: 0;
+
+      p {
+        display: inline;
       }
     }
-  }
 
-  for $type in $note-types {
-    &.{$type} {
-      if ($note-style == 'flat') {
-        background: $note-bg[$type];
-        if (hexo-config('darkmode')) {
-          @media (prefers-color-scheme: dark) {
-            background: mix($note-bg[$type], $body-bg-color-dark, 10%);
-          }
+    h2, h3, h4, h5, h6 {
+      border-bottom: initial;
+      margin: 0;
+      padding-top: 0;
+    }
+
+    p, ul, ol, table, pre, blockquote, img {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    if ($note-icons) {
+      &:not(.no-icon) {
+        padding-left: 2.5em;
+
+        &::before {
+          font-size: 1.5em;
+          left: .3em;
+          position: absolute;
+          top: calc(50% - 1em);
         }
       }
+    }
 
-      if ($note-style == 'modern') {
-        background: $note-modern-bg[$type];
-        border-color: $note-modern-border[$type];
-        color: $note-modern-text[$type];
+    for $type in $note-types {
+      &.{$type} {
+        if ($note-style == 'flat') {
+          background: $note-bg[$type];
+          if (hexo-config('darkmode')) {
+            @media (prefers-color-scheme: dark) {
+              background: mix($note-bg[$type], $body-bg-color-dark, 10%);
+            }
+          }
+        }
 
-        a:not(.btn) {
-          border-bottom-color: $note-modern-text[$type];
+        if ($note-style == 'modern') {
+          background: $note-modern-bg[$type];
+          border-color: $note-modern-border[$type];
           color: $note-modern-text[$type];
 
-          &:hover {
-            border-bottom-color: $note-modern-hover[$type];
-            color: $note-modern-hover[$type];
+          a:not(.btn) {
+            border-bottom-color: $note-modern-text[$type];
+            color: $note-modern-text[$type];
+
+            &:hover {
+              border-bottom-color: $note-modern-hover[$type];
+              color: $note-modern-hover[$type];
+            }
           }
         }
-      }
 
-      if ($note-style != 'modern') {
-        border-left-color: $note-border[$type];
+        if ($note-style != 'modern') {
+          border-left-color: $note-border[$type];
 
-        h2, h3, h4, h5, h6 {
-          color: $note-text[$type];
-        }
-      }
-
-      if ($note-icons) {
-        &:not(.no-icon)::before {
-          font-family-icons($note-icon[$type]);
-
-          if ($note-style != 'modern') {
+          h2, h3, h4, h5, h6 {
             color: $note-text[$type];
+          }
+        }
+
+        if ($note-icons) {
+          &:not(.no-icon)::before {
+            font-family-icons($note-icon[$type]);
+
+            if ($note-style != 'modern') {
+              color: $note-text[$type];
+            }
           }
         }
       }

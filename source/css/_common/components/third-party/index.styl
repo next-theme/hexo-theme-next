@@ -1,12 +1,8 @@
-@import 'gitalk' if (hexo-config('gitalk.enable'));
-
-@import 'utterances' if (hexo-config('utterances.enable'));
-
-@import 'search' if (hexo-config('local_search.enable') || hexo-config('algolia_search.enable'));
-
-@import 'related-posts' if (hexo-config('related_posts.enable'));
-
-@import 'math' if (hexo-config('math.mathjax.enable'));
+@import 'gitalk';
+@import 'utterances';
+@import 'search';
+@import 'related-posts';
+@import 'math';
 
 .use-motion .animated {
   // Fix issue #48 #55

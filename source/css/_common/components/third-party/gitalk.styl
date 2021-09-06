@@ -1,7 +1,9 @@
-.gt-header a, .gt-comments a, .gt-popup a {
-  border-bottom: 0;
-}
+if (hexo-config('gitalk.enable')) {
+  .gt-header a, .gt-comments a, .gt-popup a {
+    border-bottom: 0;
+  }
 
-.gt-container .gt-popup .gt-action.is--active::before {
-  top: .7em;
+  .gt-container .gt-popup .gt-action.is--active::before {
+    top: .7em;
+  }
 }

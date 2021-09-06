@@ -1,58 +1,60 @@
-.post-toc {
-  font-size: $font-size-small;
+if (hexo-config('toc.enable')) {
+  .post-toc {
+    font-size: $font-size-small;
 
-  ol {
-    list-style: none;
-    margin: 0;
-    padding: 0 2px 5px 10px;
-    text-align: left;
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0 2px 5px 10px;
+      text-align: left;
 
-    > ol {
-      padding-left: 0;
-    }
+      > ol {
+        padding-left: 0;
+      }
 
-    a {
-      transition: all $transition-ease;
-    }
-  }
-
-  .nav-item {
-    line-height: 1.8;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    if (not hexo-config('toc.wrap')) {
-      white-space: nowrap;
-    }
-  }
-
-  .nav {
-    .nav-child {
-      display: hexo-config('toc.expand_all') ? block : none;
-    }
-
-    .active > .nav-child {
-      display: block;
-    }
-
-    .active-current > .nav-child {
-      display: block;
-
-      > .nav-item {
-        display: block;
+      a {
+        transition: all $transition-ease;
       }
     }
 
-    .active > a {
-      border-bottom-color: $sidebar-highlight;
-      color: $sidebar-highlight;
+    .nav-item {
+      line-height: 1.8;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      if (not hexo-config('toc.wrap')) {
+        white-space: nowrap;
+      }
     }
 
-    .active-current > a {
-      color: $sidebar-highlight;
+    .nav {
+      .nav-child {
+        display: hexo-config('toc.expand_all') ? block : none;
+      }
 
-      &:hover {
+      .active > .nav-child {
+        display: block;
+      }
+
+      .active-current > .nav-child {
+        display: block;
+
+        > .nav-item {
+          display: block;
+        }
+      }
+
+      .active > a {
+        border-bottom-color: $sidebar-highlight;
         color: $sidebar-highlight;
+      }
+
+      .active-current > a {
+        color: $sidebar-highlight;
+
+        &:hover {
+          color: $sidebar-highlight;
+        }
       }
     }
   }
