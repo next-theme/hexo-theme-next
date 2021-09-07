@@ -3,6 +3,7 @@
 'use strict';
 
 const { parse } = require('url');
+const { unescapeHTML } = require('hexo-util');
 
 hexo.extend.filter.register('after_post_render', data => {
   const { config } = hexo;
@@ -25,9 +26,10 @@ hexo.extend.filter.register('after_post_render', data => {
 
       // Return encrypted URL with title.
       const title = match.match(/title="([^"]+)"/);
-      if (title) return `<span class="exturl" data-url="${Buffer.from(href).toString('base64')}" title="${title[1]}">${html}${exturlIcon}</span>`;
+      const encoded = Buffer.from(unescapeHTML(href)).toString('base64');
+      if (title) return `<span class="exturl" data-url="${encoded}" title="${title[1]}">${html}${exturlIcon}</span>`;
 
-      return `<span class="exturl" data-url="${Buffer.from(href).toString('base64')}">${html}${exturlIcon}</span>`;
+      return `<span class="exturl" data-url="${encoded}">${html}${exturlIcon}</span>`;
     });
   }
 
