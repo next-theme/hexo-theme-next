@@ -12,14 +12,14 @@ document.addEventListener('page:loaded', () => {
         newElement.className = element.className;
         element.parentNode.replaceChild(newElement, element);
       });
-
-      mermaid.init({
-        theme    : CONFIG.mermaid.theme,
-        logLevel : 3,
+      mermaid.initialize({
+        theme    : CONFIG.darkmode && window.matchMedia('(prefers-color-scheme: dark)').matches ? CONFIG.mermaid.theme.dark : CONFIG.mermaid.theme.light,
+        logLevel : 4,
         flowchart: { curve: 'linear' },
         gantt    : { axisFormat: '%m/%d/%Y' },
         sequence : { actorMargin: 50 }
-      }, '.mermaid');
+      });
+      mermaid.init();
     });
   }
 });
