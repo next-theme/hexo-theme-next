@@ -144,6 +144,7 @@ local_search:
   file: dist/search.js
   unavailable:
     - cdnjs
+  integrity: sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=
 pdfobject:
   name: pdfobject
   version: 2.2.6
