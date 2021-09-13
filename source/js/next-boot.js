@@ -16,32 +16,9 @@ NexT.boot.registerEvents = function() {
     document.body.classList.toggle('site-nav-on');
   });
 
-  const duration = 200;
   document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
     element.addEventListener('click', () => {
-      if (element.matches('.sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview')) return;
-      const sidebar = document.querySelector('.sidebar-inner');
-      const panel = document.querySelector('.sidebar-panel-container');
-      const activeClassName = ['sidebar-toc-active', 'sidebar-overview-active'];
-
-      window.anime({
-        duration,
-        targets   : panel,
-        easing    : 'linear',
-        opacity   : 0,
-        translateY: [0, -20],
-        complete  : () => {
-          // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
-          sidebar.classList.replace(activeClassName[1 - index], activeClassName[index]);
-          window.anime({
-            duration,
-            targets   : panel,
-            easing    : 'linear',
-            opacity   : [0, 1],
-            translateY: [-20, 0]
-          });
-        }
-      });
+      NexT.utils.activateSidebarPanel(index);
     });
   });
 

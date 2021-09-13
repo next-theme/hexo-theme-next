@@ -1,6 +1,6 @@
 'use strict';
 
-const merge = require('hexo-util').deepMerge || require('lodash/merge');
+const merge = require('hexo-util').deepMerge;
 
 module.exports = hexo => {
   const data = hexo.locals.get('data');
