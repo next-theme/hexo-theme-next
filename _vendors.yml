@@ -138,6 +138,13 @@ instant_search:
   version: 4.28.0
   file: dist/instantsearch.production.min.js
   integrity: sha256-x+1kTZNP+yy5U5ncci4pes6ALSaVss1UY5hnGy+mfqI=
+local_search:
+  name: hexo-generator-searchdb
+  version: 1.4.0
+  file: dist/search.js
+  unavailable:
+    - cdnjs
+  integrity: sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=
 pdfobject:
   name: pdfobject
   version: 2.2.6
