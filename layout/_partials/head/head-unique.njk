@@ -12,5 +12,5 @@
 {{ next_data('page', next_config_unique()) }}
 
 {{ next_data('calendar',
-  theme.calendar if page.type === 'schedule' and not page.title else '')
+  theme.calendar if page.type === 'schedule' else '')
 }}
