@@ -343,7 +343,7 @@ text_align:
 mobile_layout_economy: false
 
 # Browser header panel color ($brand-bg / $headband-bg => $black-deep).
-browser_theme_color:
+theme_color:
   light: "#222"
   dark: "#222"
 
