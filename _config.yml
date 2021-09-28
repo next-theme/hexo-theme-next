@@ -342,7 +342,7 @@ text_align:
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
 
-# Browser header panel color ($brand-bg / $headband-bg => $black-deep).
+# Browser header panel color.
 theme_color:
   light: "#222"
   dark: "#222"
