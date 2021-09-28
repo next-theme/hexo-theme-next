@@ -78,7 +78,7 @@ creative_commons:
 # ---------------------------------------------------------------
 
 # Usage: `Key: /link/ || icon`
-# Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-senstive.
+# Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-sensitive.
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
 # External url should start with http:// or https://
 menu:
@@ -128,7 +128,7 @@ sidebar:
 avatar:
   # Replace the default image and set the url here.
   url: #/images/avatar.gif
-  # If true, the avatar will be dispalyed in circle.
+  # If true, the avatar will be displayed in circle.
   rounded: false
   # If true, the avatar will be rotated with the cursor.
   rotated: false
@@ -168,7 +168,7 @@ links:
   #Title: https://example.com
 
 # Table of Contents in the Sidebar
-# Front-matter variable (unsupport wrap expand_all).
+# Front-matter variable (nonsupport wrap expand_all).
 toc:
   enable: true
   # Automatically add list number to toc.
@@ -251,7 +251,7 @@ symbols_count_time:
 tag_icon: false
 
 # Donate (Sponsor) settings
-# Front-matter variable (unsupport animation).
+# Front-matter variable (nonsupport animation).
 reward_settings:
   # If true, a donate button will be displayed in every article by default.
   enable: false
@@ -304,8 +304,8 @@ post_navigation: left
 
 # TagCloud settings for tags page.
 tagcloud:
-  min: 12 # Minimun font size in px
-  max: 30 # Maxium font size in px
+  min: 12 # Minimum font size in px
+  max: 30 # Maximum font size in px
   amount: 200 # Total amount of tags
   orderby: name # Order of tags
   order: 1 # Sort order
@@ -498,7 +498,7 @@ baidu_site_verification:
 math:
   # Default (false) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in front-matter.
-  # If you set it to true, it will load mathjax / katex srcipt EVERY PAGE.
+  # If you set it to true, it will load mathjax / katex script EVERY PAGE.
   every_page: false
 
   mathjax:
@@ -535,7 +535,7 @@ pangu: false
 
 # Quicklink Support
 # For more information: https://getquick.link
-# Front-matter variable (unsupport home archive).
+# Front-matter variable (nonsupport home archive).
 quicklink:
   enable: false
 
@@ -568,7 +568,7 @@ comments:
   storage: true
   # Lazyload all comment systems.
   lazyload: false
-  # Modify texts or order for any navs, here are some examples.
+  # Modify texts or order for any naves, here are some examples.
   nav:
     #disqus:
     #  text: Load Disqus
@@ -617,7 +617,7 @@ gitalk:
   admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
-  proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy adress
+  proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy address
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
