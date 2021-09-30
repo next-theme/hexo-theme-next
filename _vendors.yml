@@ -14,19 +14,19 @@ fontawesome:
   integrity: sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=
 prism:
   name: prismjs
-  version: 1.24.1
+  version: 1.25.0
   file: components/prism-core.min.js
   alias: prism
-  integrity: sha256-dz05jjFU9qYuMvQQlE6iWDtNAnEsmu6uMb1vWhKdkEM=
+  integrity: sha256-vlRYHThwdq55dA+n1BKQRzzLwFtH9VINdSI68+5JhpU=
 prism_autoloader:
   name: prismjs
-  version: 1.24.1
+  version: 1.25.0
   file: plugins/autoloader/prism-autoloader.min.js
   alias: prism
-  integrity: sha256-sttoa+EIAvFFfeeIkmPn8ypyOOb6no2sZ2NbxtBXgqU=
+  integrity: sha256-cl5LNmPvcRcGFaQFjwEKIfs51AX7wBkvoByH6LTxQCs=
 prism_line_numbers:
   name: prismjs
-  version: 1.24.1
+  version: 1.25.0
   file: plugins/line-numbers/prism-line-numbers.min.js
   alias: prism
   integrity: sha256-K837BwIyiXo5k/9fCYgqUyA14bN4/Ve9P2SIT0KmZD0=
@@ -37,19 +37,19 @@ mathjax:
   integrity: sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY=
 katex:
   name: katex
-  version: 0.13.16
+  version: 0.13.18
   file: dist/katex.min.css
   alias: KaTeX
-  integrity: sha256-e8fkE+LP8R8PMyAaC6jji0vzbcvXB0WnNxM/19zvcdU=
+  integrity: sha256-M6KFoDq9eUpmogkDgw6+3R3ZgUPSuFXnQyr8tskSfQs=
 copy_tex_js:
   name: katex
-  version: 0.13.16
+  version: 0.13.18
   file: dist/contrib/copy-tex.min.js
   alias: KaTeX
   integrity: sha256-etSqbSVF4+Lwe8MGk/Vanc1sR+mWv+qOG73fxWw9p94=
 copy_tex_css:
   name: katex
-  version: 0.13.16
+  version: 0.13.18
   file: dist/contrib/copy-tex.min.css
   alias: KaTeX
   integrity: sha256-+oItviPaTmqjDhk4y4fLLUIMgRQYDV/ZyrRNvQiebWM=
@@ -120,14 +120,14 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.0.1
+  version: 9.1.0
   file: firebase-app-compat.js
-  integrity: sha256-jof4cVSqEddbp4n9sii9GHJCgv5q8/4H1gVynvKnQ0A=
+  integrity: sha256-vHsVPXMiiuqVAnPSp1kYwUCcb78FqcfOLqyXWCg0Tio=
 firebase_firestore:
   name: firebase
-  version: 9.0.1
+  version: 9.1.0
   file: firebase-firestore-compat.js
-  integrity: sha256-+b9mq9Hw3OumqsYOSJPAgLtoW4p6zBhaZa0i08p7BFk=
+  integrity: sha256-n06izZ6mb8g7z14QSr3zBn6ZharyPS6YCHqd1n8cnbg=
 algolia_search:
   name: algoliasearch
   version: 4.10.5
@@ -135,9 +135,9 @@ algolia_search:
   integrity: sha256-HWlivbjXc58GuU4EIZziqIE83FFZ/da42de13pGZnMA=
 instant_search:
   name: instantsearch.js
-  version: 4.28.0
+  version: 4.30.2
   file: dist/instantsearch.production.min.js
-  integrity: sha256-x+1kTZNP+yy5U5ncci4pes6ALSaVss1UY5hnGy+mfqI=
+  integrity: sha256-eqhx/eer5fsD7YooSb21wsfJaQkJ/4gF3bmRBZP7q2o=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.0
@@ -152,9 +152,9 @@ pdfobject:
   integrity: sha256-77geM50MfxCD17eqyJR+Dag1svjJOLN+BJ2F/DMqMEY=
 mermaid:
   name: mermaid
-  version: 8.12.0
+  version: 8.13.2
   file: dist/mermaid.min.js
-  integrity: sha256-0dD7vUjUCTGJjeLnPotQQJIcSzug5fO6WDMYYyNIX4c=
+  integrity: sha256-UIQPVkGifpwMvDH5yGgORJ9sSTDq38zz6BGU6dNaKhM=
 animate_css:
   name: animate.css
   version: 3.1.1
