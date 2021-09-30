@@ -14,15 +14,13 @@ if (hexo-config('github_banner.enable')) {
   }
 
   .github-corner {
-    $bg-color = unquote(hexo-config('android_chrome_color'));
-
     :hover .octo-arm {
       animation: octocat-wave 560ms ease-in-out;
     }
 
     svg {
       color: white;
-      fill: $bg-color;
+      fill: var(--theme-color);
       position: absolute;
       right: 0;
       top: 0;
@@ -36,7 +34,7 @@ if (hexo-config('github_banner.enable')) {
 
       svg {
         if (($scheme == 'Pisces') or ($scheme == 'Gemini')) {
-          color: $bg-color;
+          color: var(--theme-color);
           fill: white;
         }
       }

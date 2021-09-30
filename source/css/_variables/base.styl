@@ -66,6 +66,9 @@ $card-bg-color-dark           = $black-light;
 $menu-item-bg-color           = $whitesmoke;
 $menu-item-bg-color-dark      = $black-light;
 
+$theme-color                  = convert(hexo-config('theme_color.light'));
+$theme-color-dark             = convert(hexo-config('theme_color.dark'));
+
 // Typography
 // Font, line-height, and elements colors.
 // --------------------------------------------------
@@ -198,7 +201,7 @@ $content-mobile-padding         = 8px;
 // Headband
 // --------------------------------------------------
 $headband-height                = 3px;
-$headband-bg                    = $black-deep;
+$headband-bg                    = var(--theme-color);
 
 
 // Section Header
