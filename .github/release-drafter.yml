@@ -19,7 +19,9 @@ categories:
     label: '🛠 Improvement'
 
   - title: '🌀 External Changes'
-    label: '📦 Dependencies'
+    labels:
+      - '📦 Dependencies'
+      - 'Actions'
 
   - title: '📖 Documentation'
     label: '📖 Docs'
