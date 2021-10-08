@@ -6,14 +6,6 @@ HTMLElement.prototype.wrap = function(wrapper) {
   wrapper.appendChild(this);
 };
 
-// https://caniuse.com/mdn-api_element_classlist_replace
-if (typeof DOMTokenList.prototype.replace !== 'function') {
-  DOMTokenList.prototype.replace = function(remove, add) {
-    this.remove(remove);
-    this.add(add);
-  };
-}
-
 (function() {
   const onPageLoaded = () => document.dispatchEvent(
     new Event('page:loaded', {
