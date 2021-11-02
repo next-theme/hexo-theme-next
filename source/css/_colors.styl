@@ -24,6 +24,8 @@
   --highlight-foreground: $highlight-foreground;
   --highlight-gutter-background: $highlight-gutter-background;
   --highlight-gutter-foreground: $highlight-gutter-foreground;
+
+  color-scheme: light;
 }
 
 if (hexo-config('darkmode')) {
@@ -54,6 +56,8 @@ if (hexo-config('darkmode')) {
       --highlight-foreground: $highlight-foreground-dark;
       --highlight-gutter-background: $highlight-gutter-background-dark;
       --highlight-gutter-foreground: $highlight-gutter-foreground-dark;
+
+      color-scheme: dark;
     }
 
     img {
@@ -62,6 +66,10 @@ if (hexo-config('darkmode')) {
       &:hover {
         opacity: .9;
       }
+    }
+
+    iframe {
+      color-scheme: light;
     }
   }
 }
