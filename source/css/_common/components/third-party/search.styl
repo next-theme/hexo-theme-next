@@ -56,6 +56,11 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
 
     .search-header {
       background: $gainsboro;
+      if (hexo-config('darkmode')) {
+        @media (prefers-color-scheme: dark) {
+          background: $grey-dim;
+        }
+      }
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       display: flex;
