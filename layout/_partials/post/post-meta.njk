@@ -50,6 +50,24 @@
     </span>
   {%- endif %}
 
+  {# Show tags on post meta in excerpt #}
+  {% if post.tags and post.tags.length and theme.post_meta.tags and page.layout != 'post' %}
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="fas fa-tags"></i>
+      </span>
+      <span class="post-meta-item-text">{{ __('post.tags') }}</span>
+      {%- for tag in post.tags.toArray() %}
+        <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag.name }}</a>
+
+        {%- set tags_length = post.tags.length %}
+        {%- if tags_length > 1 and loop.index !== tags_length %}
+          /
+        {%- endif %}
+      {%- endfor %}
+    </span>
+  {% endif %}
+
   {# LeanCloud PageView #}
   {%- if theme.leancloud_visitors.enable %}
     <span id="{{ url_for(post.path) }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ post.title }}" title="{{ __('post.views') }}">
