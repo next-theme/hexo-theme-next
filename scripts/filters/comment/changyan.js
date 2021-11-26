@@ -24,16 +24,10 @@ hexo.extend.filter.register('theme_inject', injects => {
   injects.postMeta.raw('changyan', `
   {% if post.comments %}
   <span class="post-meta-item">
-    ${iconText('far fa-comment', 'changyan')}
-    {% if is_post() %}
-      <a title="changyan" href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-        <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
-      </a>
-    {% else %}
-      <a title="changyan" href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-        <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
-      </a>
-    {% endif %}
+    ${iconText('far fa-comment', 'changyan', '评论数')}
+     <a title="changyan" href="{{ url_for(post.path) }}#SOHUCS">
+       <span title="{{ post.title }}" class="cy_cmt_count"></span>
+     </a>
   </span>
   {% endif %}
   `, {}, {});
