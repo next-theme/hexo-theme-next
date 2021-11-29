@@ -30,7 +30,7 @@
         {%- endif %}
         <span class="site-state-item-count">{{ site.categories.length }}</span>
         <span class="site-state-item-name">{{ __('state.categories') }}</span>
-        {%- if hasCategoriesPage %}</a>{%- endif %}
+        {%- if hasCategoriesPage %}</a>{% endif %}
       </div>
     {%- endif %}
 
@@ -44,7 +44,7 @@
         {%- endif %}
         <span class="site-state-item-count">{{ site.tags.length }}</span>
         <span class="site-state-item-name">{{ __('state.tags') }}</span>
-        {%- if hasTagsPage %}</a>{%- endif %}
+        {%- if hasTagsPage %}</a>{% endif %}
       </div>
     {%- endif %}
   </nav>
@@ -54,7 +54,7 @@
 {%- if theme.chat.enable and (theme.chatra.enable or theme.tidio.enable or theme.gitter.enable) %}
   <div class="sidebar-button site-overview-item animated">
     <button{% if theme.gitter.enable %} class="js-gitter-toggle-chat-button"{% endif %}>
-      {%- if theme.chat.icon %}<i class="{{ theme.chat.icon }}"></i>{%- endif %}
+      {%- if theme.chat.icon %}<i class="{{ theme.chat.icon }}"></i>{% endif %}
       {{ theme.chat.text }}
     </button>
   </div>
@@ -84,7 +84,7 @@
 {%- if theme.links %}
   <div class="links-of-blogroll site-overview-item animated">
     <div class="links-of-blogroll-title">
-      {%- if theme.links_settings.icon %}<i class="{{ theme.links_settings.icon }} fa-fw"></i>{%- endif %}
+      {%- if theme.links_settings.icon %}<i class="{{ theme.links_settings.icon }} fa-fw"></i>{% endif %}
       {{ theme.links_settings.title }}
     </div>
     <ul class="links-of-blogroll-list">
