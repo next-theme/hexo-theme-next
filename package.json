@@ -34,7 +34,7 @@
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.3",
     "chai": "4.3.4",
-    "eslint": "8.1.0",
+    "eslint": "8.3.0",
     "hexo": "5.4.0",
     "hexo-renderer-marked": "4.1.0",
     "js-yaml": "4.1.0",
