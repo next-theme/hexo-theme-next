@@ -37,19 +37,19 @@ mathjax:
   integrity: sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY=
 katex:
   name: katex
-  version: 0.15.0
+  version: 0.15.1
   file: dist/katex.min.css
   alias: KaTeX
-  integrity: sha256-9/xeTDw8dUp2iCEZlxX6fXUKjBafATNjlAtMQ2Tw/Aw=
+  integrity: sha256-9/mhQQwkpU5okPfM5l0v3LnP9xtc6JK8dKW0/WlGaUc=
 copy_tex_js:
   name: katex
-  version: 0.15.0
+  version: 0.15.1
   file: dist/contrib/copy-tex.min.js
   alias: KaTeX
   integrity: sha256-etSqbSVF4+Lwe8MGk/Vanc1sR+mWv+qOG73fxWw9p94=
 copy_tex_css:
   name: katex
-  version: 0.15.0
+  version: 0.15.1
   file: dist/contrib/copy-tex.min.css
   alias: KaTeX
   integrity: sha256-+oItviPaTmqjDhk4y4fLLUIMgRQYDV/ZyrRNvQiebWM=
@@ -120,14 +120,14 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.2.0
+  version: 9.5.0
   file: firebase-app-compat.js
-  integrity: sha256-CAiNPMrctMAORzKNbCHbwMjZdFpkrpyAibWtCeNevYs=
+  integrity: sha256-VxLSp4V1EKWFM0EhYqHPo8jxJShGX+Z0hn3dqKfrFCI=
 firebase_firestore:
   name: firebase
-  version: 9.2.0
+  version: 9.5.0
   file: firebase-firestore-compat.js
-  integrity: sha256-A0JR9X5njsS/u61OHxWoMI4FDe9o+65tBk+CvqGA+d0=
+  integrity: sha256-337WZl0H1k/C7KDQG7ZTXIWIhOZcxih0wWvgz+7TXLE=
 algolia_search:
   name: algoliasearch
   version: 4.11.0
@@ -135,9 +135,9 @@ algolia_search:
   integrity: sha256-48AZ24Ct05NAMLT7hvYgeW1X350OgEcZvHd6Ih6xwOA=
 instant_search:
   name: instantsearch.js
-  version: 4.33.0
+  version: 4.33.2
   file: dist/instantsearch.production.min.js
-  integrity: sha256-4ZQdz/UqmHX2Yk/+jtIRU6ZmN+ElFjKqxqYdbdQskr0=
+  integrity: sha256-0B5Q7I/DVd8yp8JYLzbpELEonNBlVe7NLixMCLEnlBU=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.0
@@ -152,9 +152,9 @@ pdfobject:
   integrity: sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I=
 mermaid:
   name: mermaid
-  version: 8.13.3
+  version: 8.13.4
   file: dist/mermaid.min.js
-  integrity: sha256-blHXaX2RMvNwEOnrYOl/6/RKqNi97Ig3o6Ae3bhXPvM=
+  integrity: sha256-96rwDGMWIQYB0yKGp1sKi1yrjrLPj2oT39IpbCsIrsg=
 animate_css:
   name: animate.css
   version: 3.1.1
