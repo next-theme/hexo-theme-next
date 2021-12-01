@@ -16,7 +16,7 @@
 
     <a href="{{ config.root }}" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">{{ title }}</h1>
+      <{% if is_home() or is_archive() %}h1{% else %}p{% endif %} class="site-title">{{ title }}</{% if is_home() or is_archive() %}h1{% else %}p{% endif %}>
       <i class="logo-line"></i>
     </a>
     {%- if subtitle %}

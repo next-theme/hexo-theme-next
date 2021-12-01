@@ -27,7 +27,7 @@
       {#################}
       {### PAGE BODY ###}
       {#################}
-      <div class="post-body{%- if page.direction and page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
+      <div class="post-body{% if page.direction and page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
         {%- if page.type === 'tags' %}
           {%- include '_partials/page/tags.njk' -%}
         {% elif page.type === 'categories' %}
