@@ -1,97 +1,97 @@
 ---
-name: English
+name: Türkmençe
 title:
-  archive: Archive
-  category: Category
-  tag: Tag
-  schedule: Schedule
+  archive: Arhiw
+  category: Bölüm
+  tag: Teg
+  schedule: Kalendar
 menu:
-  home: Home
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  search: Search
-  schedule: Schedule
-  sitemap: Sitemap
-  commonweal: Commonweal 404
+  home: Baş sahypa
+  archives: Arhiw
+  categories: Bölümler
+  tags: Tegler
+  about: Saýt hakynda
+  search: Gözleg
+  schedule: Kalendar
+  sitemap: Saýtyň kartasy
+  commonweal: 404 sahypa
 sidebar:
-  overview: Overview
-  toc: Table of Contents
+  overview: Syn
+  toc: Mazmuny
 post:
-  posted: Posted on
-  edited: Edited on
-  created: Created
-  modified: Modified
-  edit: Edit this post
-  in: In
-  read_more: Read more
-  untitled: Untitled
-  sticky: Sticky
-  views: Views
-  related_posts: Related Posts
+  posted: Goýuldy
+  edited: Üýtgedildi
+  created: Döredildi
+  modified: Üýtgedildi
+  edit: Redaktirle
+  in: bölümde
+  read_more: Dowamyny oka
+  untitled: Atlandyrylmadyk
+  sticky: Salgylanma
+  views: Görüldi
+  related_posts: Meňzeş makalalar
   copyright:
-    author: Post author
-    link: Post link
+    author: Makalanyň awtory
+    link: Makala salgylanma
     post_author: Written by
     post_link: This article originally appeared on
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    license_title: Awtorlyk hukugy hakynda maglumat
+    license_content: "Eger-de goşmaça maglumat berilmedik bolsa, bu saýtdaky ähli maglumatlar %s lisenziýa bilen goragly."
 footer:
-  powered: "Powered by %s"
-  total_views: Total Views
-  total_visitors: Total Visitors
+  powered: "Генератор — %s"
+  total_views: Görülme sany
+  total_visitors: Girilen sany
 counter:
   tag_cloud:
-    zero: No tags
-    one: 1 tag in total
-    other: "%d tags in total"
+    zero: Teg ýok.
+    one: 1 teg.
+    other: "%d teg bar."
   categories:
-    zero: No categories
-    one: 1 category in total
-    other: "%d categories in total"
+    zero: Bölüm ýok.
+    one: 1 bölüm.
+    other: "%d bölüm bar."
   archive_posts:
-    zero: No posts.
-    one: 1 post.
-    other: "%d posts in total."
+    zero: Makala tapylmady.
+    one: 1 makala.
+    other: "%d makala bar."
 state:
-  posts: posts
-  tags: tags
-  categories: categories
+  posts: Makalalar
+  tags: Tegler
+  categories: Bölümler
 search:
-  placeholder: Searching...
+  placeholder: Gözleg...
   empty: "We didn't find any results for the search: %s"
   hits_time: "%s results found in %s ms"
   hits: "%s results found"
 cheers:
-  um: Um..
+  um: Hmm..
   ok: OK
-  nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
-keep_on: Keep on posting.
+  nice: Erbet däl
+  good: Gowy
+  great: Bet
+  excellent: Örän gowy
+keep_on: Ýazmagy dowam et.
 symbol:
   comma: ", "
   period: ". "
   colon: ": "
 reward:
-  donate: Donate
+  donate: Donat
   wechatpay: WeChat Pay
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: Meniň başga paýlaşma platformalarym
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
+  nav_toggle: Görkez/Gizle
+  prev_page: Öňki sahypa
+  next_page: Indiki sahypa
   back_to_top: Back to top
   select_lang: Select language
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: Makalada symbollaryň mukdary
+  count_total: Symbollaryň umumy sany
+  time: Okalma wagty
+  time_total: Jemi okalma wagty
+  time_minutes: min.
