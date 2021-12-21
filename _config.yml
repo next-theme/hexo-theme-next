@@ -869,10 +869,12 @@ canvas_ribbon:
 vendors:
   # The CDN provider of NexT internal scripts.
   # Available values: local | jsdelivr | unpkg | cdnjs
+  #                   jsdelivr_Fastly | jsdelivr_Cloudflare | jsdelivr_Bunny | jsdelivr_QUANTIL
   # Warning: If you are using the latest master branch of NexT, please set `internal: local`
   internal: local
   # The default CDN provider of third-party plugins.
   # Available values: local | jsdelivr | unpkg | cdnjs
+  #                   jsdelivr_Fastly | jsdelivr_Cloudflare | jsdelivr_Bunny | jsdelivr_QUANTIL
   # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
   plugins: jsdelivr
 
