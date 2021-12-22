@@ -35,14 +35,14 @@ module.exports = hexo => {
     }
     const { name, version, file, alias, unavailable } = value;
     const links = {
-      local              : url_for.call(hexo, `lib/${name}/${file}`),
-      jsdelivr           : `https://cdn.jsdelivr.net/npm/${name}@${version}/${file}`,
-      unpkg              : `https://unpkg.com/${name}@${version}/${file}`,
-      cdnjs              : `https://cdnjs.cloudflare.com/ajax/libs/${alias || name}/${version}/${file.replace(/^(dist|lib|)\/(browser\/|)/, '')}`,
-      jsdelivr_Fastly    : `https://fastly.jsdelivr.net/npm/${name}@${version}/${file}`,
-      jsdelivr_Cloudflare: `https://testingcf.jsdelivr.net/npm/${name}@${version}/${file}`,
-      jsdelivr_Bunny     : `https://gcore.jsdelivr.net/npm/${name}@${version}/${file}`,
-      jsdelivr_QUANTIL   : `https://quantil.jsdelivr.net/npm/${name}@${version}/${file}`
+      local         : url_for.call(hexo, `lib/${name}/${file}`),
+      jsdelivr      : `https://cdn.jsdelivr.net/npm/${name}@${version}/${file}`,
+      unpkg         : `https://unpkg.com/${name}@${version}/${file}`,
+      cdnjs         : `https://cdnjs.cloudflare.com/ajax/libs/${alias || name}/${version}/${file.replace(/^(dist|lib|)\/(browser\/|)/, '')}`,
+      jsd_Fastly    : `https://fastly.jsdelivr.net/npm/${name}@${version}/${file}`,
+      jsd_Cloudflare: `https://testingcf.jsdelivr.net/npm/${name}@${version}/${file}`,
+      jsd_Bunny     : `https://gcore.jsdelivr.net/npm/${name}@${version}/${file}`,
+      jsd_QUANTIL   : `https://quantil.jsdelivr.net/npm/${name}@${version}/${file}`
     };
     let { plugins = 'jsdelivr' } = vendors;
     if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';

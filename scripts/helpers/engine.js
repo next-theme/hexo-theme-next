@@ -20,10 +20,14 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
   const { internal } = this.theme.vendors;
   const minified_file = file.endsWith('.js') && !file.endsWith('.min.js') ? file.slice(0, -3) + '.min.js' : file;
   const links = {
-    local   : this.url_for(`${this.theme.js}/${file}`),
-    jsdelivr: `https://cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${minified_file}`,
-    unpkg   : `https://unpkg.com/hexo-theme-next@${next_version}/source/js/${file}`,
-    cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/${next_version}/${minified_file}`
+    local         : this.url_for(`${this.theme.js}/${file}`),
+    jsdelivr      : `https://cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${minified_file}`,
+    unpkg         : `https://unpkg.com/hexo-theme-next@${next_version}/source/js/${file}`,
+    cdnjs         : `https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/${next_version}/${minified_file}`,
+    jsd_Fastly    : `https://fastly.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${minified_file}`,
+    jsd_Cloudflare: `https://testingcf.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${minified_file}`,
+    jsd_Bunny     : `https://gcore.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${minified_file}`,
+    jsd_QUANTIL   : `https://quantil.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${minified_file}`
   };
   const src = links[internal] || links.local;
   return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
@@ -53,10 +57,14 @@ hexo.extend.helper.register('next_pre', function() {
   const { enable, host } = this.theme.font;
   const { internal, plugins } = this.theme.vendors;
   const links = {
-    local   : '',
-    jsdelivr: 'https://cdn.jsdelivr.net',
-    unpkg   : 'https://unpkg.com',
-    cdnjs   : 'https://cdnjs.cloudflare.com'
+    local         : '',
+    jsdelivr      : 'https://cdn.jsdelivr.net',
+    unpkg         : 'https://unpkg.com',
+    cdnjs         : 'https://cdnjs.cloudflare.com',
+    jsd_Fastly    : 'https://fastly.jsdelivr.net',
+    jsd_Cloudflare: 'https://testingcf.jsdelivr.net',
+    jsd_Bunny     : 'https://gcore.jsdelivr.net',
+    jsd_QUANTIL   : 'https://quantil.jsdelivr.net'
   };
   const h = enable ? host || 'https://fonts.googleapis.com' : '';
   const i = links[internal];
