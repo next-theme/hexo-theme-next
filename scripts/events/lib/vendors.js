@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const { url_for } = require('hexo-util');
+const { getVendors } = require('./utils');
 
 let internal;
 try {
@@ -33,16 +34,13 @@ module.exports = hexo => {
     if (key === 'pace_css') {
       value.file = `${value.dir}/${pace.color}/pace-theme-${pace.theme}.css`;
     }
-    const { name, version, file, alias, unavailable } = value;
-    const links = {
-      local   : url_for.call(hexo, `lib/${name}/${file}`),
-      jsdelivr: `https://cdn.jsdelivr.net/npm/${name}@${version}/${file}`,
-      unpkg   : `https://unpkg.com/${name}@${version}/${file}`,
-      cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/${alias || name}/${version}/${file.replace(/^(dist|lib|)\/(browser\/|)/, '')}`
-    };
+    const { name, file, unavailable } = value;
+    value.local = url_for.call(hexo, `lib/${name}/${file}`);
+    value.custom = vendors.plugins_custom_url;
     let { plugins = 'jsdelivr' } = vendors;
     if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
     if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';
+    const links = getVendors(value);
     vendors[key] = {
       url      : links[plugins] || links.jsdelivr,
       integrity: value.integrity

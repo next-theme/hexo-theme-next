@@ -5,6 +5,7 @@
 const crypto = require('crypto');
 const nextFont = require('./font');
 const nextUrl = require('./next-url');
+const { getVendors } = require('../events/lib/utils');
 
 hexo.extend.helper.register('next_font', nextFont);
 hexo.extend.helper.register('next_url', nextUrl);
@@ -17,14 +18,16 @@ hexo.extend.helper.register('next_inject', function(point) {
 
 hexo.extend.helper.register('next_js', function(file, pjax = false) {
   const { next_version } = this;
-  const { internal } = this.theme.vendors;
+  const { internal, internal_custom_url } = this.theme.vendors;
   const minified_file = file.endsWith('.js') && !file.endsWith('.min.js') ? file.slice(0, -3) + '.min.js' : file;
-  const links = {
-    local   : this.url_for(`${this.theme.js}/${file}`),
-    jsdelivr: `https://cdn.jsdelivr.net/npm/hexo-theme-next@${next_version}/source/js/${minified_file}`,
-    unpkg   : `https://unpkg.com/hexo-theme-next@${next_version}/source/js/${file}`,
-    cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/${next_version}/${minified_file}`
+  const value = {
+    name   : 'hexo-theme-next',
+    version: next_version,
+    file   : 'source/js/' + minified_file,
+    local  : this.url_for(`js/${file}`),
+    custom : internal_custom_url
   };
+  const links = getVendors(value);
   const src = links[internal] || links.local;
   return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
 });
