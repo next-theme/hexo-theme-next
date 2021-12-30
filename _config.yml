@@ -871,12 +871,14 @@ vendors:
   # Available values: local | jsdelivr | unpkg | cdnjs | custom
   # Warning: If you are using the latest master branch of NexT, please set `internal: local`
   internal: local
-  internal_custom_url:
   # The default CDN provider of third-party plugins.
   # Available values: local | jsdelivr | unpkg | cdnjs | custom
   # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
   plugins: jsdelivr
-  plugins_custom_url:
+  # Custom CDN URL
+  # For example:
+  # custom_cdn_url: https://cdn.jsdelivr.net/npm/${name}@${version}/${file}
+  custom_cdn_url:
 
 # Assets
 # Accelerate delivery of static files using a CDN

@@ -36,7 +36,7 @@ module.exports = hexo => {
     }
     const { name, file, unavailable } = value;
     value.local = url_for.call(hexo, `lib/${name}/${file}`);
-    value.custom = vendors.plugins_custom_url;
+    value.custom = vendors.custom_cdn_url;
     let { plugins = 'jsdelivr' } = vendors;
     if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
     if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';

@@ -18,14 +18,14 @@ hexo.extend.helper.register('next_inject', function(point) {
 
 hexo.extend.helper.register('next_js', function(file, pjax = false) {
   const { next_version } = this;
-  const { internal, internal_custom_url } = this.theme.vendors;
+  const { internal, custom_cdn_url } = this.theme.vendors;
   const minified_file = file.endsWith('.js') && !file.endsWith('.min.js') ? file.slice(0, -3) + '.min.js' : file;
   const value = {
     name   : 'hexo-theme-next',
     version: next_version,
     file   : 'source/js/' + minified_file,
     local  : this.url_for(`js/${file}`),
-    custom : internal_custom_url
+    custom : custom_cdn_url
   };
   const links = getVendors(value);
   const src = links[internal] || links.local;
