@@ -36,20 +36,27 @@ function highlightTheme(name) {
   };
 }
 
-function getVendors(value) {
-  const { name, version, file, minified, local, custom } = value;
-  // Make it possible to set `alias` and `cdnjs` in `custom_cdn_url`
-  value.alias = value.alias || name;
-  value.cdnjs = minified.replace(/^(dist|lib|source\/js|)\/(browser\/|)/, '');
-  const { alias, cdnjs } = value;
-  const links = {
+function getVendors({ name, alias, version, file, minified, local, custom }) {
+  // Make it possible to set `cdnjs_name` and `cdnjs_file` in `custom_cdn_url`
+  const npm_name = name;
+  const cdnjs_name = alias || name;
+  const npm_file = file;
+  const cdnjs_file = minified.replace(/^(dist|lib|source\/js|)\/(browser\/|)/, '');
+  const value = {
+    npm_name,
+    cdnjs_name,
+    version,
+    npm_file,
+    minified,
+    cdnjs_file
+  };
+  return {
     local,
-    jsdelivr: `https://cdn.jsdelivr.net/npm/${name}@${version}/${minified}`,
-    unpkg   : `https://unpkg.com/${name}@${version}/${file}`,
-    cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/${alias}/${version}/${cdnjs}`,
+    jsdelivr: `https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}`,
+    unpkg   : `https://unpkg.com/${npm_name}@${version}/${npm_file}`,
+    cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/${cdnjs_name}/${version}/${cdnjs_file}`,
     custom  : (custom || '').replace(/\$\{(.+?)\}/g, (match, $1) => value[$1])
   };
-  return links;
 }
 
 const points = {

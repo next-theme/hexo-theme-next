@@ -877,7 +877,8 @@ vendors:
   plugins: jsdelivr
   # Custom CDN URL
   # For example:
-  # custom_cdn_url: https://cdn.jsdelivr.net/npm/${name}@${version}/${file}
+  # custom_cdn_url: https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}
+  # custom_cdn_url: https://cdnjs.cloudflare.com/ajax/libs/${cdnjs_name}/${version}/${cdnjs_file}
   custom_cdn_url:
 
 # Assets
