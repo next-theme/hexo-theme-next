@@ -1,9 +1,9 @@
 /* global NexT, CONFIG */
 
 document.addEventListener('page:loaded', () => {
-  const { changyan } = CONFIG;
+  const { appid, appkey } = CONFIG.changyan;
   const mainJs = 'https://cy-cdn.kuaizhan.com/upload/changyan.js';
-  const countJs = `https://cy-cdn.kuaizhan.com/upload/plugins/plugins.list.count.js?clientId=${changyan.appid}`;
+  const countJs = `https://cy-cdn.kuaizhan.com/upload/plugins/plugins.list.count.js?clientId=${appid}`;
 
   /**
    * Get number of comments
@@ -32,10 +32,9 @@ document.addEventListener('page:loaded', () => {
    * Fetch comments of post
    */
   const loadComments = () => {
-    const initComment = window.changyan.api.config;
-    initComment({
-      appid: changyan.appid,
-      conf : changyan.appkey
+    window.changyan.api.config({
+      appid: appid,
+      conf : appkey
     });
   };
 
