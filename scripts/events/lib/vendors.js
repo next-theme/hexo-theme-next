@@ -35,12 +35,15 @@ module.exports = hexo => {
       value.file = `${value.dir}/${pace.color}/pace-theme-${pace.theme}.css`;
     }
     const { name, file, unavailable } = value;
-    value.local = url_for.call(hexo, `lib/${name}/${file}`);
-    value.custom = vendors.custom_cdn_url;
+    const links = getVendors({
+      ...value,
+      minified: file,
+      local   : url_for.call(hexo, `lib/${name}/${file}`),
+      custom  : vendors.custom_cdn_url
+    });
     let { plugins = 'jsdelivr' } = vendors;
     if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
     if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';
-    const links = getVendors(value);
     vendors[key] = {
       url      : links[plugins] || links.jsdelivr,
       integrity: value.integrity

@@ -37,12 +37,16 @@ function highlightTheme(name) {
 }
 
 function getVendors(value) {
-  const { name, version, file, alias, custom, local } = value;
+  const { name, version, file, minified, local, custom } = value;
+  // Make it possible to set `alias` and `cdnjs` in `custom_cdn_url`
+  value.alias = value.alias || name;
+  value.cdnjs = minified.replace(/^(dist|lib|source\/js|)\/(browser\/|)/, '');
+  const { alias, cdnjs } = value;
   const links = {
     local,
-    jsdelivr: `https://cdn.jsdelivr.net/npm/${name}@${version}/${file}`,
+    jsdelivr: `https://cdn.jsdelivr.net/npm/${name}@${version}/${minified}`,
     unpkg   : `https://unpkg.com/${name}@${version}/${file}`,
-    cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/${alias || name}/${version}/${file.replace(/^(dist|lib|source\/js|)\/(browser\/|)/, '')}`,
+    cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/${alias}/${version}/${cdnjs}`,
     custom  : (custom || '').replace(/\$\{(.+?)\}/g, (match, $1) => value[$1])
   };
   return links;
