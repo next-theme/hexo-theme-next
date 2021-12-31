@@ -64,10 +64,9 @@ hexo.extend.helper.register('next_pre', function() {
   const h = enable ? host || 'https://fonts.googleapis.com' : '';
   const i = links[internal];
   const p = links[plugins];
-  const results = [...new Set([h, i, p].filter(origin => origin))].map(
+  return [...new Set([h, i, p].filter(origin => origin))].map(
     origin => `<link rel="preconnect" href="${origin}" crossorigin>`
-  );
-  return results.join('\n');
+  ).join('\n');
 });
 
 hexo.extend.helper.register('post_gallery', function(photos) {
