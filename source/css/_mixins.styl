@@ -120,21 +120,19 @@ main-container() {
   }
 }
 
-sidebar-toggle-position($reverse = false) {
+sidebar-toggle-alignment($reverse) {
   $condition = hexo-config('sidebar.position') == 'right';
   if (($scheme == 'Muse') or ($scheme == 'Mist')) {
     $condition = $condition == $reverse;
   }
-  if ($condition) {
-    left: $b2t-position-right;
-    +tablet-mobile() {
-      left: $b2t-position-right-mobile;
-    }
-  } else {
-    right: $b2t-position-right;
-    +tablet-mobile() {
-      right: $b2t-position-right-mobile;
-    }
+  return $condition ? ('left' 'right') : ('right' 'left');
+}
+
+sidebar-toggle-position($reverse) {
+  $alignment = sidebar-toggle-alignment($reverse)[0];
+  {$alignment}: $b2t-position-right;
+  +tablet-mobile() {
+    {$alignment}: $b2t-position-right-mobile;
   }
 }
 
@@ -144,7 +142,7 @@ sidebar-toggle() {
   opacity: $b2t-opacity;
   position: fixed;
   z-index: $zindex-3;
-  sidebar-toggle-position();
+  sidebar-toggle-position(false);
 
   &:hover {
     opacity: $b2t-opacity-hover;
