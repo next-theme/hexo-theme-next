@@ -1,37 +1,37 @@
 ---
-name: English
+name: ইংরেজি
 title:
-  archive: Archive
-  category: Category
-  tag: Tag
-  schedule: Schedule
+  archive: আর্কাইভ
+  category: ক্যাটাগরি
+  tag: ট্যাগ
+  schedule: কর্ম পরিকল্পনা
 menu:
-  home: Home
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  search: Search
-  schedule: Schedule
+  home: হোম পেজ
+  archives: আর্কাইভ এর তালিকা
+  categories: ক্যাটাগরি এর তালিকা
+  tags: ট্যাগ এর তালিকা
+  about: সম্পর্কে
+  search: সার্চ
+  schedule: কর্ম পরিকল্পনা
   sitemap: Sitemap
   commonweal: Commonweal 404
 sidebar:
-  overview: Overview
-  toc: Table of Contents
+  overview: সারাংশ
+  toc: সূচীপত্র
 post:
-  posted: Posted on
-  edited: Edited on
-  created: Created
-  modified: Modified
-  edit: Edit this post
-  in: In
-  read_more: Read more
-  untitled: Untitled
-  sticky: Sticky
-  views: Views
-  related_posts: Related Posts
+  posted: প্রকাশিত হয়েছে
+  edited: সম্পাদিত হয়েছে
+  created: তৈরি করা হয়েছে
+  modified: পরিমার্জন করা হয়েছে
+  edit: পোস্টটি সম্পাদনা করুন
+  in: শ্রেনী
+  read_more: আরো পড়ুন
+  untitled: শিরোনামহীন
+  sticky: স্থির
+  views: ভিউ
+  related_posts: সম্পর্কিত পোস্ট
   copyright:
-    author: Post author
+    author: লিখিকা
     link: Post link
     post_author: Written by
     post_link: This article originally appeared on
