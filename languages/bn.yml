@@ -32,36 +32,36 @@ post:
   related_posts: সম্পর্কিত পোস্ট
   copyright:
     author: লিখিকা
-    link: Post link
-    post_author: Written by
-    post_link: This article originally appeared on
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    link: পোস্ট লিঙ্ক
+    post_author: রচনা করেছেন
+    post_link: এই আর্টিকেলটি প্রথমে প্রকাশিত হয়েছে
+    license_title: কপিরাইট নোটিস
+    license_content: "এই ব্লগের সমস্ত আর্টিকেল %s এর অধীনে লাইসেন্সপ্রাপ্ত যদি না ব্যতিক্রম উল্লেখ করা হয়।"
 footer:
-  powered: "Powered by %s"
-  total_views: Total Views
-  total_visitors: Total Visitors
+  powered: "%s এর সাহায্যে চলছে"
+  total_views: মোট দর্শক
+  total_visitors: মোট দর্শক
 counter:
   tag_cloud:
-    zero: No tags
-    one: 1 tag in total
-    other: "%d tags in total"
+    zero: কোনও ট্যাগ নেই
+    one: একটি ট্যাগ আছে
+    other: "মোট %d টি ট্যাগ"
   categories:
-    zero: No categories
-    one: 1 category in total
-    other: "%d categories in total"
+    zero: কোন ক্যাটাগরি নেই
+    one: একটি ক্যাটাগরি আছে
+    other: "মোট %d টি ক্যাটাগরি"
   archive_posts:
-    zero: No posts.
-    one: 1 post.
-    other: "%d posts in total."
+    zero: কোনও পোস্ট নেই.
+    one: ১টি পোস্ট।
+    other: "মোট %d টি পোস্ট।"
 state:
   posts: posts
   tags: tags
   categories: categories
 search:
-  placeholder: Searching...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
+  placeholder: সার্চ করা হচ্ছে...
+  empty: "আমরা উক্ত অনুসন্ধানের জন্য কোন ফলাফল খুঁজে পাইনি: %s"
+  hits_time: "%s টি ফলাফল %s মিলিসেকেন্ড এ পাওয়া গেছে"
   hits: "%s results found"
 cheers:
   um: Um..
