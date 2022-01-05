@@ -1,5 +1,5 @@
 ---
-name: ইংরেজি
+name: বাংলা
 title:
   archive: আর্কাইভ
   category: ক্যাটাগরি
@@ -66,32 +66,32 @@ search:
 cheers:
   um: ইয়ে... মানে..
   ok: ঠিক আছে
-  nice: Nice
+  nice: বেশ
   good: ভালো
   great: অসাধারন
   excellent: চমৎকার
-keep_on: Keep on posting.
+keep_on: পোস্ট চালিয়ে যাও।
 symbol:
   comma: ", "
-  period: ". "
-  colon: ": "
+  period: "। "
+  colon: "ঃ "
 reward:
-  donate: Donate
-  wechatpay: WeChat Pay
-  alipay: Alipay
+  donate: দান করুন
+  wechatpay: উইচ্যাট পে
+  alipay: আলি পে
   paypal: PayPal
-  bitcoin: Bitcoin
+  bitcoin: বিটকয়েন
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: আমার অন্যান্য প্রকাশনা চ্যানেলে আপনাকে স্বাগতম
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
-  back_to_top: Back to top
-  select_lang: Select language
+  nav_toggle: নেভিগেশন বারের দৃশ্যমানতা টগল করুন
+  prev_page: পূর্ববর্তী পৃষ্ঠা
+  next_page: পূর্ববর্তী পৃষ্ঠা
+  back_to_top: উপরে ফিরে যান
+  select_lang: ভাষা নির্বাচন করুন
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: আর্টিকালে অক্ষর এর পরিমাণ
+  count_total: আর্টিকালে অক্ষর এর মোট পরিমাণ
+  time: পড়াতে লাগবে
+  time_total: মোট পড়াতে লাগবে
+  time_minutes: মিনিট।
