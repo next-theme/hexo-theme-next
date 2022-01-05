@@ -62,14 +62,14 @@ search:
   placeholder: সার্চ করা হচ্ছে...
   empty: "আমরা উক্ত অনুসন্ধানের জন্য কোন ফলাফল খুঁজে পাইনি: %s"
   hits_time: "%s টি ফলাফল %s মিলিসেকেন্ড এ পাওয়া গেছে"
-  hits: "%s results found"
+  hits: "%s টি ফলাফল পাওয়া গেছে"
 cheers:
-  um: Um..
-  ok: OK
+  um: ইয়ে... মানে..
+  ok: ঠিক আছে
   nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
+  good: ভালো
+  great: অসাধারন
+  excellent: চমৎকার
 keep_on: Keep on posting.
 symbol:
   comma: ", "
