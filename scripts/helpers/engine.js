@@ -25,7 +25,7 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
     version : next_version,
     file    : 'source/js/' + file,
     minified: 'source/js/' + file.replace(/\.js$/, '.min.js'),
-    local   : this.url_for(`js/${file}`),
+    local   : this.url_for(`${this.theme.js}/${file}`),
     custom  : custom_cdn_url
   });
   const src = links[internal] || links.local;
