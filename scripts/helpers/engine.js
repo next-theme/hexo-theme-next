@@ -55,7 +55,7 @@ hexo.extend.helper.register('next_pre', function() {
   const { enable, host } = this.theme.font;
   const { internal, plugins, custom_cdn_url } = this.theme.vendors;
   const links = {
-    local   : '',
+    local   : parse(this.theme.js || '').hostname,
     jsdelivr: 'https://cdn.jsdelivr.net',
     unpkg   : 'https://unpkg.com',
     cdnjs   : 'https://cdnjs.cloudflare.com',
