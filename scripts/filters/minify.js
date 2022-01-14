@@ -63,6 +63,10 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/third-party/chat/chatra.js');
   }
 
+  if (!theme.tidio.enable) {
+    hexo.route.remove('js/third-party/chat/tidio.js');
+  }
+
   if (!theme.gitter.enable) {
     hexo.route.remove('js/third-party/chat/gitter.js');
   }
