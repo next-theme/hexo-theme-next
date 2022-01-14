@@ -60,12 +60,12 @@ state:
   categories: Категории
 search:
   placeholder: Поиск...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
+  empty: "По запросу ничего не найдено: %s"
+  hits_time: "%s результатов найдено за %s мс"
+  hits: "%s результатов найдено"
 cheers:
   um: Эм..
-  ok: OK
+  ok: ОК
   nice: Неплохо
   good: Хорошо
   great: Замечательно
