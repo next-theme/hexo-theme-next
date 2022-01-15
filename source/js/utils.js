@@ -52,8 +52,19 @@ NexT.utils = {
         });
       });
       if (!CONFIG.copycode) return;
-      element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
-      const button = element.querySelector('.copy-btn');
+
+      let button = null;
+      if (CONFIG.prism) {
+        var wrapper = document.createElement('div');
+        wrapper.classList.add('code-wrapper');
+        element.parentNode.insertBefore(wrapper, element);
+        wrapper.appendChild(element);
+        wrapper.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
+        button = wrapper.querySelector('.copy-btn');
+      } else {
+        element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
+        button = element.querySelector('.copy-btn');
+      }
       button.addEventListener('click', () => {
         const lines = element.querySelector('.code') || element.querySelector('code');
         const code = lines.innerText;
