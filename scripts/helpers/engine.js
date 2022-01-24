@@ -25,7 +25,7 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
     version : next_version,
     file    : 'source/js/' + file,
     minified: 'source/js/' + file.replace(/\.js$/, '.min.js'),
-    local   : this.url_for(`js/${file}`),
+    local   : this.url_for(`${this.theme.js}/${file}`),
     custom  : custom_cdn_url
   });
   const src = links[internal] || links.local;
@@ -55,7 +55,7 @@ hexo.extend.helper.register('next_pre', function() {
   const { enable, host } = this.theme.font;
   const { internal, plugins, custom_cdn_url } = this.theme.vendors;
   const links = {
-    local   : '',
+    local   : parse(this.theme.js || '').hostname,
     jsdelivr: 'https://cdn.jsdelivr.net',
     unpkg   : 'https://unpkg.com',
     cdnjs   : 'https://cdnjs.cloudflare.com',
