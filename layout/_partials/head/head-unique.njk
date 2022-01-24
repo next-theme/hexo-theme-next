@@ -1,4 +1,6 @@
-{{ open_graph() }}
+{%- if theme.open_graph.enable %}
+  {{ open_graph(theme.open_graph.options) }}
+{%- endif %}
 
 {# https://github.com/theme-next/hexo-theme-next/issues/866 #}
 {%- set canonical = url | replace(r/index\.html$/, '') %}
