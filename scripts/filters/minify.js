@@ -58,6 +58,10 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/third-party/analytics/growingio.js');
   }
 
+  if (!theme.clarity_analytics) {
+    hexo.route.remove('js/third-party/analytics/microsoft-clarity.js');
+  }
+
   // Chat
   if (!theme.chatra.enable) {
     hexo.route.remove('js/third-party/chat/chatra.js');
