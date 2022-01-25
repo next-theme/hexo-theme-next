@@ -6,7 +6,9 @@
 {%- else %}
 <meta name="theme-color" content="{{ theme.theme_color.light }}">
 {%- endif %}
-<meta name="generator" content="Hexo {{ hexo_version }}">
+{%- if config.meta_generator %}
+  {{- meta_generator() }}
+{%- endif %}
 
 {{ next_pre() }}
 
