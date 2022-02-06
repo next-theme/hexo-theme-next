@@ -359,7 +359,7 @@ codeblock:
   # All available themes: https://theme-next.js.org/highlight/
   theme:
     light: default
-    dark: tomorrow-night
+    dark: stackoverflow-dark
   prism:
     light: prism
     dark: prism-dark
