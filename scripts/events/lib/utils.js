@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const css = require('css');
 
 function resolve(name, file = '') {
   let dir;
@@ -15,20 +16,17 @@ function resolve(name, file = '') {
 
 function highlightTheme(name) {
   const file = resolve('highlight.js', `styles/${name}.css`);
-  const css = fs.readFileSync(file).toString();
-  let rule = '';
+  const content = fs.readFileSync(file, 'utf8');
+
   let background = '';
   let foreground = '';
-  css.replace(/\.hljs(\s+|,[^{]+)\{(.*?)\}/sg, (match, $1, content) => {
-    rule += content;
-    return match;
-  });
-  const parse = (line, attr) => line.split(attr)[1].replace(';', '').trim();
-  rule.split('\n').forEach(line => {
-    if (line.includes('background:')) background = parse(line, 'background:');
-    else if (line.includes('background-color:')) background = parse(line, 'background-color:');
-    else if (line.includes('color:')) foreground = parse(line, 'color:');
-  });
+  css.parse(content).stylesheet.rules
+    .filter(rule => rule.type === 'rule' && rule.selectors.some(selector => selector.endsWith('.hljs')))
+    .flatMap(rule => rule.declarations)
+    .forEach(declaration => {
+      if (declaration.property === 'background' || declaration.property === 'background-color') background = declaration.value;
+      else if (declaration.property === 'color') foreground = declaration.value;
+    });
   return {
     file,
     background,
