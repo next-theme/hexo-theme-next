@@ -1,5 +1,5 @@
 ---
-name: Русский
+name: Английский
 title:
   archive: Архив
   category: Категория
@@ -12,7 +12,7 @@ menu:
   tags: Тэги
   about: О сайте
   search: Поиск
-  schedule: Календарь
+  schedule: Планировщик
   sitemap: Карта сайта
   commonweal: Страница 404
 sidebar:
@@ -24,17 +24,17 @@ post:
   created: Создано
   modified: Изменено
   edit: Редактировать запись
-  in: в категории
-  read_more: Читать полностью
-  untitled: Без имени
+  in: В категории
+  read_more: Далее...
+  untitled: Безимянный
   sticky: Ссылка
   views: Просмотров
   related_posts: Похожие записи
   copyright:
     author: Автор записи
     link: Ссылка на запись
-    post_author: Written by
-    post_link: This article originally appeared on
+    post_author: Авторы
+    post_link: Оригинал этой статьи был написан
     license_title: Информация об авторских правах
     license_content: "Все записи на этом сайте защищены лицензией %s, если не указано дополнительно."
 footer:
@@ -60,12 +60,12 @@ state:
   categories: Категории
 search:
   placeholder: Поиск...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
+  empty: "По запросу ничего не найдено: %s"
+  hits_time: "%s результатов найдено за %s мс"
+  hits: "%s результатов найдено"
 cheers:
   um: Эм..
-  ok: OK
+  ok: ОК
   nice: Неплохо
   good: Хорошо
   great: Замечательно
@@ -80,15 +80,15 @@ reward:
   wechatpay: WeChat Pay
   alipay: Alipay
   paypal: PayPal
-  bitcoin: Bitcoin
+  bitcoin: Биткоин
 follow_me:
   welcome: Добро пожаловать на другие мои издательские каналы
 accessibility:
   nav_toggle: Показать/скрыть меню
   prev_page: Предыдущая страница
   next_page: Следующая страница
-  back_to_top: Back to top
-  select_lang: Select language
+  back_to_top: В начало
+  select_lang: Выберите язык
 symbols_count_time:
   count: Кол-во символов в статье
   count_total: Общее кол-во символов

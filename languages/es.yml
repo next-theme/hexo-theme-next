@@ -27,14 +27,14 @@ post:
   in: En
   read_more: Leer más
   untitled: Sin título
-  sticky: Sticky
+  sticky: Destacados
   views: Visitas
   related_posts: Entradas relacionadas
   copyright:
     author: Autor de la entrada
     link: Enlace a la entrada
-    post_author: Written by
-    post_link: This article originally appeared on
+    post_author: Escrito por
+    post_link: Este artículo apareció originalmente en
     license_title: Copyright
     license_content: "Todos los artículos de este blog están licenciados bajo %s a no ser que se especifique una licencia adicional."
 footer:
@@ -56,13 +56,13 @@ counter:
     other: "%d entradas en total."
 state:
   posts: entradas
-  tags: tags
+  tags: etiquetas
   categories: categorías
 search:
   placeholder: Buscando...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
+  empty: "No hemos encontrado ningún resultado para la búsqueda: %s"
+  hits_time: "%s resultados encontrados en %s ms"
+  hits: "%s resultados encontrados"
 cheers:
   um: Um..
   ok: Bueno
@@ -82,13 +82,13 @@ reward:
   paypal: PayPal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: Bienvenido a mis otros canales
 accessibility:
   nav_toggle: Cambiar a barra de navegación
   prev_page: Página anterior
   next_page: Página siguiente
-  back_to_top: Back to top
-  select_lang: Select language
+  back_to_top: Volver al principio
+  select_lang: Seleccione el idioma
 symbols_count_time:
   count: Cantidad de caracteres en el articulo
   count_total: Cantidad total de caracteres
