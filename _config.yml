@@ -72,6 +72,13 @@ creative_commons:
   # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
   language:
 
+# Open graph settings
+# See: https://hexo.io/docs/helpers#open-graph
+open_graph:
+  enable: true
+  # Add pairs each line to customize 
+  options: ''
+
 
 # ---------------------------------------------------------------
 # Menu Settings
