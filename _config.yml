@@ -76,8 +76,13 @@ creative_commons:
 # See: https://hexo.io/docs/helpers#open-graph
 open_graph:
   enable: true
-  # Add pairs each line to customize 
-  options: ''
+  options:
+    #twitter_image: twitter:image
+    #twitter_card: twitter:card
+    #twitter_id: twitter:creator
+    #twitter_site: twitter:site
+    #fb_admins: fb:admins
+    #fb_app_id: fb:app_id
 
 
 # ---------------------------------------------------------------
