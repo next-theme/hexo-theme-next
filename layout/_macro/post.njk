@@ -8,11 +8,6 @@
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ post.lang }}">
     <link itemprop="mainEntityOfPage" href="{{ post.permalink }}">
 
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-      <meta itemprop="name" content="{{ title }}">
-      <meta itemprop="description" content="{{ description }}">
-    </span>
-
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="{{ url_for(theme.avatar.url or theme.images + '/avatar.gif') }}">
       <meta itemprop="name" content="{{ author }}">
@@ -20,6 +15,12 @@
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ title }}">
+      <meta itemprop="description" content="{{ description }}">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+      <meta itemprop="name" content="{{ page.title + ' | ' + title }}">
+      <meta itemprop="description" content="{{ page.description }}">
     </span>
 
     {%- if post.header !== false %}
