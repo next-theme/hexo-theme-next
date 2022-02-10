@@ -75,7 +75,7 @@ footer:
     # The full num of gongan beian.
     gongan_num:
     # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
-    gongan_icon_url: http://www.beian.gov.cn/img/new/gongan.png
+    gongan_icon_url: https://images.effiu.cn/gongan.png
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
@@ -605,7 +605,7 @@ valine:
   enable: true
   appId: Jw6tthQmGwY5Sc2OlYBjIePr-gzGzoHsz  # Your leancloud application appid
   appKey: CjWG9xugjMIBiCz8MsGnH9WI # Your leancloud application appkey
-  placeholder: Just go go # Comment box placeholder
+  placeholder: Welcome to effiu's blog # Comment box placeholder
   avatar: mm # Gravatar style
   meta: [nick, mail, link] # Custom comment header
   pageSize: 10 # Pagination size
