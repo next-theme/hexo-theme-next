@@ -25,5 +25,13 @@ jobs:
           repository: SukkaLab/hexo-many-posts
           path: source/_posts/hexo-many-posts
       - run: npx hexo config theme next
+      - uses: DamianReeves/write-file-action@master
+        with:
+          path: themes/next/scripts/error.js
+          contents: |
+            hexo.log.error = function(...params) {
+              console.error("ERROR", ...params);
+              process.exit(1);
+            }
       - name: Test
         run: npx hexo g
