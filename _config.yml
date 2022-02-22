@@ -77,7 +77,6 @@ creative_commons:
 open_graph:
   enable: true
   options:
-    type: website
     #twitter_card: <twitter:card>
     #twitter_id: <twitter:creator>
     #twitter_site: <twitter:site>
