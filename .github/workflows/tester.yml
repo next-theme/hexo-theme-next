@@ -10,17 +10,17 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
       fail-fast: false
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           repository: hexojs/hexo-starter
       - name: Use Node.js
         uses: actions/setup-node@v3
       - name: Install Dependencies
         run: npm install
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           path: themes/next
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           repository: SukkaLab/hexo-many-posts
           path: source/_posts/hexo-many-posts
