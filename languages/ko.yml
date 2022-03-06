@@ -10,7 +10,7 @@ menu:
   archives: 아카이브
   categories: 카테고리
   tags: 태그
-  about: About
+  about: 정보
   search: 검색
   schedule: Schedule
   sitemap: Sitemap
@@ -31,7 +31,7 @@ post:
   views: Views
   related_posts: Related Posts
   copyright:
-    author: Post author
+    author: 포스트 작성자
     link: Post link
     post_author: Written by
     post_link: This article originally appeared on
@@ -65,7 +65,7 @@ search:
   hits: "%s results found"
 cheers:
   um: 음..
-  ok: OK
+  ok: 동의해요
   nice: 잘했어요
   good: 좋아요
   great: 훌륭해요
@@ -76,11 +76,11 @@ symbol:
   period: ". "
   colon: ": "
 reward:
-  donate: Donate
+  donate: 도네이션
   wechatpay: WeChat Pay
   alipay: Alipay
   paypal: PayPal
-  bitcoin: Bitcoin
+  bitcoin: 비트코인
 follow_me:
   welcome: Welcome to my other publishing channels
 accessibility:
