@@ -121,10 +121,10 @@
         }
 
         if (tense === 'future' && prevEnd < now) {
-          eventList.innerHTML += '<hr>';
+          eventList.insertAdjacentHTML('beforeend', '<hr>');
         }
 
-        eventList.innerHTML += buildEventDOM(tense, event, start, end);
+        eventList.insertAdjacentHTML('beforeend', buildEventDOM(tense, event, start, end));
         prevEnd = end;
       });
     });
