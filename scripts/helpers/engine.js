@@ -17,7 +17,10 @@ hexo.extend.helper.register('next_inject', function(point) {
     .join('');
 });
 
-hexo.extend.helper.register('next_js', function(file, pjax = false) {
+hexo.extend.helper.register('next_js', function(file, {
+  pjax = false,
+  module = false
+} = {}) {
   const { next_version } = this;
   const { internal, custom_cdn_url } = this.theme.vendors;
   const links = getVendors({
@@ -29,7 +32,7 @@ hexo.extend.helper.register('next_js', function(file, pjax = false) {
     custom  : custom_cdn_url
   });
   const src = links[internal] || links.local;
-  return `<script ${pjax ? 'data-pjax ' : ''}src="${src}"></script>`;
+  return `<script ${pjax ? 'data-pjax ' : ''}${module ? 'type="module" ' : ''}src="${src}"></script>`;
 });
 
 hexo.extend.helper.register('next_vendors', function(name) {
