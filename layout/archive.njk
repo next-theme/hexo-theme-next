@@ -31,6 +31,16 @@
         <span class="collection-header">{{ __('cheers.' + cheers) }}! {{ _p('counter.archive_posts', site.posts.length) }} {{ __('keep_on') }}</span>
       </div>
 
+      {%- if theme.d3.enable %}
+        {#######################################################################}
+        {### It can be better, but I don't know how to get all posts at once ###}
+        {### Now I can only get data using JavaScript and jQuery desperately ###}
+        {#######################################################################}
+        <div style="overflow: hidden">
+          <svg id='new-archive'></svg>
+        </div>
+      {%- endif %}
+
       {{ post_template.render(page.posts) }}
 
     </div>

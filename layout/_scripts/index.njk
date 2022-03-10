@@ -18,3 +18,7 @@
 {%- if theme.pjax %}
   {{- next_js('pjax.js') }}
 {%- endif %}
+
+{%- if theme.d3.enable %}
+  {{- next_js('archives/graphify.js') }}
+{%- endif %}
