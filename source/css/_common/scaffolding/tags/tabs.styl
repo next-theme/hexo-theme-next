@@ -14,6 +14,8 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    // Fix issue #398
+    z-index: $zindex-0;
 
     +mobile-smallest() {
       display: block;
