@@ -7,7 +7,7 @@
       {%- if path != 'index.html' %}
         {%- if loop.index == count and path.endsWith('.html') %}
           {%- set link = link + path %}
-        {% else %}
+        {%- else %}
           {%- set link = link + path + '/' %}
         {%- endif %}
         {%- if theme.menu_map.has(link) %}
@@ -17,7 +17,7 @@
         {%- endif %}
         {%- if loop.index == count - 1 and paths[loop.index] == 'index.html' %}
           <li>{{ name | upper }}</li>
-        {% else %}
+        {%- else %}
           {%- if path.endsWith('.html') %}
             <li>{{ name | replace(r/\.html$/, '') | upper }}</li>
           {% else %}
