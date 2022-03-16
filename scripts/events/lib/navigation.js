@@ -35,7 +35,7 @@ module.exports = hexo => {
         node = new TreeNode(parent, path, name, icon);
       } else if (typeof value === 'object') {
         if (typeof value.default !== 'string') {
-          hexo.log.warn('Missing default entry for ', name);
+          hexo.log.warn('Missing default entry for menu item:', name);
           return;
         }
         const [path, icon] = value.default.split('||').map(v => v.trim());
