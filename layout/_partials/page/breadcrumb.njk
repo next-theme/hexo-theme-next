@@ -20,7 +20,7 @@
         {%- else %}
           {%- if path.endsWith('.html') %}
             <li>{{ name | replace(r/\.html$/, '') | upper }}</li>
-          {% else %}
+          {%- else %}
             <li><a href="{{ url_for(link) }}/">{{ name | upper }}</a></li>
           {%- endif %}
         {%- endif %}
