@@ -29,9 +29,10 @@ firebase.initializeApp({
     };
   };
 
+  const db = firebase.firestore();
+  const articles = db.collection(CONFIG.firestore.collection);
+
   document.addEventListener('page:loaded', () => {
-    const db = firebase.firestore();
-    const articles = db.collection(CONFIG.firestore.collection);
 
     if (CONFIG.page.isPost) {
       // Fix issue #118
