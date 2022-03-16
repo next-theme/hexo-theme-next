@@ -11,6 +11,8 @@ hexo.extend.filter.register('before_generate', () => {
   require('./lib/injects')(hexo);
   // Highlight
   require('./lib/highlight')(hexo);
+  // Menu and sub menu
+  require('./lib/navigation')(hexo);
 }, 0);
 
 hexo.on('ready', () => {
