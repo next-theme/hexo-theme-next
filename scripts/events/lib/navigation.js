@@ -1,6 +1,6 @@
 'use strict';
 
-const { join } = require('path');
+const { join } = require('path').posix;
 
 class TreeNode {
   constructor(parent, path, name, icon) {
