@@ -3,7 +3,7 @@
 {%- if theme.menu or theme.algolia_search.enable or theme.local_search.enable %}
 <nav class="site-nav">
   <ul class="main-menu menu">
-    {%- for node in theme.menu_root %}
+    {%- for node in theme.main_menu %}
       {{- menu_item.render(node) | trim }}
     {%- endfor %}
 

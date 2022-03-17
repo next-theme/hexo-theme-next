@@ -21,9 +21,9 @@ class TreeNode {
 
 module.exports = hexo => {
   const menu_map = new Map();
-  const menu_root = [];
+  const main_menu = [];
   hexo.theme.config.menu_map = menu_map;
-  hexo.theme.config.menu_root = menu_root;
+  hexo.theme.config.main_menu = main_menu;
 
   function parse(menu, parent) {
     if (!menu) return;
@@ -47,7 +47,7 @@ module.exports = hexo => {
         if (parent) {
           parent.append(node);
         } else {
-          menu_root.push(node);
+          main_menu.push(node);
         }
       }
     });

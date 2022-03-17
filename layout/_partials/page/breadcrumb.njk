@@ -11,7 +11,7 @@
           {%- set link = link + path + '/' %}
         {%- endif %}
         {%- if theme.menu_map.has(link) %}
-          {%- set name = theme.menu_map.get(link).name %}
+          {%- set name = __('menu.' + theme.menu_map.get(link).name) | replace('menu.', '') %}
         {%- else %}
           {%- set name = path %}
         {%- endif %}
