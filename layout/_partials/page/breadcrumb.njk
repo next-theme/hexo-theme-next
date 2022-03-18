@@ -1,18 +1,27 @@
 {%- set paths = page.path.split('/') %}
 {%- set count = paths.length %}
 {%- if count > 2 %}
-  {%- set link = '' %}
+  {%- set link = '/' %}
   <ul class="breadcrumb">
     {%- for path in paths %}
       {%- if path != 'index.html' %}
+        {%- if loop.index == count and path.endsWith('.html') %}
+          {%- set link = link + path %}
+        {%- else %}
+          {%- set link = link + path + '/' %}
+        {%- endif %}
+        {%- if theme.menu_map.has(link) %}
+          {%- set name = __('menu.' + theme.menu_map.get(link).name) | replace('menu.', '') %}
+        {%- else %}
+          {%- set name = path %}
+        {%- endif %}
         {%- if loop.index == count - 1 and paths[loop.index] == 'index.html' %}
-          <li>{{ path | upper }}</li>
-        {% else %}
-          {%- set link = '/' + path if link == '' else link + '/' + path %}
+          <li>{{ name | upper }}</li>
+        {%- else %}
           {%- if path.endsWith('.html') %}
-            <li>{{ path | replace(r/\.html$/, '') | upper }}</li>
-          {% else %}
-            <li><a href="{{ url_for(link) }}/">{{ path | upper }}</a></li>
+            <li>{{ name | replace(r/\.html$/, '') | upper }}</li>
+          {%- else %}
+            <li><a href="{{ url_for(link) }}">{{ name | upper }}</a></li>
           {%- endif %}
         {%- endif %}
       {%- endif %}

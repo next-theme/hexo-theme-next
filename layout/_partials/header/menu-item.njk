@@ -1,13 +1,10 @@
-{% macro render(name, itemName, value) %}
+{% macro render(node) %}
 
-  {%- set itemURL = value.split('||')[0] | trim %}
-  {%- if not itemURL.startsWith('http') %}
-    {%- set itemURL = itemURL | replace('//', '/') %}
-  {%- endif %}
-  <li class="menu-item menu-item-{{ itemName | replace(' ', '-') }}">
+  {%- set itemURL = node.path %}
+  <li class="menu-item menu-item-{{ node.name | lower | replace(' ', '-') }}">
 
-    {%- set menuIcon = '<i class="' + value.split('||')[1] | trim + ' fa-fw"></i>' if theme.menu_settings.icons and value.split('||')[1] else '' %}
-    {%- set menuText = __('menu.' + name) | replace('menu.', '') %}
+    {%- set menuIcon = '<i class="' + node.icon + ' fa-fw"></i>' if theme.menu_settings.icons and node.icon else '' %}
+    {%- set menuText = __('menu.' + node.name) | replace('menu.', '') %}
 
     {%- set menuBadge = '' %}
     {%- if theme.menu_settings.badges %}
@@ -18,7 +15,7 @@
         }
       %}
       {%- for menu, count in badges %}
-        {%- if name == menu %}
+        {%- if node.name == menu %}
           {%- set menuBadge = '<span class="badge">' + count + '</span>' %}
         {%- endif %}
       {%- endfor %}
