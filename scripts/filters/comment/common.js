@@ -1,7 +1,7 @@
 'use strict';
 
 function capitalize(input) {
-  return input.toString().charAt(0).toUpperCase() + input.toString().substr(1);
+  return input.toString().charAt(0).toUpperCase() + input.toString().substring(1);
 }
 
 module.exports = {

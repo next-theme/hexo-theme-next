@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (content && content.value) {
             const div = document.createElement('div');
             div.innerHTML = content.value;
-            result += `<a href="${data.permalink}"><p class="search-result">${div.textContent.substr(0, 100)}...</p></a>`;
+            result += `<a href="${data.permalink}"><p class="search-result">${div.textContent.substring(0, 100)}...</p></a>`;
           }
           return result;
         },
