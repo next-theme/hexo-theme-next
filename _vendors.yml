@@ -57,8 +57,7 @@ pjax:
   name: '@next-theme/pjax'
   version: 0.5.0
   file: pjax.min.js
-  unavailable:
-    - cdnjs
+  alias: next-theme-pjax
   integrity: sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=
 jquery:
   name: jquery
@@ -142,8 +141,6 @@ local_search:
   name: hexo-generator-searchdb
   version: 1.4.0
   file: dist/search.js
-  unavailable:
-    - cdnjs
   integrity: sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=
 pdfobject:
   name: pdfobject
