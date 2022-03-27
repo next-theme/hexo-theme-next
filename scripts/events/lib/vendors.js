@@ -34,7 +34,7 @@ module.exports = hexo => {
     if (key === 'pace_css') {
       value.file = `${value.dir}/${pace.color}/pace-theme-${pace.theme}.css`;
     }
-    const { name, file, unavailable } = value;
+    const { name, file } = value;
     const links = getVendors({
       ...value,
       minified: file,
@@ -42,7 +42,6 @@ module.exports = hexo => {
       custom  : vendors.custom_cdn_url
     });
     let { plugins = 'jsdelivr' } = vendors;
-    if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
     if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';
     vendors[key] = {
       url      : links[plugins] || links.jsdelivr,

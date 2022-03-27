@@ -75,7 +75,7 @@ const points = {
   ]
 };
 
-// Required by theme-next-docs
+// Required by theme-next-docs and @next-theme/plugins
 module.exports = {
   resolve,
   highlightTheme,
