@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
       templates: {
         text: data => {
           const stats = CONFIG.i18n.hits_time
-            .replace(/\$\{hits}/, data.nbHits)
-            .replace(/\$\{time}/, data.processingTimeMS);
+            .replace('${hits}', data.nbHits)
+            .replace('${time}', data.processingTimeMS);
           return `<span>${stats}</span>
             <img src="${CONFIG.images}/logo-algolia-nebula-blue-full.svg" alt="Algolia">`;
         }
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         empty: data => {
           return `<div class="algolia-hits-empty">
-              ${CONFIG.i18n.empty.replace(/\$\{query}/, data.query)}
+              ${CONFIG.i18n.empty.replace('${query}', data.query)}
             </div>`;
         }
       },

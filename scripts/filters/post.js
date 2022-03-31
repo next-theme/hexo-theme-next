@@ -10,13 +10,13 @@ hexo.extend.filter.register('after_post_render', data => {
   const theme = hexo.theme.config;
   if (!theme.exturl && !theme.lazyload) return;
   if (theme.lazyload) {
-    data.content = data.content.replace(/(<img[^>]*)src=/ig, '$1data-src=');
+    data.content = data.content.replace(/(<img[^>]*)\ssrc=/ig, '$1 data-src=');
   }
   if (theme.exturl) {
     const siteHost = parse(config.url).hostname || config.url;
     // External URL icon
     const exturlIcon = theme.exturl_icon ? '<i class="fa fa-external-link-alt"></i>' : '';
-    data.content = data.content.replace(/<a[^>]*href="([^"]+)"[^>]*>([^<]+)<\/a>/ig, (match, href, html) => {
+    data.content = data.content.replace(/<a[^>]*\shref="([^"]+)"[^>]*>([^<]+)<\/a>/ig, (match, href, html) => {
       // Exit if the href attribute doesn't exists.
       if (!href) return match;
 
