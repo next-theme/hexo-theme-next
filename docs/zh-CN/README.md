@@ -133,7 +133,7 @@ $ git pull
 
 > GitHub 容许我们托管 Git 仓库及运行测试。
 
-<a href="https://www.netlify.com"><img height="40" src="https://www.netlify.com/img/press/logos/full-logo-light.svg"></a>
+<a href="https://www.netlify.com"><img height="40" src="https://www.netlify.com/v3/img/components/full-logo-light.svg"></a>
 
 > Netlify 容许我们发布文档。
 

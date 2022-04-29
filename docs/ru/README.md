@@ -133,7 +133,7 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 
 > GitHub allows us to host the Git repository and run the test suite.
 
-<a href="https://www.netlify.com"><img height="40" src="https://www.netlify.com/img/press/logos/full-logo-light.svg"></a>
+<a href="https://www.netlify.com"><img height="40" src="https://www.netlify.com/v3/img/components/full-logo-light.svg"></a>
 
 > Netlify allows us to distribute the documentation.
 
