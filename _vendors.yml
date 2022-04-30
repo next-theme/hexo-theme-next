@@ -14,22 +14,22 @@ fontawesome:
   integrity: sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=
 prism:
   name: prismjs
-  version: 1.27.0
+  version: 1.28.0
   file: components/prism-core.min.js
   alias: prism
-  integrity: sha256-c9n/9oG7sBeCouNZfRg5tO8VCCQXGPLiDPJNaF5Qgic=
+  integrity: sha256-4mJNT2bMXxcc1GCJaxBmMPdmah5ji0Ldnd79DKd1hoM=
 prism_autoloader:
   name: prismjs
-  version: 1.27.0
+  version: 1.28.0
   file: plugins/autoloader/prism-autoloader.min.js
   alias: prism
-  integrity: sha256-RtKI23ujTCOg3jNK74NK61WGNYbtBWcqh6UKebC2AQo=
+  integrity: sha256-dL6vkUiCn30lPTN9cVrmQHo5UQmEwDMrx2ppAk4IhVk=
 prism_line_numbers:
   name: prismjs
-  version: 1.27.0
+  version: 1.28.0
   file: plugins/line-numbers/prism-line-numbers.min.js
   alias: prism
-  integrity: sha256-K837BwIyiXo5k/9fCYgqUyA14bN4/Ve9P2SIT0KmZD0=
+  integrity: sha256-9cmf7tcLdXpKsPi/2AWE93PbZpTp4M4tqzFk+lWomjU=
 mathjax:
   name: mathjax
   version: 3.2.0
@@ -119,14 +119,14 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.6.10
+  version: 9.7.0
   file: firebase-app-compat.js
-  integrity: sha256-NnpZMa3q+sOoU4xX94J5axBRYpjFiVFotyMSBYhls/Y=
+  integrity: sha256-kazmBornWCBvhzKX9OvlPP7/4RbDozFe7VyVx4fj/vg=
 firebase_firestore:
   name: firebase
-  version: 9.6.10
+  version: 9.7.0
   file: firebase-firestore-compat.js
-  integrity: sha256-pVrLn7CzZppKEmpmZ93rk4nDP4LoV72OrE/zMJCR4Jg=
+  integrity: sha256-JsvvsDGyUIHrfyMHH2FPJrbHRhjv7hOjtg1VdsuxI0s=
 algolia_search:
   name: algoliasearch
   version: 4.13.0
@@ -134,9 +134,9 @@ algolia_search:
   integrity: sha256-UcrGMMl88PT0z5gvotNiqA7H30f1UJTUL9ZHey6i9jk=
 instant_search:
   name: instantsearch.js
-  version: 4.40.2
+  version: 4.40.5
   file: dist/instantsearch.production.min.js
-  integrity: sha256-q2scAnOKDe/wL7CAo3MYbrtc/3Ik9RqfpGyEFlgsh7I=
+  integrity: sha256-CzAaf9BTgvv6RaF+W1nW5duR5M+vXeZ0tofFuEfJ7ms=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.0
@@ -149,9 +149,9 @@ pdfobject:
   integrity: sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I=
 mermaid:
   name: mermaid
-  version: 8.14.0
+  version: 9.0.1
   file: dist/mermaid.min.js
-  integrity: sha256-7wT34TI0pEBeEFoi4z+vhuSddGh6vUTMWdqJ2SDe2jg=
+  integrity: sha256-CemUs9ITT7liCZpVMktcEw0BpAOZ1+mujlMB3UyuImU=
 animate_css:
   name: animate.css
   version: 3.1.1
