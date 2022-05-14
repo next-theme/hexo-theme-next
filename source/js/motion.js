@@ -51,7 +51,7 @@ NexT.motion.middleWares = {
       });
     }
 
-    pushToSequence('.header');
+    pushToSequence('header.header');
     CONFIG.scheme === 'Mist' && getMistLineSettings('.logo-line');
     CONFIG.scheme === 'Muse' && pushToSequence('.custom-logo-image');
     pushToSequence('.site-title');
