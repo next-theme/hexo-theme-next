@@ -41,10 +41,14 @@ module.exports = hexo => {
       local   : url_for.call(hexo, `lib/${name}/${file}`),
       custom  : vendors.custom_cdn_url
     });
-    let { plugins = 'jsdelivr' } = vendors;
-    if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';
+    let { plugins = 'cdnjs' } = vendors;
+    if (plugins === 'local' && typeof internal === 'undefined') {
+      hexo.log.warn('Dependencies for `plugins: local` not found. The default CDN provider CDNJS is used instead.');
+      hexo.log.warn('Run `npm install @next-theme/plugins` in Hexo site root directory to install the plugin.');
+      plugins = 'cdnjs';
+    }
     vendors[key] = {
-      url      : links[plugins] || links.jsdelivr,
+      url      : links[plugins] || links.cdnjs,
       integrity: value.integrity
     };
   }
