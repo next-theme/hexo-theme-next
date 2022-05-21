@@ -112,6 +112,7 @@ hexo.extend.filter.register('after_generate', () => {
   // Search
   if (!theme.algolia_search.enable) {
     hexo.route.remove('js/third-party/search/algolia-search.js');
+    hexo.route.remove('images/logo-algolia-nebula-blue-full.svg');
   }
 
   if (!theme.local_search.enable) {
