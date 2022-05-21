@@ -45,13 +45,13 @@ NexT.boot.refresh = function() {
   CONFIG.pangu && window.pangu.spacingPage();
 
   CONFIG.exturl && NexT.utils.registerExtURL();
+  NexT.utils.wrapTableWithBox();
   NexT.utils.registerCopyCode();
   NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerLangSelect();
   NexT.utils.registerSidebarTOC();
   NexT.utils.registerPostReward();
-  NexT.utils.wrapTableWithBox();
   NexT.utils.registerVideoIframe();
 };
 

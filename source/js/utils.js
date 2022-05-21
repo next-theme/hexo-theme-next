@@ -51,8 +51,10 @@ NexT.utils = {
           span.classList.replace(name, `hljs-${name}`);
         });
       });
-      if (!CONFIG.copycode) return;
-      element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
+      if (!CONFIG.copycode.enable) return;
+      let target = element;
+      if (CONFIG.copycode.style !== 'mac') target = element.querySelector('.table-container') || element;
+      target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', () => {
         const lines = element.querySelector('.code') || element.querySelector('code');
