@@ -75,7 +75,7 @@ pjax: true
 
 第三方插件默认通过 [CDNJS](https://cdnjs.com) CDN 服务加载。我们也提供了其它的 CDN 服务供选择，包括著名的 [UNPKG](https://unpkg.com) 和 [jsDelivr](https://www.jsdelivr.com)。
 
-例如，你想要使用 `unpkg` 代替 `jsdelivr` 作为默认的 CDN 提供商，你需要在 NexT 配置文件中进行如下设置：
+例如，你想要使用 `unpkg` 代替 `cdnjs` 作为默认的 CDN 提供商，你需要在 NexT 配置文件中进行如下设置：
 
 ```yml
 vendors:
