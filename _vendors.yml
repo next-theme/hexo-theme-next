@@ -32,24 +32,24 @@ prism_line_numbers:
   integrity: sha256-9cmf7tcLdXpKsPi/2AWE93PbZpTp4M4tqzFk+lWomjU=
 mathjax:
   name: mathjax
-  version: 3.2.0
+  version: 3.2.1
   file: es5/tex-mml-chtml.js
   integrity: sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY=
 katex:
   name: katex
-  version: 0.15.3
+  version: 0.15.6
   file: dist/katex.min.css
   alias: KaTeX
   integrity: sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=
 copy_tex_js:
   name: katex
-  version: 0.15.3
+  version: 0.15.6
   file: dist/contrib/copy-tex.min.js
   alias: KaTeX
   integrity: sha256-etSqbSVF4+Lwe8MGk/Vanc1sR+mWv+qOG73fxWw9p94=
 copy_tex_css:
   name: katex
-  version: 0.15.3
+  version: 0.15.6
   file: dist/contrib/copy-tex.min.css
   alias: KaTeX
   integrity: sha256-Wk20U9mS/kHGcSgkjSiRezW5exqT6wAOKwySOaLotXM=
@@ -119,22 +119,22 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.7.0
+  version: 9.8.2
   file: firebase-app-compat.js
   integrity: sha256-kazmBornWCBvhzKX9OvlPP7/4RbDozFe7VyVx4fj/vg=
 firebase_firestore:
   name: firebase
-  version: 9.7.0
+  version: 9.8.2
   file: firebase-firestore-compat.js
   integrity: sha256-JsvvsDGyUIHrfyMHH2FPJrbHRhjv7hOjtg1VdsuxI0s=
 algolia_search:
   name: algoliasearch
-  version: 4.13.0
+  version: 4.13.1
   file: dist/algoliasearch-lite.umd.js
   integrity: sha256-UcrGMMl88PT0z5gvotNiqA7H30f1UJTUL9ZHey6i9jk=
 instant_search:
   name: instantsearch.js
-  version: 4.40.5
+  version: 4.41.0
   file: dist/instantsearch.production.min.js
   integrity: sha256-CzAaf9BTgvv6RaF+W1nW5duR5M+vXeZ0tofFuEfJ7ms=
 local_search:
@@ -144,12 +144,12 @@ local_search:
   integrity: sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=
 pdfobject:
   name: pdfobject
-  version: 2.2.7
+  version: 2.2.8
   file: pdfobject.min.js
   integrity: sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I=
 mermaid:
   name: mermaid
-  version: 9.0.1
+  version: 9.1.1
   file: dist/mermaid.min.js
   integrity: sha256-CemUs9ITT7liCZpVMktcEw0BpAOZ1+mujlMB3UyuImU=
 animate_css:
