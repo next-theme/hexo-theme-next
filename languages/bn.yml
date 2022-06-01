@@ -55,9 +55,9 @@ counter:
     one: ১টি পোস্ট।
     other: "মোট %d টি পোস্ট।"
 state:
-  posts: posts
-  tags: tags
-  categories: categories
+  posts: পোস্ট এর তালিকা
+  tags: ট্যাগ এর তালিকা
+  categories: ক্যাটাগরি এর তালিকা
 search:
   placeholder: সার্চ করা হচ্ছে...
   empty: "আমরা উক্ত অনুসন্ধানের জন্য কোন ফলাফল খুঁজে পাইনি: %s"
