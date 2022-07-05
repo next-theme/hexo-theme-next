@@ -47,12 +47,6 @@ copy_tex_js:
   file: dist/contrib/copy-tex.min.js
   alias: KaTeX
   integrity: sha256-etSqbSVF4+Lwe8MGk/Vanc1sR+mWv+qOG73fxWw9p94=
-copy_tex_css:
-  name: katex
-  version: 0.15.6
-  file: dist/contrib/copy-tex.min.css
-  alias: KaTeX
-  integrity: sha256-Wk20U9mS/kHGcSgkjSiRezW5exqT6wAOKwySOaLotXM=
 pjax:
   name: '@next-theme/pjax'
   version: 0.5.0
