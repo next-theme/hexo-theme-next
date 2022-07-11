@@ -124,8 +124,8 @@ firebase_firestore:
 algolia_search:
   name: algoliasearch
   version: 4.13.1
-  file: dist/algoliasearch-lite.umd.js
-  integrity: sha256-g68T2rU86flpyzVWWCcZxWGWISTfOXVwEpZgyKOaZ1c=
+  file: dist/algoliasearchLite.js
+  integrity: sha256-Lo1hgzpep12pGfO8ze7kq63+xtFp5zNuoEjQbclVP6I=
 instant_search:
   name: instantsearch.js
   version: 4.43.0
