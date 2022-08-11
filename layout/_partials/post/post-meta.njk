@@ -68,6 +68,32 @@
       <span class="firestore-visitors-count"></span>
     </span>
   {%- endif %}
+  
+  {# Waline PageView count #}
+  {%- if theme.waline.enable and theme.waline.pageview %}
+  <span class="post-meta-item" title="{{ __('post.views') }}">
+    <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+    </span>
+    <span class="post-meta-item-text">{{ __('post.views') }}
+      <i class="waline-pageview-count" data-path="{{ url_for(post.path) }}"></i>
+    </span>
+  </span>
+  {% endif %}
+
+  {# Waline Comment count #}
+  {%- if theme.waline.enable and theme.waline.comment %}
+  <span class="post-meta-item" title="{{ __('post.comments') }}">
+    <span class="post-meta-item-icon">
+        <i class="far fa-comments"></i>
+    </span>
+    <span class="post-meta-item-text">{{ __('post.comments') }}
+      <a href="{{ url_for(post.path) }}#waline">
+        <i class="waline-comment-count" data-path="{{ url_for(post.path) }}"></i>
+      </a>
+    </span>
+  </span>
+  {% endif %}
 
   {%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
     <span class="post-meta-item" title="{{ __('post.views') }}" id="busuanzi_container_page_pv">

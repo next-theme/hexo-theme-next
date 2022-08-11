@@ -172,3 +172,19 @@ creative_commons:
   version: 2020.11.3
   dir: assets/license_badges
   alias: creativecommons-vocabulary
+waline_js:
+  name: '@waline/client'
+  version: 2.6.2
+  file: dist/waline.js
+waline_js_cdnjs:
+  name: 'waline'
+  version: 2.6.2
+  file: waline.js
+waline_css:
+  name: '@waline/client'
+  version: 2.6.2
+  file: dist/waline.css
+waline_css_cdnjs:
+  name: 'waline'
+  version: 2.6.2
+  file: waline.css

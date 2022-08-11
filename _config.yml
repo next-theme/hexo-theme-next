@@ -646,6 +646,32 @@ utterances:
 # For more information: https://posativ.org/isso/
 isso: # <data_isso>
 
+# Waline
+# For more information: https://waline.js.org
+waline:
+  enable: false
+  serverURL: # Waline backend servie url.
+  pageview: true # View count
+  comment: true # Comment count
+  lang: zh # I18n Support: zh | zh-CN | zh-TW | en | en-US | jp | jp-JP | pt-BR | ru | ru-RU
+  meta: [ nick, mail, link ] # Reviewer attributes. Optional values: 'nick', 'mail', 'link'
+  requiredMeta: [ mail ] # Set required fields, default anonymous, optional values []
+  metaPlaceholder:  # Set meta placeholder, config 'nick' and 'link' is the same as setting 'mail'.
+    mail: 'Get avator'
+  login: enable # Login mode status, optional values: enable, disable, force
+  wordLimit: 0 # Comment word s limit. When a single number is filled in, it 's the maximum number of comment words. No limit when set to 0.
+  pageSize: 10 # number of comments per page.
+  copyright: true
+  emojiCdn: # Optional: jsdelivr | unpkg (default)
+  emoji: # Optional: alus, bilibili, qq, tieba, twitter, weibo
+    - alus
+    - bilibili
+    - twitter
+    - weibo
+    #- https://example.com/myemoji.1  # how to creating own, see:
+    #- https://example.com/myemoji.2  # https://waline.js.org/en/guide/client/emoji.html#creating-own-preset
+    #- https://example.com/myemoji.n
+
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services

@@ -1,0 +1,9 @@
+{%- if theme.vendors.plugins == 'cdnjs' %}
+  {{ next_vendors('waline_css_cdnjs') }}
+  {{ next_data('waline', theme.waline, {js: theme.vendors.waline_js_cdnjs}) }}
+{%- else %}
+  {{ next_vendors('waline_css') }}
+  {{ next_data('waline', theme.waline, {js: theme.vendors.waline_js}) }}
+{%- endif %}
+
+{{ next_js('third-party/comments/waline.js') }}
