@@ -37,6 +37,81 @@ for (let item of CONFIG.waline.emoji) {
 }
 
 /**
+ * refresh Waline
+ */
+const waitToRun = (selector, action) => {
+  let timeout = 30000;
+  let start = Date.now();
+  let getElem = (resolve, reject) => {
+    // check timeout.
+    if (Date.now() - start > timeout) {
+      reject(`Query element '${selector}' timeout, 30s.`)
+      return;
+    }
+    // query element
+    let elem = document.querySelector(selector);
+    if (elem) {
+      resolve(elem);
+      return;
+    }
+    setTimeout(getElem(resolve, reject), 500);
+  }
+  new Promise((resolve, reject) => {
+    getElem(resolve, reject);
+  }).then(action).catch(reson => console.log(reson));
+}
+
+const setPlachHolder = () => {
+  //Set input placeholder.
+  const metaPlaceholder = CONFIG.waline.metaPlaceholder;
+  if (!metaPlaceholder) {
+    return;
+  }
+
+  if (metaPlaceholder.nick) {
+    waitToRun('.wl-header-item input.wl-nick', elem => elem.placeholder = metaPlaceholder.nick);
+  }
+  if (metaPlaceholder.mail) {
+    waitToRun('.wl-header-item input.wl-mail', elem => elem.placeholder = metaPlaceholder.mail);
+  }
+  if (metaPlaceholder.link) {
+    waitToRun('.wl-header-item input.wl-link', elem => elem.placeholder = metaPlaceholder.link);
+  }
+}
+
+/**
+ * Observe login button to reinitialize waline instance.
+ */
+const observeWaline = () => {
+  let options = { childList: true };
+  
+  Waline.observer = new MutationObserver((mutationList) => {
+    let check = node => {
+      if (node.nodeName == "BUTTON" && node.className == "wl-btn") {
+        initWaline();
+        return true;
+      }
+      return false;
+    }
+    mutationList.forEach(nodes => {
+      for (let node of nodes.addedNodes) {
+        if (check(node)) return;
+      }
+      for (let node of nodes.removedNodes) {
+        if (check(node)) return;
+      }
+    });
+  });
+
+  waitToRun(".wl-footer .wl-info", elem => {
+    Waline.observer.disconnect();
+    Waline.observer.observe(elem, options);
+    setPlachHolder();
+  });
+}
+
+
+/**
  * initialize waline.
  */
  const initWaline = () => {
@@ -57,90 +132,15 @@ for (let item of CONFIG.waline.emoji) {
     copyright: CONFIG.waline.copyright,
     emoji: CONFIG.waline.emojis
   });
-}
-
-/**
- * refresh Waline
- */
-const observeWaline = () => {
-
-  const waitToRun = (selector) => {
-    timeout = 30000,
-    start = Date.now();
-    return new Promise((resolve, reject) => {
-      let getElem = function () {
-        // check timeout.
-        if (Date.now() - start > timeout) {
-          reject(`Query element '${selector}' timeout, 30s.`)
-          return;
-        }
-        // query element
-        let elem = document.querySelector(selector);
-        if (elem) {
-          resolve(elem);
-          return;
-        }
-        setTimeout(getElem, 500);
-      }
-      getElem();
-    });
-  }
-
-  // Observe login button to reinitialize waline instance.
-  waitToRun(".wl-footer .wl-info").then(elem => {
-    options = { childList: true };
-
-    if (!Waline.observer) {
-      Waline.observer = new MutationObserver((mutationList) => {
-        let nodeAll = [];
-        mutationList.forEach(nodes => {
-          nodes.addedNodes.forEach(list => nodeAll = nodeAll.concat(list));
-          nodes.removedNodes.forEach(list => nodeAll = nodeAll.concat(list));
-        });
-        for (let node of nodeAll) {
-          if (node.nodeName != "BUTTON" || node.className != "wl-btn") {
-            continue;
-          }
-          initWaline();
-          observeWaline();
-          return;
-        }
-      });
-    }
-
-    Waline.observer.disconnect();
-    Waline.observer.observe(elem, options);
-  }).catch(reson => console.log(reson));
-
-  //Set input placeholder.
-  const metaPlaceholder = CONFIG.waline.metaPlaceholder;
-  if (!metaPlaceholder) {
-    return;
-  }
-  if (metaPlaceholder.nick) {
-    waitToRun('.wl-header-item input.wl-nick')
-    .then(elem => elem.placeholder = metaPlaceholder.nick)
-    .catch(reson => console.log(reson));
-  }
-  if (metaPlaceholder.mail) {
-    waitToRun('.wl-header-item input.wl-mail')
-    .then(elem => elem.placeholder = metaPlaceholder.mail)
-    .catch(reson => console.log(reson));
-  }
-  if (metaPlaceholder.link) {
-    waitToRun('.wl-header-item input.wl-link')
-    .then(elem => elem.placeholder = metaPlaceholder.link)
-    .catch(reson => console.log(reson));
-  }
+  observeWaline();
 }
 
 document.addEventListener('page:loaded', () => {
   if (!CONFIG.page.comments) return;
-
-  NexT.utils.loadComments('.waline-container')
+  const utils = NexT.utils;
+  utils.loadComments('.waline-container')
     .then(() => NexT.utils.getScript(CONFIG.waline.js, {
       condition: window.Waline
     }))
-    .then(initWaline)
-    .then(observeWaline);
+    .then(initWaline);
 });
