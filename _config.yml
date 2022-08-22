@@ -693,6 +693,13 @@ cloudflare_analytics:
 # See: https://clarity.microsoft.com/
 clarity_analytics: # <project_id>
 
+# Matomo Analytics
+# See: https://matomo.org/
+matomo:
+  enable: false
+  server_url: # https://www.example.com/
+  site_id: # <your site id>
+
 # Show number of visitors of each article.
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:

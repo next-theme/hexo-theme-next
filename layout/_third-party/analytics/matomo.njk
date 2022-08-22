@@ -1,0 +1,4 @@
+{%- if theme.matomo.enable %}
+  {{ next_data('matomo', theme.matomo) }}
+  {{ next_js('third-party/analytics/matomo.js') }}
+{%- endif %}
