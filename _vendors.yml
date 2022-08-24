@@ -99,12 +99,14 @@ quicklink:
   integrity: sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=
 disqusjs_js:
   name: disqusjs
-  version: 3.0.0
+  version: 3.0.2
   file: dist/browser/disqusjs.es2015.umd.min.js
+  integrity: sha256-okP99ZQKVpIy7+NogAMpGlIQzJa9XKXhIJcFgdju5bU=
 disqusjs_css:
   name: disqusjs
-  version: 3.0.0
+  version: 3.0.2
   file: dist/browser/styles/disqusjs.css
+  integrity: sha256-71XarXwNr1Td27HmZI9zjY+rMzRdush6/glo6VFXp7o=
 gitalk_js:
   name: gitalk
   version: 1.7.2
