@@ -17,7 +17,7 @@
     "prepare": "node .githooks/install.js",
     "stylint": "stylint source/css/",
     "test": "mocha test/index.js",
-    "test-cov": "nyc npm test"
+    "test-cov": "c8 npm test"
   },
   "repository": "next-theme/hexo-theme-next",
   "keywords": [
@@ -33,13 +33,13 @@
   "homepage": "https://theme-next.js.org",
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.3",
+    "c8": "7.12.0",
     "chai": "4.3.6",
     "eslint": "8.20.0",
     "hexo": "6.2.0",
     "hexo-renderer-marked": "5.0.0",
     "js-yaml": "4.1.0",
     "mocha": "10.0.0",
-    "nyc": "15.1.0",
     "stylint": "2.0.0"
   }
 }
