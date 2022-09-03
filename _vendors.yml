@@ -8,25 +8,25 @@ anime:
   integrity: sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=
 fontawesome:
   name: '@fortawesome/fontawesome-free'
-  version: 6.1.2
+  version: 6.2.0
   file: css/all.min.css
   alias: font-awesome
-  integrity: sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=
+  integrity: sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=
 prism:
   name: prismjs
-  version: 1.28.0
+  version: 1.29.0
   file: components/prism-core.min.js
   alias: prism
   integrity: sha256-4mJNT2bMXxcc1GCJaxBmMPdmah5ji0Ldnd79DKd1hoM=
 prism_autoloader:
   name: prismjs
-  version: 1.28.0
+  version: 1.29.0
   file: plugins/autoloader/prism-autoloader.min.js
   alias: prism
-  integrity: sha256-dL6vkUiCn30lPTN9cVrmQHo5UQmEwDMrx2ppAk4IhVk=
+  integrity: sha256-AjM0J5XIbiB590BrznLEgZGLnOQWrt62s3BEq65Q/I0=
 prism_line_numbers:
   name: prismjs
-  version: 1.28.0
+  version: 1.29.0
   file: plugins/line-numbers/prism-line-numbers.min.js
   alias: prism
   integrity: sha256-9cmf7tcLdXpKsPi/2AWE93PbZpTp4M4tqzFk+lWomjU=
@@ -37,13 +37,13 @@ mathjax:
   integrity: sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=
 katex:
   name: katex
-  version: 0.16.0
+  version: 0.16.2
   file: dist/katex.min.css
   alias: KaTeX
-  integrity: sha256-uik/hNqHWZldXh/0K35nqOSCff9F61/ZOFReqNOBgB0=
+  integrity: sha256-oWCabCfPd4Oi21wqZezBSz/anto4VYcJqc9sM9IzQTk=
 copy_tex_js:
   name: katex
-  version: 0.16.0
+  version: 0.16.2
   file: dist/contrib/copy-tex.min.js
   alias: KaTeX
   integrity: sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=
@@ -55,9 +55,9 @@ pjax:
   integrity: sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=
 jquery:
   name: jquery
-  version: 3.6.0
+  version: 3.6.1
   file: dist/jquery.min.js
-  integrity: sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=
+  integrity: sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=
 fancybox_js:
   name: '@fancyapps/fancybox'
   version: 3.5.7
@@ -88,9 +88,9 @@ pangu:
   integrity: sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=
 quicklink:
   name: quicklink
-  version: 2.2.0
+  version: 2.3.0
   file: dist/quicklink.umd.js
-  integrity: sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=
+  integrity: sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=
 disqusjs_js:
   name: disqusjs
   version: 3.0.2
@@ -103,24 +103,24 @@ disqusjs_css:
   integrity: sha256-71XarXwNr1Td27HmZI9zjY+rMzRdush6/glo6VFXp7o=
 gitalk_js:
   name: gitalk
-  version: 1.7.2
+  version: 1.8.0
   file: dist/gitalk.min.js
-  integrity: sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA=
+  integrity: sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4=
 gitalk_css:
   name: gitalk
-  version: 1.7.2
+  version: 1.8.0
   file: dist/gitalk.css
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.9.1
+  version: 9.9.4
   file: firebase-app-compat.js
-  integrity: sha256-BZqADJTynzztcubgFmplXDkhMk7o/6KO4tHzL8X+biE=
+  integrity: sha256-oT4Iq8DavJt2Y4f9xqTkuZUQcNPf2J7a1TxHJCxIMWk=
 firebase_firestore:
   name: firebase
-  version: 9.9.1
+  version: 9.9.4
   file: firebase-firestore-compat.js
-  integrity: sha256-8Y5+rcygX0v5tCQhOjr4rob7oykEcp6IhhutNKKGzfk=
+  integrity: sha256-1GJlM827o4GIssN6/O0n4kkbGg/YZ0/wAqIJ+AQLf1A=
 algolia_search:
   name: algoliasearch
   version: 4.14.2
@@ -128,9 +128,9 @@ algolia_search:
   integrity: sha256-dImjLPUsG/6p3+i7gVKBiDM8EemJAhQ0VvkRK2pVsQY=
 instant_search:
   name: instantsearch.js
-  version: 4.43.1
+  version: 4.45.0
   file: dist/instantsearch.production.min.js
-  integrity: sha256-jLNoKrKRDKAOg8JBqkl8jSy2tpqCGQ1/++9QRYtWl8k=
+  integrity: sha256-356MuKn0s/KnBeNjzWGP1048qENU5M4IiAWc7q9GErU=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.0
@@ -143,9 +143,9 @@ pdfobject:
   integrity: sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM=
 mermaid:
   name: mermaid
-  version: 9.1.3
+  version: 9.1.6
   file: dist/mermaid.min.js
-  integrity: sha256-TIYL00Rhw/8WaoUhYTLX9SKIEFdXxg+yMWSLVUbhiLg=
+  integrity: sha256-ZfzwelSToHk5YAcr9wbXAmWgyn9Jyq08fSLrLhZE89w=
 animate_css:
   name: animate.css
   version: 3.1.1
