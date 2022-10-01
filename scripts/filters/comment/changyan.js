@@ -19,7 +19,7 @@ hexo.extend.filter.register('theme_inject', injects => {
 // Add post_meta
 hexo.extend.filter.register('theme_inject', injects => {
   const config = hexo.theme.config.changyan;
-  if (!config.enable || !config.appid || !config.appkey) return;
+  if (!config.enable || !config.count || !config.appid || !config.appkey) return;
 
   injects.postMeta.raw('changyan', `
   {% if post.comments %}
