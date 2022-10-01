@@ -113,14 +113,14 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.9.4
+  version: 9.10.0
   file: firebase-app-compat.js
-  integrity: sha256-oT4Iq8DavJt2Y4f9xqTkuZUQcNPf2J7a1TxHJCxIMWk=
+  integrity: sha256-6Nm4WHn8/bc0pLsdYfFkCHrVapw3mBVeYYj5h01R2j8=
 firebase_firestore:
   name: firebase
-  version: 9.9.4
+  version: 9.10.0
   file: firebase-firestore-compat.js
-  integrity: sha256-1GJlM827o4GIssN6/O0n4kkbGg/YZ0/wAqIJ+AQLf1A=
+  integrity: sha256-Um2jbi1LvNLJXY8Z0GwOMVMizhPcKnxtU8neHnHtHfo=
 algolia_search:
   name: algoliasearch
   version: 4.14.2
@@ -128,9 +128,9 @@ algolia_search:
   integrity: sha256-dImjLPUsG/6p3+i7gVKBiDM8EemJAhQ0VvkRK2pVsQY=
 instant_search:
   name: instantsearch.js
-  version: 4.45.0
+  version: 4.46.3
   file: dist/instantsearch.production.min.js
-  integrity: sha256-356MuKn0s/KnBeNjzWGP1048qENU5M4IiAWc7q9GErU=
+  integrity: sha256-TDBtvQ4sIGgJS5bk8VOKto+yvrblCB/JxE/9odR5u+M=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.0
@@ -143,9 +143,9 @@ pdfobject:
   integrity: sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM=
 mermaid:
   name: mermaid
-  version: 9.1.6
+  version: 9.1.7
   file: dist/mermaid.min.js
-  integrity: sha256-ZfzwelSToHk5YAcr9wbXAmWgyn9Jyq08fSLrLhZE89w=
+  integrity: sha256-G58AID1YoX5YaEtWfXSI0VLrZ6N4kvNvwg0BI8zUFxE=
 animate_css:
   name: animate.css
   version: 3.1.1
