@@ -10,6 +10,7 @@ if (hexo-config('follow_me')) {
 
       .social-item {
         margin: .5em 2em;
+        position: relative;
 
         +tablet-mobile() {
           margin: .5em .75em;
@@ -29,6 +30,18 @@ if (hexo-config('follow_me')) {
           display: block;
           font-size: 14px;
         }
+
+        &:hover + .social-item-img {
+          display: block;
+        }
+      }
+
+      .social-item-img {
+        display: none;
+        left: 50%;
+        max-width: $post-reward-img-width;
+        position: absolute;
+        transform: translate(-50%, 20px);
       }
     }
   }
