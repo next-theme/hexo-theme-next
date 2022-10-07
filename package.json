@@ -37,7 +37,7 @@
     "chai": "4.3.6",
     "eslint": "8.24.0",
     "hexo": "6.3.0",
-    "hexo-renderer-marked": "5.0.0",
+    "hexo-renderer-marked": "6.0.0",
     "js-yaml": "4.1.0",
     "mocha": "10.0.0",
     "stylint": "2.0.0"
