@@ -336,7 +336,7 @@ calendar:
 # See: https://theme-next.js.org/docs/theme-settings/miscellaneous
 # ---------------------------------------------------------------
 
-# Preconnect CDN for fonts and plugins.
+# Preload styles and preconnect CDN for fonts and plugins.
 # For more information: https://www.w3.org/TR/resource-hints/#preconnect
 preconnect: false
 
