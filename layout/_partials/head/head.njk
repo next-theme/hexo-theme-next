@@ -10,6 +10,9 @@
   {{- meta_generator() }}
 {%- endif %}
 
+{%- if config.preconnect %}
+  <link rel="preload" href="{{ url_for(theme.css) }}/main.css" as="style">
+{%- endif %}
 {{ next_pre() }}
 
 {%- if theme.favicon.apple_touch_icon %}
