@@ -6,4 +6,12 @@ if (hexo-config('gitalk.enable')) {
   .gt-container .gt-popup .gt-action.is--active::before {
     top: .7em;
   }
+
+  if (hexo-config('darkmode')) {
+    @media (prefers-color-scheme: dark) {
+      .gt-container .gt-header-textarea {
+        background-color: var(--card-bg-color) !important;
+      }
+    }
+  }
 }
