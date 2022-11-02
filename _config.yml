@@ -702,6 +702,20 @@ matomo:
   server_url: # https://www.example.com/
   site_id: # <your site id>
 
+# Umami Analytics
+# See: https://umami.is/
+umami:
+  enable: false
+  script_url: # https://umami.example.com/script.js
+  website_id: # <your website id>
+
+# Plausible Analytics
+# See: https://plausible.io/
+plausible:
+  enable: false
+  script_url: # https://plausible.io/js/script.js
+  site_domain: # www.example.com
+
 # Show number of visitors of each article.
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
