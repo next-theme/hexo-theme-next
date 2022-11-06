@@ -90,8 +90,8 @@ accessibility:
   back_to_top: Volver al principio
   select_lang: Seleccione el idioma
 symbols_count_time:
-  count: Cantidad de caracteres en el articulo
-  count_total: Cantidad total de caracteres
+  count: Word count in article
+  count_total: Word count total
   time: Tiempo de lectura
   time_total: Tiempo total de lectura
   time_minutes: minutos.
