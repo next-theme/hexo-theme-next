@@ -106,8 +106,8 @@ accessibility:
   select_lang: Select language
 
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
+  count: Word count in article
+  count_total: Word count total
   time: Reading time
   time_total: Reading time total
   time_minutes: mins.
