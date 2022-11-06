@@ -90,8 +90,8 @@ accessibility:
   back_to_top: Back to top
   select_lang: Select language
 symbols_count_time:
-  count: Số biểu tượng trong bài viết
-  count_total: Tổng số biểu tượng
+  count: Word count in article
+  count_total: Word count total
   time: Thời lượng đọc
   time_total: Tổng thời lượng đọc
   time_minutes: phút.
