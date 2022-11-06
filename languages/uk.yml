@@ -90,8 +90,8 @@ accessibility:
   back_to_top: Back to top
   select_lang: Select language
 symbols_count_time:
-  count: К-сть символів в статті
-  count_total: Загальна к-сть символів
+  count: Word count in article
+  count_total: Word count total
   time: Час читання
   time_total: Загальний час читання
   time_minutes: хв.
