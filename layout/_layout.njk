@@ -15,14 +15,14 @@
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
         {%- include '_partials/header/index.njk' -%}
-      </div>
+      </header>
       {%- if theme.sidebar.display !== 'remove' %}
         {% block sidebar %}{% endblock %}
       {%- endif %}
-    </header>
+    </div>
 
     <div class="main-inner {% block class %}{% endblock %}">
       {%- include '_partials/header/sub-menu.njk' -%}
