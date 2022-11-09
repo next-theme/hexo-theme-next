@@ -1,3 +1,14 @@
+{# Widgets with fixed position #}
+
+{%- if theme.sidebar.display !== 'remove' and (theme.scheme === 'Muse' or theme.scheme === 'Mist') %}
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+{%- endif %}
+
 {%- if theme.back2top.enable and not theme.back2top.sidebar %}
   <div class="back-to-top" role="button" aria-label="{{ __('accessibility.back_to_top') }}">
     <i class="fa fa-arrow-up"></i>

@@ -1,10 +1,4 @@
 {% macro render(display_toc) %}
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
   <aside class="sidebar">
     {%- set display_toc = page.toc.enable and display_toc %}
     {%- if display_toc %}
@@ -46,5 +40,4 @@
       {%- endif %}
     </div>
   </aside>
-  <div class="sidebar-dimmer"></div>
 {% endmacro %}
