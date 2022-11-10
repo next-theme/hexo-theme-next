@@ -1,10 +1,8 @@
 .sidebar {
-  margin-top: $sidebar-offset;
   // https://caniuse.com/css-sticky
   position: -webkit-sticky;
   position: sticky;
   top: $sidebar-offset;
-  width: $sidebar-desktop;
 
   +tablet-mobile() {
     display: none;
@@ -21,6 +19,7 @@
   box-shadow: $box-shadow;
   box-sizing: border-box;
   color: var(--text-color);
+  margin-top: $sidebar-offset;
 }
 
 .site-state-item {
