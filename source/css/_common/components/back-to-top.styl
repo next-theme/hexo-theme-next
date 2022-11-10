@@ -2,14 +2,21 @@ if (hexo-config('back2top.enable')) {
   .back-to-top {
     font-size: $b2t-font-size;
 
-    if (not hexo-config('back2top.scrollpercent')) {
-      span {
+    span {
+      margin-right: 8px;
+      if (not hexo-config('back2top.scrollpercent')) {
         display: none;
       }
     }
 
+    .fa {
+      text-align: center;
+      width: $sidebar-toggle-size;
+    }
+
     if (hexo-config('back2top.sidebar')) {
       margin: 20px - $sidebar-offset -10px -20px;
+      // FIXME: opacity override by motion
       opacity: 0;
       transition: opacity $transition-ease;
 
@@ -22,16 +29,13 @@ if (hexo-config('back2top.enable')) {
         }
       }
     } else {
+      align-items: center;
       bottom: $b2t-position-bottom;
-      box-sizing: border-box;
       color: $b2t-color;
-      padding: 0 6px;
+      display: flex;
+      height: $sidebar-toggle-size;
       transition: bottom $transition-ease;
       sidebar-toggle();
-
-      if (not hexo-config('back2top.scrollpercent')) {
-        width: 24px;
-      }
 
       &:hover {
         color: $sidebar-highlight;
