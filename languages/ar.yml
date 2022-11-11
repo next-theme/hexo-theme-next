@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: عام
   toc: المحتويات
+  links: Links
 post:
   posted: نُشر في
   edited: عُدل في
@@ -41,6 +42,9 @@ footer:
   powered: "تطبيق الموقع %s"
   total_views: إجمالي المشاهدات
   total_visitors: إجمالي الزوار
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: لا وسوم
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 follow_me:
   welcome: مرحباً بك حيثُ أنشر أيضاً
 accessibility:
