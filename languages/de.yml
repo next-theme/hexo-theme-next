@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: Übersicht
   toc: Inhaltsverzeichnis
+  links: Links
 post:
   posted: Veröffentlicht am
   edited: Bearbeitet am
@@ -41,6 +42,9 @@ footer:
   powered: "Erstellt mit  %s"
   total_views: Alle Aufrufe
   total_visitors: Alle Besucher
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: Keine Schlagworte
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 follow_me:
   welcome: Willkommen zu meinen anderen Veröffentlichen Kanälen
 accessibility:
