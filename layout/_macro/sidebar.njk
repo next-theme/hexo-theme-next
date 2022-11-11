@@ -57,5 +57,13 @@
       </div>
     </div>
     {%- endif %}
+
+    {%- if theme.related_posts.enable and page.related_posts and page.related_posts.length > 0 %}
+    <div class="sidebar-inner sidebar-post-related">
+      <div class="site-overview-item animated">
+        {{ partial('_partials/post/post-related.njk') }}
+      </div>
+    </div>
+    {%- endif %}
   </aside>
 {% endmacro %}
