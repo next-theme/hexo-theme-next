@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: نمای کلی
   toc: فهرست مطالب
+  links: Links
 post:
   posted: نوشته شده در
   edited: ویرایش شده در
@@ -41,6 +42,9 @@ footer:
   powered: "قدرت گرفته از %s"
   total_views: مجموع بازدیدها
   total_visitors: تعداد بازدید کنندگان
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: بدون برچسب
@@ -81,6 +85,7 @@ reward:
   alipay: AliPay
   paypal: PayPal
   bitcoin: بیت کوین
+  comment: Buy me a coffee
 follow_me:
   welcome: Welcome to my other publishing channels
 accessibility:
