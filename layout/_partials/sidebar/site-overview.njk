@@ -79,20 +79,3 @@
     {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
   </div>
 {%- endif %}
-
-{# Blogroll #}
-{%- if theme.links %}
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title">
-      {%- if theme.links_settings.icon %}<i class="{{ theme.links_settings.icon }} fa-fw"></i>{% endif %}
-      {{ __('sidebar.links') }}
-    </div>
-    <ul class="links-of-blogroll-list">
-      {%- for blogrollText, blogrollURL in theme.links %}
-        <li class="links-of-blogroll-item">
-          {{ next_url(blogrollURL, blogrollText, {title: blogrollURL}) }}
-        </li>
-      {%- endfor %}
-    </ul>
-  </div>
-{%- endif %}

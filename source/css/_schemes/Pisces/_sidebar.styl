@@ -7,10 +7,6 @@
   +tablet-mobile() {
     display: none;
   }
-
-  if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) {
-    visibility: hidden;
-  }
 }
 
 .sidebar-inner {
@@ -20,6 +16,10 @@
   box-sizing: border-box;
   color: var(--text-color);
   margin-top: $sidebar-offset;
+
+  if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) {
+    visibility: hidden;
+  }
 }
 
 .site-state-item {
