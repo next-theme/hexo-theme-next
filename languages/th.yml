@@ -1,68 +1,68 @@
 ---
-name: English
+name: ประเทศไทย
 title:
-  archive: Archive
-  category: Category
-  tag: Tag
-  schedule: Schedule
+  archive: คลังเก็บเอกสารสำคัญ
+  category: หมวดหมู่
+  tag: แท็ก
+  schedule: กำหนดการ
 menu:
-  home: Home
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  search: Search
-  schedule: Schedule
-  sitemap: Sitemap
-  commonweal: Commonweal 404
+  home: บ้าน
+  archives: หอจดหมายเหตุ
+  categories: หมวดหมู่
+  tags: แท็ก
+  about: เกี่ยวกับ
+  search: ค้นหา
+  schedule: กำหนดการ
+  sitemap: แผนผังเว็บไซต์
+  commonweal: เครือจักรภพ404
 sidebar:
-  overview: Overview
-  toc: Table of Contents
+  overview: ภาพรวม
+  toc: สารบัญ
 post:
-  posted: Posted on
-  edited: Edited on
-  created: Created
-  modified: Modified
-  edit: Edit this post
-  in: In
-  read_more: Read more
-  untitled: Untitled
-  sticky: Sticky
-  views: Views
-  related_posts: Related Posts
+  posted: โพสต์เมื่อ
+  edited: แก้ไขเมื่อ
+  created: สร้าง
+  modified: ดัดแปลง
+  edit: แก้ไขโพสต์นี้
+  in: ใน
+  read_more: อ่านเพิ่มเติม
+  untitled: ไม่มีชื่อ
+  sticky: เหนียว
+  views: มุมมอง
+  related_posts: กระทู้ที่เกี่ยวข้อง
   copyright:
-    author: Post author
-    link: Post link
-    post_author: Written by
-    post_link: This article originally appeared on
-    license_title: Copyright Notice
-    license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    author: ผู้เขียนโพสต์
+    link: โพสต์ลิงค์
+    post_author: เขียนโดย
+    post_link: บทความนี้เดิมปรากฏบน
+    license_title: ประกาศเกี่ยวกับลิขสิทธิ์
+    license_content: "บทความทั้งหมดในบล็อกนี้ได้รับอนุญาตภายใต้ %s เว้นแต่จะระบุไว้เพิ่มเติม"
 footer:
-  powered: "Powered by %s"
-  total_views: Total Views
-  total_visitors: Total Visitors
+  powered: "ขับเคลื่อนโดย %s"
+  total_views: ยอดดูทั้งหมด
+  total_visitors: ผู้เข้าชมทั้งหมด
 counter:
   tag_cloud:
-    zero: No tags
-    one: 1 tag in total
-    other: "%d tags in total"
+    zero: ไม่มีแท็ก
+    one: ทั้งหมด 1 แท็ก
+    other: "รวม %d แท็ก"
   categories:
-    zero: No categories
-    one: 1 category in total
-    other: "%d categories in total"
+    zero: ไม่มีหมวดหมู่
+    one: ทั้งหมด 1 หมวดหมู่
+    other: "ทั้งหมด %d หมวดหมู่"
   archive_posts:
-    zero: No posts.
-    one: 1 post.
-    other: "%d posts in total."
+    zero: ไม่มีโพสต์
+    one: 1 โพสต์
+    other: "ทั้งหมด %d โพสต์"
 state:
   posts: posts
   tags: tags
   categories: categories
 search:
-  placeholder: Searching...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
+  placeholder: กำลังค้นหา...
+  empty: "เราไม่พบผลลัพธ์ใด ๆ สำหรับการค้นหา: %s"
+  hits_time: "พบผลลัพธ์ %s ใน %s ms"
+  hits: "พบผลลัพธ์ %s"
 cheers:
   um: Um..
   ok: OK
@@ -70,7 +70,7 @@ cheers:
   good: Good
   great: Great
   excellent: Excellent
-keep_on: Keep on posting.
+keep_on: โพสต์ต่อไป.
 symbol:
   comma: ", "
   period: ". "
@@ -82,16 +82,16 @@ reward:
   paypal: PayPal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: ยินดีต้อนรับสู่ช่องทางการเผยแพร่อื่นๆ ของฉัน
 accessibility:
-  nav_toggle: Toggle navigation bar
-  prev_page: Previous page
-  next_page: Next page
-  back_to_top: Back to top
-  select_lang: Select language
+  nav_toggle: สลับแถบนำทาง
+  prev_page: หน้าก่อน
+  next_page: หน้าต่อไป
+  back_to_top: กลับไปด้านบน
+  select_lang: เลือกภาษา
 symbols_count_time:
-  count: Word count in article
-  count_total: Word count total
-  time: Reading time
-  time_total: Reading time total
-  time_minutes: mins.
+  count: สัญลักษณ์นับในบทความ
+  count_total: สัญลักษณ์นับรวม
+  time: เวลาอ่านหนังสือ
+  time_total: เวลาในการอ่านทั้งหมด
+  time_minutes: นาที
