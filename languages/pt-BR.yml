@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: Visão geral
   toc: Índice
+  links: Links
 post:
   posted: Postado em
   edited: Editado em
@@ -41,6 +42,9 @@ footer:
   powered: "Feito com %s"
   total_views: Visualizações Totais
   total_visitors: Total de visitantes
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: Sem etiquetas
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 follow_me:
   welcome: Bem-vindo aos meus outros canais de publicação
 accessibility:
