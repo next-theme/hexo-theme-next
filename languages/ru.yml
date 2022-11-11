@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: Обзор
   toc: Содержание
+  links: Links
 post:
   posted: Размещено
   edited: Изменено
@@ -41,6 +42,9 @@ footer:
   powered: "Генератор — %s"
   total_views: Всего просмотров
   total_visitors: Всего посетителей
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: Нет тэгов.
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Биткоин
+  comment: Buy me a coffee
 follow_me:
   welcome: Добро пожаловать на другие мои издательские каналы
 accessibility:
