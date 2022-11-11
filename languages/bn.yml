@@ -90,8 +90,8 @@ accessibility:
   back_to_top: উপরে ফিরে যান
   select_lang: ভাষা নির্বাচন করুন
 symbols_count_time:
-  count: Word count in article
-  count_total: Word count total
+  count: আর্টিকালে অক্ষর এর পরিমাণ
+  count_total: আর্টিকালে অক্ষর এর মোট পরিমাণ
   time: পড়াতে লাগবে
   time_total: মোট পড়াতে লাগবে
   time_minutes: মিনিট।
