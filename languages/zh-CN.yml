@@ -18,7 +18,7 @@ menu:
 sidebar:
   overview: 站点概览
   toc: 文章目录
-  links: Links
+  links: 链接
 post:
   posted: 发表于
   edited: 更新于
@@ -44,7 +44,7 @@ footer:
   total_visitors: 总访客量
 widget:
   github: Follow me on GitHub
-  chat: Chat
+  chat: 聊天
 counter:
   tag_cloud:
     zero: 暂无标签
