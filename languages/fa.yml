@@ -90,8 +90,8 @@ accessibility:
   back_to_top: Back to top
   select_lang: Select language
 symbols_count_time:
-  count: Word count in article
-  count_total: Word count total
+  count: تعداد نمادها در مقاله
+  count_total: تعداد کل نمادها
   time: زمان خواندن
   time_total: کل زمان خواندن
   time_minutes: دقیقه.
