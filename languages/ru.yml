@@ -90,8 +90,8 @@ accessibility:
   back_to_top: В начало
   select_lang: Выберите язык
 symbols_count_time:
-  count: Word count in article
-  count_total: Word count total
+  count: Кол-во символов в статье
+  count_total: Общее кол-во символов
   time: Время чтения
   time_total: Общее время чтения
   time_minutes: мин.
