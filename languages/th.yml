@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: ภาพรวม
   toc: สารบัญ
+  links: Links
 post:
   posted: โพสต์เมื่อ
   edited: แก้ไขเมื่อ
@@ -41,6 +42,9 @@ footer:
   powered: "ขับเคลื่อนโดย %s"
   total_views: ยอดดูทั้งหมด
   total_visitors: ผู้เข้าชมทั้งหมด
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: ไม่มีแท็ก
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 follow_me:
   welcome: ยินดีต้อนรับสู่ช่องทางการเผยแพร่อื่นๆ ของฉัน
 accessibility:
