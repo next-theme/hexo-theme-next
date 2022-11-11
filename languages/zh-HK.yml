@@ -90,8 +90,8 @@ accessibility:
   back_to_top: 回到頂部
   select_lang: 選擇語言
 symbols_count_time:
-  count: Word count in article
-  count_total: Word count total
+  count: 本文字數
+  count_total: 站點總字數
   time: 閱讀時長
   time_total: 站點閱讀時長
   time_minutes: 分鍾
