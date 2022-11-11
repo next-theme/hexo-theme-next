@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: Genel Bakış
   toc: İçindekiler
+  links: Links
 post:
   posted: Yayınlandı
   edited: Düzenlendi
@@ -41,6 +42,9 @@ footer:
   powered: "%s tarafından desteklenmektedir"
   total_views: Toplam görüntülenme
   total_visitors: Toplam Ziyaretçi
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: Etiket yok
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 follow_me:
   welcome: Diğer yayıncılık kanallarıma hoşgeldiniz
 accessibility:
