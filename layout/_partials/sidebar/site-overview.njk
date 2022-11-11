@@ -55,7 +55,7 @@
   <div class="sidebar-button site-overview-item animated">
     <button{% if theme.gitter.enable %} class="js-gitter-toggle-chat-button"{% endif %}>
       {%- if theme.chat.icon %}<i class="{{ theme.chat.icon }}"></i>{% endif %}
-      {{ theme.chat.text }}
+      {{ __('widget.chat') }}
     </button>
   </div>
 {%- endif %}
@@ -85,7 +85,7 @@
   <div class="links-of-blogroll site-overview-item animated">
     <div class="links-of-blogroll-title">
       {%- if theme.links_settings.icon %}<i class="{{ theme.links_settings.icon }} fa-fw"></i>{% endif %}
-      {{ theme.links_settings.title }}
+      {{ __('sidebar.links') }}
     </div>
     <ul class="links-of-blogroll-list">
       {%- for blogrollText, blogrollURL in theme.links %}

@@ -20,6 +20,7 @@ menu:
 sidebar:
   overview: Overview
   toc: Table of Contents
+  links: Links
 
 post:
   posted: Posted on
@@ -45,6 +46,10 @@ footer:
   powered: "Powered by %s"
   total_views: Total Views
   total_visitors: Total Visitors
+
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 
 counter:
   tag_cloud:
@@ -94,6 +99,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 
 follow_me:
   welcome: Welcome to my other publishing channels

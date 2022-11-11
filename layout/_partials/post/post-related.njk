@@ -1,5 +1,5 @@
 {%- if page.related_posts and page.related_posts.length > 0 %}
-  <div class="popular-posts-header">{{ theme.related_posts.title or __('post.related_posts') }}</div>
+  <div class="popular-posts-header">{{ __('post.related_posts') }}</div>
   <ul class="popular-posts">
   {%- for path in page.related_posts %}
     {%- set popular_post = site.posts.findOne({ path: path }) %}

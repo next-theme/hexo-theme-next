@@ -157,7 +157,6 @@ social:
   #GitHub: https://github.com/yourname || fab fa-github
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
-  #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
   #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
@@ -173,7 +172,6 @@ social_icons:
 # Blog rolls
 links_settings:
   icon: fa fa-globe
-  title: Links
   # Available values: block | inline
   layout: block
 
@@ -269,7 +267,6 @@ reward_settings:
   # If true, a donate button will be displayed in every article by default.
   enable: false
   animation: false
-  #comment: Buy me a coffee
 
 reward:
   #wechatpay: /images/wechatpay.png
@@ -289,7 +286,6 @@ follow_me:
 # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
 related_posts:
   enable: false
-  title: # Custom header, leave empty to use the default one
   display_in_home: false
 
 # Post edit
@@ -407,7 +403,6 @@ bookmark:
 github_banner:
   enable: false
   permalink: https://github.com/yourname
-  title: Follow me on GitHub
 
 
 # ---------------------------------------------------------------
@@ -467,7 +462,7 @@ font:
 # See: https://theme-next.js.org/docs/theme-settings/seo
 # ---------------------------------------------------------------
 
-# If true, site-subtitle will be added to index page.
+# If true, site-subtitle will be added to the title of index page.
 # Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
 index_with_subtitle: false
 
@@ -528,7 +523,7 @@ pjax: false
 # For more information: https://fancyapps.com/fancybox/
 fancybox: false
 
-# A JavaScript library for zooming images like Medium.
+# Medium Zoom is a JavaScript library for zooming images like Medium.
 # Warning: Do not enable both `fancybox` and `mediumzoom`.
 # For more information: https://medium-zoom.francoischalifour.com
 mediumzoom: false
@@ -537,12 +532,12 @@ mediumzoom: false
 # For more information: https://apoorv.pro/lozad.js/demo/
 lazyload: false
 
-# Pangu Support
+# Automatically insert whitespace between CJK and half-width characters.
 # For more information: https://github.com/vinta/pangu.js
 # Server-side plugin: https://github.com/next-theme/hexo-pangu
 pangu: false
 
-# Quicklink Support
+# Prefetch links based on what is in the user's viewport.
 # For more information: https://getquick.link
 # Front-matter variable (nonsupport home archive).
 quicklink:
@@ -787,9 +782,8 @@ local_search:
 chat:
   enable: false
   icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
-  text: Chat # Button text, change it as you wish.
 
-# Chatra Support
+# Chatra is a functional, easy to use piece of chat software for websites.
 # For more information: https://chatra.com
 # Dashboard: https://app.chatra.io/settings/general
 chatra:
@@ -798,14 +792,14 @@ chatra:
   id: # Visit Dashboard to get your ChatraID
   #embed: # Unfinished experimental feature for developers. See: https://chatra.com/help/api/#injectto
 
-# Tidio Support
+# Tidio is a powerful, all-in-one customer service tool.
 # For more information: https://www.tidio.com
 # Dashboard: https://www.tidio.com/panel/dashboard
 tidio:
   enable: false
   key: # Public Key, get it from dashboard. See: https://www.tidio.com/panel/settings/developer
 
-# Gitter Support
+# Gitter is a chat and networking platform.
 # For more information: https://gitter.im
 gitter:
   enable: false
@@ -886,7 +880,7 @@ pace:
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
   theme: minimal
 
-# Canvas ribbon
+# Generate a ribbon in your website with HTML5 canvas.
 # For more information: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
   enable: false
