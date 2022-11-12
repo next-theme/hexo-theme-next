@@ -649,13 +649,6 @@ isso: # <data_isso>
 # See: https://theme-next.js.org/docs/third-party-services/post-widgets
 # ---------------------------------------------------------------
 
-# Star rating support to each article.
-# To get your ID visit https://widgetpack.com
-rating:
-  enable: false
-  id:     # <app_id>
-  color:  "#fc6423"
-
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id:
