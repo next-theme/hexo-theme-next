@@ -42,7 +42,7 @@
     {# Blogroll #}
     {%- if theme.links %}
     <div class="sidebar-inner sidebar-blogroll">
-      <div class="links-of-blogroll site-overview-item animated">
+      <div class="links-of-blogroll animated">
         <div class="links-of-blogroll-title">
           {%- if theme.links_settings.icon %}<i class="{{ theme.links_settings.icon }} fa-fw"></i>{% endif %}
           {{ __('sidebar.links') }}
@@ -60,7 +60,7 @@
 
     {%- if theme.related_posts.enable and page.related_posts and page.related_posts.length > 0 %}
     <div class="sidebar-inner sidebar-post-related">
-      <div class="site-overview-item animated">
+      <div class="animated">
         {{ partial('_partials/post/post-related.njk') }}
       </div>
     </div>
