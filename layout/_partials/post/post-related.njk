@@ -7,9 +7,6 @@
     {%- set popular_post = site.posts.findOne({ path: path }) %}
     <li class="popular-posts-item">
       <a class="popular-posts-link" href="{{ url_for(popular_post.path) }}" rel="bookmark">
-      {%- if popular_post.img %}
-        <div class="popular-posts-img"><img src="{{ popular_post.img }}" alt="{{ popular_post.title }}"></div>
-      {%- endif %}
       {%- if popular_post.date %}
         <time class="popular-posts-time">{{ date(popular_post.date) }}</time>
         <br>
