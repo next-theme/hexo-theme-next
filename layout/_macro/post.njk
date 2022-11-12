@@ -129,6 +129,8 @@
           </div>
         {%- endif %}
 
+        {{ partial('_partials/post/post-share.njk', {}, {cache: theme.cache.enable}) }}
+
         {%- if theme.post_navigation and (post.prev or post.next) %}
           {%- set prev = post.prev if theme.post_navigation === 'right' else post.next %}
           {%- set next = post.next if theme.post_navigation === 'right' else post.prev %}
