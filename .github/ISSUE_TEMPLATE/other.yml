@@ -26,7 +26,7 @@ body:
         - label: I have already searched for current [issues](https://github.com/next-theme/hexo-theme-next/issues), which does not help me.
           required: true
   - type: textarea
-    id: reproduce
+    id: other-info
     attributes:
       label: Other Information
       description: "e.g. Browser, System"
