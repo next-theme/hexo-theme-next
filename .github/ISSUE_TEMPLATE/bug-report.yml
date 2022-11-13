@@ -90,7 +90,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: reproduce
+    id: other-info
     attributes:
       label: Other Information
       description: "e.g. Browser, System"
