@@ -6,6 +6,7 @@ labels:
 #assignees: ""
 body:
   - type: markdown
+    id: overall
     attributes:
       value: |
         Please follow this Issue template to provide relevant information, such as source code repository, website URL and screenshots, which will help us investigate.
@@ -19,8 +20,11 @@ body:
         Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择)
       options:
         - label: I am using NexT version 8.0 or later.
+          required: true
         - label: I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Troubleshooting page of NexT](https://theme-next.js.org/docs/troubleshooting.html).
+          required: true
         - label: I have already searched for current [issues](https://github.com/next-theme/hexo-theme-next/issues), which does not help me.
+          required: true
   - type: textarea
     id: expected-behavior
     attributes:
@@ -49,6 +53,7 @@ body:
     validations:
       required: true
   - type: markdown
+    id: env
     attributes:
       value: |
         Environment Information
