@@ -39,7 +39,7 @@ body:
       description: |
         (实际行为)
         Please provide the following information (请同时提供网站链接和屏幕截图)
-      placeholder: |
+      value: |
         - Links to demo site with this issue:
         - Links to repository or source code of the blog:
         - Screenshots:
