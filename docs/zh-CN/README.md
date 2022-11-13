@@ -5,7 +5,11 @@
   <a title="俄语" href="../ru/README.md">🇷🇺</a>
 </div>
 
-![NexT preview](https://user-images.githubusercontent.com/16272760/99784261-872d3200-2b56-11eb-807c-869042d1f6e8.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/next-theme/theme-next-docs/v8.13.0/source/images/next-schemes-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/next-theme/theme-next-docs/v8.13.0/source/images/next-schemes.png">
+  <img alt="NexT preview" src="https://raw.githubusercontent.com/next-theme/theme-next-docs/v8.13.0/source/images/next-schemes.png">
+</picture>
 
 <a title="NexT 网站" href="https://theme-next.js.org"><img align="right" alt="NexT logo" width="100" height="100" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg"></a>
 
@@ -132,7 +136,13 @@ $ git pull
 
 > GitHub 容许我们托管 Git 仓库及运行测试。
 
-<a href="https://www.netlify.com"><img height="40" src="https://www.netlify.com/v3/img/components/full-logo-light.svg"></a>
+<a href="https://www.netlify.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" height="40" srcset="https://www.netlify.com/v3/img/components/full-logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" height="40" srcset="https://www.netlify.com/v3/img/components/full-logo-light.svg">
+    <img alt="Netlify Logo" height="40" src="https://www.netlify.com/v3/img/components/full-logo-light.svg">
+  </picture>
+</a>
 
 > Netlify 容许我们发布文档。
 
@@ -140,7 +150,13 @@ $ git pull
 
 > Crowdin 容许我们方便地翻译文档。
 
-<a href="https://cdnjs.com"><img height="40" src="https://raw.githubusercontent.com/cdnjs/brand/master/logo/source/dark-brackets.svg"></a>
+<a href="https://cdnjs.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" height="40" srcset="https://raw.githubusercontent.com/cdnjs/brand/master/logo/source/light-brackets.svg">
+    <source media="(prefers-color-scheme: light)" height="40" srcset="https://raw.githubusercontent.com/cdnjs/brand/master/logo/source/dark-brackets.svg">
+    <img alt="CDNJS Logo" height="40" src="https://raw.githubusercontent.com/cdnjs/brand/master/logo/source/dark-brackets.svg">
+  </picture>
+</a>
 
 > 感谢 CDNJS 提供的 CDN 服务。
 
