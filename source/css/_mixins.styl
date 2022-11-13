@@ -111,6 +111,10 @@ main-container() {
   margin: 0 auto;
   width: $content-desktop;
 
+  +mobile() {
+    width: auto;
+  }
+
   +desktop-large() {
     width: $content-desktop-large;
   }
