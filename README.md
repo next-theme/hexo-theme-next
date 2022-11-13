@@ -127,6 +127,7 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 ## Contributors
 
 [![Contributors][contributors-image]][contributors-url]
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnext-theme%2Fhexo-theme-next.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnext-theme%2Fhexo-theme-next?ref=badge_shield)
 
 ## Thanks
 
@@ -179,3 +180,7 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 [official-plugins-url]: https://github.com/next-theme
 [contributors-image]: https://raw.githubusercontent.com/next-theme/contributors/master/contributors.svg
 [contributors-url]: https://github.com/next-theme/hexo-theme-next/blob/master/docs/AUTHORS.md
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnext-theme%2Fhexo-theme-next.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnext-theme%2Fhexo-theme-next?ref=badge_large)
