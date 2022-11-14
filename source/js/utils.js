@@ -172,18 +172,12 @@ NexT.utils = {
         if (element.classList.contains('active')) return;
         const nav = element.parentNode;
         // Get the height of `tab-pane` which is activated before, and set it as the height of `tab-content` with extra margin / paddings.
-        let i;
-        for (i = 0; i < nav.children.length; i++) {
-          if (nav.children[i].classList.contains('active')) {
-            break;
-          }
-        }
         const tabContent = nav.nextElementSibling;
         tabContent.style.overflow = 'hidden';
         tabContent.style.transition = 'height 1s';
-        const prevHeight = parseFloat(window.getComputedStyle(tabContent.children[i]).height.replace('px', ''));
-        const paddingTop = parseFloat(window.getComputedStyle(tabContent.children[i]).paddingTop.replace('px', ''));
-        const marginBottom = parseFloat(window.getComputedStyle(tabContent.children[i].firstChild).marginBottom.replace('px', ''));
+        const prevHeight = parseFloat(window.getComputedStyle(tabContent.querySelector('.active')).height.replace('px', ''));
+        const paddingTop = parseFloat(window.getComputedStyle(tabContent.querySelector('.active')).paddingTop.replace('px', ''));
+        const marginBottom = parseFloat(window.getComputedStyle(tabContent.querySelector('.active').firstChild).marginBottom.replace('px', ''));
         tabContent.style.height = prevHeight + paddingTop + marginBottom + 'px';
         // Add & Remove active class on `nav-tabs` & `tab-content`.
         [...nav.children].forEach(target => {
@@ -199,22 +193,16 @@ NexT.utils = {
           bubbles: true
         }));
         // Get the height of `tab-pane` which is activated now.
-        let j;
-        for (j = 0; j < nav.children.length; j++) {
-          if (nav.children[j].classList.contains('active')) {
-            break;
-          }
-        }
         const hasScrollBar = document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
-        const currHeight = parseFloat(window.getComputedStyle(tabContent.children[j]).height.replace('px', ''));
-        // Reset the height of `tab-content` and see the animation
+        const currHeight = parseFloat(window.getComputedStyle(tabContent.querySelector('.active')).height.replace('px', ''));
+        // Reset the height of `tab-content` and see the animation.
         tabContent.style.height = currHeight + paddingTop + marginBottom + 'px';
         // Change the height of `tab-content` may cause scrollbar show / disappear, which may result in the change of the `tab-pane`'s height
         setTimeout(function() {
           if ((document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)) !== hasScrollBar) {
             tabContent.style.transition = 'height 0.3s linear';
             // After the animation, we need reset the height of `tab-content` again.
-            const currHeightAfterScrollBarChange = parseFloat(window.getComputedStyle(tabContent.children[j]).height.replace('px', ''));
+            const currHeightAfterScrollBarChange = parseFloat(window.getComputedStyle(tabContent.querySelector('.active')).height.replace('px', ''));
             tabContent.style.height = currHeightAfterScrollBarChange + paddingTop + marginBottom + 'px';
           }
           // Remove all the inline styles, and let the height be adaptive again.
