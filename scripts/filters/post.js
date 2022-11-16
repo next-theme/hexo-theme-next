@@ -17,7 +17,7 @@ hexo.extend.filter.register('after_post_render', data => {
     // External URL icon
     const exturlIcon = theme.exturl_icon ? '<i class="fa fa-external-link-alt"></i>' : '';
     data.content = data.content.replace(/<a[^>]*\shref="([^"]+)"[^>]*>([^<]+)<\/a>/ig, (match, href, html) => {
-      // Exit if the href attribute doesn't exists.
+      // Exit if the href attribute doesn't exist.
       if (!href) return match;
 
       // Exit if the url has same host with `config.url`, which means it's an internal link.
