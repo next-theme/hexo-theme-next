@@ -1,6 +1,6 @@
 if (hexo-config('sidebar.position') == 'right') {
   .sidebar-active {
-    // Note: $sidebar-desktop + $content-desktop-large should be greater than desktop-large threshold
+    // Note: $sidebar-desktop + $content-desktop-large should be less than desktop-large threshold
     // Otherwise a horizontal scrollbar will appear
     +desktop-large() {
       padding-right: $sidebar-desktop;

@@ -93,7 +93,7 @@ vendors:
 
 A new version of NexT will be released every month. Please read the [release notes][docs-release-url] before updating the theme. You can update NexT by the following command.
 
-Install the latest version throuth npm:
+Install the latest version through npm:
 
 ```sh
 $ cd hexo-site
