@@ -19,8 +19,8 @@ if (hexo-config('follow_me')) {
 
       .social-link {
         border: 0;
-        display: inline-block;
-        text-align: center;
+        // Make the hit area continious
+        display: block;
 
         .icon {
           font-size: 1.75em;
@@ -33,6 +33,14 @@ if (hexo-config('follow_me')) {
 
         &:hover + .social-item-img {
           display: block;
+        }
+      }
+
+      span.social-link {
+        color: var(--link-color);
+
+        &:hover {
+          color: var(--link-hover-color);
         }
       }
 

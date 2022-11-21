@@ -1,6 +1,6 @@
 'use strict';
 
-const merge = require('hexo-util').deepMerge;
+const { deepMerge } = require('hexo-util');
 
 module.exports = hexo => {
   const data = hexo.locals.get('data');
@@ -30,7 +30,7 @@ module.exports = hexo => {
     const { i18n } = hexo.theme;
 
     const mergeLang = lang => {
-      if (data.languages[lang]) i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
+      if (data.languages[lang]) i18n.set(lang, deepMerge(i18n.get([lang]), data.languages[lang]));
     };
 
     if (Array.isArray(language)) {

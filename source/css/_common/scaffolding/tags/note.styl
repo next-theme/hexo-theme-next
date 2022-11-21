@@ -5,7 +5,7 @@ if (hexo-config('note.style') != 'disabled') {
 
     border-radius: $note-border-radius;
     margin-bottom: 20px;
-    padding: 1em;
+    padding: 1em 1em 0;
     position: relative;
 
     if ($note-style == 'simple') {
@@ -37,16 +37,6 @@ if (hexo-config('note.style') != 'disabled') {
       border-bottom: initial;
       margin: 0;
       padding-top: 0;
-    }
-
-    p, ul, ol, table, pre, blockquote, img {
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
 
     if ($note-icons) {

@@ -15,7 +15,7 @@
   "scripts": {
     "eslint": "eslint scripts/ source/js test/",
     "prepare": "node .githooks/install.js",
-    "stylint": "stylint source/css/",
+    "stylint": "stylelint source/css/ --ip source/css/_common/scaffolding/highlight/index.styl",
     "test": "mocha test/index.js",
     "test-cov": "c8 npm test"
   },
@@ -40,6 +40,7 @@
     "hexo-renderer-marked": "6.0.0",
     "js-yaml": "4.1.0",
     "mocha": "10.1.0",
-    "stylint": "2.0.0"
+    "stylelint": "14.15.0",
+    "stylelint-stylus": "0.17.0"
   }
 }
