@@ -58,12 +58,20 @@
     </div>
     {%- endif %}
 
-    {%- if theme.related_posts.enable and page.related_posts and page.related_posts.length > 0 %}
-    <div class="sidebar-inner sidebar-post-related">
-      <div class="animated">
-        {{ partial('_partials/post/post-related.njk') }}
-      </div>
-    </div>
+    {%- if theme.related_posts.enable %}
+      {%- if theme.pjax %}
+        <div class="pjax">
+      {%- endif %}
+      {%- if page.related_posts and page.related_posts.length > 0 %}
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+            {{ partial('_partials/post/post-related.njk') }}
+          </div>
+        </div>
+      {%- endif %}
+      {%- if theme.pjax %}
+        </div>
+      {%- endif %}
     {%- endif %}
   </aside>
 {% endmacro %}
