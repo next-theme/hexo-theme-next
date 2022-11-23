@@ -59,13 +59,16 @@ NexT.motion.middleWares = {
     pushToSequence('.site-subtitle');
     (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') && pushToSequence('.custom-logo-image');
 
-    document.querySelectorAll('.menu-item').forEach(targets => {
-      sequence.push({
-        targets,
-        complete: () => targets.classList.add('animated', 'fadeInDown'),
-        deltaT  : '-=200'
+    const menuItemTransition = CONFIG.motion.transition.menu_item;
+    if (menuItemTransition) {
+      document.querySelectorAll('.menu-item').forEach(targets => {
+        sequence.push({
+          targets,
+          complete: () => targets.classList.add('animated', menuItemTransition),
+          deltaT  : '-=200'
+        });
       });
-    });
+    }
 
     return sequence;
   },
