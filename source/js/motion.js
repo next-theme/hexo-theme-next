@@ -107,16 +107,20 @@ NexT.motion.middleWares = {
   },
 
   sidebar: function() {
-    const sidebar = document.querySelector('.sidebar');
+    const sequence = [];
+    const sidebar = document.querySelectorAll('.sidebar-inner');
     const sidebarTransition = CONFIG.motion.transition.sidebar;
     // Only for Pisces | Gemini.
     if (sidebarTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini')) {
-      return [{
-        targets : sidebar,
-        complete: () => sidebar.classList.add('animated', sidebarTransition)
-      }];
+      sidebar.forEach(targets => {
+        sequence.push({
+          targets,
+          complete: () => targets.classList.add('animated', sidebarTransition),
+          deltaT  : '-=100'
+        });
+      });
     }
-    return [];
+    return sequence;
   },
 
   footer: function() {

@@ -23,6 +23,8 @@ document.addEventListener('pjax:success', () => {
       .init()
       .add(NexT.motion.middleWares.subMenu)
       .add(NexT.motion.middleWares.postList)
+      // Add sidebar-post-related transition.
+      .add(NexT.motion.middleWares.sidebar)
       .bootstrap();
   }
   if (CONFIG.sidebar.display !== 'remove') {
