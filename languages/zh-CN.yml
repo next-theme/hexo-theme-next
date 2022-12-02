@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: 站点概览
   toc: 文章目录
+  links: 链接
 post:
   posted: 发表于
   edited: 更新于
@@ -41,6 +42,9 @@ footer:
   powered: "由 %s 强力驱动"
   total_views: 总访问量
   total_visitors: 总访客量
+widget:
+  github: Follow me on GitHub
+  chat: 聊天
 counter:
   tag_cloud:
     zero: 暂无标签
@@ -81,6 +85,7 @@ reward:
   alipay: 支付宝
   paypal: PayPal
   bitcoin: 比特币
+  comment: Buy me a coffee
 follow_me:
   welcome: 欢迎关注我的其它发布渠道
 accessibility:

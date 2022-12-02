@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: 概要
   toc: 見出し
+  links: Links
 post:
   posted: 投稿日
   edited: 編集日
@@ -41,6 +42,9 @@ footer:
   powered: "Powered by %s"
   total_views: 閲覧合計数
   total_visitors: 合計閲覧者数
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: タグなし
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: ビットコイン
+  comment: Buy me a coffee
 follow_me:
   welcome: 他の公開チャンネルへようこそ
 accessibility:

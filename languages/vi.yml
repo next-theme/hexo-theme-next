@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: Tổng Quan
   toc: Mục Lục
+  links: Links
 post:
   posted: Tạo lúc
   edited: Chỉnh sửa vào
@@ -41,6 +42,9 @@ footer:
   powered: "Cung cấp bởi %s"
   total_views: Tổng số người xem
   total_visitors: Tổng số truy cập
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: Không có thẻ nào
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: Paypal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 follow_me:
   welcome: Xin chào mừng đến với các kênh khác của tôi
 accessibility:

@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: 흝어보기
   toc: 목차
+  links: Links
 post:
   posted: 작성일
   edited: Edited on
@@ -41,6 +42,9 @@ footer:
   powered: "Powered by %s"
   total_views: Total Views
   total_visitors: Total Visitors
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: 태그 없음
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: 비트코인
+  comment: Buy me a coffee
 follow_me:
   welcome: Welcome to my other publishing channels
 accessibility:
