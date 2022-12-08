@@ -198,7 +198,7 @@ NexT.utils = {
         // Reset the height of `tab-content` and see the animation.
         tabContent.style.height = currHeight + paddingTop + marginBottom + 'px';
         // Change the height of `tab-content` may cause scrollbar show / disappear, which may result in the change of the `tab-pane`'s height
-        setTimeout(function() {
+        setTimeout(() => {
           if ((document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)) !== hasScrollBar) {
             tabContent.style.transition = 'height 0.3s linear';
             // After the animation, we need reset the height of `tab-content` again.
@@ -206,7 +206,7 @@ NexT.utils = {
             tabContent.style.height = currHeightAfterScrollBarChange + paddingTop + marginBottom + 'px';
           }
           // Remove all the inline styles, and let the height be adaptive again.
-          setTimeout(function() {
+          setTimeout(() => {
             tabContent.style.transition = '';
             tabContent.style.height = '';
           }, 250);
