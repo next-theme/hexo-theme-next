@@ -42,7 +42,7 @@ module.exports = function(path, text, options = {}) {
 
     if (!theme.exturl) {
       // Only for simple link need to rewrite/add attributes.
-      attrs.rel = 'noopener';
+      attrs.rel = attrs.rel || 'noopener';
       attrs.target = '_blank';
     } else {
       // Remove rel attributes for `exturl` in main menu.
