@@ -25,7 +25,7 @@
 // ==================================================
 // Post blocks.
 .main-inner {
-  .sub-menu, .post-block, .tabs-comment, .comments, .pagination {
+  .sub-menu, .post-block, .tabs-comment, :not(.tab-pane) > .comments, .pagination {
     gemini-block();
   }
 
@@ -35,7 +35,7 @@
     }
   }
 
-  .tabs-comment, .comments, .pagination {
+  .tabs-comment, :not(.tab-pane) > .comments, .pagination {
     gemini-block-not-first();
   }
 }

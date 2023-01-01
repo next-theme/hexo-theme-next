@@ -87,9 +87,9 @@ NexT.motion.middleWares = {
     const sequence = [];
     const { post_block, post_header, post_body, coll_header } = CONFIG.motion.transition;
 
-    function animate(animation, selector) {
+    function animate(animation, elements) {
       if (!animation) return;
-      document.querySelectorAll(selector).forEach(targets => {
+      elements.forEach(targets => {
         sequence.push({
           targets,
           complete: () => targets.classList.add('animated', animation),
@@ -98,10 +98,18 @@ NexT.motion.middleWares = {
       });
     }
 
-    animate(post_block, '.post-block, .pagination, .comments');
-    animate(coll_header, '.collection-header');
-    animate(post_header, '.post-header');
-    animate(post_body, '.post-body');
+    document.querySelectorAll('.post-block').forEach(targets => {
+      sequence.push({
+        targets,
+        complete: () => targets.classList.add('animated', post_block),
+        deltaT  : '-=100'
+      });
+      animate(coll_header, targets.querySelectorAll('.collection-header'));
+      animate(post_header, targets.querySelectorAll('.post-header'));
+      animate(post_body, targets.querySelectorAll('.post-body'));
+    });
+
+    animate(post_block, document.querySelectorAll('.pagination, .comments'));
 
     return sequence;
   },

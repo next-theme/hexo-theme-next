@@ -176,11 +176,11 @@ NexT.utils = {
         tabContent.style.overflow = 'hidden';
         tabContent.style.transition = 'height 1s';
         // Comment system selection tab does not contain .active class.
-        const activeTab = tabContent.querySelector('.active') || tabContent.firstChild;
+        const activeTab = tabContent.querySelector('.active') || tabContent.firstElementChild;
         // Hight might be `auto`.
         const prevHeight = parseInt(window.getComputedStyle(activeTab).height.replace('px', ''), 10) || 0;
         const paddingTop = parseInt(window.getComputedStyle(activeTab).paddingTop.replace('px', ''), 10);
-        const marginBottom = parseInt(window.getComputedStyle(activeTab.firstChild).marginBottom.replace('px', ''), 10);
+        const marginBottom = parseInt(window.getComputedStyle(activeTab.firstElementChild).marginBottom.replace('px', ''), 10);
         tabContent.style.height = prevHeight + paddingTop + marginBottom + 'px';
         // Add & Remove active class on `nav-tabs` & `tab-content`.
         [...nav.children].forEach(target => {
