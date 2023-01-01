@@ -249,3 +249,23 @@ button($color) {
     color: white;
   }
 }
+
+gemini-block() {
+  background: var(--content-bg-color);
+  border-radius: $border-radius-inner;
+  box-shadow: $box-shadow-inner;
+}
+
+gemini-block-not-first() {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  margin-top: $sidebar-offset;
+
+  +tablet() {
+    margin-top: $content-tablet-padding;
+  }
+
+  +mobile() {
+    margin-top: $content-mobile-padding;
+  }
+}
