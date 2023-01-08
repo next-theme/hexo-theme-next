@@ -41,6 +41,6 @@
     "js-yaml": "4.1.0",
     "mocha": "10.2.0",
     "stylelint": "14.16.1",
-    "stylelint-stylus": "0.17.0"
+    "stylelint-stylus": "0.17.1"
   }
 }
