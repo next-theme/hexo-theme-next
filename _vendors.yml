@@ -113,14 +113,14 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.15.0
+  version: 9.16.0
   file: firebase-app-compat.js
-  integrity: sha256-A8uo1+X48MvWPwgPlvCnYuAImCUflgEhnkcrIB/o0h8=
+  integrity: sha256-ugLrv2V3S3effuUc0sDKuh3ICRsl8dlG1FS+iAMQtlE=
 firebase_firestore:
   name: firebase
-  version: 9.15.0
+  version: 9.16.0
   file: firebase-firestore-compat.js
-  integrity: sha256-2vTXB2VWavgiIk/TK93CjOsIcPlVR5Rd4qq74a8UGU0=
+  integrity: sha256-oaAQkODa+UNQUcrZrKC7MRY6Z+H/AyOOvWY/nPHGDM8=
 algolia_search:
   name: algoliasearch
   version: 4.14.3
@@ -128,9 +128,9 @@ algolia_search:
   integrity: sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=
 instant_search:
   name: instantsearch.js
-  version: 4.49.2
+  version: 4.50.1
   file: dist/instantsearch.production.min.js
-  integrity: sha256-Nu8yqoXoRZEVYyZf4/eY1V4FsenbiCw85RY3gWjN3zQ=
+  integrity: sha256-xtz5Q60cdtw/7BDkzWiTgCXLvwLrUqlKqegFqvNHiNM=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.1
