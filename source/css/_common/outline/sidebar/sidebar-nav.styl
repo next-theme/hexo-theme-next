@@ -44,7 +44,12 @@
   flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-top: 20px;
+  padding-top: 0;
+  transition: padding-top $transition-ease;
+
+  .sidebar-nav-active & {
+    padding-top: 20px;
+  }
 }
 
 .sidebar-panel {
