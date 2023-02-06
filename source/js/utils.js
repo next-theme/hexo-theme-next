@@ -321,7 +321,7 @@ NexT.utils = {
         // Defined in CSS. The last nav-item in a list has a margin-bottom of 5px.
         const extraHeight = 5;
 
-        // scrollHeight isn't reliable here as transitioning items affect.
+        // scrollHeight isn't reliable for transitioning child items.
         navChildHeight += (singleHeight * activateEle.childElementCount) + extraHeight;
         activateEle.style.setProperty('--height', `${navChildHeight}px`);
       }

@@ -53,17 +53,28 @@
 }
 
 .sidebar-panel {
-  --deactivate-duration: .3s;
-  animation: var(--deactivate-duration) deactivate-sidebar-panel;
+  --switch-duration: .3s;
+  animation: var(--switch-duration) deactivate-sidebar-panel;
   grid-area: 1 / 1;
   height: 0;
   opacity: 0;
   overflow: hidden;
   transform: translateY(-20px);
   transition-delay: 0s;
-  transition-duration: var(--deactivate-duration);
+  transition-duration: var(--switch-duration);
   transition-property: opacity, transform;
   pointer-events: none;
+
+  .sidebar-overview-active &.site-overview-wrap,
+  .sidebar-toc-active &.post-toc-wrap {
+    animation-name: activate-sidebar-panel;
+    height: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: var(--switch-duration);
+    transition-duration: var(--switch-duration);
+    pointer-events: unset;
+  }
 
   &.site-overview-wrap {
     // Flexbox layout makes it possible to reorder the child
@@ -92,16 +103,4 @@
   to {
     height: var(--active-panel-height);
   }
-}
-
-.sidebar-overview-active .site-overview-wrap,
-.sidebar-toc-active .post-toc-wrap {
-  --activate-duration: var(--deactivate-duration);
-  animation: var(--deactivate-duration) activate-sidebar-panel;
-  height: auto;
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: var(--deactivate-duration);
-  transition-duration: var(--activate-duration);
-  pointer-events: auto;
 }
