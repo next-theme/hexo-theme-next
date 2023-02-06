@@ -297,7 +297,7 @@ NexT.utils = {
   },
 
   activateNavByIndex: function(index) {
-    const nav = document.querySelector('.post-toc .nav');
+    const nav = document.querySelector('.post-toc:not(.placeholder-toc) .nav');
     if (!nav) return;
 
     const navItemList = nav.querySelectorAll('.nav-item');
