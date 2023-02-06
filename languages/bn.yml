@@ -1,0 +1,102 @@
+---
+name: বাংলা
+title:
+  archive: আর্কাইভ
+  category: ক্যাটাগরি
+  tag: ট্যাগ
+  schedule: কর্ম পরিকল্পনা
+menu:
+  home: হোম পেজ
+  archives: আর্কাইভ এর তালিকা
+  categories: ক্যাটাগরি এর তালিকা
+  tags: ট্যাগ এর তালিকা
+  about: সম্পর্কে
+  search: সার্চ
+  schedule: কর্ম পরিকল্পনা
+  sitemap: Sitemap
+  commonweal: Commonweal 404
+sidebar:
+  overview: সারাংশ
+  toc: সূচীপত্র
+  links: Links
+post:
+  posted: প্রকাশিত হয়েছে
+  edited: সম্পাদিত হয়েছে
+  created: তৈরি করা হয়েছে
+  modified: পরিমার্জন করা হয়েছে
+  edit: পোস্টটি সম্পাদনা করুন
+  in: শ্রেনী
+  read_more: আরো পড়ুন
+  untitled: শিরোনামহীন
+  sticky: স্থির
+  views: ভিউ
+  related_posts: সম্পর্কিত পোস্ট
+  copyright:
+    author: লিখিকা
+    link: পোস্ট লিঙ্ক
+    post_author: রচনা করেছেন
+    post_link: এই আর্টিকেলটি প্রথমে প্রকাশিত হয়েছে
+    license_title: কপিরাইট নোটিস
+    license_content: "এই ব্লগের সমস্ত আর্টিকেল %s এর অধীনে লাইসেন্সপ্রাপ্ত যদি না ব্যতিক্রম উল্লেখ করা হয়।"
+footer:
+  powered: "%s এর সাহায্যে চলছে"
+  total_views: মোট দর্শক
+  total_visitors: মোট দর্শক
+widget:
+  github: Follow me on GitHub
+  chat: Chat
+counter:
+  tag_cloud:
+    zero: কোনও ট্যাগ নেই
+    one: একটি ট্যাগ আছে
+    other: "মোট %d টি ট্যাগ"
+  categories:
+    zero: কোন ক্যাটাগরি নেই
+    one: একটি ক্যাটাগরি আছে
+    other: "মোট %d টি ক্যাটাগরি"
+  archive_posts:
+    zero: কোনও পোস্ট নেই.
+    one: ১টি পোস্ট।
+    other: "মোট %d টি পোস্ট।"
+state:
+  posts: পোস্ট এর তালিকা
+  tags: ট্যাগ এর তালিকা
+  categories: ক্যাটাগরি এর তালিকা
+search:
+  placeholder: সার্চ করা হচ্ছে...
+  empty: "আমরা উক্ত অনুসন্ধানের জন্য কোন ফলাফল খুঁজে পাইনি: %s"
+  hits_time: "%s টি ফলাফল %s মিলিসেকেন্ড এ পাওয়া গেছে"
+  hits: "%s টি ফলাফল পাওয়া গেছে"
+cheers:
+  um: ইয়ে... মানে..
+  ok: ঠিক আছে
+  nice: বেশ
+  good: ভালো
+  great: অসাধারন
+  excellent: চমৎকার
+keep_on: পোস্ট চালিয়ে যাও।
+symbol:
+  comma: ", "
+  period: "। "
+  colon: "ঃ "
+reward:
+  donate: দান করুন
+  wechatpay: উইচ্যাট পে
+  alipay: আলি পে
+  paypal: PayPal
+  bitcoin: বিটকয়েন
+  comment: Buy me a coffee
+follow_me:
+  welcome: আমার অন্যান্য প্রকাশনা চ্যানেলে আপনাকে স্বাগতম
+accessibility:
+  nav_toggle: নেভিগেশন বারের দৃশ্যমানতা টগল করুন
+  prev_page: পূর্ববর্তী পৃষ্ঠা
+  next_page: পূর্ববর্তী পৃষ্ঠা
+  back_to_top: উপরে ফিরে যান
+  select_lang: ভাষা নির্বাচন করুন
+symbols_count_time:
+  count: আর্টিকালে অক্ষর এর পরিমাণ
+  count_total: আর্টিকালে অক্ষর এর মোট পরিমাণ
+  time: পড়াতে লাগবে
+  time_total: মোট পড়াতে লাগবে
+  time_minutes: মিনিট।

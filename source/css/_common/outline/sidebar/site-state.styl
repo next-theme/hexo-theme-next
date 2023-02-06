@@ -1,26 +1,28 @@
-.site-state {
-  flex-wrap();
-  line-height: 1.4;
-}
-
-.site-state-item {
-  // Fix issue #103
-  // The click area of the link becomes smaller
-  padding: 0 15px;
-
-  a {
-    border-bottom: 0;
-    display: block;
+if (hexo-config('site_state')) {
+  .site-state {
+    flex-wrap();
+    line-height: 1.4;
   }
-}
 
-.site-state-item-count {
-  display: block;
-  font-size: $site-state-item-count-font-size;
-  font-weight: 600;
-}
+  .site-state-item {
+    // Fix issue #103
+    // The click area of the link becomes smaller
+    padding: 0 15px;
 
-.site-state-item-name {
-  color: $site-state-item-name-color;
-  font-size: $site-state-item-name-font-size;
+    a {
+      border-bottom: 0;
+      display: block;
+    }
+  }
+
+  .site-state-item-count {
+    display: block;
+    font-size: $site-state-item-count-font-size;
+    font-weight: 600;
+  }
+
+  .site-state-item-name {
+    color: $site-state-item-name-color;
+    font-size: $site-state-item-name-font-size;
+  }
 }

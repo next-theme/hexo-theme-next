@@ -23,15 +23,10 @@ firebase.initializeApp({
     });
   };
 
-  const appendCountTo = el => {
-    return count => {
-      el.innerText = count;
-    };
-  };
+  const db = firebase.firestore();
+  const articles = db.collection(CONFIG.firestore.collection);
 
   document.addEventListener('page:loaded', () => {
-    const db = firebase.firestore();
-    const articles = db.collection(CONFIG.firestore.collection);
 
     if (CONFIG.page.isPost) {
       // Fix issue #118
@@ -45,7 +40,9 @@ firebase.initializeApp({
         // Mark as visited
         localStorage.setItem(title, true);
       }
-      getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
+      getCount(doc, increaseCount).then(count => {
+        document.querySelector('.firestore-visitors-count').innerText = count;
+      });
     } else if (CONFIG.page.isHome) {
       const promises = [...document.querySelectorAll('.post-title')].map(element => {
         const title = element.textContent.trim();
@@ -55,7 +52,7 @@ firebase.initializeApp({
       Promise.all(promises).then(counts => {
         const metas = document.querySelectorAll('.firestore-visitors-count');
         counts.forEach((val, idx) => {
-          appendCountTo(metas[idx])(val);
+          metas[idx].innerText = val;
         });
       });
     }

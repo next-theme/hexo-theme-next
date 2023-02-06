@@ -1,6 +1,8 @@
-.pdfobject-container {
-  iframe, embed {
-    height: unquote(hexo-config('pdf.height'));
-    width: 100%;
+if (hexo-config('pdf.enable')) {
+  .pdfobject-container {
+    iframe, embed {
+      height: convert(hexo-config('pdf.height'));
+      width: 100%;
+    }
   }
 }

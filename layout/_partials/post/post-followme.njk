@@ -7,13 +7,25 @@
       {%- set icon = value.split('||')[1] | trim if value.split('||')[1] else '' %}
 
       <div class="social-item">
-        <a target="_blank" class="social-link" href="{{ url_for(link) }}">
-          <span class="icon">
-            <i class="{{ icon }}"></i>
+        {%- if link.endsWith('.png') or link.endsWith('.jpg') %}
+          <span class="social-link">
+            <span class="icon">
+              <i class="{{ icon }}"></i>
+            </span>
+
+            <span class="label">{{ name }}</span>
           </span>
 
-          <span class="label">{{ name }}</span>
-        </a>
+          <img class="social-item-img" src="{{ url_for(link) }}">
+        {%- else %}
+          <a target="_blank" class="social-link" href="{{ url_for(link) }}">
+            <span class="icon">
+              <i class="{{ icon }}"></i>
+            </span>
+
+            <span class="label">{{ name }}</span>
+          </a>
+        {%- endif %}
       </div>
     {%- endfor %}
   </div>

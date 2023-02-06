@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const { url_for } = require('hexo-util');
+const { getVendors } = require('./utils');
 
 let internal;
 try {
@@ -14,7 +15,7 @@ const vendorsFile = fs.readFileSync(path.join(__dirname, '../../../_vendors.yml'
 const dependencies = yaml.load(vendorsFile);
 
 module.exports = hexo => {
-  const { vendors, creative_commons } = hexo.theme.config;
+  const { vendors, creative_commons, pace } = hexo.theme.config;
   if (typeof internal === 'function') {
     internal(hexo, dependencies);
   }
@@ -30,18 +31,24 @@ module.exports = hexo => {
     if (key === 'creative_commons') {
       value.file = `${value.dir}/${creative_commons.size}/${creative_commons.license.replace(/-/g, '_')}.svg`;
     }
-    const { name, version, file, alias, unavailable } = value;
-    const links = {
+    if (key === 'pace_css') {
+      value.file = `${value.dir}/${pace.color}/pace-theme-${pace.theme}.css`;
+    }
+    const { name, file } = value;
+    const links = getVendors({
+      ...value,
+      minified: file,
       local   : url_for.call(hexo, `lib/${name}/${file}`),
-      jsdelivr: `https://cdn.jsdelivr.net/npm/${name}@${version}/${file}`,
-      unpkg   : `https://unpkg.com/${name}@${version}/${file}`,
-      cdnjs   : `https://cdnjs.cloudflare.com/ajax/libs/${alias || name}/${version}/${file.replace(/^(dist|lib|)\/(browser\/|)/, '')}`
-    };
-    let { plugins = 'jsdelivr' } = vendors;
-    if (plugins === 'cdnjs' && unavailable && unavailable.includes('cdnjs')) plugins = 'jsdelivr';
-    if (plugins === 'local' && typeof internal === 'undefined') plugins = 'jsdelivr';
+      custom  : vendors.custom_cdn_url
+    });
+    let { plugins = 'cdnjs' } = vendors;
+    if (plugins === 'local' && typeof internal === 'undefined') {
+      hexo.log.warn('Dependencies for `plugins: local` not found. The default CDN provider CDNJS is used instead.');
+      hexo.log.warn('Run `npm install @next-theme/plugins` in Hexo site root directory to install the plugin.');
+      plugins = 'cdnjs';
+    }
     vendors[key] = {
-      url      : links[plugins] || links.jsdelivr,
+      url      : links[plugins] || links.cdnjs,
       integrity: value.integrity
     };
   }

@@ -9,14 +9,6 @@
   }
 }
 
-.header {
-  background: $head-bg;
-}
-
-.header-inner {
-  main-container();
-}
-
 .site-brand-container {
   display: flex;
   flex-shrink: 0;
@@ -24,7 +16,7 @@
 }
 
 .use-motion {
-  .header, .site-brand-container .toggle {
+  .column, .site-brand-container .toggle {
     opacity: 0;
   }
 }
@@ -33,6 +25,5 @@
 @import 'site-nav';
 @import 'menu';
 
-@import 'bookmark' if (hexo-config('bookmark.enable'));
-
-@import 'github-banner' if (hexo-config('github_banner.enable'));
+@import 'bookmark';
+@import 'github-banner';

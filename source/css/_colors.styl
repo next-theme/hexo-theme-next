@@ -11,6 +11,7 @@
   --table-row-odd-bg-color: $table-row-odd-bg-color;
   --table-row-hover-bg-color: $table-row-hover-bg-color;
   --menu-item-bg-color: $menu-item-bg-color;
+  --theme-color: $theme-color;
 
   --btn-default-bg: $btn-default-bg;
   --btn-default-color: $btn-default-color;
@@ -23,6 +24,8 @@
   --highlight-foreground: $highlight-foreground;
   --highlight-gutter-background: $highlight-gutter-background;
   --highlight-gutter-foreground: $highlight-gutter-foreground;
+
+  color-scheme: light;
 }
 
 if (hexo-config('darkmode')) {
@@ -40,6 +43,7 @@ if (hexo-config('darkmode')) {
       --table-row-odd-bg-color: $table-row-odd-bg-color-dark;
       --table-row-hover-bg-color: $table-row-hover-bg-color-dark;
       --menu-item-bg-color: $menu-item-bg-color-dark;
+      --theme-color: $theme-color-dark;
 
       --btn-default-bg: $btn-default-bg-dark;
       --btn-default-color: $btn-default-color-dark;
@@ -52,6 +56,8 @@ if (hexo-config('darkmode')) {
       --highlight-foreground: $highlight-foreground-dark;
       --highlight-gutter-background: $highlight-gutter-background-dark;
       --highlight-gutter-foreground: $highlight-gutter-foreground-dark;
+
+      color-scheme: dark;
     }
 
     img {
@@ -60,6 +66,10 @@ if (hexo-config('darkmode')) {
       &:hover {
         opacity: .9;
       }
+    }
+
+    iframe {
+      color-scheme: light;
     }
   }
 }

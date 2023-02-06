@@ -11,16 +11,21 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="{{ url_for(theme.avatar.url or theme.images + '/avatar.gif') }}">
       <meta itemprop="name" content="{{ author }}">
-      <meta itemprop="description" content="{{ description }}">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ title }}">
+      <meta itemprop="description" content="{{ description }}">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="{{ page.title + ' | ' + title }}">
+      <meta itemprop="description" content="{{ page.description }}">
     </span>
 
     {%- if post.header !== false %}
       <header class="post-header">
-        <{%- if is_index %}h2{% else %}h1{%- endif %} class="post-title{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="name headline">
+        <{% if is_index %}h2{% else %}h1{% endif %} class="post-title{% if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">
           {# Link posts #}
           {%- if post.link %}
             {%- if post.sticky > 0 %}
@@ -42,7 +47,7 @@
             {{- post.title }}
             {{- post_edit(post.source) }}
           {%- endif %}
-        </{%- if is_index %}h2{% else %}h1{%- endif %}>
+        </{% if is_index %}h2{% else %}h1{% endif %}>
 
         <div class="post-meta-container">
           {{ partial('_partials/post/post-meta.njk') }}
@@ -57,7 +62,7 @@
     {#################}
     {### POST BODY ###}
     {#################}
-    <div class="post-body{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="articleBody">
+    <div class="post-body{% if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
       {%- if is_index %}
         {%- if post.description and theme.excerpt_description %}
           <p>{{ post.description }}</p>
@@ -93,10 +98,6 @@
     {### END POST BODY ###}
     {#####################}
 
-    {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-      {{ partial('_partials/post/post-related.njk') }}
-    {%- endif %}
-
     <footer class="post-footer">
       {%- if is_index %}
         <div class="post-eof"></div>
@@ -124,7 +125,7 @@
           </div>
         {%- endif %}
 
-        {{ partial('_partials/post/post-footer.njk', {}, {cache: theme.cache.enable}) }}
+        {{ partial('_partials/post/post-share.njk', {}, {cache: theme.cache.enable}) }}
 
         {%- if theme.post_navigation and (post.prev or post.next) %}
           {%- set prev = post.prev if theme.post_navigation === 'right' else post.next %}

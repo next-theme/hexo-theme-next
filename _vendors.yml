@@ -8,63 +8,56 @@ anime:
   integrity: sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=
 fontawesome:
   name: '@fortawesome/fontawesome-free'
-  version: 5.15.3
+  version: 6.2.1
   file: css/all.min.css
   alias: font-awesome
-  integrity: sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=
+  integrity: sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=
 prism:
   name: prismjs
-  version: 1.24.0
+  version: 1.29.0
   file: components/prism-core.min.js
   alias: prism
-  integrity: sha256-dz05jjFU9qYuMvQQlE6iWDtNAnEsmu6uMb1vWhKdkEM=
+  integrity: sha256-4mJNT2bMXxcc1GCJaxBmMPdmah5ji0Ldnd79DKd1hoM=
 prism_autoloader:
   name: prismjs
-  version: 1.24.0
+  version: 1.29.0
   file: plugins/autoloader/prism-autoloader.min.js
   alias: prism
-  integrity: sha256-sttoa+EIAvFFfeeIkmPn8ypyOOb6no2sZ2NbxtBXgqU=
+  integrity: sha256-AjM0J5XIbiB590BrznLEgZGLnOQWrt62s3BEq65Q/I0=
 prism_line_numbers:
   name: prismjs
-  version: 1.24.0
+  version: 1.29.0
   file: plugins/line-numbers/prism-line-numbers.min.js
   alias: prism
-  integrity: sha256-K837BwIyiXo5k/9fCYgqUyA14bN4/Ve9P2SIT0KmZD0=
+  integrity: sha256-9cmf7tcLdXpKsPi/2AWE93PbZpTp4M4tqzFk+lWomjU=
 mathjax:
   name: mathjax
-  version: 3.2.0
+  version: 3.2.2
   file: es5/tex-mml-chtml.js
-  integrity: sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY=
+  integrity: sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=
 katex:
   name: katex
-  version: 0.13.11
+  version: 0.16.4
   file: dist/katex.min.css
   alias: KaTeX
-  integrity: sha256-hFAmQt2dGk6G99nu2cEWz8/1JGRnBP/BsGoZwQ7WeLE=
+  integrity: sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=
 copy_tex_js:
   name: katex
-  version: 0.13.11
+  version: 0.16.4
   file: dist/contrib/copy-tex.min.js
   alias: KaTeX
-  integrity: sha256-etSqbSVF4+Lwe8MGk/Vanc1sR+mWv+qOG73fxWw9p94=
-copy_tex_css:
-  name: katex
-  version: 0.13.11
-  file: dist/contrib/copy-tex.min.css
-  alias: KaTeX
-  integrity: sha256-+oItviPaTmqjDhk4y4fLLUIMgRQYDV/ZyrRNvQiebWM=
+  integrity: sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=
 pjax:
   name: '@next-theme/pjax'
-  version: 0.5.0
+  version: 0.6.0
   file: pjax.min.js
-  unavailable:
-    - cdnjs
-  integrity: sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=
+  alias: next-theme-pjax
+  integrity: sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=
 jquery:
   name: jquery
-  version: 3.6.0
+  version: 3.6.3
   file: dist/jquery.min.js
-  integrity: sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=
+  integrity: sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=
 fancybox_js:
   name: '@fancyapps/fancybox'
   version: 3.5.7
@@ -79,9 +72,9 @@ fancybox_css:
   integrity: sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=
 mediumzoom:
   name: medium-zoom
-  version: 1.0.6
+  version: 1.0.8
   file: dist/medium-zoom.min.js
-  integrity: sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=
+  integrity: sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=
 lazyload:
   name: lozad
   version: 1.16.0
@@ -95,80 +88,84 @@ pangu:
   integrity: sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=
 quicklink:
   name: quicklink
-  version: 2.2.0
+  version: 2.3.0
   file: dist/quicklink.umd.js
-  integrity: sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=
+  integrity: sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=
 disqusjs_js:
   name: disqusjs
-  version: 1.3.0
-  file: dist/disqus.js
-  integrity: sha256-LVaMHPQ2zLqOc5rXSAfr4d1PIkEGNLyyUTDNPZmTtUw=
+  version: 3.0.2
+  file: dist/browser/disqusjs.es2015.umd.min.js
+  integrity: sha256-okP99ZQKVpIy7+NogAMpGlIQzJa9XKXhIJcFgdju5bU=
 disqusjs_css:
   name: disqusjs
-  version: 1.3.0
-  file: dist/disqusjs.css
-  integrity: sha256-GxdCIOyfxQ1OBfS99qAIJDoGK1ADuBsxhMTqXG82fAY=
+  version: 3.0.2
+  file: dist/browser/styles/disqusjs.css
+  integrity: sha256-71XarXwNr1Td27HmZI9zjY+rMzRdush6/glo6VFXp7o=
 gitalk_js:
   name: gitalk
-  version: 1.7.2
+  version: 1.8.0
   file: dist/gitalk.min.js
-  integrity: sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA=
+  integrity: sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4=
 gitalk_css:
   name: gitalk
-  version: 1.7.2
+  version: 1.8.0
   file: dist/gitalk.css
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 8.6.8
-  file: firebase-app.js
-  integrity: sha256-3hdiTmkDsofqAYaeI/xZx6N7xYgnG+aXWangXu+jtCg=
+  version: 9.16.0
+  file: firebase-app-compat.js
+  integrity: sha256-ugLrv2V3S3effuUc0sDKuh3ICRsl8dlG1FS+iAMQtlE=
 firebase_firestore:
   name: firebase
-  version: 8.6.8
-  file: firebase-firestore.js
-  integrity: sha256-Itvsoir8vLRlK5Xg9Mz8vQqzJ6gVmc5GQ27rNTOZSOY=
+  version: 9.16.0
+  file: firebase-firestore-compat.js
+  integrity: sha256-oaAQkODa+UNQUcrZrKC7MRY6Z+H/AyOOvWY/nPHGDM8=
 algolia_search:
   name: algoliasearch
-  version: 4.10.2
+  version: 4.14.3
   file: dist/algoliasearch-lite.umd.js
-  integrity: sha256-QpiEPiLTebWnaWu14/C5XhRzUyh/OYx0CYWEHd9mv7o=
+  integrity: sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=
 instant_search:
   name: instantsearch.js
-  version: 4.24.2
+  version: 4.50.1
   file: dist/instantsearch.production.min.js
-  integrity: sha256-m6RnEITznVydRlSHfl3EknCIK6aL72SHYL9Ol+v5nNw=
+  integrity: sha256-xtz5Q60cdtw/7BDkzWiTgCXLvwLrUqlKqegFqvNHiNM=
+local_search:
+  name: hexo-generator-searchdb
+  version: 1.4.1
+  file: dist/search.js
+  integrity: sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=
 pdfobject:
   name: pdfobject
-  version: 2.2.5
+  version: 2.2.8
   file: pdfobject.min.js
-  integrity: sha256-YuNlP9i6s/WH7EaU2kErloo9Vc85C3WVqhoMDgsEVpY=
+  integrity: sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM=
 mermaid:
   name: mermaid
-  version: 8.11.0
+  version: 9.3.0
   file: dist/mermaid.min.js
-  integrity: sha256-sVAx+v/Q7v0Q2xm5vN7h5ccSna6gaLREhG9sF8pKT6I=
+  integrity: sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=
 animate_css:
   name: animate.css
   version: 3.1.1
   file: animate.min.css
   integrity: sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=
-nprogress_js:
-  name: nprogress
-  version: 0.2.0
-  file: nprogress.js
-  integrity: sha256-a5YRB27CcBwBFcT5EF/f3E4vzIqyHrSR878nseNYw64=
-nprogress_css:
-  name: nprogress
-  version: 0.2.0
-  file: nprogress.css
-  integrity: sha256-no0c5ccDODBwp+9hSmV5VvPpKwHCpbVzXHexIkupM6U=
+pace_js:
+  name: pace-js
+  version: 1.2.4
+  file: pace.min.js
+  alias: pace
+  integrity: sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=
+pace_css:
+  name: pace-js
+  version: 1.2.4
+  dir: themes
+  alias: pace
 canvas_ribbon:
   name: ribbon.js
   version: 1.0.2
   file: dist/ribbon.min.js
-  unavailable:
-    - cdnjs
   integrity: sha256-UkSSapoJqxvq+8bSCIrAhXO+aOMBRmkK6vxjTstemLs=
 creative_commons:
   name: '@creativecommons/vocabulary'

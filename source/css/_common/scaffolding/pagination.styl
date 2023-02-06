@@ -8,10 +8,16 @@ $page-number-basic {
   }
 }
 
+$page-number-current {
+  background: $pagination-active-bg;
+  border-color: $pagination-active-border;
+  color: $pagination-active-color;
+}
+
 .pagination {
   border-top: 1px solid $pagination-border;
   margin: 120px 0 0;
-  text-align: center;
+  text-align: $scheme-text-align;
 
   .prev, .next, .page-number {
     @extend $page-number-basic;
@@ -44,8 +50,6 @@ $page-number-basic {
   }
 
   .page-number.current {
-    background: $pagination-active-bg;
-    border-color: $pagination-active-border;
-    color: $pagination-active-color;
+    @extend $page-number-current;
   }
 }

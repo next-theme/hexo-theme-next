@@ -1,8 +1,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="{{ theme.android_chrome_color }}">
-<meta name="generator" content="Hexo {{ hexo_version }}">
+{%- if theme.darkmode %}
+<meta name="theme-color" content="{{ theme.theme_color.light }}" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="{{ theme.theme_color.dark }}" media="(prefers-color-scheme: dark)">
+{%- else %}
+<meta name="theme-color" content="{{ theme.theme_color.light }}">
+{%- endif %}
+{%- if config.meta_generator %}
+  {{- meta_generator() }}
+{%- endif %}
 
+{%- if config.preconnect %}
+  <link rel="preload" href="{{ url_for(theme.css) }}/main.css" as="style">
+{%- endif %}
 {{ next_pre() }}
 
 {%- if theme.favicon.apple_touch_icon %}
@@ -15,7 +25,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for(theme.favicon.small) }}">
 {%- endif %}
 {%- if theme.favicon.safari_pinned_tab %}
-  <link rel="mask-icon" href="{{ url_for(theme.favicon.safari_pinned_tab) }}" color="{{ theme.android_chrome_color }}">
+  <link rel="mask-icon" href="{{ url_for(theme.favicon.safari_pinned_tab) }}" color="{{ theme.theme_color.light }}">
 {%- endif %}
 {%- if theme.favicon.android_manifest %}
   <link rel="manifest" href="{{ url_for(theme.favicon.android_manifest) }}">
@@ -48,9 +58,9 @@
   {{ next_vendors('fancybox_css') }}
 {%- endif %}
 
-{%- if theme.nprogress.enable %}
-  {{ next_vendors('nprogress_css') }}
-  {{ next_vendors('nprogress_js') }}
+{%- if theme.pace.enable %}
+  {{ next_vendors('pace_css') }}
+  {{ next_vendors('pace_js') }}
 {%- endif %}
 
 {{ next_data('main', next_config()) }}

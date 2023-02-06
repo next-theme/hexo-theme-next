@@ -6,17 +6,26 @@ jobs:
   linter:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Use Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
     - name: Install Dependencies
       run: npm install
     - run: npm run eslint
     - name: Coverage
-      run: npx nyc --reporter=lcovonly npm test
+      run: npx c8 --reporter=lcovonly npm test
       env:
         CI: true
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install curlylint
+    - run: curlylint --include .njk layout

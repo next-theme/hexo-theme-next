@@ -3,7 +3,7 @@
 .posts-expand {
   &.index {
     .post-header {
-      text-align: left;
+      text-align: $scheme-text-align;
 
       +mobile() {
         text-align: center;
@@ -27,7 +27,7 @@
     display: none;
   }
 
-  .post-block:not(:first-child) {
+  .post-block:not(:first-of-type) {
     margin-top: 120px;
   }
 
@@ -36,8 +36,6 @@
   }
 
   .post-tags {
-    text-align: left;
-
     a {
       background: var(--content-bg-color);
       border-bottom: 0;
@@ -56,7 +54,6 @@
 
 .post-button {
   margin-top: 20px;
-  text-align: left;
 
   .btn {
     background: none;

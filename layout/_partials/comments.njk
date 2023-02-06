@@ -14,7 +14,7 @@
           {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
         </div>
       {%- endfor %}
-      {{- next_js('comments-buttons.js', true) }}
+      {{- next_js('comments-buttons.js', { pjax: true }) }}
     {%- elif theme.comments.style == 'tabs' %}
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">

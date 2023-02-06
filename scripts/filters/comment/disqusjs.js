@@ -10,7 +10,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   if (!config.enable || !config.shortname || !config.apikey) return;
 
   injects.comment.raw('disqusjs', `
-  <div class="comments" id="disqus_thread">
+  <div class="comments disqusjs-container">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   `, {}, { cache: true });

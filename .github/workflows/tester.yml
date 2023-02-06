@@ -10,20 +10,28 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
       fail-fast: false
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           repository: hexojs/hexo-starter
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
       - name: Install Dependencies
         run: npm install
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           path: themes/next
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           repository: SukkaLab/hexo-many-posts
           path: source/_posts/hexo-many-posts
       - run: npx hexo config theme next
+      - uses: DamianReeves/write-file-action@master
+        with:
+          path: themes/next/scripts/error.js
+          contents: |
+            hexo.log.error = function(...params) {
+              console.error("ERROR", ...params);
+              process.exit(1);
+            }
       - name: Test
         run: npx hexo g

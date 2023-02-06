@@ -15,8 +15,6 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    padding-top: 10px;
-
     // Supported plugins: hexo-renderer-markdown-it hexo-renderer-marked
     .header-anchor, .headerlink {
       border-bottom-style: none;
@@ -47,12 +45,13 @@
     margin-left: 4px;
   }
 
-  .image-caption, .figure .caption {
+  // For fancybox and pandoc
+  .image-caption, img + figcaption, .fancybox + figcaption {
     color: $grey-dark;
     font-size: $font-size-small;
     font-weight: bold;
     line-height: 1;
-    margin: -20px auto 15px;
+    margin: -15px auto 15px;
     text-align: center;
   }
 

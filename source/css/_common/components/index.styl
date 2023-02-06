@@ -1,32 +1,5 @@
-if (hexo-config('back2top.enable')) {
-  .back-to-top {
-    font-size: $b2t-font-size;
-
-    if (not hexo-config('back2top.scrollpercent')) {
-      span {
-        display: none;
-      }
-    }
-  }
-
-  @import (hexo-config('back2top.sidebar') ? 'back-to-top-sidebar' : 'back-to-top');
-}
-
-.noscript-warning {
-  background-color: lighten($red, 20%);
-  color: white;
-  font-family: sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  left: 0;
-  position: fixed;
-  text-align: center;
-  top: 0;
-  width: 100%;
-  z-index: $zindex-5;
-}
-
-@import 'reading-progress' if (hexo-config('reading_progress.enable'));
+@import 'back-to-top';
+@import 'reading-progress';
 
 @import 'post';
 @import 'pages';

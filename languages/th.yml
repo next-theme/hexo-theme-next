@@ -1,0 +1,102 @@
+---
+name: ประเทศไทย
+title:
+  archive: คลังเก็บเอกสารสำคัญ
+  category: หมวดหมู่
+  tag: แท็ก
+  schedule: กำหนดการ
+menu:
+  home: บ้าน
+  archives: หอจดหมายเหตุ
+  categories: หมวดหมู่
+  tags: แท็ก
+  about: เกี่ยวกับ
+  search: ค้นหา
+  schedule: กำหนดการ
+  sitemap: แผนผังเว็บไซต์
+  commonweal: เครือจักรภพ404
+sidebar:
+  overview: ภาพรวม
+  toc: สารบัญ
+  links: Links
+post:
+  posted: โพสต์เมื่อ
+  edited: แก้ไขเมื่อ
+  created: สร้าง
+  modified: ดัดแปลง
+  edit: แก้ไขโพสต์นี้
+  in: ใน
+  read_more: อ่านเพิ่มเติม
+  untitled: ไม่มีชื่อ
+  sticky: เหนียว
+  views: มุมมอง
+  related_posts: กระทู้ที่เกี่ยวข้อง
+  copyright:
+    author: ผู้เขียนโพสต์
+    link: โพสต์ลิงค์
+    post_author: เขียนโดย
+    post_link: บทความนี้เดิมปรากฏบน
+    license_title: ประกาศเกี่ยวกับลิขสิทธิ์
+    license_content: "บทความทั้งหมดในบล็อกนี้ได้รับอนุญาตภายใต้ %s เว้นแต่จะระบุไว้เพิ่มเติม"
+footer:
+  powered: "ขับเคลื่อนโดย %s"
+  total_views: ยอดดูทั้งหมด
+  total_visitors: ผู้เข้าชมทั้งหมด
+widget:
+  github: Follow me on GitHub
+  chat: Chat
+counter:
+  tag_cloud:
+    zero: ไม่มีแท็ก
+    one: ทั้งหมด 1 แท็ก
+    other: "รวม %d แท็ก"
+  categories:
+    zero: ไม่มีหมวดหมู่
+    one: ทั้งหมด 1 หมวดหมู่
+    other: "ทั้งหมด %d หมวดหมู่"
+  archive_posts:
+    zero: ไม่มีโพสต์
+    one: 1 โพสต์
+    other: "ทั้งหมด %d โพสต์"
+state:
+  posts: posts
+  tags: tags
+  categories: categories
+search:
+  placeholder: กำลังค้นหา...
+  empty: "เราไม่พบผลลัพธ์ใด ๆ สำหรับการค้นหา: %s"
+  hits_time: "พบผลลัพธ์ %s ใน %s ms"
+  hits: "พบผลลัพธ์ %s"
+cheers:
+  um: Um..
+  ok: OK
+  nice: Nice
+  good: Good
+  great: Great
+  excellent: Excellent
+keep_on: โพสต์ต่อไป.
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ": "
+reward:
+  donate: Donate
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  paypal: PayPal
+  bitcoin: Bitcoin
+  comment: Buy me a coffee
+follow_me:
+  welcome: ยินดีต้อนรับสู่ช่องทางการเผยแพร่อื่นๆ ของฉัน
+accessibility:
+  nav_toggle: สลับแถบนำทาง
+  prev_page: หน้าก่อน
+  next_page: หน้าต่อไป
+  back_to_top: กลับไปด้านบน
+  select_lang: เลือกภาษา
+symbols_count_time:
+  count: สัญลักษณ์นับในบทความ
+  count_total: สัญลักษณ์นับรวม
+  time: เวลาอ่านหนังสือ
+  time_total: เวลาในการอ่านทั้งหมด
+  time_minutes: นาที

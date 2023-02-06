@@ -144,18 +144,18 @@ Pull Request 的标签：
 - `New Feature`: 添加了新功能的 Pull Request
 - `Feature`: 为现有功能提供选项或加成的 Pull Request
 - `i18n`: 更新了翻译的 Pull Request
+- `Dependencies`: 更新了依赖包的 Pull Request
+- `Actions`: 更新了 GitHub Actions 的 Pull Request
 - `Skip Release`: 无需在 Release Note 中展现的 Pull Request
 
 两者兼有：
 
 - `Roadmap`: 与 NexT 主题发展相关的 Issue 或者 Pull Request
 - `Help Wanted`: 需要帮助的 Issue 或者 Pull Request
-- `Discussion`: 需要进行讨论的 Issue 或者 Pull Request
 - `Improvement`: 需要改进的 Issue 或者改进了 NexT 主题的 Pull Request
-- `Performance`: 提出性能问题的 Issue 或者提高了 NexT 主题性能的 Pull Request
 - `Layout`: 与模版引擎相关的 Issue 或者 Pull Request
 - `CSS`: 与 NexT 主题 CSS 文件相关的 Issue 或者 Pull Request
-- `Fonts`: 与 NexT 主题字体相关的 Issue 或者 Pull Request
+- `Icons & Fonts`: 与 NexT 主题图标和字体相关的 Issue 或者 Pull Request
 - `PJAX`: 与 PJAX 相关的 Issue 或者 Pull Request
 - `3rd Party Plugin`: 与第三方插件和服务相关的 Issue 或者 Pull Request
 - `Docs`: 与文档说明相关的 Issue 或者 Pull Request

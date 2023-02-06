@@ -51,6 +51,8 @@
   }
 }
 
-.use-motion .menu-item {
-  visibility: hidden;
+if (hexo-config('motion.transition.menu_item')) {
+  .use-motion .menu-item {
+    visibility: hidden;
+  }
 }

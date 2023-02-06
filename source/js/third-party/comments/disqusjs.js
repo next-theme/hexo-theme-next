@@ -14,5 +14,10 @@ document.addEventListener('page:loaded', () => {
         identifier: CONFIG.page.path,
         title     : CONFIG.page.title
       });
+      window.dsqjs.render(document.querySelector('.disqusjs-container'));
     });
+});
+
+document.addEventListener('pjax:send', () => {
+  if (window.dsqjs) window.dsqjs.destroy();
 });

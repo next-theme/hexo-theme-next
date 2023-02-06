@@ -1,8 +1,8 @@
 .sidebar-toggle {
-  bottom: 45px;
-  height: 12px;
-  padding: 6px 5px;
-  width: 14px;
+  bottom: $b2t-position-bottom-on + $sidebar-toggle-size + 5px;
+  height: $sidebar-toggle-inner-size;
+  padding: $sidebar-toggle-padding;
+  width: $sidebar-toggle-inner-size;
   sidebar-toggle();
 }
 
@@ -10,10 +10,6 @@
   background: $sidebar-highlight;
 }
 
-// Fix issue #75
-// @extends does not seem to work inside @media
-// So we use a mixin here
-// https://github.com/stylus/stylus/issues/609
 @media (any-hover: hover) {
   body:not(.sidebar-active) .sidebar-toggle:hover {
     toggle-arrow(hexo-config('sidebar.position'));

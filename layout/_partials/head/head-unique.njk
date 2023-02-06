@@ -1,4 +1,10 @@
-{{ open_graph() }}
+{%- if theme.open_graph.enable %}
+  {%- if theme.open_graph.options %}
+    {{ open_graph(theme.open_graph.options) }}
+  {%- else %}
+    {{ open_graph() }}
+  {%- endif %}
+{%- endif %}
 
 {# https://github.com/theme-next/hexo-theme-next/issues/866 #}
 {%- set canonical = url | replace(r/index\.html$/, '') %}
@@ -12,5 +18,5 @@
 {{ next_data('page', next_config_unique()) }}
 
 {{ next_data('calendar',
-  theme.calendar if page.type === 'schedule' and not page.title else '')
+  theme.calendar if page.type === 'schedule' else '')
 }}

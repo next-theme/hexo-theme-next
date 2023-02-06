@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    "stylelint-stylus"
+  ],
+  "extends": [
+    "stylelint-stylus/standard"
+  ],
+  "rules": {
+    "stylus/semicolon": "always",
+    "stylus/pythonic": "never",
+    "stylus/declaration-colon": "always",
+    "stylus/number-leading-zero": "never",
+    "stylus/selector-list-comma": "always",
+    "stylus/selector-list-comma-newline-after": "never-multi-line",
+    "stylus/media-feature-colon": "always",
+    "stylus/single-line-comment": false,
+    "stylus/single-line-comment-no-empty": false,
+    "stylus/block-closing-brace-newline-after": "never-single-line"
+  }
+}

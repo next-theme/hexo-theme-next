@@ -23,12 +23,16 @@ document.addEventListener('pjax:success', () => {
       .init()
       .add(NexT.motion.middleWares.subMenu)
       .add(NexT.motion.middleWares.postList)
+      // Add sidebar-post-related transition.
+      .add(NexT.motion.middleWares.sidebar)
       .bootstrap();
   }
-  const hasTOC = document.querySelector('.post-toc');
-  const sidebarNav = document.querySelector('.sidebar-nav');
-  sidebarNav.style.setProperty('--scroll-height', `${sidebarNav.scrollHeight}px`);
-  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
-  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
-  NexT.utils.updateSidebarPosition();
+  if (CONFIG.sidebar.display !== 'remove') {
+    const sidebarNav = document.querySelector('.sidebar-nav');
+    sidebarNav.style.setProperty('--scroll-height', `${sidebarNav.scrollHeight}px`);
+    const hasTOC = document.querySelector('.post-toc:not(.placeholder-toc)');
+    document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+    NexT.utils.activateSidebarPanel(hasTOC ? 0 : 1);
+    NexT.utils.updateSidebarPosition();
+  }
 });

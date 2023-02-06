@@ -66,6 +66,11 @@ $card-bg-color-dark           = $black-light;
 $menu-item-bg-color           = $whitesmoke;
 $menu-item-bg-color-dark      = $black-light;
 
+$theme-color                  = convert(hexo-config('theme_color.light'));
+$theme-color-dark             = convert(hexo-config('theme_color.dark'));
+
+$scheme-text-align            = center;
+
 // Typography
 // Font, line-height, and elements colors.
 // --------------------------------------------------
@@ -116,12 +121,13 @@ $line-height-code-block   = 1.6; // Can't be less than 1.3;
 
 // Z-index master list
 // --------------------------------------------------
-$zindex-0       = 1000;
-$zindex-1       = 1100;
-$zindex-2       = 1200;
-$zindex-3       = 1300;
-$zindex-4       = 1400;
-$zindex-5       = 1500;
+// Fix issue https://github.com/next-theme/theme-next-docs/issues/54
+$zindex-0       = 5;
+$zindex-1       = 10;
+$zindex-2       = 20;
+$zindex-3       = 30;
+$zindex-4       = 40;
+$zindex-5       = 50;
 
 
 // Table
@@ -198,19 +204,18 @@ $content-mobile-padding         = 8px;
 // Headband
 // --------------------------------------------------
 $headband-height                = 3px;
-$headband-bg                    = $black-deep;
+$headband-bg                    = var(--theme-color);
 
-
-// Section Header
-// Variables for header section elements.
-// --------------------------------------------------
-$head-bg                        = transparent;
 
 // Site Meta
+// --------------------------------------------------
 $brand-color                    = white;
 $brand-hover-color              = white;
 $brand-color-dark               = $grey-lighter;
 $brand-hover-color-dark         = $grey-lighter;
+$brand-padding                  = 0 40px;
+
+$site-subtitle-margin           = 10px 0;
 
 $font-size-title                = (hexo-config('font.enable') and hexo-config('font.title.size') is a 'unit') ? unit(hexo-config('font.title.size'), em) : 1.375em;
 $font-size-subtitle             = $font-size-smaller;
@@ -265,12 +270,16 @@ $site-state-item-name-color           = inherit;
 $b2t-opacity                  = .8;
 $b2t-opacity-hover            = 1;
 $b2t-position-bottom          = -100px;
-$b2t-position-bottom-on       = 19px;
+$b2t-position-bottom-on       = 30px;
 $b2t-position-right           = 30px;
 $b2t-position-right-mobile    = 20px;
 $b2t-font-size                = 12px;
 $b2t-color                    = white;
 $b2t-bg-color                 = $black-deep;
+
+$sidebar-toggle-inner-size    = 16px;
+$sidebar-toggle-padding       = 5px;
+$sidebar-toggle-size          = $sidebar-toggle-inner-size + $sidebar-toggle-padding * 2;
 
 //  .post-expand .post-eof
 //  In Muse scheme, margin above and below the post separator
@@ -278,6 +287,7 @@ $post-eof-margin-top          = 80px; //  or 160px for more white space;
 $post-eof-margin-bottom       = 60px; //  or 120px for less white space;
 
 $post-card-margin             = 1em 0 0;
+$post-reward-img-width        = 180px;
 
 
 // Note colors

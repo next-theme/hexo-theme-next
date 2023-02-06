@@ -24,25 +24,19 @@
 // Desktop layout styles.
 // ==================================================
 // Post blocks.
-.main-inner > {
-  .sub-menu, .post-block, .tabs-comment, .comments, .pagination {
-    background: var(--content-bg-color);
-    border-radius: $border-radius-inner;
-    box-shadow: $box-shadow-inner;
+.main-inner {
+  .sub-menu, .post-block, .tabs-comment, & > .comments, .comment-position .comments, .pagination {
+    gemini-block();
+  }
 
-    &:not(:first-child):not(.sub-menu) {
-      border-radius: $border-radius;
-      box-shadow: $box-shadow;
-      margin-top: $sidebar-offset;
-
-      +tablet() {
-        margin-top: $content-tablet-padding;
-      }
-
-      +mobile() {
-        margin-top: $content-mobile-padding;
-      }
+  .post-block:not(:first-child) {
+    &:not(:first-child) {
+      gemini-block-not-first();
     }
+  }
+
+  .tabs-comment, & > .comments, .comment-position .comments, .pagination {
+    gemini-block-not-first();
   }
 }
 

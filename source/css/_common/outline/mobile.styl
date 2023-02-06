@@ -5,77 +5,78 @@
 }
 */
 
-+mobile-small() {
-  // For Pisces & Gemini schemes only wider width (remove main blocks in Gemini).
-  .main-inner {
-    padding: initial !important;
-  }
-
-  // For all schemes wider width.
-  .posts-expand {
-    .post-header {
-      margin-bottom: 10px !important;
-    }
-  }
-
-  .post-block {
-    margin-top: initial !important;
-    // Inside posts blocks content padding (default 40px).
-    padding: $content-mobile-padding 18px $content-mobile-padding !important;
-  }
-
-  .post-body {
-    // For headers narrow width.
-    h1, h2, h3, h4, h5, h6 {
-      margin: 10px 0 8px;
+if (hexo-config('mobile_layout_economy')) {
+  +mobile-small() {
+    // For Pisces & Gemini schemes only wider width (remove main blocks in Gemini).
+    .main-inner {
+      padding: initial !important;
     }
 
-    // Rewrite paddings & margins inside tags.
-    .note, .tabs .tab-content .tab-pane {
-      h1, h2, h3, h4, h5, h6 {
-        margin: 0 5px;
+    // For all schemes wider width.
+    .posts-expand {
+      .post-header {
+        margin-bottom: 10px !important;
       }
     }
 
-    // For paragraphs narrow width.
-    > p {
-      margin: 0 0 10px;
+    .post-block {
+      margin-top: initial !important;
+      // Inside posts blocks content padding (default 40px).
+      padding: $content-mobile-padding 18px $content-mobile-padding !important;
     }
 
-    // Rewrite paddings & margins inside tags.
-    .note > p, .tabs .tab-content .tab-pane > p {
-      padding: 0 5px;
-    }
+    .post-body {
+      // For headers narrow width.
+      h1, h2, h3, h4, h5, h6 {
+        margin: 20px 0 8px;
+      }
 
-    img, video {
-      margin-bottom: 10px !important;
-    }
-
-    .note {
-      margin-bottom: 10px !important;
-      padding: 10px !important;
-
-      if (hexo-config('note.icons')) {
-        &:not(.no-icon) {
-          padding-left: 35px !important;
+      // Rewrite paddings & margins inside tags.
+      .note, .tabs .tab-content .tab-pane {
+        h1, h2, h3, h4, h5, h6 {
+          margin: 0 5px;
         }
       }
+
+      // For paragraphs narrow width.
+      > p {
+        margin: 0 0 10px;
+      }
+
+      // Rewrite paddings & margins inside tags.
+      .note > p, .tabs .tab-content .tab-pane > p {
+        padding: 0 5px;
+      }
+
+      img, video {
+        margin-bottom: 10px !important;
+      }
+
+      .note {
+        margin-bottom: 10px !important;
+        padding: 10px !important;
+
+        if (hexo-config('note.icons')) {
+          &:not(.no-icon) {
+            padding-left: 35px !important;
+          }
+        }
+      }
+
+      .tabs .tab-content .tab-pane {
+        padding: 10px 10px 0 !important;
+      }
     }
 
-    .tabs .tab-content .tab-pane {
-      padding: 10px 10px 0 !important;
+    .post-eof {
+      margin: 40px auto 20px !important;
     }
-  }
 
-  .post-eof {
-    margin: 40px auto 20px !important;
-  }
-
-  .pagination {
-    margin-top: 40px;
+    .pagination {
+      margin-top: 40px;
+    }
   }
 }
-
 /*
 // < 413px
 +mobile-smallest() {

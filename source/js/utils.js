@@ -6,14 +6,6 @@ HTMLElement.prototype.wrap = function(wrapper) {
   wrapper.appendChild(this);
 };
 
-// https://caniuse.com/mdn-api_element_classlist_replace
-if (typeof DOMTokenList.prototype.replace !== 'function') {
-  DOMTokenList.prototype.replace = function(remove, add) {
-    this.remove(remove);
-    this.add(add);
-  };
-}
-
 (function() {
   const onPageLoaded = () => document.dispatchEvent(
     new Event('page:loaded', {
@@ -30,41 +22,6 @@ if (typeof DOMTokenList.prototype.replace !== 'function') {
 })();
 
 NexT.utils = {
-
-  /**
-   * Wrap images with fancybox.
-   */
-  wrapImageWithFancyBox: function() {
-    document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(element => {
-      const $image = $(element);
-      const imageLink = $image.attr('data-src') || $image.attr('src');
-      const $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
-      if ($image.is('.post-gallery img')) {
-        $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
-      } else if ($image.is('.group-picture img')) {
-        $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
-      } else {
-        $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
-      }
-
-      const imageTitle = $image.attr('title') || $image.attr('alt');
-      if (imageTitle) {
-        $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
-        // Make sure img title tag will show correctly in fancybox
-        $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
-      }
-    });
-
-    $.fancybox.defaults.hash = false;
-    $('.fancybox').fancybox({
-      loop   : true,
-      helpers: {
-        overlay: {
-          locked: false
-        }
-      }
-    });
-  },
 
   registerExtURL: function() {
     document.querySelectorAll('span.exturl').forEach(element => {
@@ -94,8 +51,10 @@ NexT.utils = {
           span.classList.replace(name, `hljs-${name}`);
         });
       });
-      if (!CONFIG.copycode) return;
-      element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
+      if (!CONFIG.copycode.enable) return;
+      let target = element;
+      if (CONFIG.copycode.style !== 'mac') target = element.querySelector('.table-container') || element;
+      target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', () => {
         const lines = element.querySelector('.code') || element.querySelector('code');
@@ -166,7 +125,7 @@ NexT.utils = {
   updateActiveNav: function() {
     if (!Array.isArray(NexT.utils.sections)) return;
     let index = NexT.utils.sections.findIndex(element => {
-      return element && element.getBoundingClientRect().top > 0;
+      return element && element.getBoundingClientRect().top > 10;
     });
     if (index === -1) {
       index = NexT.utils.sections.length - 1;
@@ -192,7 +151,7 @@ NexT.utils = {
           readingProgressBar.style.setProperty('--progress', scrollPercent.toFixed(2) + '%');
         }
       }
-      NexT.utils.updateActiveNav();
+      this.updateActiveNav();
     }, { passive: true });
 
     backToTop && backToTop.addEventListener('click', () => {
@@ -215,8 +174,20 @@ NexT.utils = {
         event.preventDefault();
         // Prevent selected tab to select again.
         if (element.classList.contains('active')) return;
+        const nav = element.parentNode;
+        // Get the height of `tab-pane` which is activated before, and set it as the height of `tab-content` with extra margin / paddings.
+        const tabContent = nav.nextElementSibling;
+        tabContent.style.overflow = 'hidden';
+        tabContent.style.transition = 'height 1s';
+        // Comment system selection tab does not contain .active class.
+        const activeTab = tabContent.querySelector('.active') || tabContent.firstElementChild;
+        // Hight might be `auto`.
+        const prevHeight = parseInt(window.getComputedStyle(activeTab).height.replace('px', ''), 10) || 0;
+        const paddingTop = parseInt(window.getComputedStyle(activeTab).paddingTop.replace('px', ''), 10);
+        const marginBottom = parseInt(window.getComputedStyle(activeTab.firstElementChild).marginBottom.replace('px', ''), 10);
+        tabContent.style.height = prevHeight + paddingTop + marginBottom + 'px';
         // Add & Remove active class on `nav-tabs` & `tab-content`.
-        [...element.parentNode.children].forEach(target => {
+        [...nav.children].forEach(target => {
           target.classList.toggle('active', target === element);
         });
         // https://stackoverflow.com/questions/20306204/using-queryselector-with-ids-that-are-numbers
@@ -228,6 +199,33 @@ NexT.utils = {
         tActive.dispatchEvent(new Event('tabs:click', {
           bubbles: true
         }));
+        // Get the height of `tab-pane` which is activated now.
+        const hasScrollBar = document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
+        const currHeight = parseInt(window.getComputedStyle(tabContent.querySelector('.active')).height.replace('px', ''), 10);
+        // Reset the height of `tab-content` and see the animation.
+        tabContent.style.height = currHeight + paddingTop + marginBottom + 'px';
+        // Change the height of `tab-content` may cause scrollbar show / disappear, which may result in the change of the `tab-pane`'s height
+        setTimeout(() => {
+          if ((document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)) !== hasScrollBar) {
+            tabContent.style.transition = 'height 0.3s linear';
+            // After the animation, we need reset the height of `tab-content` again.
+            const currHeightAfterScrollBarChange = parseInt(window.getComputedStyle(tabContent.querySelector('.active')).height.replace('px', ''), 10);
+            tabContent.style.height = currHeightAfterScrollBarChange + paddingTop + marginBottom + 'px';
+          }
+          // Remove all the inline styles, and let the height be adaptive again.
+          setTimeout(() => {
+            tabContent.style.transition = '';
+            tabContent.style.height = '';
+          }, 250);
+        }, 1000);
+        if (!CONFIG.stickytabs) return;
+        const offset = nav.parentNode.getBoundingClientRect().top + window.scrollY + 10;
+        window.anime({
+          targets  : document.scrollingElement,
+          duration : 500,
+          easing   : 'linear',
+          scrollTop: offset
+        });
       });
     });
 
@@ -279,7 +277,10 @@ NexT.utils = {
           targets  : document.scrollingElement,
           duration : 500,
           easing   : 'linear',
-          scrollTop: offset + 10
+          scrollTop: offset,
+          complete : () => {
+            history.pushState(null, document.title, element.href);
+          }
         });
       });
       return target;
@@ -328,7 +329,8 @@ NexT.utils = {
     }
 
     // Scrolling to center active TOC element if TOC content is taller then viewport.
-    const tocElement = document.querySelector('.sidebar-panel-container');
+    const tocElement = document.querySelector(CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini' ? '.sidebar-panel-container' : '.sidebar');
+    if (!document.querySelector('.sidebar-toc-active')) return;
     window.anime({
       targets  : tocElement,
       duration : 200,
@@ -337,26 +339,8 @@ NexT.utils = {
     });
   },
 
-  /**
-   * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
-   * Need for Sidebar/TOC inner scrolling if content taller then viewport.
-   */
-  initSidebarDimension: function() {
-    const sidebarNav = document.querySelector('.sidebar-nav');
-    const sidebarb2t = document.querySelector('.sidebar-inner .back-to-top');
-    const sidebarNavHeight = sidebarNav ? sidebarNav.offsetHeight : 0;
-    const sidebarb2tHeight = sidebarb2t ? sidebarb2t.offsetHeight : 0;
-    const sidebarOffset = CONFIG.sidebar.offset || 12;
-    let sidebarSchemePadding = (CONFIG.sidebar.padding * 2) + sidebarNavHeight + sidebarb2tHeight;
-    if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') sidebarSchemePadding += sidebarOffset * 2;
-    // Initialize Sidebar & TOC Height.
-    const sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding + 'px';
-    document.documentElement.style.setProperty('--sidebar-wrapper-height', sidebarWrapperHeight);
-  },
-
   updateSidebarPosition: function() {
-    NexT.utils.initSidebarDimension();
-    if (window.innerWidth < 992 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
+    if (window.innerWidth < 1200 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     const hasTOC = document.querySelector('.post-toc');
     let display = CONFIG.page.sidebar;
@@ -367,6 +351,34 @@ NexT.utils = {
     if (display) {
       window.dispatchEvent(new Event('sidebar:show'));
     }
+  },
+
+  activateSidebarPanel: function(index) {
+    const duration = 200;
+    const sidebar = document.querySelector('.sidebar-inner');
+    const panel = document.querySelector('.sidebar-panel-container');
+    const activeClassName = ['sidebar-toc-active', 'sidebar-overview-active'];
+
+    if (sidebar.classList.contains(activeClassName[index])) return;
+
+    window.anime({
+      duration,
+      targets   : panel,
+      easing    : 'linear',
+      opacity   : 0,
+      translateY: [0, -20],
+      complete  : () => {
+        // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
+        sidebar.classList.replace(activeClassName[1 - index], activeClassName[index]);
+        window.anime({
+          duration,
+          targets   : panel,
+          easing    : 'linear',
+          opacity   : [0, 1],
+          translateY: [-20, 0]
+        });
+      }
+    });
   },
 
   getScript: function(src, options = {}, legacyCondition) {

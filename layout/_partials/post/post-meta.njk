@@ -19,16 +19,14 @@
     </span>
   {%- endif %}
 
-  {%- if theme.post_meta.updated_at.enable %}
-    {%- if not theme.post_meta.updated_at.another_day or date_diff or not theme.post_meta.created_at %}
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">{{ __('post.edited') }}</span>
-        <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{{ date(post.updated) }}</time>
+  {%- if theme.post_meta.updated_at.enable and (not theme.post_meta.updated_at.another_day or date_diff or not theme.post_meta.created_at) %}
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
       </span>
-    {%- endif %}
+      <span class="post-meta-item-text">{{ __('post.edited') }}</span>
+      <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{{ date(post.updated) }}</time>
+    </span>
   {%- endif %}
 
   {%- if post.categories and post.categories.length and theme.post_meta.categories %}
@@ -83,11 +81,11 @@
 
   {{- next_inject('postMeta') }}
 
+  {%- if theme.symbols_count_time.separated_meta and config.symbols_count_time.symbols and config.symbols_count_time.time %}
+    <span class="post-meta-break"></span>
+  {%- endif %}
+
   {%- if config.symbols_count_time.symbols %}
-    {%- if theme.symbols_count_time.separated_meta %}
-      </div>
-      <div class="post-meta">
-    {%- endif %}
     <span class="post-meta-item" title="{{ __('symbols_count_time.count') }}">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>

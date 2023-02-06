@@ -11,9 +11,12 @@ hexo.extend.filter.register('before_generate', () => {
   require('./lib/injects')(hexo);
   // Highlight
   require('./lib/highlight')(hexo);
+  // Menu and sub menu
+  require('./lib/navigation')(hexo);
 }, 0);
 
 hexo.on('ready', () => {
+  if (!/^(g|s)/.test(hexo.env.cmd) || process.argv.includes('--next-disable-banner')) return;
   const { version } = require('../../package.json');
   hexo.log.info(`==================================
   ███╗   ██╗███████╗██╗  ██╗████████╗

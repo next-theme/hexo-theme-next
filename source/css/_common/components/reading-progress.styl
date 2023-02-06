@@ -1,25 +1,27 @@
-.reading-progress-bar {
-  --progress: 0;
-  background: unquote(hexo-config('reading_progress.color'));
-  height: unquote(hexo-config('reading_progress.height'));
-  position: fixed;
-  z-index: $zindex-5;
+if (hexo-config('reading_progress.enable')) {
+  .reading-progress-bar {
+    --progress: 0;
+    background: convert(hexo-config('reading_progress.color'));
+    height: convert(hexo-config('reading_progress.height'));
+    position: fixed;
+    z-index: $zindex-5;
 
-  if (hexo-config('reading_progress.reversed')) {
-    width: calc(100% - var(--progress));
-  } else {
-    width: var(--progress);
-  }
+    if (hexo-config('reading_progress.reversed')) {
+      width: calc(100% - var(--progress));
+    } else {
+      width: var(--progress);
+    }
 
-  if (hexo-config('reading_progress.start_at') == 'right') {
-    right: 0;
-  } else {
-    left: 0;
-  }
+    if (hexo-config('reading_progress.start_at') == 'right') {
+      right: 0;
+    } else {
+      left: 0;
+    }
 
-  if (hexo-config('reading_progress.position') == 'bottom') {
-    bottom: 0;
-  } else {
-    top: 0;
+    if (hexo-config('reading_progress.position') == 'bottom') {
+      bottom: 0;
+    } else {
+      top: 0;
+    }
   }
 }

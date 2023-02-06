@@ -1,6 +1,6 @@
 'use strict';
 
-const merge = require('hexo-util').deepMerge || require('lodash/merge');
+const { deepMerge } = require('hexo-util');
 
 module.exports = hexo => {
   const data = hexo.locals.get('data');
@@ -23,7 +23,6 @@ module.exports = hexo => {
     warning('caching', '`relative_link` option in Hexo `_config.yml`');
     hexo.config.relative_link = false;
   }
-  hexo.config.meta_generator = false;
 
   // Custom languages support. Introduced in NexT v6.3.0.
   if (data.languages) {
@@ -31,7 +30,7 @@ module.exports = hexo => {
     const { i18n } = hexo.theme;
 
     const mergeLang = lang => {
-      if (data.languages[lang]) i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
+      if (data.languages[lang]) i18n.set(lang, deepMerge(i18n.get([lang]), data.languages[lang]));
     };
 
     if (Array.isArray(language)) {

@@ -2,14 +2,7 @@
   color: $grey-dark;
   padding: $sidebar-padding 10px;
   text-align: center;
-}
-
-.site-overview {
-  max-height: var(--sidebar-wrapper-height);
-}
-
-.site-overview-item:not(:first-child) {
-  margin-top: 10px;
+  flex-column();
 }
 
 .cc-license {
@@ -31,10 +24,8 @@
 @import 'sidebar-author-links';
 @import 'sidebar-button';
 @import 'sidebar-blogroll';
-@import 'sidebar-dimmer';
 @import 'sidebar-nav';
 @import 'sidebar-toggle';
-
-@import 'sidebar-toc' if (hexo-config('toc.enable'));
-
-@import 'site-state' if (hexo-config('site_state'));
+@import 'sidebar-toc';
+@import 'site-state';
+@import 'related-posts';

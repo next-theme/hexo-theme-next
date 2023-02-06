@@ -37,9 +37,10 @@
   }
 }
 
+// Need for Sidebar/TOC inner scrolling if content taller then viewport.
 .sidebar-panel-container {
   display: grid;
-  max-height: var(--sidebar-wrapper-height);
+  flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
   padding-top: 20px;
@@ -89,6 +90,7 @@
 
 .sidebar-overview-active .site-overview-wrap {
   // Flexbox layout makes it possible to reorder the child
-  // elements of .site-overview-item through the `order` CSS property
+  // elements of .site-overview-wrap through the `order` CSS property
   flex-column();
+  gap: 10px;
 }

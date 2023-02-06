@@ -17,7 +17,7 @@
 // elements of .footer-inner through the `order` CSS property
 .footer-inner {
   box-sizing: border-box;
-  text-align: center;
+  text-align: $scheme-text-align;
   flex-column();
   main-container();
 }
@@ -66,7 +66,7 @@
 }
 
 .with-love {
-  color: unquote(hexo-config('footer.icon.color'));
+  color: convert(hexo-config('footer.icon.color'));
   display: inline-block;
   margin: 0 5px;
 
@@ -75,9 +75,11 @@
   }
 }
 
-if (hexo-config('footer.beian.enable') && hexo-config('footer.beian.gongan_icon_url')) {
+if (hexo-config('footer.beian.enable') and hexo-config('footer.beian.gongan_icon_url')) {
   .beian img {
     display: inline-block;
+    margin: 0 3px;
+    vertical-align: middle;
   }
 }
 
