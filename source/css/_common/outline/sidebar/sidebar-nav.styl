@@ -57,7 +57,7 @@
   transform: translateY(-20px);
   transition-delay: 0s;
   transition-duration: var(--deactivate-duration);
-  transition-property: opacity, transform, height, visibility;
+  transition-property: opacity, transform;
   pointer-events: none;
 
   &.site-overview-wrap {
@@ -69,6 +69,8 @@
   }
 }
 
+// These two are the same but if we use the same name
+// it will only run once
 @keyframes deactivate-sidebar-panel {
   from {
     height: var(--inactive-panel-height);
@@ -79,9 +81,11 @@
 }
 
 @keyframes activate-sidebar-panel {
-  // Keep height 0 to avoid affecting the layout.
-  from, to {
-    height: 0;
+  from {
+    height: var(--inactive-panel-height);
+  }
+  to {
+    height: var(--active-panel-height);
   }
 }
 
