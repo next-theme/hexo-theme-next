@@ -37,8 +37,9 @@
   }
 }
 
-// Need for Sidebar/TOC inner scrolling if content taller then viewport.
+// For TOC/Overview scrolling
 .sidebar-panel-container {
+  align-items: start;
   display: grid;
   flex: 1;
   overflow-x: hidden;
@@ -58,6 +59,14 @@
   transition-duration: var(--deactivate-duration);
   transition-property: opacity, transform, height, visibility;
   pointer-events: none;
+
+  &.site-overview-wrap {
+    // Flexbox layout makes it possible to reorder the child
+    // elements of .site-overview-wrap through the `order` CSS property
+    flex-column();
+    gap: 10px;
+    justify-content: flex-start; // TODO: Optimize the duplicate with flex-column()
+  }
 }
 
 @keyframes deactivate-sidebar-panel {
@@ -86,11 +95,4 @@
   transition-delay: var(--deactivate-duration);
   transition-duration: var(--activate-duration);
   pointer-events: auto;
-}
-
-.sidebar-overview-active .site-overview-wrap {
-  // Flexbox layout makes it possible to reorder the child
-  // elements of .site-overview-wrap through the `order` CSS property
-  flex-column();
-  gap: 10px;
 }
