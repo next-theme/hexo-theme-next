@@ -4,8 +4,9 @@ const pjax = new Pjax({
   selectors: [
     'head title',
     'script[type="application/json"]',
-    '.main-inner',
+    // Precede .main-inner to prevent placeholder TOC changes asap
     '.post-toc-wrap',
+    '.main-inner',
     '.languages',
     '.pjax'
   ],
