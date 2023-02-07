@@ -73,8 +73,9 @@
     transform: translateY(-20px);
   }
 
-  // Delay TOC transform transition when switching from TOC to Overview while
-  // deactivating the sidebar nav to prevent the TOC panel from moving too fast
+  // Delay TOC transform transition when switching from TOC to Overview and
+  // deactivating the sidebar nav at the same time, to prevent the TOC panel
+  // from moving too fast
   // https://github.com/next-theme/hexo-theme-next/pull/323#issuecomment-1420780965
   .sidebar-overview-active:not(.sidebar-nav-active) &.post-toc-wrap {
     transition-delay: 0s, var(--switch-duration);
