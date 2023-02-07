@@ -367,10 +367,7 @@ NexT.utils = {
     if (index === 0) {
       const nav = tocPanel.querySelector('.nav');
       if (nav) {
-        const heightStr = nav.style.getPropertyValue('--height');
-        if (heightStr !== '') {
-          postTOCHeight = parseInt(heightStr, 10);
-        }
+        postTOCHeight = parseInt(nav.style.getPropertyValue('--height'), 10);
       }
     }
     const panelHeights = [
