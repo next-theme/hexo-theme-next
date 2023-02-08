@@ -317,12 +317,10 @@ NexT.utils = {
     while (nav.contains(activateEle)) {
       if (activateEle.classList.contains('nav-item')) {
         activateEle.classList.add('active');
-      } else if (activateEle.classList.contains('nav-child') || activateEle === nav) {
-        // Defined in CSS. The last nav-item in a list has a margin-bottom of 5px.
-        const extraHeight = 5;
-
+      } else { // .nav-child or .nav
         // scrollHeight isn't reliable for transitioning child items.
-        navChildHeight += (singleHeight * activateEle.childElementCount) + extraHeight;
+        // The last nav-item in a list has a margin-bottom of 5px.
+        navChildHeight += (singleHeight * activateEle.childElementCount) + 5;
         activateEle.style.setProperty('--height', `${navChildHeight}px`);
       }
       activateEle = activateEle.parentElement;
