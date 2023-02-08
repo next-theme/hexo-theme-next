@@ -267,7 +267,7 @@ NexT.utils = {
   },
 
   registerSidebarTOC: function() {
-    this.sections = [...document.querySelectorAll('.post-toc li a.nav-link')].map(element => {
+    this.sections = [...document.querySelectorAll('.post-toc:not(.placeholder-toc) li a.nav-link')].map(element => {
       const target = document.getElementById(decodeURI(element.getAttribute('href')).replace('#', ''));
       // TOC item animation navigate.
       element.addEventListener('click', event => {
@@ -342,7 +342,7 @@ NexT.utils = {
   updateSidebarPosition: function() {
     if (window.innerWidth < 1200 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
-    const hasTOC = document.querySelector('.post-toc');
+    const hasTOC = document.querySelector('.post-toc:not(.placeholder-toc)');
     let display = CONFIG.page.sidebar;
     if (typeof display !== 'boolean') {
       // There's no definition sidebar in the page front-matter.
