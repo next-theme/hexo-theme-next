@@ -17,6 +17,8 @@
     cursor: pointer;
     display: inline-block;
     font-size: $font-size-small;
+    transition: $transition-ease;
+    transition-property: border-bottom-color, color;
 
     &.sidebar-nav-overview {
       margin-left: 10px;
@@ -31,6 +33,7 @@
 .sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview {
   border-bottom-color: $sidebar-highlight;
   color: $sidebar-highlight;
+  transition-delay: $transition-duration;
 
   &:hover {
     color: $sidebar-highlight;
