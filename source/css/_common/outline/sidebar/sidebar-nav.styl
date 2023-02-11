@@ -53,15 +53,14 @@
 }
 
 .sidebar-panel {
-  --switch-duration: .3s;
-  animation: var(--switch-duration) deactivate-sidebar-panel;
+  animation: $transition-duration deactivate-sidebar-panel;
   grid-area: 1 / 1;
   height: 0;
   opacity: 0;
   overflow: hidden;
   transform: translateY(0);
   transition-delay: 0s;
-  transition-duration: var(--switch-duration);
+  transition-duration: $transition-duration;
   transition-property: opacity, transform;
   pointer-events: none;
 
@@ -78,7 +77,7 @@
   // from moving too fast
   // https://github.com/next-theme/hexo-theme-next/pull/323#issuecomment-1420780965
   .sidebar-overview-active:not(.sidebar-nav-active) &.post-toc-wrap {
-    transition-delay: 0s, var(--switch-duration);
+    transition-delay: 0s, $transition-duration;
   }
 
   .sidebar-overview-active &.site-overview-wrap,
@@ -87,8 +86,8 @@
     height: auto;
     opacity: 1;
     transform: translateY(0);
-    transition-delay: var(--switch-duration);
-    transition-duration: var(--switch-duration);
+    transition-delay: $transition-duration;
+    transition-duration: $transition-duration;
     pointer-events: unset;
   }
 
