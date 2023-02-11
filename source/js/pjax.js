@@ -42,8 +42,6 @@ document.addEventListener('pjax:success', () => {
       .bootstrap();
   }
   if (CONFIG.sidebar.display !== 'remove') {
-    const sidebarNav = document.querySelector('.sidebar-nav');
-    sidebarNav.style.setProperty('--scroll-height', `${sidebarNav.scrollHeight}px`);
     const hasTOC = document.querySelector('.post-toc:not(.placeholder-toc)');
     document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
     NexT.utils.activateSidebarPanel(hasTOC ? 0 : 1);

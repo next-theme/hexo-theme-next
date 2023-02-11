@@ -1,6 +1,6 @@
 // Sidebar Navigation
 .sidebar-nav {
-  --scroll-height: auto;
+  font-size: $font-size-small;
   height: 0;
   margin: 0;
   overflow: hidden;
@@ -8,7 +8,7 @@
   transition: height $transition-ease;
 
   .sidebar-nav-active & {
-    height: var(--scroll-height);
+    height: "calc(%sem + 1px)" % $line-height-base;
   }
 
   li {
@@ -16,7 +16,6 @@
     color: $sidebar-nav-color;
     cursor: pointer;
     display: inline-block;
-    font-size: $font-size-small;
     transition: $transition-ease;
     transition-property: border-bottom-color, color;
 
