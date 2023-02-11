@@ -102,22 +102,20 @@
   }
 }
 
-// These two are the same but if we use the same name
-// it will only run once
 @keyframes deactivate-sidebar-panel {
   from {
-    height: var(--inactive-panel-height);
+    height: var(--inactive-panel-height, 0);
   }
   to {
-    height: var(--active-panel-height);
+    height: var(--active-panel-height, 0);
   }
 }
 
 @keyframes activate-sidebar-panel {
   from {
-    height: var(--inactive-panel-height);
+    height: var(--inactive-panel-height, auto);
   }
   to {
-    height: var(--active-panel-height);
+    height: var(--active-panel-height, auto);
   }
 }
