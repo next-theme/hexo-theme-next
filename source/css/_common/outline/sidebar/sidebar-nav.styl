@@ -62,9 +62,10 @@
   overflow: hidden;
   transform: translateY(0);
   transition: $transition-ease;
-  transition-delay: 0s;
-  transition-property: opacity, transform;
+  transition-delay: 0s, 0s, $transition-duration;
+  transition-property: opacity, transform, visibility;
   pointer-events: none;
+  visibility: hidden;
 
   // Apply transform to both panels when sidebar nav is active,
   // to the TOC panel when switching between Overview and TOC regardless of
@@ -79,7 +80,7 @@
   // from moving too fast
   // https://github.com/next-theme/hexo-theme-next/pull/323#issuecomment-1420780965
   .sidebar-overview-active:not(.sidebar-nav-active) &.post-toc-wrap {
-    transition-delay: 0s, $transition-duration;
+    transition-delay: 0s, $transition-duration, $transition-duration;
   }
 
   .sidebar-overview-active &.site-overview-wrap,
@@ -88,8 +89,9 @@
     height: auto;
     opacity: 1;
     transform: translateY(0);
-    transition-delay: $transition-duration;
+    transition-delay: $transition-duration, $transition-duration, 0s;
     pointer-events: unset;
+    visibility: unset;
   }
 
   &.site-overview-wrap {
