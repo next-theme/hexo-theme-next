@@ -5,10 +5,17 @@
   margin: 0;
   overflow: hidden;
   padding-left: 0;
-  transition: height $transition-ease;
+  pointer-events: none;
+  transition: $transition-ease;
+  transition-delay: 0s, $transition-duration;
+  transition-property: height, visibility;
+  visibility: hidden;
 
   .sidebar-nav-active & {
     height: "calc(%sem + 1px)" % $line-height-base;
+    pointer-events: unset;
+    transition-delay: 0s;
+    visibility: unset;
   }
 
   li {
