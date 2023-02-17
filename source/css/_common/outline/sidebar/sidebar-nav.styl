@@ -67,11 +67,11 @@
   height: 0;
   opacity: 0;
   overflow: hidden;
+  pointer-events: none;
   transform: translateY(0);
   transition: $transition-ease;
   transition-delay: 0s, 0s, $transition-duration;
   transition-property: opacity, transform, visibility;
-  pointer-events: none;
   visibility: hidden;
 
   // Apply transform to both panels when sidebar nav is active,
@@ -95,9 +95,9 @@
     animation-name: activate-sidebar-panel;
     height: auto;
     opacity: 1;
+    pointer-events: unset;
     transform: translateY(0);
     transition-delay: $transition-duration, $transition-duration, 0s;
-    pointer-events: unset;
     visibility: unset;
   }
 
