@@ -38,13 +38,17 @@ if (hexo-config('toc.enable')) {
           height: 0;
           opacity: 0;
           overflow: hidden;
-          transition-property: height, opacity;
+          transition-delay: 0s, 0s, $transition-duration;
+          transition-property: height, opacity, visibility;
           transition: $transition-ease;
+          visibility: hidden;
         }
 
         .active > .nav-child {
           height: var(--height, auto);
           opacity: 1;
+          transition-delay: 0s;
+          visibility: unset;
         }
       }
 
