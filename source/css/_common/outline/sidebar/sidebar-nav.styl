@@ -7,14 +7,12 @@
   padding-left: 0;
   pointer-events: none;
   transition: $transition-ease;
-  transition-delay: 0s, $transition-duration;
   transition-property: height, visibility;
   visibility: hidden;
 
   .sidebar-nav-active & {
     height: "calc(%sem + 1px)" % $line-height-base;
     pointer-events: unset;
-    transition-delay: 0s;
     visibility: unset;
   }
 
@@ -70,7 +68,7 @@
   pointer-events: none;
   transform: translateY(0);
   transition: $transition-ease;
-  transition-delay: 0s, 0s, $transition-duration;
+  transition-delay: 0s;
   transition-property: opacity, transform, visibility;
   visibility: hidden;
 
@@ -87,7 +85,7 @@
   // from moving too fast
   // https://github.com/next-theme/hexo-theme-next/pull/323#issuecomment-1420780965
   .sidebar-overview-active:not(.sidebar-nav-active) &.post-toc-wrap {
-    transition-delay: 0s, $transition-duration, $transition-duration;
+    transition-delay: 0s, $transition-duration, 0s;
   }
 
   .sidebar-overview-active &.site-overview-wrap,
@@ -97,6 +95,8 @@
     opacity: 1;
     pointer-events: unset;
     transform: translateY(0);
+    // The visibility delay is intentionally set to 0s to accommodate
+    // the visibility change on initial page load.
     transition-delay: $transition-duration, $transition-duration, 0s;
     visibility: unset;
   }
