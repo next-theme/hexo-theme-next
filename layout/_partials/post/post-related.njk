@@ -1,20 +1,18 @@
-{%- if page.related_posts and page.related_posts.length > 0 %}
-  <div class="popular-posts-header">{{ theme.related_posts.title or __('post.related_posts') }}</div>
+  <div class="links-of-blogroll-title">
+    {%- if theme.related_posts.icon %}<i class="{{ theme.related_posts.icon }} fa-fw"></i>{% endif %}
+    {{ __('post.related_posts') }}
+  </div>
   <ul class="popular-posts">
   {%- for path in page.related_posts %}
     {%- set popular_post = site.posts.findOne({ path: path }) %}
     <li class="popular-posts-item">
+      <a class="popular-posts-link" href="{{ url_for(popular_post.path) }}" rel="bookmark">
       {%- if popular_post.date %}
-        <div class="popular-posts-date">{{ date(popular_post.date) }}</div>
+        <time class="popular-posts-time">{{ date(popular_post.date) }}</time>
+        <br>
       {%- endif %}
-      {%- if popular_post.img %}
-        <div class="popular-posts-img"><img src="{{ popular_post.img }}" alt="{{ popular_post.title }}"></div>
-      {%- endif %}
-      <div class="popular-posts-title"><a href="{{ popular_post.path }}" rel="bookmark">{{ popular_post.title }}</a></div>
-      {%- if popular_post.excerpt and popular_post.excerpt != '' %}
-        <div class="popular-posts-excerpt"><p>{{ popular_post.excerpt }}</p></div>
-      {%- endif %}
+      {{ popular_post.title }}
+      </a>
     </li>
   {%- endfor %}
   </ul>
-{%- endif %}

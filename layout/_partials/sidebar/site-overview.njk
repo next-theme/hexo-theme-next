@@ -1,4 +1,4 @@
-<div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   {%- if theme.avatar.url %}
     <img class="site-author-image" itemprop="image" alt="{{ author }}"
       src="{{ url_for(theme.avatar.url) }}">
@@ -8,7 +8,7 @@
 </div>
 
 {%- if theme.site_state %}
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
     {%- if config.archive_dir != '/' and site.posts.length > 0 %}
       <div class="site-state-item site-state-posts">
@@ -52,47 +52,30 @@
 {%- endif %}
 
 {%- if theme.chat.enable and (theme.chatra.enable or theme.tidio.enable or theme.gitter.enable) %}
-  <div class="sidebar-button site-overview-item animated">
+  <div class="sidebar-button animated">
     <button{% if theme.gitter.enable %} class="js-gitter-toggle-chat-button"{% endif %}>
       {%- if theme.chat.icon %}<i class="{{ theme.chat.icon }}"></i>{% endif %}
-      {{ theme.chat.text }}
+      {{ __('widget.chat') }}
     </button>
   </div>
 {%- endif %}
 
 {%- if theme.social %}
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author animated">
     {%- for name, link in theme.social %}
       <span class="links-of-author-item">
         {%- set sidebarURL = link.split('||')[0] | trim %}
         {%- set sidebarIcon = '<i class="' + link.split('||')[1] | trim + ' fa-fw"></i>' if theme.social_icons.enable and link.split('||')[1] else '' %}
         {%- set sidebarText = '' if (theme.social_icons.enable and theme.social_icons.icons_only) else name %}
-        {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' → ' + sidebarURL}) }}
+        {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' → ' + sidebarURL, rel: 'noopener me'}) }}
       </span>
     {%- endfor %}
   </div>
 {%- endif %}
 
 {%- if theme.creative_commons.license and theme.creative_commons.sidebar %}
-  <div class="cc-license site-overview-item animated" itemprop="license">
+  <div class="cc-license animated" itemprop="license">
     {%- set ccImage = '<img src="' + theme.vendors.creative_commons.url + '" alt="Creative Commons">' %}
     {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
-  </div>
-{%- endif %}
-
-{# Blogroll #}
-{%- if theme.links %}
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title">
-      {%- if theme.links_settings.icon %}<i class="{{ theme.links_settings.icon }} fa-fw"></i>{% endif %}
-      {{ theme.links_settings.title }}
-    </div>
-    <ul class="links-of-blogroll-list">
-      {%- for blogrollText, blogrollURL in theme.links %}
-        <li class="links-of-blogroll-item">
-          {{ next_url(blogrollURL, blogrollText, {title: blogrollURL}) }}
-        </li>
-      {%- endfor %}
-    </ul>
   </div>
 {%- endif %}

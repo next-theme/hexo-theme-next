@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: 本站概要
   toc: 文章目錄
+  links: Links
 post:
   posted: 發表於
   edited: 更新於
@@ -41,6 +42,9 @@ footer:
   powered: "由 %s 強力驅動"
   total_views: 總瀏覽次數
   total_visitors: 訪客總數
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: 沒有標籤
@@ -81,6 +85,7 @@ reward:
   alipay: 支付寶
   paypal: 貝寶
   bitcoin: 比特幣
+  comment: Buy me a coffee
 follow_me:
   welcome: 歡迎關注我的其它發布渠道
 accessibility:

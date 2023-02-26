@@ -1,12 +1,5 @@
 {% macro render(display_toc) %}
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
   <aside class="sidebar">
-    {%- set display_toc = page.toc.enable and display_toc %}
     {%- if display_toc %}
       {%- set toc = toc(page.content, {class: 'nav', list_number: page.toc.number, max_depth: page.toc.max_depth}) %}
       {%- set display_toc = toc.length > 1 and display_toc %}
@@ -45,6 +38,40 @@
         </div>
       {%- endif %}
     </div>
+
+    {# Blogroll #}
+    {%- if theme.links %}
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title">
+          {%- if theme.links_settings.icon %}<i class="{{ theme.links_settings.icon }} fa-fw"></i>{% endif %}
+          {{ __('sidebar.links') }}
+        </div>
+        <ul class="links-of-blogroll-list">
+          {%- for blogrollText, blogrollURL in theme.links %}
+            <li class="links-of-blogroll-item">
+              {{ next_url(blogrollURL, blogrollText, {title: blogrollURL}) }}
+            </li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    {%- endif %}
+
+    {%- if theme.related_posts.enable %}
+      {%- if theme.pjax %}
+        <div class="pjax">
+      {%- endif %}
+      {%- if page.related_posts and page.related_posts.length > 0 %}
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+            {{ partial('_partials/post/post-related.njk') }}
+          </div>
+        </div>
+      {%- endif %}
+      {%- if theme.pjax %}
+        </div>
+      {%- endif %}
+    {%- endif %}
   </aside>
-  <div class="sidebar-dimmer"></div>
 {% endmacro %}

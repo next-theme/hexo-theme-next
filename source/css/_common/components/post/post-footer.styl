@@ -21,14 +21,26 @@
 if (hexo-config('creative_commons.post')) {
   .post-copyright ul {
     list-style: none;
+    overflow: hidden;
     padding: .5em 1em;
+    position: relative;
     post-card();
+
+    &::after {
+      content: '\f25e';
+      font-family: 'Font Awesome 6 Brands';
+      font-size: 200px;
+      opacity: .1;
+      position: absolute;
+      right: -50px;
+      top: -150px;
+    }
   }
 }
 
 .post-tags {
   margin-top: 40px;
-  text-align: center;
+  text-align: $scheme-text-align;
 
   a {
     display: inline-block;

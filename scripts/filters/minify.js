@@ -149,8 +149,4 @@ hexo.extend.filter.register('after_generate', () => {
   if (!theme.quicklink.enable) {
     hexo.route.remove('js/third-party/quicklink.js');
   }
-
-  if (!theme.rating.enable) {
-    hexo.route.remove('js/third-party/rating.js');
-  }
 });

@@ -14,7 +14,7 @@ document.addEventListener('page:loaded', () => {
         identifier: CONFIG.page.path,
         title     : CONFIG.page.title
       });
-      window.dsqjs.render(document.querySelector('.disqusjs'));
+      window.dsqjs.render(document.querySelector('.disqusjs-container'));
     });
 });
 

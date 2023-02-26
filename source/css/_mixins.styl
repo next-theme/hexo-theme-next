@@ -103,13 +103,17 @@ font-family-icons($icon = '') {
   if ($icon) {
     content: $icon;
   }
-  font-family: 'Font Awesome 5 Free';
+  font-family: 'Font Awesome 6 Free';
   font-weight: 900;
 }
 
 main-container() {
   margin: 0 auto;
   width: $content-desktop;
+
+  +mobile() {
+    width: auto;
+  }
 
   +desktop-large() {
     width: $content-desktop-large;
@@ -162,26 +166,26 @@ round-icon($diameter) {
 
 toggle-arrow($position) {
   if ($position == 'right') {
-    .toggle-line:first-child {
+    :first-child {
       top: 2px;
       transform: rotate(-45deg);
       width: 50%;
     }
 
-    .toggle-line:last-child {
+    :last-child {
       top: -2px;
       transform: rotate(45deg);
       width: 50%;
     }
   } else {
-    .toggle-line:first-child {
+    :first-child {
       left: 50%;
       top: 2px;
       transform: rotate(45deg);
       width: 50%;
     }
 
-    .toggle-line:last-child {
+    :last-child {
       left: 50%;
       top: -2px;
       transform: rotate(-45deg);
@@ -191,28 +195,28 @@ toggle-arrow($position) {
 }
 
 toggle-close($position) {
-  .toggle-line:nth-child(2) {
+  :nth-child(2) {
     opacity: 0;
   }
 
   if ($position == 'right') {
-    .toggle-line:first-child {
-      top: 5px;
+    :first-child {
+      top: 6px;
       transform: rotate(-45deg);
     }
 
-    .toggle-line:last-child {
-      top: -5px;
+    :last-child {
+      top: -6px;
       transform: rotate(45deg);
     }
   } else {
-    .toggle-line:first-child {
-      top: 5px;
+    :first-child {
+      top: 6px;
       transform: rotate(45deg);
     }
 
-    .toggle-line:last-child {
-      top: -5px;
+    :last-child {
+      top: -6px;
       transform: rotate(-45deg);
     }
   }
@@ -243,5 +247,25 @@ button($color) {
   &:hover {
     background: $color;
     color: white;
+  }
+}
+
+gemini-block() {
+  background: var(--content-bg-color);
+  border-radius: $border-radius-inner;
+  box-shadow: $box-shadow-inner;
+}
+
+gemini-block-not-first() {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  margin-top: $sidebar-offset;
+
+  +tablet() {
+    margin-top: $content-tablet-padding;
+  }
+
+  +mobile() {
+    margin-top: $content-mobile-padding;
   }
 }

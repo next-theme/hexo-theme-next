@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: Огляд
   toc: Зміст
+  links: Links
 post:
   posted: Опубліковано
   edited: Змінено
@@ -41,6 +42,9 @@ footer:
   powered: "Генератор — %s"
   total_views: Всього переглядів
   total_visitors: Всього відвідувачів
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: Немає тегів.
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 follow_me:
   welcome: Мої інші видавничі канали
 accessibility:

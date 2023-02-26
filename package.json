@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-next",
-  "version": "8.13.1",
+  "version": "8.14.2",
   "description": "Elegant and powerful theme for Hexo.",
   "main": "package.json",
   "files": [
@@ -15,7 +15,7 @@
   "scripts": {
     "eslint": "eslint scripts/ source/js test/",
     "prepare": "node .githooks/install.js",
-    "stylint": "stylint source/css/",
+    "stylint": "stylelint source/css/ --ip source/css/_common/scaffolding/highlight/index.styl",
     "test": "mocha test/index.js",
     "test-cov": "c8 npm test"
   },
@@ -34,12 +34,13 @@
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.3",
     "c8": "7.12.0",
-    "chai": "4.3.6",
-    "eslint": "8.24.0",
+    "chai": "4.3.7",
+    "eslint": "8.33.0",
     "hexo": "6.3.0",
-    "hexo-renderer-marked": "5.0.0",
+    "hexo-renderer-marked": "6.0.0",
     "js-yaml": "4.1.0",
-    "mocha": "10.0.0",
-    "stylint": "2.0.0"
+    "mocha": "10.2.0",
+    "stylelint": "14.16.1",
+    "stylelint-stylus": "0.17.1"
   }
 }

@@ -98,10 +98,6 @@
     {### END POST BODY ###}
     {#####################}
 
-    {%- if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-      {{ partial('_partials/post/post-related.njk') }}
-    {%- endif %}
-
     <footer class="post-footer">
       {%- if is_index %}
         <div class="post-eof"></div>
@@ -129,7 +125,7 @@
           </div>
         {%- endif %}
 
-        {{ partial('_partials/post/post-footer.njk', {}, {cache: theme.cache.enable}) }}
+        {{ partial('_partials/post/post-share.njk', {}, {cache: theme.cache.enable}) }}
 
         {%- if theme.post_navigation and (post.prev or post.next) %}
           {%- set prev = post.prev if theme.post_navigation === 'right' else post.next %}

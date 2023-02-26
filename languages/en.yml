@@ -20,6 +20,7 @@ menu:
 sidebar:
   overview: Overview
   toc: Table of Contents
+  links: Links
 
 post:
   posted: Posted on
@@ -45,6 +46,10 @@ footer:
   powered: "Powered by %s"
   total_views: Total Views
   total_visitors: Total Visitors
+
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 
 counter:
   tag_cloud:
@@ -94,6 +99,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 
 follow_me:
   welcome: Welcome to my other publishing channels
@@ -106,8 +112,8 @@ accessibility:
   select_lang: Select language
 
 symbols_count_time:
-  count: Symbols count in article
-  count_total: Symbols count total
+  count: Word count in article
+  count_total: Word count total
   time: Reading time
   time_total: Reading time total
   time_minutes: mins.

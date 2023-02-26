@@ -1,0 +1,31 @@
+if (hexo-config('related_posts.enable')) {
+  .sidebar-post-related {
+    font-size: $font-size-smaller;
+    padding: $sidebar-padding 0 0 0;
+  }
+
+  .popular-posts {
+    margin: 0;
+    padding: 1em 0;
+    text-align: left;
+
+    .popular-posts-item {
+      display: block;
+
+      .popular-posts-link {
+        border-bottom: 0;
+        display: block;
+        padding: 5px 20px;
+        transition: background .2s ease-in-out;
+
+        &:hover {
+          background: var(--menu-item-bg-color);
+        }
+      }
+
+      .popular-posts-time {
+        color: $site-state-item-name-color;
+      }
+    }
+  }
+}

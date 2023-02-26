@@ -39,14 +39,12 @@ if (hexo-config('note.style') != 'disabled') {
       padding-top: 0;
     }
 
-    p, ul, ol, table, pre, blockquote, img {
-      &:first-child {
-        margin-top: 0;
-      }
+    :first-child {
+      margin-top: 0;
+    }
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+    :last-child {
+      margin-bottom: 0;
     }
 
     if ($note-icons) {

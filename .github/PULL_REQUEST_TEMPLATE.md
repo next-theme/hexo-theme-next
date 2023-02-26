@@ -1,7 +1,7 @@
 <!-- ATTENTION!
 1. Please write pull request readme in English, thanks!
 
-2. Always remember that NexT includes 4 schemes. And if on one of them works fine after the changes, on another scheme this changes can be broken. Muse and Mist have similar structure, but Pisces is very difference from them. Gemini is a mirror of Pisces with some styles and layouts remakes. So, please make the tests at least on two schemes (Muse or Mist and Pisces or Gemini).
+2. NexT includes 4 schemes: Muse and Mist have similar structure, but Pisces and Gemini are very different from them. It is possible that one scheme works fine after the changes, but another scheme is broken. Please make the tests in different schemes to make sure the changes are compatible with all schemes.
 
 3. In addition, you need to confirm that the changes made by this PR are compatible with PJAX and Dark Mode.
 -->
@@ -10,9 +10,7 @@
 <!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
 - [ ] The commit message follows [guidelines for NexT](https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
-- [ ] Tests for the changes was maked (for bug fixes / features).
-   - [ ] Muse | Mist have been tested.
-   - [ ] Pisces | Gemini have been tested.
+- [ ] The changes have been tested (for bug fixes / features).
 - [ ] [Docs](https://github.com/next-theme/theme-next-docs/tree/master/source/docs) in [NexT website](https://theme-next.js.org/docs/) have been added / updated (for features).
 <!-- For adding Docs edit needed file here: https://github.com/next-theme/theme-next-docs/tree/master/source/docs and create PR with this changes here: https://github.com/next-theme/theme-next-docs/pulls -->
 
@@ -21,8 +19,9 @@
 
 - [ ] Bugfix.
 - [ ] Feature.
-- [ ] Code style update (formatting, local variables).
-- [ ] Refactoring (no functional changes, no api changes).
+- [ ] Improvement.
+- [ ] Code style update (formatting, linting).
+- [ ] Refactoring (no functional changes).
 - [ ] Documentation.
 - [ ] Translation. <!-- We use Crowdin to manage translations https://crowdin.com/project/hexo-theme-next -->
 - [ ] Other... Please describe:

@@ -1,0 +1,60 @@
+name: Feature Request
+description: Suggest an idea for this project
+#title: ""
+labels: 
+  - Feature Request
+#assignees: ""
+body:
+  - type: markdown
+    id: overall
+    attributes:
+      value: |
+        Please follow this Issue template to provide relevant information, such as source code repository, website URL and screenshots, which will help us investigate.
+        请按照此 Issue 模版提供相关信息，例如源码仓库、网站链接和屏幕截图，这将有助于我们进行调查。
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Issue Checklist
+      description: |
+        (我确认我已经查看了)
+      options:
+        - label: I am using NexT version 8.0 or later.
+          required: true
+        - label: I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Troubleshooting page of NexT](https://theme-next.js.org/docs/troubleshooting.html).
+          required: true
+        - label: I have already searched for current [issues](https://github.com/next-theme/hexo-theme-next/issues), which does not help me.
+          required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: "(预期行为)"
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: |
+        (实际行为)
+        Please provide the following information (请同时提供网站链接和屏幕截图)
+      value: |
+        - Links to demo site with this issue:
+        - Links to repository or source code of the blog:
+        - Screenshots:
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce the behavior
+      description: "(重现步骤)"
+    validations:
+      required: true
+  - type: textarea
+    id: other-info
+    attributes:
+      label: Other Information
+      description: "e.g. Browser, System"
+    validations:
+      required: false

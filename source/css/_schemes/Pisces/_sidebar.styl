@@ -1,22 +1,12 @@
 .sidebar {
-  margin-top: $sidebar-offset;
   // https://caniuse.com/css-sticky
   position: -webkit-sticky;
   position: sticky;
   top: $sidebar-offset;
-  width: $sidebar-desktop;
 
   +tablet-mobile() {
     display: none;
   }
-
-  if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) {
-    visibility: hidden;
-  }
-}
-
-.sidebar-toggle {
-  display: none;
 }
 
 .sidebar-inner {
@@ -25,6 +15,12 @@
   box-shadow: $box-shadow;
   box-sizing: border-box;
   color: var(--text-color);
+  margin-top: $sidebar-offset;
+  max-height: 'calc(100vh - %s)' % unit($sidebar-offset * 2, 'px');
+
+  if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) {
+    visibility: hidden;
+  }
 }
 
 .site-state-item {

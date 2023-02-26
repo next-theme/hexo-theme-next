@@ -171,6 +171,17 @@ NexT.utils = {
         // Prevent selected tab to select again.
         if (element.classList.contains('active')) return;
         const nav = element.parentNode;
+        // Get the height of `tab-pane` which is activated before, and set it as the height of `tab-content` with extra margin / paddings.
+        const tabContent = nav.nextElementSibling;
+        tabContent.style.overflow = 'hidden';
+        tabContent.style.transition = 'height 1s';
+        // Comment system selection tab does not contain .active class.
+        const activeTab = tabContent.querySelector('.active') || tabContent.firstElementChild;
+        // Hight might be `auto`.
+        const prevHeight = parseInt(window.getComputedStyle(activeTab).height.replace('px', ''), 10) || 0;
+        const paddingTop = parseInt(window.getComputedStyle(activeTab).paddingTop.replace('px', ''), 10);
+        const marginBottom = parseInt(window.getComputedStyle(activeTab.firstElementChild).marginBottom.replace('px', ''), 10);
+        tabContent.style.height = prevHeight + paddingTop + marginBottom + 'px';
         // Add & Remove active class on `nav-tabs` & `tab-content`.
         [...nav.children].forEach(target => {
           target.classList.toggle('active', target === element);
@@ -184,6 +195,25 @@ NexT.utils = {
         tActive.dispatchEvent(new Event('tabs:click', {
           bubbles: true
         }));
+        // Get the height of `tab-pane` which is activated now.
+        const hasScrollBar = document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
+        const currHeight = parseInt(window.getComputedStyle(tabContent.querySelector('.active')).height.replace('px', ''), 10);
+        // Reset the height of `tab-content` and see the animation.
+        tabContent.style.height = currHeight + paddingTop + marginBottom + 'px';
+        // Change the height of `tab-content` may cause scrollbar show / disappear, which may result in the change of the `tab-pane`'s height
+        setTimeout(() => {
+          if ((document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)) !== hasScrollBar) {
+            tabContent.style.transition = 'height 0.3s linear';
+            // After the animation, we need reset the height of `tab-content` again.
+            const currHeightAfterScrollBarChange = parseInt(window.getComputedStyle(tabContent.querySelector('.active')).height.replace('px', ''), 10);
+            tabContent.style.height = currHeightAfterScrollBarChange + paddingTop + marginBottom + 'px';
+          }
+          // Remove all the inline styles, and let the height be adaptive again.
+          setTimeout(() => {
+            tabContent.style.transition = '';
+            tabContent.style.height = '';
+          }, 250);
+        }, 1000);
         if (!CONFIG.stickytabs) return;
         const offset = nav.parentNode.getBoundingClientRect().top + window.scrollY + 10;
         window.anime({
@@ -275,8 +305,8 @@ NexT.utils = {
       parent = parent.parentNode;
     }
     // Scrolling to center active TOC element if TOC content is taller then viewport.
-    const tocElement = document.querySelector('.sidebar-panel-container');
-    if (!tocElement.parentNode.classList.contains('sidebar-toc-active')) return;
+    const tocElement = document.querySelector(CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini' ? '.sidebar-panel-container' : '.sidebar');
+    if (!document.querySelector('.sidebar-toc-active')) return;
     window.anime({
       targets  : tocElement,
       duration : 200,
@@ -286,7 +316,7 @@ NexT.utils = {
   },
 
   updateSidebarPosition: function() {
-    if (window.innerWidth < 992 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
+    if (window.innerWidth < 1200 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     const hasTOC = document.querySelector('.post-toc');
     let display = CONFIG.page.sidebar;

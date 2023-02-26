@@ -1,15 +1,8 @@
 .sidebar-inner {
   color: $grey-dark;
-  // Init Sidebar & TOC inner dimensions on all pages and for all schemes.
-  $offset = (($scheme == 'Pisces') or ($scheme == 'Gemini')) ? $sidebar-offset : $sidebar-padding;
-  max-height: 'calc(100vh - %s)' % unit($offset * 2, 'px');
   padding: $sidebar-padding 10px;
   text-align: center;
   flex-column();
-}
-
-.site-overview-item:not(:first-child) {
-  margin-top: 10px;
 }
 
 .cc-license {
@@ -31,8 +24,8 @@
 @import 'sidebar-author-links';
 @import 'sidebar-button';
 @import 'sidebar-blogroll';
-@import 'sidebar-dimmer';
 @import 'sidebar-nav';
 @import 'sidebar-toggle';
 @import 'sidebar-toc';
 @import 'site-state';
+@import 'related-posts';

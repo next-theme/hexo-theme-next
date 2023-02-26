@@ -18,6 +18,7 @@ menu:
 sidebar:
   overview: Panoramica
   toc: Indice
+  links: Links
 post:
   posted: Scritto il
   edited: Edited on
@@ -41,6 +42,9 @@ footer:
   powered: "Powered by %s"
   total_views: Total Views
   total_visitors: Total Visitors
+widget:
+  github: Follow me on GitHub
+  chat: Chat
 counter:
   tag_cloud:
     zero: Nessun tag
@@ -81,6 +85,7 @@ reward:
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
+  comment: Buy me a coffee
 follow_me:
   welcome: Welcome to my other publishing channels
 accessibility:
