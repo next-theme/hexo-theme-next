@@ -5,8 +5,12 @@ if (hexo-config('toc.enable')) {
     ol {
       list-style: none;
       margin: 0;
-      padding: 0 2px 5px 10px;
+      padding: 0 2px 0 10px;
       text-align: left;
+
+      > :last-child {
+        margin-bottom: 5px;
+      }
 
       > ol {
         padding-left: 0;
@@ -28,19 +32,21 @@ if (hexo-config('toc.enable')) {
     }
 
     .nav {
-      .nav-child {
-        display: hexo-config('toc.expand_all') ? block : none;
-      }
+      if (not hexo-config('toc.expand_all')) {
+        .nav-child {
+          --height: 0;
+          height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition-property: height, opacity, visibility;
+          transition: $transition-ease;
+          visibility: hidden;
+        }
 
-      .active > .nav-child {
-        display: block;
-      }
-
-      .active-current > .nav-child {
-        display: block;
-
-        > .nav-item {
-          display: block;
+        .active > .nav-child {
+          height: var(--height, auto);
+          opacity: 1;
+          visibility: unset;
         }
       }
 

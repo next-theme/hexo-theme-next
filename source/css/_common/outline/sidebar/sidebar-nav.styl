@@ -1,12 +1,19 @@
 // Sidebar Navigation
 .sidebar-nav {
-  display: none;
+  font-size: $font-size-small;
+  height: 0;
   margin: 0;
-  padding-bottom: 20px;
+  overflow: hidden;
   padding-left: 0;
+  pointer-events: none;
+  transition: $transition-ease;
+  transition-property: height, visibility;
+  visibility: hidden;
 
   .sidebar-nav-active & {
-    display: block;
+    height: "calc(%sem + 1px)" % $line-height-base;
+    pointer-events: unset;
+    visibility: unset;
   }
 
   li {
@@ -14,7 +21,8 @@
     color: $sidebar-nav-color;
     cursor: pointer;
     display: inline-block;
-    font-size: $font-size-small;
+    transition: $transition-ease;
+    transition-property: border-bottom-color, color;
 
     &.sidebar-nav-overview {
       margin-left: 10px;
@@ -29,30 +37,93 @@
 .sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview {
   border-bottom-color: $sidebar-highlight;
   color: $sidebar-highlight;
+  transition-delay: $transition-duration;
 
   &:hover {
     color: $sidebar-highlight;
   }
 }
 
-// Need for Sidebar/TOC inner scrolling if content taller then viewport.
+// For TOC/Overview scrolling
 .sidebar-panel-container {
+  align-items: start;
+  display: grid;
   flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
+  padding-top: 0;
+  transition: padding-top $transition-ease;
+
+  .sidebar-nav-active & {
+    padding-top: 20px;
+  }
 }
 
 .sidebar-panel {
-  display: none;
+  animation: deactivate-sidebar-panel $transition-duration ease-in-out;
+  grid-area: 1 / 1;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(0);
+  transition: $transition-ease;
+  transition-delay: 0s;
+  transition-property: opacity, transform, visibility;
+  visibility: hidden;
+
+  // Apply transform to both panels when sidebar nav is active,
+  // to the TOC panel when switching between Overview and TOC regardless of
+  // whether the sidebar nav is active
+  .sidebar-nav-active &,
+  .sidebar-overview-active &.post-toc-wrap {
+    transform: translateY(-20px);
+  }
+
+  // Delay TOC transform transition when switching from TOC to Overview and
+  // deactivating the sidebar nav at the same time, to prevent the TOC panel
+  // from moving too fast
+  // https://github.com/next-theme/hexo-theme-next/pull/323#issuecomment-1420780965
+  .sidebar-overview-active:not(.sidebar-nav-active) &.post-toc-wrap {
+    transition-delay: 0s, $transition-duration, 0s;
+  }
+
+  .sidebar-overview-active &.site-overview-wrap,
+  .sidebar-toc-active &.post-toc-wrap {
+    animation-name: activate-sidebar-panel;
+    height: auto;
+    opacity: 1;
+    pointer-events: unset;
+    transform: translateY(0);
+    // The visibility delay is intentionally set to 0s to accommodate
+    // the visibility change on initial page load.
+    transition-delay: $transition-duration, $transition-duration, 0s;
+    visibility: unset;
+  }
+
+  &.site-overview-wrap {
+    // Flexbox layout makes it possible to reorder the child
+    // elements of .site-overview-wrap through the `order` CSS property
+    flex-column();
+    gap: 10px;
+    justify-content: flex-start; // TODO: Optimize the duplicate with flex-column()
+  }
 }
 
-.sidebar-overview-active .site-overview-wrap {
-  // Flexbox layout makes it possible to reorder the child
-  // elements of .site-overview-wrap through the `order` CSS property
-  flex-column();
-  gap: 10px;
+@keyframes deactivate-sidebar-panel {
+  from {
+    height: var(--inactive-panel-height, 0);
+  }
+  to {
+    height: var(--active-panel-height, 0);
+  }
 }
 
-.sidebar-toc-active .post-toc-wrap {
-  display: block;
+@keyframes activate-sidebar-panel {
+  from {
+    height: var(--inactive-panel-height, auto);
+  }
+  to {
+    height: var(--active-panel-height, auto);
+  }
 }
