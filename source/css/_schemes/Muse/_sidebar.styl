@@ -4,6 +4,10 @@ if (hexo-config('sidebar.position') == 'right') {
     // Otherwise a horizontal scrollbar will appear
     +desktop-large() {
       padding-right: $sidebar-desktop;
+
+      .footer-fixed {
+        right: $sidebar-desktop;
+      }
     }
   }
 
@@ -18,6 +22,10 @@ if (hexo-config('sidebar.position') == 'right') {
   .sidebar-active {
     +desktop-large() {
       padding-left: $sidebar-desktop;
+
+      .footer-fixed {
+        left: $sidebar-desktop;
+      }
     }
   }
 
