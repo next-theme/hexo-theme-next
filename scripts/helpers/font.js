@@ -20,6 +20,9 @@ module.exports = function() {
   fontFamilies = fontFamilies.map(name => name.trim().replace(/\s/g, '+') + fontStyles);
   fontFamilies = [...new Set(fontFamilies)].join('%7C');
 
+  const fontURL= config.url || `"${fontHost}/css?family=${fontFamilies}&display=swap&subset=latin,latin-ext"`
+  // console.info("fontURL:"+fontURL)
+
   // Merge extra parameters to the final processed font string
-  return fontFamilies ? `<link rel="stylesheet" href="${fontHost}/css?family=${fontFamilies}&display=swap&subset=latin,latin-ext">` : '';
+  return fontFamilies ? `<link rel="stylesheet" href="${fontURL}">` : '';
 };
