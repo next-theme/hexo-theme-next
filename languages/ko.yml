@@ -38,6 +38,7 @@ post:
     post_link: This article originally appeared on
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "Powered by %s"
   total_views: Total Views
@@ -57,7 +58,7 @@ counter:
   archive_posts:
     zero: 포스트 없음
     one: 1개의 포스트
-    other: "총 %d개의 포스트"
+    other: "총 %d개의 포스트를 작성하셨습니다."
 state:
   posts: 포스트
   tags: 태그
@@ -74,7 +75,7 @@ cheers:
   good: 좋아요
   great: 훌륭해요
   excellent: 완벽해요
-keep_on: 포스트를 마저 작성하세요
+keep_on: 포스트를 계속 작성하세요.
 symbol:
   comma: ", "
   period: ". "
