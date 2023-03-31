@@ -38,6 +38,7 @@ post:
     post_link: This article originally appeared on
     license_title: Urheberrechtshinweis
     license_content: "Alle Artikel in diesem Blog sind unter %s lizenziert, außer es wird anders angegeben."
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "Erstellt mit  %s"
   total_views: Alle Aufrufe
