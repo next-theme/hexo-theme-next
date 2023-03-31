@@ -42,6 +42,7 @@ post:
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
     license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
+
 footer:
   powered: "Powered by %s"
   total_views: Total Views
