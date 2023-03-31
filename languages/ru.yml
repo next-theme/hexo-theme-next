@@ -38,6 +38,7 @@ post:
     post_link: Оригинал этой статьи был написан
     license_title: Информация об авторских правах
     license_content: "Все записи на этом сайте защищены лицензией %s, если не указано дополнительно."
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "Генератор — %s"
   total_views: Всего просмотров
