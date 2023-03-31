@@ -38,6 +38,7 @@ post:
     post_link: This article originally appeared on
     license_title: Chú ý bản quyền
     license_content: "Tất cả bài viết trong blog này được đăng ký bởi %s trừ khi có thông báo bổ sung."
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "Cung cấp bởi %s"
   total_views: Tổng số người xem
