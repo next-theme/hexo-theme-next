@@ -741,9 +741,12 @@ isso: # <data_isso>
 # See: https://theme-next.js.org/docs/third-party-services/post-widgets
 # ---------------------------------------------------------------
 
-# AddThis Share. See: https://www.addthis.com
-# Go to https://www.addthis.com/dashboard to customize your tools.
-add_this_id:
+# AddToAny Share. See: https://www.addtoany.com
+addtoany:
+  enable: false
+  buttons:
+    - facebook
+    - twitter
 
 
 # ---------------------------------------------------------------
