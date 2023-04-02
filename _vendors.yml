@@ -8,10 +8,10 @@ anime:
   integrity: sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=
 fontawesome:
   name: '@fortawesome/fontawesome-free'
-  version: 6.3.0
+  version: 6.4.0
   file: css/all.min.css
   alias: font-awesome
-  integrity: sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=
+  integrity: sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=
 prism:
   name: prismjs
   version: 1.29.0
@@ -55,9 +55,9 @@ pjax:
   integrity: sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=
 jquery:
   name: jquery
-  version: 3.6.3
+  version: 3.6.4
   file: dist/jquery.min.js
-  integrity: sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=
+  integrity: sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=
 fancybox_js:
   name: '@fancyapps/fancybox'
   version: 3.5.7
@@ -113,24 +113,24 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.17.1
+  version: 9.18.0
   file: firebase-app-compat.js
-  integrity: sha256-4nstrISMqU/N2gvWaEztDS859x7Wv9U4pGGu55cZpc8=
+  integrity: sha256-9kvAs39Qh7HjJ0KChcD/wbpLb4SUg6YzguYDxj/2au0=
 firebase_firestore:
   name: firebase
-  version: 9.17.1
+  version: 9.18.0
   file: firebase-firestore-compat.js
-  integrity: sha256-Euwjh/Y0lrAutmk/dlGLqP9M516nt50FF6B+sRI2XHQ=
+  integrity: sha256-j5lFUjH+fMc6hphZj+GoBz2APjoCXrcvN2IP0eZ3NnA=
 algolia_search:
   name: algoliasearch
-  version: 4.14.3
+  version: 4.16.0
   file: dist/algoliasearch-lite.umd.js
-  integrity: sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=
+  integrity: sha256-zti3IO5mcnIxuJGpYC58EnL1rrahhT+sOUT2uWO45E8=
 instant_search:
   name: instantsearch.js
-  version: 4.51.1
+  version: 4.53.0
   file: dist/instantsearch.production.min.js
-  integrity: sha256-y6I4MY/blLHk4a7G33zp97DcnBFRY2iMId4FObo8toI=
+  integrity: sha256-JAFoxs9krkfi1sqvG1a7Rg2roZXsI+UnI3ElbjW762k=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.1
@@ -143,9 +143,9 @@ pdfobject:
   integrity: sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM=
 mermaid:
   name: mermaid
-  version: 9.4.0
+  version: 9.4.3
   file: dist/mermaid.min.js
-  integrity: sha256-3JloMMI/ZQx6ryuhhZTsQJQmGAkXeni6PkshX7UUO2s=
+  integrity: sha256-e0o3JYsdjqKajf9eOe22FhioYSz9WofRY4dLKo3F6do=
 animate_css:
   name: animate.css
   version: 3.1.1
