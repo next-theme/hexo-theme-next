@@ -38,6 +38,7 @@ post:
     post_link: This article originally appeared on
     license_title: Telif Hakkı Bildirimi
     license_content: "Bu blogdaki tüm makaleler aksi belirtilmediği sürece %s altında lisanslıdır."
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "%s tarafından desteklenmektedir"
   total_views: Toplam görüntülenme

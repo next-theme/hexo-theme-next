@@ -38,6 +38,7 @@ post:
     post_link: මේ ලිපිය මුළින්ම පළ වූයේ
     license_title: හිමිකම් ප්‍රකාශය
     license_content: "මෙහි සියලු ලිපි, අමතර සඳහනක් නොමැති තැන් වලදී, %s බලපත්‍රය යටතේ පවතී."
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "%s විසින් බල ගැන්වේ"
   total_views: සියලු දර්ශන වාර

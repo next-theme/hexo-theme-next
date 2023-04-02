@@ -38,12 +38,13 @@ post:
     post_link: 原文链接
     license_title: 版权声明
     license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
+    license_content_reprint: "本文章为转载文章，已获转载许可。转载请注明出处！"
 footer:
   powered: "由 %s 强力驱动"
   total_views: 总访问量
   total_visitors: 总访客量
 widget:
-  github: Follow me on GitHub
+  github: 在 GitHub 上关注我
   chat: 聊天
 counter:
   tag_cloud:
@@ -85,7 +86,7 @@ reward:
   alipay: 支付宝
   paypal: PayPal
   bitcoin: 比特币
-  comment: Buy me a coffee
+  comment: 请我一杯咖啡吧！
 follow_me:
   welcome: 欢迎关注我的其它发布渠道
 accessibility:

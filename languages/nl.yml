@@ -38,6 +38,7 @@ post:
     post_link: This article originally appeared on
     license_title: Copyright melding
     license_content: "Alle artikelen op deze blog zijn gelicenseerd onder %s, mits niet anders aangegeven."
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "Mede mogelijk gemaakt door %s"
   total_views: Total Views

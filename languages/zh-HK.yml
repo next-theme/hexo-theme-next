@@ -38,6 +38,7 @@ post:
     post_link: 文章最初發表於
     license_title: 版權聲明
     license_content: "本網誌所有文章除特別聲明外，均採用 %s 許可協議。轉載請註明出處！"
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "由 %s 強力驅動"
   total_views: 總瀏覽次數

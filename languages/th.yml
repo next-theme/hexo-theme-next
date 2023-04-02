@@ -38,6 +38,7 @@ post:
     post_link: บทความนี้เดิมปรากฏบน
     license_title: ประกาศเกี่ยวกับลิขสิทธิ์
     license_content: "บทความทั้งหมดในบล็อกนี้ได้รับอนุญาตภายใต้ %s เว้นแต่จะระบุไว้เพิ่มเติม"
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "ขับเคลื่อนโดย %s"
   total_views: ยอดดูทั้งหมด

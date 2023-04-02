@@ -38,6 +38,7 @@ post:
     post_link: এই আর্টিকেলটি প্রথমে প্রকাশিত হয়েছে
     license_title: কপিরাইট নোটিস
     license_content: "এই ব্লগের সমস্ত আর্টিকেল %s এর অধীনে লাইসেন্সপ্রাপ্ত যদি না ব্যতিক্রম উল্লেখ করা হয়।"
+    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
 footer:
   powered: "%s এর সাহায্যে চলছে"
   total_views: মোট দর্শক
