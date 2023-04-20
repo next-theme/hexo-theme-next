@@ -1,3 +1,7 @@
 {%- if theme.umami.enable %}
+  {%- if theme.umami.cdn.enable %}
   <script async defer data-website-id="{{ theme.umami.website_id }}" src="{{ theme.umami.script_url }}" data-host-url="{{ theme.umami.data_host_url }}"></script>
+  {% else %}
+  <script async defer data-website-id="{{ theme.umami.website_id }}" src="{{ theme.umami.script_url }}"></script>
+  {%- endif %}
 {%- endif %}
