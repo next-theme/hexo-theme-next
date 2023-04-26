@@ -52,6 +52,11 @@ if (hexo-config('mobile_layout_economy')) {
         margin-bottom: 10px !important;
       }
 
+      // Fix issue #641
+      .image-caption, img + figcaption, .fancybox + figcaption {
+        margin: -5px auto 15px !important;
+      }
+
       .note {
         margin-bottom: 10px !important;
         padding: 10px !important;
