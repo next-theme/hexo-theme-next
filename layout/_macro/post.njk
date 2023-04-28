@@ -23,6 +23,8 @@
       <meta itemprop="description" content="{{ page.description }}">
     </span>
 
+    {%- set post_link = post.link or url_for(post.path) %}
+
     {%- if post.header !== false %}
       <header class="post-header">
         <{% if is_index %}h2{% else %}h1{% endif %} class="post-title{% if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">
@@ -69,7 +71,7 @@
           <!--noindex-->
           {%- if theme.read_more_btn %}
             <div class="post-button">
-              <a class="btn" href="{{ url_for(post.path) }}">
+              <a class="btn" href="{{ post_link }}">
                 {{ __('post.read_more') }} &raquo;
               </a>
             </div>
@@ -80,7 +82,7 @@
           <!--noindex-->
           {%- if theme.read_more_btn %}
             <div class="post-button">
-              <a class="btn" href="{{ url_for(post.path) }}#more" rel="contents">
+              <a class="btn" href="{{ post_link }}#more" rel="contents">
                 {{ __('post.read_more') }} &raquo;
               </a>
             </div>

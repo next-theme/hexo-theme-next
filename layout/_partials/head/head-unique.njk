@@ -8,7 +8,9 @@
 
 {# https://github.com/theme-next/hexo-theme-next/issues/866 #}
 {%- set canonical = url | replace(r/index\.html$/, '') %}
-{%- if not config.permalink.endsWith('.html') %}
+{%- if page.link %}
+  {%- set canonical = page.link %}
+{%- elif not config.permalink.endsWith('.html') %}
   {%- set canonical = canonical | replace(r/\.html$/, '') %}
 {%- endif %}
 <link rel="canonical" href="{{ canonical }}">

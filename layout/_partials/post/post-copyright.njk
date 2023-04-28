@@ -16,6 +16,9 @@
     {%- if page.post_link %}
       <strong>{{ __('post.copyright.post_link') + __('symbol.colon') }}</strong>
       {{ next_url(page.post_link, page.post_link, {title: page.title}) }}
+    {%- elif page.link %}
+      <strong>{{ __('post.copyright.post_link') + __('symbol.colon') }}</strong>
+      {{- next_url(page.link, page.link, {title: page.title}) }}
     {%- else %}
       <strong>{{ __('post.copyright.link') + __('symbol.colon') }}</strong>
       {{ next_url(page.permalink, page.permalink, {title: page.title}) }}
