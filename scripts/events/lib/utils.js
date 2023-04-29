@@ -63,6 +63,7 @@ const points = {
     'header',
     'sidebar',
     'postMeta',
+    'postBodyStart',
     'postBodyEnd',
     'footer',
     'bodyEnd',
