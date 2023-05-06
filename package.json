@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-next",
-  "version": "8.15.1",
+  "version": "8.16.0",
   "description": "Elegant and powerful theme for Hexo.",
   "main": "package.json",
   "files": [
@@ -26,7 +26,7 @@
     "next"
   ],
   "author": "NexT (https://theme-next.js.org)",
-  "license": "AGPL-3.0-or-later",
+  "license": "AGPL-3.0-only",
   "bugs": {
     "url": "https://github.com/next-theme/hexo-theme-next/issues"
   },
