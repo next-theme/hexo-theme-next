@@ -137,6 +137,10 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/third-party/tags/pdf.js');
   }
 
+  if (!theme.wavedrom.enable) {
+    hexo.route.remove('js/third-party/tags/wavedrom.js');
+  }
+
   // Others
   if (!theme.fancybox) {
     hexo.route.remove('js/third-party/fancybox.js');
