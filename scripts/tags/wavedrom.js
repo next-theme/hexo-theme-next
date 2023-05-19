@@ -4,8 +4,6 @@
 
 'use strict';
 
-const { escapeHTML } = require('hexo-util');
-
 module.exports = function(args, content) {
   return `<script type="WaveDrom">
 ${content}
