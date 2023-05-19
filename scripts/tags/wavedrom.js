@@ -5,7 +5,7 @@
 'use strict';
 
 module.exports = function(args, content) {
-  return `<script type="WaveDrom">
+  return `<div class="wavedrom"><script type="WaveDrom">
 ${content}
-</script>`;
+</script></div>`;
 };
