@@ -532,7 +532,7 @@ mermaid:
     light: default
     dark: dark
 
-# Wavedrom tag
+# WaveDrom tag
 wavedrom:
   enable: false
 
