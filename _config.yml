@@ -532,6 +532,9 @@ mermaid:
     light: default
     dark: dark
 
+# WaveDrom tag
+wavedrom:
+  enable: false
 
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings

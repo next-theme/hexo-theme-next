@@ -1,0 +1,9 @@
+{%- if theme.wavedrom.enable %}
+  {{ next_data('wavedrom', theme.wavedrom, {
+    js: theme.vendors.wavedrom
+  }) }}
+  {{ next_data('wavedrom_skin', theme.wavedrom, {
+    js: theme.vendors.wavedrom_skin
+  }) }}
+  {{ next_js('third-party/tags/wavedrom.js') }}
+{%- endif %}

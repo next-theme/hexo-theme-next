@@ -172,3 +172,13 @@ creative_commons:
   version: 2020.11.3
   dir: assets/license_badges
   alias: creativecommons-vocabulary
+wavedrom:
+  name: wavedrom
+  version: 3.2.0
+  file: wavedrom.min.js
+  integrity: sha512-/ZL0uQxVV1wYyWlpO4klZ1a39eaBz4zESSamuBMaMsZ6le3YejJ07hmLlHoCTXrKz5eYtEuO5K1BcTo+lQpQJA==
+wavedrom_skin:
+  name: wavedrom
+  version: 3.2.0
+  file: skins/default.js
+  integrity: sha512-GV5gOBpCHd3M5Af9Ooz+I9dQdwcDKPR2F8ulzCpoF4W6uwmtLTh/pT8Q1XupPmQJO+Kt88/DrIiK7PzR1YLvwQ==
