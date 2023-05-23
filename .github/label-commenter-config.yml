@@ -4,9 +4,7 @@ labels:
   - name: Invalid
     labeled:
       issue:
-        body: |
-          This issue has been closed because it does not meet our Issue template.
-          Please read our [guidelines for contributing](https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md#how-can-i-contribute).
+        body: This issue has been closed because it does not seem right.
         action: close
   - name: Need More Info
     labeled:
