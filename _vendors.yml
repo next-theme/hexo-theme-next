@@ -55,9 +55,9 @@ pjax:
   integrity: sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=
 jquery:
   name: jquery
-  version: 3.6.4
+  version: 3.7.0
   file: dist/jquery.min.js
-  integrity: sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=
+  integrity: sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=
 fancybox_js:
   name: '@fancyapps/fancybox'
   version: 3.5.7
@@ -113,24 +113,24 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.21.0
+  version: 9.22.1
   file: firebase-app-compat.js
-  integrity: sha256-pGG2NrTihZgua0lFtFiA77BaNJRRZUw+YhGCyEowxJs=
+  integrity: sha256-k74cv2m6iO63FdKOnpAEwdNSVBYVQh7bZXmjb09vORs=
 firebase_firestore:
   name: firebase
-  version: 9.21.0
+  version: 9.22.1
   file: firebase-firestore-compat.js
-  integrity: sha256-OZVS5blqRZ/tQxQ7HXEUkSs8J3d3BSxlNQ/RNoTArXs=
+  integrity: sha256-heVsuC/9fyGrkx03lYLht+Xs88f7NBIhlLlwHoi8Sfw=
 algolia_search:
   name: algoliasearch
-  version: 4.17.0
+  version: 4.17.1
   file: dist/algoliasearch-lite.umd.js
-  integrity: sha256-Lf9DrpGmcRip6OQzbcL6lnvNmoZNSKpyQX5pMlwatWE=
+  integrity: sha256-F7emIId74fYoGrHzsnu3iClRHIbBMhMCbxDoA1cfMAY=
 instant_search:
   name: instantsearch.js
-  version: 4.55.0
+  version: 4.56.1
   file: dist/instantsearch.production.min.js
-  integrity: sha256-aRxUroY27yHj7g0t6OfxRaGP1NIgtuperOoNVzgUSys=
+  integrity: sha256-lz9C+x8+6w2rh56x5TrH5iYmE4Js2FiJS5h0tuMz7hQ=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.1
@@ -138,9 +138,9 @@ local_search:
   integrity: sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=
 pdfobject:
   name: pdfobject
-  version: 2.2.8
+  version: 2.2.11
   file: pdfobject.min.js
-  integrity: sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM=
+  integrity: sha256-N6JtCNwaYm6kizuG92UtOOXamRHPwu+V1yF10g3bu/c=
 mermaid:
   name: mermaid
   version: 9.4.3
@@ -176,9 +176,9 @@ wavedrom:
   name: wavedrom
   version: 3.2.0
   file: wavedrom.min.js
-  integrity: sha512-/ZL0uQxVV1wYyWlpO4klZ1a39eaBz4zESSamuBMaMsZ6le3YejJ07hmLlHoCTXrKz5eYtEuO5K1BcTo+lQpQJA==
+  integrity: sha256-cOqJCt2rKQA4GNjlL0tODFHnWd0CRLKLFqYhO6TCtAE=
 wavedrom_skin:
   name: wavedrom
   version: 3.2.0
   file: skins/default.js
-  integrity: sha512-GV5gOBpCHd3M5Af9Ooz+I9dQdwcDKPR2F8ulzCpoF4W6uwmtLTh/pT8Q1XupPmQJO+Kt88/DrIiK7PzR1YLvwQ==
+  integrity: sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI=
