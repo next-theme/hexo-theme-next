@@ -13,8 +13,8 @@
     "stylus/selector-list-comma": "always",
     "stylus/selector-list-comma-newline-after": "never-multi-line",
     "stylus/media-feature-colon": "always",
-    "stylus/single-line-comment": false,
-    "stylus/single-line-comment-no-empty": false,
+    "stylus/single-line-comment": null,
+    "stylus/single-line-comment-no-empty": null,
     "stylus/block-closing-brace-newline-after": "never-single-line"
   }
 }
