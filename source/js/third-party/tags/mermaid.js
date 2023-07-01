@@ -26,7 +26,7 @@ document.addEventListener('page:loaded', () => {
         gantt    : { axisFormat: '%m/%d/%Y' },
         sequence : { actorMargin: 50 }
       });
-      mermaid.init();
+      mermaid.run();
     });
   }
 });
