@@ -168,7 +168,7 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 
 [awesome-next-url]: https://github.com/next-theme/awesome-next
 [discussions-url]: https://github.com/next-theme/hexo-theme-next/discussions
-[gitter-url]: https://gitter.im/hexo-next
+[gitter-url]: https://app.gitter.im/#/room/#next:gitter.im
 [i18n-url]: https://crowdin.com/project/hexo-theme-next
 
 [issues-bug-url]: https://github.com/next-theme/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md

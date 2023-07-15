@@ -88,7 +88,7 @@
     * [GitHub Discussions](https://github.com/next-theme/hexo-theme-next/discussions)
 
 * 即时通信:
-    * [Gitter](https://gitter.im/hexo-next)
+    * [Gitter](https://app.gitter.im/#/room/#next:gitter.im)
 
 ## 来源
 

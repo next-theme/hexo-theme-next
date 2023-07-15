@@ -90,7 +90,7 @@ You may get in touch with the maintainer team through any of the following metho
     * [GitHub Discussions](https://github.com/next-theme/hexo-theme-next/discussions)
 
 * Through Chat:
-    * [Gitter](https://gitter.im/hexo-next)
+    * [Gitter](https://app.gitter.im/#/room/#next:gitter.im)
 
 ## Attribution
 
