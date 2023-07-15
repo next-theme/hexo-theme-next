@@ -67,10 +67,6 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/third-party/chat/tidio.js');
   }
 
-  if (!theme.gitter.enable) {
-    hexo.route.remove('js/third-party/chat/gitter.js');
-  }
-
   // Comments
   if (!theme.changyan.enable || !theme.changyan.appid || !theme.changyan.appkey) {
     hexo.route.remove('js/third-party/comments/changyan.js');

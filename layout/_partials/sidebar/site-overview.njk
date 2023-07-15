@@ -51,9 +51,9 @@
 </div>
 {%- endif %}
 
-{%- if theme.chat.enable and (theme.chatra.enable or theme.tidio.enable or theme.gitter.enable) %}
+{%- if theme.chat.enable and (theme.chatra.enable or theme.tidio.enable) %}
   <div class="sidebar-button animated">
-    <button{% if theme.gitter.enable %} class="js-gitter-toggle-chat-button"{% endif %}>
+    <button>
       {%- if theme.chat.icon %}<i class="{{ theme.chat.icon }}"></i>{% endif %}
       {{ __('widget.chat') }}
     </button>

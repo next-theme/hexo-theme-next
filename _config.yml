@@ -893,12 +893,6 @@ tidio:
   enable: false
   key: # Public Key, get it from dashboard. See: https://www.tidio.com/panel/settings/developer
 
-# Gitter is a chat and networking platform.
-# For more information: https://gitter.im
-gitter:
-  enable: false
-  room:
-
 
 # ---------------------------------------------------------------
 # CDN Settings
