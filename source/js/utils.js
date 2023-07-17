@@ -44,7 +44,11 @@ NexT.utils = {
    */
   registerCopyCode: function() {
     let figure = document.querySelectorAll('figure.highlight');
-    if (figure.length === 0) figure = document.querySelectorAll('pre:not(.mermaid)');
+    let needWrap = false;
+    if (figure.length === 0) {
+      figure = document.querySelectorAll('pre:not(.mermaid)');
+      needWrap = true;
+    }
     figure.forEach(element => {
       element.querySelectorAll('.code .line span').forEach(span => {
         span.classList.forEach(name => {
@@ -53,9 +57,14 @@ NexT.utils = {
       });
       if (!CONFIG.copycode.enable) return;
       let target = element;
-      if (CONFIG.copycode.style !== 'mac') target = element.querySelector('.table-container') || element;
+      if (needWrap) {
+        const box = document.createElement('div');
+        box.className = 'code-container';
+        element.wrap(box);
+        target = box;
+      }
       target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
-      const button = element.querySelector('.copy-btn');
+      const button = target.querySelector('.copy-btn');
       button.addEventListener('click', () => {
         const lines = element.querySelector('.code') || element.querySelector('code');
         const code = lines.innerText;
