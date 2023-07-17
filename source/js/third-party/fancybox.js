@@ -5,30 +5,38 @@ document.addEventListener('page:loaded', () => {
   /**
    * Wrap images with fancybox.
    */
-  document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(element => {
-    const $image = $(element);
-    const imageLink = $image.attr('data-src') || $image.attr('src');
-    const $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
-    if ($image.is('.post-gallery img')) {
-      $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
-    } else if ($image.is('.group-picture img')) {
-      $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
+  document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(image => {
+    const imageLink = image.getAttribute('data-src') || image.getAttribute('src');
+    const imageWrapLink = document.createElement('a');
+    imageWrapLink.classList.add('fancybox');
+    imageWrapLink.href = imageLink;
+    imageWrapLink.setAttribute('itemscope', '');
+    imageWrapLink.setAttribute('itemtype', 'http://schema.org/ImageObject');
+    imageWrapLink.setAttribute('itemprop', 'url');
+    image.wrap(imageWrapLink);
+
+    if (image.closest('.post-gallery') !== null) {
+      imageWrapLink.setAttribute('data-fancybox', 'gallery');
+    } else if (image.closest('.group-picture') !== null) {
+      imageWrapLink.setAttribute('data-fancybox', 'group');
     } else {
-      $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
+      imageWrapLink.setAttribute('data-fancybox', 'default');
     }
 
-    const imageTitle = $image.attr('title') || $image.attr('alt');
+    const imageTitle = image.getAttribute('title') || image.getAttribute('alt');
     if (imageTitle) {
       // Do not append image-caption if pandoc has already created a figcaption
-      if (!$imageWrapLink.next('figcaption').length) {
-        $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
+      if (!imageWrapLink.nextElementSibling || imageWrapLink.nextElementSibling.tagName.toLowerCase() !== 'figcaption') {
+        const imageCaption = document.createElement('p');
+        imageCaption.classList.add('image-caption');
+        imageCaption.textContent = imageTitle;
+        imageWrapLink.appendChild(imageCaption);
       }
       // Make sure img title tag will show correctly in fancybox
-      $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
+      imageWrapLink.title = imageTitle;
+      imageWrapLink.dataset.caption = imageTitle;
     }
   });
 
-  Fancybox.bind('[data-fancybox]', {
-    // Your custom options
-  });
+  Fancybox.bind('[data-fancybox]');
 });
