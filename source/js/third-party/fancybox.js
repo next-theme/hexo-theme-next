@@ -1,3 +1,5 @@
+/* global Fancybox */
+
 document.addEventListener('page:loaded', () => {
 
   /**
@@ -26,13 +28,7 @@ document.addEventListener('page:loaded', () => {
     }
   });
 
-  $.fancybox.defaults.hash = false;
-  $('.fancybox').fancybox({
-    loop   : true,
-    helpers: {
-      overlay: {
-        locked: false
-      }
-    }
+  Fancybox.bind('[data-fancybox]', {
+    // Your custom options
   });
 });

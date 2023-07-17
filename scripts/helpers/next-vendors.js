@@ -15,7 +15,7 @@ hexo.extend.helper.register('js_vendors', function() {
     vendors.push('pjax');
   }
   if (theme.fancybox) {
-    vendors.push('jquery', 'fancybox_js');
+    vendors.push('fancybox_js');
   }
   if (theme.mediumzoom) {
     vendors.push('mediumzoom');
