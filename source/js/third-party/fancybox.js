@@ -6,7 +6,7 @@ document.addEventListener('page:loaded', () => {
    * Wrap images with fancybox.
    */
   document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(image => {
-    const imageLink = image.getAttribute('data-src') || image.getAttribute('src');
+    const imageLink = image.dataset.src || image.src;
     const imageWrapLink = document.createElement('a');
     imageWrapLink.classList.add('fancybox');
     imageWrapLink.href = imageLink;
@@ -15,15 +15,15 @@ document.addEventListener('page:loaded', () => {
     imageWrapLink.setAttribute('itemprop', 'url');
     image.wrap(imageWrapLink);
 
+    let dataFancybox = 'default';
     if (image.closest('.post-gallery') !== null) {
-      imageWrapLink.setAttribute('data-fancybox', 'gallery');
+      dataFancybox = 'gallery';
     } else if (image.closest('.group-picture') !== null) {
-      imageWrapLink.setAttribute('data-fancybox', 'group');
-    } else {
-      imageWrapLink.setAttribute('data-fancybox', 'default');
+      dataFancybox = 'group';
     }
+    imageWrapLink.dataset.fancybox = dataFancybox;
 
-    const imageTitle = image.getAttribute('title') || image.getAttribute('alt');
+    const imageTitle = image.title || image.alt;
     if (imageTitle) {
       // Do not append image-caption if pandoc has already created a figcaption
       if (!imageWrapLink.nextElementSibling || imageWrapLink.nextElementSibling.tagName.toLowerCase() !== 'figcaption') {
