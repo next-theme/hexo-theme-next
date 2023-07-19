@@ -58,11 +58,13 @@ fancybox_js:
   version: 5.0.20
   file: dist/fancybox/fancybox.umd.js
   alias: fancyapps-ui
+  integrity: sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=
 fancybox_css:
   name: '@fancyapps/ui'
   version: 5.0.20
   file: dist/fancybox/fancybox.css
   alias: fancyapps-ui
+  integrity: sha256-RvRHGSuWAxZpXKV9lLDt2e+rZ+btzn48Wp4ueS3NZKs=
 mediumzoom:
   name: medium-zoom
   version: 1.0.8
