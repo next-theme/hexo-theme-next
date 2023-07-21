@@ -13,7 +13,6 @@ document.addEventListener('page:loaded', () => {
     imageWrapLink.setAttribute('itemscope', '');
     imageWrapLink.setAttribute('itemtype', 'http://schema.org/ImageObject');
     imageWrapLink.setAttribute('itemprop', 'url');
-    image.wrap(imageWrapLink);
 
     let dataFancybox = 'default';
     if (image.closest('.post-gallery') !== null) {
@@ -25,17 +24,11 @@ document.addEventListener('page:loaded', () => {
 
     const imageTitle = image.title || image.alt;
     if (imageTitle) {
-      // Do not append image-caption if pandoc has already created a figcaption
-      if (!imageWrapLink.nextElementSibling || imageWrapLink.nextElementSibling.tagName.toLowerCase() !== 'figcaption') {
-        const imageCaption = document.createElement('p');
-        imageCaption.classList.add('image-caption');
-        imageCaption.textContent = imageTitle;
-        imageWrapLink.appendChild(imageCaption);
-      }
-      // Make sure img title tag will show correctly in fancybox
       imageWrapLink.title = imageTitle;
+      // Make sure img captions will show correctly in fancybox
       imageWrapLink.dataset.caption = imageTitle;
     }
+    image.wrap(imageWrapLink);
   });
 
   Fancybox.bind('[data-fancybox]');
