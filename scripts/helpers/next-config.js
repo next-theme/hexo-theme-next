@@ -19,6 +19,7 @@ hexo.extend.helper.register('next_config', function() {
     exturl    : theme.exturl,
     sidebar   : theme.sidebar,
     copycode  : theme.codeblock.copy_button,
+    fold      : theme.codeblock.fold,
     bookmark  : theme.bookmark,
     mediumzoom: theme.mediumzoom,
     lazyload  : theme.lazyload,

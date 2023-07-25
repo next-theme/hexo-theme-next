@@ -55,14 +55,23 @@ NexT.utils = {
           span.classList.replace(name, `hljs-${name}`);
         });
       });
-      if (!CONFIG.copycode.enable) return;
+      const height = parseInt(window.getComputedStyle(element).height.replace('px', ''), 10);
+      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.threshold);
       let target = element;
-      if (needWrap) {
+      if ((needFold || CONFIG.copycode.enable) && needWrap) {
         const box = document.createElement('div');
         box.className = 'code-container';
         element.wrap(box);
         target = box;
       }
+      if (needFold) {
+        target.classList.add('highlight-fold');
+        target.insertAdjacentHTML('beforeend', '<div class="fold-cover"></div><div class="expand-btn"><i class="fa fa-chevron-down fa-fw"></i></div>');
+        target.querySelector('.expand-btn').addEventListener('click', () => {
+          target.classList.remove('highlight-fold');
+        });
+      }
+      if (!CONFIG.copycode.enable) return;
       target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
       const button = target.querySelector('.copy-btn');
       button.addEventListener('click', () => {
