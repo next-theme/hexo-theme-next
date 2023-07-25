@@ -27,3 +27,9 @@ labels:
       issue:
         body: This will not be worked on but we appreciate your contribution.
         action: close
+  - name: Configuration
+    labeled:
+      pr:
+        body: |
+          This pull request contains changes to the configuration file. Please make sure the documentation in [NexT website](https://theme-next.js.org/docs/) is changed or added.
+          Please edit relevant source files here: https://github.com/next-theme/theme-next-docs/tree/master/source/docs and create a pull request with the changes here: https://github.com/next-theme/theme-next-docs/pulls
