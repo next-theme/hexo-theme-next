@@ -56,7 +56,7 @@ NexT.utils = {
         });
       });
       const height = parseInt(window.getComputedStyle(element).height.replace('px', ''), 10);
-      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.threshold);
+      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height);
       let target = element;
       if ((needFold || CONFIG.copycode.enable) && needWrap) {
         const box = document.createElement('div');
