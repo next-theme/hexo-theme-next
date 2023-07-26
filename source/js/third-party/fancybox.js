@@ -1,38 +1,35 @@
+/* global Fancybox */
+
 document.addEventListener('page:loaded', () => {
 
   /**
    * Wrap images with fancybox.
    */
-  document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(element => {
-    const $image = $(element);
-    const imageLink = $image.attr('data-src') || $image.attr('src');
-    const $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
-    if ($image.is('.post-gallery img')) {
-      $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
-    } else if ($image.is('.group-picture img')) {
-      $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
-    } else {
-      $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
-    }
+  document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(image => {
+    const imageLink = image.dataset.src || image.src;
+    const imageWrapLink = document.createElement('a');
+    imageWrapLink.classList.add('fancybox');
+    imageWrapLink.href = imageLink;
+    imageWrapLink.setAttribute('itemscope', '');
+    imageWrapLink.setAttribute('itemtype', 'http://schema.org/ImageObject');
+    imageWrapLink.setAttribute('itemprop', 'url');
 
-    const imageTitle = $image.attr('title') || $image.attr('alt');
+    let dataFancybox = 'default';
+    if (image.closest('.post-gallery') !== null) {
+      dataFancybox = 'gallery';
+    } else if (image.closest('.group-picture') !== null) {
+      dataFancybox = 'group';
+    }
+    imageWrapLink.dataset.fancybox = dataFancybox;
+
+    const imageTitle = image.title || image.alt;
     if (imageTitle) {
-      // Do not append image-caption if pandoc has already created a figcaption
-      if (!$imageWrapLink.next('figcaption').length) {
-        $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
-      }
-      // Make sure img title tag will show correctly in fancybox
-      $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
+      imageWrapLink.title = imageTitle;
+      // Make sure img captions will show correctly in fancybox
+      imageWrapLink.dataset.caption = imageTitle;
     }
+    image.wrap(imageWrapLink);
   });
 
-  $.fancybox.defaults.hash = false;
-  $('.fancybox').fancybox({
-    loop   : true,
-    helpers: {
-      overlay: {
-        locked: false
-      }
-    }
-  });
+  Fancybox.bind('[data-fancybox]');
 });

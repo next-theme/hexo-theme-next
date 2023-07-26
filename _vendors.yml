@@ -53,23 +53,18 @@ pjax:
   file: pjax.min.js
   alias: next-theme-pjax
   integrity: sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=
-jquery:
-  name: jquery
-  version: 3.7.0
-  file: dist/jquery.min.js
-  integrity: sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=
 fancybox_js:
-  name: '@fancyapps/fancybox'
-  version: 3.5.7
-  file: dist/jquery.fancybox.min.js
-  alias: fancybox
-  integrity: sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=
+  name: '@fancyapps/ui'
+  version: 5.0.20
+  file: dist/fancybox/fancybox.umd.js
+  alias: fancyapps-ui
+  integrity: sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=
 fancybox_css:
-  name: '@fancyapps/fancybox'
-  version: 3.5.7
-  file: dist/jquery.fancybox.min.css
-  alias: fancybox
-  integrity: sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=
+  name: '@fancyapps/ui'
+  version: 5.0.20
+  file: dist/fancybox/fancybox.css
+  alias: fancyapps-ui
+  integrity: sha256-RvRHGSuWAxZpXKV9lLDt2e+rZ+btzn48Wp4ueS3NZKs=
 mediumzoom:
   name: medium-zoom
   version: 1.0.8
