@@ -41,10 +41,10 @@ NexT.utils = {
 
   registerCodeblock: function() {
     let figure = document.querySelectorAll('figure.highlight');
-    let needWrap = false;
+    let isHljs = true;
     if (figure.length === 0) {
       figure = document.querySelectorAll('pre:not(.mermaid)');
-      needWrap = true;
+      isHljs = false;
     }
     figure.forEach(element => {
       element.querySelectorAll('.code .line span').forEach(span => {
@@ -54,11 +54,15 @@ NexT.utils = {
       });
       const height = parseInt(window.getComputedStyle(element).height.replace('px', ''), 10);
       const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height);
-      let target = element;
-      if ((needFold || CONFIG.copycode.enable) && needWrap) {
+      if (!needFold && !CONFIG.copycode.enable) return;
+      let target;
+      if (isHljs && CONFIG.copycode.style === 'mac') {
+        target = element;
+      } else {
+        const container = element.querySelector('.table-container') || element;
         const box = document.createElement('div');
         box.className = 'code-container';
-        element.wrap(box);
+        container.wrap(box);
         target = box;
       }
       if (needFold) {
