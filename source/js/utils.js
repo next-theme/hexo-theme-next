@@ -39,10 +39,7 @@ NexT.utils = {
     });
   },
 
-  /**
-   * One-click copy code support.
-   */
-  registerCopyCode: function() {
+  registerCodeblock: function() {
     let figure = document.querySelectorAll('figure.highlight');
     let needWrap = false;
     if (figure.length === 0) {
@@ -72,6 +69,7 @@ NexT.utils = {
         });
       }
       if (!CONFIG.copycode.enable) return;
+      // One-click copy code support.
       target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
       const button = target.querySelector('.copy-btn');
       button.addEventListener('click', () => {
