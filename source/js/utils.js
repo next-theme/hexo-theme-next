@@ -59,6 +59,8 @@ NexT.utils = {
       if (isHljs && CONFIG.copycode.style === 'mac') {
         target = element;
       } else {
+        // https://github.com/next-theme/hexo-theme-next/issues/98
+        // https://github.com/next-theme/hexo-theme-next/pull/508
         const container = element.querySelector('.table-container') || element;
         const box = document.createElement('div');
         box.className = 'code-container';
