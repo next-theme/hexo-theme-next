@@ -27,7 +27,7 @@ labels:
       issue:
         body: This will not be worked on but we appreciate your contribution.
         action: close
-  - name: Configurations
+  - name: Configuration
     labeled:
       pr:
         body: |

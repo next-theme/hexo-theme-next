@@ -41,22 +41,27 @@ NexT.utils = {
 
   registerCodeblock: function() {
     let figure = document.querySelectorAll('figure.highlight');
-    let isHljs = true;
+    let isHljsWithWrap = true;
     if (figure.length === 0) {
       figure = document.querySelectorAll('pre:not(.mermaid)');
-      isHljs = false;
+      isHljsWithWrap = false;
     }
     figure.forEach(element => {
-      element.querySelectorAll('.code .line span').forEach(span => {
-        span.classList.forEach(name => {
-          span.classList.replace(name, `hljs-${name}`);
+      let span = element.querySelectorAll('.code .line span');
+      if (span.length === 0) {
+        // Hljs without line_number and wrap
+        span = element.querySelectorAll('code.highlight span');
+      }
+      span.forEach(s => {
+        s.classList.forEach(name => {
+          s.classList.replace(name, `hljs-${name}`);
         });
       });
       const height = parseInt(window.getComputedStyle(element).height.replace('px', ''), 10);
       const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height);
       if (!needFold && !CONFIG.copycode.enable) return;
       let target;
-      if (isHljs && CONFIG.copycode.style === 'mac') {
+      if (isHljsWithWrap && CONFIG.copycode.style === 'mac') {
         target = element;
       } else {
         // https://github.com/next-theme/hexo-theme-next/issues/98
@@ -69,7 +74,7 @@ NexT.utils = {
       }
       if (needFold) {
         target.classList.add('highlight-fold');
-        target.insertAdjacentHTML('beforeend', '<div class="fold-cover"></div><div class="expand-btn"><i class="fa fa-chevron-down fa-fw"></i></div>');
+        target.insertAdjacentHTML('beforeend', '<div class="fold-cover"></div><div class="expand-btn"><i class="fa fa-angle-down fa-fw"></i></div>');
         target.querySelector('.expand-btn').addEventListener('click', () => {
           target.classList.remove('highlight-fold');
         });
