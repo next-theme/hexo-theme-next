@@ -22,15 +22,9 @@
       </div>
 
       <div class="post-title">
-        {%- if post.link %}{# Link posts #}
-          {%- set postTitleIcon = '<i class="fa fa-external-link-alt"></i>' %}
-          {%- set postText = post.title or post.link %}
-          {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url'}) }}
-        {% else %}
-          <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
-            <span itemprop="name">{{ post.title or __('post.untitled') }}</span>
-          </a>
-        {%- endif %}
+        <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
+          <span itemprop="name">{{ post.title or __('post.untitled') }}</span>
+        </a>
       </div>
 
       {{ post_gallery(post.photos) }}
