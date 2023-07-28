@@ -373,6 +373,10 @@ codeblock:
     enable: false
     # Available values: default | flat | mac
     style:
+  # Fold code block
+  fold:
+    enable: false
+    height: 500
 
 back2top:
   enable: true

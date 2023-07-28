@@ -46,7 +46,7 @@ NexT.boot.refresh = function() {
 
   CONFIG.exturl && NexT.utils.registerExtURL();
   NexT.utils.wrapTableWithBox();
-  NexT.utils.registerCopyCode();
+  NexT.utils.registerCodeblock();
   NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerLangSelect();

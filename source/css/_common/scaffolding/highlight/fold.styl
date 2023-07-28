@@ -1,0 +1,29 @@
+.expand-btn {
+  bottom: 0;
+  color: var(--highlight-foreground);
+  cursor: pointer;
+  display: none;
+  left: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+}
+
+.fold-cover {
+  background-image: linear-gradient(to top, var(--highlight-background) 0, rgba(0, 0, 0, 0) 100%);
+  bottom: 0;
+  display: none;
+  height: 50px;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+.highlight-fold {
+  max-height: unit(hexo-config('codeblock.fold.height'), 'px');
+  overflow-y: hidden !important;
+
+  .expand-btn, .fold-cover {
+    display: block;
+  }
+}
