@@ -108,24 +108,24 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 9.23.0
+  version: 10.1.0
   file: firebase-app-compat.js
-  integrity: sha256-FYa4Xn7MJlI18eIkwawbRKLz7bGeUODtNpSR+bsjlHg=
+  integrity: sha256-oHsmS3zqBxvp/Qdg9vucmyY8AeVINi9wApvaRCX4Hhc=
 firebase_firestore:
   name: firebase
-  version: 9.23.0
+  version: 10.1.0
   file: firebase-firestore-compat.js
-  integrity: sha256-sgbLcRGF3ph6N+ymg9zoy9kFQDWBvJlCd0GbGMKBH0c=
+  integrity: sha256-GHgKMbAW0epA1D+BqqSYKy7jvQ/xJLUcemM7MGRKXjY=
 algolia_search:
   name: algoliasearch
-  version: 4.18.0
+  version: 4.19.1
   file: dist/algoliasearch-lite.umd.js
-  integrity: sha256-V3GHVlMSAsogT3wL0OY/l4d3fRLa56gNzlnzdIMBIWg=
+  integrity: sha256-qzlNbRtZWHoUV5I2mI2t9QR7oYXlS9oNctX+0pECXI0=
 instant_search:
   name: instantsearch.js
-  version: 4.56.3
+  version: 4.56.8
   file: dist/instantsearch.production.min.js
-  integrity: sha256-mWvjWAfZylKMOg+S3HLq+wng1HHRnl2Idr2r8NsUzIU=
+  integrity: sha256-xUys6KCuRGBxFaRaYZlWulRUjY48XFv6/Q2s0mb1dmc=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.1
@@ -138,9 +138,9 @@ pdfobject:
   integrity: sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA=
 mermaid:
   name: mermaid
-  version: 10.2.3
+  version: 10.3.0
   file: dist/mermaid.min.js
-  integrity: sha256-JFptYy4KzJ5OQP+Q9fubNf3cxpPPmZKqUOovyEONKrQ=
+  integrity: sha256-9y71g5Lz/KLsHjB8uXwnkuWDtAMDSzD/HdIbqhJfTAI=
 animate_css:
   name: animate.css
   version: 3.1.1
@@ -169,11 +169,11 @@ creative_commons:
   alias: creativecommons-vocabulary
 wavedrom:
   name: wavedrom
-  version: 3.2.0
+  version: 3.3.0
   file: wavedrom.min.js
-  integrity: sha256-cOqJCt2rKQA4GNjlL0tODFHnWd0CRLKLFqYhO6TCtAE=
+  integrity: sha256-IRMDzTC+wK5stMucZ/XSXkeS5VNtxZ+/Bm8Mcqfoxdo=
 wavedrom_skin:
   name: wavedrom
-  version: 3.2.0
+  version: 3.3.0
   file: skins/default.js
   integrity: sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI=
