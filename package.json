@@ -33,7 +33,7 @@
   "homepage": "https://theme-next.js.org",
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.3",
-    "c8": "8.0.0",
+    "c8": "8.0.1",
     "chai": "4.3.7",
     "eslint": "8.46.0",
     "hexo": "6.3.0",
