@@ -1,5 +1,9 @@
 <div class="reward-container">
-  <div>{{ __('reward.comment') }}</div>
+
+  {%- if theme.reward_settings.comment.enable %}
+    <div>{{ __('reward.comment') }}</div>
+  {%- endif %}
+
   <button>
     {{ __('reward.donate') }}
   </button>
