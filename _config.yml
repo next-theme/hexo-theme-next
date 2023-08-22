@@ -269,6 +269,9 @@ reward_settings:
   # If true, a donate button will be displayed in every article by default.
   enable: false
   animation: false
+  comment:
+    # If false, the comment tip will hide.
+    enable: true
 
 reward:
   #wechatpay: /images/wechatpay.png
