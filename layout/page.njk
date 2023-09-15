@@ -52,3 +52,5 @@
 {% block sidebar %}
   {{ sidebar_template.render(page.toc.enable) }}
 {% endblock %}
+
+{{ partial('_third-party/summarize/index.njk', {}, {cache: theme.cache.enable}) }}
