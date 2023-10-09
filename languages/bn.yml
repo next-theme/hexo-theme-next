@@ -18,7 +18,7 @@ menu:
 sidebar:
   overview: সারাংশ
   toc: সূচীপত্র
-  links: Links
+  links: লিঙ্কসমুহ
 post:
   posted: প্রকাশিত হয়েছে
   edited: সম্পাদিত হয়েছে
@@ -38,14 +38,14 @@ post:
     post_link: এই আর্টিকেলটি প্রথমে প্রকাশিত হয়েছে
     license_title: কপিরাইট নোটিস
     license_content: "এই ব্লগের সমস্ত আর্টিকেল %s এর অধীনে লাইসেন্সপ্রাপ্ত যদি না ব্যতিক্রম উল্লেখ করা হয়।"
-    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
+    license_content_reprint: "এই  আর্টিকেলটি একটি পুনর্মুদ্রিত আর্টিকেল এবং অনুমতি নিয়ে পুনরায় মুদ্রণ করা হয়েছে। দয়া করে উৎস নির্দেশ করুন!"
 footer:
   powered: "%s এর সাহায্যে চলছে"
   total_views: মোট দর্শক
   total_visitors: মোট দর্শক
 widget:
-  github: Follow me on GitHub
-  chat: Chat
+  github: আমাকে GitHub এ অনুসরন কর
+  chat: চ্যাট
 counter:
   tag_cloud:
     zero: কোনও ট্যাগ নেই
@@ -86,7 +86,7 @@ reward:
   alipay: আলি পে
   paypal: PayPal
   bitcoin: বিটকয়েন
-  comment: Buy me a coffee
+  comment: আমাকে একটা কফি কিনে দাও
 follow_me:
   welcome: আমার অন্যান্য প্রকাশনা চ্যানেলে আপনাকে স্বাগতম
 accessibility:
