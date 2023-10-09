@@ -13,12 +13,12 @@ menu:
   about: À propos
   search: Recherche
   schedule: Plannifier
-  sitemap: Sitemap
+  sitemap: Plan de site
   commonweal: Commonweal 404
 sidebar:
   overview: Aperçu
   toc: Table Des Matières
-  links: Links
+  links: Liens
 post:
   posted: Posté le
   edited: Édité le
@@ -34,18 +34,18 @@ post:
   copyright:
     author: Auteur de l'article
     link: Lien de l'article
-    post_author: Written by
-    post_link: This article originally appeared on
+    post_author: Rédigé par
+    post_link: Cet article a été initialement publié sur
     license_title: Droit d'auteur
     license_content: "Tous les articles de ce blog sont sous licence %s, sauf mention contraire."
-    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
+    license_content_reprint: "Cet article provient d'un article publié et repris avec autorisation. Veuillez indiquer la source!"
 footer:
   powered: "Propulsé par %s"
   total_views: Vues totales
   total_visitors: Total visiteurs
 widget:
-  github: Follow me on GitHub
-  chat: Chat
+  github: Suivez-moi sur GitHub
+  chat: Discussion
 counter:
   tag_cloud:
     zero: Aucun tag
@@ -65,12 +65,12 @@ state:
   categories: catégories
 search:
   placeholder: Recherche...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
+  empty: "Nous n'avons trouvé aucun résultat pour la recherche : %s"
+  hits_time: "%s resultats trouvés en %s ms"
+  hits: "%s résultats trouvés"
 cheers:
-  um: Um..
-  ok: OK
+  um: Eh bien..
+  ok: Ok
   nice: Jolie
   good: Bien
   great: Super
@@ -82,22 +82,22 @@ symbol:
   colon: ": "
 reward:
   donate: Donner
-  wechatpay: WeChat Pay
+  wechatpay: Paiement WeChat
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
-  comment: Buy me a coffee
+  comment: Offrez-moi un café
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: Bienvenue dans mes autres salons de publication
 accessibility:
   nav_toggle: Basculer la barre de navigation
   prev_page: Page précédente
   next_page: Page suivante
-  back_to_top: Back to top
-  select_lang: Select language
+  back_to_top: Revenir en haut
+  select_lang: Choisir une langue
 symbols_count_time:
   count: Caractères dans l'article
   count_total: Caractères total
   time: Temps de lecture
   time_total: Temps total de lecture
-  time_minutes: mins.
+  time_minutes: minutes.
