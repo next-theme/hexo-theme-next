@@ -8,10 +8,10 @@ anime:
   integrity: sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=
 fontawesome:
   name: '@fortawesome/fontawesome-free'
-  version: 6.4.0
+  version: 6.4.2
   file: css/all.min.css
   alias: font-awesome
-  integrity: sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=
+  integrity: sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=
 prism:
   name: prismjs
   version: 1.29.0
@@ -37,13 +37,13 @@ mathjax:
   integrity: sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=
 katex:
   name: katex
-  version: 0.16.8
+  version: 0.16.9
   file: dist/katex.min.css
   alias: KaTeX
-  integrity: sha256-3574TpfThVfeAhg+I4+N39EJiLN3QUkuEsMVe8hWAR4=
+  integrity: sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=
 copy_tex_js:
   name: katex
-  version: 0.16.8
+  version: 0.16.9
   file: dist/contrib/copy-tex.min.js
   alias: KaTeX
   integrity: sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=
@@ -55,16 +55,16 @@ pjax:
   integrity: sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=
 fancybox_js:
   name: '@fancyapps/ui'
-  version: 5.0.20
+  version: 5.0.24
   file: dist/fancybox/fancybox.umd.js
   alias: fancyapps-ui
-  integrity: sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=
+  integrity: sha256-oyhjPiYRWGXaAt+ny/mTMWOnN1GBoZDUQnzzgC7FRI4=
 fancybox_css:
   name: '@fancyapps/ui'
-  version: 5.0.20
+  version: 5.0.24
   file: dist/fancybox/fancybox.css
   alias: fancyapps-ui
-  integrity: sha256-RvRHGSuWAxZpXKV9lLDt2e+rZ+btzn48Wp4ueS3NZKs=
+  integrity: sha256-vQkngPS8jiHHH0I6ABTZroZk8NPZ7b+MUReOFE9UsXQ=
 mediumzoom:
   name: medium-zoom
   version: 1.0.8
@@ -108,24 +108,24 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 10.1.0
+  version: 10.4.0
   file: firebase-app-compat.js
-  integrity: sha256-oHsmS3zqBxvp/Qdg9vucmyY8AeVINi9wApvaRCX4Hhc=
+  integrity: sha256-kv9gfd+UUnUqqJ2d478LEHzOijuUbZOVdEkuXSMm4qM=
 firebase_firestore:
   name: firebase
-  version: 10.1.0
+  version: 10.4.0
   file: firebase-firestore-compat.js
-  integrity: sha256-GHgKMbAW0epA1D+BqqSYKy7jvQ/xJLUcemM7MGRKXjY=
+  integrity: sha256-sS/hkEB7nn47hhc//PNKfXiRX2YMEe4rBqUIqEhMYA8=
 algolia_search:
   name: algoliasearch
-  version: 4.19.1
+  version: 4.20.0
   file: dist/algoliasearch-lite.umd.js
-  integrity: sha256-qzlNbRtZWHoUV5I2mI2t9QR7oYXlS9oNctX+0pECXI0=
+  integrity: sha256-DABVk+hYj0mdUzo+7ViJC6cwLahQIejFvC+my2M/wfM=
 instant_search:
   name: instantsearch.js
-  version: 4.56.8
+  version: 4.57.0
   file: dist/instantsearch.production.min.js
-  integrity: sha256-xUys6KCuRGBxFaRaYZlWulRUjY48XFv6/Q2s0mb1dmc=
+  integrity: sha256-foJtB+Wd0wvvK+VU3KO0/H6CjwSwJfB1RnWlgx0Ov9U=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.1
@@ -138,9 +138,9 @@ pdfobject:
   integrity: sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA=
 mermaid:
   name: mermaid
-  version: 10.3.0
+  version: 10.5.0
   file: dist/mermaid.min.js
-  integrity: sha256-9y71g5Lz/KLsHjB8uXwnkuWDtAMDSzD/HdIbqhJfTAI=
+  integrity: sha256-K7oJiQlDulzl24ZUFOywuYme1JqBBvQzK6m8qHjt9Gk=
 animate_css:
   name: animate.css
   version: 3.1.1
