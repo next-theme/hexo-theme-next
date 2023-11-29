@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v3
       - name: Install Dependencies
         run: npm install
+      - name: Install hexo-tag-embed
+        run: npm install hexo-tag-embed
       - uses: actions/checkout@v3
         with:
           path: themes/next
