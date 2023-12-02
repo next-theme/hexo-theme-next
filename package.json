@@ -40,7 +40,7 @@
     "hexo-renderer-marked": "6.1.1",
     "js-yaml": "4.1.0",
     "mocha": "10.2.0",
-    "stylelint": "15.10.3",
+    "stylelint": "15.11.0",
     "stylelint-stylus": "0.18.0"
   }
 }
