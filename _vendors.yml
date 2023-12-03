@@ -5,7 +5,7 @@ anime:
   name: animejs
   version: 3.2.2
   file: lib/anime.min.js
-  integrity: sha256-tc4b48P1MPGS4PJXHRlChGCW1mEZy62jS/3JEsSHPzU=
+  integrity: sha256-vO75T5ZEgfdoDZXn+75ajCDTlFqSanVIdImKV423x6s=
 fontawesome:
   name: '@fortawesome/fontawesome-free'
   version: 6.5.0
