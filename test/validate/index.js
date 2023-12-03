@@ -27,7 +27,7 @@ describe('Validate', () => {
           const integrity = Buffer.from(createHash('sha256').update(body, 'utf8').digest()).toString('base64');
           return !vendor.integrity || 'sha256-' + integrity === vendor.integrity;
         });
-    }))).should.all.equal(true);
+    })))[0].should.all.equal(true);
   });
 
   it('language', () => {
