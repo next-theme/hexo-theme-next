@@ -1,10 +1,26 @@
 # Configuration for labeler - https://github.com/actions/labeler
 
-📦 Dependencies: package.json
-Configurations: _config.yml
-CSS: source/css/**/*
-📖 Docs: docs/**/*
-Layout: layout/**/*
-🌍 i18n: languages/**/*
-Actions: .github/workflows/**/*
-🔌 3rd Party Plugin: '**/*third-party/**/*'
+📦 Dependencies:
+- changed-files:
+  - any-glob-to-any-file: package.json
+Configurations:
+- changed-files:
+  - any-glob-to-any-file: _config.yml
+CSS:
+- changed-files:
+  - any-glob-to-any-file: source/css/**/*
+📖 Docs:
+- changed-files:
+  - any-glob-to-any-file: docs/**/*
+Layout:
+- changed-files:
+  - any-glob-to-any-file: layout/**/*
+🌍 i18n:
+- changed-files:
+  - any-glob-to-any-file: languages/**/*
+Actions:
+- changed-files:
+  - any-glob-to-any-file: .github/workflows/**/*
+🔌 3rd Party Plugin:
+- changed-files:
+  - any-glob-to-any-file: '**/*third-party/**/*'
