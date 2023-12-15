@@ -49,10 +49,10 @@ copy_tex_js:
   integrity: sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=
 pjax:
   name: '@next-theme/pjax'
-  version: 0.6.0
+  version: latest
   file: pjax.min.js
   alias: next-theme-pjax
-  integrity: sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=
+  integrity: sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=
 fancybox_js:
   name: '@fancyapps/ui'
   version: 5.0.28
