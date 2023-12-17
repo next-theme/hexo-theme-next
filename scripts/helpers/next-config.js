@@ -27,7 +27,7 @@ hexo.extend.helper.register('next_config', function() {
     comments  : theme.comments,
     stickytabs: theme.tabs.sticky,
     motion    : theme.motion,
-    prism     : config.prismjs.enable && !config.prismjs.preprocess,
+    prism     : theme.prism.enable && !config.prismjs.preprocess,
     i18n      : {
       placeholder: __('search.placeholder'),
       empty      : __('search.empty', '${query}'),
