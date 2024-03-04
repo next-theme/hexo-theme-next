@@ -22,13 +22,31 @@ if (!CONFIG.google_analytics.only_pageview) {
     if (CONFIG.hostname !== location.hostname) return;
     const uid = localStorage.getItem('uid') || (Math.random() + '.' + Math.random());
     localStorage.setItem('uid', uid);
-    navigator.sendBeacon('https://www.google-analytics.com/collect', new URLSearchParams({
-      v  : 1,
-      tid: CONFIG.google_analytics.tracking_id,
-      cid: uid,
-      t  : 'pageview',
-      dp : encodeURIComponent(location.pathname)
-    }));
+    fetch(
+      'https://www.google-analytics.com/mp/collect?' + new URLSearchParams({
+        api_secret    : CONFIG.google_analytics.measure_protocol_api_secret,
+        measurement_id: CONFIG.google_analytics.tracking_id
+      }),
+      {
+        method : 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          client_id: uid,
+          events   : [
+            {
+              name  : 'page_view',
+              params: {
+                page_location: location.href,
+                page_title   : document.title
+              }
+            }
+          ]
+        }),
+        mode: 'no-cors'
+      }
+    );
   };
   document.addEventListener('pjax:complete', sendPageView);
   sendPageView();

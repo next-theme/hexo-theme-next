@@ -75,6 +75,9 @@ NexT.utils = {
           box = document.createElement('div');
           box.className = 'code-container';
           container.wrap(box);
+
+          // add "notranslate" to prevent Google Translate from translating it, which also completely messes up the layout
+          box.classList.add('notranslate');
         }
         target = box;
       }
