@@ -26,7 +26,17 @@
     {%- if post.header !== false %}
       <header class="post-header">
         <{% if is_index %}h2{% else %}h1{% endif %} class="post-title{% if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">
-          {% if is_index %}
+          {# Link posts #}
+          {%- if post.link %}
+            {%- if post.sticky > 0 %}
+              <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
+                <i class="fa fa-thumbtack"></i>
+              </span>
+            {%- endif %}
+            {%- set postTitleIcon = '<i class="fa fa-external-link-alt"></i>' %}
+            {%- set postText = post.title or post.link %}
+            {{- next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url'}) }}
+          {% elif is_index %}
             {%- if post.sticky > 0 %}
               <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
                 <i class="fa fa-thumbtack"></i>
