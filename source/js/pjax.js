@@ -3,6 +3,7 @@
 const pjax = new Pjax({
   selectors: [
     'head title',
+    'meta[property="og:title"]',
     'script[type="application/json"]',
     // Precede .main-inner to prevent placeholder TOC changes asap
     '.post-toc-wrap',
