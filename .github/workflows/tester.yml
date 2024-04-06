@@ -24,7 +24,7 @@ jobs:
           path: themes/next
       - uses: actions/checkout@v4
         with:
-          repository: SukkaLab/hexo-many-posts
+          repository: hexojs/hexo-many-posts
           path: source/_posts/hexo-many-posts
       - run: npx hexo config theme next
       - uses: DamianReeves/write-file-action@master
