@@ -9,6 +9,7 @@ const { getVendors } = require('./utils');
 let internal;
 try {
   internal = require('@next-theme/plugins');
+  // eslint-disable-next-line no-unused-vars
 } catch (error) {
 }
 const vendorsFile = fs.readFileSync(path.join(__dirname, '../../../_vendors.yml'));

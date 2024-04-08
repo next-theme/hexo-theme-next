@@ -5,6 +5,7 @@ const path = require('path');
 let css;
 try {
   css = require('@adobe/css-tools');
+  // eslint-disable-next-line no-unused-vars
 } catch (error) {
   css = require('css');
 }
@@ -13,6 +14,7 @@ function resolve(name, file = '') {
   let dir;
   try {
     dir = path.dirname(require.resolve(`${name}/package.json`));
+    // eslint-disable-next-line no-unused-vars
   } catch (error) {
     return '';
   }
