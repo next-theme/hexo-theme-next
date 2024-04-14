@@ -23,7 +23,9 @@
     {### PAGE BLOCK ###}
     {##################}
     <div class="post-block" lang="{{ page.lang }}">
-      {%- include '_partials/page/page-header.njk' -%}
+      {%- if page.header !== false %}
+        {%- include '_partials/page/page-header.njk' -%}
+      {%- endif %}
       {#################}
       {### PAGE BODY ###}
       {#################}
