@@ -120,9 +120,10 @@ const templates = {
 };
 
 module.exports = ctx => function(args, content) {
-  args = args[0].split('-');
-  const group = parseInt(args[0], 10);
-  const layout = parseInt(args[1], 10);
+  let group, layout;
+  if (args[0]) {
+    [group, layout] = args[0].split('-');
+  }
 
   content = ctx.render.renderSync({ text: content, engine: 'markdown' });
 
