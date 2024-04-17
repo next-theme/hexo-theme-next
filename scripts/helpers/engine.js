@@ -92,6 +92,10 @@ hexo.extend.helper.register('post_edit', function(src) {
   });
 });
 
+hexo.extend.helper.register('post_count', function(year) {
+  return this.site.posts.filter(post => this.date(post.date, 'YYYY') === year).count();
+});
+
 hexo.extend.helper.register('gitalk_md5', function(path) {
   const str = this.url_for(path);
   return crypto.createHash('md5').update(str).digest('hex');

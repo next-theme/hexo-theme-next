@@ -7,7 +7,7 @@
   {%- if year !== current_year %}
     {%- set current_year = year %}
     <div class="collection-year">
-      <span class="collection-header">{{ current_year }}</span>
+      <span class="collection-header">{{ current_year }}{% if is_archive() %}<span class="collection-year-count">{{ post_count(year) }}</span>{% endif %}</span>
     </div>
   {%- endif %}
 
