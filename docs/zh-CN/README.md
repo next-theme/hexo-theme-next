@@ -39,15 +39,15 @@
 如果你在使用 Hexo 5.0 或更新版本，最简单的安装方式是通过 npm：
 
 ```sh
-$ cd hexo-site
-$ npm install hexo-theme-next
+cd hexo-site
+npm install hexo-theme-next
 ```
 
 你也可以直接克隆整个仓库：
 
 ```sh
-$ cd hexo-site
-$ git clone https://github.com/next-theme/hexo-theme-next themes/next
+cd hexo-site
+git clone https://github.com/next-theme/hexo-theme-next themes/next
 ```
 
 此外，如果你想要使用其他方式，请参见[详细安装步骤][docs-installation-url]。
@@ -97,15 +97,15 @@ NexT 每个月都会发布新版本。请在更新前阅读[更新说明][docs-r
 通过 npm 安装最新版本：
 
 ```sh
-$ cd hexo-site
-$ npm install hexo-theme-next@latest
+cd hexo-site
+npm install hexo-theme-next@latest
 ```
 
 或者通过 git 更新到最新的 master 分支：
 
 ```sh
-$ cd themes/next
-$ git pull
+cd themes/next
+git pull
 ```
 
 **如果你想要从 v5.x / v7.x 更新到最新版本，阅读[这篇文档][docs-upgrade-url]。**
