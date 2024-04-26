@@ -125,13 +125,7 @@ main-container() {
 }
 
 sidebar-toggle-alignment($reverse) {
-  $condition = hexo-config('sidebar.position') == 'right';
-  if ((($scheme == 'Muse') or ($scheme == 'Mist')) and !$button_reverse) {
-    $condition = $condition == $reverse;
-  }
-  if ((($scheme == 'Pisces') or ($scheme == 'Gemini')) and $button_reverse) {
-    $condition = $condition == $reverse;
-  }
+  $condition = ($sidebar-toggle-position == 'right') == $reverse;
   return $condition ? ('left' 'right') : ('right' 'left');
 }
 

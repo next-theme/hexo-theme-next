@@ -40,8 +40,12 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/comments-buttons.js');
   }
 
-  if ((theme.scheme === 'Pisces' || theme.scheme === 'Gemini') && !theme.sidebar.on_mobile) {
+  if ((theme.scheme === 'Pisces' || theme.scheme === 'Gemini')) {
     hexo.route.remove('js/schemes/muse.js');
+  }
+
+  if (theme.sidebar.display === 'remove') {
+    hexo.route.remove('js/sidebar.js');
   }
 
   // Third Party Scripts
