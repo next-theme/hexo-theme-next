@@ -52,6 +52,16 @@ desktop-largest() {
   }
 }
 
+sidebar() {
+  if (($scheme == 'Muse') or ($scheme == 'Mist')) {
+    {block}
+  } else {
+    +tablet-mobile() {
+      {block}
+    }
+  }
+}
+
 random-color($min, $max) {
   return floor(math(0, 'random') * ($max - $min + 1) + $min);
 }

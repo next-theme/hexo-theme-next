@@ -40,7 +40,7 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/comments-buttons.js');
   }
 
-  if ((theme.scheme === 'Pisces' || theme.scheme === 'Gemini')) {
+  if (theme.scheme === 'Pisces' || theme.scheme === 'Gemini') {
     hexo.route.remove('js/schemes/muse.js');
   }
 
