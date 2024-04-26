@@ -1,88 +1,94 @@
-.sidebar {
-  // https://caniuse.com/css-sticky
-  position: -webkit-sticky;
-  position: sticky;
-  top: $sidebar-offset;
++desktop() {
+  .sidebar {
+    // https://caniuse.com/css-sticky
+    position: -webkit-sticky;
+    position: sticky;
+    top: $sidebar-offset;
 
-  +tablet-mobile() {
+    +tablet-mobile() {
+      display: none;
+    }
+  }
+
+  .sidebar-toggle {
     display: none;
   }
-}
 
-.sidebar-inner {
-  background: var(--content-bg-color);
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-  box-sizing: border-box;
-  color: var(--text-color);
-  margin-top: $sidebar-offset;
-  max-height: 'calc(100vh - %s)' % unit($sidebar-offset * 2, 'px');
+  .sidebar-inner {
+    background: var(--content-bg-color);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    box-sizing: border-box;
+    color: var(--text-color);
+    margin-top: $sidebar-offset;
+    max-height: 'calc(100vh - %s)' % unit($sidebar-offset * 2, 'px');
 
-  if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) {
-    visibility: hidden;
+    if (hexo-config('motion.enable') and hexo-config('motion.transition.sidebar')) {
+      visibility: hidden;
+    }
   }
-}
 
-.site-state-item {
-  padding: 0 10px;
-}
+  .site-state-item {
+    padding: 0 10px;
+  }
 
-.sidebar .sidebar-button {
-  border-bottom: 1px dotted $grey-light;
-  border-top: 1px dotted $grey-light;
+  .sidebar .sidebar-button {
+    border-bottom: 1px dotted $grey-light;
+    border-top: 1px dotted $grey-light;
 
-  button {
-    border: 0;
-    color: $orange;
-    display: block;
-    width: 100%;
-
-    &:hover {
-      background: none;
+    button {
       border: 0;
-      color: darken($orange, 20%);
+      color: $orange;
+      display: block;
+      width: 100%;
+
+      &:hover {
+        background: none;
+        border: 0;
+        color: darken($orange, 20%);
+      }
     }
   }
-}
 
-.links-of-author {
-  flex-wrap();
-}
-
-.links-of-author-item {
-  sidebar-inline-links-item();
-
-  if (not hexo-config('social_icons.icons_only')) {
-    width: 50%;
+  .links-of-author {
+    flex-wrap();
   }
 
-  a {
-    border-bottom: 0;
-    border-radius: 4px;
-    display: block;
-
-    &:hover {
-      background: var(--body-bg-color);
-    }
-  }
-}
-
-.links-of-blogroll-item {
-  if (hexo-config('links_settings.layout') == 'inline') {
-    display: inline-block;
-    max-width: 100%;
+  .links-of-author-item {
     sidebar-inline-links-item();
+
+    if (not hexo-config('social_icons.icons_only')) {
+      width: 50%;
+    }
+
+    a {
+      border-bottom: 0;
+      border-radius: 4px;
+      display: block;
+
+      &:hover {
+        background: var(--body-bg-color);
+      }
+    }
   }
-}
 
-if (hexo-config('back2top.sidebar')) {
-  // Only when back2top.sidebar is true, apply the following styles
-  .back-to-top {
-    background: var(--body-bg-color);
-    margin: 8px - $sidebar-offset -10px -18px;
+  .links-of-blogroll-item {
+    if (hexo-config('links_settings.layout') == 'inline') {
+      display: inline-block;
+      max-width: 100%;
+      sidebar-inline-links-item();
+    }
+  }
 
-    &.back-to-top-on {
-      margin-top: 16px;
+  if (hexo-config('back2top.sidebar')) {
+    // Only when back2top.sidebar is true, apply the following styles
+    .back-to-top {
+      background: var(--body-bg-color);
+      margin: 8px - $sidebar-offset -10px -18px;
+
+      &.back-to-top-on {
+        margin-top: 16px;
+      }
     }
   }
 }

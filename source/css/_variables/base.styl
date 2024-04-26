@@ -242,6 +242,8 @@ $tag-cloud-end-dark   = #eee;
 // Variables for sidebar section elements.
 // --------------------------------------------------
 
+$sidebar-width                        = hexo-config('sidebar.width_expanded') is a 'unit' ? hexo-config('sidebar.width_expanded') : 320;
+$sidebar-width-expanded               = unit($sidebar-width, 'px');
 $sidebar-padding                      = hexo-config('sidebar.padding') is a 'unit' ? unit(hexo-config('sidebar.padding'), px) : 18px;
 $sidebar-offset                       = hexo-config('sidebar.offset') is a 'unit' ? unit(hexo-config('sidebar.offset'), px) : 12px;
 $sidebar-nav-color                    = $grey-dim;
@@ -281,6 +283,7 @@ $b2t-bg-color                 = $black-deep;
 $sidebar-toggle-inner-size    = 16px;
 $sidebar-toggle-padding       = 5px;
 $sidebar-toggle-size          = $sidebar-toggle-inner-size + $sidebar-toggle-padding * 2;
+$sidebar-toggle-alignment     = hexo-config('sidebar.position') == 'left' ? 'left' : 'right';
 
 //  .post-expand .post-eof
 //  In Muse scheme, margin above and below the post separator

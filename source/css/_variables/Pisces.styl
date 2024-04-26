@@ -5,8 +5,8 @@
 // --------------------------------------------------
 $body-bg-color                = #f5f7f9;
 
-$sidebar-width                = hexo-config('sidebar.width') is a 'unit' ? hexo-config('sidebar.width') : 240;
-$sidebar-desktop              = unit($sidebar-width, 'px');
+$sidebar-width                = hexo-config('sidebar.width_dual_column') is a 'unit' ? hexo-config('sidebar.width_dual_column') : 240;
+$sidebar-width-dual-column    = unit($sidebar-width, 'px');
 $content-wrap                 = 'calc(100% - %s)' % unit($sidebar-width + $sidebar-offset, 'px');
 
 $content-desktop              = 'calc(100% - %s)' % unit($content-desktop-padding / 2, 'px');

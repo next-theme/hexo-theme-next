@@ -44,6 +44,10 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/schemes/muse.js');
   }
 
+  if (theme.sidebar.display === 'remove') {
+    hexo.route.remove('js/sidebar.js');
+  }
+
   // Third Party Scripts
   // Analytics
   if (!theme.baidu_analytics) {

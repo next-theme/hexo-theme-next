@@ -11,6 +11,10 @@
   {{- next_js('schemes/muse.js') }}
 {%- endif %}
 
+{%- if theme.sidebar.display !== 'remove' %}
+  {{- next_js('sidebar.js') }}
+{%- endif %}
+
 {{- next_js('next-boot.js') }}
 {%- if theme.bookmark.enable %}
   {{- next_js('bookmark.js') }}

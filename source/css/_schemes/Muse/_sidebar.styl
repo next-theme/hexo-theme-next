@@ -1,134 +1,23 @@
-if (hexo-config('sidebar.position') == 'right') {
-  .sidebar-active {
-    // Note: $sidebar-desktop + $content-desktop-large should be less than desktop-large threshold
-    // Otherwise a horizontal scrollbar will appear
-    +desktop-large() {
-      padding-right: $sidebar-desktop;
-
-      .footer-fixed {
-        right: $sidebar-desktop;
-      }
-    }
-  }
-
-  .sidebar {
-    right: 0 - $sidebar-desktop;
-
-    .sidebar-active & {
-      right: 0;
-    }
-  }
-} else {
-  .sidebar-active {
-    +desktop-large() {
-      padding-left: $sidebar-desktop;
-
-      .footer-fixed {
-        left: $sidebar-desktop;
-      }
-    }
-  }
-
-  .sidebar {
-    left: 0 - $sidebar-desktop;
-
-    .sidebar-active & {
-      left: 0;
-    }
-  }
-}
-
-.sidebar {
-  background: $black-deep;
-  bottom: 0;
-  if (not hexo-config('back2top.sidebar')) {
-    box-shadow: inset 0 2px 6px black;
-  }
-  max-height: 100vh;
-  overflow-y: auto;
-  position: fixed;
-  top: 0;
-  transition: all $transition-ease-out;
-  width: $sidebar-desktop;
-  z-index: $zindex-2;
-
-  a {
-    border-bottom-color: $black-light;
-    color: $grey-dark;
-
-    &:hover {
-      border-bottom-color: $gainsboro;
-      color: $gainsboro;
-    }
-  }
-}
-
-.links-of-author {
-  &:not(:first-child) {
-    margin-top: 15px;
-  }
-
-  a {
-    border-bottom-color: $black-light;
-    display: inline-block;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    vertical-align: middle;
-
-    if (hexo-config('social_icons.transition')) {
-      transition: all $transition-ease;
-    }
-
-    &::before {
-      background: rgb(random-color(0, 255) - 50%, random-color(0, 255) - 50%, random-color(0, 255) - 50%);
-      display: inline-block;
-      margin-right: 3px;
-      transform: translateY(-2px);
-      round-icon(4px);
-    }
-  }
-}
-
-.links-of-blogroll-item {
-  if (hexo-config('links_settings.layout') == 'inline') {
-    display: inline-block;
-  }
-  padding: 2px 10px;
-
-  a {
-    box-sizing: border-box;
-    display: inline-block;
-    max-width: 280px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}
-
-.popular-posts .popular-posts-item .popular-posts-link:hover {
-  background: none;
-}
-
-.sidebar-dimmer {
-  background: black;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  transition: visibility .4s, opacity .4s;
-  visibility: hidden;
-  width: 100%;
-  z-index: $zindex-1;
-
-  .sidebar-active & {
-    opacity: .7;
-    visibility: visible;
-  }
-}
-
 +desktop-large() {
   .sidebar-dimmer {
     display: none;
+  }
+
+  .sidebar-active {
+    // Note: $sidebar-width-expanded + $content-desktop-large should be less than desktop-large threshold
+    // Otherwise a horizontal scrollbar will appear
+    if ($sidebar-toggle-alignment == 'right') {
+      padding-right: $sidebar-width-expanded;
+
+      .footer-fixed {
+        right: $sidebar-width-expanded;
+      }
+    } else {
+      padding-left: $sidebar-width-expanded;
+
+      .footer-fixed {
+        left: $sidebar-width-expanded;
+      }
+    }
   }
 }

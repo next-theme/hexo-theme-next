@@ -52,6 +52,16 @@ desktop-largest() {
   }
 }
 
+sidebar() {
+  if (($scheme == 'Muse') or ($scheme == 'Mist')) {
+    {block}
+  } else {
+    +tablet-mobile() {
+      {block}
+    }
+  }
+}
+
 random-color($min, $max) {
   return floor(math(0, 'random') * ($max - $min + 1) + $min);
 }
@@ -124,16 +134,9 @@ main-container() {
   }
 }
 
-sidebar-toggle-alignment($reverse) {
-  $condition = hexo-config('sidebar.position') == 'right';
-  if (($scheme == 'Muse') or ($scheme == 'Mist')) {
-    $condition = $condition == $reverse;
-  }
-  return $condition ? ('left' 'right') : ('right' 'left');
-}
-
 sidebar-toggle-position($reverse) {
-  $alignment = sidebar-toggle-alignment($reverse)[0];
+  $condition = ($sidebar-toggle-alignment == 'right') == $reverse;
+  $alignment = $condition ? 'left' : 'right';
   {$alignment}: $b2t-position-right;
   +tablet-mobile() {
     {$alignment}: $b2t-position-right-mobile;
