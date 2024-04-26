@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const sidebarToggleMotion = {
     mouse: {},
-    init: function() {
+    init : function() {
       window.addEventListener('mousedown', this.mousedownHandler.bind(this));
       window.addEventListener('mouseup', this.mouseupHandler.bind(this));
       document.querySelector('.sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));

@@ -1,5 +1,3 @@
-/* global CONFIG */
-
 document.addEventListener('DOMContentLoaded', () => {
 
   function updateFooterPosition() {
