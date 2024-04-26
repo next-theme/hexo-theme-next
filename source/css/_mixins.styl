@@ -134,13 +134,9 @@ main-container() {
   }
 }
 
-sidebar-toggle-alignment($reverse) {
-  $condition = ($sidebar-toggle-position == 'right') == $reverse;
-  return $condition ? ('left' 'right') : ('right' 'left');
-}
-
 sidebar-toggle-position($reverse) {
-  $alignment = sidebar-toggle-alignment($reverse)[0];
+  $condition = ($sidebar-toggle-alignment == 'right') == $reverse;
+  $alignment = $condition ? 'left' : 'right';
   {$alignment}: $b2t-position-right;
   +tablet-mobile() {
     {$alignment}: $b2t-position-right-mobile;
