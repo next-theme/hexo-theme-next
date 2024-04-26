@@ -4,19 +4,19 @@
   }
 
   .sidebar-active {
-    // Note: $sidebar-desktop + $content-desktop-large should be less than desktop-large threshold
+    // Note: $sidebar-width-expanded + $content-desktop-large should be less than desktop-large threshold
     // Otherwise a horizontal scrollbar will appear
     if (hexo-config('sidebar.position') == 'right') {
-      padding-right: $sidebar-desktop;
+      padding-right: $sidebar-width-expanded;
 
       .footer-fixed {
-        right: $sidebar-desktop;
+        right: $sidebar-width-expanded;
       }
     } else {
-      padding-left: $sidebar-desktop;
+      padding-left: $sidebar-width-expanded;
 
       .footer-fixed {
-        left: $sidebar-desktop;
+        left: $sidebar-width-expanded;
       }
     }
   }

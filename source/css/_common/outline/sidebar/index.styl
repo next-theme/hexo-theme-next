@@ -1,7 +1,7 @@
 +sidebar() {
   if (hexo-config('sidebar.position') == 'right') {
     .sidebar {
-      right: 0 - $sidebar-desktop;
+      right: 0 - $sidebar-width-expanded;
 
       .sidebar-active & {
         right: 0;
@@ -9,7 +9,7 @@
     }
   } else {
     .sidebar {
-      left: 0 - $sidebar-desktop;
+      left: 0 - $sidebar-width-expanded;
 
       .sidebar-active & {
         left: 0;
@@ -28,7 +28,7 @@
     position: fixed;
     top: 0;
     transition: all $transition-ease-out;
-    width: $sidebar-desktop;
+    width: $sidebar-width-expanded;
     z-index: $zindex-2;
 
     a {
