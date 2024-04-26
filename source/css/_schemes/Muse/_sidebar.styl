@@ -6,7 +6,7 @@
   .sidebar-active {
     // Note: $sidebar-width-expanded + $content-desktop-large should be less than desktop-large threshold
     // Otherwise a horizontal scrollbar will appear
-    if (hexo-config('sidebar.position') == 'right') {
+    if ($sidebar-toggle-alignment == 'right') {
       padding-right: $sidebar-width-expanded;
 
       .footer-fixed {
