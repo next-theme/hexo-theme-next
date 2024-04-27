@@ -415,6 +415,19 @@ NexT.utils = {
     sidebar.classList.replace(activeClassNames[1 - index], activeClassNames[index]);
   },
 
+  updateFooterPosition: function() {
+    if (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
+    function updateFooterPosition() {
+      const footer = document.querySelector('.footer');
+      const containerHeight = document.querySelector('.main').offsetHeight + footer.offsetHeight;
+      footer.classList.toggle('footer-fixed', containerHeight <= window.innerHeight);
+    }
+
+    updateFooterPosition();
+    window.addEventListener('resize', updateFooterPosition);
+    window.addEventListener('scroll', updateFooterPosition, { passive: true });
+  },
+
   getScript: function(src, options = {}, legacyCondition) {
     if (typeof options === 'function') {
       return this.getScript(src, {
