@@ -37,9 +37,9 @@ document.addEventListener('pjax:success', () => {
     NexT.motion.integrator
       .init()
       .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
       // Add sidebar-post-related transition.
       .add(NexT.motion.middleWares.sidebar)
+      .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
   if (CONFIG.sidebar.display !== 'remove') {
