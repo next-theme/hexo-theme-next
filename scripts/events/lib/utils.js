@@ -5,7 +5,7 @@ const path = require('path');
 let css;
 try {
   css = require('@adobe/css-tools');
-} catch (error) {
+} catch {
   css = require('css');
 }
 
@@ -13,7 +13,7 @@ function resolve(name, file = '') {
   let dir;
   try {
     dir = path.dirname(require.resolve(`${name}/package.json`));
-  } catch (error) {
+  } catch {
     return '';
   }
   return `${dir}/${file}`;

@@ -9,7 +9,7 @@ const { getVendors } = require('./utils');
 let internal;
 try {
   internal = require('@next-theme/plugins');
-} catch (error) {
+} catch {
 }
 const vendorsFile = fs.readFileSync(path.join(__dirname, '../../../_vendors.yml'));
 const dependencies = yaml.load(vendorsFile);

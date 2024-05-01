@@ -32,10 +32,10 @@
   },
   "homepage": "https://theme-next.js.org",
   "devDependencies": {
-    "@next-theme/eslint-config": "0.0.3",
+    "@next-theme/eslint-config": "0.0.4",
     "c8": "9.1.0",
     "chai": "4.4.1",
-    "eslint": "8.55.0",
+    "eslint": "9.1.1",
     "hexo": "7.1.1",
     "hexo-renderer-marked": "6.3.0",
     "js-yaml": "4.1.0",
