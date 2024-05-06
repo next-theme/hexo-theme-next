@@ -106,17 +106,29 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
       padding: 5px 0;
     }
   }
+
+  .search-popup {
+    .search-input-container {
+      flex-grow: 1;
+      padding: 2px;
+    }
+
+    .no-result {
+      display: flex;
+    }
+
+    .search-result-list {
+      width: 100%;
+    }
+
+    .search-result-icon {
+      color: $grey-light;
+      margin: auto;
+    }
+  }
 }
 
 if (hexo-config('algolia_search.enable')) {
-  .search-input-container {
-    flex-grow: 1;
-
-    form {
-      padding: 2px;
-    }
-  }
-
   .search-stats {
     align-items: center;
     display: flex;
@@ -150,26 +162,6 @@ if (hexo-config('algolia_search.enable')) {
 }
 
 if (hexo-config('local_search.enable')) {
-  .search-popup {
-    .search-input-container {
-      flex-grow: 1;
-      padding: 2px;
-    }
-
-    .no-result {
-      display: flex;
-    }
-
-    .search-result-list {
-      width: 100%;
-    }
-
-    .search-result-icon {
-      color: $grey-light;
-      margin: auto;
-    }
-  }
-
   mark.search-keyword {
     background: transparent;
     border-bottom: 1px dashed $red;

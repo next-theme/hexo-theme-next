@@ -1,112 +1,74 @@
-/* global instantsearch, algoliasearch, CONFIG, pjax */
+/* global CONFIG, pjax, algoliasearch */
 
 document.addEventListener('DOMContentLoaded', () => {
   const { indexName, appID, apiKey, hits } = CONFIG.algolia;
+  const client = algoliasearch(appID, apiKey);
+  const index = client.initIndex(indexName);
 
-  const search = instantsearch({
-    indexName,
-    searchClient  : algoliasearch(appID, apiKey),
-    searchFunction: helper => {
-      if (document.querySelector('.search-input').value) {
-        helper.search();
-      }
+  const input = document.querySelector('.search-input');
+
+  const formatHits = data => {
+    const { title, excerpt, excerptStrip, contentStripTruncate } = data._highlightResult;
+    let result = `<li><a href="${data.permalink}" class="search-result-title">${title.value}</a>`;
+    const content = excerpt || excerptStrip || contentStripTruncate;
+    if (content && content.value) {
+      const div = document.createElement('div');
+      div.innerHTML = content.value;
+      result += `<a href="${data.permalink}"><p class="search-result">${div.textContent.substring(0, 100)}...</p></a></li>`;
     }
-  });
+    return result;
+  };
 
-  if (typeof pjax === 'object') {
-    search.on('render', () => {
-      pjax.refresh(document.querySelector('.algolia-hits'));
+  const inputEventFunction = async() => {
+    const searchText = input.value.trim();
+    const container = document.querySelector('.search-result-container');
+    if (searchText === '') {
+      container.classList.add('no-result');
+      container.innerHTML = '<div class="search-result-icon"><i class="fab fa-algolia fa-5x"></i></div>';
+      return;
+    }
+    const data = await index.search(searchText, {
+      attributesToRetrieve : ['permalink'],
+      attributesToHighlight: ['title', 'excerpt', 'excerptStrip', 'contentStripTruncate'],
+      page                 : 0,
+      hitsPerPage          : hits.per_page || 10
+    });
+    if (data.nbHits === 0) {
+      container.classList.add('no-result');
+      container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
+    } else {
+      const stats = CONFIG.i18n.hits_time
+        .replace('${hits}', data.nbHits)
+        .replace('${time}', data.processingTimeMS);
+
+      container.classList.remove('no-result');
+      container.innerHTML = `<div class="search-stats">
+          <span>${stats}</span>
+          <img src="${CONFIG.images}/logo-algolia-nebula-blue-full.svg" alt="Algolia">
+        </div>
+        <hr>
+        <ul class="search-result-list">${data.hits.map(formatHits).join('')}</ul>`;
+      if (typeof pjax === 'object') pjax.refresh(container);
+    }
+  };
+
+  if (CONFIG.algolia.trigger === 'auto') {
+    input.addEventListener('input', inputEventFunction);
+  } else {
+    document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
+    input.addEventListener('keypress', event => {
+      if (event.key === 'Enter') {
+        inputEventFunction();
+      }
     });
   }
-
-  // Registering Widgets
-  search.addWidgets([
-    instantsearch.widgets.configure({
-      hitsPerPage: hits.per_page || 10
-    }),
-
-    instantsearch.widgets.searchBox({
-      container           : '.search-input-container',
-      placeholder         : CONFIG.i18n.placeholder,
-      // Hide default icons of algolia search
-      showReset           : false,
-      showSubmit          : false,
-      showLoadingIndicator: false,
-      cssClasses          : {
-        input: 'search-input'
-      }
-    }),
-
-    instantsearch.widgets.stats({
-      container: '.algolia-stats',
-      templates: {
-        text: data => {
-          const stats = CONFIG.i18n.hits_time
-            .replace('${hits}', data.nbHits)
-            .replace('${time}', data.processingTimeMS);
-          return `<span>${stats}</span>
-            <img src="${CONFIG.images}/logo-algolia-nebula-blue-full.svg" alt="Algolia">`;
-        }
-      },
-      cssClasses: {
-        text: 'search-stats'
-      }
-    }),
-
-    instantsearch.widgets.hits({
-      container : '.algolia-hits',
-      escapeHTML: false,
-      templates : {
-        item: data => {
-          const { title, excerpt, excerptStrip, contentStripTruncate } = data._highlightResult;
-          let result = `<a href="${data.permalink}" class="search-result-title">${title.value}</a>`;
-          const content = excerpt || excerptStrip || contentStripTruncate;
-          if (content && content.value) {
-            const div = document.createElement('div');
-            div.innerHTML = content.value;
-            result += `<a href="${data.permalink}"><p class="search-result">${div.textContent.substring(0, 100)}...</p></a>`;
-          }
-          return result;
-        },
-        empty: data => {
-          return `<div class="algolia-hits-empty">
-              ${CONFIG.i18n.empty.replace('${query}', data.query)}
-            </div>`;
-        }
-      },
-      cssClasses: {
-        list: 'search-result-list'
-      }
-    }),
-
-    instantsearch.widgets.pagination({
-      container: '.algolia-pagination',
-      scrollTo : false,
-      showFirst: false,
-      showLast : false,
-      templates: {
-        first   : '<i class="fa fa-angle-double-left"></i>',
-        last    : '<i class="fa fa-angle-double-right"></i>',
-        previous: '<i class="fa fa-angle-left"></i>',
-        next    : '<i class="fa fa-angle-right"></i>'
-      },
-      cssClasses: {
-        list        : ['pagination', 'algolia-pagination'],
-        item        : 'pagination-item',
-        link        : 'page-number',
-        selectedItem: 'current',
-        disabledItem: 'disabled-item'
-      }
-    })
-  ]);
-
-  search.start();
 
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
       document.body.classList.add('search-active');
-      setTimeout(() => document.querySelector('.search-input').focus(), 500);
+      // Wait for search-popup animation to complete
+      setTimeout(() => input.focus(), 500);
     });
   });
 
