@@ -140,24 +140,12 @@ if (hexo-config('algolia_search.enable')) {
     }
   }
 
-  .algolia-pagination {
-    // Override default style of ul
+  .pagination.algolia-pagination {
+    // Override default style of pagination
     margin: 40px 0;
-    opacity: 1;
     padding: 0;
-
-    .pagination-item {
-      display: inline-block;
-    }
-
-    .current .page-number {
-      @extend $page-number-current;
-      cursor: default;
-    }
-
-    .disabled-item {
-      visibility: hidden;
-    }
+    // Override motion
+    visibility: visible;
   }
 }
 

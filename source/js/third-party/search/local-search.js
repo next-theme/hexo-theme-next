@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const input = document.querySelector('.search-input');
+  const container = document.querySelector('.search-result-container');
 
   const inputEventFunction = () => {
     if (!localSearch.isfetched) return;
     const searchText = input.value.trim().toLowerCase();
     const keywords = searchText.split(/[-\s]+/);
-    const container = document.querySelector('.search-result-container');
     let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching
@@ -54,16 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localSearch.fetchData();
   }
 
-  if (CONFIG.localsearch.trigger === 'auto') {
-    input.addEventListener('input', inputEventFunction);
-  } else {
-    document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
-    input.addEventListener('keypress', event => {
-      if (event.key === 'Enter') {
-        inputEventFunction();
-      }
-    });
-  }
+  input.addEventListener('input', inputEventFunction);
   window.addEventListener('search:loaded', inputEventFunction);
 
   // Handle and trigger popup window
