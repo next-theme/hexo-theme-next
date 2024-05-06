@@ -1,11 +1,24 @@
 {%- if theme.algolia_search.enable or theme.local_search.enable %}
   <div class="search-pop-overlay">
     <div class="popup search-popup">
-      {%- if theme.algolia_search.enable %}
-        {%- include 'algolia-search.njk' -%}
-      {% elif theme.local_search.enable %}
-        {%- include 'localsearch.njk' -%}
-      {%- endif %}
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="{{ __('search.placeholder') }}" spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="{% if theme.algolia_search.enable %}fab fa-algolia{% elif theme.local_search.enable %}fa fa-spinner fa-pulse{% endif %} fa-5x"></i>
+        </div>
+      </div>
     </div>
   </div>
 {%- endif %}
