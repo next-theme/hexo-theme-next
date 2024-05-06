@@ -25,10 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
       resultItems = localSearch.getResultItems(keywords);
     }
     if (keywords.length === 1 && keywords[0] === '') {
-      container.classList.add('no-result');
       container.innerHTML = '<div class="search-result-icon"><i class="fa fa-search fa-5x"></i></div>';
     } else if (resultItems.length === 0) {
-      container.classList.add('no-result');
       container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
     } else {
       resultItems.sort((left, right) => {
@@ -41,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       const stats = CONFIG.i18n.hits.replace('${hits}', resultItems.length);
 
-      container.classList.remove('no-result');
       container.innerHTML = `<div class="search-stats">${stats}</div>
         <hr>
         <ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;

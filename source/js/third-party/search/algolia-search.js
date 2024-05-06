@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       hitsPerPage          : hits.per_page || 10
     });
     if (data.nbHits === 0) {
-      container.classList.add('no-result');
       container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
     } else {
       const stats = CONFIG.i18n.hits_time
@@ -47,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         pagination += '</nav>';
       }
 
-      container.classList.remove('no-result');
       container.innerHTML = `<div class="search-stats">
           <span>${stats}</span>
           <img src="${CONFIG.images}/logo-algolia-nebula-blue-full.svg" alt="Algolia">
@@ -68,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputEventFunction = async() => {
     const searchText = input.value.trim();
     if (searchText === '') {
-      container.classList.add('no-result');
       container.innerHTML = '<div class="search-result-icon"><i class="fab fa-algolia fa-5x"></i></div>';
       return;
     }
