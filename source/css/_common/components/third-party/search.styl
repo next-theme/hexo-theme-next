@@ -141,9 +141,10 @@ if (hexo-config('algolia_search.enable')) {
   }
 
   .pagination.algolia-pagination {
-    // Override default style of pagination
-    margin: 40px 0;
-    padding: 0;
+    // Override the default style of pagination
+    // Put pagination at the bottom when there is sufficient height
+    margin-top: auto;
+    padding: 40px 0;
     // Override motion
     // https://github.com/theme-next/hexo-theme-next/issues/537
     visibility: visible;

@@ -20,7 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return result;
   };
 
+  let isSearching = false;
+  let pendingQuery = null;
+
   const searchAlgolia = async(searchText, page = 0) => {
+    if (isSearching) {
+      pendingQuery = { searchText, page };
+      return;
+    }
+    isSearching = true;
+    const startTime = Date.now();
     const data = await index.search(searchText, {
       page,
       attributesToRetrieve : ['permalink'],
@@ -34,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       const stats = CONFIG.i18n.hits_time
         .replace('${hits}', data.nbHits)
-        .replace('${time}', data.processingTimeMS);
+        .replace('${time}', Date.now() - startTime);
       let pagination = '';
       if (data.nbPages > 1) {
         pagination += '<nav class="pagination algolia-pagination">';
@@ -63,6 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
+    isSearching = false;
+    if (pendingQuery !== null && (pendingQuery.searchText !== searchText || pendingQuery.page !== page)) {
+      const { searchText, page } = pendingQuery;
+      pendingQuery = null;
+      searchAlgolia(searchText, page);
+    }
   };
 
   const inputEventFunction = async() => {
@@ -75,7 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
     await searchAlgolia(searchText, 0);
   };
 
-  input.addEventListener('input', inputEventFunction);
+  const debouncedSearch = NexT.utils.debounce(inputEventFunction, 500);
+  input.addEventListener('input', debouncedSearch);
 
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {
