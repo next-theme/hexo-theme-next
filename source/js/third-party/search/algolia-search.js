@@ -1,4 +1,4 @@
-/* global CONFIG, pjax, algoliasearch */
+/* global CONFIG, NexT, pjax, algoliasearch */
 
 document.addEventListener('DOMContentLoaded', () => {
   const { indexName, appID, apiKey, hits } = CONFIG.algolia;
