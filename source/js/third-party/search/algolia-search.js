@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
       page,
       attributesToRetrieve : ['permalink'],
       attributesToHighlight: ['title', 'excerpt', 'excerptStrip', 'contentStripTruncate'],
-      hitsPerPage          : hits.per_page || 10
+      hitsPerPage          : hits.per_page || 10,
+      highlightPreTag      : '<mark class="search-keyword">',
+      highlightPostTag     : '</mark>'
     });
     if (data.nbHits === 0) {
       container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';

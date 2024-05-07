@@ -121,6 +121,13 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
   }
 }
 
+mark.search-keyword {
+  background: transparent;
+  border-bottom: 1px dashed $red;
+  color: $red;
+  font-weight: bold;
+}
+
 if (hexo-config('algolia_search.enable')) {
   .search-stats {
     align-items: center;
@@ -140,14 +147,5 @@ if (hexo-config('algolia_search.enable')) {
     // Override motion
     // https://github.com/theme-next/hexo-theme-next/issues/537
     visibility: visible;
-  }
-}
-
-if (hexo-config('local_search.enable')) {
-  mark.search-keyword {
-    background: transparent;
-    border-bottom: 1px dashed $red;
-    color: $red;
-    font-weight: bold;
   }
 }
