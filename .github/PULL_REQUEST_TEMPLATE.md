@@ -1,15 +1,16 @@
-<!-- ATTENTION!
-1. Please write pull request readme in English, thanks!
+<!--
+Thank you for creating a pull request to contribute to NexT code! Before you open the pull request, please:
 
-2. NexT includes 4 schemes: Muse and Mist have similar structure, but Pisces and Gemini are very different from them. It is possible that one scheme works fine after the changes, but another scheme is broken. Please make the tests in different schemes to make sure the changes are compatible with all schemes.
+1. Make the tests to confirm that the changes are compatible with PJAX, Dark Mode and all four schemes of NexT (Muse, Mist, Pisces and Gemini). For backend code changes, modify or add unit tests if necessary.
 
-3. In addition, you need to confirm that the changes made by this PR are compatible with PJAX and Dark Mode.
+2. Break up your pull request into multiple smaller requests if it contains multiple bug fixes or new features. Each pull request should have one bug fix or new feature only for better code maintainability.
+
+3. If possible, please write the pull request description in English.
 -->
 
 ## PR Checklist <!-- 我确认我已经查看了 -->
-<!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
+<!-- Remove items that do not apply. For completed items, change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
-- [ ] The commit message follows [guidelines for NexT](https://github.com/next-theme/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
 - [ ] The changes have been tested (for bug fixes / features).
 - [ ] [Docs](https://github.com/next-theme/theme-next-docs/tree/master/source/docs) in [NexT website](https://theme-next.js.org/docs/) have been added / updated (for features).
 <!-- For adding Docs edit needed file here: https://github.com/next-theme/theme-next-docs/tree/master/source/docs and create PR with this changes here: https://github.com/next-theme/theme-next-docs/pulls -->
@@ -20,10 +21,10 @@
 - [ ] Bugfix.
 - [ ] Feature.
 - [ ] Improvement.
-- [ ] Code style update (formatting, linting).
-- [ ] Refactoring (no functional changes).
+- [ ] Code style update (e.g. formatting, linting).
+- [ ] Refactoring (no changes to functionality and APIs).
 - [ ] Documentation.
-- [ ] Translation. <!-- We use Crowdin to manage translations https://crowdin.com/project/hexo-theme-next -->
+- [ ] Translation. <!-- We use Crowdin to manage translations: https://crowdin.com/project/hexo-theme-next -->
 - [ ] Other... Please describe:
 
 ## What is the current behavior?
@@ -32,7 +33,7 @@
 Issue resolved:
 
 ## What is the new behavior?
-<!-- Description about this pull, in several words -->
+<!-- Please describe the new behavior of this pull request -->
 
 - Link to demo site with this changes:
 - Screenshots with this changes:
