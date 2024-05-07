@@ -121,11 +121,6 @@ algolia_search:
   version: 4.23.3
   file: dist/algoliasearch-lite.umd.js
   integrity: sha256-1QNshz86RqXe/qsCBldsUu13eAX6n/O98uubKQs87UI=
-instant_search:
-  name: instantsearch.js
-  version: 4.67.0
-  file: dist/instantsearch.production.min.js
-  integrity: sha256-TW7D3X/i/W+RUgEeDppEnFT2ixv5lzplKH0c58D92dY=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.1

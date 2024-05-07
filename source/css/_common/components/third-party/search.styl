@@ -79,11 +79,14 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
     }
 
     .search-result-container {
+      display: flex;
+      flex-direction: column;
       height: calc(100% - 55px);
       overflow: auto;
       padding: 5px 25px;
 
       hr {
+        flex-shrink: 0;
         margin: 5px 0 10px;
 
         &:first-child {
@@ -105,18 +108,27 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
       border-bottom: 1px dashed $grey-light;
       padding: 5px 0;
     }
+
+    .search-input-container {
+      flex-grow: 1;
+      padding: 2px;
+    }
+
+    .search-result-icon {
+      color: $grey-light;
+      margin: auto;
+    }
   }
 }
 
+mark.search-keyword {
+  background: transparent;
+  border-bottom: 1px dashed $red;
+  color: $red;
+  font-weight: bold;
+}
+
 if (hexo-config('algolia_search.enable')) {
-  .search-input-container {
-    flex-grow: 1;
-
-    form {
-      padding: 2px;
-    }
-  }
-
   .search-stats {
     align-items: center;
     display: flex;
@@ -128,52 +140,13 @@ if (hexo-config('algolia_search.enable')) {
     }
   }
 
-  .algolia-pagination {
-    // Override default style of ul
-    margin: 40px 0;
-    opacity: 1;
-    padding: 0;
-
-    .pagination-item {
-      display: inline-block;
-    }
-
-    .current .page-number {
-      @extend $page-number-current;
-      cursor: default;
-    }
-
-    .disabled-item {
-      visibility: hidden;
-    }
-  }
-}
-
-if (hexo-config('local_search.enable')) {
-  .search-popup {
-    .search-input-container {
-      flex-grow: 1;
-      padding: 2px;
-    }
-
-    .no-result {
-      display: flex;
-    }
-
-    .search-result-list {
-      width: 100%;
-    }
-
-    .search-result-icon {
-      color: $grey-light;
-      margin: auto;
-    }
-  }
-
-  mark.search-keyword {
-    background: transparent;
-    border-bottom: 1px dashed $red;
-    color: $red;
-    font-weight: bold;
+  .pagination.algolia-pagination {
+    // Override the default style of pagination
+    // Put pagination at the bottom when there is sufficient height
+    margin-top: auto;
+    padding: 40px 0;
+    // Override motion
+    // https://github.com/theme-next/hexo-theme-next/issues/537
+    visibility: visible;
   }
 }
