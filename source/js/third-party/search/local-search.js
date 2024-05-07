@@ -51,7 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
     localSearch.fetchData();
   }
 
-  input.addEventListener('input', inputEventFunction);
+  if (CONFIG.localsearch.trigger === 'auto') {
+    input.addEventListener('input', inputEventFunction);
+  } else {
+    document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
+    input.addEventListener('keypress', event => {
+      if (event.key === 'Enter') {
+        inputEventFunction();
+      }
+    });
+  }
   window.addEventListener('search:loaded', inputEventFunction);
 
   // Handle and trigger popup window
