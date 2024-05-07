@@ -4,17 +4,17 @@ NexT.motion = {};
 
 NexT.motion.integrator = {
   queue: [],
-  init : function() {
+  init() {
     this.queue = [];
     return this;
   },
-  add: function(fn) {
+  add(fn) {
     const sequence = fn();
     if (CONFIG.motion.async) this.queue.push(sequence);
     else this.queue = this.queue.concat(sequence);
     return this;
   },
-  bootstrap: function() {
+  bootstrap() {
     if (!CONFIG.motion.async) this.queue = [this.queue];
     this.queue.forEach(sequence => {
       const timeline = window.anime.timeline({
@@ -30,7 +30,7 @@ NexT.motion.integrator = {
 };
 
 NexT.motion.middleWares = {
-  header: function() {
+  header() {
     const sequence = [];
 
     function getMistLineSettings(targets) {
@@ -73,7 +73,7 @@ NexT.motion.middleWares = {
     return sequence;
   },
 
-  subMenu: function() {
+  subMenu() {
     const subMenuItem = document.querySelectorAll('.sub-menu .menu-item');
     if (subMenuItem.length > 0) {
       subMenuItem.forEach(element => {
@@ -83,7 +83,7 @@ NexT.motion.middleWares = {
     return [];
   },
 
-  postList: function() {
+  postList() {
     const sequence = [];
     const { post_block, post_header, post_body, coll_header } = CONFIG.motion.transition;
 
@@ -114,7 +114,7 @@ NexT.motion.middleWares = {
     return sequence;
   },
 
-  sidebar: function() {
+  sidebar() {
     const sequence = [];
     const sidebar = document.querySelectorAll('.sidebar-inner');
     const sidebarTransition = CONFIG.motion.transition.sidebar;
@@ -131,7 +131,7 @@ NexT.motion.middleWares = {
     return sequence;
   },
 
-  footer: function() {
+  footer() {
     return [{
       targets: document.querySelector('.footer'),
       opacity: 1

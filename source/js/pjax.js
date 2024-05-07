@@ -12,7 +12,7 @@ const pjax = new Pjax({
     '.pjax'
   ],
   switches: {
-    '.post-toc-wrap': function(oldWrap, newWrap) {
+    '.post-toc-wrap'(oldWrap, newWrap) {
       if (newWrap.querySelector('.post-toc')) {
         Pjax.switches.outerHTML.call(this, oldWrap, newWrap);
       } else {
