@@ -1,7 +1,7 @@
 /* global NexT, CONFIG, mermaid */
 
 document.addEventListener('page:loaded', () => {
-  const mermaidElements = document.querySelectorAll('.mermaid');
+  const mermaidElements = document.querySelectorAll('pre > .mermaid');
   if (mermaidElements.length) {
     NexT.utils.getScript(CONFIG.mermaid.js, {
       condition: window.mermaid
@@ -11,13 +11,7 @@ document.addEventListener('page:loaded', () => {
         newElement.innerHTML = element.innerHTML;
         newElement.className = element.className;
         const parent = element.parentNode;
-        // Fix issue #347
-        // Support mermaid inside backtick code block
-        if (parent.matches('pre')) {
-          parent.parentNode.replaceChild(newElement, parent);
-        } else {
-          parent.replaceChild(newElement, element);
-        }
+        parent.parentNode.replaceChild(newElement, parent);
       });
       mermaid.initialize({
         theme    : CONFIG.darkmode && window.matchMedia('(prefers-color-scheme: dark)').matches ? CONFIG.mermaid.theme.dark : CONFIG.mermaid.theme.light,

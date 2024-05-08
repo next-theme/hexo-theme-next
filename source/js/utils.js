@@ -41,11 +41,11 @@ NexT.utils = {
 
   registerCodeblock(element) {
     const inited = !!element;
-    let figure = (inited ? element : document).querySelectorAll('figure.highlight');
-    let isHljsWithWrap = true;
-    if (figure.length === 0) {
-      figure = document.querySelectorAll('pre:not(.mermaid)');
-      isHljsWithWrap = false;
+    let figure;
+    if (CONFIG.hljswrap) {
+      figure = (inited ? element : document).querySelectorAll('figure.highlight');
+    } else {
+      figure = document.querySelectorAll('pre');
     }
     figure.forEach(element => {
       if (!inited) {
@@ -61,10 +61,12 @@ NexT.utils = {
         });
       }
       const height = parseInt(window.getComputedStyle(element).height.replace('px', ''), 10);
-      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height);
+      // Skip pre > .mermaid for folding but keep the copy button
+      // Note that it only works before mermaid.js loaded (race condition)
+      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height) && !element.querySelector('.mermaid');
       if (!needFold && !CONFIG.copycode.enable) return;
       let target;
-      if (isHljsWithWrap && CONFIG.copycode.style === 'mac') {
+      if (CONFIG.hljswrap && CONFIG.copycode.style === 'mac') {
         target = element;
       } else {
         let box = element.querySelector('.code-container');
