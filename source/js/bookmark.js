@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const scrollToMark = () => {
     let top = localStorage.getItem('bookmark' + location.pathname);
-    top = parseInt(top, 10);
+    top = Number(top);
     // If the page opens with a specific hash, just jump out
     if (!isNaN(top) && location.hash === '') {
       // Auto scroll to the position
