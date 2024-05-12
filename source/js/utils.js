@@ -39,6 +39,45 @@ NexT.utils = {
     });
   },
 
+  registerCopyButton(target, element, code) {
+    // One-click copy code support.
+    target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
+    const button = target.querySelector('.copy-btn');
+    button.addEventListener('click', () => {
+      if (navigator.clipboard) {
+        // https://caniuse.com/mdn-api_clipboard_writetext
+        navigator.clipboard.writeText(code).then(() => {
+          button.querySelector('i').className = 'fa fa-check-circle fa-fw';
+        }, () => {
+          button.querySelector('i').className = 'fa fa-times-circle fa-fw';
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.append(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        const result = document.execCommand('copy');
+        button.querySelector('i').className = result ? 'fa fa-check-circle fa-fw' : 'fa fa-times-circle fa-fw';
+        ta.blur(); // For iOS
+        button.blur();
+        document.body.removeChild(ta);
+      }
+    });
+    // If copycode.style is not mac, element is larger than target
+    // So we need to accept both of them as parameters
+    element.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        button.querySelector('i').className = 'fa fa-copy fa-fw';
+      }, 300);
+    });
+  },
+
   registerCodeblock(element) {
     const inited = !!element;
     let figure;
@@ -48,6 +87,8 @@ NexT.utils = {
       figure = document.querySelectorAll('pre');
     }
     figure.forEach(element => {
+      // Skip pre > .mermaid for folding and copy button
+      if (element.querySelector('.mermaid')) return;
       if (!inited) {
         let span = element.querySelectorAll('.code .line span');
         if (span.length === 0) {
@@ -61,9 +102,7 @@ NexT.utils = {
         });
       }
       const height = parseInt(window.getComputedStyle(element).height, 10);
-      // Skip pre > .mermaid for folding but keep the copy button
-      // Note that it only works before mermaid.js loaded (race condition)
-      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height) && !element.querySelector('.mermaid');
+      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height);
       if (!needFold && !CONFIG.copycode.enable) return;
       let target;
       if (CONFIG.hljswrap && CONFIG.copycode.style === 'mac') {
@@ -91,43 +130,10 @@ NexT.utils = {
           target.classList.add('unfold');
         });
       }
-      if (inited || !CONFIG.copycode.enable) return;
-      // One-click copy code support.
-      target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
-      const button = target.querySelector('.copy-btn');
-      button.addEventListener('click', () => {
+      if (!inited && CONFIG.copycode.enable) {
         const lines = element.querySelector('.code') || element.querySelector('code');
-        const code = lines.innerText;
-        if (navigator.clipboard) {
-          // https://caniuse.com/mdn-api_clipboard_writetext
-          navigator.clipboard.writeText(code).then(() => {
-            button.querySelector('i').className = 'fa fa-check-circle fa-fw';
-          }, () => {
-            button.querySelector('i').className = 'fa fa-times-circle fa-fw';
-          });
-        } else {
-          const ta = document.createElement('textarea');
-          ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
-          ta.style.position = 'absolute';
-          ta.style.opacity = '0';
-          ta.readOnly = true;
-          ta.value = code;
-          document.body.append(ta);
-          ta.select();
-          ta.setSelectionRange(0, code.length);
-          ta.readOnly = false;
-          const result = document.execCommand('copy');
-          button.querySelector('i').className = result ? 'fa fa-check-circle fa-fw' : 'fa fa-times-circle fa-fw';
-          ta.blur(); // For iOS
-          button.blur();
-          document.body.removeChild(ta);
-        }
-      });
-      element.addEventListener('mouseleave', () => {
-        setTimeout(() => {
-          button.querySelector('i').className = 'fa fa-copy fa-fw';
-        }, 300);
-      });
+        this.registerCopyButton(target, element, lines.innerText);
+      }
     });
   },
 
@@ -162,12 +168,12 @@ NexT.utils = {
   },
 
   updateActiveNav() {
-    if (!Array.isArray(NexT.utils.sections)) return;
-    let index = NexT.utils.sections.findIndex(element => {
+    if (!Array.isArray(this.sections)) return;
+    let index = this.sections.findIndex(element => {
       return element && element.getBoundingClientRect().top > 10;
     });
     if (index === -1) {
-      index = NexT.utils.sections.length - 1;
+      index = this.sections.length - 1;
     } else if (index > 0) {
       index--;
     }

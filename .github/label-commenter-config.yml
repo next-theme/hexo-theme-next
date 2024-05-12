@@ -25,7 +25,7 @@ labels:
   - name: Wontfix
     labeled:
       issue:
-        body: This will not be worked on but we appreciate your contribution.
+        body: There wasn't enough interest from the team or community to implement this change. Thanks for contributing and we appreciate your understanding.
         action: close
   - name: Configurations
     labeled:
