@@ -39,11 +39,15 @@ NexT.utils = {
     });
   },
 
-  registerCopyButton(target, element, code) {
+  registerCopyButton(target, element, code = '') {
     // One-click copy code support.
     target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
     const button = target.querySelector('.copy-btn');
     button.addEventListener('click', () => {
+      if (!code) {
+        const lines = element.querySelector('.code') || element.querySelector('code');
+        code = lines.innerText;
+      }
       if (navigator.clipboard) {
         // https://caniuse.com/mdn-api_clipboard_writetext
         navigator.clipboard.writeText(code).then(() => {
@@ -131,8 +135,7 @@ NexT.utils = {
         });
       }
       if (!inited && CONFIG.copycode.enable) {
-        const lines = element.querySelector('.code') || element.querySelector('code');
-        this.registerCopyButton(target, element, lines.innerText);
+        this.registerCopyButton(target, element);
       }
     });
   },

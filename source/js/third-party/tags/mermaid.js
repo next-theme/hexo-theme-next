@@ -14,7 +14,7 @@ document.addEventListener('page:loaded', () => {
         newElement.className = 'mermaid';
         box.appendChild(newElement);
         if (CONFIG.copycode.enable) {
-          NexT.utils.registerCopyButton(box, box, element.innerText);
+          NexT.utils.registerCopyButton(box, box, element.textContent);
         }
         const parent = element.parentNode;
         parent.parentNode.replaceChild(box, parent);
