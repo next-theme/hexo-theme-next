@@ -7,10 +7,6 @@
   {{- next_js('motion.js') }}
 {%- endif %}
 
-{%- if theme.scheme === 'Muse' or theme.scheme === 'Mist' %}
-  {{- next_js('schemes/muse.js') }}
-{%- endif %}
-
 {%- if theme.sidebar.display !== 'remove' %}
   {{- next_js('sidebar.js') }}
 {%- endif %}
