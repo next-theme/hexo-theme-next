@@ -4,7 +4,7 @@ title:
   archive: 歸檔
   category: 分類
   tag: 標籤
-  schedule: 時間表
+  schedule: 文章日曆
 menu:
   home: 首頁
   archives: 歸檔
@@ -18,7 +18,7 @@ menu:
 sidebar:
   overview: 本站概要
   toc: 文章目錄
-  links: Links
+  links: 連結
 post:
   posted: 發表於
   edited: 更新於
@@ -32,27 +32,27 @@ post:
   views: 閱讀次數
   related_posts: 相關文章
   copyright:
-    author: 作者
+    author: 本文作者
     link: 文章連結
-    post_author: 已寫入
+    post_author: 原作者
     post_link: 文章最初發表於
     license_title: 版權聲明
     license_content: "本網誌所有文章除特別聲明外，均採用 %s 許可協議。轉載請註明出處！"
-    license_content_reprint: "This article is a reprinted article and has been reprinted with permission. Please indicate the source!"
+    license_content_reprint: "本文章為轉載文章，已獲轉載許可。轉載請註明出處！"
 footer:
   powered: "由 %s 強力驅動"
   total_views: 總瀏覽次數
   total_visitors: 訪客總數
 widget:
-  github: Follow me on GitHub
-  chat: Chat
+  github: 在 GitHub 上關注我
+  chat: 聊天
 counter:
   tag_cloud:
-    zero: 沒有標籤
+    zero: 暫無標籤
     one: 目前共有 1 個標籤
     other: "目前共有 %d 個標籤"
   categories:
-    zero: 沒有分類
+    zero: 暫無分類
     one: 目前共有 1 個分類
     other: "目前共有 %d 個分類"
   archive_posts:
@@ -66,8 +66,8 @@ state:
 search:
   placeholder: 搜尋...
   empty: "我們無法找到任何有關 %s 的搜索結果"
-  hits_time: "%s 找到 %s 個結果"
-  hits: "找到 %s 個結果"
+  hits_time: "找到 %s 個搜索結果（用時 %s 毫秒）"
+  hits: "找到 %s 個搜索結果"
 cheers:
   um: 嗯..
   ok: 還行
@@ -84,9 +84,9 @@ reward:
   donate: 捐贈
   wechatpay: 微信支付
   alipay: 支付寶
-  paypal: 貝寶
+  paypal: PayPal
   bitcoin: 比特幣
-  comment: Buy me a coffee
+  comment: 請我喝杯咖啡！
 follow_me:
   welcome: 歡迎關注我的其它發布渠道
 accessibility:

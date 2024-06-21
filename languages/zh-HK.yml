@@ -66,7 +66,7 @@ state:
 search:
   placeholder: 搜索...
   empty: "我們無法找到任何有關 %s 的搜索結果"
-  hits_time: "%s 結果在 %s 毫秒找到"
+  hits_time: "找到 %s 個搜索結果（用時 %s 毫秒）"
   hits: "找到 %s 個結果"
 cheers:
   um: 嗯..
