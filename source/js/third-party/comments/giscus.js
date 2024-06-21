@@ -18,7 +18,8 @@ document.addEventListener('page:loaded', () => {
           'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
           'data-input-position'   : CONFIG.giscus.input_position,
           'data-theme'            : CONFIG.giscus.theme,
-          'data-lang'             : CONFIG.giscus.lang
+          'data-lang'             : CONFIG.giscus.lang,
+          'data-loading'          : CONFIG.giscus.loading,
         },
         parentNode: document.querySelector('.giscus-container')
       }));

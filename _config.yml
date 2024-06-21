@@ -750,7 +750,7 @@ isso: # <data_isso>
 # For more information: https://giscus.app/
 giscus:
   enable: true
-  # Fill in the following data as the script displayed on the site
+  # Fill in the following data as the script displayed on the site https://giscus.app/
   repo:
   repo_id:
   category:
@@ -762,7 +762,7 @@ giscus:
   input_position:
   theme:
   lang:
-  crossorigin:
+  loading:
 
 
 # ---------------------------------------------------------------
