@@ -669,7 +669,7 @@ comments:
   # Available values: tabs | buttons
   style: tabs
   # Choose a comment system to be displayed by default.
-  # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
+  # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances | giscus
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
@@ -745,6 +745,24 @@ utterances:
 # Isso
 # For more information: https://isso-comments.de
 isso: # <data_isso>
+
+# Giscus
+# For more information: https://giscus.app/
+giscus:
+  enable: true
+  # Fill in the following data as the script displayed on the site
+  repo:
+  repo_id:
+  category:
+  category_id:
+  mapping:
+  strict:
+  reactions_enabled:
+  emit_metadata:
+  input_position:
+  theme:
+  lang:
+  crossorigin:
 
 
 # ---------------------------------------------------------------
