@@ -1,5 +1,5 @@
 ---
-name: Português
+name: Inglês
 title:
   archive: Arquivo
   category: Categoria
@@ -61,13 +61,13 @@ counter:
     other: "%d publicações no total."
 state:
   posts: publicações
-  tags: tags
+  tags: etiquetas
   categories: categorias
 search:
-  placeholder: Searching...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
+  placeholder: Pesquisando...
+  empty: "Não encontramos nenhum resultado para a pesquisa: %s"
+  hits_time: "%s resultados encontrados em %s ms"
+  hits: "%s resultados encontrados"
 cheers:
   um: Um..
   ok: OK
@@ -81,23 +81,23 @@ symbol:
   period: ". "
   colon: ": "
 reward:
-  donate: Donate
+  donate: Doar
   wechatpay: WeChat Pay
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
-  comment: Buy me a coffee
+  comment: Pague-me um café
 follow_me:
-  welcome: Welcome to my other publishing channels
+  welcome: Bem-vindo aos meus outros canais de publicação
 accessibility:
-  nav_toggle: Toggle navigation bar
+  nav_toggle: Alternar barra de navegação
   prev_page: Página anterior
   next_page: Página seguinte
-  back_to_top: Back to top
-  select_lang: Select language
+  back_to_top: Voltar ao início
+  select_lang: Escolher idioma
 symbols_count_time:
   count: Symbols count in article
   count_total: Symbols count total
-  time: Reading time
-  time_total: Reading time total
+  time: Tempo de leitura
+  time_total: Tempo total de leitura
   time_minutes: mins.
