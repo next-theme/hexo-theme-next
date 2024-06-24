@@ -669,7 +669,7 @@ comments:
   # Available values: tabs | buttons
   style: tabs
   # Choose a comment system to be displayed by default.
-  # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
+  # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances | twikoo
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
@@ -746,6 +746,15 @@ utterances:
 # For more information: https://isso-comments.de
 isso: # <data_isso>
 
+# Twikoo
+# For more information: https://twikoo.js.org, https://github.com/imaegoo/twikoo
+twikoo:
+  enable: false
+  visitor: false
+  envId: # 环境 ID，搭建教程：https://twikoo.js.org/quick-start.html
+  # region: ap-guangzhou # 环境地域，默认为 ap-shanghai
+  # path: 'window.location.pathname' # 自定义文章路径
+  # jsUrl: https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js # 自定义 JS 文件地址
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
