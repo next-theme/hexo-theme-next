@@ -374,11 +374,14 @@ $note-modern-hover = {
   danger  : darken(spin($note-modern-text.danger, -10), 22%)
 };
 
-transform-map(map, transform)
-  new-map = {};
-  for key, val in map
+transform-map(map, transform) {
+  new-map = {
+  }
+  for key, val in map {
     new-map[key] = transform(val);
+  }
   return new-map;
+}
 
 $note-modern-border-dark = transform-map($note-modern-hover,  @(val) {           lighten(val, 10%)       });
 $note-modern-bg-dark     = transform-map($note-modern-text,   @(val) { desaturate(darken(val, 20%), 20%) });
