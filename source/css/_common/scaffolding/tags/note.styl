@@ -85,6 +85,24 @@ if (hexo-config('note.style') != 'disabled') {
               color: $note-modern-hover[$type];
             }
           }
+
+          if (hexo-config('darkmode')) {
+            @media (prefers-color-scheme: dark) {
+              background: $note-modern-bg-dark[$type];
+              border-color: $note-modern-border-dark[$type];
+              color: $note-modern-text-dark[$type];
+
+              a:not(.btn) {
+                border-bottom-color: $note-modern-text-dark[$type];
+                color: $note-modern-text-dark[$type];
+
+                &:hover {
+                  border-bottom-color: $note-modern-hover-dark[$type];
+                  color: $note-modern-hover-dark[$type];
+                }
+              }
+            }
+          }
         }
 
         if ($note-style != 'modern') {
