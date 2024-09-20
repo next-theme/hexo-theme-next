@@ -79,6 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
     localSearch.highlightSearchWords(document.querySelector('.post-body'));
     onPopupClose();
   });
+  window.addEventListener('keydown', event => {
+    if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+      event.preventDefault();
+      document.body.classList.add('search-active');
+      setTimeout(() => input.focus(), 500);
+      if (!localSearch.isfetched) localSearch.fetchData();
+    }
+  });
   window.addEventListener('keyup', event => {
     if (event.key === 'Escape') {
       onPopupClose();
