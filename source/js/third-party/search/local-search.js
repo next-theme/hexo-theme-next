@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     onPopupClose();
   });
   window.addEventListener('keydown', event => {
-    if (event.ctrlKey && event.key === 'k') {
+    if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
       event.preventDefault();
       document.body.classList.add('search-active');
       setTimeout(() => input.focus(), 500);
