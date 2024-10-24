@@ -1,3 +1,7 @@
 {%- if theme.busuanzi_count.enable %}
+  {%- if theme.busuanzi_count.custom_url %}
+  <script{{ pjax }} async src="{{ theme.busuanzi_count.custom_url }}"></script>
+  {%- else %}
   <script{{ pjax }} async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  {%- endif %}
 {%- endif %}
