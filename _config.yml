@@ -839,9 +839,6 @@ firestore:
 # For more information: http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   enable: false
-  # Default url is https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
-  # Or try more better https://cn.vercount.one/js
-  custom_url:
   total_visitors: true
   total_visitors_icon: fa fa-user
   total_views: true
