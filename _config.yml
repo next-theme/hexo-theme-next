@@ -628,6 +628,7 @@ quicklink:
 motion:
   enable: true
   async: false
+  duration: 200
   transition:
     # All available transition variants: https://theme-next.js.org/animate/
     menu_item: fadeInDown
