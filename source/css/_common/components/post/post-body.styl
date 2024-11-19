@@ -46,7 +46,8 @@
   }
 
   // https://github.com/hexojs/hexo-renderer-marked/pull/264
-  img + figcaption, .fancybox + figcaption {
+  // https://github.com/next-theme/hexo-next-exif
+  figure:not(.highlight) figcaption {
     color: $grey-dark;
     font-size: $font-size-small;
     font-weight: bold;
