@@ -4,7 +4,7 @@ require('chai').should();
 const Hexo = require('hexo');
 const hexo = new Hexo();
 
-const fontStyles = ':300,300italic,400,400italic,700,700italic';
+const fontStyles = ':ital,wght@0,300;0,400;0,700;1,300;1,400;1,700';
 const fontHost = 'https://fonts.googleapis.com';
 
 describe('font', () => {
@@ -42,7 +42,7 @@ describe('font', () => {
       family  : 'Palatino',
       external: false
     };
-    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Amatic+SC${fontStyles}&display=swap&subset=latin,latin-ext">`);
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css2?family=Amatic+SC${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 
   it('multiple', () => {
@@ -55,7 +55,7 @@ describe('font', () => {
       family  : 'Palatino',
       external: true
     };
-    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Amatic+SC${fontStyles}%7CPalatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css2?family=Amatic+SC${fontStyles}&family=Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 
   it('duplicate', () => {
@@ -68,7 +68,7 @@ describe('font', () => {
       family  : 'Palatino',
       external: true
     };
-    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css2?family=Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 
   it('fallback font', () => {
@@ -81,6 +81,6 @@ describe('font', () => {
       family  : 'Palatino',
       external: true
     };
-    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css?family=Roboto+Slab${fontStyles}%7CNoto+Serif+SC${fontStyles}%7CPalatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
+    nextFont().should.eql(`<link rel="stylesheet" href="${fontHost}/css2?family=Roboto+Slab${fontStyles}&family=Noto+Serif+SC${fontStyles}&family=Palatino${fontStyles}&display=swap&subset=latin,latin-ext">`);
   });
 });
