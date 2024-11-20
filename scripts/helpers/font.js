@@ -12,7 +12,7 @@ module.exports = function() {
   // Get a font list from config
   let fontFamilies = [];
   ['global', 'title', 'headings', 'posts', 'codes'].forEach(item => {
-    if (config[item] && config[item].family && config[item].external) {
+    if (config[item]?.family && config[item].external) {
       fontFamilies = fontFamilies.concat(config[item].family.split(','));
     }
   });

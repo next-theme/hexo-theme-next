@@ -15,11 +15,11 @@ module.exports = hexo => {
     hexo.log.warn(`Since ${args[0]} is turned on, the ${args[1]} is disabled to avoid potential hazards.`);
   };
 
-  if (cache && cache.enable && language_switcher) {
+  if (cache?.enable && language_switcher) {
     warning('language_switcher', 'caching');
     cache.enable = false;
   }
-  if (cache && cache.enable && hexo.config.relative_link) {
+  if (cache?.enable && hexo.config.relative_link) {
     warning('caching', '`relative_link` option in Hexo `_config.yml`');
     hexo.config.relative_link = false;
   }

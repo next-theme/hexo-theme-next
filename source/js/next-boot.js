@@ -27,7 +27,7 @@ NexT.boot.registerEvents = function() {
     const tHash = location.hash;
     if (tHash !== '' && !tHash.match(/%\S{2}/)) {
       const target = document.querySelector(`.tabs ul.nav-tabs li a[href="${tHash}"]`);
-      target && target.click();
+      target?.click();
     }
   });
 

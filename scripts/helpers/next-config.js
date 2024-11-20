@@ -36,7 +36,7 @@ hexo.extend.helper.register('next_config', function() {
       hits       : __('search.hits', '${hits}')
     }
   };
-  if (config.algolia && theme.algolia_search && theme.algolia_search.enable) {
+  if (config.algolia && theme.algolia_search?.enable) {
     exportConfig.algolia = {
       appID    : config.algolia.applicationID || config.algolia.appId,
       apiKey   : config.algolia.apiKey,
@@ -44,7 +44,7 @@ hexo.extend.helper.register('next_config', function() {
       hits     : theme.algolia_search.hits
     };
   }
-  if (config.search && theme.local_search && theme.local_search.enable) {
+  if (config.search && theme.local_search?.enable) {
     exportConfig.path = url_for(config.search.path);
     exportConfig.localsearch = theme.local_search;
   }
