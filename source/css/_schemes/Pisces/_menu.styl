@@ -10,28 +10,31 @@
 
   a {
     padding: 5px 20px;
+    // For .menu-item-active::after
     position: relative;
     transition-property: background-color;
     menu-item-row();
-
-    if (not hexo-config('menu_settings.badges')) {
-      &.menu-item-active::after {
-        background: $grey;
-        border-radius: 50%;
-        content: ' ';
-        height: 6px;
-        margin-top: -3px;
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        width: 6px;
-      }
-    }
   }
 
   +tablet-mobile() {
     &.menu-item-search {
       display: none;
     }
+  }
+}
+
+if (not hexo-config('menu_settings.badges')) {
+  // Only apply to the main menu
+  // Fix issue #850
+  .main-menu .menu-item-active::after {
+    background: $grey;
+    border-radius: 50%;
+    content: ' ';
+    height: 6px;
+    margin-top: -3px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 6px;
   }
 }
