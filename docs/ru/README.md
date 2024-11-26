@@ -110,10 +110,17 @@ git pull
 
 **Если нужно обновиться с версии v5.x / v7.x на последней версиями, читаем [здесь][docs-upgrade-url].**
 
+## Community
+
+Connect with us and be part of our growing community!
+
+* **Discord Server**: [Join our Discord!](https://discord.gg/qmkgkY3jaG)
+* **Gitter**: [Join our Gitter chats!][gitter-url]
+
 ## Обратная связь
 
 * Посетите [Awesome NexT][awesome-next-url] список.
-* Вступить в наши [GitHub discussions][discussions-url] / [Gitter][gitter-url] чаты.
+* Вступить в наши [GitHub discussions][discussions-url].
 * [Добавить или улучшить перевод][i18n-url] за несколько секунд.
 * Сообщить об ошибке в разделе [GitHub Issues][issues-bug-url].
 * Запросить новую возможность на [GitHub][issues-feat-url].

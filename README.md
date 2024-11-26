@@ -15,7 +15,7 @@
 
 # NexT
 
-> «NexT» is a high quality elegant [Hexo](https://hexo.io) theme. It is crafted from scratch with love.
+> NexT is a high quality elegant [Hexo](https://hexo.io) theme. It is crafted from scratch with love.
 
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-next?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-next)
 [![NPM Downloads](https://img.shields.io/npm/dm/hexo-theme-next?logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-next)
@@ -31,7 +31,7 @@
   💟 <a href="https://theme-next.js.org/muse/">Muse</a> | 🔯 <a href="https://theme-next.js.org/mist/">Mist</a> | ♓️ <a href="https://theme-next.js.org/pisces/">Pisces</a> | ♊️ <a href="https://theme-next.js.org">Gemini</a>
 <br>
 <br>
-  More «NexT» examples <a href="https://github.com/next-theme/awesome-next#live-preview">here</a>.
+  More NexT examples <a href="https://github.com/next-theme/awesome-next#live-preview">here</a>.
 </p>
 
 ## Installation
@@ -110,10 +110,18 @@ git pull
 
 **If you want to update from v5.x / v7.x to the latest version, read [this][docs-upgrade-url].**
 
+## Community
+
+Connect with us and be part of our growing community!
+
+* **Telegram Group (Chinese Language)**: [Click here to join!](https://t.me/theme_next_cn)
+* **Discord Server**: [Join our Discord!](https://discord.gg/qmkgkY3jaG)
+* **Gitter**: [Join our Gitter chats!][gitter-url]
+
 ## Feedback
 
 * Visit the [Awesome NexT][awesome-next-url] list to share plugins and tutorials with other users.
-* Join our [GitHub discussions][discussions-url] / [Gitter][gitter-url] chats.
+* Join our [GitHub discussions][discussions-url].
 * [Add or improve translation][i18n-url] in few seconds.
 * Report a bug in [GitHub Issues][issues-bug-url].
 * Request a new feature on [GitHub][issues-feat-url].
@@ -131,7 +139,7 @@ Also, we welcome Issue or PR to our [official-plugins][official-plugins-url].
 
 ## Thanks
 
-«NexT» send special thanks to these great services that sponsor our core infrastructure:
+NexT send special thanks to these great services that sponsor our core infrastructure:
 
 <a href="https://github.com"><img height="40" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png"></a>
 

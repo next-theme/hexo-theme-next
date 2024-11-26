@@ -15,7 +15,7 @@
 
 # NexT
 
-> «NexT» 是一款风格优雅的高质量 [Hexo](https://hexo.io) 主题，自点点滴滴中用爱雕琢而成。
+> NexT 是一款风格优雅的高质量 [Hexo](https://hexo.io) 主题，自点点滴滴中用爱雕琢而成。
 
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-next?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-next)
 [![NPM Downloads](https://img.shields.io/npm/dm/hexo-theme-next?logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-next)
@@ -31,7 +31,7 @@
   💟 <a href="https://theme-next.js.org/muse/">Muse</a> | 🔯 <a href="https://theme-next.js.org/mist/">Mist</a> | ♓️ <a href="https://theme-next.js.org/pisces/">Pisces</a> | ♊️ <a href="https://theme-next.js.org">Gemini</a>
 <br>
 <br>
-  更多 «NexT» 的例子参见<a href="https://github.com/next-theme/awesome-next#live-preview">这里</a>。
+  更多 NexT 的例子参见<a href="https://github.com/next-theme/awesome-next#live-preview">这里</a>。
 </p>
 
 ## 安装
@@ -110,10 +110,18 @@ git pull
 
 **如果你想要从 v5.x / v7.x 更新到最新版本，阅读[这篇文档][docs-upgrade-url]。**
 
+## 社区
+
+与我们联系并成为我们日益壮大的社区的一部分！
+
+* **Telegram 群组（中文）**：[点击此处加入！](https://t.me/theme_next_cn)
+* **Discord 服务器**：[加入我们的 Discord！](https://discord.gg/qmkgkY3jaG)
+* **Gitter**：[加入我们的 Gitter 聊天！][gitter-url]
+
 ## 反馈
 
 * 浏览 [Awesome NexT][awesome-next-url] 列表，与其它用户分享插件和教程。
-* 加入我们的 [GitHub discussions][discussions-url] / [Gitter][gitter-url] 聊天。
+* 加入我们的 [GitHub discussions][discussions-url]。
 * 请花几秒钟来[添加或修正翻译][i18n-url]。
 * 在 [GitHub Issues][issues-bug-url] 报告Bug。
 * 在 [GitHub][issues-feat-url] 请求新的功能。
@@ -131,7 +139,7 @@ git pull
 
 ## 鸣谢
 
-«NexT» 特别感谢这些支持我们核心基础设施的优质服务：
+NexT 特别感谢这些支持我们核心基础设施的优质服务：
 
 <a href="https://github.com"><img height="40" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png"></a>
 
