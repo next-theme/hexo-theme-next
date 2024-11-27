@@ -70,19 +70,7 @@
   }
 
   .links-of-blogroll-item {
-    if (hexo-config('links_settings.layout') == 'inline') {
-      display: inline-block;
-    }
-    padding: 2px 10px;
-
-    a {
-      box-sizing: border-box;
-      display: inline-block;
-      max-width: 280px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+    padding: 0 5px;
   }
 
   .popular-posts .popular-posts-item .popular-posts-link:hover {
@@ -113,6 +101,14 @@
   padding: $sidebar-padding 10px;
   text-align: center;
   flex-column();
+}
+
+.links-of-blogroll-item {
+  max-width: calc(100% - 20px);
+
+  a {
+    sidebar-inline-links-item();
+  }
 }
 
 .cc-license {

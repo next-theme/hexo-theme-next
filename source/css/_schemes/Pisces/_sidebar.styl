@@ -50,7 +50,7 @@
   }
 
   .links-of-author-item {
-    sidebar-inline-links-item();
+    margin: 5px 0 0;
 
     if (not hexo-config('social_icons.icons_only')) {
       width: 50%;
@@ -60,6 +60,8 @@
       border-bottom: 0;
       border-radius: 4px;
       display: block;
+      padding: 0 5px;
+      sidebar-inline-links-item();
 
       &:hover {
         background: var(--body-bg-color);
@@ -67,12 +69,8 @@
     }
   }
 
-  .links-of-blogroll-item {
-    if (hexo-config('links_settings.layout') == 'inline') {
-      display: inline-block;
-      max-width: 100%;
-      sidebar-inline-links-item();
-    }
+  .links-of-blogroll-item a {
+    padding: 0 5px;
   }
 
   if (hexo-config('back2top.sidebar')) {

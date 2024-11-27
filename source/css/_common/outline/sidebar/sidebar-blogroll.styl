@@ -9,6 +9,12 @@
 
 .links-of-blogroll-list {
   list-style: none;
-  margin: 0;
+  gap: 5px;
+  margin: 5px 0 0;
   padding: 0;
+  flex-wrap();
+
+  if (hexo-config('links_settings.layout') == 'block') {
+    flex-direction: column;
+  }
 }
