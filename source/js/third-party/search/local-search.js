@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
+      document.body.style.setProperty("--dialog-scrollgutter", `${window.innerWidth - document.body.clientWidth}px`);
       document.body.classList.add('search-active');
       // Wait for search-popup animation to complete
       setTimeout(() => input.focus(), 500);
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Monitor main search box
   const onPopupClose = () => {
+    document.body.style.setProperty("--dialog-scrollgutter", 0);
     document.body.classList.remove('search-active');
   };
 
@@ -82,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('keydown', event => {
     if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
       event.preventDefault();
+      document.body.style.setProperty("--dialog-scrollgutter", `${window.innerWidth - document.body.clientWidth}px`)
       document.body.classList.add('search-active');
       setTimeout(() => input.focus(), 500);
       if (!localSearch.isfetched) localSearch.fetchData();
