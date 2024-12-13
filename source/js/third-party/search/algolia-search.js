@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let isSearching = false;
   let pendingQuery = null;
 
-/**
+ /**
  * Sets the CSS variable '--dialog-scrollgutter' to the specified gap value.
  * If no gap is provided, it calculates the gap as the difference between
  * the window's inner width and the document body's client width.
@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {string} [gap] - The gap value to be set. If not provided, the
  *                         default gap is calculated automatically.
  */
-  const setGutter = (gap) => {
+  const setGutter = gap => {
     const gutter = gap || `${window.innerWidth - document.body.clientWidth}px`;
     document.body.style.setProperty('--dialog-scrollgutter', gutter);
-  }
+  };
 
   const searchAlgolia = async(searchText, page = 0) => {
     if (isSearching) {

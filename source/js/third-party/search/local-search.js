@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
    * @param {string} [gap] - The gap value to be set. If not provided, the
    *                         default gap is calculated automatically.
    */
-  const setGutter = (gap) => {
+  const setGutter = gap => {
     document.body.style.setProperty('--dialog-scrollgutter', gap || `${window.innerWidth - document.body.clientWidth}px`);
-  }
+  };
 
   const inputEventFunction = () => {
     if (!localSearch.isfetched) return;
