@@ -23,6 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
   let isSearching = false;
   let pendingQuery = null;
 
+/**
+ * Sets the CSS variable '--dialog-scrollgutter' to the specified gap value.
+ * If no gap is provided, it calculates the gap as the difference between
+ * the window's inner width and the document body's client width.
+ *
+ * @param {string} [gap] - The gap value to be set. If not provided, the
+ *                         default gap is calculated automatically.
+ */
+  const setGutter = (gap) => {
+    const gutter = gap || `${window.innerWidth - document.body.clientWidth}px`;
+    document.body.style.setProperty('--dialog-scrollgutter', gutter);
+  }
+
   const searchAlgolia = async(searchText, page = 0) => {
     if (isSearching) {
       pendingQuery = { searchText, page };
@@ -96,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
-      document.body.style.setProperty('--dialog-scrollgutter', `${window.innerWidth - document.body.clientWidth}px`);
+      setGutter();
       document.body.classList.add('search-active');
       // Wait for search-popup animation to complete
       setTimeout(() => input.focus(), 500);
@@ -105,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Monitor main search box
   const onPopupClose = () => {
-    document.body.style.setProperty('--dialog-scrollgutter', 0);
+    setGutter('0');
     document.body.classList.remove('search-active');
   };
 
@@ -119,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('keydown', event => {
     if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
       event.preventDefault();
-      document.body.style.setProperty('--dialog-scrollgutter', `${window.innerWidth - document.body.clientWidth}px`);
+      setGutter();
       document.body.classList.add('search-active');
       setTimeout(() => input.focus(), 500);
     }
