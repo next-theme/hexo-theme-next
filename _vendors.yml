@@ -8,10 +8,10 @@ anime:
   integrity: sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=
 fontawesome:
   name: '@fortawesome/fontawesome-free'
-  version: 6.6.0
+  version: 6.7.2
   file: css/all.min.css
   alias: font-awesome
-  integrity: sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=
+  integrity: sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=
 prism:
   name: prismjs
   version: 1.29.0
@@ -108,14 +108,14 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 10.14.1
+  version: 11.1.0
   file: firebase-app-compat.js
-  integrity: sha256-KsPwUaqMNX8FDBi2qNV4Z/We2FthlJrPIRQhOVgfXMQ=
+  integrity: sha256-k2eD8Bl04gp35v4S01cNbO+3UeLK6mVqpOyUJz4aXzY=
 firebase_firestore:
   name: firebase
-  version: 10.14.1
+  version: 11.1.0
   file: firebase-firestore-compat.js
-  integrity: sha256-oPdfryMK6T4WGGJbidMkl/7TIOrnkCJ8BqrOT8En2a4=
+  integrity: sha256-r1EpenNle+MZs+KB73PFJnrmIF3k29t5XGrSqfZ9PPw=
 algolia_search:
   name: algoliasearch
   version: 4.24.0
