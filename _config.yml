@@ -733,7 +733,6 @@ gitalk:
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language:
   # If you want to customize the content of the initialized Issue, please edit the body parameters. support line breaks via `|`.
-  # If not filled in, the default is `location.href + header.meta[description]`.
   body:
 
 # Utterances
