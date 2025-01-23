@@ -24,9 +24,8 @@ document.addEventListener('page:loaded', () => {
     });
 });
 
-// 函数：自动替换模板字符串中的占位符
 function processTemplate(template) {
-  return template.replace(/\$\{([^}]+)\}/g, (_, expression) => {
+  return template.replace(/\$\{([^}]+)}/g, (_, expression) => {
     // 使用 new Function 来执行表达式，确保动态获取值
     try {
       return new Function('return ' + expression)(); // 执行 `${document.title}` 或 `${location.href}` 等表达式
