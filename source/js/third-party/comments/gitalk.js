@@ -17,7 +17,8 @@ document.addEventListener('page:loaded', () => {
         id                 : CONFIG.gitalk.path_md5,
         proxy              : CONFIG.gitalk.proxy,
         language           : CONFIG.gitalk.language || window.navigator.language,
-        distractionFreeMode: CONFIG.gitalk.distraction_free_mode
+        distractionFreeMode: CONFIG.gitalk.distraction_free_mode,
+        body               : `${CONFIG.gitalk.body || location.href + header.meta[description]}`
       });
       gitalk.render(document.querySelector('.gitalk-container'));
     });
