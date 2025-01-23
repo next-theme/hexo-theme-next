@@ -3,6 +3,16 @@
 document.addEventListener('page:loaded', () => {
   if (!CONFIG.page.comments) return;
 
+  // Parse and replace body expressions
+  const parsedBody = CONFIG.gitalk.body.replace(/\$\{([^}]+)}/g, (_, expression) => {
+    try {
+      return new Function('return ' + expression)(); // run `${document.title}` or `${location.href}` expressions
+    } catch (e) {
+      console.error('gitalk body expression parsing failed, expression is %s, error is %s', expression, e);
+      return '';
+    }
+  })
+
   NexT.utils.loadComments('.gitalk-container')
     .then(() => NexT.utils.getScript(CONFIG.gitalk.js, {
       condition: window.Gitalk
@@ -18,20 +28,8 @@ document.addEventListener('page:loaded', () => {
         proxy              : CONFIG.gitalk.proxy,
         language           : CONFIG.gitalk.language || window.navigator.language,
         distractionFreeMode: CONFIG.gitalk.distraction_free_mode,
-        body               : processTemplate(CONFIG.gitalk.body)
+        body               : parsedBody
       });
       gitalk.render(document.querySelector('.gitalk-container'));
     });
 });
-
-function processTemplate(template) {
-  return template.replace(/\$\{([^}]+)}/g, (_, expression) => {
-    // 使用 new Function 来执行表达式，确保动态获取值
-    try {
-      return new Function('return ' + expression)(); // 执行 `${document.title}` 或 `${location.href}` 等表达式
-    } catch (e) {
-      console.error('Error evaluating template:', e);
-      return ''; // 如果替换失败，返回空字符串
-    }
-  });
-}
