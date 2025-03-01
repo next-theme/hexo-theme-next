@@ -49,3 +49,5 @@ document.addEventListener('pjax:success', () => {
     NexT.utils.updateSidebarPosition();
   }
 });
+
+if (!window.pjax) window.pjax = pjax;
