@@ -16,13 +16,13 @@
 
   if (hexo-config('links_settings.layout') == 'block') {
     flex-direction: column;
+  } else {
+    .links-of-blogroll-item {
+      max-width: calc(100% - 20px);
+    }
   }
 }
 
-.links-of-blogroll-item {
-  max-width: calc(100% - 20px);
-
-  a {
-    sidebar-inline-links-item();
-  }
+.links-of-blogroll-item a {
+  sidebar-inline-links-item();
 }
