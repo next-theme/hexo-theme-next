@@ -32,7 +32,7 @@ hexo.extend.helper.register('next_js', function(file, {
     custom  : custom_cdn_url
   });
   const src = links[internal] || links.local;
-  return `<script ${pjax ? 'data-pjax ' : ''}${module ? 'type="module" ' : ''}src="${src}"></script>`;
+  return `<script ${pjax ? 'data-pjax ' : ''}${module ? 'type="module" ' : ''}src="${src}" defer></script>`;
 });
 
 hexo.extend.helper.register('next_vendors', function(name) {
@@ -42,8 +42,8 @@ hexo.extend.helper.register('next_vendors', function(name) {
     if (integrity) return `<link rel="stylesheet" href="${url}" integrity="${integrity}" crossorigin="anonymous">`;
     return `<link rel="stylesheet" href="${url}">`;
   }
-  if (integrity) return `<script src="${url}" integrity="${integrity}" crossorigin="anonymous"></script>`;
-  return `<script src="${url}"></script>`;
+  if (integrity) return `<script src="${url}" integrity="${integrity}" crossorigin="anonymous" defer></script>`;
+  return `<script src="${url}" defer></script>`;
 });
 
 hexo.extend.helper.register('next_data', function(name, ...data) {
