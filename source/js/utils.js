@@ -13,11 +13,7 @@ HTMLElement.prototype.wrap = function(wrapper) {
     })
   );
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('readystatechange', onPageLoaded, { once: true });
-  } else {
-    onPageLoaded();
-  }
+  document.addEventListener('DOMContentLoaded', onPageLoaded);
   document.addEventListener('pjax:success', onPageLoaded);
 })();
 
