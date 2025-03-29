@@ -1,9 +1,8 @@
-/* global CONFIG, NexT, pjax, algoliasearch */
+/* global CONFIG, NexT, pjax */
 
 document.addEventListener('DOMContentLoaded', () => {
   const { indexName, appID, apiKey, hits } = CONFIG.algolia;
-  const client = algoliasearch(appID, apiKey);
-  const index = client.initIndex(indexName);
+  const client = window['algoliasearch/lite'].liteClient(appID, apiKey);
 
   const input = document.querySelector('.search-input');
   const container = document.querySelector('.search-result-container');
@@ -11,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const formatHits = data => {
     const { title, excerpt, excerptStrip, contentStripTruncate } = data._highlightResult;
     let result = `<li><a href="${data.permalink}" class="search-result-title">${title.value}</a>`;
-    const content = excerpt || excerptStrip || contentStripTruncate;
-    if (content && content.value) {
+    const content = excerpt?.value || excerptStrip?.value || contentStripTruncate?.value;
+    if (content) {
       const div = document.createElement('div');
-      div.innerHTML = content.value;
+      div.innerHTML = content;
       result += `<a href="${data.permalink}"><p class="search-result">${div.textContent.substring(0, 100)}...</p></a></li>`;
     }
     return result;
@@ -30,14 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     isSearching = true;
     const startTime = Date.now();
-    const data = await index.search(searchText, {
-      page,
-      attributesToRetrieve : ['permalink'],
-      attributesToHighlight: ['title', 'excerpt', 'excerptStrip', 'contentStripTruncate'],
-      hitsPerPage          : hits.per_page || 10,
-      highlightPreTag      : '<mark class="search-keyword">',
-      highlightPostTag     : '</mark>'
+    const result = await client.search({
+      requests: [{
+        indexName,
+        page,
+        query                : searchText,
+        hitsPerPage          : hits.per_page || 10,
+        attributesToRetrieve : ['permalink'],
+        attributesToHighlight: ['title', 'excerpt', 'excerptStrip', 'contentStripTruncate'],
+        highlightPreTag      : '<mark class="search-keyword">',
+        highlightPostTag     : '</mark>'
+      }]
     });
+    const data = result.results[0];
     if (data.nbHits === 0) {
       container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
     } else {
