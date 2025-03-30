@@ -33,7 +33,10 @@
 .posts-expand .post-title-link {
   border-bottom: 0;
   color: var(--link-color);
+  // Make underline position correct
   display: inline-block;
+  // Fix issue #736
+  max-width: 100%;
   position: relative;
 
   &::before {
