@@ -1,6 +1,5 @@
 'use strict';
 
-require('chai').should();
 
 const { escapeHTML } = require('hexo-util');
 
