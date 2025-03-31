@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-next",
-  "version": "8.22.0",
+  "version": "8.23.0",
   "description": "Elegant and powerful theme for Hexo.",
   "main": "package.json",
   "files": [
@@ -19,7 +19,10 @@
     "test": "mocha test/index.js",
     "test-cov": "c8 npm test"
   },
-  "repository": "next-theme/hexo-theme-next",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/next-theme/hexo-theme-next.git"
+  },
   "keywords": [
     "hexo",
     "theme",
