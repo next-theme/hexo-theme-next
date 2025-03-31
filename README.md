@@ -66,7 +66,7 @@ At present, NexT encourages users to use the [Alternate Theme Config][docs-confi
 
 ## Plugins
 
-Plugins extend and expand the functionality of NexT. There are two types of plugins: core plugins and third-party plugins. The core plugins are required by the basic functions of NexT. Third-party plugins provide a large number of optional features.
+Plugins extend and expand the functionality of NexT. Some advanced features may require third-party libraries or additional configuration, giving you the flexibility to create a truly personalized website.
 
 Configuring these plugins is very easy. For example, if you want to enable `pjax` on your site, just set `pjax` to `true` in NexT config file:
 
@@ -92,7 +92,7 @@ vendors:
 
 ## Update
 
-A new version of NexT will be released every month. Please read the [release notes][docs-release-url] before updating the theme. You can update NexT by the following command.
+The NexT theme will continue to release new versions to include new features and bug fixes. Please read the [release notes][docs-release-url] before updating the theme. You can update NexT by the following command.
 
 Install the latest version through npm:
 
