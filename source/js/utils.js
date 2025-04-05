@@ -89,6 +89,7 @@ NexT.utils = {
     figure.forEach(element => {
       // Skip pre > .mermaid for folding and copy button
       if (element.querySelector('.mermaid')) return;
+      const languageName = [...element.classList].find(cls => cls !== 'highlight');
       if (!inited) {
         let span = element.querySelectorAll('.code .line span');
         if (span.length === 0) {
@@ -102,10 +103,10 @@ NexT.utils = {
         });
       }
       const height = parseInt(window.getComputedStyle(element).height, 10);
-      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height);
-      if (!needFold && !CONFIG.copycode.enable) return;
+      const needFold = CONFIG.codeblock.fold.enable && (height > CONFIG.codeblock.fold.height);
+      if (!needFold && !CONFIG.codeblock.copy_button.enable && !CONFIG.codeblock.language) return;
       let target;
-      if (CONFIG.hljswrap && CONFIG.copycode.style === 'mac') {
+      if (CONFIG.hljswrap && CONFIG.codeblock.copy_button.style === 'mac') {
         target = element;
       } else {
         let box = element.querySelector('.code-container');
@@ -130,8 +131,14 @@ NexT.utils = {
           target.classList.add('unfold');
         });
       }
-      if (!inited && CONFIG.copycode.enable) {
+      if (!inited && CONFIG.codeblock.copy_button.enable) {
         this.registerCopyButton(target, element);
+      }
+      if (!inited && CONFIG.codeblock.language && languageName) {
+        const lang = document.createElement('div');
+        lang.className = 'code-lang';
+        lang.innerText = languageName.toUpperCase();
+        target.insertAdjacentElement('afterbegin', lang);
       }
     });
   },
