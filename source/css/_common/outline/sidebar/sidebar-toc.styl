@@ -34,19 +34,18 @@ if (hexo-config('toc.enable')) {
     .nav {
       if (not hexo-config('toc.expand_all')) {
         .nav-child {
-          --height: 0;
           height: 0;
           opacity: 0;
           overflow: hidden;
-          transition-property: height, opacity, visibility;
+          transition-property: height, opacity;
           transition: $transition-ease;
-          visibility: hidden;
         }
 
         .active > .nav-child {
-          height: var(--height, auto);
+          height: auto;
+          // https://caniuse.com/mdn-css_types_calc-size
+          height: calc-size(auto, size);
           opacity: 1;
-          visibility: unset;
         }
       }
 
