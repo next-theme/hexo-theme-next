@@ -135,7 +135,7 @@
             <div class="post-nav-item">
               {%- if prev %}
                 <a href="{{ url_for(prev.path) }}" rel="prev" title="{{ escape_html(prev.title or '') }}">
-                  <i class="fa fa-angle-left"></i> {{ escape_html(prev.title or '') }}
+                  <i class="fa fa-angle-left"></i> {{ prev.title }}
                 </a>
               {%- endif %}
             </div>
