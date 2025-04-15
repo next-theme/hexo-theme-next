@@ -442,6 +442,18 @@ NexT.utils = {
     window.addEventListener('scroll', updateFooterPosition, { passive: true });
   },
 
+  /**
+   * Sets the CSS variable '--dialog-scrollgutter' to the specified gap value.
+   * If no gap is provided, it calculates the gap as the difference between
+   * the window's inner width and the document body's client width.
+   *
+   * @param {string} [gap] - The gap value to be set. If not provided, the
+   *                         default gap is calculated automatically.
+   */
+  setGutter(gap) {
+    document.body.style.setProperty('--dialog-scrollgutter', gap || `${window.innerWidth - document.body.clientWidth}px`);
+  },
+
   getScript(src, options = {}, legacyCondition) {
     if (typeof options === 'function') {
       return this.getScript(src, {
