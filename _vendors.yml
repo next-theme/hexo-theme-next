@@ -118,9 +118,9 @@ firebase_firestore:
   integrity: sha256-r1EpenNle+MZs+KB73PFJnrmIF3k29t5XGrSqfZ9PPw=
 algolia_search:
   name: algoliasearch
-  version: 5.23.0
+  version: 5.20.2
   file: dist/lite/builds/browser.umd.js
-  integrity: sha256-pfKeJRuGRsHDNu078bcMlWdxjw/Vgz5QLC6hyLFw9fA=
+  integrity: sha256-GAVfj3g77lfB3t1p2bw8++dsZYNGet5S4K75T292Izs=
 local_search:
   name: hexo-generator-searchdb
   version: 1.4.1
