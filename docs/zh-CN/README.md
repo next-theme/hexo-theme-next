@@ -116,7 +116,8 @@ git pull
 
 * **Telegram 群组（中文）**：[点击此处加入！](https://t.me/theme_next_cn)
 * **Discord 服务器**：[加入我们的 Discord！](https://discord.gg/qmkgkY3jaG)
-* **Gitter**：[加入我们的 Gitter 聊天！][gitter-url]
+* **Gitter**：[加入我们的 Gitter 聊天！]
+* **ChatGPT**: [NexT Mentor][gpt-url]
 
 ## 反馈
 
@@ -184,6 +185,7 @@ NexT 特别感谢这些支持我们核心基础设施的优质服务：
 [awesome-next-url]: https://github.com/next-theme/awesome-next
 [discussions-url]: https://github.com/next-theme/hexo-theme-next/discussions
 [gitter-url]: https://app.gitter.im/#/room/#next:gitter.im
+[gpt-url]: https://chatgpt.com/g/g-68286c2fc1f48191aee3e87c94a89431-next-mentor
 [i18n-url]: https://crowdin.com/project/hexo-theme-next
 
 [issues-bug-url]: https://github.com/next-theme/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
