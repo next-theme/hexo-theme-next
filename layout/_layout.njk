@@ -4,6 +4,7 @@
   {{ partial('_partials/head/head.njk', {}, {cache: theme.cache.enable}) }}
   {%- include '_partials/head/head-unique.njk' -%}
   <title>{% block title %}{% endblock %}</title>
+  {{ partial('_third-party/adsense/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_scripts/index.njk', {}, {cache: theme.cache.enable}) }}
   {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
