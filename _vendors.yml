@@ -78,9 +78,9 @@ lazyload:
   integrity: sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=
 pangu:
   name: pangu
-  version: 4.0.7
-  file: dist/browser/pangu.min.js
-  integrity: sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=
+  version: 6.1.2
+  file: dist/browser/pangu.umd.js
+  integrity: sha256-u+znORFzVVGPfJh4e5hGrs+UnNVzlOhrGQMAcq5MXUE=
 quicklink:
   name: quicklink
   version: 2.3.0
