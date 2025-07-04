@@ -42,7 +42,7 @@
     "hexo": "7.3.0",
     "hexo-renderer-marked": "7.0.1",
     "js-yaml": "4.1.0",
-    "mocha": "11.5.0",
+    "mocha": "11.7.1",
     "stylelint": "16.20.0",
     "stylelint-stylus": "1.0.0"
   }
