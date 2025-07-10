@@ -52,21 +52,7 @@ NexT.utils = {
           button.querySelector('i').className = 'fa fa-times-circle fa-fw';
         });
       } else {
-        const ta = document.createElement('textarea');
-        ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
-        ta.style.position = 'absolute';
-        ta.style.opacity = '0';
-        ta.readOnly = true;
-        ta.value = code;
-        document.body.append(ta);
-        ta.select();
-        ta.setSelectionRange(0, code.length);
-        ta.readOnly = false;
-        const result = document.execCommand('copy');
-        button.querySelector('i').className = result ? 'fa fa-check-circle fa-fw' : 'fa fa-times-circle fa-fw';
-        ta.blur(); // For iOS
-        button.blur();
-        document.body.removeChild(ta);
+        button.querySelector('i').className = 'fa fa-times-circle fa-fw';
       }
     });
     // If copycode.style is not mac, element is larger than target
