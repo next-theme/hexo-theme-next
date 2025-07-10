@@ -7,62 +7,60 @@
     return document.getElementById(url).querySelector('.leancloud-visitors-count');
   };
 
-  const addCount = Counter => {
+  const addCount = async Counter => {
     const visitors = document.querySelector('.leancloud_visitors');
     const url = decodeURI(visitors.id);
     const title = visitors.dataset.flagTitle;
 
-    Counter('get', `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url }))}`)
-      .then(response => response.json())
-      .then(({ results }) => {
-        if (results.length > 0) {
-          const counter = results[0];
-          leancloudSelector(url).innerText = counter.time + 1;
-          Counter('put', '/classes/Counter/' + counter.objectId, {
+    try {
+      const response = await Counter('get', `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url }))}`);
+      const { results } = await response.json();
+      if (results.length > 0) {
+        const counter = results[0];
+        leancloudSelector(url).innerText = counter.time + 1;
+        try {
+          await Counter('put', '/classes/Counter/' + counter.objectId, {
             time: {
               '__op'  : 'Increment',
               'amount': 1
             }
-          })
-            .catch(error => {
-              console.error('Failed to save visitor count', error);
-            });
-        } else if (CONFIG.leancloud_visitors.security) {
-          leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-          console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-        } else {
-          Counter('post', '/classes/Counter', { title, url, time: 1 })
-            .then(response => response.json())
-            .then(() => {
-              leancloudSelector(url).innerText = 1;
-            })
-            .catch(error => {
-              console.error('Failed to create', error);
-            });
+          });
+        } catch (error) {
+          console.error('Failed to save visitor count', error);
         }
-      })
-      .catch(error => {
-        console.error('LeanCloud Counter Error', error);
-      });
+      } else if (CONFIG.leancloud_visitors.security) {
+        leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+        console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+      } else {
+        try {
+          const response = await Counter('post', '/classes/Counter', { title, url, time: 1 });
+          await response.json();
+          leancloudSelector(url).innerText = 1;
+        } catch (error) {
+          console.error('Failed to create', error);
+        }
+      }
+    } catch (error) {
+      console.error('LeanCloud Counter Error', error);
+    }
   };
 
-  const showTime = Counter => {
+  const showTime = async Counter => {
     const visitors = document.querySelectorAll('.leancloud_visitors');
     const entries = [...visitors].map(element => {
       return decodeURI(element.id);
     });
 
-    Counter('get', `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`)
-      .then(response => response.json())
-      .then(({ results }) => {
-        for (const url of entries) {
-          const target = results.find(item => item.url === url);
-          leancloudSelector(url).innerText = target ? target.time : 0;
-        }
-      })
-      .catch(error => {
-        console.error('LeanCloud Counter Error', error);
-      });
+    try {
+      const response = await Counter('get', `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`);
+      const { results } = await response.json();
+      for (const url of entries) {
+        const target = results.find(item => item.url === url);
+        leancloudSelector(url).innerText = target ? target.time : 0;
+      }
+    } catch (error) {
+      console.error('LeanCloud Counter Error', error);
+    }
   };
 
   const { app_id, app_key, server_url } = CONFIG.leancloud_visitors;
@@ -93,15 +91,17 @@
     api_server = `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
   }
 
-  document.addEventListener('page:loaded', () => {
+  document.addEventListener('page:loaded', async () => {
     if (api_server) {
       fetchData(api_server);
     } else {
-      fetch(`https://app-router.leancloud.cn/2/route?appId=${app_id}`)
-        .then(response => response.json())
-        .then(({ api_server }) => {
-          fetchData(`https://${api_server}`);
-        });
+      try {
+        const response = await fetch(`https://app-router.leancloud.cn/2/route?appId=${app_id}`);
+        const { api_server } = await response.json();
+        fetchData(`https://${api_server}`);
+      } catch (error) {
+        console.error('Failed to fetch API server', error);
+      }
     }
   });
 })();

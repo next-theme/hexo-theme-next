@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let isSearching = false;
   let pendingQuery = null;
 
-  const searchAlgolia = async(searchText, page = 0) => {
+  const searchAlgolia = async (searchText, page = 0) => {
     if (isSearching) {
       pendingQuery = { searchText, page };
       return;
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const inputEventFunction = async() => {
+  const inputEventFunction = async () => {
     const searchText = input.value.trim();
     if (searchText === '') {
       container.innerHTML = '<div class="search-result-icon"><i class="fab fa-algolia fa-5x"></i></div>';

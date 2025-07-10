@@ -39,18 +39,19 @@ NexT.utils = {
     // One-click copy code support.
     target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
     const button = target.querySelector('.copy-btn');
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async () => {
       if (!code) {
         const lines = element.querySelector('.code') || element.querySelector('code');
         code = lines.innerText;
       }
       if (navigator.clipboard) {
         // https://caniuse.com/mdn-api_clipboard_writetext
-        navigator.clipboard.writeText(code).then(() => {
+        try {
+          await navigator.clipboard.writeText(code);
           button.querySelector('i').className = 'fa fa-check-circle fa-fw';
-        }, () => {
+        } catch {
           button.querySelector('i').className = 'fa fa-times-circle fa-fw';
-        });
+        }
       } else {
         button.querySelector('i').className = 'fa fa-times-circle fa-fw';
       }
