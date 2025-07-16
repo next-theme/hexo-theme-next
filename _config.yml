@@ -287,7 +287,8 @@ follow_me:
   #RSS: /atom.xml || fa fa-rss
 
 # Related popular posts
-# Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
+# Dependencies: https://github.com/next-theme/hexo-posts-embedding
+# Or: https://github.com/sergeyzwezdin/hexo-related-posts
 related_posts:
   enable: false
   icon: fa fa-signs-post
