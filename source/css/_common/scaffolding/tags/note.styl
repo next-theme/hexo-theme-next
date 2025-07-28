@@ -69,6 +69,11 @@ if (hexo-config('note.style') != 'disabled') {
               background: mix($note-bg[$type], $body-bg-color-dark, 10%);
             }
           }
+          if (hexo-config('lightdark.enable')) {
+            +light-dark-block() {
+              background: light-dark($note-bg[$type], mix($note-bg[$type], $body-bg-color-dark, 10%));
+            }
+          }
         }
 
         if ($note-style == 'modern') {
@@ -99,6 +104,24 @@ if (hexo-config('note.style') != 'disabled') {
                 &:hover {
                   border-bottom-color: $note-modern-hover-dark[$type];
                   color: $note-modern-hover-dark[$type];
+                }
+              }
+            }
+          }
+
+          if (hexo-config('lightdark.enable')) {
+            +light-dark-block() {
+              background: light-dark($note-modern-bg[$type], $note-modern-bg-dark[$type]);
+              border-color: light-dark($note-modern-border[$type], $note-modern-border-dark[$type]);
+              color: light-dark($note-modern-text[$type], $note-modern-text-dark[$type]);
+
+              a:not(.btn) {
+                border-bottom-color: light-dark($note-modern-text[$type], $note-modern-text-dark[$type]);
+                color: light-dark($note-modern-text[$type], $note-modern-text-dark[$type]);
+
+                &:hover {
+                  border-bottom-color: light-dark($note-modern-hover[$type], $note-modern-hover-dark[$type]);
+                  color: light-dark($note-modern-hover[$type], $note-modern-hover-dark[$type]);
                 }
               }
             }

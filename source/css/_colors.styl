@@ -77,3 +77,46 @@ if (hexo-config('darkmode')) {
     }
   }
 }
+
+if (hexo-config('lightdark.enable')) {
+  +light-dark-block() {
+    :root {
+      --body-bg-color: light-dark($body-bg-color, $body-bg-color-dark);
+      --content-bg-color: light-dark($content-bg-color, $content-bg-color-dark);
+      --card-bg-color: light-dark($card-bg-color, $card-bg-color-dark);
+      --text-color: light-dark($text-color, $text-color-dark);
+      --selection-bg: light-dark($selection-bg, $selection-bg-dark);
+      --selection-color: light-dark($selection-color, $selection-color-dark);
+      --blockquote-color: light-dark($blockquote-color, $blockquote-color-dark);
+      --link-color: light-dark($link-color, $link-color-dark);
+      --link-hover-color: light-dark($link-hover-color, $link-hover-color-dark);
+      --brand-color: light-dark($brand-color, $brand-color-dark);
+      --brand-hover-color: light-dark($brand-hover-color, $brand-hover-color-dark);
+      --table-row-odd-bg-color: light-dark($table-row-odd-bg-color, $table-row-odd-bg-color-dark);
+      --table-row-hover-bg-color: light-dark($table-row-hover-bg-color, $table-row-hover-bg-color-dark);
+      --menu-item-bg-color: light-dark($menu-item-bg-color, $menu-item-bg-color-dark);
+      --theme-color: light-dark($theme-color, $theme-color-dark);
+
+      --btn-default-bg: light-dark($btn-default-bg, $btn-default-bg-dark);
+      --btn-default-color: light-dark($btn-default-color, $btn-default-color-dark);
+      --btn-default-border-color: light-dark($btn-default-border-color, $btn-default-border-color-dark);
+      --btn-default-hover-bg: light-dark($btn-default-hover-bg, $btn-default-hover-bg-dark);
+      --btn-default-hover-color: light-dark($btn-default-hover-color, $btn-default-hover-color-dark);
+      --btn-default-hover-border-color: light-dark($btn-default-hover-border-color, $btn-default-hover-border-color-dark);
+
+      color-scheme: light dark;
+
+      img {
+        opacity: light-dark(1, .75);
+
+        &:hover {
+          opacity: light-dark(1, .9);
+        }
+      }
+
+      iframe {
+        color-scheme: light;
+      }
+    }
+  }
+}
