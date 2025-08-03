@@ -102,8 +102,8 @@ menu:
   #categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
-  sitemap: /sitemap.xml || fa fa-sitemap
-  commonweal: /404/ || fa fa-heartbeat
+  #sitemap: /sitemap.xml || fa fa-sitemap
+  #commonweal: /404/ || fa fa-heartbeat
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
@@ -179,7 +179,7 @@ links_settings:
   layout: block
 
 links:
-  #Title: https://example.com
+  "Wenjie's Blog": https://wenjie.store/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).
@@ -296,8 +296,8 @@ related_posts:
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit:
-  enable: true
-  url: https://github.com/lushihuan/lushihuan.github.io/tree/master/source/_posts/ # Link for view source
+  enable: false
+  #url: https://github.com/lushihuan/lushihuan.github.io/tree/master/source/_posts/ # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
 # Show previous post and next post in post footer if exists
