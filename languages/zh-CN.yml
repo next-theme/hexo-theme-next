@@ -56,9 +56,9 @@ counter:
     one: 目前共计 1 个分类
     other: "目前共计 %d 个分类"
   archive_posts:
-    zero: 暂无博客。
-    one: 目前共计 1 篇博客。
-    other: "目前共计 %d 篇博客。"
+    zero: 暂无文章。
+    one: 目前共计 1 篇文章。
+    other: "目前共计 %d 篇文章。"
 state:
   posts: 博客
   tags: 标签
