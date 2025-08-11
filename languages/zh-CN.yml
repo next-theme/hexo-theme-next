@@ -60,7 +60,7 @@ counter:
     one: 目前共计 1 篇文章。
     other: "目前共计 %d 篇文章。"
 state:
-  posts: 博客
+  posts: 文章
   tags: 标签
   categories: 分类
 search:
