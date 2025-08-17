@@ -601,7 +601,7 @@ lazyload: true
 # Automatically insert whitespace between CJK and half-width characters.
 # For more information: https://github.com/vinta/pangu.js
 # Server-side plugin: https://github.com/next-theme/hexo-pangu
-pangu: true
+pangu: false
 
 # Prefetch links based on what is in the user's viewport.
 # For more information: https://getquick.link
