@@ -51,11 +51,11 @@ darkmode: true
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-96x96.png
-  medium: /images/favicon-96x96.png
+  small: /images/web-app-manifest-192x192.png
+  medium: /images/web-app-manifest-512x512.png
   apple_touch_icon: /images/apple-touch-icon.png
-  safari_pinned_tab: /images/logo.svg
-  android_manifest: /site.webmanifest
+  safari_pinned_tab: /images/favicon.svg
+  android_manifest: /images/site.webmanifest
 
 # Custom Logo (Warning: Do not support scheme Mist)
 custom_logo: #/uploads/custom-logo.png
