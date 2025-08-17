@@ -759,9 +759,8 @@ isso: # <data_isso>
 # AddToAny Share. See: https://www.addtoany.com
 addtoany:
   enable: false
+  # Example: bottons: [facebook, twitter]
   buttons:
-    - facebook
-    - twitter
 
 
 # ---------------------------------------------------------------
