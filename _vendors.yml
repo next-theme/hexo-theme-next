@@ -55,16 +55,16 @@ pjax:
   integrity: sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=
 fancybox_js:
   name: '@fancyapps/ui'
-  version: 6.0.17
+  version: 5.0.31
   file: dist/fancybox/fancybox.umd.js
   alias: fancyapps-ui
-  integrity: sha256-32A/chfN6JgQkwK/QFZY8siVcOZj3LUt1vSKIcDvshM=
+  integrity: sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=
 fancybox_css:
   name: '@fancyapps/ui'
-  version: 6.0.17
+  version: 5.0.31
   file: dist/fancybox/fancybox.css
   alias: fancyapps-ui
-  integrity: sha256-yE0aDX61mjiw8FoDuGetFttFoGJMeWsU/iYEFOfpMhA=
+  integrity: sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=
 mediumzoom:
   name: medium-zoom
   version: 1.1.0
@@ -108,19 +108,19 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 12.0.0
+  version: 12.1.0
   file: firebase-app-compat.js
-  integrity: sha256-7Mt0D5k1pxgybDH6x6XGephi5Kid/qElVYv3cE9dHn4=
+  integrity: sha256-qhDYlUgXWwKeLFf4vGRF1hHj7oOV/3WECTTa6rz6Lew=
 firebase_firestore:
   name: firebase
-  version: 12.0.0
+  version: 12.1.0
   file: firebase-firestore-compat.js
-  integrity: sha256-7GsOnF14hDnY7sMgZIN6Ys4VAx85kJao0KE1+KAvQTM=
+  integrity: sha256-4dPI6QIVQywlOblkmyd4lmgq4cxyK6Y4OcdklBuA58A=
 algolia_search:
   name: algoliasearch
-  version: 5.34.1
+  version: 5.35.0
   file: dist/lite/builds/browser.umd.js
-  integrity: sha256-PwDce3Wzwi9zHPn8hTJDDs6rmWsV/Qv/SwKTQDttA4A=
+  integrity: sha256-k54K9sZqimlyVUDmX8WGI5Xbe9OvyjOlkoWLdxa79Kk=
 local_search:
   name: hexo-generator-searchdb
   version: 1.5.0
