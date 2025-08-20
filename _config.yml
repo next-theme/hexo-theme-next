@@ -51,8 +51,8 @@ darkmode: true
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/web-app-manifest-192x192.png
-  medium: /images/web-app-manifest-512x512.png
+  small: /images/favicon-32x32.png
+  medium: /images/favicon-64x64.png
   apple_touch_icon: /images/apple-touch-icon.png
   safari_pinned_tab: /images/favicon.svg
   android_manifest: /images/site.webmanifest
