@@ -75,6 +75,14 @@ figure.highlight {
   overflow: auto;
   position: relative;
 
+  color-scheme: light;
+
+  if (hexo-config('darkmode')) {
+    @media (prefers-color-scheme: dark) {
+      color-scheme: dark;
+    }
+  }
+
   pre {
     border: 0;
     margin: 0;

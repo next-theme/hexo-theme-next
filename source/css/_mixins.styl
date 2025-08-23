@@ -52,6 +52,17 @@ desktop-largest() {
   }
 }
 
+light-dark-block() {
+  if (hexo-config('lightdark.check_supports')){
+    @supports (color: light-dark(red, red)) {
+      {block};
+    }
+  }
+  else {
+    {block};
+  }
+}
+
 sidebar() {
   if (($scheme == 'Muse') or ($scheme == 'Mist')) {
     {block}
