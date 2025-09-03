@@ -6,11 +6,11 @@
     {%- if theme.comments.style == 'buttons' %}
       <div class="comment-button-group">
         {%- for inject_item in theme.injects.comment %}
-          <a class="btn comment-button {{ inject_item.locals.class }}">{{ inject_item.locals.button }}</a>
+          <a class="btn comment-button comment-{{ inject_item.locals.class }}">{{ inject_item.locals.button }}</a>
         {%- endfor %}
       </div>
       {%- for inject_item in theme.injects.comment %}
-        <div class="comment-position {{ inject_item.locals.class }}">
+        <div class="comment-position comment-{{ inject_item.locals.class }}">
           {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
         </div>
       {%- endfor %}
