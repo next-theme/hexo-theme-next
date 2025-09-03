@@ -673,7 +673,7 @@ comments:
   # Available values: tabs | buttons
   style: tabs
   # Choose a comment system to be displayed by default.
-  # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
+  # Available values: disqus | disqusjs | livere | gitalk | utterances | isso
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
@@ -705,15 +705,6 @@ disqusjs:
   api:
   apikey: # Register new application from https://disqus.com/api/applications/
   shortname: # See: https://disqus.com/admin/settings/general/
-
-# Changyan
-# For more information: https://changyan.kuaizhan.com
-changyan:
-  enable: false
-  appid:
-  appkey:
-  # Show comments count
-  count: true
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
