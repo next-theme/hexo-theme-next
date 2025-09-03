@@ -422,7 +422,7 @@ github_banner:
 # Find fonts on Google Fonts (https://fonts.google.com)
 # All fonts set here will have the following styles:
 #   light | light italic | normal | normal italic | bold | bold italic
-# Be aware that setting too much fonts will cause site running slowly
+# Be aware that setting too much fonts will cause site loading slowly
 # ---------------------------------------------------------------
 # Web Safe fonts are recommended for `global` (and `title`):
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
@@ -666,6 +666,7 @@ canvas_ribbon:
 # ---------------------------------------------------------------
 # Comments Settings
 # See: https://theme-next.js.org/docs/third-party-services/comments
+# More comment system plugins: https://github.com/next-theme/awesome-next/blob/main/README.md#comment
 # ---------------------------------------------------------------
 
 # Multiple Comment System Support
@@ -806,19 +807,6 @@ plausible:
   enable: false
   script_url: # https://plausible.io/js/script.js
   site_domain: # www.example.com
-
-# Show number of visitors of each article.
-# You can visit https://www.leancloud.cn to get AppID and AppKey.
-leancloud_visitors:
-  enable: false
-  app_id: # <your app id>
-  app_key: # <your app key>
-  # Required for apps from CN region
-  server_url: # <your server url>
-  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
-  # If you don't care about security in leancloud counter and just want to use it directly
-  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  security: true
 
 # Another tool to show number of visitors to each article.
 # Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.
