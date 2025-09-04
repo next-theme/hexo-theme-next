@@ -108,19 +108,19 @@ gitalk_css:
   integrity: sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=
 firebase_app:
   name: firebase
-  version: 12.1.0
+  version: 12.2.1
   file: firebase-app-compat.js
-  integrity: sha256-qhDYlUgXWwKeLFf4vGRF1hHj7oOV/3WECTTa6rz6Lew=
+  integrity: sha256-d21UgtIcA6c6qwr8nWk6lxs/KrpbWhknQN7qBjWA2Kk=
 firebase_firestore:
   name: firebase
-  version: 12.1.0
+  version: 12.2.1
   file: firebase-firestore-compat.js
-  integrity: sha256-4dPI6QIVQywlOblkmyd4lmgq4cxyK6Y4OcdklBuA58A=
+  integrity: sha256-leHatffkFuVGIg7ABaA5BDsqsEUtktL4tftb3OdQfg0=
 algolia_search:
   name: algoliasearch
-  version: 5.35.0
+  version: 5.36.0
   file: dist/lite/builds/browser.umd.js
-  integrity: sha256-k54K9sZqimlyVUDmX8WGI5Xbe9OvyjOlkoWLdxa79Kk=
+  integrity: sha256-o49zoHLDPBm9WLg6AiliAVi3axCRTqe3ltTxLvhzAVg=
 local_search:
   name: hexo-generator-searchdb
   version: 1.5.0
@@ -133,9 +133,9 @@ pdfobject:
   integrity: sha256-jI72I8ZLVflVOisZIOaLvRew3tyvzeu6aZXFm7P7dEo=
 mermaid:
   name: mermaid
-  version: 11.9.0
+  version: 11.10.1
   file: dist/mermaid.min.js
-  integrity: sha256-Cz7UN0EXNjgV2u/a38wg/3BNfdRRO1XtgDq93L2GqJg=
+  integrity: sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk=
 animate_css:
   name: animate.css
   version: 3.1.1
