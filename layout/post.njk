@@ -9,6 +9,8 @@
 
   {{ partial('_macro/post.njk', {post: page}) }}
 
+  {{ partial('_third-party/summarize/index.njk', {}, {cache: theme.cache.enable}) }}
+
 {% endblock %}
 
 {% block sidebar %}

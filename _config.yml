@@ -755,6 +755,9 @@ addtoany:
   buttons:
 
 
+# Google Adsense
+google_adsense: # <client_id>
+
 # ---------------------------------------------------------------
 # Statistics and Analytics
 # See: https://theme-next.js.org/docs/third-party-services/statistics-and-analytics
