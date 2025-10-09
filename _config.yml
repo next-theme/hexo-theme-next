@@ -546,6 +546,21 @@ mermaid:
 wavedrom:
   enable: false
 
+# Picture Caption tag
+picture_caption:
+  picture_border_radius:
+    enable: false
+    radius_size: 5px
+  # Picture gap size between pictures. No strict validation for units; the `px` unit is also acceptable.
+  picture_gap: 0.5em
+  # Available caption position: top | bottom
+  caption_position: bottom
+  # Available caption alignment: left | center | right
+  caption_alignment: center
+  # Caption margin size between picture and caption. No strict validation for units; the `px` unit is also acceptable.
+  caption_margin: 0.5em
+  caption_font_size: 0.875em
+
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
 # See: https://theme-next.js.org/docs/third-party-services/
