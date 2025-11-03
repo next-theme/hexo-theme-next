@@ -11,7 +11,7 @@ document.addEventListener('page:loaded', async () => {
     lang : navigator.language
   };
 
-  const parsedBody = CONFIG.gitalk.body.replace(/\$\{([^}]+)}/g, (_, keyRaw) => {
+  const parsedBody = CONFIG.gitalk.body?.replace(/\$\{([^}]+)}/g, (_, keyRaw) => {
     const key = keyRaw.trim();
     if (!/^[A-Za-z0-9_]+$/.test(key)) return '';
     return String(allowed[key] ?? '');
