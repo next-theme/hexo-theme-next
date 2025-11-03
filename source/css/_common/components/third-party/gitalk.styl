@@ -14,4 +14,12 @@ if (hexo-config('gitalk.enable')) {
       }
     }
   }
+
+  if (hexo-config('lightdark.enable')) {
+    +light-dark-block() {
+      .gt-container .gt-header-textarea {
+        background-color: light-dark(#f6f6f6, var(--card-bg-color-dark)) !important;
+      }
+    }
+  }
 }

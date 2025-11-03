@@ -45,6 +45,12 @@ scheme: Muse
 # Dark Mode
 darkmode: false
 
+# Light-Dark Mode
+lightdark:
+  enable: false
+  # Add @supports (color: light-dark(red, red)) check
+  check_supports: true
+
 
 # ---------------------------------------------------------------
 # Site Information Settings
