@@ -1,6 +1,5 @@
 'use strict';
 
-require('chai').should();
 const Hexo = require('hexo');
 const hexo = new Hexo();
 

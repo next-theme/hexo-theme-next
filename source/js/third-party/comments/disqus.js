@@ -1,6 +1,6 @@
 /* global NexT, CONFIG, DISQUS */
 
-document.addEventListener('page:loaded', () => {
+document.addEventListener('page:loaded', async () => {
 
   if (CONFIG.disqus.count) {
     if (window.DISQUSWIDGETS) {
@@ -24,18 +24,17 @@ document.addEventListener('page:loaded', () => {
         this.language = CONFIG.disqus.i18n.disqus;
       }
     };
-    NexT.utils.loadComments('#disqus_thread').then(() => {
-      if (window.DISQUS) {
-        DISQUS.reset({
-          reload: true,
-          config: window.disqus_config
-        });
-      } else {
-        NexT.utils.getScript(`https://${CONFIG.disqus.shortname}.disqus.com/embed.js`, {
-          attributes: { dataset: { timestamp: '' + +new Date() } }
-        });
-      }
-    });
+    await NexT.utils.loadComments('#disqus_thread');
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: window.disqus_config
+      });
+    } else {
+      NexT.utils.getScript(`https://${CONFIG.disqus.shortname}.disqus.com/embed.js`, {
+        attributes: { dataset: { timestamp: '' + +new Date() } }
+      });
+    }
   }
 
 });

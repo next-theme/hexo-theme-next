@@ -45,6 +45,12 @@ scheme: Muse
 # Dark Mode
 darkmode: false
 
+# Light-Dark Mode
+lightdark:
+  enable: false
+  # Add @supports (color: light-dark(red, red)) check
+  check_supports: true
+
 
 # ---------------------------------------------------------------
 # Site Information Settings
@@ -287,7 +293,8 @@ follow_me:
   #RSS: /atom.xml || fa fa-rss
 
 # Related popular posts
-# Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
+# Dependencies: https://github.com/next-theme/hexo-posts-embedding
+# Or: https://github.com/sergeyzwezdin/hexo-related-posts
 related_posts:
   enable: false
   icon: fa fa-signs-post
@@ -379,6 +386,8 @@ codeblock:
   fold:
     enable: false
     height: 500
+  # Display language name
+  language: false
 
 back2top:
   enable: true
@@ -419,7 +428,7 @@ github_banner:
 # Find fonts on Google Fonts (https://fonts.google.com)
 # All fonts set here will have the following styles:
 #   light | light italic | normal | normal italic | bold | bold italic
-# Be aware that setting too much fonts will cause site running slowly
+# Be aware that setting too much fonts will cause site loading slowly
 # ---------------------------------------------------------------
 # Web Safe fonts are recommended for `global` (and `title`):
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
@@ -663,6 +672,7 @@ canvas_ribbon:
 # ---------------------------------------------------------------
 # Comments Settings
 # See: https://theme-next.js.org/docs/third-party-services/comments
+# More comment system plugins: https://github.com/next-theme/awesome-next/blob/main/README.md#comment
 # ---------------------------------------------------------------
 
 # Multiple Comment System Support
@@ -670,7 +680,7 @@ comments:
   # Available values: tabs | buttons
   style: tabs
   # Choose a comment system to be displayed by default.
-  # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
+  # Available values: disqus | disqusjs | livere | gitalk | utterances | isso
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
@@ -702,15 +712,6 @@ disqusjs:
   api:
   apikey: # Register new application from https://disqus.com/api/applications/
   shortname: # See: https://disqus.com/admin/settings/general/
-
-# Changyan
-# For more information: https://changyan.kuaizhan.com
-changyan:
-  enable: false
-  appid:
-  appkey:
-  # Show comments count
-  count: true
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
@@ -759,9 +760,8 @@ isso: # <data_isso>
 # AddToAny Share. See: https://www.addtoany.com
 addtoany:
   enable: false
+  # Example: bottons: [facebook, twitter]
   buttons:
-    - facebook
-    - twitter
 
 
 # ---------------------------------------------------------------
@@ -782,10 +782,6 @@ google_analytics:
 # Baidu Analytics
 # See: https://tongji.baidu.com
 baidu_analytics: # <app_id>
-
-# Growingio Analytics
-# See: https://www.growingio.com
-growingio_analytics: # <project_id>
 
 # Cloudflare Web Analytics
 # See: https://www.cloudflare.com/web-analytics/
@@ -816,19 +812,6 @@ plausible:
   enable: false
   script_url: # https://plausible.io/js/script.js
   site_domain: # www.example.com
-
-# Show number of visitors of each article.
-# You can visit https://www.leancloud.cn to get AppID and AppKey.
-leancloud_visitors:
-  enable: false
-  app_id: # <your app id>
-  app_key: # <your app key>
-  # Required for apps from CN region
-  server_url: # <your server url>
-  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
-  # If you don't care about security in leancloud counter and just want to use it directly
-  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  security: true
 
 # Another tool to show number of visitors to each article.
 # Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.

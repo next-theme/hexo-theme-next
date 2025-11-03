@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let isSearching = false;
   let pendingQuery = null;
 
-  const searchAlgolia = async(searchText, page = 0) => {
+  const searchAlgolia = async (searchText, page = 0) => {
     if (isSearching) {
       pendingQuery = { searchText, page };
       return;
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const inputEventFunction = async() => {
+  const inputEventFunction = async () => {
     const searchText = input.value.trim();
     if (searchText === '') {
       container.innerHTML = '<div class="search-result-icon"><i class="fab fa-algolia fa-5x"></i></div>';
@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
+      NexT.utils.setGutter();
       document.body.classList.add('search-active');
       // Wait for search-popup animation to complete
       setTimeout(() => input.focus(), 500);
@@ -108,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Monitor main search box
   const onPopupClose = () => {
+    NexT.utils.setGutter('0');
     document.body.classList.remove('search-active');
   };
 
@@ -121,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('keydown', event => {
     if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
       event.preventDefault();
+      NexT.utils.setGutter();
       document.body.classList.add('search-active');
       setTimeout(() => input.focus(), 500);
     }

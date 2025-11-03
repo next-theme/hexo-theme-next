@@ -8,7 +8,7 @@ const { iconText } = require('./common');
 // Add comment
 hexo.extend.filter.register('theme_inject', injects => {
   const config = hexo.theme.config.changyan;
-  if (!config.enable || !config.appid || !config.appkey) return;
+  if (!config || !config.enable || !config.appid || !config.appkey) return;
 
   injects.comment.raw('changyan', '<div class="comments" id="SOHUCS" sid="{{ gitalk_md5(page.path) }}"></div>', {}, {});
 
@@ -19,7 +19,7 @@ hexo.extend.filter.register('theme_inject', injects => {
 // Add post_meta
 hexo.extend.filter.register('theme_inject', injects => {
   const config = hexo.theme.config.changyan;
-  if (!config.enable || !config.count || !config.appid || !config.appkey) return;
+  if (!config || !config.enable || !config.count || !config.appid || !config.appkey) return;
 
   injects.postMeta.raw('changyan', `
   {% if post.comments %}

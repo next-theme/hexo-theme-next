@@ -62,6 +62,9 @@
       {%- if theme.pjax %}
         <div class="pjax">
       {%- endif %}
+      {%- if page.embedding_vector %}
+        {% set _ = related_posts(page) %}
+      {%- endif %}
       {%- if page.related_posts and page.related_posts.length > 0 %}
         <div class="sidebar-inner sidebar-post-related">
           <div class="animated">

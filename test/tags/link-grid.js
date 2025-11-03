@@ -1,6 +1,5 @@
 'use strict';
 
-require('chai').should();
 
 const result = `<div class="link-grid"><div class="link-grid-container">
 <object class="link-grid-image" data="/images/sample.png"></object>

@@ -52,6 +52,17 @@ desktop-largest() {
   }
 }
 
+light-dark-block() {
+  if (hexo-config('lightdark.check_supports')){
+    @supports (color: light-dark(red, red)) {
+      {block};
+    }
+  }
+  else {
+    {block};
+  }
+}
+
 sidebar() {
   if (($scheme == 'Muse') or ($scheme == 'Mist')) {
     {block}
@@ -106,7 +117,7 @@ font-family-icons($icon = '') {
   if ($icon) {
     content: $icon;
   }
-  font-family: 'Font Awesome 6 Free';
+  font-family: 'Font Awesome 7 Free';
   font-weight: 900;
 }
 

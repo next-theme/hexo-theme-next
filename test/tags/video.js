@@ -1,6 +1,5 @@
 'use strict';
 
-require('chai').should();
 
 describe('video', () => {
   const postVideo = require('../../scripts/tags/video');

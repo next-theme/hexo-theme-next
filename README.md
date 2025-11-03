@@ -17,13 +17,13 @@
 
 > NexT is a high quality elegant [Hexo](https://hexo.io) theme. It is crafted from scratch with love.
 
-[![NPM version](https://img.shields.io/npm/v/hexo-theme-next?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-next)
-[![NPM Downloads](https://img.shields.io/npm/dm/hexo-theme-next?logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-next)
-[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.3.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
-[![License](https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu)](https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/linter.yml?branch=master&label=test&logo=github&style=flat-square)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ALinter)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/tester.yml?branch=master&logo=github&style=flat-square)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ATester)
-[![Coverage Status](https://img.shields.io/coveralls/github/next-theme/hexo-theme-next?logo=coveralls&style=flat-square)](https://coveralls.io/github/next-theme/hexo-theme-next)
+[![NPM version](https://img.shields.io/npm/v/hexo-theme-next?color=red&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/hexo-theme-next)
+[![NPM Downloads](https://img.shields.io/npm/dm/hexo-theme-next?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/hexo-theme-next)
+[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.3.0-blue?style=for-the-badge&logo=hexo)](https://hexo.io)
+[![License](https://img.shields.io/badge/license-%20AGPL-orange?style=for-the-badge&logo=gnu)](https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/linter.yml?branch=master&label=test&logo=github&style=for-the-badge)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ALinter)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/tester.yml?branch=master&logo=github&style=for-the-badge)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ATester)
+[![Coverage Status](https://img.shields.io/coveralls/github/next-theme/hexo-theme-next?logo=coveralls&style=for-the-badge)](https://coveralls.io/github/next-theme/hexo-theme-next)
 
 ## Live Preview
 
@@ -66,7 +66,7 @@ At present, NexT encourages users to use the [Alternate Theme Config][docs-confi
 
 ## Plugins
 
-Plugins extend and expand the functionality of NexT. There are two types of plugins: core plugins and third-party plugins. The core plugins are required by the basic functions of NexT. Third-party plugins provide a large number of optional features.
+Plugins extend and expand the functionality of NexT. Some advanced features may require third-party libraries or additional configuration, giving you the flexibility to create a truly personalized website.
 
 Configuring these plugins is very easy. For example, if you want to enable `pjax` on your site, just set `pjax` to `true` in NexT config file:
 
@@ -92,7 +92,7 @@ vendors:
 
 ## Update
 
-A new version of NexT will be released every month. Please read the [release notes][docs-release-url] before updating the theme. You can update NexT by the following command.
+The NexT theme will continue to release new versions to include new features and bug fixes. Please read the [release notes][docs-release-url] before updating the theme. You can update NexT by the following command.
 
 Install the latest version through npm:
 
@@ -117,6 +117,7 @@ Connect with us and be part of our growing community!
 * **Telegram Group (Chinese Language)**: [Click here to join!](https://t.me/theme_next_cn)
 * **Discord Server**: [Join our Discord!](https://discord.gg/qmkgkY3jaG)
 * **Gitter**: [Join our Gitter chats!][gitter-url]
+* **ChatGPT**: [NexT Mentor][gpt-url]
 
 ## Feedback
 
@@ -175,10 +176,6 @@ NexT send special thanks to these great services that sponsor our core infrastru
 
 > Thanks CDNJS for providing public CDN service.
 
-## License
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnext-theme%2Fhexo-theme-next.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnext-theme%2Fhexo-theme-next?ref=badge_large)
-
 [docs-installation-url]: https://theme-next.js.org/docs/getting-started/installation.html
 [docs-configuration-url]: https://theme-next.js.org/docs/getting-started/configuration.html
 [docs-custom-files-url]: https://theme-next.js.org/docs/advanced-settings/custom-files.html
@@ -188,6 +185,7 @@ NexT send special thanks to these great services that sponsor our core infrastru
 [awesome-next-url]: https://github.com/next-theme/awesome-next
 [discussions-url]: https://github.com/next-theme/hexo-theme-next/discussions
 [gitter-url]: https://app.gitter.im/#/room/#next:gitter.im
+[gpt-url]: https://chatgpt.com/g/g-68286c2fc1f48191aee3e87c94a89431-next-mentor
 [i18n-url]: https://crowdin.com/project/hexo-theme-next
 
 [issues-bug-url]: https://github.com/next-theme/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md

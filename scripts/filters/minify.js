@@ -68,7 +68,7 @@ hexo.extend.filter.register('after_generate', () => {
   }
 
   // Comments
-  if (!theme.changyan.enable || !theme.changyan.appid || !theme.changyan.appkey) {
+  if (!theme.changyan || !theme.changyan.enable || !theme.changyan.appid || !theme.changyan.appkey) {
     hexo.route.remove('js/third-party/comments/changyan.js');
   }
 
@@ -120,7 +120,7 @@ hexo.extend.filter.register('after_generate', () => {
     hexo.route.remove('js/third-party/statistics/firestore.js');
   }
 
-  if (!theme.leancloud_visitors.enable) {
+  if (!theme.leancloud_visitors?.enable) {
     hexo.route.remove('js/third-party/statistics/lean-analytics.js');
   }
 

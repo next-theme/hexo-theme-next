@@ -39,34 +39,21 @@ NexT.utils = {
     // One-click copy code support.
     target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
     const button = target.querySelector('.copy-btn');
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async () => {
       if (!code) {
         const lines = element.querySelector('.code') || element.querySelector('code');
         code = lines.innerText;
       }
       if (navigator.clipboard) {
         // https://caniuse.com/mdn-api_clipboard_writetext
-        navigator.clipboard.writeText(code).then(() => {
+        try {
+          await navigator.clipboard.writeText(code);
           button.querySelector('i').className = 'fa fa-check-circle fa-fw';
-        }, () => {
+        } catch {
           button.querySelector('i').className = 'fa fa-times-circle fa-fw';
-        });
+        }
       } else {
-        const ta = document.createElement('textarea');
-        ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
-        ta.style.position = 'absolute';
-        ta.style.opacity = '0';
-        ta.readOnly = true;
-        ta.value = code;
-        document.body.append(ta);
-        ta.select();
-        ta.setSelectionRange(0, code.length);
-        ta.readOnly = false;
-        const result = document.execCommand('copy');
-        button.querySelector('i').className = result ? 'fa fa-check-circle fa-fw' : 'fa fa-times-circle fa-fw';
-        ta.blur(); // For iOS
-        button.blur();
-        document.body.removeChild(ta);
+        button.querySelector('i').className = 'fa fa-times-circle fa-fw';
       }
     });
     // If copycode.style is not mac, element is larger than target
@@ -89,6 +76,7 @@ NexT.utils = {
     figure.forEach(element => {
       // Skip pre > .mermaid for folding and copy button
       if (element.querySelector('.mermaid')) return;
+      const languageName = [...element.classList].find(cls => cls !== 'highlight');
       if (!inited) {
         let span = element.querySelectorAll('.code .line span');
         if (span.length === 0) {
@@ -102,10 +90,10 @@ NexT.utils = {
         });
       }
       const height = parseInt(window.getComputedStyle(element).height, 10);
-      const needFold = CONFIG.fold.enable && (height > CONFIG.fold.height);
-      if (!needFold && !CONFIG.copycode.enable) return;
+      const needFold = CONFIG.codeblock.fold.enable && (height > CONFIG.codeblock.fold.height);
+      if (!needFold && !CONFIG.codeblock.copy_button.enable && !CONFIG.codeblock.language) return;
       let target;
-      if (CONFIG.hljswrap && CONFIG.copycode.style === 'mac') {
+      if (CONFIG.hljswrap && CONFIG.codeblock.copy_button.style === 'mac') {
         target = element;
       } else {
         let box = element.querySelector('.code-container');
@@ -130,8 +118,14 @@ NexT.utils = {
           target.classList.add('unfold');
         });
       }
-      if (!inited && CONFIG.copycode.enable) {
+      if (!inited && CONFIG.codeblock.copy_button.enable) {
         this.registerCopyButton(target, element);
+      }
+      if (!inited && CONFIG.codeblock.language && languageName) {
+        const lang = document.createElement('div');
+        lang.className = 'code-lang';
+        lang.innerText = languageName.toUpperCase();
+        target.insertAdjacentElement('afterbegin', lang);
       }
     });
   },
@@ -433,6 +427,18 @@ NexT.utils = {
     updateFooterPosition();
     window.addEventListener('resize', updateFooterPosition);
     window.addEventListener('scroll', updateFooterPosition, { passive: true });
+  },
+
+  /**
+   * Sets the CSS variable '--dialog-scrollgutter' to the specified gap value.
+   * If no gap is provided, it calculates the gap as the difference between
+   * the window's inner width and the document body's client width.
+   *
+   * @param {string} [gap] - The gap value to be set. If not provided, the
+   *                         default gap is calculated automatically.
+   */
+  setGutter(gap) {
+    document.body.style.setProperty('--dialog-scrollgutter', gap || `${window.innerWidth - document.body.clientWidth}px`);
   },
 
   getScript(src, options = {}, legacyCondition) {
