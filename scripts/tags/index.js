@@ -48,6 +48,12 @@ const pdf = require('./pdf')(hexo);
 
 hexo.extend.tag.register('pdf', pdf);
 
+const pictureCaption = require('./picture-caption')(hexo);
+
+hexo.extend.tag.register('picturecaption', pictureCaption);
+hexo.extend.tag.register('piccap', pictureCaption);
+hexo.extend.tag.register('pc', pictureCaption);
+
 const postTabs = require('./tabs')(hexo);
 
 hexo.extend.tag.register('tabs', postTabs, true);
