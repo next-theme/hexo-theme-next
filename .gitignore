@@ -8,3 +8,4 @@ package-lock.json
 node_modules/
 .nyc_output/
 coverage/
+.env
