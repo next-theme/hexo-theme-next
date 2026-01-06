@@ -1,0 +1,44 @@
+.picture-caption-container {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  vertical-align: bottom;
+}
+
+.picture-caption-container + .picture-caption-container {
+  margin-left: unquote(hexo-config('picture_caption.picture_gap'));
+}
+
+.picture-caption-container img {
+  margin: 0 !important;
+  if(hexo-config('picture_caption.picture_border_radius.enable'))
+  {
+    border-radius: unquote(hexo-config('picture_caption.picture_border_radius.radius_size'));
+  }
+}
+
+.picture-caption-caption {
+  margin: 0;
+  line-height: 1;
+  font-size: unquote(hexo-config('picture_caption.caption_font_size'));
+}
+
+.picture-caption-align-left {
+  text-align: left;
+}
+
+.picture-caption-align-center {
+  text-align: center;
+}
+
+.picture-caption-align-right {
+  text-align: right;
+}
+
+.picture-caption-position-top .picture-caption-caption {
+  margin-bottom: unquote(hexo-config('picture_caption.caption_margin'));
+}
+
+.picture-caption-position-bottom .picture-caption-caption {
+  margin-top: unquote(hexo-config('picture_caption.caption_margin'));
+}
