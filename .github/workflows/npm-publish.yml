@@ -5,20 +5,22 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write
     steps:
     - uses: actions/checkout@v6
     - name: Use Node.js
       uses: actions/setup-node@v6
       with:
+        node-version: '24'
         registry-url: 'https://registry.npmjs.org'
+    - name: Update npm to latest version for OIDC support
+      run: npm install -g npm@latest
     - run: |
         npm install
-        npm publish --provenance
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        npm publish
