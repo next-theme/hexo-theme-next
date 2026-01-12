@@ -63,6 +63,10 @@ favicon:
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /manifest.json
 
+# Generate webmanifest file for PWA. Path can be customized in `favicon.android_manifest`.
+webmanifest:
+  enable: false
+
 # Custom Logo (Warning: Do not support scheme Mist)
 custom_logo: #/uploads/custom-logo.png
 
