@@ -48,14 +48,14 @@
 
 {{ next_font() }}
 
-{{ next_vendors('fontawesome') }}
+{{ next_vendors('fontawesome', { lazy: true }) }}
 
 {%- if theme.motion.enable %}
   {{ next_vendors('animate_css') }}
 {%- endif %}
 
 {%- if theme.fancybox %}
-  {{ next_vendors('fancybox_css') }}
+  {{ next_vendors('fancybox_css', { lazy: true }) }}
 {%- endif %}
 
 {%- if theme.pace.enable %}

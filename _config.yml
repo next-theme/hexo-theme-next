@@ -347,6 +347,12 @@ calendar:
 # For more information: https://www.w3.org/TR/resource-hints/#preconnect
 preconnect: false
 
+# Performance optimization
+performance:
+  # Lazy-load non-critical CSS (FontAwesome, Fancybox, KaTeX)
+  # This improves Lighthouse scores by making these CSS files non-render-blocking
+  lazy_css: false
+
 # Set the text alignment in posts / pages.
 text_align:
   # Available values: start | end | left | right | center | justify | justify-all | match-parent
