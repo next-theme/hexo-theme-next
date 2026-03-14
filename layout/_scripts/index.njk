@@ -1,22 +1,22 @@
 {%- include 'vendors.njk' -%}
 
 {%- if theme.injects.comment.length > 1 %}
-  {{- next_js('comments.js') }}
+  {{- next_js('comments.js', { defer: true }) }}
 {%- endif %}
 
 {{- next_js('utils.js') }}
 {%- if theme.motion.enable %}
-  {{- next_js('motion.js') }}
+  {{- next_js('motion.js', { defer: true }) }}
 {%- endif %}
 
 {%- if theme.sidebar.display !== 'remove' %}
-  {{- next_js('sidebar.js') }}
+  {{- next_js('sidebar.js', { defer: true }) }}
 {%- endif %}
 
-{{- next_js('next-boot.js') }}
+{{- next_js('next-boot.js', { defer: true }) }}
 {%- if theme.bookmark.enable %}
-  {{- next_js('bookmark.js') }}
+  {{- next_js('bookmark.js', { defer: true }) }}
 {%- endif %}
 {%- if theme.pjax %}
-  {{- next_js('pjax.js') }}
+  {{- next_js('pjax.js', { defer: true }) }}
 {%- endif %}

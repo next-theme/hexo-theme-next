@@ -1,3 +1,2 @@
-{{ next_vendors('algolia_search') }}
-
-{{- next_js('third-party/search/algolia-search.js') }}
+{{ next_vendors('algolia_search', { async: true }) }}
+{{- next_js('third-party/search/algolia-search.js', { defer: true }) }}

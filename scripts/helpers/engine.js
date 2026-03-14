@@ -20,7 +20,7 @@ hexo.extend.helper.register('next_inject', function(point) {
 hexo.extend.helper.register('next_js', function(file, {
   pjax = false,
   module = false,
-  defer = true,
+  defer = false,
   async = false
 } = {}) {
   const { next_version } = this;
