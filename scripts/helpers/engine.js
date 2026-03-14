@@ -34,6 +34,9 @@ hexo.extend.helper.register('next_js', function(file, {
     custom  : custom_cdn_url
   });
   const src = links[internal] || links.local;
+  if (defer && async) {
+    hexo.log.warn('Both `defer` and `async` are set to true for', file, 'in next_js helper. `defer` will be ignored.');
+  }
   return `<script ${pjax ? 'data-pjax ' : ''}${module ? 'type="module" ' : ''}${defer ? 'defer ' : ''}${async ? 'async ' : ''}src="${src}"></script>`;
 });
 
@@ -46,6 +49,9 @@ hexo.extend.helper.register('next_vendors', function(name, {
   if (type === 'css') {
     if (integrity) return `<link rel="stylesheet" href="${url}" integrity="${integrity}" crossorigin="anonymous">`;
     return `<link rel="stylesheet" href="${url}">`;
+  }
+  if (defer && async) {
+    hexo.log.warn('Both `defer` and `async` are set to true for', name, 'in next_vendors helper. `defer` will be ignored.');
   }
   if (integrity) return `<script ${defer ? 'defer ' : ''}${async ? 'async ' : ''}src="${url}" integrity="${integrity}" crossorigin="anonymous"></script>`;
   return `<script ${defer ? 'defer ' : ''}${async ? 'async ' : ''}src="${url}"></script>`;
