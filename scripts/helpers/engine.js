@@ -36,6 +36,7 @@ hexo.extend.helper.register('next_js', function(file, {
   const src = links[internal] || links.local;
   if (defer && async) {
     hexo.log.warn('Both `defer` and `async` are set to true for', file, 'in next_js helper. `defer` will be ignored.');
+    defer = false;
   }
   return `<script ${pjax ? 'data-pjax ' : ''}${module ? 'type="module" ' : ''}${defer ? 'defer ' : ''}${async ? 'async ' : ''}src="${src}"></script>`;
 });
@@ -52,6 +53,7 @@ hexo.extend.helper.register('next_vendors', function(name, {
   }
   if (defer && async) {
     hexo.log.warn('Both `defer` and `async` are set to true for', name, 'in next_vendors helper. `defer` will be ignored.');
+    defer = false;
   }
   if (integrity) return `<script ${defer ? 'defer ' : ''}${async ? 'async ' : ''}src="${url}" integrity="${integrity}" crossorigin="anonymous"></script>`;
   return `<script ${defer ? 'defer ' : ''}${async ? 'async ' : ''}src="${url}"></script>`;
