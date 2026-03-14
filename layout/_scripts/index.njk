@@ -4,7 +4,7 @@
   {{- next_js('comments.js', { defer: true }) }}
 {%- endif %}
 
-{{- next_js('utils.js') }}
+{{- next_js('utils.js', { defer: true }) }}
 {%- if theme.motion.enable %}
   {{- next_js('motion.js', { defer: true }) }}
 {%- endif %}

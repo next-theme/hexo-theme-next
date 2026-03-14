@@ -3,5 +3,5 @@
   {{ next_data('katex', {
     copy_tex_js: theme.vendors.copy_tex_js
   }) }}
-  {{ next_js('third-party/math/katex.js') }}
+  {{ next_js('third-party/math/katex.js', { async: true }) }}
 {%- endif %}

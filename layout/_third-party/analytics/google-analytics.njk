@@ -3,5 +3,5 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme.google_analytics.tracking_id }}"></script>
   {%- endif %}
   {{ next_data('google_analytics', theme.google_analytics) }}
-  {{ next_js('third-party/analytics/google-analytics.js') }}
+  {{ next_js('third-party/analytics/google-analytics.js', { async: true }) }}
 {%- endif %}
