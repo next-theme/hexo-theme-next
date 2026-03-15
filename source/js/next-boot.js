@@ -35,16 +35,14 @@ NexT.boot.registerEvents = function() {
       NexT.utils.registerCodeblock(e.target);
     });
   } catch (error) {
-    console.error('Something went wrong when NexT registering events', error);
+    console.error('Something went wrong while NexT registering events', error);
   }
 };
 
 NexT.boot.refresh = function() {
   try {
-    /**
-     * Register JS handlers by condition option.
-     * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
-     */
+    // Register JS handlers by condition option.
+    // Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
     CONFIG.prism && window.Prism.highlightAll();
     CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img', {
       background: 'var(--content-bg-color)'
@@ -73,7 +71,7 @@ NexT.boot.refresh = function() {
     NexT.utils.registerPostReward();
     NexT.utils.registerVideoIframe();
   } catch (error) {
-    console.error('Something went wrong when NexT refresh', error);
+    console.error('Something went wrong during NexT refresh', error);
   }
 };
 
@@ -89,7 +87,7 @@ NexT.boot.motion = function() {
         .bootstrap();
     } catch (error) {
       console.error('NexT Motion Error, fallback to static mode', error);
-      document.body.classList.remove("use-motion");
+      document.body.classList.remove('use-motion');
       CONFIG.motion.enable = false;
     }
   }
