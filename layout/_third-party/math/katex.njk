@@ -1,4 +1,4 @@
-{{ next_vendors('katex') }}
+{{ next_vendors('katex', { defer: true }) }}
 {%- if theme.math.katex.copy_tex %}
   {{ next_data('katex', {
     copy_tex_js: theme.vendors.copy_tex_js

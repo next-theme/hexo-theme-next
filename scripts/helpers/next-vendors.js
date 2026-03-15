@@ -4,27 +4,28 @@
 
 hexo.extend.helper.register('js_vendors', function() {
   const { config, theme } = this;
-  const vendors = ['anime'];
+  const vendors = { anime: {} };
   if (theme.prism.enable && !config.prismjs.preprocess) {
-    vendors.push('prism', 'prism_autoloader');
+    vendors.prism = {};
+    vendors.prism_autoloader = {};
     if (config.prismjs.line_number) {
-      vendors.push('prism_line_numbers');
+      vendors.prism_line_numbers = {};
     }
   }
   if (theme.pjax) {
-    vendors.push('pjax');
+    vendors.pjax = { defer: true };
   }
   if (theme.fancybox) {
-    vendors.push('fancybox_js');
+    vendors.fancybox_js = {};
   }
   if (theme.mediumzoom) {
-    vendors.push('mediumzoom');
+    vendors.mediumzoom = {};
   }
   if (theme.lazyload) {
-    vendors.push('lazyload');
+    vendors.lazyload = { defer: true };
   }
   if (theme.pangu) {
-    vendors.push('pangu');
+    vendors.pangu = {};
   }
   return vendors;
 });
