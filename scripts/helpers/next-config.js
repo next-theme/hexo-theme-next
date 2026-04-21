@@ -2,15 +2,19 @@
 
 'use strict';
 
-const { parse } = require('url');
-
 /**
  * Export theme config
  */
 hexo.extend.helper.register('next_config', function() {
   const { config, theme, url_for, __ } = this;
+  let hostname = config.url;
+  try {
+    hostname = new URL(config.url).hostname || config.url;
+  } catch (_) {
+    hostname = config.url;
+  }
   const exportConfig = {
-    hostname  : parse(config.url).hostname || config.url,
+    hostname,
     root      : config.root,
     images    : url_for(theme.images),
     scheme    : theme.scheme,
