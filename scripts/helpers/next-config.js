@@ -7,10 +7,10 @@
  */
 hexo.extend.helper.register('next_config', function() {
   const { config, theme, url_for, __ } = this;
-  let hostname = config.url;
+  let hostname;
   try {
     hostname = new URL(config.url).hostname || config.url;
-  } catch (_) {
+  } catch {
     hostname = config.url;
   }
   const exportConfig = {
