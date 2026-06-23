@@ -3,83 +3,93 @@
 NexT.boot = {};
 
 NexT.boot.registerEvents = function() {
+  try {
+    NexT.utils.registerScrollPercent();
+    NexT.utils.registerCanIUseTag();
+    NexT.utils.updateFooterPosition();
 
-  NexT.utils.registerScrollPercent();
-  NexT.utils.registerCanIUseTag();
-  NexT.utils.updateFooterPosition();
-
-  // Mobile top menu bar.
-  document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {
-    event.currentTarget.classList.toggle('toggle-close');
-    const siteNav = document.querySelector('.site-nav');
-    if (!siteNav) return;
-    siteNav.style.setProperty('--scroll-height', siteNav.scrollHeight + 'px');
-    document.body.classList.toggle('site-nav-on');
-  });
-
-  document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
-    element.addEventListener('click', () => {
-      NexT.utils.activateSidebarPanel(index);
+    // Mobile top menu bar.
+    document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {
+      event.currentTarget.classList.toggle('toggle-close');
+      const siteNav = document.querySelector('.site-nav');
+      if (!siteNav) return;
+      siteNav.style.setProperty('--scroll-height', siteNav.scrollHeight + 'px');
+      document.body.classList.toggle('site-nav-on');
     });
-  });
 
-  window.addEventListener('hashchange', () => {
-    const tHash = location.hash;
-    if (tHash !== '' && !tHash.match(/%\S{2}/)) {
-      const target = document.querySelector(`.tabs ul.nav-tabs li a[href="${tHash}"]`);
-      target?.click();
-    }
-  });
+    document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
+      element.addEventListener('click', () => {
+        NexT.utils.activateSidebarPanel(index);
+      });
+    });
 
-  window.addEventListener('tabs:click', e => {
-    NexT.utils.registerCodeblock(e.target);
-  });
+    window.addEventListener('hashchange', () => {
+      const tHash = location.hash;
+      if (tHash !== '' && !tHash.match(/%\S{2}/)) {
+        const target = document.querySelector(`.tabs ul.nav-tabs li a[href="${tHash}"]`);
+        target?.click();
+      }
+    });
+
+    window.addEventListener('tabs:click', e => {
+      NexT.utils.registerCodeblock(e.target);
+    });
+  } catch (error) {
+    console.warn('Something went wrong while NexT registering events', error);
+  }
 };
 
 NexT.boot.refresh = function() {
-
-  /**
-   * Register JS handlers by condition option.
-   * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
-   */
-  CONFIG.prism && window.Prism.highlightAll();
-  CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img', {
-    background: 'var(--content-bg-color)'
-  });
-  CONFIG.lazyload && window.lozad('.post-body img').observe();
-  if (CONFIG.pangu) {
-    // Polyfill for requestIdleCallback if not supported
-    if (!window.requestIdleCallback) {
-      window.requestIdleCallback = function(cb) {
-        cb({
-          didTimeout   : false,
-          timeRemaining: () => 100
-        });
-      };
+  try {
+    // Register JS handlers by condition option.
+    // Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
+    CONFIG.prism && window.Prism.highlightAll();
+    CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img', {
+      background: 'var(--content-bg-color)'
+    });
+    CONFIG.lazyload && window.lozad('.post-body img').observe();
+    if (CONFIG.pangu) {
+      // Polyfill for requestIdleCallback if not supported
+      if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function(cb) {
+          cb({
+            didTimeout   : false,
+            timeRemaining: () => 100
+          });
+        };
+      }
+      [...document.getElementsByTagName('main')].forEach(e => window.pangu.spacingNode(e));
     }
-    [...document.getElementsByTagName('main')].forEach(e => window.pangu.spacingNode(e));
-  }
 
-  CONFIG.exturl && NexT.utils.registerExtURL();
-  NexT.utils.wrapTableWithBox();
-  NexT.utils.registerCodeblock();
-  NexT.utils.registerTabsTag();
-  NexT.utils.registerActiveMenuItem();
-  NexT.utils.registerLangSelect();
-  NexT.utils.registerSidebarTOC();
-  NexT.utils.registerPostReward();
-  NexT.utils.registerVideoIframe();
+    CONFIG.exturl && NexT.utils.registerExtURL();
+    NexT.utils.wrapTableWithBox();
+    NexT.utils.registerCodeblock();
+    NexT.utils.registerTabsTag();
+    NexT.utils.registerActiveMenuItem();
+    NexT.utils.registerLangSelect();
+    NexT.utils.registerSidebarTOC();
+    NexT.utils.registerPostReward();
+    NexT.utils.registerVideoIframe();
+  } catch (error) {
+    console.warn('Something went wrong during NexT refresh', error);
+  }
 };
 
 NexT.boot.motion = function() {
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .add(NexT.motion.middleWares.header)
-      .add(NexT.motion.middleWares.sidebar)
-      .add(NexT.motion.middleWares.postList)
-      .add(NexT.motion.middleWares.footer)
-      .bootstrap();
+    try {
+      NexT.motion.integrator
+        .add(NexT.motion.middleWares.header)
+        .add(NexT.motion.middleWares.sidebar)
+        .add(NexT.motion.middleWares.postList)
+        .add(NexT.motion.middleWares.footer)
+        .bootstrap();
+    } catch (error) {
+      console.warn('NexT Motion Error, fallback to static mode', error);
+      document.body.classList.remove('use-motion');
+      CONFIG.motion.enable = false;
+    }
   }
   NexT.utils.updateSidebarPosition();
 };
