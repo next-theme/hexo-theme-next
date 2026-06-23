@@ -43,7 +43,7 @@ document.addEventListener('pjax:success', () => {
         .add(NexT.motion.middleWares.postList)
         .bootstrap();
     } catch (error) {
-      console.error('NexT Motion Error, fallback to static mode', error);
+      console.warn('NexT Motion Error, fallback to static mode', error);
       document.body.classList.remove('use-motion');
       CONFIG.motion.enable = false;
     }

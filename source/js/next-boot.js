@@ -35,7 +35,7 @@ NexT.boot.registerEvents = function() {
       NexT.utils.registerCodeblock(e.target);
     });
   } catch (error) {
-    console.error('Something went wrong while NexT registering events', error);
+    console.warn('Something went wrong while NexT registering events', error);
   }
 };
 
@@ -71,7 +71,7 @@ NexT.boot.refresh = function() {
     NexT.utils.registerPostReward();
     NexT.utils.registerVideoIframe();
   } catch (error) {
-    console.error('Something went wrong during NexT refresh', error);
+    console.warn('Something went wrong during NexT refresh', error);
   }
 };
 
@@ -86,7 +86,7 @@ NexT.boot.motion = function() {
         .add(NexT.motion.middleWares.footer)
         .bootstrap();
     } catch (error) {
-      console.error('NexT Motion Error, fallback to static mode', error);
+      console.warn('NexT Motion Error, fallback to static mode', error);
       document.body.classList.remove('use-motion');
       CONFIG.motion.enable = false;
     }
