@@ -49,7 +49,13 @@ module.exports = hexo => {
     });
     vendors[key] = {
       url      : links[plugins] || links.cdnjs,
-      integrity: value.integrity
+      // Subresource Integrity only adds value for cross-origin CDN assets.
+      // The hashes in _vendors.yml are computed for the CDN builds; when
+      // self-hosting (`plugins: local`) the files are served same-origin and
+      // may differ byte-for-byte from those builds (e.g. a newer bundled
+      // version), so a hardcoded hash would make the browser block them.
+      // Omit integrity for local assets.
+      integrity: plugins === 'local' ? undefined : value.integrity
     };
   }
 };
