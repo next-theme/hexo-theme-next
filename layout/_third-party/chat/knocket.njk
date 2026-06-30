@@ -1,0 +1,5 @@
+{#- Knocket live chat — https://trtc.io/solutions/knocket -#}
+{#- Free-forever live chat widget. Get your identifier at https://trtc.io/solutions/knocket -#}
+{%- if theme.knocket.identifier %}
+<script{{ ' async' if theme.knocket.async }} src="https://trtc.io/knocket-sdk/sdk.js?identifier={{ theme.knocket.identifier }}"></script>
+{%- endif %}
