@@ -148,9 +148,9 @@ NexT 特别感谢这些支持我们核心基础设施的优质服务：
 
 <a href="https://www.netlify.com">
   <picture>
-    <source media="(prefers-color-scheme: dark)" height="40" srcset="https://www.netlify.com/v3/img/components/full-logo-dark.svg">
-    <source media="(prefers-color-scheme: light)" height="40" srcset="https://www.netlify.com/v3/img/components/full-logo-light.svg">
-    <img alt="Netlify Logo" height="40" src="https://www.netlify.com/v3/img/components/full-logo-light.svg">
+    <source media="(prefers-color-scheme: dark)" height="40" srcset="https://raw.githubusercontent.com/netlify/netlify-example-styles/main/public/images/logo-netlify-small-fullcolor-darkmode.svg">
+    <source media="(prefers-color-scheme: light)" height="40" srcset="https://raw.githubusercontent.com/netlify/netlify-example-styles/main/public/images/logo-netlify-small-fullcolor-lightmode.svg">
+    <img alt="Netlify Logo" height="40" src="https://raw.githubusercontent.com/netlify/netlify-example-styles/main/public/images/logo-netlify-small-fullcolor-lightmode.svg">
   </picture>
 </a>
 
