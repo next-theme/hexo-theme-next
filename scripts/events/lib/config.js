@@ -10,7 +10,7 @@ module.exports = hexo => {
     hexo.log.warn('Documentation: https://theme-next.js.org/docs/getting-started/configuration.html');
   }
 
-  const { cache, language_switcher, leancloud_visitors } = hexo.theme.config;
+  const { cache, changyan, growingio_analytics, language_switcher, leancloud_visitors } = hexo.theme.config;
   const warning = function(...args) {
     hexo.log.warn(`Since ${args[0]} is turned on, the ${args[1]} is disabled to avoid potential hazards.`);
   };
@@ -22,6 +22,12 @@ module.exports = hexo => {
   if (cache?.enable && hexo.config.relative_link) {
     warning('caching', '`relative_link` option in Hexo `_config.yml`');
     hexo.config.relative_link = false;
+  }
+  if (changyan?.enable) {
+    hexo.log.warn('changyan is deprecated. Please migrate to another comment system.');
+  }
+  if (growingio_analytics) {
+    hexo.log.warn('growingio_analytics is deprecated. Please migrate to another analytics provider.');
   }
   if (leancloud_visitors?.enable) {
     hexo.log.warn('LeanCloud will stop public services on 2027-01-12. Please migrate your data as soon as possible.');
