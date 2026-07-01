@@ -886,6 +886,13 @@ tidio:
   enable: false
   key: # Public Key, get it from dashboard. See: https://www.tidio.com/panel/settings/developer
 
+# Knocket is a 100% free live chat widget by Tencent RTC.
+# For more information: https://trtc.io/solutions/knocket
+knocket:
+  enable: false
+  async: true
+  identifier: # Get it from https://trtc.io/solutions/knocket
+
 
 # ---------------------------------------------------------------
 # CDN Settings
