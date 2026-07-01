@@ -6,11 +6,11 @@ module.exports = hexo => {
   const data = hexo.locals.get('data');
 
   if (data.next) {
-    hexo.log.warn('`next.yml` is deprecated. Please upgrade to Hexo 5 or later and use `_config.next.yml` instead.');
+    hexo.log.warn('`next.yml` is deprecated. Please use `_config.next.yml` instead.');
     hexo.log.warn('Documentation: https://theme-next.js.org/docs/getting-started/configuration.html');
   }
 
-  const { cache, language_switcher } = hexo.theme.config;
+  const { cache, language_switcher, leancloud_visitors } = hexo.theme.config;
   const warning = function(...args) {
     hexo.log.warn(`Since ${args[0]} is turned on, the ${args[1]} is disabled to avoid potential hazards.`);
   };
@@ -22,6 +22,10 @@ module.exports = hexo => {
   if (cache?.enable && hexo.config.relative_link) {
     warning('caching', '`relative_link` option in Hexo `_config.yml`');
     hexo.config.relative_link = false;
+  }
+  if (leancloud_visitors?.enable) {
+    hexo.log.warn('LeanCloud will stop public services on 2027-01-12. Please migrate your data as soon as possible.');
+    hexo.log.warn('Announcement: https://docs.leancloud.app/sdk/announcements/sunset-announcement/');
   }
 
   // Custom languages support. Introduced in NexT v6.3.0.
