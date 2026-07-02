@@ -342,24 +342,16 @@ NexT.utils = {
     const target = navItemList[index];
     if (!target || target.classList.contains('active-current')) return;
 
-    const singleHeight = navItemList[navItemList.length - 1].offsetHeight;
-
     nav.querySelectorAll('.active').forEach(navItem => {
       navItem.classList.remove('active', 'active-current');
     });
     target.classList.add('active', 'active-current');
 
     let activateEle = target.querySelector('.nav-child') || target.parentElement;
-    let navChildHeight = 0;
 
     while (nav.contains(activateEle)) {
       if (activateEle.classList.contains('nav-item')) {
         activateEle.classList.add('active');
-      } else { // .nav-child or .nav
-        // scrollHeight isn't reliable for transitioning child items.
-        // The last nav-item in a list has a margin-bottom of 5px.
-        navChildHeight += (singleHeight * activateEle.childElementCount) + 5;
-        activateEle.style.setProperty('--height', `${navChildHeight}px`);
       }
       activateEle = activateEle.parentElement;
     }
@@ -398,16 +390,8 @@ NexT.utils = {
     const tocPanel = panelContainer.firstElementChild;
     const overviewPanel = panelContainer.lastElementChild;
 
-    let postTOCHeight = tocPanel.scrollHeight;
-    // For TOC activation, try to use the animated TOC height
-    if (index === 0) {
-      const nav = tocPanel.querySelector('.nav');
-      if (nav) {
-        postTOCHeight = parseInt(nav.style.getPropertyValue('--height'), 10);
-      }
-    }
     const panelHeights = [
-      postTOCHeight,
+      tocPanel.scrollHeight,
       overviewPanel.scrollHeight
     ];
     panelContainer.style.setProperty('--inactive-panel-height', `${panelHeights[1 - index]}px`);
