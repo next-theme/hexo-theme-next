@@ -1,3 +1,3 @@
 {{ next_data('chatra', theme.chatra) }}
-{{ next_js('third-party/chat/chatra.js') }}
+{{ next_js('third-party/chat/chatra.js', { defer: true }) }}
 <script{{ ' async' if theme.chatra.async }} src="https://call.chatra.io/chatra.js"></script>

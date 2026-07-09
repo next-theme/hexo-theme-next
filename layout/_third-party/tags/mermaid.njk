@@ -2,5 +2,5 @@
   {{ next_data('mermaid', theme.mermaid, {
     js: theme.vendors.mermaid
   }) }}
-  {{ next_js('third-party/tags/mermaid.js') }}
+  {{ next_js('third-party/tags/mermaid.js', { defer: true }) }}
 {%- endif %}

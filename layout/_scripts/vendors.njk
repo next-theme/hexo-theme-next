@@ -2,6 +2,6 @@
   <script size="{{ theme.canvas_ribbon.size }}" alpha="{{ theme.canvas_ribbon.alpha }}" zIndex="{{ theme.canvas_ribbon.zIndex }}" src="{{ theme.vendors.canvas_ribbon.url }}" defer></script>
 {%- endif %}
 
-{%- for name in js_vendors() %}
-  {{ next_vendors(name) }}
+{%- for name, options in js_vendors() %}
+  {{ next_vendors(name, options) }}
 {%- endfor %}

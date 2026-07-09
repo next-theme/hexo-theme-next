@@ -1,6 +1,6 @@
 {%- if theme.firestore.enable %}
-  {{ next_vendors('firebase_app') }}
-  {{ next_vendors('firebase_firestore') }}
+  {{ next_vendors('firebase_app', { defer: true }) }}
+  {{ next_vendors('firebase_firestore', { defer: true }) }}
   {{ next_data('firestore', theme.firestore) }}
-  {{ next_js('third-party/statistics/firestore.js') }}
+  {{ next_js('third-party/statistics/firestore.js', { defer: true }) }}
 {%- endif %}

@@ -48,7 +48,7 @@
 
 {{ next_font() }}
 
-{{ next_vendors('fontawesome') }}
+{{ next_vendors('fontawesome', { async: true }) }}
 
 {%- if theme.motion.enable %}
   {{ next_vendors('animate_css') }}
@@ -60,7 +60,7 @@
 
 {%- if theme.pace.enable %}
   {{ next_vendors('pace_css') }}
-  {{ next_vendors('pace_js') }}
+  {{ next_vendors('pace_js', { async: true }) }}
 {%- endif %}
 
 {{ next_data('main', next_config()) }}

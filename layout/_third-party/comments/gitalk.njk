@@ -4,4 +4,4 @@
   js: theme.vendors.gitalk_js,
   path_md5: gitalk_md5(page.path)
 }) }}
-{{ next_js('third-party/comments/gitalk.js') }}
+{{ next_js('third-party/comments/gitalk.js', { defer: true }) }}

@@ -1,7 +1,7 @@
 {%- if theme.quicklink.enable %}
-  {{ next_vendors('quicklink') }}
+  {{ next_vendors('quicklink', { defer: true }) }}
   {{ next_data('quicklink', page.quicklink, {
     url: url | replace(r/index\.html$/, '')
   }) }}
-  {{ next_js('third-party/quicklink.js') }}
+  {{ next_js('third-party/quicklink.js', { defer: true }) }}
 {%- endif %}

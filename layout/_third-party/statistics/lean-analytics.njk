@@ -1,4 +1,4 @@
 {%- if theme.leancloud_visitors.enable %}
   {{ next_data('leancloud_visitors', theme.leancloud_visitors) }}
-  {{ next_js('third-party/statistics/lean-analytics.js') }}
+  {{ next_js('third-party/statistics/lean-analytics.js', { defer: true }) }}
 {%- endif %}
