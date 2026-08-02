@@ -88,7 +88,6 @@ open_graph:
     #twitter_id: <twitter:creator>
     #twitter_site: <twitter:site>
     #twitter_image: <twitter:image>
-    #google_plus: <g+:profile_link>
     #fb_admins: <fb:admin_id>
     #fb_app_id: <fb:app_id>
 
@@ -599,10 +598,6 @@ fancybox: false
 # Warning: Do not enable both `fancybox` and `mediumzoom`.
 # For more information: https://medium-zoom.francoischalifour.com
 mediumzoom: false
-
-# Vanilla JavaScript plugin for lazyloading images.
-# For more information: https://apoorv.pro/lozad.js/demo/
-lazyload: false
 
 # Automatically insert whitespace between CJK and half-width characters.
 # For more information: https://github.com/vinta/pangu.js
