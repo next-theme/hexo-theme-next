@@ -1,4 +1,4 @@
-/* global CONFIG */
+/* global NexT, CONFIG */
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
@@ -13,12 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // If the page opens with a specific hash, just jump out
     if (!isNaN(top) && location.hash === '') {
       // Auto scroll to the position
-      window.anime({
-        targets  : document.scrollingElement,
-        duration : 200,
-        easing   : 'linear',
-        scrollTop: top
-      });
+      NexT.utils.scrollTo(window, top);
     }
   };
   // Register everything
