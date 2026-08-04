@@ -19,83 +19,92 @@ document.addEventListener('DOMContentLoaded', () => {
     return result;
   };
 
-  let isSearching = false;
-  let pendingQuery = null;
+  let latestSearchId = 0;
 
-  const searchAlgolia = async (searchText, page = 0) => {
-    if (isSearching) {
-      pendingQuery = { searchText, page };
-      return;
-    }
-    isSearching = true;
+  const searchAlgolia = async (searchText, page, searchId) => {
+    if (searchId !== latestSearchId) return;
+    container.setAttribute('aria-busy', 'true');
     const startTime = Date.now();
-    const result = await client.search({
-      requests: [{
-        indexName,
-        page,
-        query                : searchText,
-        hitsPerPage          : hits.per_page || 10,
-        attributesToRetrieve : ['permalink'],
-        attributesToHighlight: ['title', 'excerpt', 'excerptStrip', 'contentStripTruncate'],
-        highlightPreTag      : '<mark class="search-keyword">',
-        highlightPostTag     : '</mark>'
-      }]
-    });
-    const data = result.results[0];
-    if (data.nbHits === 0) {
-      container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
-    } else {
-      const stats = CONFIG.i18n.hits_time
-        .replace('${hits}', data.nbHits)
-        .replace('${time}', Date.now() - startTime);
-      let pagination = '';
-      if (data.nbPages > 1) {
-        pagination += '<nav class="pagination algolia-pagination">';
-        for (let i = 0; i < data.nbPages; i++) {
-          if (i === page) {
-            pagination += `<span class="page-number current">${i + 1}</span>`;
-          } else {
-            pagination += `<a class="page-number" href="#" data-index=${i}>${i + 1}</a>`;
-          }
-        }
-        pagination += '</nav>';
-      }
+    try {
+      const result = await client.search({
+        requests: [{
+          indexName,
+          page,
+          query                : searchText,
+          hitsPerPage          : hits.per_page || 10,
+          attributesToRetrieve : ['permalink'],
+          attributesToHighlight: ['title', 'excerpt', 'excerptStrip', 'contentStripTruncate'],
+          highlightPreTag      : '<mark class="search-keyword">',
+          highlightPostTag     : '</mark>'
+        }]
+      });
+      if (searchId !== latestSearchId) return;
 
-      container.innerHTML = `<div class="search-stats">
+      const data = result.results[0];
+      if (data.nbHits === 0) {
+        container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
+      } else {
+        const stats = CONFIG.i18n.hits_time
+          .replace('${hits}', data.nbHits)
+          .replace('${time}', Date.now() - startTime);
+        let pagination = '';
+        if (data.nbPages > 1) {
+          pagination += '<nav class="pagination algolia-pagination">';
+          for (let i = 0; i < data.nbPages; i++) {
+            if (i === page) {
+              pagination += `<span class="page-number current">${i + 1}</span>`;
+            } else {
+              pagination += `<a class="page-number" href="#" data-index=${i}>${i + 1}</a>`;
+            }
+          }
+          pagination += '</nav>';
+        }
+
+        container.innerHTML = `<div class="search-stats">
           <span>${stats}</span>
           <img src="${CONFIG.images}/logo-algolia-nebula-blue-full.svg" alt="Algolia">
         </div>
         <hr>
         <ul class="search-result-list">${data.hits.map(formatHits).join('')}</ul>
         ${pagination}`;
-      if (typeof pjax === 'object') pjax.refresh(container);
-      container.querySelectorAll('.page-number').forEach(element => {
-        element.addEventListener('click', async event => {
-          event.preventDefault();
-          await searchAlgolia(searchText, Number(element.dataset.index));
+        if (typeof pjax === 'object') pjax.refresh(container);
+        container.querySelectorAll('.page-number').forEach(element => {
+          element.addEventListener('click', async event => {
+            event.preventDefault();
+            if (input.value.trim() !== searchText) return;
+            const searchId = ++latestSearchId;
+            await searchAlgolia(searchText, Number(element.dataset.index), searchId);
+          });
         });
-      });
-    }
-    isSearching = false;
-    if (pendingQuery !== null && (pendingQuery.searchText !== searchText || pendingQuery.page !== page)) {
-      const { searchText, page } = pendingQuery;
-      pendingQuery = null;
-      searchAlgolia(searchText, page);
+      }
+    } catch (error) {
+      if (searchId !== latestSearchId) return;
+      console.warn('Algolia search failed:', error);
+      container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
+    } finally {
+      if (searchId === latestSearchId) container.removeAttribute('aria-busy');
     }
   };
 
-  const inputEventFunction = async () => {
+  const inputEventFunction = async searchId => {
+    if (searchId !== latestSearchId) return;
     const searchText = input.value.trim();
-    if (searchText === '') {
-      container.innerHTML = '<div class="search-result-icon"><i class="fab fa-algolia fa-5x"></i></div>';
-      return;
-    }
+    if (searchText === '') return;
     // Algolia client will automatically cache the data for same queries
-    await searchAlgolia(searchText, 0);
+    await searchAlgolia(searchText, 0, searchId);
   };
 
   const debouncedSearch = NexT.utils.debounce(inputEventFunction, 500);
-  input.addEventListener('input', debouncedSearch);
+  input.addEventListener('input', () => {
+    const searchId = ++latestSearchId;
+    if (input.value.trim() === '') {
+      container.removeAttribute('aria-busy');
+      container.innerHTML = '<div class="search-result-icon"><i class="fab fa-algolia fa-5x"></i></div>';
+    } else {
+      container.setAttribute('aria-busy', 'true');
+    }
+    debouncedSearch(searchId);
+  });
 
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {
