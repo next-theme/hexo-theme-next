@@ -10,7 +10,7 @@ module.exports = hexo => {
     hexo.log.warn('Documentation: https://theme-next.js.org/docs/getting-started/configuration.html');
   }
 
-  const { cache, changyan, growingio_analytics, language_switcher, lazyload, leancloud_visitors } = hexo.theme.config;
+  const { body_scrollbar, cache, changyan, growingio_analytics, language_switcher, lazyload, leancloud_visitors } = hexo.theme.config;
   const warning = function(...args) {
     hexo.log.warn(`Since ${args[0]} is turned on, the ${args[1]} is disabled to avoid potential hazards.`);
   };
@@ -28,6 +28,9 @@ module.exports = hexo => {
   }
   if (growingio_analytics) {
     hexo.log.warn('growingio_analytics is deprecated. Please migrate to another analytics provider.');
+  }
+  if (body_scrollbar?.stable) {
+    hexo.log.warn('The `body_scrollbar.stable` theme option is deprecated and will be removed in the next version.');
   }
   if (lazyload) {
     hexo.log.warn('The `lazyload` theme option is deprecated and will be removed in the next version.');
