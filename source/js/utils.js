@@ -336,8 +336,6 @@ NexT.utils = {
     const target = navItemList[index];
     if (!target || target.classList.contains('active-current')) return;
 
-    const singleHeight = navItemList[navItemList.length - 1].offsetHeight;
-
     nav.querySelectorAll('.active').forEach(navItem => {
       navItem.classList.remove('active', 'active-current');
     });
@@ -350,9 +348,13 @@ NexT.utils = {
       if (activateEle.classList.contains('nav-item')) {
         activateEle.classList.add('active');
       } else { // .nav-child or .nav
-        // scrollHeight isn't reliable for transitioning child items.
+        // Exclude nested lists so each item's own wrapped row is counted once.
+        const listItemHeight = [...activateEle.children].reduce((height, navItem) => {
+          const navChild = [...navItem.children].find(element => element.classList.contains('nav-child'));
+          return height + navItem.getBoundingClientRect().height - (navChild?.getBoundingClientRect().height || 0);
+        }, 0);
         // The last nav-item in a list has a margin-bottom of 5px.
-        navChildHeight += (singleHeight * activateEle.childElementCount) + 5;
+        navChildHeight += listItemHeight + 5;
         activateEle.style.setProperty('--height', `${navChildHeight}px`);
       }
       activateEle = activateEle.parentElement;
