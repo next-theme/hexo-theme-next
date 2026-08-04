@@ -1,6 +1,7 @@
 {%- if theme.firestore.enable %}
-  {{ next_vendors('firebase_app') }}
-  {{ next_vendors('firebase_firestore') }}
-  {{ next_data('firestore', theme.firestore) }}
+  {{ next_data('firestore', {
+    collection: theme.firestore.collection,
+    projectId: theme.firestore.projectId
+  }) }}
   {{ next_js('third-party/statistics/firestore.js') }}
 {%- endif %}

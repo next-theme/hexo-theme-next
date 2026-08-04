@@ -1,57 +1,95 @@
-/* global CONFIG, firebase */
-
-firebase.initializeApp({
-  apiKey   : CONFIG.firestore.apiKey,
-  projectId: CONFIG.firestore.projectId
-});
+/* global CONFIG */
 
 (function() {
-  const getCount = async (doc, increaseCount) => {
-    // IncreaseCount will be false when not in article page
-    const d = await doc.get();
-    // Has no data, initialize count
-    let count = d.exists ? d.data().count : 0;
-    // If first view this article
-    if (increaseCount) {
-      // Increase count
-      count++;
-      doc.set({
-        count
-      });
-    }
-    return count;
+  const database = `projects/${CONFIG.firestore.projectId}/databases/(default)`;
+  const documents = `${database}/documents`;
+  const api = `https://firestore.googleapis.com/v1/${documents}`;
+
+  const fetchFirestore = async (path, options) => {
+    const response = await fetch(`${api}${path}`, options);
+    if (response.status === 404) return null;
+    if (!response.ok) throw new Error(`Firestore request failed with status ${response.status}`);
+    return response.json();
   };
 
-  const db = firebase.firestore();
-  const articles = db.collection(CONFIG.firestore.collection);
+  const documentName = title => `${documents}/${CONFIG.firestore.collection}/${title}`;
+  const getValue = value => Number(value?.integerValue ?? value?.doubleValue ?? 0);
+
+  const getCount = async (title, increaseCount) => {
+    if (increaseCount) {
+      const data = await fetchFirestore(':commit', {
+        method : 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          writes: [{
+            transform: {
+              document       : documentName(title),
+              fieldTransforms: [{
+                fieldPath: 'count',
+                increment: {
+                  integerValue: '1'
+                }
+              }]
+            }
+          }]
+        })
+      });
+      return getValue(data.writeResults[0].transformResults[0]);
+    }
+
+    const collection = encodeURIComponent(CONFIG.firestore.collection);
+    const document = await fetchFirestore(`/${collection}/${encodeURIComponent(title)}`);
+    return getValue(document?.fields?.count);
+  };
+
+  const getCounts = async titles => {
+    if (titles.length === 0) return [];
+    const data = await fetchFirestore(':batchGet', {
+      method : 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        documents: titles.map(documentName),
+        mask     : {
+          fieldPaths: ['count']
+        }
+      })
+    });
+    const counts = new Map(data.map(result => {
+      const document = result.found;
+      return [document?.name ?? result.missing, getValue(document?.fields?.count)];
+    }));
+    return titles.map(title => counts.get(documentName(title)) ?? 0);
+  };
 
   document.addEventListener('page:loaded', async () => {
-
-    if (CONFIG.page.isPost) {
-      // Fix issue #118
-      // https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
-      const title = document.querySelector('.post-title').textContent.trim();
-      const doc = articles.doc(title);
-      let increaseCount = CONFIG.hostname === location.hostname;
-      if (localStorage.getItem(title)) {
-        increaseCount = false;
-      } else {
-        // Mark as visited
-        localStorage.setItem(title, true);
+    try {
+      if (CONFIG.page.isPost) {
+        // Fix issue #118
+        // https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+        const title = document.querySelector('.post-title').textContent.trim();
+        let increaseCount = CONFIG.hostname === location.hostname;
+        if (localStorage.getItem(title)) {
+          increaseCount = false;
+        } else {
+          // Mark as visited
+          localStorage.setItem(title, true);
+        }
+        const count = await getCount(title, increaseCount);
+        document.querySelector('.firestore-visitors-count').innerText = count;
+      } else if (CONFIG.page.isHome) {
+        const titles = [...document.querySelectorAll('.post-title')].map(element => element.textContent.trim());
+        const counts = await getCounts(titles);
+        const metas = document.querySelectorAll('.firestore-visitors-count');
+        counts.forEach((val, idx) => {
+          metas[idx].innerText = val;
+        });
       }
-      const count = await getCount(doc, increaseCount);
-      document.querySelector('.firestore-visitors-count').innerText = count;
-    } else if (CONFIG.page.isHome) {
-      const promises = [...document.querySelectorAll('.post-title')].map(element => {
-        const title = element.textContent.trim();
-        const doc = articles.doc(title);
-        return getCount(doc);
-      });
-      const counts = await Promise.all(promises);
-      const metas = document.querySelectorAll('.firestore-visitors-count');
-      counts.forEach((val, idx) => {
-        metas[idx].innerText = val;
-      });
+    } catch (error) {
+      console.warn('Failed to load Firestore visitor count:', error);
     }
   });
 })();

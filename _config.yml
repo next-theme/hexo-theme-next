@@ -807,13 +807,13 @@ plausible:
   script_url: # https://plausible.io/js/script.js
   site_domain: # www.example.com
 
-# Another tool to show number of visitors to each article.
-# Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.
-# Visit https://firebase.google.com/docs/firestore/ to get more information about firestore.
+# Show the number of visitors to each article using the Firestore REST API.
+# Visit https://console.firebase.google.com/ to get projectId.
+# Visit https://firebase.google.com/docs/firestore/use-rest-api for more information.
+# Anonymous requests are authorized by your Firestore Security Rules.
 firestore:
   enable: false
   collection: articles # Required, a string collection name to access firestore database
-  apiKey: # Required
   projectId: # Required
 
 # Show Views / Visitors of the website / page with busuanzi.
