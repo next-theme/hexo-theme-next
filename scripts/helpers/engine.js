@@ -35,13 +35,26 @@ hexo.extend.helper.register('next_js', function(file, {
   return `<script ${pjax ? 'data-pjax ' : ''}${module ? 'type="module" ' : ''}src="${src}" defer></script>`;
 });
 
-hexo.extend.helper.register('next_vendors', function(name) {
+hexo.extend.helper.register('next_vendors', function(name, options = {}) {
   const { url, integrity } = this.theme.vendors[name];
   const type = url.endsWith('css') ? 'css' : 'js';
+  const { lazy = false } = options;
+
   if (type === 'css') {
+    const integrityAttr = integrity ? ` integrity="${integrity}" crossorigin="anonymous"` : '';
+
+    // Lazy-load CSS using preload + onload technique
+    if (lazy && this.theme.performance?.lazy_css) {
+      return `<link rel="preload" href="${url}" as="style" onload="this.onload=null;this.rel='stylesheet'"${integrityAttr}>
+<noscript><link rel="stylesheet" href="${url}"${integrityAttr}></noscript>`;
+    }
+
+    // Default: render-blocking CSS
     if (integrity) return `<link rel="stylesheet" href="${url}" integrity="${integrity}" crossorigin="anonymous">`;
     return `<link rel="stylesheet" href="${url}">`;
   }
+
+  // JS handling unchanged (already uses defer)
   if (integrity) return `<script src="${url}" integrity="${integrity}" crossorigin="anonymous" defer></script>`;
   return `<script src="${url}" defer></script>`;
 });
