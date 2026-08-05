@@ -50,16 +50,16 @@ pjax:
   integrity: sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=
 fancybox_js:
   name: '@fancyapps/ui'
-  version: 5.0.31
+  version: 6.1.14
   file: dist/fancybox/fancybox.umd.js
   alias: fancyapps-ui
-  integrity: sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=
+  integrity: sha256-QnJV4HT5r8i89ovZGRD86iynZqHerEbT2xt69vDM36I=
 fancybox_css:
   name: '@fancyapps/ui'
-  version: 5.0.31
+  version: 6.1.14
   file: dist/fancybox/fancybox.css
   alias: fancyapps-ui
-  integrity: sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=
+  integrity: sha256-mdaMxrItEW6hMIVJJNPKuX0B7KCSJQVEv3mVY4N2we4=
 mediumzoom:
   name: medium-zoom
   version: 1.1.0
@@ -73,9 +73,9 @@ lazyload:
   integrity: sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=
 pangu:
   name: pangu
-  version: 7.2.0
+  version: 7.2.1
   file: dist/browser/pangu.umd.js
-  integrity: sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=
+  integrity: sha256-kRsxecBnwG6mULFPe2E6UKnNm8XfDOuDwCOprjLZuX8=
 quicklink:
   name: quicklink
   version: 3.0.1
@@ -83,14 +83,14 @@ quicklink:
   integrity: sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=
 disqusjs_js:
   name: disqusjs
-  version: 3.1.0
+  version: 3.2.1
   file: dist/browser/disqusjs.es2015.umd.min.js
-  integrity: sha256-gdbBT62HLzqWTnXQED3WQL/ItFCuWsA5gd6dM/wgdiE=
+  integrity: sha256-6a5jzAWTjd18Nq6rZZn1x9hZLDZAilRDnd0arUFteBM=
 disqusjs_css:
   name: disqusjs
-  version: 3.1.0
+  version: 3.2.1
   file: dist/browser/styles/disqusjs.css
-  integrity: sha256-E4RzceSomICFY1PT/yDQrN8DsLSwdScDEiQAevHabp0=
+  integrity: sha256-9SkCf6N7ls5uSFyENCeHM+m7Qv3lHH9Eg/CxdCajarI=
 gitalk_js:
   name: gitalk
   version: 1.8.0
@@ -149,11 +149,11 @@ creative_commons:
   alias: creativecommons-vocabulary
 wavedrom:
   name: wavedrom
-  version: 3.5.0
+  version: 3.6.2
   file: wavedrom.min.js
-  integrity: sha256-INLAoJc6quTNfiMWkGZniYO2cxE8mHpddnLow1m6RFs=
+  integrity: sha256-3hPWxTqi1K1sjmlESiOTH6lfGwYmz8/SFqoAcPxrjwg=
 wavedrom_skin:
   name: wavedrom
-  version: 3.5.0
+  version: 3.6.2
   file: skins/default.js
-  integrity: sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI=
+  integrity: sha256-bUKjUpel+qLgflZd3EfdbhIorwRYgSkaZKM2s/Bi0VI=
