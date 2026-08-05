@@ -4,6 +4,7 @@
 
 hexo.extend.helper.register('js_vendors', function() {
   const { config, theme } = this;
+  /** @type {string[]} */
   const vendors = [];
   if (theme.prism.enable && !config.prismjs.preprocess) {
     vendors.push('prism', 'prism_autoloader');

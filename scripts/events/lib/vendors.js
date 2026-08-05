@@ -14,7 +14,7 @@ try {
 const vendorsFile = fs.readFileSync(path.join(__dirname, '../../../_vendors.yml'));
 const dependencies = yaml.load(vendorsFile);
 
-module.exports = hexo => {
+module.exports = /** @param {import('hexo')} hexo */ hexo => {
   const { vendors, creative_commons, pace } = hexo.theme.config;
   if (typeof internal === 'function') {
     internal(hexo, dependencies);

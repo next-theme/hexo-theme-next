@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+/** @type {typeof import('@types/css')} */
 let css;
 try {
   css = require('@adobe/css-tools');
@@ -9,6 +10,9 @@ try {
   css = require('css');
 }
 
+/**
+ * @param {string} name
+ */
 function resolve(name, file = '') {
   let dir;
   try {
@@ -19,6 +23,9 @@ function resolve(name, file = '') {
   return `${dir}/${file}`;
 }
 
+/**
+ * @param {string} name
+ */
 function highlightTheme(name) {
   const file = resolve('highlight.js', `styles/${name}.css`);
   const content = fs.readFileSync(file, 'utf8');
@@ -39,6 +46,9 @@ function highlightTheme(name) {
   };
 }
 
+/**
+ * @param {{name: string, alias?: string, version: string, file: string, minified: string, local: string, custom?: string}} options
+ */
 function getVendors({ name, alias, version, file, minified, local, custom }) {
   // Make it possible to set `cdnjs_name` and `cdnjs_file` in `custom_cdn_url`
   const npm_name = name;

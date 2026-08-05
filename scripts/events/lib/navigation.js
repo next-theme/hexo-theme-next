@@ -3,28 +3,48 @@
 const { join } = require('path').posix;
 
 class TreeNode {
+  /**
+   * @param {?TreeNode} parent 
+   * @param {string} path 
+   * @param {string} name 
+   * @param {string} icon
+   */
   constructor(parent, path, name, icon) {
     if (parent && !path.startsWith('http')) {
       path = join(parent.path, path);
     }
     this.parent = parent;
+    /** @type {TreeNode[]} */
     this.children = [];
     this.path = path;
     this.name = name;
     this.icon = icon;
   }
 
+  /**
+   * @param {TreeNode} child
+   */
   append(child) {
     this.children.push(child);
   }
 }
 
-module.exports = hexo => {
+/**
+ * @typedef {TreeNode} TreeNode
+ */
+
+module.exports = /** @param {import('hexo')} hexo */ hexo => {
+  /** @type {Map<string, TreeNode>} */
   const menu_map = new Map();
+  /** @type {TreeNode[]} */
   const main_menu = [];
   hexo.theme.config.menu_map = menu_map;
   hexo.theme.config.main_menu = main_menu;
 
+  /**
+   * @param {Record<string, string | { default: string }>} menu
+   * @param {?TreeNode} parent
+   */
   function parse(menu, parent) {
     if (!menu) return;
     Object.entries(menu).forEach(([name, value]) => {

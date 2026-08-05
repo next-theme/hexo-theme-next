@@ -3,13 +3,16 @@
 const fs = require('fs');
 const { resolve, highlightTheme } = require('./utils');
 
+/**
+ * @param {string} name
+ */
 function prismTheme(name) {
   let file = resolve('prismjs', `themes/${name}.css`);
   if (!fs.existsSync(file)) file = resolve('prism-themes', `themes/${name}.css`);
   return file;
 }
 
-module.exports = hexo => {
+module.exports = /** @param {import('hexo')} hexo */ hexo => {
   const { config } = hexo;
   const theme = hexo.theme.config;
   config.highlight.hljs = false;

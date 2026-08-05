@@ -2,7 +2,7 @@
 
 const { deepMerge } = require('hexo-util');
 
-module.exports = hexo => {
+module.exports = /** @param {import('hexo')} hexo */ hexo => {
   const data = hexo.locals.get('data');
 
   if (data.next) {
