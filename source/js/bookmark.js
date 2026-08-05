@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       NexT.utils.scrollTo(window, top);
     }
   };
+
   /**
    * Register everything
    * @param {typeof CONFIG.bookmark.save} trigger

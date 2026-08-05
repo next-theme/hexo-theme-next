@@ -14,12 +14,14 @@
 NexT.motion = {};
 
 NexT.motion.integrator = {
+
   /** @type {MotionSequenceItem[][]} */
   queue: [],
   init() {
     this.queue = [];
     return this;
   },
+
   /**
    * @param {() => MotionSequenceItem[]} fn
    */
@@ -37,6 +39,7 @@ NexT.motion.integrator = {
     if (!CONFIG.motion.async) this.queue = [this.queue.flat()];
     this.queue.forEach(sequence => this.schedule(sequence));
   },
+
   /**
    * @param {MotionSequenceItem[]} sequence
    */
@@ -49,6 +52,7 @@ NexT.motion.integrator = {
       cursor = Math.max(cursor, end);
 
       if (item.styles) {
+
         /** @type {NodeListOf<HTMLElement>} */
         const targets = typeof item.targets === 'string' ? document.querySelectorAll(item.targets) : [item.targets].filter(Boolean);
         targets.forEach(target => {
@@ -71,6 +75,7 @@ NexT.motion.integrator = {
 
 NexT.motion.middleWares = {
   header() {
+
     /** @type {MotionSequenceItem[]} */
     const sequence = [];
 
@@ -130,6 +135,7 @@ NexT.motion.middleWares = {
   },
 
   postList() {
+
     /** @type {MotionSequenceItem[]} */
     const sequence = [];
     const { post_block, post_header, post_body, coll_header } = CONFIG.motion.transition;
@@ -166,6 +172,7 @@ NexT.motion.middleWares = {
   },
 
   sidebar() {
+
     /** @type {MotionSequenceItem[]} */
     const sequence = [];
     const sidebar = document.querySelectorAll('.sidebar-inner');

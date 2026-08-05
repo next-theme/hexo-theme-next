@@ -3,7 +3,7 @@
 
 /**
  * @this {HTMLElement}
- * @param {Node} wrapper 
+ * @param {Node} wrapper
  */
 HTMLElement.prototype.wrap = function(wrapper) {
   this.parentNode.insertBefore(wrapper, this);
@@ -25,7 +25,7 @@ HTMLElement.prototype.wrap = function(wrapper) {
 NexT.utils = {
 
   /**
-   * @param {Element} target 
+   * @param {Element} target
    * @param {number} top
    */
   scrollTo(target, top) {
@@ -56,8 +56,8 @@ NexT.utils = {
   },
 
   /**
-   * @param {Element} target 
-   * @param {Element} element 
+   * @param {Element} target
+   * @param {Element} element
    * @param {string} code
    */
   registerCopyButton(target, element, code = '') {
@@ -95,8 +95,8 @@ NexT.utils = {
    */
   registerCodeblock(element) {
     const inited = !!element;
-    const figure =
-      CONFIG.hljswrap
+    const figure
+      = CONFIG.hljswrap
         ? (inited ? element : document).querySelectorAll('figure.highlight')
         : document.querySelectorAll('pre');
     figure.forEach(element => {
@@ -118,6 +118,7 @@ NexT.utils = {
       const height = parseInt(window.getComputedStyle(element).height, 10);
       const needFold = CONFIG.codeblock.fold.enable && (height > CONFIG.codeblock.fold.height);
       if (!needFold && !CONFIG.codeblock.copy_button.enable && !CONFIG.codeblock.language) return;
+
       /** @type {?Element} */
       let target;
       if (CONFIG.hljswrap && CONFIG.codeblock.copy_button.style === 'mac') {
@@ -454,7 +455,7 @@ NexT.utils = {
   /**
    * @param {string | Function | {url: string, integrity?: string}} src
    * @param {{condition?: boolean, attributes?: {id?: string, defer?: boolean, crossOrigin?: string, dataset?: Record<string, string>, [key: string]: any}, parentNode?: HTMLElement, async?: boolean}} options
-   * @param {boolean} legacyCondition 
+   * @param {boolean} legacyCondition
    * @returns {Promise<void>}
    */
   getScript(src, options = {}, legacyCondition) {
@@ -509,8 +510,8 @@ NexT.utils = {
   },
 
   /**
-   * @param {string} selector 
-   * @param {Function} legacyCallback 
+   * @param {string} selector
+   * @param {Function} legacyCallback
    * @returns {Promise<void>}
    */
   loadComments(selector, legacyCallback) {
@@ -536,11 +537,12 @@ NexT.utils = {
 
   /**
    * @template {Function} T
-   * @param {T} func 
+   * @param {T} func
    * @param {Parameters<setTimeout>[1]} wait
    * @returns {(...args: Parameters<T>) => void}
    */
   debounce(func, wait) {
+
     /** @type {ReturnType<setTimeout>} */
     let timeout;
     return function(...args) {

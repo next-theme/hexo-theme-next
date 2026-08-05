@@ -18,6 +18,7 @@ if (!window.NexT) window.NexT = {};
    * @param {string} name
    */
   const update = name => {
+
     /** @type {HTMLScriptElement} */
     const targetEle = document.querySelector(`.${className}[data-name="${name}"]`);
     if (!targetEle) return;
