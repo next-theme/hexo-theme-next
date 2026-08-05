@@ -1,3 +1,4 @@
+/// <reference path="../../utils.js" />
 /* global NexT, CONFIG, DISQUS */
 
 document.addEventListener('page:loaded', async () => {

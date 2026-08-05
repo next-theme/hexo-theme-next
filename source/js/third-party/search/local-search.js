@@ -1,4 +1,14 @@
+/// <reference path="../../pjax.js" />
 /* global CONFIG, NexT, pjax, LocalSearch */
+
+/**
+ * @typedef {{
+ *   item: string,
+ *   id: number,
+ *   hitCount: number,
+ *   includedCount: number
+ * }} ReasultItem
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!CONFIG.path) {
@@ -19,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!localSearch.isfetched) return;
     const searchText = input.value.trim().toLowerCase();
     const keywords = searchText.split(/[-\s]+/);
+
+    /** @type {ReasultItem[]} */
     let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching

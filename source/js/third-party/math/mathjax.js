@@ -1,3 +1,4 @@
+/// <reference path="../../utils.js" />
 /* global NexT, CONFIG, MathJax */
 
 document.addEventListener('page:loaded', () => {

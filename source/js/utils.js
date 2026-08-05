@@ -24,6 +24,9 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
+  /** @type {(?HTMLElement)[] | undefined} */
+  sections: undefined,
+
   /**
    * @param {Element} target
    * @param {number} top

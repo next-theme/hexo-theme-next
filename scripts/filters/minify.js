@@ -2,6 +2,7 @@
 
 'use strict';
 
+/** @type {string[]} */
 const internalScripts = [];
 
 hexo.theme.addProcessor('js/*', file => {
@@ -13,7 +14,8 @@ hexo.extend.filter.register('after_generate', () => {
   if (!theme.minify) return;
 
   if (theme.minify.type) {
-    hexo.route.remove('js/type.d.ts');
+    hexo.route.remove('js/config.d.ts');
+    hexo.route.remove('js/pjax.d.ts');
   }
 
   if (theme.vendors.internal !== 'local') {

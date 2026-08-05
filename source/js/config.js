@@ -1,4 +1,4 @@
-/// <reference path="type.d.ts" />
+/// <reference path="config.d.ts" />
 
 if (!window.NexT) window.NexT = {};
 

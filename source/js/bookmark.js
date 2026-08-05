@@ -1,4 +1,4 @@
-/// <reference path="next-boot.js" />
+/// <reference path="utils.js" />
 /* global NexT, CONFIG */
 
 document.addEventListener('DOMContentLoaded', () => {
