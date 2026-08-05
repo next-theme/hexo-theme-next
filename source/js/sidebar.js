@@ -1,3 +1,4 @@
+/// <reference path="config.js" />
 /* global CONFIG */
 
 document.addEventListener('DOMContentLoaded', () => {

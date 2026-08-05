@@ -1,4 +1,6 @@
+/// <reference path="../../config.js" />
 /* global CONFIG, gio */
+/** @deprecated */
 
 if (!window.gio) {
   window.gio = function() {

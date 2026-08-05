@@ -1,5 +1,10 @@
+/// <reference path="config.js" />
 /* global NexT, CONFIG */
 
+/**
+ * @this {HTMLElement}
+ * @param {Node} wrapper
+ */
 HTMLElement.prototype.wrap = function(wrapper) {
   this.parentNode.insertBefore(wrapper, this);
   this.parentNode.removeChild(this);
@@ -19,6 +24,13 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
+  /** @type {(?HTMLElement)[] | undefined} */
+  sections: undefined,
+
+  /**
+   * @param {Element} target
+   * @param {number} top
+   */
   scrollTo(target, top) {
     if (window.CSS?.supports('scroll-behavior', 'smooth')) {
       target.scrollTo({
@@ -46,6 +58,11 @@ NexT.utils = {
     });
   },
 
+  /**
+   * @param {Element} target
+   * @param {Element} element
+   * @param {string} code
+   */
   registerCopyButton(target, element, code = '') {
     // One-click copy code support.
     target.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
@@ -76,14 +93,15 @@ NexT.utils = {
     });
   },
 
+  /**
+   * @param {Element} element
+   */
   registerCodeblock(element) {
     const inited = !!element;
-    let figure;
-    if (CONFIG.hljswrap) {
-      figure = (inited ? element : document).querySelectorAll('figure.highlight');
-    } else {
-      figure = document.querySelectorAll('pre');
-    }
+    const figure
+      = CONFIG.hljswrap
+        ? (inited ? element : document).querySelectorAll('figure.highlight')
+        : document.querySelectorAll('pre');
     figure.forEach(element => {
       // Skip pre > .mermaid for folding and copy button
       if (element.querySelector('.mermaid')) return;
@@ -103,6 +121,8 @@ NexT.utils = {
       const height = parseInt(window.getComputedStyle(element).height, 10);
       const needFold = CONFIG.codeblock.fold.enable && (height > CONFIG.codeblock.fold.height);
       if (!needFold && !CONFIG.codeblock.copy_button.enable && !CONFIG.codeblock.language) return;
+
+      /** @type {?Element} */
       let target;
       if (CONFIG.hljswrap && CONFIG.codeblock.copy_button.style === 'mac') {
         target = element;
@@ -328,6 +348,9 @@ NexT.utils = {
     });
   },
 
+  /**
+   * @param {number} index
+   */
   activateNavByIndex(index) {
     const nav = document.querySelector('.post-toc:not(.placeholder-toc) .nav');
     if (!nav) return;
@@ -432,6 +455,12 @@ NexT.utils = {
     document.body.style.setProperty('--dialog-scrollgutter', gap || `${window.innerWidth - document.body.clientWidth}px`);
   },
 
+  /**
+   * @param {string | Function | {url: string, integrity?: string}} src
+   * @param {{condition?: boolean, attributes?: {id?: string, defer?: boolean, crossOrigin?: string, dataset?: Record<string, string>, [key: string]: any}, parentNode?: HTMLElement, async?: boolean}} options
+   * @param {boolean} legacyCondition
+   * @returns {Promise<void>}
+   */
   getScript(src, options = {}, legacyCondition) {
     if (typeof options === 'function') {
       return this.getScript(src, {
@@ -483,6 +512,11 @@ NexT.utils = {
     });
   },
 
+  /**
+   * @param {string} selector
+   * @param {Function} legacyCallback
+   * @returns {Promise<void>}
+   */
   loadComments(selector, legacyCallback) {
     if (legacyCallback) {
       return this.loadComments(selector).then(legacyCallback);
@@ -504,7 +538,15 @@ NexT.utils = {
     });
   },
 
+  /**
+   * @template {Function} T
+   * @param {T} func
+   * @param {Parameters<setTimeout>[1]} wait
+   * @returns {(...args: Parameters<T>) => void}
+   */
   debounce(func, wait) {
+
+    /** @type {ReturnType<setTimeout>} */
     let timeout;
     return function(...args) {
       const context = this;

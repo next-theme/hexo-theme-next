@@ -4,7 +4,7 @@
 
 'use strict';
 
-module.exports = ctx => function(args, content = '') {
+module.exports = /** @param {import('hexo')} ctx */ ctx => function(/** @type {string[]} */ args, /** @type {string} */ content = '') {
   const tabBlock = /<!--\s*tab (.*?)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g;
 
   args = args.join(' ').split(',');

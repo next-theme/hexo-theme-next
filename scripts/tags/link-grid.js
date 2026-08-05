@@ -4,7 +4,7 @@
 
 'use strict';
 
-module.exports = function([image = '/images/avatar.gif', delimiter = '|', comment = '%'], content) {
+module.exports = function([image = '/images/avatar.gif', delimiter = '|', comment = '%'], /** @type {string} */ content) {
   const links = content.split('\n').filter(line => line.trim() !== '').map(line => {
     const item = line.split(delimiter).map(arg => arg.trim());
     if (item[0][0] === comment) return '';

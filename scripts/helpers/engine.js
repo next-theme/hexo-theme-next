@@ -11,13 +11,13 @@ const { getVendors } = require('../events/lib/utils');
 hexo.extend.helper.register('next_font', nextFont);
 hexo.extend.helper.register('next_url', nextUrl);
 
-hexo.extend.helper.register('next_inject', function(point) {
+hexo.extend.helper.register('next_inject', function(/** @type {string} */ point) {
   return this.theme.injects[point]
     .map(item => this.partial(item.layout, item.locals, item.options))
     .join('');
 });
 
-hexo.extend.helper.register('next_js', function(file, {
+hexo.extend.helper.register('next_js', function(/** @type {string} */ file, {
   pjax = false,
   module = false,
   async = false,
@@ -37,7 +37,7 @@ hexo.extend.helper.register('next_js', function(file, {
   return `<script ${pjax ? 'data-pjax ' : ''}${module ? 'type="module" ' : ''}src="${src}"${defer ? ' defer' : ''}${async ? ' async' : ''}></script>`;
 });
 
-hexo.extend.helper.register('next_vendors', function(name, {
+hexo.extend.helper.register('next_vendors', function(/** @type {string} */ name, {
   async = false,
   defer = !async
 } = {}) {
@@ -51,7 +51,7 @@ hexo.extend.helper.register('next_vendors', function(name, {
   return `<script src="${url}"${defer ? ' defer' : ''}${async ? ' async' : ''}></script>`;
 });
 
-hexo.extend.helper.register('next_data', function(name, ...data) {
+hexo.extend.helper.register('next_data', function(/** @type {string} */ name, ...data) {
   const json = data.length === 1 ? data[0] : Object.assign({}, ...data);
   return `<script class="next-config" data-name="${name}" type="application/json">${
     JSON.stringify(json).replace(/</g, '\\u003c')
@@ -77,7 +77,7 @@ hexo.extend.helper.register('next_pre', function() {
   ).join('\n');
 });
 
-hexo.extend.helper.register('post_gallery', function(photos) {
+hexo.extend.helper.register('post_gallery', function(/** @type {string[]} */ photos) {
   if (!photos || !photos.length) return '';
   const content = photos.map(photo => `
     <div class="post-gallery-image">
@@ -88,7 +88,7 @@ hexo.extend.helper.register('post_gallery', function(photos) {
     </div>`;
 });
 
-hexo.extend.helper.register('post_edit', function(src) {
+hexo.extend.helper.register('post_edit', function(/** @type {string} */ src) {
   const { post_edit } = this.theme;
   if (!post_edit.enable) return '';
   return this.next_url(post_edit.url + src, '<i class="fa fa-pen-nib"></i>', {
@@ -97,11 +97,11 @@ hexo.extend.helper.register('post_edit', function(src) {
   });
 });
 
-hexo.extend.helper.register('post_count', function(year) {
+hexo.extend.helper.register('post_count', function(/** @type {string} */ year) {
   return this.site.posts.filter(post => this.date(post.date, 'YYYY') === year).count();
 });
 
-hexo.extend.helper.register('gitalk_md5', function(path) {
+hexo.extend.helper.register('gitalk_md5', function(/** @type {string} */ path) {
   const str = this.url_for(path);
   return crypto.createHash('md5').update(str).digest('hex');
 });
@@ -109,7 +109,7 @@ hexo.extend.helper.register('gitalk_md5', function(path) {
 /**
  * Get page path given a certain language tag
  */
-hexo.extend.helper.register('i18n_path', function(language) {
+hexo.extend.helper.register('i18n_path', function(/** @type {string} */ language) {
   const { path, lang } = this.page;
   const base = path.startsWith(lang) ? path.slice(lang.length + 1) : path;
   return this.url_for(`${this.languages.indexOf(language) === 0 ? '' : '/' + language}/${base}`);
@@ -118,7 +118,7 @@ hexo.extend.helper.register('i18n_path', function(language) {
 /**
  * Get the language name
  */
-hexo.extend.helper.register('language_name', function(language) {
+hexo.extend.helper.register('language_name', function(/** @type {string} */ language) {
   const name = hexo.theme.i18n.__(language)('name');
   return name === 'name' ? language : name;
 });

@@ -1,3 +1,4 @@
+/// <reference path="../../config.js" />
 /* global CONFIG, dataLayer, gtag */
 
 if (!CONFIG.google_analytics.only_pageview) {
