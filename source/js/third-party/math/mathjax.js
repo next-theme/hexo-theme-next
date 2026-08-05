@@ -20,7 +20,10 @@ document.addEventListener('page:loaded', () => {
             });
           }, '', false]
         }
-      }
+      },
+      output: CONFIG.mathjax.font_path ? {
+        fontPath: CONFIG.mathjax.font_path
+      } : {}
     };
     NexT.utils.getScript(CONFIG.mathjax.js, {
       attributes: {

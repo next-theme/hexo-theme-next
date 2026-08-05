@@ -57,5 +57,10 @@ module.exports = hexo => {
       // Omit integrity for local assets.
       integrity: plugins === 'local' ? undefined : value.integrity
     };
+    if (key === 'mathjax') {
+      vendors.mathjax_font_path = plugins === 'local'
+        ? url_for.call(hexo, 'lib/@mathjax/mathjax-newcm-font')
+        : undefined;
+    }
   }
 };

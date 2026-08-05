@@ -27,9 +27,9 @@ prism_line_numbers:
   integrity: sha256-9cmf7tcLdXpKsPi/2AWE93PbZpTp4M4tqzFk+lWomjU=
 mathjax:
   name: mathjax
-  version: 3.2.2
-  file: es5/tex-mml-chtml.js
-  integrity: sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=
+  version: 4.1.3
+  file: tex-mml-chtml.js
+  integrity: sha256-ihPtDDm7pTmSF9ViEsItlvsrBTsNkz0MOXMchzOwCQw=
 katex:
   name: katex
   version: 0.16.9
