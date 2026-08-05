@@ -1,13 +1,28 @@
+/// <reference path="utils.js" />
 /* global NexT, CONFIG */
+
+/**
+ * @typedef {{
+ *   targets: string | HTMLElement,
+ *   styles?: Record<string, string>,
+ *   duration?: number,
+ *   overlap?: number,
+ *   complete?: Function
+ * }} MotionSequenceItem
+ */
 
 NexT.motion = {};
 
 NexT.motion.integrator = {
+  /** @type {MotionSequenceItem[][]} */
   queue: [],
   init() {
     this.queue = [];
     return this;
   },
+  /**
+   * @param {() => MotionSequenceItem[]} fn
+   */
   add(fn) {
     const sequence = fn();
     this.queue.push(sequence);
@@ -22,6 +37,9 @@ NexT.motion.integrator = {
     if (!CONFIG.motion.async) this.queue = [this.queue.flat()];
     this.queue.forEach(sequence => this.schedule(sequence));
   },
+  /**
+   * @param {MotionSequenceItem[]} sequence
+   */
   schedule(sequence) {
     let cursor = 0;
     sequence.forEach(item => {
@@ -31,6 +49,7 @@ NexT.motion.integrator = {
       cursor = Math.max(cursor, end);
 
       if (item.styles) {
+        /** @type {NodeListOf<HTMLElement>} */
         const targets = typeof item.targets === 'string' ? document.querySelectorAll(item.targets) : [item.targets].filter(Boolean);
         targets.forEach(target => {
           const animation = target.animate([{}, item.styles], {
@@ -52,8 +71,12 @@ NexT.motion.integrator = {
 
 NexT.motion.middleWares = {
   header() {
+    /** @type {MotionSequenceItem[]} */
     const sequence = [];
 
+    /**
+     * @param {MotionSequenceItem['targets']} targets
+     */
     function getMistLineSettings(targets) {
       sequence.push({
         targets,
@@ -63,6 +86,9 @@ NexT.motion.middleWares = {
       });
     }
 
+    /**
+     * @param {MotionSequenceItem['targets']} targets
+     */
     function pushToSequence(targets, sequenceQueue = false) {
       sequence.push({
         targets,
@@ -104,9 +130,14 @@ NexT.motion.middleWares = {
   },
 
   postList() {
+    /** @type {MotionSequenceItem[]} */
     const sequence = [];
     const { post_block, post_header, post_body, coll_header } = CONFIG.motion.transition;
 
+    /**
+     * @param {string} animation
+     * @param {NodeListOf<HTMLElement>} elements
+     */
     function animate(animation, elements) {
       if (!animation) return;
       elements.forEach(targets => {
@@ -135,6 +166,7 @@ NexT.motion.middleWares = {
   },
 
   sidebar() {
+    /** @type {MotionSequenceItem[]} */
     const sequence = [];
     const sidebar = document.querySelectorAll('.sidebar-inner');
     const sidebarTransition = CONFIG.motion.transition.sidebar;

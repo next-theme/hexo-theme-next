@@ -1,14 +1,24 @@
+/// <reference path="type.d.ts" />
+
 if (!window.NexT) window.NexT = {};
 
 (function() {
   const className = 'next-config';
 
+  /** @type {StaticConfig} */
   const staticConfig = {};
   let variableConfig = {};
 
+  /**
+   * @param {string} text
+   */
   const parse = text => JSON.parse(text || '{}');
 
+  /**
+   * @param {string} name
+   */
   const update = name => {
+    /** @type {HTMLScriptElement} */
     const targetEle = document.querySelector(`.${className}[data-name="${name}"]`);
     if (!targetEle) return;
     const parsedConfig = parse(targetEle.text);

@@ -1,3 +1,4 @@
+/// <reference path="utils.js" />
 /* global CONFIG */
 
 document.addEventListener('DOMContentLoaded', () => {

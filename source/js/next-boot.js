@@ -1,3 +1,5 @@
+/// <reference path="motion.js" />
+/// <reference path="sidebar.js" />
 /* global NexT, CONFIG */
 
 NexT.boot = {};
