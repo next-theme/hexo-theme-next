@@ -572,6 +572,8 @@ math:
     enable: false
     # Available values: none | ams | all
     tags: none
+    # Available values: overflow | scroll | scale | truncate | linebreak
+    display_overflow: scroll
 
   katex:
     enable: false
