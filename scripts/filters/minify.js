@@ -12,6 +12,10 @@ hexo.extend.filter.register('after_generate', () => {
   const theme = hexo.theme.config;
   if (!theme.minify) return;
 
+  if (theme.minify.type) {
+    hexo.route.remove('js/type.d.ts');
+  }
+
   if (theme.vendors.internal !== 'local') {
     // Remove all internal scripts
     internalScripts.forEach(path => {
