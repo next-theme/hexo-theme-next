@@ -7,7 +7,7 @@
  *   id: number,
  *   hitCount: number,
  *   includedCount: number
- * }} ReasultItem
+ * }} ResultItem
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchText = input.value.trim().toLowerCase();
     const keywords = searchText.split(/[-\s]+/);
 
-    /** @type {ReasultItem[]} */
+    /** @type {ResultItem[]} */
     let resultItems = [];
     if (searchText.length > 0) {
       // Perform local searching

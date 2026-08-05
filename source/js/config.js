@@ -19,7 +19,7 @@ if (!window.NexT) window.NexT = {};
    */
   const update = name => {
 
-    /** @type {HTMLScriptElement} */
+    /** @type {?HTMLScriptElement} */
     const targetEle = document.querySelector(`.${className}[data-name="${name}"]`);
     if (!targetEle) return;
     const parsedConfig = parse(targetEle.text);

@@ -4,7 +4,7 @@
 // https://developers.google.com/calendar/api/v3/reference/events/list
 (function() {
   // Initialization
-  /** @type {typeof CONFIG.calendar} */
+  /** @type {typeof CONFIG.calendar & object} */
   const calendar = {
     orderBy     : 'startTime',
     showLocation: false,
