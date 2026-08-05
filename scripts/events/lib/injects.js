@@ -7,14 +7,17 @@ const defaultExtname = '.njk';
 
 // Defining stylus types
 class StylusInject {
+
   /**
    * @param {string} base_dir
    */
   constructor(base_dir) {
     this.base_dir = base_dir;
+
     /** @type {string[]} */
     this.files = [];
   }
+
   /**
    * @param {string} file
    */
@@ -26,14 +29,17 @@ class StylusInject {
 
 // Defining view types
 class ViewInject {
+
   /**
    * @param {string} base_dir
    */
   constructor(base_dir) {
     this.base_dir = base_dir;
+
     /** @type {{ name: string, raw: string, args: any[] }[]} */
     this.raws = [];
   }
+
   /**
    * @param {string} name
    * @param {string} raw
@@ -45,6 +51,7 @@ class ViewInject {
     }
     this.raws.push({ name, raw, args });
   }
+
   /**
    * @param {string} name
    * @param {string} file
@@ -64,6 +71,7 @@ class ViewInject {
  * @param {string} base_dir
  */
 function initInject(base_dir) {
+
   /** @type {Record<string, StylusInject | ViewInject>} */
   const injects = {};
   points.styles.forEach(item => {
@@ -88,6 +96,7 @@ module.exports = /** @param {import('hexo')} hexo */ hexo => {
 
   // Inject views
   points.views.forEach(type => {
+
     /** @type {Record<string, { order: number }>} */
     const configs = Object.create(null);
     hexo.theme.config.injects[type] = [];

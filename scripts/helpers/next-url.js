@@ -3,13 +3,14 @@
 const { htmlTag } = require('hexo-util');
 const { parse } = require('url');
 
-module.exports =
+module.exports
+
   /**
    * @param {string} path
    * @param {string} text
    * @param {Record<string, string>} options
    */
-  function(path, text, options = {}, decode = false) {
+  = function(path, text, options = {}, decode = false) {
     const { config, theme } = this;
     const data = parse(path);
     const siteHost = parse(config.url).hostname || config.url;

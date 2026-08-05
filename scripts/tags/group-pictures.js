@@ -83,6 +83,7 @@ function groupBy(group, data) {
 }
 
 const templates = {
+
   /**
    * @template {keyof typeof LAYOUTS} TGroup
    * @template {keyof typeof LAYOUTS[TGroup]} TLayout
@@ -107,6 +108,7 @@ const templates = {
   defaults(pictures) {
     const ROW_SIZE = 3;
     const rows = pictures.length / ROW_SIZE;
+
     /** @type {string[][]} */
     const pictureArr = [];
 
@@ -139,8 +141,9 @@ const templates = {
 module.exports = /** @param {import('hexo')} ctx */ ctx => function(/** @type {string[]} */ args, /** @type {string} */ content) {
   /** @type {string} */
   let group,
-    /** @type {string} */
-    layout;
+
+      /** @type {string} */
+      layout;
   if (args[0]) {
     [group, layout] = args[0].split('-');
   }

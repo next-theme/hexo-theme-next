@@ -8,6 +8,7 @@ function capitalize(input) {
 }
 
 module.exports = {
+
   /**
    * @param {string} icon
    * @param {{toString: () => string}} key

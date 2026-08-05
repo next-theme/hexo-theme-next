@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+
 /** @type {typeof import('@types/css')} */
 let css;
 try {

@@ -3,10 +3,11 @@
 const { join } = require('path').posix;
 
 class TreeNode {
+
   /**
-   * @param {?TreeNode} parent 
-   * @param {string} path 
-   * @param {string} name 
+   * @param {?TreeNode} parent
+   * @param {string} path
+   * @param {string} name
    * @param {string} icon
    */
   constructor(parent, path, name, icon) {
@@ -14,6 +15,7 @@ class TreeNode {
       path = join(parent.path, path);
     }
     this.parent = parent;
+
     /** @type {TreeNode[]} */
     this.children = [];
     this.path = path;
@@ -36,6 +38,7 @@ class TreeNode {
 module.exports = /** @param {import('hexo')} hexo */ hexo => {
   /** @type {Map<string, TreeNode>} */
   const menu_map = new Map();
+
   /** @type {TreeNode[]} */
   const main_menu = [];
   hexo.theme.config.menu_map = menu_map;

@@ -7,6 +7,7 @@ module.exports = function() {
   if (!config || !config.enable) return '';
 
   const fontStyles = ':ital,wght@0,300;0,400;0,700;1,300;1,400;1,700';
+
   /** @type {string} */
   const fontHost = config.host || 'https://fonts.googleapis.com';
 

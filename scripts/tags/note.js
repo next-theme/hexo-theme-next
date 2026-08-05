@@ -6,6 +6,7 @@
 
 module.exports = /** @param {import('hexo')} ctx */ ctx => function(/** @type {string[]} */ args, /** @type {string} */ content) {
   const keywords = ['default', 'primary', 'info', 'success', 'warning', 'danger', 'no-icon'];
+
   /** @type {string[]} */
   const className = [];
   for (let i = 0; i < 2; i++) {
