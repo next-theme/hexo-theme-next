@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('`hexo-generator-searchdb` plugin is not installed!');
     return;
   }
+  document.body.appendChild(document.querySelector('#search-popup-template').content.cloneNode(true));
   const localSearch = new LocalSearch({
     path             : CONFIG.path,
     top_n_per_article: CONFIG.localsearch.top_n_per_article,
