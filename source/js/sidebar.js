@@ -3,13 +3,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const isRight = CONFIG.sidebar.position === 'right';
+  // Create the dimmer dynamically to prevent an unwanted animation before main.css is applied.
+  const sidebarDimmer = document.createElement('div');
+  sidebarDimmer.className = 'sidebar-dimmer';
+  document.body.appendChild(sidebarDimmer);
 
   const sidebarToggleMotion = {
     mouse: {},
     init() {
       window.addEventListener('mousedown', this.mousedownHandler.bind(this));
       window.addEventListener('mouseup', this.mouseupHandler.bind(this));
-      document.querySelector('.sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
+      sidebarDimmer.addEventListener('click', this.clickHandler.bind(this));
       document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
       window.addEventListener('sidebar:show', this.showSidebar);
       window.addEventListener('sidebar:hide', this.hideSidebar);
