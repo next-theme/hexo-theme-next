@@ -1,10 +1,8 @@
 <div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="{{ __('accessibility.nav_toggle') }}" role="button">
-      {%- if theme.menu %}
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+  <div class="site-nav-search">
+    <div class="toggle popup-trigger" aria-label="{{ __('menu.search') }}" role="button">
+      {%- if theme.algolia_search.enable or theme.local_search.enable %}
+        <i class="fa fa-search fa-fw fa-lg"></i>
       {%- endif %}
     </div>
   </div>
@@ -27,10 +25,10 @@
     {%- endif %}
   </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="{{ __('menu.search') }}" role="button">
-      {%- if theme.algolia_search.enable or theme.local_search.enable %}
-        <i class="fa fa-search fa-fw fa-lg"></i>
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="{{ __('accessibility.nav_toggle') }}" role="button">
+      {%- if theme.menu %}
+        <i class="fa fa-ellipsis fa-fw fa-lg"></i>
       {%- endif %}
     </div>
   </div>
