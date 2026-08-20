@@ -9,8 +9,7 @@ NexT.boot.registerEvents = function() {
     NexT.utils.updateFooterPosition();
 
     // Mobile top menu bar.
-    document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {
-      event.currentTarget.classList.toggle('toggle-close');
+    document.querySelector('.site-nav-toggle').addEventListener('click', event => {
       const siteNav = document.querySelector('.site-nav');
       if (!siteNav) return;
       siteNav.style.setProperty('--scroll-height', siteNav.scrollHeight + 'px');
