@@ -26,7 +26,8 @@ const pjax = new Pjax({
   },
   analytics: false,
   cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
+  // scrollTo accepts a number (vertical offset), a number array ([x, y]), or false (do not scroll).
+  scrollTo : CONFIG.bookmark.enable ? false : 0
 });
 
 document.addEventListener('pjax:success', () => {
