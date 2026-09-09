@@ -2,7 +2,6 @@
 /* global CONFIG, NexT, pjax */
 
 document.addEventListener('DOMContentLoaded', () => {
-
   document.body.appendChild(document.querySelector('#search-popup-template').content.cloneNode(true));
 
   /** @type {typeof CONFIG.algolia & object} */
