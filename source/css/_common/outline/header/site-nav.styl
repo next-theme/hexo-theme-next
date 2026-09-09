@@ -1,20 +1,19 @@
-.site-nav-toggle, .site-nav-right {
+.site-nav-toggle, .site-nav-search {
+  color: var(--text-color);
   display: none;
+  padding: 0 10px;
+
+  .fa {
+    transition: transform .5s;
+  }
 
   +mobile() {
     flex-column();
   }
+}
 
-  .toggle {
-    color: var(--text-color);
-    padding: 10px;
-    width: 22px;
-
-    .toggle-line {
-      background: var(--text-color);
-      border-radius: 1px;
-    }
-  }
+.site-nav-on .site-nav-toggle .fa {
+  transform: rotate(-90deg);
 }
 
 .site-nav {

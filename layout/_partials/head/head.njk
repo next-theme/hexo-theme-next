@@ -10,7 +10,7 @@
   {{- meta_generator() }}
 {%- endif %}
 
-{%- if config.preconnect %}
+{%- if theme.preconnect %}
   <link rel="preload" href="{{ url_for(theme.css) }}/main.css" as="style">
 {%- endif %}
 {{ next_pre() }}

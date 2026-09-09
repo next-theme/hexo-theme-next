@@ -1,5 +1,7 @@
 {%- if theme.algolia_search.enable or theme.local_search.enable %}
-  <div class="search-pop-overlay">
+  {# Keep the popup out of the render tree to prevent Safari from animating it before main.css is applied.
+     When main.css loads slowly, the unstyled search popup briefly appears and shrinks away. #}
+  <template id="search-popup-template"><div class="search-pop-overlay">
     <div class="popup search-popup">
       <div class="search-header">
         <span class="search-icon">
@@ -20,5 +22,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div></template>
 {%- endif %}
