@@ -4,7 +4,7 @@
 
 'use strict';
 
-module.exports = ctx => function(args) {
+module.exports = /** @param {import('hexo')} ctx */ ctx => function(/** @type {string[]} */ args) {
   const [feature, periods = 'current'] = args.join('').split('@');
 
   if (!feature) {

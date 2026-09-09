@@ -4,6 +4,6 @@
 
 'use strict';
 
-module.exports = function(args) {
+module.exports = function(/** @type {string[]} */ args) {
   return `<video src="${args[0]}" preload="metadata" controlslist="nodownload" controls playsinline poster="${args[1] || ''}"></video>`;
 };

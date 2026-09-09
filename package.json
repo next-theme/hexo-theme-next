@@ -36,13 +36,16 @@
   "homepage": "https://theme-next.js.org",
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.5",
+    "@next-theme/pjax": "^0.6.0",
+    "@types/css": "^0.0.38",
+    "@types/node": "^26.1.2",
     "c8": "12.0.0",
     "chai": "6.2.2",
     "eslint": "10.8.0",
     "hexo": "8.1.2",
     "hexo-renderer-marked": "7.0.1",
-    "js-yaml": "4.3.0",
-    "mocha": "11.8.0",
+    "js-yaml": "5.2.3",
+    "mocha": "^11.8.0",
     "stylelint": "16.26.1",
     "stylelint-stylus": "1.0.0"
   }

@@ -1,6 +1,9 @@
+/// <reference path="../../utils.js" />
 /* global NexT, CONFIG */
 
 document.addEventListener('page:loaded', async () => {
+
+  /** @type {typeof CONFIG.changyan & object} */
   const { appid, appkey } = CONFIG.changyan;
   const mainJs = 'https://cy-cdn.kuaizhan.com/upload/changyan.js';
   const countJs = `https://cy-cdn.kuaizhan.com/upload/plugins/plugins.list.count.js?clientId=${appid}`;

@@ -4,7 +4,7 @@
 
 'use strict';
 
-module.exports = ctx => function(args) {
+module.exports = /** @param {import('hexo')} ctx */ ctx => function(/** @type {string[]} */ args) {
   args = args.join(' ').split(',');
   const url   = args[0];
   const text  = (args[1] || '').trim();

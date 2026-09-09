@@ -1,3 +1,4 @@
+/// <reference path="../../config.js" />
 /* global CONFIG */
 
 (function() {
@@ -5,6 +6,10 @@
   const documents = `${database}/documents`;
   const api = `https://firestore.googleapis.com/v1/${documents}`;
 
+  /**
+   * @param {string} path
+   * @param {Parameters<typeof fetch>[1]} options
+   */
   const fetchFirestore = async (path, options) => {
     const response = await fetch(`${api}${path}`, options);
     if (response.status === 404) return null;
@@ -12,9 +17,20 @@
     return response.json();
   };
 
+  /**
+   * @param {string} title
+   */
   const documentName = title => `${documents}/${CONFIG.firestore.collection}/${title}`;
+
+  /**
+   * @param {{ integerValue?: string, doubleValue?: string } | undefined } value
+   */
   const getValue = value => Number(value?.integerValue ?? value?.doubleValue ?? 0);
 
+  /**
+   * @param {string} title
+   * @param {number} increaseCount
+   */
   const getCount = async (title, increaseCount) => {
     if (increaseCount) {
       const data = await fetchFirestore(':commit', {
@@ -44,6 +60,9 @@
     return getValue(document?.fields?.count);
   };
 
+  /**
+   * @param {string[]} titles
+   */
   const getCounts = async titles => {
     if (titles.length === 0) return [];
     const data = await fetchFirestore(':batchGet', {

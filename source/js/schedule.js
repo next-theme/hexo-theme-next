@@ -1,8 +1,10 @@
+/// <reference path="config.js" />
 /* global CONFIG */
 
 // https://developers.google.com/calendar/api/v3/reference/events/list
 (function() {
   // Initialization
+  /** @type {typeof CONFIG.calendar & object} */
   const calendar = {
     orderBy     : 'startTime',
     showLocation: false,
@@ -37,6 +39,10 @@
   const request_url = new URL(`https://www.googleapis.com/calendar/v3/calendars/${calendar.calendar_id}/events`);
   Object.entries(params).forEach(param => request_url.searchParams.append(...param));
 
+  /**
+   * @param {Date} current
+   * @param {Date} previous
+   */
   function getRelativeTime(current, previous) {
     const msPerMinute = 60 * 1000;
     const msPerHour = msPerMinute * 60;
@@ -62,6 +68,12 @@
     return 'about ' + Math.round(elapsed / msPerYear) + ' years' + tense;
   }
 
+  /**
+   * @param {string} tense
+   * @param {{ summary: string, location?: string, description?: string }} event
+   * @param {Date} start
+   * @param {Date} end
+   */
   function buildEventDOM(tense, event, start, end) {
     const durationFormat = {
       weekday: 'short',

@@ -69,6 +69,10 @@ const LAYOUTS = {
   }
 };
 
+/**
+ * @param {readonly number[]} group
+ * @param {string[]} data
+ */
 function groupBy(group, data) {
   const r = [];
   for (const count of group) {
@@ -80,6 +84,13 @@ function groupBy(group, data) {
 
 const templates = {
 
+  /**
+   * @template {keyof typeof LAYOUTS} TGroup
+   * @template {keyof typeof LAYOUTS[TGroup]} TLayout
+   * @param {string[]} pictures
+   * @param {TGroup} group
+   * @param {TLayout} layout
+   */
   dispatch(pictures, group, layout) {
     const rule = LAYOUTS[group] ? LAYOUTS[group][layout] : null;
     return rule ? this.getHTML(groupBy(rule, pictures)) : this.defaults(pictures);
@@ -92,11 +103,13 @@ const templates = {
    * □ □ □
    * ...
    *
-   * @param pictures
+   * @param {string[]} pictures
    */
   defaults(pictures) {
     const ROW_SIZE = 3;
     const rows = pictures.length / ROW_SIZE;
+
+    /** @type {string[][]} */
     const pictureArr = [];
 
     for (let i = 0; i < rows; i++) {
@@ -106,12 +119,18 @@ const templates = {
     return this.getHTML(pictureArr);
   },
 
+  /**
+   * @param {string[][]} rows
+   */
   getHTML(rows) {
     return rows.map(row => {
       return `<div class="group-picture-row">${this.getColumnHTML(row)}</div>`;
     }).join('');
   },
 
+  /**
+   * @param {string[]} pictures
+   */
   getColumnHTML(pictures) {
     return pictures.map(picture => {
       return `<div class="group-picture-column">${picture}</div>`;
@@ -119,8 +138,12 @@ const templates = {
   }
 };
 
-module.exports = ctx => function(args, content) {
-  let group, layout;
+module.exports = /** @param {import('hexo')} ctx */ ctx => function(/** @type {string[]} */ args, /** @type {string} */ content) {
+  /** @type {string} */
+  let group,
+
+      /** @type {string} */
+      layout;
   if (args[0]) {
     [group, layout] = args[0].split('-');
   }

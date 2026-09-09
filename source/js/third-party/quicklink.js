@@ -1,3 +1,4 @@
+/// <reference path="../config.js" />
 /* global CONFIG, quicklink */
 
 (function() {
@@ -6,6 +7,7 @@
     CONFIG.quicklink.ignores = JSON.parse(ignoresStr);
   }
 
+  /** @type {?Function} */
   let resetFn = null;
 
   const onRefresh = () => {

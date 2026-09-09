@@ -1,3 +1,5 @@
+/// <reference path="next-boot.js" />
+/// <reference path="pjax.d.ts" />
 /* global NexT, CONFIG, Pjax */
 
 const pjax = new Pjax({

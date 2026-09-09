@@ -1,3 +1,4 @@
+/// <reference path="../../config.js" />
 /* global CONFIG */
 
 if (CONFIG.matomo.enable) {

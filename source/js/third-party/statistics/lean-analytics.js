@@ -1,13 +1,24 @@
+/// <reference path="../../config.js" />
 /* global CONFIG */
 /* eslint-disable no-console */
+/** @deprecated */
 
 class LeanCloudCounter {
+
+  /**
+   * @param {string} appId
+   * @param {string} appKey
+   * @param {string} apiServer
+   */
   constructor(appId, appKey, apiServer) {
     this.appId = appId;
     this.appKey = appKey;
     this.apiServer = apiServer;
   }
 
+  /**
+   * @param {string} url
+   */
   leancloudSelector(url) {
     url = encodeURI(url);
     return document.getElementById(url).querySelector('.leancloud-visitors-count');
@@ -83,6 +94,8 @@ class LeanCloudCounter {
 }
 
 (function() {
+
+  /** @type {typeof CONFIG.leancloud_visitors & object} */
   const { app_id, app_key, server_url } = CONFIG.leancloud_visitors;
   const fetchData = api_server => {
     const counter = new LeanCloudCounter(app_id, app_key, api_server);
@@ -94,6 +107,7 @@ class LeanCloudCounter {
     }
   };
 
+  /** @type {string | undefined} */
   let api_server;
   if (server_url) {
     api_server = server_url;

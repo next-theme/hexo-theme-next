@@ -1,3 +1,4 @@
+/// <reference path="utils.js" />
 /* global NexT, CONFIG */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,7 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
       NexT.utils.scrollTo(window, top);
     }
   };
-  // Register everything
+
+  /**
+   * Register everything
+   * @param {typeof CONFIG.bookmark.save} trigger
+   */
   const init = function(trigger) {
     // Create a link element
     const link = document.querySelector('.book-mark-link');

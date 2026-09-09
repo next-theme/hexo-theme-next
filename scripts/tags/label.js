@@ -4,7 +4,7 @@
 
 'use strict';
 
-module.exports = ctx => function(args) {
+module.exports = /** @param {import('hexo')} ctx */ ctx => function(/** @type {string[]} */ args) {
   const [classes = 'default', text = ''] = args.join(' ').split('@');
 
   if (!text) ctx.log.warn('Label text must be defined!');

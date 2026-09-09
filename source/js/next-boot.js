@@ -1,3 +1,4 @@
+/// <reference path="motion.js" />
 /* global NexT, CONFIG */
 
 NexT.boot = {};

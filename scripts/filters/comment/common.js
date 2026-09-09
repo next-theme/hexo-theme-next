@@ -1,10 +1,19 @@
 'use strict';
 
+/**
+ * @param {{toString: () => string}} input
+ */
 function capitalize(input) {
   return input.toString().charAt(0).toUpperCase() + input.toString().substring(1);
 }
 
 module.exports = {
+
+  /**
+   * @param {string} icon
+   * @param {{toString: () => string}} key
+   * @param {string} defaultValue
+   */
   iconText(icon, key, defaultValue) {
     if (!defaultValue) {
       defaultValue = capitalize(key);

@@ -1,7 +1,10 @@
+/// <reference path="../../utils.js" />
 /* global CONFIG, NexT, pjax */
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(document.querySelector('#search-popup-template').content.cloneNode(true));
+
+  /** @type {typeof CONFIG.algolia & object} */
   const { indexName, appID, apiKey, hits } = CONFIG.algolia;
   const client = window['algoliasearch/lite'].liteClient(appID, apiKey);
 
@@ -22,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let latestSearchId = 0;
 
+  /**
+   * @param {string} searchText
+   * @param {number} page
+   * @param {number} searchId
+   */
   const searchAlgolia = async (searchText, page, searchId) => {
     if (searchId !== latestSearchId) return;
     container.setAttribute('aria-busy', 'true');
@@ -87,6 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  /**
+   * @param {number} searchId
+   */
   const inputEventFunction = async searchId => {
     if (searchId !== latestSearchId) return;
     const searchText = input.value.trim();

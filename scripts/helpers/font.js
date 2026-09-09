@@ -7,9 +7,12 @@ module.exports = function() {
   if (!config || !config.enable) return '';
 
   const fontStyles = ':ital,wght@0,300;0,400;0,700;1,300;1,400;1,700';
+
+  /** @type {string} */
   const fontHost = config.host || 'https://fonts.googleapis.com';
 
   // Get a font list from config
+  /** @type {string[]} */
   let fontFamilies = [];
   ['global', 'title', 'headings', 'posts', 'codes'].forEach(item => {
     if (config[item]?.family && config[item].external) {
