@@ -5,6 +5,7 @@ NexT.boot = {};
 NexT.boot.registerEvents = function() {
   try {
     NexT.utils.registerScrollPercent();
+    NexT.utils.registerLightDarkToggle();
     NexT.utils.registerCanIUseTag();
     NexT.utils.updateFooterPosition();
 

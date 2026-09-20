@@ -15,6 +15,14 @@
   </div>
 {%- endif %}
 
+{%- if theme.lightdark.enable and theme.lightdark.switcher %}
+  <div class="light-dark-toggle" role="button" aria-label="{{ __('accessibility.light_dark_toggle') }}">
+    <i class="fa fa-adjust fa-lg"></i>
+    <i class="fa fa-sun fa-lg"></i>
+    <i class="fa fa-moon fa-lg"></i>
+  </div>
+{%- endif %}
+
 {%- if theme.reading_progress.enable %}
   <div class="reading-progress-bar"></div>
 {%- endif %}

@@ -208,6 +208,37 @@ NexT.utils = {
     });
   },
 
+  registerLightDarkToggle() {
+    const lightDarkToggle = document.querySelector('.light-dark-toggle');
+    if (!lightDarkToggle) return;
+
+    const media = matchMedia('(prefers-color-scheme: dark)');
+    lightDarkToggle.addEventListener('click', () => {
+      const isDarkMode = media.matches;
+      const element = document.documentElement;
+      const theme = element.getAttribute('data-theme');
+      switch (theme) {
+        case 'light':
+          if (isDarkMode) {
+            element.removeAttribute('data-theme');
+          } else {
+            element.setAttribute('data-theme', 'dark');
+          }
+          break;
+        case 'dark':
+          if (isDarkMode) {
+            element.setAttribute('data-theme', 'light');
+          } else {
+            element.removeAttribute('data-theme');
+          }
+          break;
+        default:
+          element.setAttribute('data-theme', isDarkMode ? 'light' : 'dark');
+          break;
+      }
+    });
+  },
+
   /**
    * Tabs tag listener (without twitter bootstrap).
    */
