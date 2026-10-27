@@ -9,19 +9,6 @@ try {
   css = require('css');
 }
 
-/**
- * Parse an absolute URL with the WHATWG URL API.
- * Returns null for relative or invalid input, where the legacy `url.parse()`
- * returned an object with no protocol or hostname.
- */
-function parseURL(url) {
-  try {
-    return new URL(url);
-  } catch {
-    return null;
-  }
-}
-
 function resolve(name, file = '') {
   let dir;
   try {
@@ -99,6 +86,5 @@ module.exports = {
   resolve,
   highlightTheme,
   getVendors,
-  points,
-  parseURL
+  points
 };

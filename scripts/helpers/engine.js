@@ -5,7 +5,7 @@
 const crypto = require('crypto');
 const nextFont = require('./font');
 const nextUrl = require('./next-url');
-const { getVendors, parseURL } = require('../events/lib/utils');
+const { getVendors } = require('../events/lib/utils');
 
 hexo.extend.helper.register('next_font', nextFont);
 hexo.extend.helper.register('next_url', nextUrl);
@@ -59,7 +59,7 @@ hexo.extend.helper.register('next_data', function(name, ...data) {
 
 // Scheme and hostname of an absolute URL, or '' for a relative one.
 function urlOrigin(url) {
-  const data = url && parseURL(url);
+  const data = url && URL.parse(url);
   return data?.hostname ? data.protocol + '//' + data.hostname : '';
 }
 

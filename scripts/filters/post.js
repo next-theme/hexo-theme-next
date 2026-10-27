@@ -2,7 +2,6 @@
 
 'use strict';
 
-const { parseURL } = require('../events/lib/utils');
 const { unescapeHTML } = require('hexo-util');
 
 hexo.extend.filter.register('after_post_render', data => {
@@ -13,7 +12,7 @@ hexo.extend.filter.register('after_post_render', data => {
     data.content = data.content.replace(/(<img[^>]*)\ssrc=/ig, '$1 data-src=');
   }
   if (theme.exturl) {
-    const siteHost = parseURL(config.url)?.hostname || config.url;
+    const siteHost = URL.parse(config.url)?.hostname || config.url;
     // External URL icon
     const exturlIcon = theme.exturl_icon ? '<i class="fa fa-external-link-alt"></i>' : '';
     data.content = data.content.replace(/<a[^>]*\shref="([^"]+)"[^>]*>([^<]+)<\/a>/ig, (match, href, html) => {
@@ -21,7 +20,7 @@ hexo.extend.filter.register('after_post_render', data => {
       if (!href) return match;
 
       // Exit if the url has same host with `config.url`, which means it's an internal link.
-      const link = parseURL(href);
+      const link = URL.parse(href);
       if (!link?.protocol || link.hostname === siteHost) return match;
 
       // Return encrypted URL with title.

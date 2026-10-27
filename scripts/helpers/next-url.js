@@ -1,12 +1,11 @@
 'use strict';
 
 const { htmlTag } = require('hexo-util');
-const { parseURL } = require('../events/lib/utils');
 
 module.exports = function(path, text, options = {}, decode = false) {
   const { config, theme } = this;
-  const data = parseURL(path);
-  const siteHost = parseURL(config.url)?.hostname || config.url;
+  const data = URL.parse(path);
+  const siteHost = URL.parse(config.url)?.hostname || config.url;
 
   let exturl = '';
   let tag = 'a';
