@@ -19,7 +19,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-next?color=red&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/hexo-theme-next)
 [![NPM Downloads](https://img.shields.io/npm/dm/hexo-theme-next?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/hexo-theme-next)
-[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=7.0.0-blue?style=for-the-badge&logo=hexo)](https://hexo.io)
+[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=8.0.0-blue?style=for-the-badge&logo=hexo)](https://hexo.io)
 [![License](https://img.shields.io/badge/license-%20AGPL-orange?style=for-the-badge&logo=gnu)](https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/linter.yml?branch=master&label=test&logo=github&style=for-the-badge)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ALinter)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/tester.yml?branch=master&logo=github&style=for-the-badge)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ATester)
@@ -36,7 +36,9 @@
 
 ## 安装
 
-如果你在使用 Hexo 5.0 或更新版本，最简单的安装方式是通过 npm：
+需要 Hexo 8.0.0 或更新版本，以及 Node.js `^22.13.0 || >=24.0.0`。
+
+最简单的安装方式是通过 npm：
 
 ```sh
 cd hexo-site

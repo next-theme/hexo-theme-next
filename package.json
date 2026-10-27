@@ -34,6 +34,9 @@
     "url": "https://github.com/next-theme/hexo-theme-next/issues"
   },
   "homepage": "https://theme-next.js.org",
+  "engines": {
+    "node": "^22.13.0 || >=24.0.0"
+  },
   "devDependencies": {
     "@next-theme/eslint-config": "0.0.5",
     "c8": "12.0.0",
