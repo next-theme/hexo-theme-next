@@ -3,7 +3,6 @@
 'use strict';
 
 const crypto = require('crypto');
-const { parse } = require('url');
 const nextFont = require('./font');
 const nextUrl = require('./next-url');
 const { getVendors } = require('../events/lib/utils');
@@ -58,16 +57,22 @@ hexo.extend.helper.register('next_data', function(name, ...data) {
   }</script>`;
 });
 
+// Scheme and hostname of an absolute URL, or '' for a relative one.
+function urlOrigin(url) {
+  const data = url && URL.parse(url);
+  return data?.hostname ? data.protocol + '//' + data.hostname : '';
+}
+
 hexo.extend.helper.register('next_pre', function() {
   if (!this.theme.preconnect) return '';
   const { enable, host } = this.theme.font;
   const { internal, plugins, custom_cdn_url } = this.theme.vendors;
   const links = {
-    local   : this.theme.js && parse(this.theme.js).hostname ? parse(this.theme.js).protocol + '//' + parse(this.theme.js).hostname : '',
+    local   : urlOrigin(this.theme.js),
     jsdelivr: 'https://cdn.jsdelivr.net',
     unpkg   : 'https://unpkg.com',
     cdnjs   : 'https://cdnjs.cloudflare.com',
-    custom  : custom_cdn_url && parse(custom_cdn_url).hostname ? parse(custom_cdn_url).protocol + '//' + parse(custom_cdn_url).hostname : ''
+    custom  : urlOrigin(custom_cdn_url)
   };
   const h = enable ? host || 'https://fonts.googleapis.com' : '';
   const i = links[internal];

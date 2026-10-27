@@ -46,4 +46,15 @@ describe('next-url', () => {
     const encoded = btoa('https://theme-next.js.org');
     nextUrl('https://theme-next.js.org', 'Text', { class: 'theme-link' }).should.eql(`<span class="exturl theme-link" data-url="${encoded}">Text</span>`);
   });
+
+  it('relative and anchor links stay links with exturl enabled', () => {
+    hexo.theme.exturl = true;
+    nextUrl('/child/', 'Text').should.eql('<a href="/child/">Text</a>');
+    nextUrl('#comments', 'Text').should.eql('<a href="#comments">Text</a>');
+  });
+
+  it('an absolute link to the site itself is internal', () => {
+    hexo.theme.exturl = false;
+    nextUrl('https://EXAMPLE.com/about/', 'Text').should.eql('<a href="https://example.com/about/">Text</a>');
+  });
 });
