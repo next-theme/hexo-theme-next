@@ -1,19 +1,19 @@
 'use strict';
 
 const { htmlTag } = require('hexo-util');
-const { parse } = require('url');
+const { parseURL } = require('../events/lib/utils');
 
 module.exports = function(path, text, options = {}, decode = false) {
   const { config, theme } = this;
-  const data = parse(path);
-  const siteHost = parse(config.url).hostname || config.url;
+  const data = parseURL(path);
+  const siteHost = parseURL(config.url)?.hostname || config.url;
 
   let exturl = '';
   let tag = 'a';
   let attrs = { href: this.url_for(path) };
 
   // If `exturl` enabled, set spanned links only on external links.
-  if (theme.exturl && data.protocol && data.hostname !== siteHost) {
+  if (theme.exturl && data?.protocol && data.hostname !== siteHost) {
     tag = 'span';
     exturl = 'exturl';
     const encoded = Buffer.from(path).toString('base64');
@@ -37,7 +37,7 @@ module.exports = function(path, text, options = {}, decode = false) {
   }
 
   // If it's external link, rewrite attributes.
-  if (data.protocol && data.hostname !== siteHost) {
+  if (data?.protocol && data.hostname !== siteHost) {
     attrs.external = null;
 
     if (!theme.exturl) {
