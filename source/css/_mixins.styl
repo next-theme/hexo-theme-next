@@ -147,13 +147,13 @@ sidebar-toggle-position($reverse) {
   }
 }
 
-sidebar-toggle() {
+sidebar-toggle($reverse = false) {
   background: $b2t-bg-color;
   cursor: pointer;
   opacity: $b2t-opacity;
   position: fixed;
   z-index: $zindex-3;
-  sidebar-toggle-position(false);
+  sidebar-toggle-position($reverse);
 
   &:hover {
     opacity: $b2t-opacity-hover;

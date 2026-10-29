@@ -1,0 +1,62 @@
+if (hexo-config('lightdark.switcher')) {
+  .light-dark-toggle {
+    display: none;
+  }
+
+  +light-dark-block() {
+    .light-dark-toggle {
+      font-size: $b2t-font-size;
+      align-items: center;
+      bottom: $b2t-position-bottom-on + $sidebar-toggle-size + 5px;
+      color: $b2t-color;
+      display: flex;
+      height: $sidebar-toggle-inner-size;
+      padding: $sidebar-toggle-padding;
+      width: $sidebar-toggle-inner-size;
+      sidebar-toggle(true);
+
+      &:hover {
+        color: $sidebar-highlight;
+      }
+
+      .fa {
+        text-align: center;
+        width: $sidebar-toggle-size;
+
+        &.fa-sun, &.fa-moon {
+          display: none;
+        }
+      }
+    }
+
+    html {
+      &[data-theme='light'] {
+        color-scheme: light;
+
+        .light-dark-toggle .fa {
+          &.fa-sun {
+            display: inline-block;
+          }
+
+          &.fa-moon, &.fa-adjust {
+            display: none;
+          }
+        }
+      }
+
+      &[data-theme='dark'] {
+        color-scheme: dark;
+
+        .light-dark-toggle .fa {
+          &.fa-sun, &.fa-adjust {
+            display: none;
+          }
+
+          &.fa-moon {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

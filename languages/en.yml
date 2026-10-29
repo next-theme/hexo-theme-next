@@ -110,6 +110,7 @@ accessibility:
   prev_page: Previous page
   next_page: Next page
   back_to_top: Back to top
+  light_dark_toggle: Toggle light/dark mode
   select_lang: Select language
 
 symbols_count_time:
