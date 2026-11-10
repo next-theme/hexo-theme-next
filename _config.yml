@@ -888,6 +888,13 @@ knocket:
   async: true
   identifier: # Get it from https://trtc.io/solutions/knocket
 
+# OneTag AI adds an "ask this page" button: visitors type a question and get an answer drawn from the current page.
+# The key is a public site key with a hard usage cap; nothing is loaded until it is set.
+# For more information: https://onetagai.com
+onetag:
+  enable: false
+  key: # Get it from https://onetagai.com
+
 
 # ---------------------------------------------------------------
 # CDN Settings

@@ -1,0 +1,5 @@
+{#- OneTag AI "ask this page" widget — https://onetagai.com -#}
+{#- The button sits on the side opposite to the sidebar toggle and the back-to-top button. -#}
+{%- if theme.onetag.key %}
+<script async src="https://onetagai.com/widget.js" data-key="{{ theme.onetag.key }}" data-ref="hexo-theme-next"{% if theme.sidebar.position == 'right' %} data-position="left"{% endif %}></script>
+{%- endif %}
